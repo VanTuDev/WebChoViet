@@ -67,7 +67,8 @@
     "phoneLabel": "Phone",
     "phone": "+84 (236) 3456 789",
     "hoursLabel": "Opening Hours",
-    "hours": "Daily: 07:00 - 22:00"
+    "hours": "Daily: 07:00 - 22:00",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "The Ocean Cafe",

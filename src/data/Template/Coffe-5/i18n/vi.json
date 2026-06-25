@@ -57,7 +57,8 @@
     "phone": "090 123 4567",
     "hoursLabel": "Giờ mở cửa",
     "hours": "08:00 - 22:30 (Hằng ngày)",
-    "mapLabel": "Mật Ngọt Tea ở đây nè!"
+    "mapLabel": "Mật Ngọt Tea ở đây nè!",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "webchoviet",

@@ -57,7 +57,8 @@
     "phone": "090 123 4567",
     "hoursLabel": "Opening Hours",
     "hours": "08:00 - 22:30 (Daily)",
-    "mapLabel": "Mật Ngọt Tea is right here!"
+    "mapLabel": "Mật Ngọt Tea is right here!",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "webchoviet",

@@ -96,7 +96,8 @@
     "hoursLabel": "Opening Hours:",
     "hours": "Mon - Sun: 07:00 - 22:30",
     "phone": "0123 456 789",
-    "directionsBtn": "Get Directions on Maps"
+    "directionsBtn": "Get Directions on Maps",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "webchoviet",

@@ -5,6 +5,7 @@ import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
 import { useTemplateCustom } from '../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../utils/deepMerge';
+import { toGoogleMapsEmbedUrl } from '../../../utils/googleMaps';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -232,7 +233,18 @@ export default function Coffe4({ lang = 'vi' }: Props) {
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
-              <img className="w-full h-full object-cover" src={images['map'] ?? IMGS.map} alt="Location Map" />
+              {t.contact.mapUrl ? (
+                <iframe
+                  src={toGoogleMapsEmbedUrl(t.contact.mapUrl)}
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps"
+                />
+              ) : (
+                <img className="w-full h-full object-cover" src={images['map'] ?? IMGS.map} alt="Location Map" />
+              )}
             </div>
             <div>
               <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-10">{t.contact.sectionTitle}</h2>

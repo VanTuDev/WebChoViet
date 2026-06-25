@@ -4,6 +4,7 @@ import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
 import { useTemplateCustom } from '../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../utils/deepMerge';
+import { toGoogleMapsEmbedUrl } from '../../../utils/googleMaps';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -250,7 +251,18 @@ export default function Coffe3({ lang = 'vi' }: Props) {
               </div>
             </div>
             <div className="lg:w-2/3 min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#c2c6d4]/30">
-              <img className="w-full h-full object-cover" src={IMAGES.map} alt="Location Map" />
+              {t.contact.mapUrl ? (
+                <iframe
+                  src={toGoogleMapsEmbedUrl(t.contact.mapUrl)}
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps"
+                />
+              ) : (
+                <img className="w-full h-full object-cover" src={IMAGES.map} alt="Location Map" />
+              )}
             </div>
           </div>
         </div>

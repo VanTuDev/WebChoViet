@@ -96,7 +96,8 @@
     "hoursLabel": "Giờ mở cửa:",
     "hours": "Thứ 2 - Chủ Nhật: 07:00 - 22:30",
     "phone": "0123 456 789",
-    "directionsBtn": "Chỉ đường trên Maps"
+    "directionsBtn": "Chỉ đường trên Maps",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "webchoviet",

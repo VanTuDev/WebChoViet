@@ -96,7 +96,8 @@
     "hoursLabel": "营业时间：",
     "hours": "周一至周日：07:00 - 22:30",
     "phone": "0123 456 789",
-    "directionsBtn": "地图导航"
+    "directionsBtn": "地图导航",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "webchoviet",

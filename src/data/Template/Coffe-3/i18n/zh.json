@@ -67,7 +67,8 @@
     "phoneLabel": "电话",
     "phone": "+84 (236) 3456 789",
     "hoursLabel": "营业时间",
-    "hours": "每日：07:00 - 22:00"
+    "hours": "每日：07:00 - 22:00",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "The Ocean Cafe",

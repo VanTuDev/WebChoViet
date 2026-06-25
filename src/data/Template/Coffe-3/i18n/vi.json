@@ -67,7 +67,8 @@
     "phoneLabel": "Điện Thoại",
     "phone": "+84 (236) 3456 789",
     "hoursLabel": "Giờ Mở Cửa",
-    "hours": "Hàng ngày: 07:00 - 22:00"
+    "hours": "Hàng ngày: 07:00 - 22:00",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "The Ocean Cafe",

@@ -74,7 +74,8 @@
     "openStatus": "영업 중 • 지금 방문하세요",
     "contactLabel": "연락처",
     "hotline": "028 3848 99XX",
-    "email": "info@koigardencoffee.vn"
+    "email": "info@koigardencoffee.vn",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "정원 & 코이 커피",

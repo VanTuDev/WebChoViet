@@ -57,7 +57,8 @@
     "phone": "090 123 4567",
     "hoursLabel": "营业时间",
     "hours": "08:00 - 22:30（每日）",
-    "mapLabel": "蜜甜茶就在这里！"
+    "mapLabel": "蜜甜茶就在这里！",
+    "mapUrl": ""
   },
   "footer": {
     "brand": "webchoviet",

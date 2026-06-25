@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Image as ImageIcon, Plus, Trash2 } from 'lucide-react';
+import { ChevronDown, ChevronRight, Image as ImageIcon, Plus, Trash2, Link, Map, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { isGoogleMapsEmbedUrl } from '../../../utils/googleMaps';
 import type { ImageSlot } from '../../../data/Template/templateImageKeys';
 import ImageCropModal from './ImageCropModal';
 
@@ -67,6 +68,108 @@ function StringField({ label, value, path, onChange }: {
   );
 }
 
+// ── Link field (URL input) ────────────────────────────────────────────────────
+
+function LinkField({ label, value, path, onChange }: {
+  label: string;
+  value: string;
+  path: string[];
+  onChange: (path: string[], value: string) => void;
+}) {
+  return (
+    <div>
+      <label className="flex items-center gap-1 text-xs font-medium text-gray-400 mb-1 capitalize">
+        <Link className="w-3 h-3" />
+        {label.replace(/_/g, ' ')}
+      </label>
+      <input
+        type="url"
+        placeholder="https://..."
+        className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-400 transition-all"
+        value={value}
+        onChange={e => onChange(path, e.target.value)}
+      />
+    </div>
+  );
+}
+
+// ── Google Maps embed field ────────────────────────────────────────────────────
+
+/** Extract src URL from a raw <iframe ...> HTML string, or return the string as-is if already a URL */
+function extractMapSrc(raw: string): string {
+  const match = raw.match(/src="([^"]+)"/);
+  return match ? match[1] : raw.trim();
+}
+
+function MapEmbedField({ value, path, onChange }: {
+  value: string;
+  path: string[];
+  onChange: (path: string[], value: string) => void;
+}) {
+  const isValid = value ? isGoogleMapsEmbedUrl(value) : null;
+
+  const handleChange = (raw: string) => {
+    const extracted = extractMapSrc(raw);
+    onChange(path, extracted);
+  };
+
+  return (
+    <div className="rounded-xl border border-blue-100 bg-blue-50/50 p-3 space-y-2">
+      <label className="flex items-center gap-1.5 text-xs font-bold text-blue-700">
+        <Map className="w-3.5 h-3.5" />
+        Nhúng Google Maps
+      </label>
+
+      <ol className="text-[10px] text-blue-600 space-y-0.5 list-none">
+        <li>1. Mở Google Maps → tìm địa điểm</li>
+        <li>2. Nhấn <strong>Chia sẻ</strong> → tab <strong>Nhúng bản đồ</strong></li>
+        <li>3. Nhấn <strong>Sao chép HTML</strong> rồi dán thẳng vào đây</li>
+      </ol>
+
+      <div className="relative">
+        <textarea
+          rows={3}
+          placeholder={'Dán code HTML <iframe ...> hoặc link embed vào đây...'}
+          className={`w-full text-xs text-gray-800 bg-white border rounded-lg px-3 py-2 pr-8 focus:outline-none transition-all resize-none ${
+            isValid === false
+              ? 'border-amber-400 focus:border-amber-500'
+              : 'border-blue-200 focus:border-blue-400'
+          }`}
+          value={value}
+          onChange={e => handleChange(e.target.value)}
+        />
+        {value && (
+          <span className="absolute right-2.5 top-3">
+            {isValid
+              ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+              : <AlertCircle className="w-3.5 h-3.5 text-amber-500" />
+            }
+          </span>
+        )}
+      </div>
+
+      {value && !isValid && (
+        <p className="text-[10px] text-amber-600 leading-relaxed">
+          Link không đúng định dạng embed. Hãy dùng tính năng <strong>Nhúng bản đồ</strong> trong Google Maps (không phải link chia sẻ thông thường).
+        </p>
+      )}
+
+      {value && isValid && (
+        <div className="rounded-lg overflow-hidden border border-emerald-200 h-36">
+          <iframe
+            src={value}
+            className="w-full h-full border-0"
+            title="Xem trước bản đồ"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Menu item editor (array of objects with image) ───────────────────────────
 
 function MenuArrayEditor({
@@ -121,7 +224,7 @@ function MenuArrayEditor({
               <div className="flex items-center gap-3 p-3 border-b border-gray-100">
                 <button
                   onClick={() => setCropTarget({ key, label: `${label} ${i + 1}`, currentUrl: imgSrc || undefined })}
-                  className="relative w-14 h-14 rounded-lg overflow-hidden bg-gray-200 flex-shrink-0 hover:ring-2 hover:ring-blue-400 transition-all group"
+                  className="relative w-14 h-14 rounded-lg overflow-hidden bg-gray-200 shrink-0 hover:ring-2 hover:ring-blue-400 transition-all group"
                 >
                   {imgSrc ? (
                     <img src={imgSrc} className="w-full h-full object-cover" alt="" />
@@ -142,7 +245,7 @@ function MenuArrayEditor({
                 </div>
                 <button
                   onClick={() => removeItem(i)}
-                  className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-red-50 text-gray-300 hover:text-red-500 transition-colors flex-shrink-0"
+                  className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-red-50 text-gray-300 hover:text-red-500 transition-colors shrink-0"
                   title="Xóa món"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
@@ -198,7 +301,7 @@ function ImageSlotItem({ slot, currentUrl, onEdit }: {
   const src = currentUrl ?? slot.defaultUrl;
   return (
     <div className="flex items-center gap-3">
-      <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
+      <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 shrink-0 border border-gray-200">
         {src ? (
           <img src={src} alt={slot.label} className="w-full h-full object-cover" />
         ) : (
@@ -213,23 +316,12 @@ function ImageSlotItem({ slot, currentUrl, onEdit }: {
       </div>
       <button
         onClick={() => onEdit(slot)}
-        className="flex-shrink-0 px-3 py-1.5 text-xs font-semibold text-blue-600 border border-blue-200 rounded-full hover:bg-blue-50 transition-colors"
+        className="shrink-0 px-3 py-1.5 text-xs font-semibold text-blue-600 border border-blue-200 rounded-full hover:bg-blue-50 transition-colors"
       >
         Đổi
       </button>
     </div>
   );
-}
-
-// ── Get effective value at a dot-path (from customData or schema) ─────────────
-
-function getAtPath(obj: Record<string, unknown>, path: string[]): unknown {
-  let cur: unknown = obj;
-  for (const key of path) {
-    if (cur === null || typeof cur !== 'object') return undefined;
-    cur = (cur as Record<string, unknown>)[key];
-  }
-  return cur;
 }
 
 // ── Recursive generic renderer (for non-array-of-objects fields) ──────────────
@@ -245,10 +337,37 @@ function renderFields(
 ): React.ReactNode {
   return Object.entries(schemaObj).map(([key, val]) => {
     const currentPath = [...path, key];
-    const override = getAtPath(customData, currentPath);
+    // customData is already narrowed to the current schema level, so override is just customData[key]
+    const override = customData[key];
 
     if (typeof val === 'string') {
       const displayVal = typeof override === 'string' ? override : val;
+
+      // Google Maps embed field
+      if (key === 'mapUrl') {
+        return (
+          <MapEmbedField
+            key={currentPath.join('.')}
+            value={displayVal}
+            path={currentPath}
+            onChange={onChange}
+          />
+        );
+      }
+
+      // Generic link field — key ends with Url or Link (case-insensitive)
+      if (/url$/i.test(key) || /link$/i.test(key)) {
+        return (
+          <LinkField
+            key={currentPath.join('.')}
+            label={key}
+            value={displayVal}
+            path={currentPath}
+            onChange={onChange}
+          />
+        );
+      }
+
       return (
         <StringField
           key={currentPath.join('.')}
