@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "brand": "Garden & Koi Coffee",
+    "home": "Home",
+    "menu": "Menu",
+    "space": "Space",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "contactBtn": "Contact"
+  },
+  "hero": {
+    "title": "Garden Coffee - Where Nature Meets Flavor",
+    "desc": "Enjoy a cool, green atmosphere and watch the Koi fish swim beside your cup of bold coffee. A peaceful haven in the heart of the city.",
+    "btnExplore": "Explore the menu",
+    "btnSpace": "View the space"
+  },
+  "features": {
+    "items": [
+      {
+        "icon": "nature_people",
+        "title": "Green Space",
+        "desc": "Over 100 species of tropical plants providing an absolutely fresh and cool atmosphere."
+      },
+      {
+        "icon": "set_meal",
+        "title": "Japanese Koi Pond",
+        "desc": "High-quality Koi fish from Japan, bringing a sense of tranquility and good fortune."
+      },
+      {
+        "icon": "coffee_maker",
+        "title": "Roasted Coffee",
+        "desc": "Carefully selected highland beans, purely roasted to deliver a rich, bold flavor."
+      }
+    ]
+  },
+  "menuSection": {
+    "sectionTitle": "Featured Menu",
+    "tabs": {
+      "signature": "Signature",
+      "coffee": "Coffee",
+      "tea": "Tea & Juice",
+      "cake": "Pastries"
+    },
+    "placeholder": "For the full menu, please see at the counter. We always update new seasonal items.",
+    "items": [
+      { "name": "Garden Egg Coffee", "price": "55.000đ", "desc": "Silky egg cream foam blended with rich Robusta espresso." },
+      { "name": "Tropical Fruit Tea", "price": "49.000đ", "desc": "Cold-brewed jasmine tea combined with 5 types of seasonal fresh fruit." },
+      { "name": "Coconut Milk Coffee", "price": "45.000đ", "desc": "The rich aroma of fresh coconut cream and traditional drip coffee." },
+      { "name": "Matcha Koi Garden", "price": "52.000đ", "desc": "Premium Japanese green tea powder combined with full-cream fresh milk." }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Masterpiece Space",
+    "sectionDesc": "The perfect combination of classic wooden architecture, winding Koi pond and lush greenery.",
+    "labelMain": "Central Pond Area",
+    "labelCorner1": "Vintage Nostalgic Corner",
+    "labelCorner2": "Cool Green Terrace"
+  },
+  "testimonials": {
+    "sectionTitle": "What Our Customers Say",
+    "sectionSubtitle": "Authentic experiences from coffee and nature lovers.",
+    "items": [
+      { "name": "Ms. Minh Anh", "role": "Regular Customer", "text": "The atmosphere here is absolutely wonderful. I can sit for hours just watching the Koi fish swim. The egg coffee is rich and exactly to my taste." },
+      { "name": "Mr. Hoàng Nam", "role": "Photographer", "text": "Thank you for creating such a wonderful relaxing space. The staff are very professional and attentive. This is the ideal weekend gathering spot for my family." },
+      { "name": "Lê Quốc Khánh", "role": "Designer", "text": "The Koi pond is well cared for, with large fish and beautiful colors. The fruit tea here is refreshing and not too sweet. A 10/10 spot for nature lovers." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Visit Us",
+    "addressLabel": "Address",
+    "address": "123 Lakeside Road, Thao Dien Ward, District 2, Ho Chi Minh City",
+    "hoursLabel": "Opening Hours",
+    "hours": "Mon - Sun: 06:30 - 22:30",
+    "openStatus": "Open Now • Come Visit",
+    "contactLabel": "Contact",
+    "hotline": "028 3848 99XX",
+    "email": "info@koigardencoffee.vn"
+  },
+  "footer": {
+    "brand": "Garden & Koi Coffee",
+    "desc": "Creating green spaces, nurturing the soul and savoring the most refined flavors from nature.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "careers": "Careers",
+    "ads": "Advertising Inquiries",
+    "copyright": "© 2024 Garden & Koi Coffee. All rights reserved."
+  }
+}

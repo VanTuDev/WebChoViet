@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "brand": "The Ocean Cafe",
+    "home": "Home",
+    "menu": "Menu",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Vẻ đẹp bên bờ biển",
+    "title": "The Ocean Cafe - ",
+    "titleHighlight": "Nơi Khởi Đầu Ngày Mới",
+    "subtitle": "Thưởng thức hương vị cà phê đậm đà trong không gian khoáng đạt của đại dương. Một trải nghiệm tinh tế dành cho tâm hồn yêu biển.",
+    "btnMenu": "Xem Thực Đơn"
+  },
+  "menu": {
+    "sectionTitle": "Thực Đơn Đặc Sắc",
+    "sectionSubtitle": "Tâm huyết trong từng hạt cà phê và nguyên liệu tươi mới mỗi ngày",
+    "coffee": {
+      "title": "Cà Phê",
+      "items": [
+        { "name": "Ocean Signature Latte", "price": "55k", "desc": "Cà phê sữa đá pha máy, lớp kem mặn biển", "badge": "HOT" },
+        { "name": "Cold Brew Classic", "price": "65k", "desc": "Cà phê ủ lạnh 18h hương trái cây", "badge": "" },
+        { "name": "Espresso Doppio", "price": "40k", "desc": "Cà phê nguyên chất chiết xuất áp suất cao", "badge": "" },
+        { "name": "Caramel Macchiato", "price": "65k", "desc": "Sữa nóng, sốt caramel và espresso đậm đà", "badge": "" }
+      ]
+    },
+    "tea": {
+      "title": "Trà & Nước Ép",
+      "items": [
+        { "name": "Trà Đào Cam Sả", "price": "49k", "desc": "Trà đen, đào miếng, cam tươi, hương sả", "badge": "NEW" },
+        { "name": "Ocean Breeze Smoothie", "price": "75k", "desc": "Thanh long đỏ, dâu tây, sữa chua hy lạp", "badge": "" },
+        { "name": "Matcha Latte", "price": "59k", "desc": "Bột trà xanh Nhật Bản và sữa tươi thanh trùng", "badge": "" },
+        { "name": "Trà Trái Cây Nhiệt Đới", "price": "55k", "desc": "Hỗn hợp trái cây tươi theo mùa", "badge": "" }
+      ]
+    },
+    "pastries": {
+      "title": "Bánh Ngọt",
+      "items": [
+        { "name": "Croissant Bơ Pháp", "price": "35k", "desc": "Bánh sừng bò nướng giòn tan với bơ thượng hạng", "badge": "" },
+        { "name": "Tiramisu Signature", "price": "60k", "desc": "Lớp kem béo ngậy quyện cùng hương cà phê", "badge": "" },
+        { "name": "Chocolate Lava Cake", "price": "70k", "desc": "Bánh socola tan chảy dùng kèm dâu tây", "badge": "" },
+        { "name": "Bánh Mì Artisan", "price": "45k", "desc": "Bánh mì nướng thủ công dùng kèm mứt", "badge": "" }
+      ]
+    }
+  },
+  "gallery": {
+    "sectionTitle": "Không Gian Của Chúng Tôi",
+    "sectionSubtitle": "Nơi từng góc nhỏ đều kể một câu chuyện về biển cả",
+    "viewAll": "Xem Toàn Cảnh"
+  },
+  "testimonials": {
+    "sectionTitle": "Khách Hàng Nói Gì",
+    "sectionSubtitle": "Những chia sẻ từ những người bạn yêu cà phê và biển",
+    "items": [
+      { "name": "Minh Anh", "stars": 5, "text": "Không gian ở đây thật sự tuyệt vời để thư giãn. Vừa uống cà phê vừa nghe tiếng sóng vỗ, cảm giác mọi mệt mỏi đều tan biến." },
+      { "name": "Hoàng Nam", "stars": 4.5, "text": "Cà phê Signature rất ấn tượng, lớp kem mặn vừa phải quyện cùng vị đắng nhẹ của cà phê. Sẽ quay lại nhiều lần nữa." },
+      { "name": "Cô Mai & Chú Hùng", "stars": 5, "text": "Dịch vụ rất chu đáo. Nhân viên lễ phép và không gian yên tĩnh, rất phù hợp cho những buổi sáng cuối tuần của gia đình." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Tìm Chúng Tôi Tại",
+    "sectionSubtitle": "Luôn sẵn sàng chào đón bạn với những ly cà phê thơm ngon nhất.",
+    "addressLabel": "Địa Chỉ",
+    "address": "123 Đường Bờ Biển, Tp. Đà Nẵng, Việt Nam",
+    "phoneLabel": "Điện Thoại",
+    "phone": "+84 (236) 3456 789",
+    "hoursLabel": "Giờ Mở Cửa",
+    "hours": "Hàng ngày: 07:00 - 22:00"
+  },
+  "footer": {
+    "brand": "The Ocean Cafe",
+    "copyright": "© 2024 The Ocean Cafe. Refreshing Moments by the Sea.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "careers": "Careers"
+  }
+}

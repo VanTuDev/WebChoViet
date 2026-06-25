@@ -1,0 +1,6 @@
+{
+  "name": "WebChoViet",
+  "description": "Nền tảng số hóa thực đơn, bảng giá dịch vụ và tạo Mã QR Code động chuyên nghiệp cho các chủ hộ kinh doanh, nhà hàng, quán cafe, spa và tiệm nail Việt Nam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

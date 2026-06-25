@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output (Vercel tự build)
+dist/
+build/
+server.js
+
+# Biến môi trường thật (API keys)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Editor
+.idea/
+.vscode/settings.json

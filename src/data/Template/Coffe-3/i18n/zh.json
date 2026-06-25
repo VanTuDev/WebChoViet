@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "brand": "The Ocean Cafe",
+    "home": "首页",
+    "menu": "菜单",
+    "gallery": "图库",
+    "reviews": "评价",
+    "contact": "联系"
+  },
+  "hero": {
+    "badge": "海岸之美",
+    "title": "The Ocean Cafe - ",
+    "titleHighlight": "每一天的美好起点",
+    "subtitle": "在辽阔的海洋氛围中品尝浓郁咖啡。为热爱大海的心灵带来的精致体验。",
+    "btnMenu": "查看菜单"
+  },
+  "menu": {
+    "sectionTitle": "特色菜单",
+    "sectionSubtitle": "每一粒咖啡豆和每一份新鲜食材都倾注了我们的热情",
+    "coffee": {
+      "title": "咖啡",
+      "items": [
+        { "name": "海洋招牌拿铁", "price": "55k", "desc": "机器冰拿铁，海盐奶泡顶", "badge": "热销" },
+        { "name": "经典冷萃", "price": "65k", "desc": "18小时冷萃，带有果香", "badge": "" },
+        { "name": "双倍浓缩", "price": "40k", "desc": "高压萃取纯浓缩咖啡", "badge": "" },
+        { "name": "焦糖玛奇朵", "price": "65k", "desc": "温热牛奶、焦糖酱与浓郁浓缩咖啡", "badge": "" }
+      ]
+    },
+    "tea": {
+      "title": "茶饮 & 果汁",
+      "items": [
+        { "name": "水蜜桃柑橘香茅茶", "price": "49k", "desc": "红茶、桃片、鲜橙、香茅", "badge": "新品" },
+        { "name": "海洋微风冰沙", "price": "75k", "desc": "红火龙果、草莓、希腊酸奶", "badge": "" },
+        { "name": "抹茶拿铁", "price": "59k", "desc": "日本抹茶粉与巴氏杀菌鲜奶", "badge": "" },
+        { "name": "热带水果茶", "price": "55k", "desc": "应季新鲜水果混合", "badge": "" }
+      ]
+    },
+    "pastries": {
+      "title": "甜点",
+      "items": [
+        { "name": "法式黄油可颂", "price": "35k", "desc": "用顶级法国黄油烤制的酥脆牛角包", "badge": "" },
+        { "name": "招牌提拉米苏", "price": "60k", "desc": "浓郁奶油层与咖啡香气的完美融合", "badge": "" },
+        { "name": "熔岩巧克力蛋糕", "price": "70k", "desc": "搭配草莓的熔岩巧克力蛋糕", "badge": "" },
+        { "name": "工匠面包", "price": "45k", "desc": "手工烤制面包，配以果酱", "badge": "" }
+      ]
+    }
+  },
+  "gallery": {
+    "sectionTitle": "我们的空间",
+    "sectionSubtitle": "每一个角落都诉说着大海的故事",
+    "viewAll": "查看全景"
+  },
+  "testimonials": {
+    "sectionTitle": "顾客评价",
+    "sectionSubtitle": "来自热爱咖啡与大海的朋友们的真实分享",
+    "items": [
+      { "name": "Minh Anh", "stars": 5, "text": "这里的氛围真的太适合放松了。一边喝咖啡一边听浪声，所有的疲惫都消散了。" },
+      { "name": "Hoàng Nam", "stars": 4.5, "text": "招牌拿铁印象深刻，恰到好处的海盐奶泡与咖啡的微苦完美搭配。会再来很多次。" },
+      { "name": "Mai女士和Hùng先生", "stars": 5, "text": "服务非常周到。员工礼貌，环境安静，非常适合家庭周末早晨。" }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "找到我们",
+    "sectionSubtitle": "随时欢迎您光临，享用最香醇的咖啡。",
+    "addressLabel": "地址",
+    "address": "越南岘港市海岸路123号",
+    "phoneLabel": "电话",
+    "phone": "+84 (236) 3456 789",
+    "hoursLabel": "营业时间",
+    "hours": "每日：07:00 - 22:00"
+  },
+  "footer": {
+    "brand": "The Ocean Cafe",
+    "copyright": "© 2024 The Ocean Cafe. 海边的清爽时刻。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "careers": "招聘"
+  }
+}

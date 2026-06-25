@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "features": "Features",
+    "templates": "Templates",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "login": "Log in",
+    "start": "Get Started"
+  },
+  "hero": {
+    "badge": "Garden Oasis Cafe",
+    "title": "A green sanctuary,",
+    "titleHighlight": "Peaceful coffee",
+    "subtitle": "Escape the urban noise, immerse yourself in a tropical garden and enjoy our exclusive herbal coffee creations.",
+    "btnBook": "Book a Table",
+    "btnMenu": "View Menu"
+  },
+  "drinks": {
+    "sectionTitle": "Signature Flavors",
+    "sectionSubtitle": "The perfect blend of freshly roasted coffee beans and herbs from our own garden.",
+    "addToOrder": "Add to Order",
+    "badgeBestseller": "Best Seller",
+    "badgeNew": "New",
+    "items": [
+      {
+        "name": "Forest Matcha Espresso",
+        "price": "65K",
+        "desc": "The mild bitterness of espresso harmonizes with the refreshing notes of premium Japanese matcha."
+      },
+      {
+        "name": "Garden Floral Tea",
+        "price": "55K",
+        "desc": "Chrysanthemum, wolfberry and red date tea brewed with longan blossom honey for ultimate relaxation."
+      },
+      {
+        "name": "Cold Brew Citrus Lemongrass",
+        "price": "60K",
+        "desc": "24-hour cold brew combined with fresh orange juice and aromatic lemongrass, awakening all your senses."
+      }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Spaces & Inspiration",
+    "sectionSubtitle": "A quiet little corner in the heart of the city.",
+    "viewAll": "View all photos",
+    "labelIndoor": "Indoor seating area"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "copyright": "© 2024 webchoviet. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "support": "Support"
+  }
+}

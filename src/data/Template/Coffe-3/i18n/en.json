@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "brand": "The Ocean Cafe",
+    "home": "Home",
+    "menu": "Menu",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Coastal Beauty",
+    "title": "The Ocean Cafe - ",
+    "titleHighlight": "Where Every Day Begins",
+    "subtitle": "Savor bold coffee flavors in the open, refreshing ambiance of the ocean. A refined experience for those who love the sea.",
+    "btnMenu": "View Menu"
+  },
+  "menu": {
+    "sectionTitle": "Featured Menu",
+    "sectionSubtitle": "Passion in every coffee bean and fresh ingredient, every single day",
+    "coffee": {
+      "title": "Coffee",
+      "items": [
+        { "name": "Ocean Signature Latte", "price": "55k", "desc": "Iced machine latte with a sea-salt cream topping", "badge": "HOT" },
+        { "name": "Cold Brew Classic", "price": "65k", "desc": "18-hour cold brew with fruity notes", "badge": "" },
+        { "name": "Espresso Doppio", "price": "40k", "desc": "Pure espresso extracted under high pressure", "badge": "" },
+        { "name": "Caramel Macchiato", "price": "65k", "desc": "Warm milk, caramel sauce and bold espresso", "badge": "" }
+      ]
+    },
+    "tea": {
+      "title": "Tea & Juices",
+      "items": [
+        { "name": "Peach Citrus Lemongrass Tea", "price": "49k", "desc": "Black tea, peach slices, fresh orange, lemongrass", "badge": "NEW" },
+        { "name": "Ocean Breeze Smoothie", "price": "75k", "desc": "Red dragon fruit, strawberry, Greek yogurt", "badge": "" },
+        { "name": "Matcha Latte", "price": "59k", "desc": "Japanese matcha powder with fresh pasteurized milk", "badge": "" },
+        { "name": "Tropical Fruit Tea", "price": "55k", "desc": "A seasonal mix of fresh tropical fruits", "badge": "" }
+      ]
+    },
+    "pastries": {
+      "title": "Pastries",
+      "items": [
+        { "name": "French Butter Croissant", "price": "35k", "desc": "Crispy baked croissant with premium French butter", "badge": "" },
+        { "name": "Signature Tiramisu", "price": "60k", "desc": "Rich creamy layers infused with coffee aroma", "badge": "" },
+        { "name": "Chocolate Lava Cake", "price": "70k", "desc": "Molten chocolate cake served with strawberries", "badge": "" },
+        { "name": "Artisan Bread", "price": "45k", "desc": "Handcrafted toasted bread served with jam", "badge": "" }
+      ]
+    }
+  },
+  "gallery": {
+    "sectionTitle": "Our Space",
+    "sectionSubtitle": "Where every little corner tells a story of the sea",
+    "viewAll": "View Full View"
+  },
+  "testimonials": {
+    "sectionTitle": "What Customers Say",
+    "sectionSubtitle": "Shared moments from fellow coffee and ocean lovers",
+    "items": [
+      { "name": "Minh Anh", "stars": 5, "text": "The atmosphere here is truly wonderful for relaxing. Sipping coffee while listening to the waves — all tiredness just disappears." },
+      { "name": "Hoàng Nam", "stars": 4.5, "text": "The Signature Latte is impressive, just the right amount of sea-salt cream paired with the mild bitterness of coffee. Will return many times." },
+      { "name": "Ms. Mai & Mr. Hùng", "stars": 5, "text": "The service is very attentive. Polite staff and quiet ambiance — perfect for family weekend mornings." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Find Us At",
+    "sectionSubtitle": "Always ready to welcome you with the most aromatic cups of coffee.",
+    "addressLabel": "Address",
+    "address": "123 Coastal Road, Da Nang City, Vietnam",
+    "phoneLabel": "Phone",
+    "phone": "+84 (236) 3456 789",
+    "hoursLabel": "Opening Hours",
+    "hours": "Daily: 07:00 - 22:00"
+  },
+  "footer": {
+    "brand": "The Ocean Cafe",
+    "copyright": "© 2024 The Ocean Cafe. Refreshing Moments by the Sea.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "careers": "Careers"
+  }
+}

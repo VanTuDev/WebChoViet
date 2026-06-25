@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "brand": "花园锦鲤咖啡",
+    "home": "首页",
+    "menu": "菜单",
+    "space": "空间",
+    "reviews": "评价",
+    "contact": "联系",
+    "contactBtn": "联系"
+  },
+  "hero": {
+    "title": "花园咖啡 - 自然与风味的交汇之处",
+    "desc": "在凉爽绿意的环境中欣赏锦鲤游弋，配上一杯浓郁咖啡。城市中心的一片宁静乐土。",
+    "btnExplore": "探索菜单",
+    "btnSpace": "查看空间"
+  },
+  "features": {
+    "items": [
+      {
+        "icon": "nature_people",
+        "title": "绿色空间",
+        "desc": "超过100种热带植物，带来绝对清新凉爽的空气。"
+      },
+      {
+        "icon": "set_meal",
+        "title": "日本锦鲤池",
+        "desc": "来自日本的高品质锦鲤，带来宁静祥和与好运。"
+      },
+      {
+        "icon": "coffee_maker",
+        "title": "现烤咖啡",
+        "desc": "精选高原咖啡豆，纯粹烘焙带来醇厚浓郁的风味。"
+      }
+    ]
+  },
+  "menuSection": {
+    "sectionTitle": "特色菜单",
+    "tabs": {
+      "signature": "招牌",
+      "coffee": "咖啡",
+      "tea": "茶饮 & 果汁",
+      "cake": "甜点"
+    },
+    "placeholder": "完整菜单请至柜台查询。我们持续更新时令新品。",
+    "items": [
+      { "name": "花园蛋咖啡", "price": "55.000đ", "desc": "丝滑蛋奶泡沫与浓郁罗布斯塔浓缩咖啡的融合。" },
+      { "name": "热带水果茶", "price": "49.000đ", "desc": "茉莉花冷泡茶结合5种时令新鲜水果。" },
+      { "name": "椰奶咖啡", "price": "45.000đ", "desc": "新鲜椰浆的浓郁香气与传统滴滤咖啡。" },
+      { "name": "锦鲤花园抹茶", "price": "52.000đ", "desc": "优质日本绿茶粉配全脂鲜奶。" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "空间杰作",
+    "sectionDesc": "经典木质建筑、蜿蜒锦鲤池与丰富绿植的完美融合。",
+    "labelMain": "中央锦鲤池区域",
+    "labelCorner1": "复古怀旧角落",
+    "labelCorner2": "清凉绿色走廊"
+  },
+  "testimonials": {
+    "sectionTitle": "顾客怎么说",
+    "sectionSubtitle": "来自热爱咖啡与自然的真实体验。",
+    "items": [
+      { "name": "Minh Anh 女士", "role": "常客", "text": "这里的氛围真的太棒了。我可以坐好几个小时，只是欣赏锦鲤游动。蛋咖啡浓郁，正是我喜欢的口味。" },
+      { "name": "Hoàng Nam 先生", "role": "摄影师", "text": "感谢创造了这么好的休闲空间。员工非常专业和体贴。这是我家庭周末聚会的理想地点。" },
+      { "name": "Lê Quốc Khánh", "role": "设计师", "text": "锦鲤池保养得很好，鱼大而色彩艳丽。水果茶清爽不过甜。对于喜欢自然的人来说，10/10好去处。" }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "来拜访我们",
+    "addressLabel": "地址",
+    "address": "胡志明市第2郡草甸坊湖畔路123号",
+    "hoursLabel": "营业时间",
+    "hours": "周一至周日：06:30 - 22:30",
+    "openStatus": "营业中 • 欢迎光临",
+    "contactLabel": "联系方式",
+    "hotline": "028 3848 99XX",
+    "email": "info@koigardencoffee.vn"
+  },
+  "footer": {
+    "brand": "花园锦鲤咖啡",
+    "desc": "创造绿色空间，滋养心灵，品味来自大自然最精粹的风味。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "careers": "招聘",
+    "ads": "广告合作",
+    "copyright": "© 2024 花园锦鲤咖啡. 保留所有权利。"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "home": "Home",
+    "menu": "Menu",
+    "space": "Space",
+    "location": "Location",
+    "start": "Get Started"
+  },
+  "hero": {
+    "slides": [
+      {
+        "title": "Beat the summer heat with Tropical Tea",
+        "desc": "The perfect blend of premium tea and fresh tropical fruits, delivering an instantly refreshing experience.",
+        "btn": "Try Now"
+      },
+      {
+        "title": "The authentic taste of coffee",
+        "desc": "Enjoy a cup of traditional roasted coffee in a cool, peaceful tropical setting in the heart of the city.",
+        "btn": "Explore Menu"
+      }
+    ]
+  },
+  "bestsellers": {
+    "badge": "Barista's Picks",
+    "title": "Best Sellers",
+    "items": [
+      {
+        "name": "Coconut Coffee",
+        "price": "55.000đ",
+        "desc": "The creaminess of coconut milk blends with the rich bitterness of Robusta."
+      },
+      {
+        "name": "Tropical Tea",
+        "price": "49.000đ",
+        "desc": "A fresh fruit medley brewed with premium Oolong tea."
+      },
+      {
+        "name": "Crushed Matcha Ice",
+        "price": "65.000đ",
+        "desc": "Premium Uji matcha powder combined with smooth fresh milk."
+      }
+    ]
+  },
+  "menuSection": {
+    "title": "Explore the Menu",
+    "subtitle": "Every drink is a story about flavor that we want to share with you.",
+    "tabs": {
+      "signature": "Signature",
+      "coffee": "Coffee",
+      "tea": "Tea"
+    },
+    "items": {
+      "signature": [
+        { "name": "Coconut Coffee", "price": "55.000", "desc": "House specialty, rich coconut flavor." },
+        { "name": "Tropical Tea Special", "price": "59.000", "desc": "A mix of 5 types of fresh fruit." },
+        { "name": "Almond Latte", "price": "52.000", "desc": "The nutty taste of roasted almonds." },
+        { "name": "Citrus Lemongrass Cold Brew", "price": "55.000", "desc": "16-hour cold brew, refreshing." }
+      ],
+      "coffee": [
+        { "name": "Black Coffee", "price": "32.000", "desc": "Bold Robusta from Buon Ma Thuot." },
+        { "name": "White Coffee", "price": "35.000", "desc": "Traditional Vietnamese sweetness." },
+        { "name": "Cappuccino", "price": "45.000", "desc": "Silky milk foam, Italian style." },
+        { "name": "Americano", "price": "40.000", "desc": "Clean and refreshing." }
+      ],
+      "tea": [
+        { "name": "Peach Citrus Lemongrass Tea", "price": "45.000", "desc": "Summer best seller." },
+        { "name": "Lychee Jasmine Tea", "price": "45.000", "desc": "Gentle, pure fragrance." },
+        { "name": "Lotus Salt Cream Tea", "price": "49.000", "desc": "A blend of tradition and modernity." },
+        { "name": "Herbal Tea", "price": "42.000", "desc": "Healthy, no added sugar." }
+      ]
+    }
+  },
+  "space": {
+    "badge": "About the Space",
+    "title": "A green oasis in the city",
+    "desc": "Tropical Chill is more than just a coffee shop — it's a place to escape the urban buzz and immerse yourself in a cool tropical setting. With an open design, lush greenery, and natural light, it's the perfect spot for work, meetings, or simply unwinding.",
+    "amenities": [
+      { "icon": "wifi", "title": "High-speed WiFi", "desc": "Perfect for working" },
+      { "icon": "electric_bolt", "title": "Power Outlets", "desc": "At every table" },
+      { "icon": "air", "title": "Air Conditioning", "desc": "Optimal temperature" },
+      { "icon": "music_note", "title": "Acoustic Music", "desc": "Chill & Relax" }
+    ]
+  },
+  "testimonials": {
+    "title": "What our customers say",
+    "items": [
+      { "text": "Super chill vibes, the drinks look amazing and taste even better. Will definitely come back regularly.", "name": "Minh Anh", "role": "Designer" },
+      { "text": "My favorite is the Tropical Tea — the summer heat melts away after the first sip. Staff is very friendly.", "name": "Hoàng Nam", "role": "Freelancer" },
+      { "text": "The cafe has so many great photo spots. Drinks are reasonably priced for the quality and amazing atmosphere.", "name": "Phương Thảo", "role": "Influencer" }
+    ]
+  },
+  "location": {
+    "title": "Visit Us",
+    "address": "123 Tropical Street, Thao Dien Ward, District 2, Ho Chi Minh City",
+    "hoursLabel": "Opening Hours:",
+    "hours": "Mon - Sun: 07:00 - 22:30",
+    "phone": "0123 456 789",
+    "directionsBtn": "Get Directions on Maps"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "desc": "Professional website builder for Vietnamese businesses.",
+    "linksTitle": "Links",
+    "about": "About Us",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "followTitle": "Follow",
+    "copyright": "© 2024 webchoviet. Professional website builder for Vietnamese businesses."
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "home": "Trang chủ",
+    "menu": "Thực đơn",
+    "space": "Không gian",
+    "location": "Vị trí",
+    "start": "Bắt đầu ngay"
+  },
+  "hero": {
+    "slides": [
+      {
+        "title": "Giải nhiệt mùa hè với Tropical Tea",
+        "desc": "Sự kết hợp hoàn hảo giữa trà hảo hạng và trái cây nhiệt đới tươi mát, mang đến trải nghiệm sảng khoái tức thì.",
+        "btn": "Thử ngay"
+      },
+      {
+        "title": "Hương vị cà phê nguyên bản",
+        "desc": "Tận hưởng tách cà phê rang mộc truyền thống trong không gian xanh mát, yên bình giữa lòng thành phố.",
+        "btn": "Khám phá Menu"
+      }
+    ]
+  },
+  "bestsellers": {
+    "badge": "Gợi ý từ Barista",
+    "title": "Món bán chạy nhất",
+    "items": [
+      {
+        "name": "Cà phê Cốt Dừa",
+        "price": "55.000đ",
+        "desc": "Sự béo ngậy của cốt dừa hòa quyện cùng vị đắng đậm đà của Robusta."
+      },
+      {
+        "name": "Trà Nhiệt Đới",
+        "price": "49.000đ",
+        "desc": "Hỗn hợp trái cây tươi ủ cùng trà Oolong hảo hạng."
+      },
+      {
+        "name": "Matcha Đá Xay",
+        "price": "65.000đ",
+        "desc": "Bột matcha Uji thượng hạng kết hợp cùng sữa tươi sánh mịn."
+      }
+    ]
+  },
+  "menuSection": {
+    "title": "Khám phá Thực đơn",
+    "subtitle": "Mỗi thức uống là một câu chuyện về hương vị mà chúng tôi muốn gửi gắm đến bạn.",
+    "tabs": {
+      "signature": "Signature",
+      "coffee": "Coffee",
+      "tea": "Tea"
+    },
+    "items": {
+      "signature": [
+        { "name": "Cà phê Cốt Dừa", "price": "55.000", "desc": "Đặc sản của quán, béo ngậy vị dừa." },
+        { "name": "Trà Nhiệt Đới Special", "price": "59.000", "desc": "Hỗn hợp 5 loại trái cây tươi." },
+        { "name": "Latte Hạnh Nhân", "price": "52.000", "desc": "Vị bùi của hạnh nhân rang." },
+        { "name": "Cold Brew Cam Sả", "price": "55.000", "desc": "Cà phê ủ lạnh 16h tươi mát." }
+      ],
+      "coffee": [
+        { "name": "Cà phê Đen", "price": "32.000", "desc": "Robusta Buôn Ma Thuột đậm đà." },
+        { "name": "Cà phê Sữa", "price": "35.000", "desc": "Vị ngọt truyền thống Việt Nam." },
+        { "name": "Cappuccino", "price": "45.000", "desc": "Lớp bọt sữa mịn màng chuẩn Ý." },
+        { "name": "Americano", "price": "40.000", "desc": "Thanh tao và tỉnh táo." }
+      ],
+      "tea": [
+        { "name": "Trà Đào Cam Sả", "price": "45.000", "desc": "Best seller mùa hè." },
+        { "name": "Trà Vải Lài", "price": "45.000", "desc": "Hương thơm dịu nhẹ, thanh khiết." },
+        { "name": "Trà Sen Kem Mặn", "price": "49.000", "desc": "Sự kết hợp giữa truyền thống và hiện đại." },
+        { "name": "Trà Thảo Mộc", "price": "42.000", "desc": "Tốt cho sức khỏe, không đường." }
+      ]
+    }
+  },
+  "space": {
+    "badge": "Về không gian",
+    "title": "Một ốc đảo xanh giữa phố thị",
+    "desc": "Tropical Chill không chỉ là một quán cà phê, mà là nơi bạn có thể trốn khỏi sự ồn ào của thành phố để đắm mình vào không gian nhiệt đới mát rượi. Với thiết kế mở, nhiều cây xanh và ánh sáng tự nhiên, đây là địa điểm lý tưởng để làm việc, gặp gỡ hay đơn giản là thư giãn.",
+    "amenities": [
+      { "icon": "wifi", "title": "Wifi Tốc độ cao", "desc": "Phù hợp làm việc" },
+      { "icon": "electric_bolt", "title": "Ổ cắm tiện lợi", "desc": "Trang bị tại mọi bàn" },
+      { "icon": "air", "title": "Máy lạnh mát mẻ", "desc": "Nhiệt độ tối ưu" },
+      { "icon": "music_note", "title": "Nhạc Acoustic", "desc": "Chill & Relax" }
+    ]
+  },
+  "testimonials": {
+    "title": "Khách hàng nói gì về chúng tôi",
+    "items": [
+      { "text": "Không gian cực chill, thức uống trang trí rất đẹp và vị cũng rất vừa miệng. Sẽ quay lại thường xuyên.", "name": "Minh Anh", "role": "Designer" },
+      { "text": "Thích nhất là món Trà Nhiệt Đới, cảm giác mùa hè tan biến ngay sau ngụm đầu tiên. Nhân viên rất nhiệt tình.", "name": "Hoàng Nam", "role": "Freelancer" },
+      { "text": "Quán có nhiều góc sống ảo cực đỉnh. Đồ uống giá hợp lý so với chất lượng và không gian tuyệt vời này.", "name": "Phương Thảo", "role": "Influencer" }
+    ]
+  },
+  "location": {
+    "title": "Ghé thăm chúng tôi",
+    "address": "123 Đường Nhiệt Đới, Phường Thảo Điền, Quận 2, TP. Hồ Chí Minh",
+    "hoursLabel": "Giờ mở cửa:",
+    "hours": "Thứ 2 - Chủ Nhật: 07:00 - 22:30",
+    "phone": "0123 456 789",
+    "directionsBtn": "Chỉ đường trên Maps"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "desc": "Nền tảng xây dựng website chuyên nghiệp cho doanh nghiệp Việt.",
+    "linksTitle": "Liên kết",
+    "about": "Về chúng tôi",
+    "terms": "Điều khoản",
+    "privacy": "Bảo mật",
+    "followTitle": "Theo dõi",
+    "copyright": "© 2024 webchoviet. Nền tảng xây dựng website chuyên nghiệp cho doanh nghiệp Việt."
+  }
+}

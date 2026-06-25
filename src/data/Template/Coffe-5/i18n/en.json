@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "shopName": "Mật Ngọt Tea",
+    "home": "Home",
+    "menu": "Menu",
+    "space": "Space",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Homemade Milk Tea",
+    "title": "Pure Sweet Flavor",
+    "titleHighlight": "To Brighten Your Day",
+    "subtitle": "Discover handcrafted milk tea made from the most natural ingredients. Every cup is a lovingly crafted masterpiece to bring a smile to your face.",
+    "btnMenu": "View Menu Now",
+    "btnGallery": "Aesthetic Corner",
+    "badgeBestSeller": "Best Seller",
+    "badgeOrganic": "Organic"
+  },
+  "menuSection": {
+    "sectionTitle": "Must-Try Drinks",
+    "sectionSubtitle": "Top 10 most-loved beverages with exclusive recipes from Mật Ngọt Tea",
+    "addToCart": "Add to cart",
+    "items": [
+      { "name": "Black Pearl Milk Tea", "price": "35.000đ" },
+      { "name": "Matcha Strawberry", "price": "45.000đ" },
+      { "name": "Salt Coffee", "price": "32.000đ" },
+      { "name": "Peach Citrus Lemongrass Tea", "price": "38.000đ" },
+      { "name": "Fresh Milk Pearl", "price": "40.000đ" },
+      { "name": "Coconut Milk Coffee", "price": "35.000đ" },
+      { "name": "Taro Milk Tea", "price": "42.000đ" },
+      { "name": "Blueberry Tea", "price": "36.000đ" },
+      { "name": "Iced Black Coffee", "price": "25.000đ" },
+      { "name": "Thai Green Milk Tea", "price": "35.000đ" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Aesthetic Check-in Corner",
+    "sectionSubtitle": "Where your sweetest moments are preserved",
+    "hashtags": ["#MatNgotTea", "#AestheticCafe", "#ChillVibe"],
+    "mainTitle": "Dreamy Window Corner",
+    "mainDesc": "A space flooded with golden sunlight and tranquility"
+  },
+  "testimonials": {
+    "sectionTitle": "Sweet Messages",
+    "items": [
+      { "name": "Linh Chi", "role": "19, Freelancer", "text": "The milk tea here is gently sweet, the pearls are super chewy and delicious. And the cafe has so many cute photo spots!" },
+      { "name": "Hoàng Nam", "role": "Student, University of Economics", "text": "I come here often to study. Quiet atmosphere, chill music and the salt coffee is absolutely top-tier." },
+      { "name": "Minh Anh", "role": "High School Student", "text": "The cafe is super cute, from the decor to the packaging. Diverse menu at very student-friendly prices." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Come Visit\nMật Ngọt",
+    "addressLabel": "Address",
+    "address": "123 Pastel Street, Dream Ward, District 1, Ho Chi Minh City",
+    "phoneLabel": "Hotline",
+    "phone": "090 123 4567",
+    "hoursLabel": "Opening Hours",
+    "hours": "08:00 - 22:30 (Daily)",
+    "mapLabel": "Mật Ngọt Tea is right here!"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "shopName": "Mật Ngọt Tea",
+    "desc": "Bringing handcrafted milk tea to your hands with all sincerity and sweetness.",
+    "exploreTitle": "Explore",
+    "exploreLinks": ["About Us", "Full Menu", "Partnership Opportunities", "Shipping Policy"],
+    "newsletterTitle": "Newsletter Signup",
+    "newsletterDesc": "Get 20% off your first order!",
+    "newsletterPlaceholder": "Your email...",
+    "newsletterBtn": "Subscribe",
+    "copyright": "© 2024 Mật Ngọt Tea by webchoviet. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

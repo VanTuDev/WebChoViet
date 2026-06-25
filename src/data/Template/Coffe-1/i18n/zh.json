@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "features": "功能",
+    "templates": "模板",
+    "pricing": "价格",
+    "resources": "资源",
+    "login": "登录",
+    "start": "立即开始"
+  },
+  "hero": {
+    "badge": "花园绿洲咖啡",
+    "title": "绿意盎然的空间，",
+    "titleHighlight": "宁静的咖啡时光",
+    "subtitle": "逃离城市喧嚣，沉浸在热带花园中，享用我们独家草本咖啡创作。",
+    "btnBook": "立即预订",
+    "btnMenu": "查看菜单"
+  },
+  "drinks": {
+    "sectionTitle": "招牌风味",
+    "sectionSubtitle": "精选咖啡豆与花园新鲜草本植物的完美融合。",
+    "addToOrder": "加入订单",
+    "badgeBestseller": "畅销",
+    "badgeNew": "新品",
+    "items": [
+      {
+        "name": "森林抹茶浓缩咖啡",
+        "price": "65K",
+        "desc": "浓缩咖啡的微苦与优质日本抹茶的清爽完美交融。"
+      },
+      {
+        "name": "花园花卉茶",
+        "price": "55K",
+        "desc": "菊花、枸杞与红枣茶，配以龙眼花蜜冲泡，带来极致放松。"
+      },
+      {
+        "name": "柑橘香茅冷萃",
+        "price": "60K",
+        "desc": "24小时冷萃结合新鲜橙汁和浓郁香茅，唤醒所有感官。"
+      }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "空间与灵感",
+    "sectionSubtitle": "城市中心的一处宁静小角落。",
+    "viewAll": "查看所有照片",
+    "labelIndoor": "室内座位区"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "copyright": "© 2024 webchoviet. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "support": "客户支持"
+  }
+}

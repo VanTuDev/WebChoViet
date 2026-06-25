@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "shopName": "Mật Ngọt Tea",
+    "home": "Trang chủ",
+    "menu": "Menu",
+    "space": "Không gian",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "badge": "Trà Sữa Nhà Làm",
+    "title": "Vị Ngọt Thanh Khiết",
+    "titleHighlight": "Cho Ngày Thêm Vui",
+    "subtitle": "Khám phá hương vị trà sữa thủ công từ nguyên liệu tự nhiên nhất. Mỗi ly trà là một tác phẩm được chăm chút tỉ mỉ để mang lại nụ cười cho bạn.",
+    "btnMenu": "Xem Menu Ngay",
+    "btnGallery": "Góc Sống Ảo",
+    "badgeBestSeller": "Best Seller",
+    "badgeOrganic": "Organic"
+  },
+  "menuSection": {
+    "sectionTitle": "Món Ngon Phải Thử",
+    "sectionSubtitle": "Top 10 thức uống được yêu thích nhất với công thức độc quyền từ Mật Ngọt Tea",
+    "addToCart": "Thêm vào giỏ",
+    "items": [
+      { "name": "Trà Sữa Trân Châu Đen", "price": "35.000đ" },
+      { "name": "Matcha Dâu Tây", "price": "45.000đ" },
+      { "name": "Cà Phê Muối", "price": "32.000đ" },
+      { "name": "Trà Đào Cam Sả", "price": "38.000đ" },
+      { "name": "Sữa Tươi Trân Châu", "price": "40.000đ" },
+      { "name": "Bạc Xỉu Cốt Dừa", "price": "35.000đ" },
+      { "name": "Trà Sữa Khoai Môn", "price": "42.000đ" },
+      { "name": "Trà Việt Quất", "price": "36.000đ" },
+      { "name": "Cà Phê Đen Đá", "price": "25.000đ" },
+      { "name": "Trà Sữa Thái Xanh", "price": "35.000đ" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Góc Check-in Xinh Xẻo",
+    "sectionSubtitle": "Nơi lưu giữ những khoảnh khắc ngọt ngào của bạn",
+    "hashtags": ["#MatNgotTea", "#AestheticCafe", "#ChillVibe"],
+    "mainTitle": "Góc Cửa Sổ Mộng Mơ",
+    "mainDesc": "Không gian ngập tràn nắng vàng và bình yên"
+  },
+  "testimonials": {
+    "sectionTitle": "Lời Nhắn Ngọt Ngào",
+    "items": [
+      { "name": "Linh Chi", "role": "19 tuổi, Freelancer", "text": "Trà sữa ở đây ngọt thanh, trân châu cực kỳ dai và ngon. Đặc biệt quán có nhiều góc chụp ảnh siêu xinh luôn á!" },
+      { "name": "Hoàng Nam", "role": "Sinh viên, ĐH Kinh Tế", "text": "Mình hay ghé đây làm bài tập. Không gian yên tĩnh, nhạc chill và cà phê muối thì đỉnh khỏi bàn." },
+      { "name": "Minh Anh", "role": "Học sinh, THPT", "text": "Quán siêu cute, từ decor cho đến bao bì nước. Menu đa dạng mà giá lại cực kỳ học sinh sinh viên." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Ghé Chơi Với\nMật Ngọt",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Pastel, Phường Mộng Mơ, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Hotline",
+    "phone": "090 123 4567",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "08:00 - 22:30 (Hằng ngày)",
+    "mapLabel": "Mật Ngọt Tea ở đây nè!"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "shopName": "Mật Ngọt Tea",
+    "desc": "Mang hương vị trà sữa thủ công đến tận tay bạn với tất cả sự chân thành và ngọt ngào.",
+    "exploreTitle": "Khám phá",
+    "exploreLinks": ["Về chúng tôi", "Thực đơn đầy đủ", "Cơ hội hợp tác", "Chính sách vận chuyển"],
+    "newsletterTitle": "Đăng ký nhận tin",
+    "newsletterDesc": "Nhận ngay ưu đãi 20% cho đơn hàng đầu tiên!",
+    "newsletterPlaceholder": "Email của bạn...",
+    "newsletterBtn": "Gửi",
+    "copyright": "© 2024 Mật Ngọt Tea by webchoviet. All rights reserved.",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "shopName": "蜜甜茶",
+    "home": "首页",
+    "menu": "菜单",
+    "space": "空间",
+    "contact": "联系"
+  },
+  "hero": {
+    "badge": "手工奶茶",
+    "title": "纯净甜蜜风味",
+    "titleHighlight": "让每天更美好",
+    "subtitle": "探索由最天然原料精心制作的手工奶茶。每一杯都是用心打造的杰作，为您带来微笑。",
+    "btnMenu": "立即查看菜单",
+    "btnGallery": "美颜打卡角",
+    "badgeBestSeller": "畅销",
+    "badgeOrganic": "有机"
+  },
+  "menuSection": {
+    "sectionTitle": "必尝饮品",
+    "sectionSubtitle": "蜜甜茶独家配方的10款最受欢迎饮品",
+    "addToCart": "加入购物车",
+    "items": [
+      { "name": "黑珍珠奶茶", "price": "35.000đ" },
+      { "name": "抹茶草莓", "price": "45.000đ" },
+      { "name": "盐咖啡", "price": "32.000đ" },
+      { "name": "水蜜桃柑橘香茅茶", "price": "38.000đ" },
+      { "name": "鲜奶珍珠", "price": "40.000đ" },
+      { "name": "椰奶咖啡", "price": "35.000đ" },
+      { "name": "芋头奶茶", "price": "42.000đ" },
+      { "name": "蓝莓茶", "price": "36.000đ" },
+      { "name": "冰美式咖啡", "price": "25.000đ" },
+      { "name": "泰式绿奶茶", "price": "35.000đ" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "美颜打卡角",
+    "sectionSubtitle": "留住您最甜蜜的瞬间",
+    "hashtags": ["#蜜甜茶", "#网红咖啡馆", "#放松时光"],
+    "mainTitle": "梦幻窗边角落",
+    "mainDesc": "充满金色阳光与宁静的空间"
+  },
+  "testimonials": {
+    "sectionTitle": "甜蜜留言",
+    "items": [
+      { "name": "Linh Chi", "role": "19岁，自由职业", "text": "这里的奶茶甜而清淡，珍珠超级Q弹好吃。而且咖啡馆有好多超美的拍照角落！" },
+      { "name": "Hoàng Nam", "role": "经济大学学生", "text": "我经常来这里学习。环境安静，音乐放松，盐咖啡简直是极品。" },
+      { "name": "Minh Anh", "role": "高中生", "text": "咖啡馆超级可爱，从装修到包装。菜单多样，价格对学生非常友好。" }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "来找\n蜜甜茶玩",
+    "addressLabel": "地址",
+    "address": "胡志明市第1郡梦境坊粉彩街123号",
+    "phoneLabel": "热线",
+    "phone": "090 123 4567",
+    "hoursLabel": "营业时间",
+    "hours": "08:00 - 22:30（每日）",
+    "mapLabel": "蜜甜茶就在这里！"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "shopName": "蜜甜茶",
+    "desc": "用所有的真诚与甜蜜，将手工奶茶送到您手中。",
+    "exploreTitle": "探索",
+    "exploreLinks": ["关于我们", "完整菜单", "合作机会", "配送政策"],
+    "newsletterTitle": "订阅通讯",
+    "newsletterDesc": "立即享受首单八折优惠！",
+    "newsletterPlaceholder": "您的邮箱...",
+    "newsletterBtn": "订阅",
+    "copyright": "© 2024 蜜甜茶 by webchoviet. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+}

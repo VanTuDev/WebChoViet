@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "features": "Tính năng",
+    "templates": "Mẫu giao diện",
+    "pricing": "Bảng giá",
+    "resources": "Tài nguyên",
+    "login": "Đăng nhập",
+    "start": "Bắt đầu ngay"
+  },
+  "hero": {
+    "badge": "Garden Oasis Cafe",
+    "title": "Không gian xanh mát,",
+    "titleHighlight": "Cà phê an nhiên",
+    "subtitle": "Trốn khỏi phố thị ồn ào, đắm mình trong khu vườn nhiệt đới và thưởng thức những ly cà phê thảo mộc độc bản.",
+    "btnBook": "Đặt bàn ngay",
+    "btnMenu": "Xem Menu"
+  },
+  "drinks": {
+    "sectionTitle": "Hương Vị Đặc Bản",
+    "sectionSubtitle": "Sự kết hợp hoàn hảo giữa hạt cà phê rang mộc và thảo mộc tươi từ khu vườn của chúng tôi.",
+    "addToOrder": "Thêm vào đơn",
+    "badgeBestseller": "Bán chạy",
+    "badgeNew": "Mới",
+    "items": [
+      {
+        "name": "Matcha Espresso Rừng",
+        "price": "65K",
+        "desc": "Vị đắng nhẹ của espresso hòa quyện cùng độ thanh mát của matcha Nhật Bản cao cấp."
+      },
+      {
+        "name": "Trà Hoa Viên",
+        "price": "55K",
+        "desc": "Trà hoa cúc, kỷ tử và táo đỏ, được hãm cùng mật ong hoa nhãn, mang lại sự thư thái."
+      },
+      {
+        "name": "Cold Brew Cam Sả",
+        "price": "60K",
+        "desc": "Cà phê ủ lạnh 24h, kết hợp nước ép cam tươi và hương sả nồng nàn, đánh thức mọi giác quan."
+      }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Không Gian & Cảm Hứng",
+    "sectionSubtitle": "Một góc nhỏ tĩnh lặng giữa lòng thành phố.",
+    "viewAll": "Xem tất cả ảnh",
+    "labelIndoor": "Khu vực trong nhà"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "copyright": "© 2024 webchoviet. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "support": "Support"
+  }
+}

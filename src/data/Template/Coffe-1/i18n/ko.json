@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "brand": "webchoviet",
+    "features": "기능",
+    "templates": "템플릿",
+    "pricing": "요금제",
+    "resources": "리소스",
+    "login": "로그인",
+    "start": "시작하기"
+  },
+  "hero": {
+    "badge": "Garden Oasis 카페",
+    "title": "초록빛 힐링 공간,",
+    "titleHighlight": "평화로운 커피 한 잔",
+    "subtitle": "도시의 소음에서 벗어나 열대 정원에 빠져들고 저희만의 특별한 허브 커피를 즐겨보세요.",
+    "btnBook": "바로 예약하기",
+    "btnMenu": "메뉴 보기"
+  },
+  "drinks": {
+    "sectionTitle": "시그니처 음료",
+    "sectionSubtitle": "신선하게 로스팅한 원두와 정원의 허브를 완벽하게 블렌딩했습니다.",
+    "addToOrder": "주문에 추가",
+    "badgeBestseller": "베스트셀러",
+    "badgeNew": "신메뉴",
+    "items": [
+      {
+        "name": "포레스트 말차 에스프레소",
+        "price": "65K",
+        "desc": "에스프레소의 은은한 쓴맛과 프리미엄 일본 말차의 상쾌함이 완벽하게 어우러집니다."
+      },
+      {
+        "name": "가든 플로럴 티",
+        "price": "55K",
+        "desc": "국화, 구기자, 대추 차를 용안꽃 꿀로 우려낸 극도의 편안함을 선사합니다."
+      },
+      {
+        "name": "콜드브루 시트러스 레몬그라스",
+        "price": "60K",
+        "desc": "24시간 콜드브루에 신선한 오렌지 주스와 향긋한 레몬그라스를 더해 모든 감각을 깨웁니다."
+      }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "공간 & 영감",
+    "sectionSubtitle": "도시 한가운데 조용한 작은 코너.",
+    "viewAll": "모든 사진 보기",
+    "labelIndoor": "실내 좌석 공간"
+  },
+  "footer": {
+    "brand": "webchoviet",
+    "copyright": "© 2024 webchoviet. 모든 권리 보유.",
+    "privacy": "개인정보 보호",
+    "terms": "이용 약관",
+    "support": "고객 지원"
+  }
+}

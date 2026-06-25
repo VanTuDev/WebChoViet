@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "brand": "Sân Vườn & Cá Koi",
+    "home": "Trang chủ",
+    "menu": "Thực đơn",
+    "space": "Không gian",
+    "reviews": "Đánh giá",
+    "contact": "Liên hệ",
+    "contactBtn": "Liên hệ"
+  },
+  "hero": {
+    "title": "Cà Phê Sân Vườn - Nơi Giao Thoa Giữa Thiên Nhiên & Hương Vị",
+    "desc": "Tận hưởng không gian xanh mát và ngắm nhìn đàn cá Koi bơi lội bên tách cà phê đậm đà. Một chốn bình yên ngay giữa lòng thành phố.",
+    "btnExplore": "Khám phá thực đơn",
+    "btnSpace": "Xem không gian"
+  },
+  "features": {
+    "items": [
+      {
+        "icon": "nature_people",
+        "title": "Không Gian Xanh",
+        "desc": "Hơn 100 loại cây nhiệt đới mang lại bầu không khí trong lành, mát mẻ tuyệt đối."
+      },
+      {
+        "icon": "set_meal",
+        "title": "Hồ Cá Koi Nhật",
+        "desc": "Đàn cá Koi chất lượng cao từ Nhật Bản, mang lại cảm giác thư thái và may mắn."
+      },
+      {
+        "icon": "coffee_maker",
+        "title": "Cà Phê Rang Xay",
+        "desc": "Hạt cà phê tuyển chọn từ cao nguyên, rang xay nguyên chất mang hương vị đậm đà."
+      }
+    ]
+  },
+  "menuSection": {
+    "sectionTitle": "Thực Đơn Đặc Sắc",
+    "tabs": {
+      "signature": "Signature",
+      "coffee": "Cà Phê",
+      "tea": "Trà & Nước Ép",
+      "cake": "Bánh Ngọt"
+    },
+    "placeholder": "Menu đầy đủ vui lòng xem tại quầy. Chúng tôi luôn cập nhật các món mới theo mùa.",
+    "items": [
+      { "name": "Cà Phê Trứng Sân Vườn", "price": "55.000đ", "desc": "Lớp kem trứng sánh mịn hòa quyện cùng cà phê Robusta đậm đặc." },
+      { "name": "Trà Trái Cây Nhiệt Đới", "price": "49.000đ", "desc": "Trà lài ủ lạnh kết hợp cùng 5 loại trái cây tươi mát theo mùa." },
+      { "name": "Bạc Xỉu Cốt Dừa", "price": "45.000đ", "desc": "Hương thơm béo ngậy từ cốt dừa tươi và cà phê phin truyền thống." },
+      { "name": "Matcha Koi Garden", "price": "52.000đ", "desc": "Bột trà xanh Nhật Bản cao cấp kết hợp sữa tươi nguyên kem." }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Tuyệt Tác Không Gian",
+    "sectionDesc": "Sự kết hợp hoàn hảo giữa kiến trúc gỗ cổ điển, hồ cá Koi uốn lượn và thảm thực vật phong phú.",
+    "labelMain": "Khu vực hồ trung tâm",
+    "labelCorner1": "Góc Vintage Hoài Cổ",
+    "labelCorner2": "Hiên Nhà Xanh Mát"
+  },
+  "testimonials": {
+    "sectionTitle": "Khách Hàng Nói Gì Về Chúng Tôi",
+    "sectionSubtitle": "Những trải nghiệm chân thực từ những người yêu cà phê và thiên nhiên.",
+    "items": [
+      { "name": "Chị Minh Anh", "role": "Khách hàng thân thiết", "text": "Không gian ở đây thực sự quá tuyệt vời. Tôi có thể ngồi hàng giờ chỉ để ngắm đàn cá Koi bơi lội. Cà phê trứng rất đậm đà, đúng vị tôi thích." },
+      { "name": "Anh Hoàng Nam", "role": "Nhiếp ảnh gia", "text": "Cảm ơn quán đã tạo ra một không gian thư giãn tuyệt vời. Nhân viên phục vụ rất chuyên nghiệp và chu đáo. Đây là điểm hẹn cuối tuần lý tưởng cho gia đình tôi." },
+      { "name": "Lê Quốc Khánh", "role": "Designer", "text": "Hồ cá Koi được chăm sóc rất tốt, cá to và màu sắc rất đẹp. Trà trái cây ở đây thanh mát, không quá ngọt. Một địa điểm 10/10 cho những ai thích thiên nhiên." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Ghé Thăm Chúng Tôi",
+    "addressLabel": "Địa Chỉ",
+    "address": "123 Đường Ven Hồ, Phường Thảo Điền, Quận 2, TP. Hồ Chí Minh",
+    "hoursLabel": "Giờ Mở Cửa",
+    "hours": "Thứ 2 - Chủ Nhật: 06:30 - 22:30",
+    "openStatus": "Đang mở cửa • Ghé thăm ngay",
+    "contactLabel": "Liên Hệ",
+    "hotline": "028 3848 99XX",
+    "email": "info@koigardencoffee.vn"
+  },
+  "footer": {
+    "brand": "Sân Vườn & Cá Koi Coffee",
+    "desc": "Kiến tạo không gian xanh, nuôi dưỡng tâm hồn và thưởng thức những hương vị tinh túy nhất từ thiên nhiên.",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "careers": "Tuyển dụng",
+    "ads": "Liên hệ quảng cáo",
+    "copyright": "© 2024 Sân Vườn & Cá Koi Coffee. Tất cả quyền được bảo lưu."
+  }
+}

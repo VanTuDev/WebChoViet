@@ -1,0 +1,86 @@
+{
+  "siteId": "site_cafe_garden_001",
+  "subdomain": "ca-phe-vuon-an-nhien",
+  "userId": "user_129847192",
+  "templateId": "coffe-1",
+  "themeColor": "#2E4E3F",
+  "defaultLanguage": "vi",
+  "languages": ["vi", "en", "zh", "ko"],
+  
+  "customData": {
+    "nav": {
+      "brand": "An Nhiên Cafe",
+      "features": "Trải nghiệm",
+      "templates": "Thực đơn",
+      "pricing": "Đặt bàn",
+      "resources": "Liên hệ",
+      "login": "Thành viên",
+      "start": "Đăng ký nhận ưu đãi"
+    },
+    
+    "hero": {
+      "badge": "Cà Phê Sân Vườn Độc Bản",
+      "title": "Tìm lại chút bình yên,",
+      "titleHighlight": "Giữa lòng phố thị nhộn nhịp",
+      "subtitle": "Khu vườn thảo mộc nhiệt đới nhỏ xinh, phục vụ cà phê rang tay thủ công hảo hạng cùng bánh ngọt tươi nướng mỗi ngày.",
+      "btnBook": "Đặt bàn trực tuyến",
+      "btnMenu": "Xem thực đơn quán"
+    },
+    
+    "drinks": {
+      "sectionTitle": "Hương Vị Mộc Mạc",
+      "sectionSubtitle": "Mỗi thức uống là một tác phẩm được chăm chút tỉ mỉ từ những lá trà non và hạt cà phê Arabica thượng hạng.",
+      "addToOrder": "Chọn món này",
+      "badgeBestseller": "Yêu thích nhất",
+      "badgeNew": "Món mới thử",
+      
+      "items": [
+        {
+          "id": "item_drink_001",
+          "name": "Cà Phê Kem Muối An Nhiên",
+          "price": "55.000 ₫",
+          "desc": "Cà phê pha phin truyền thống thơm đậm đà, kết hợp cùng lớp kem mặn béo mịn màng độc quyền."
+        },
+        {
+          "id": "item_drink_002",
+          "name": "Trà Vải Hoa Hồng Cổ",
+          "price": "49.000 ₫",
+          "desc": "Trà đen hoa hồng thanh nhã thơm ngát kết hợp cùng những quả vải mọng nước giòn ngọt tự nhiên."
+        },
+        {
+          "id": "item_drink_003",
+          "name": "Matcha Latte Dừa Nướng",
+          "price": "60.000 ₫",
+          "desc": "Bột trà xanh Nhật Bản nguyên chất pha cùng sữa dừa tươi thơm béo và vụn dừa nướng giòn rụm."
+        }
+      ]
+    },
+    
+    "gallery": {
+      "sectionTitle": "Góc Nhỏ An Nhiên",
+      "sectionSubtitle": "Nơi bạn có thể ngồi hàng giờ bên trang sách hay lắng nghe giai điệu Acoustic dịu êm.",
+      "viewAll": "Khám phá không gian",
+      "labelIndoor": "Không gian đọc sách ấm cúng"
+    },
+    
+    "footer": {
+      "brand": "An Nhiên Garden Cafe",
+      "copyright": "© 2026 An Nhiên Cafe. Bản quyền website thuộc về WebChoViet.",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản dịch vụ",
+      "support": "Hỗ trợ khách hàng"
+    }
+  },
+  
+  "images": {
+    "heroBg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&auto=format&fit=crop&q=80",
+    "heroMain": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=80",
+    "drink1": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=80",
+    "drink2": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=600&auto=format&fit=crop&q=80",
+    "drink3": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&auto=format&fit=crop&q=80",
+    "galleryMain": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
+    "gallery2": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&auto=format&fit=crop&q=80",
+    "gallery3": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=600&auto=format&fit=crop&q=80",
+    "gallery4": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&auto=format&fit=crop&q=80"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "brand": "The Ocean Cafe",
+    "home": "홈",
+    "menu": "메뉴",
+    "gallery": "갤러리",
+    "reviews": "리뷰",
+    "contact": "연락처"
+  },
+  "hero": {
+    "badge": "해안의 아름다움",
+    "title": "The Ocean Cafe - ",
+    "titleHighlight": "하루의 시작을 여기서",
+    "subtitle": "광활한 바다의 분위기 속에서 진한 커피를 즐겨보세요. 바다를 사랑하는 영혼을 위한 세련된 경험.",
+    "btnMenu": "메뉴 보기"
+  },
+  "menu": {
+    "sectionTitle": "시그니처 메뉴",
+    "sectionSubtitle": "매일 신선한 원두와 재료에 담긴 정성",
+    "coffee": {
+      "title": "커피",
+      "items": [
+        { "name": "오션 시그니처 라떼", "price": "55k", "desc": "씨솔트 크림 토핑의 아이스 머신 라떼", "badge": "HOT" },
+        { "name": "클래식 콜드브루", "price": "65k", "desc": "과일향이 감도는 18시간 콜드브루", "badge": "" },
+        { "name": "에스프레소 도피오", "price": "40k", "desc": "고압 추출 순수 에스프레소", "badge": "" },
+        { "name": "카라멜 마키아토", "price": "65k", "desc": "따뜻한 우유, 카라멜 소스와 진한 에스프레소", "badge": "" }
+      ]
+    },
+    "tea": {
+      "title": "티 & 주스",
+      "items": [
+        { "name": "복숭아 시트러스 레몬그라스 티", "price": "49k", "desc": "홍차, 복숭아 슬라이스, 신선한 오렌지, 레몬그라스", "badge": "NEW" },
+        { "name": "오션 브리즈 스무디", "price": "75k", "desc": "레드 용과, 딸기, 그릭 요거트", "badge": "" },
+        { "name": "말차 라떼", "price": "59k", "desc": "일본 말차 파우더와 살균 신선한 우유", "badge": "" },
+        { "name": "트로피컬 프루트 티", "price": "55k", "desc": "계절 신선 과일 혼합", "badge": "" }
+      ]
+    },
+    "pastries": {
+      "title": "베이커리",
+      "items": [
+        { "name": "프렌치 버터 크루아상", "price": "35k", "desc": "프리미엄 프랑스 버터로 바삭하게 구운 크루아상", "badge": "" },
+        { "name": "시그니처 티라미수", "price": "60k", "desc": "진한 크림층과 커피 향의 완벽한 조화", "badge": "" },
+        { "name": "초콜릿 라바 케이크", "price": "70k", "desc": "딸기와 함께 즐기는 용암 초콜릿 케이크", "badge": "" },
+        { "name": "아르티산 빵", "price": "45k", "desc": "잼과 함께 즐기는 수제 구운 빵", "badge": "" }
+      ]
+    }
+  },
+  "gallery": {
+    "sectionTitle": "우리의 공간",
+    "sectionSubtitle": "모든 작은 구석이 바다 이야기를 들려주는 곳",
+    "viewAll": "전체 보기"
+  },
+  "testimonials": {
+    "sectionTitle": "고객 리뷰",
+    "sectionSubtitle": "커피와 바다를 사랑하는 친구들의 진솔한 이야기",
+    "items": [
+      { "name": "Minh Anh", "stars": 5, "text": "여기 분위기는 정말 휴식하기에 너무 좋아요. 커피 마시면서 파도 소리 들으면 모든 피로가 사라지는 것 같아요." },
+      { "name": "Hoàng Nam", "stars": 4.5, "text": "시그니처 라떼가 인상적이에요. 적당한 씨솔트 크림이 커피의 은은한 쓴맛과 완벽하게 어울려요. 자주 올 것 같아요." },
+      { "name": "Mai 아주머니 & Hùng 아저씨", "stars": 5, "text": "서비스가 정말 세심해요. 직원들이 예의 바르고 조용한 분위기가 가족 주말 아침에 딱이에요." }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "저희를 찾아오세요",
+    "sectionSubtitle": "가장 향기로운 커피로 언제든지 환영합니다.",
+    "addressLabel": "주소",
+    "address": "베트남 다낭시 해안로 123번지",
+    "phoneLabel": "전화",
+    "phone": "+84 (236) 3456 789",
+    "hoursLabel": "영업 시간",
+    "hours": "매일: 07:00 - 22:00"
+  },
+  "footer": {
+    "brand": "The Ocean Cafe",
+    "copyright": "© 2024 The Ocean Cafe. 바다 곁의 상쾌한 순간들.",
+    "privacy": "개인정보 보호",
+    "terms": "이용 약관",
+    "careers": "채용"
+  }
+}
