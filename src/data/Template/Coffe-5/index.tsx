@@ -60,10 +60,10 @@ export default function Coffe5({ lang = 'vi' }: Props) {
       `}</style>
 
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#FFFBEB]/80 backdrop-blur-md shadow-sm">
+      <header data-section="nav" className="fixed top-0 w-full z-50 bg-[#FFFBEB]/80 backdrop-blur-md shadow-sm">
         <nav className="flex justify-between items-center px-6 py-3 max-w-[1280px] mx-auto">
           <div className="flex items-center gap-3">
-            <span className="font-lexend text-2xl tracking-tight text-primary">{t.nav.brand}</span>
+            <span data-field="nav.brand" className="font-lexend text-2xl tracking-tight text-primary">{t.nav.brand}</span>
             <div className="h-6 w-px bg-[#c2c6d4]" />
             <div className="flex items-center gap-1 font-bold text-[#92400e] text-sm">
               <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>bubble_chart</span>
@@ -84,20 +84,20 @@ export default function Coffe5({ lang = 'vi' }: Props) {
 
       <main className="pt-[72px]">
         {/* Hero */}
-        <section className="py-20 px-6 max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <section data-section="hero" className="py-20 px-6 max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FEF3C7] text-[#92400e] text-xs font-semibold rounded-full mb-6 border border-[#fde68a]">
               <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span>
-              {t.hero.badge}
+              <span data-field="hero.badge">{t.hero.badge}</span>
             </div>
             <h1 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] text-[#191c1e]">
-              {t.hero.title}{' '}
-              <span className="text-[#92400e]">{t.hero.titleHighlight}</span>
+              <span data-field="hero.title">{t.hero.title}</span>{' '}
+              <span data-field="hero.titleHighlight" className="text-[#92400e]">{t.hero.titleHighlight}</span>
             </h1>
-            <p className="text-lg leading-[1.6] text-[#57534e] mt-6 mb-10">{t.hero.subtitle}</p>
+            <p data-field="hero.subtitle" className="text-lg leading-[1.6] text-[#57534e] mt-6 mb-10">{t.hero.subtitle}</p>
             <div className="flex flex-wrap gap-6">
-              <a className="bg-[#92400e] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#78350f] transition-colors shadow-lg" href="#menu">{t.hero.btnMenu}</a>
-              <a className="border border-[#92400e]/30 text-[#92400e] px-8 py-3 rounded-full text-sm font-medium hover:bg-[#FEF3C7] transition-colors" href="#gallery">{t.hero.btnGallery}</a>
+              <a data-field="hero.btnMenu" className="bg-[#92400e] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#78350f] transition-colors shadow-lg" href="#menu">{t.hero.btnMenu}</a>
+              <a data-field="hero.btnGallery" className="border border-[#92400e]/30 text-[#92400e] px-8 py-3 rounded-full text-sm font-medium hover:bg-[#FEF3C7] transition-colors" href="#gallery">{t.hero.btnGallery}</a>
             </div>
           </div>
           <div className="relative">
@@ -120,12 +120,12 @@ export default function Coffe5({ lang = 'vi' }: Props) {
         </section>
 
         {/* Menu Carousel */}
-        <section className="py-20 bg-[#FEF3C7]/50" id="menu">
+        <section data-section="menuSection" className="py-20 bg-[#FEF3C7]/50" id="menu">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="flex justify-between items-end mb-10">
               <div>
-                <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.menuSection.sectionTitle}</h2>
-                <p className="text-base text-[#57534e] mt-1">{t.menuSection.sectionSubtitle}</p>
+                <h2 data-field="menuSection.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.menuSection.sectionTitle}</h2>
+                <p data-field="menuSection.sectionSubtitle" className="text-base text-[#57534e] mt-1">{t.menuSection.sectionSubtitle}</p>
               </div>
               <div className="flex gap-3">
                 <button onClick={() => scrollCarousel('prev')} className="w-10 h-10 rounded-full border border-[#fde68a] bg-white text-[#92400e] flex items-center justify-center hover:bg-[#FEF3C7] transition-all">
@@ -147,9 +147,9 @@ export default function Coffe5({ lang = 'vi' }: Props) {
                     <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`menuSection_items_${i}`] ?? MENU_IMGS[i % MENU_IMGS.length]} alt={item.name} />
                   </div>
                   <div className="p-6">
-                    <h3 className="font-bold text-[#191c1e] text-base mb-1">{item.name}</h3>
+                    <h3 data-field={`menuSection.items.${i}.name`} className="font-bold text-[#191c1e] text-base mb-1">{item.name}</h3>
                     <div className="flex justify-between items-center mt-3">
-                      <span className="font-bold text-[#92400e]">{item.price}</span>
+                      <span data-field={`menuSection.items.${i}.price`} className="font-bold text-[#92400e]">{item.price}</span>
                       <button className="bg-[#92400e] text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-[#78350f] transition-colors">
                         {t.menuSection.addToCart}
                       </button>
@@ -162,7 +162,7 @@ export default function Coffe5({ lang = 'vi' }: Props) {
         </section>
 
         {/* Gallery Bento */}
-        <section className="py-20 bg-[#FFFBEB]" id="gallery">
+        <section data-section="gallery" className="py-20 bg-[#FFFBEB]" id="gallery">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-10">
               <div className="flex justify-center gap-3 mb-3">
@@ -170,8 +170,8 @@ export default function Coffe5({ lang = 'vi' }: Props) {
                   <span key={i} className="text-xs font-semibold text-[#92400e] bg-[#FEF3C7] px-3 py-1 rounded-full border border-[#fde68a]">{tag}</span>
                 ))}
               </div>
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.gallery.sectionTitle}</h2>
-              <p className="text-base text-[#57534e] mt-1">{t.gallery.sectionSubtitle}</p>
+              <h2 data-field="gallery.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.gallery.sectionTitle}</h2>
+              <p data-field="gallery.sectionSubtitle" className="text-base text-[#57534e] mt-1">{t.gallery.sectionSubtitle}</p>
             </div>
             <div className="grid grid-cols-12 gap-6 h-[600px]">
               <article className="col-span-6 row-span-2 rounded-2xl overflow-hidden group relative h-full">
@@ -198,9 +198,9 @@ export default function Coffe5({ lang = 'vi' }: Props) {
         </section>
 
         {/* Testimonials — middle card elevated */}
-        <section className="py-20 bg-[#FEF3C7]/50">
+        <section data-section="testimonials" className="py-20 bg-[#FEF3C7]/50">
           <div className="max-w-[1280px] mx-auto px-6 text-center">
-            <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold mb-20">{t.testimonials.sectionTitle}</h2>
+            <h2 data-field="testimonials.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold mb-20">{t.testimonials.sectionTitle}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
               {(Array.isArray(t.testimonials.items) ? t.testimonials.items : []).map((item, i) => (
                 <div
@@ -229,30 +229,30 @@ export default function Coffe5({ lang = 'vi' }: Props) {
         </section>
 
         {/* Contact — primary panel + map */}
-        <section className="py-20 px-6 max-w-[1280px] mx-auto" id="contact">
+        <section data-section="contact" className="py-20 px-6 max-w-[1280px] mx-auto" id="contact">
           <div className="rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
             <div className="md:w-2/5 bg-primary text-white p-10 flex flex-col justify-center">
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold mb-10 whitespace-pre-line">{t.contact.sectionTitle}</h2>
+              <h2 data-field="contact.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold mb-10 whitespace-pre-line">{t.contact.sectionTitle}</h2>
               <div className="space-y-6">
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined">location_on</span>
                   <div>
                     <p className="font-bold text-xs font-semibold opacity-80 uppercase tracking-wide">{t.contact.addressLabel}</p>
-                    <p className="text-base mt-1">{t.contact.address}</p>
+                    <p data-field="contact.address" className="text-base mt-1">{t.contact.address}</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined">call</span>
                   <div>
                     <p className="font-bold text-xs font-semibold opacity-80 uppercase tracking-wide">{t.contact.phoneLabel}</p>
-                    <p className="text-base mt-1">{t.contact.phone}</p>
+                    <p data-field="contact.phone" className="text-base mt-1">{t.contact.phone}</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined">schedule</span>
                   <div>
                     <p className="font-bold text-xs font-semibold opacity-80 uppercase tracking-wide">{t.contact.hoursLabel}</p>
-                    <p className="text-base mt-1">{t.contact.hours}</p>
+                    <p data-field="contact.hours" className="text-base mt-1">{t.contact.hours}</p>
                   </div>
                 </div>
               </div>
@@ -279,18 +279,18 @@ export default function Coffe5({ lang = 'vi' }: Props) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-20">
+      <footer data-section="footer" className="bg-primary text-white py-20">
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="font-lexend text-2xl font-bold">{t.footer.brand}</span>
+              <span data-field="footer.brand" className="font-lexend text-2xl font-bold">{t.footer.brand}</span>
               <div className="h-5 w-px bg-white/30" />
               <div className="flex items-center gap-1 text-sm font-bold">
                 <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>bubble_chart</span>
                 {t.footer.shopName}
               </div>
             </div>
-            <p className="text-sm opacity-80 max-w-xs">{t.footer.desc}</p>
+            <p data-field="footer.desc" className="text-sm opacity-80 max-w-xs">{t.footer.desc}</p>
           </div>
           <div>
             <h4 className="text-sm font-semibold mb-6 opacity-80 uppercase tracking-widest">{t.footer.exploreTitle}</h4>

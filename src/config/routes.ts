@@ -27,7 +27,7 @@ export const ROUTES = {
   TEMPLATE_EDITOR_EDIT: '/template-editor/:siteId',      // chỉnh sửa site đã tạo
 
   // ── Trang công khai đã xuất bản ─────────────────────────────────────────────
-  PUBLIC_SITE:        '/p/:slug',
+  PUBLIC_SITE:        '/:slug',
 
   // ── Admin portal (luồng riêng biệt) ─────────────────────────────────────────
   ADMIN_LOGIN:        '/admin/login',

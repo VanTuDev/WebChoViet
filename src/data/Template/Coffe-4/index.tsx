@@ -42,11 +42,11 @@ export default function Coffe4({ lang = 'vi' }: Props) {
   return (
     <div className="text-[#191c1e] font-inter bg-[#f7f9fb]">
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 backdrop-blur-md shadow-sm">
+      <nav data-section="nav" className="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 backdrop-blur-md shadow-sm">
         <div className="flex justify-between items-center px-6 py-4 max-w-[1280px] mx-auto">
           <a className="font-lexend text-2xl font-bold text-primary flex items-center gap-2" href="#">
             <span className="material-symbols-outlined text-[#1B4332]" style={{ fontVariationSettings: "'FILL' 1" }}>water_ec</span>
-            <span className="tracking-tight">{t.nav.brand}</span>
+            <span data-field="nav.brand" className="tracking-tight">{t.nav.brand}</span>
           </a>
           <div className="hidden md:flex gap-10">
             <a className="text-primary font-bold border-b-2 border-primary pb-1 text-sm font-medium" href="#">{t.nav.home}</a>
@@ -63,15 +63,15 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </nav>
 
       {/* Hero */}
-      <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+      <section data-section="hero" className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('${images['hero'] ?? IMGS.hero}')` }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6))' }} />
         </div>
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 text-white">
           <div className="max-w-3xl">
-            <h1 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mb-6">{t.hero.title}</h1>
-            <p className="text-lg leading-[1.6] mb-10 opacity-90">{t.hero.desc}</p>
+            <h1 data-field="hero.title" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mb-6">{t.hero.title}</h1>
+            <p data-field="hero.desc" className="text-lg leading-[1.6] mb-10 opacity-90">{t.hero.desc}</p>
             <div className="flex flex-wrap gap-6">
               <a
                 className="bg-[#1B4332] text-white px-8 py-4 rounded-full text-sm font-medium flex items-center gap-2 hover:scale-105 transition-transform shadow-xl"
@@ -95,7 +95,7 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-[#f7f9fb]">
+      <section data-section="features" className="py-20 bg-[#f7f9fb]">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {(Array.isArray(t.features.items) ? t.features.items : []).map((feat, i) => (
@@ -103,8 +103,8 @@ export default function Coffe4({ lang = 'vi' }: Props) {
                 <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${i === 0 ? 'bg-[#1B4332]/10' : i === 1 ? 'bg-[#00a9fd]/10' : 'bg-primary/10'}`}>
                   <span className={`material-symbols-outlined text-3xl ${i === 0 ? 'text-[#1B4332]' : i === 1 ? 'text-secondary' : 'text-primary'}`}>{feat.icon}</span>
                 </div>
-                <h3 className={`font-lexend text-2xl font-semibold mb-3 ${i === 0 ? 'text-[#1B4332]' : i === 1 ? 'text-secondary' : 'text-primary'}`}>{feat.title}</h3>
-                <p className="text-base leading-[1.6] text-[#424752]">{feat.desc}</p>
+                <h3 data-field={`features.items.${i}.title`} className={`font-lexend text-2xl font-semibold mb-3 ${i === 0 ? 'text-[#1B4332]' : i === 1 ? 'text-secondary' : 'text-primary'}`}>{feat.title}</h3>
+                <p data-field={`features.items.${i}.desc`} className="text-base leading-[1.6] text-[#424752]">{feat.desc}</p>
               </div>
             ))}
           </div>
@@ -112,10 +112,10 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </section>
 
       {/* Menu Tabs */}
-      <section className="py-20 bg-white overflow-hidden" id="thuc-don">
+      <section data-section="menuSection" className="py-20 bg-white overflow-hidden" id="thuc-don">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-3">{t.menuSection.sectionTitle}</h2>
+            <h2 data-field="menuSection.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-3">{t.menuSection.sectionTitle}</h2>
             <div className="w-24 h-1 bg-[#1B4332] mx-auto rounded-full" />
           </div>
           <div className="flex justify-center flex-wrap gap-6 mb-20">
@@ -139,10 +139,10 @@ export default function Coffe4({ lang = 'vi' }: Props) {
                   </div>
                   <div className="flex flex-col justify-center border-b border-[#c2c6d4] flex-grow pb-3">
                     <div className="flex justify-between items-baseline mb-1">
-                      <h4 className="font-lexend text-2xl font-semibold text-[#1B4332]">{item.name}</h4>
-                      <span className="text-sm font-medium text-primary font-bold">{item.price}</span>
+                      <h4 data-field={`menuSection.items.${i}.name`} className="font-lexend text-2xl font-semibold text-[#1B4332]">{item.name}</h4>
+                      <span data-field={`menuSection.items.${i}.price`} className="text-sm font-medium text-primary font-bold">{item.price}</span>
                     </div>
-                    <p className="text-base leading-[1.6] text-[#424752]">{item.desc}</p>
+                    <p data-field={`menuSection.items.${i}.desc`} className="text-base leading-[1.6] text-[#424752]">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -156,12 +156,12 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </section>
 
       {/* Gallery */}
-      <section className="py-20 bg-[#f2f4f6]" id="khong-gian">
+      <section data-section="gallery" className="py-20 bg-[#f2f4f6]" id="khong-gian">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
             <div className="max-w-2xl">
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-3">{t.gallery.sectionTitle}</h2>
-              <p className="text-lg leading-[1.6] text-[#424752]">{t.gallery.sectionDesc}</p>
+              <h2 data-field="gallery.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-3">{t.gallery.sectionTitle}</h2>
+              <p data-field="gallery.sectionDesc" className="text-lg leading-[1.6] text-[#424752]">{t.gallery.sectionDesc}</p>
             </div>
             <div className="hidden md:flex gap-1">
               <div className="w-12 h-1 bg-[#1B4332] rounded-full" />
@@ -195,14 +195,14 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </section>
 
       {/* Testimonials — dark forest green bg */}
-      <section className="py-20 bg-[#1B4332] text-white relative overflow-hidden" id="danh-gia">
+      <section data-section="testimonials" className="py-20 bg-[#1B4332] text-white relative overflow-hidden" id="danh-gia">
         <div className="absolute top-0 right-0 opacity-10">
           <span className="material-symbols-outlined text-[300px]" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
         </div>
         <div className="max-w-[1280px] mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold mb-3">{t.testimonials.sectionTitle}</h2>
-            <p className="text-base leading-[1.6] opacity-80">{t.testimonials.sectionSubtitle}</p>
+            <h2 data-field="testimonials.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold mb-3">{t.testimonials.sectionTitle}</h2>
+            <p data-field="testimonials.sectionSubtitle" className="text-base leading-[1.6] opacity-80">{t.testimonials.sectionSubtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {(Array.isArray(t.testimonials.items) ? t.testimonials.items : []).map((item, i) => (
@@ -229,7 +229,7 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </section>
 
       {/* Contact */}
-      <section className="py-20 bg-white" id="lien-he">
+      <section data-section="contact" className="py-20 bg-white" id="lien-he">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
@@ -247,7 +247,7 @@ export default function Coffe4({ lang = 'vi' }: Props) {
               )}
             </div>
             <div>
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-10">{t.contact.sectionTitle}</h2>
+              <h2 data-field="contact.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-10">{t.contact.sectionTitle}</h2>
               <div className="space-y-10">
                 <div className="flex items-start gap-6">
                   <div className="w-12 h-12 rounded-full bg-[#1B4332] flex items-center justify-center flex-shrink-0">
@@ -255,7 +255,7 @@ export default function Coffe4({ lang = 'vi' }: Props) {
                   </div>
                   <div>
                     <h4 className="font-lexend text-2xl font-semibold text-[#191c1e] mb-1">{t.contact.addressLabel}</h4>
-                    <p className="text-base leading-[1.6] text-[#424752]">{t.contact.address}</p>
+                    <p data-field="contact.address" className="text-base leading-[1.6] text-[#424752]">{t.contact.address}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
@@ -264,7 +264,7 @@ export default function Coffe4({ lang = 'vi' }: Props) {
                   </div>
                   <div>
                     <h4 className="font-lexend text-2xl font-semibold text-[#191c1e] mb-1">{t.contact.hoursLabel}</h4>
-                    <p className="text-base leading-[1.6] text-[#424752]">{t.contact.hours}</p>
+                    <p data-field="contact.hours" className="text-base leading-[1.6] text-[#424752]">{t.contact.hours}</p>
                     <p className="text-xs font-semibold text-secondary font-bold mt-1">{t.contact.openStatus}</p>
                   </div>
                 </div>
@@ -285,11 +285,11 @@ export default function Coffe4({ lang = 'vi' }: Props) {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-20 border-t border-[#c2c6d4]">
+      <footer data-section="footer" className="bg-white py-20 border-t border-[#c2c6d4]">
         <div className="flex flex-col md:flex-row justify-between items-center px-6 max-w-[1280px] mx-auto gap-6">
           <div className="text-center md:text-left">
-            <a className="font-lexend text-2xl font-bold text-primary mb-1 block" href="#">{t.footer.brand}</a>
-            <p className="text-base leading-[1.6] text-[#424752] max-w-sm">{t.footer.desc}</p>
+            <a data-field="footer.brand" className="font-lexend text-2xl font-bold text-primary mb-1 block" href="#">{t.footer.brand}</a>
+            <p data-field="footer.desc" className="text-base leading-[1.6] text-[#424752] max-w-sm">{t.footer.desc}</p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             <a className="text-[#424752] hover:underline text-xs font-semibold" href="#">{t.footer.privacy}</a>

@@ -15,16 +15,32 @@ interface Props {
   onArrayChange: (path: string[], newArray: Record<string, unknown>[]) => void;
   /** Called when an image slot changes */
   onImageChange: (key: string, dataUrl: string) => void;
+  /** Called when a section header is clicked — scroll preview to that section */
+  onSectionFocus?: (sectionKey: string) => void;
 }
 
 // ── Section toggle ──────────────────────────────────────────────────────────
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  sectionKey,
+  onFocus,
+  children,
+}: {
+  title: string;
+  sectionKey?: string;
+  onFocus?: (key: string) => void;
+  children: React.ReactNode;
+}) {
   const [open, setOpen] = useState(true);
+  const handleClick = () => {
+    setOpen(o => !o);
+    if (onFocus && sectionKey) onFocus(sectionKey);
+  };
   return (
     <div className="border-b border-gray-100 last:border-0">
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={handleClick}
         className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
       >
         <span className="text-xs font-bold text-gray-700 uppercase tracking-wider">{title}</span>
@@ -453,6 +469,7 @@ export default function EditorPanel({
   onChange,
   onArrayChange,
   onImageChange,
+  onSectionFocus,
 }: Props) {
   const [cropTarget, setCropTarget] = useState<ImageSlot | null>(null);
   const sectionKeys = Object.keys(schema);
@@ -462,7 +479,7 @@ export default function EditorPanel({
       <div className="flex-1 overflow-y-auto">
         {/* Static image slots (hero, gallery, etc.) */}
         {imageSlots.length > 0 && (
-          <Section title="Ảnh">
+          <Section title="Ảnh" sectionKey="hero" onFocus={onSectionFocus}>
             <div className="space-y-3">
               {imageSlots.map(slot => (
                 <ImageSlotItem
@@ -482,7 +499,7 @@ export default function EditorPanel({
           if (typeof sectionVal !== 'object' || sectionVal === null) return null;
           const sectionOverride = (customData[section] as Record<string, unknown>) ?? {};
           return (
-            <Section key={section} title={section}>
+            <Section key={section} title={section} sectionKey={section} onFocus={onSectionFocus}>
               {renderFields(
                 sectionVal as Record<string, unknown>,
                 sectionOverride,

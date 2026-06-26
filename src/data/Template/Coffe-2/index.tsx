@@ -62,9 +62,9 @@ export default function Coffe2({ lang = 'vi' }: Props) {
       `}</style>
 
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 shadow-sm bg-[#f7f9fb]/80 backdrop-blur-md">
+      <header data-section="nav" className="fixed top-0 w-full z-50 shadow-sm bg-[#f7f9fb]/80 backdrop-blur-md">
         <nav className="flex justify-between items-center px-10 py-3 max-w-[1280px] mx-auto">
-          <a className="font-lexend text-2xl tracking-tight text-[#191c1e]" href="#">{t.nav.brand}</a>
+          <a data-field="nav.brand" className="font-lexend text-2xl tracking-tight text-[#191c1e]" href="#">{t.nav.brand}</a>
           <div className="hidden md:flex gap-6">
             <a className="text-secondary font-bold border-b-2 border-secondary text-base transition-all" href="#hero">{t.nav.home}</a>
             <a className="text-[#424752] hover:text-primary text-base transition-colors" href="#menu">{t.nav.menu}</a>
@@ -77,7 +77,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
 
       <main className="overflow-x-hidden">
         {/* Hero Slider */}
-        <section className="relative h-screen w-full pt-[72px]" id="hero">
+        <section data-section="hero" className="relative h-screen w-full pt-[72px]" id="hero">
           <div
             ref={sliderRef}
             className="flex h-full overflow-x-auto snap-x scroll-smooth"
@@ -88,10 +88,10 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${images[`slide_${i}`] ?? SLIDE_IMGS[i]}')` }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="relative z-10 h-full flex flex-col justify-end p-10 md:p-20 text-white">
-                  <h1 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] max-w-2xl mb-3">{slide.title}</h1>
-                  <p className="text-lg leading-[1.6] max-w-xl opacity-90">{slide.desc}</p>
+                  <h1 data-field={`hero.slides.${i}.title`} className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] max-w-2xl mb-3">{slide.title}</h1>
+                  <p data-field={`hero.slides.${i}.desc`} className="text-lg leading-[1.6] max-w-xl opacity-90">{slide.desc}</p>
                   <div className="mt-6">
-                    <button className="bg-[#00a9fd] text-[#003a5c] px-10 py-3 rounded-full text-sm font-medium hover:bg-[#cce5ff] transition-colors">{slide.btn}</button>
+                    <button data-field={`hero.slides.${i}.btn`} className="bg-[#00a9fd] text-[#003a5c] px-10 py-3 rounded-full text-sm font-medium hover:bg-[#cce5ff] transition-colors">{slide.btn}</button>
                   </div>
                 </div>
               </div>
@@ -118,11 +118,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         </div>
 
         {/* Best Sellers */}
-        <section className="py-20 px-6 max-w-[1280px] mx-auto relative z-10">
+        <section data-section="bestsellers" className="py-20 px-6 max-w-[1280px] mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
             <div>
-              <span className="text-secondary text-sm font-medium uppercase tracking-widest">{t.bestsellers.badge}</span>
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold mt-1">{t.bestsellers.title}</h2>
+              <span data-field="bestsellers.badge" className="text-secondary text-sm font-medium uppercase tracking-widest">{t.bestsellers.badge}</span>
+              <h2 data-field="bestsellers.title" className="font-lexend text-[32px] leading-[1.3] font-semibold mt-1">{t.bestsellers.title}</h2>
             </div>
             <div className="flex gap-3">
               <button className="p-3 rounded-full border border-[#c2c6d4] hover:bg-[#eceef0] transition-all">
@@ -139,10 +139,10 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                 <div className="aspect-square overflow-hidden rounded-xl mb-6">
                   <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`bestsellers_items_${i}`] ?? BESTSELLER_IMGS[i]} alt={item.name} />
                 </div>
-                <h3 className="font-lexend text-2xl font-semibold">{item.name}</h3>
-                <p className="text-[#424752] mb-6 text-base">{item.desc}</p>
+                <h3 data-field={`bestsellers.items.${i}.name`} className="font-lexend text-2xl font-semibold">{item.name}</h3>
+                <p data-field={`bestsellers.items.${i}.desc`} className="text-[#424752] mb-6 text-base">{item.desc}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-primary font-bold text-2xl">{item.price}</span>
+                  <span data-field={`bestsellers.items.${i}.price`} className="text-primary font-bold text-2xl">{item.price}</span>
                   <button className="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined">add</span>
                   </button>
@@ -153,11 +153,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         </section>
 
         {/* Menu Tabs */}
-        <section className="py-20 bg-[#f2f4f6] relative z-10" id="menu">
+        <section data-section="menuSection" className="py-20 bg-[#f2f4f6] relative z-10" id="menu">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-20">
-              <h2 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em]">{t.menuSection.title}</h2>
-              <p className="text-[#424752] mt-3 max-w-lg mx-auto">{t.menuSection.subtitle}</p>
+              <h2 data-field="menuSection.title" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em]">{t.menuSection.title}</h2>
+              <p data-field="menuSection.subtitle" className="text-[#424752] mt-3 max-w-lg mx-auto">{t.menuSection.subtitle}</p>
             </div>
             <div className="flex justify-center mb-10">
               <div className="inline-flex p-1 bg-white rounded-full shadow-sm border border-[#c2c6d4]">
@@ -193,7 +193,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         </section>
 
         {/* Space Section */}
-        <section className="py-20 px-6 max-w-[1280px] mx-auto relative z-10" id="space">
+        <section data-section="space" className="py-20 px-6 max-w-[1280px] mx-auto relative z-10" id="space">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-20">
@@ -202,9 +202,9 @@ export default function Coffe2({ lang = 'vi' }: Props) {
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#cce5ff] rounded-full -z-10 blur-3xl opacity-50" />
             </div>
             <div>
-              <span className="text-secondary text-sm font-medium uppercase tracking-widest">{t.space.badge}</span>
-              <h2 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mt-1 mb-6">{t.space.title}</h2>
-              <p className="text-[#424752] text-lg leading-[1.6] mb-10">{t.space.desc}</p>
+              <span data-field="space.badge" className="text-secondary text-sm font-medium uppercase tracking-widest">{t.space.badge}</span>
+              <h2 data-field="space.title" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mt-1 mb-6">{t.space.title}</h2>
+              <p data-field="space.desc" className="text-[#424752] text-lg leading-[1.6] mb-10">{t.space.desc}</p>
               <div className="grid grid-cols-2 gap-6">
                 {t.space.amenities.map((a, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -221,9 +221,9 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 bg-primary/10 relative z-10 overflow-hidden">
+        <section data-section="testimonials" className="py-20 bg-primary/10 relative z-10 overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-6 relative z-20">
-            <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-center mb-20">{t.testimonials.title}</h2>
+            <h2 data-field="testimonials.title" className="font-lexend text-[32px] leading-[1.3] font-semibold text-center mb-20">{t.testimonials.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {(Array.isArray(t.testimonials.items) ? t.testimonials.items : []).map((item, i) => (
                 <div key={i} className="p-10 rounded-2xl" style={glassCard}>
@@ -249,25 +249,25 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         </section>
 
         {/* Location */}
-        <section className="py-20 px-6 max-w-[1280px] mx-auto relative z-10" id="location">
+        <section data-section="location" className="py-20 px-6 max-w-[1280px] mx-auto relative z-10" id="location">
           <div className="flex flex-col md:flex-row gap-20">
             <div className="md:w-1/3">
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold mb-6">{t.location.title}</h2>
+              <h2 data-field="location.title" className="font-lexend text-[32px] leading-[1.3] font-semibold mb-6">{t.location.title}</h2>
               <div className="space-y-6">
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined text-primary">location_on</span>
-                  <p className="text-base">{t.location.address}</p>
+                  <p data-field="location.address" className="text-base">{t.location.address}</p>
                 </div>
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined text-primary">schedule</span>
                   <div>
                     <p className="font-bold">{t.location.hoursLabel}</p>
-                    <p className="text-base">{t.location.hours}</p>
+                    <p data-field="location.hours" className="text-base">{t.location.hours}</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined text-primary">call</span>
-                  <p className="text-base">{t.location.phone}</p>
+                  <p data-field="location.phone" className="text-base">{t.location.phone}</p>
                 </div>
                 <div className="pt-6">
                   <button className="bg-primary text-white px-10 py-3 rounded-full text-sm font-medium hover:shadow-lg transition-all w-full">{t.location.directionsBtn}</button>
@@ -293,11 +293,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
       </main>
 
       {/* Footer */}
-      <footer className="w-full relative border-t border-[#c2c6d4] bg-white py-20">
+      <footer data-section="footer" className="w-full relative border-t border-[#c2c6d4] bg-white py-20">
         <div className="flex flex-col md:flex-row justify-between items-center px-10 max-w-[1280px] mx-auto gap-6">
           <div className="text-center md:text-left">
-            <a className="font-lexend text-2xl text-[#191c1e]" href="#">{t.footer.brand}</a>
-            <p className="text-[#424752] text-base max-w-xs mt-3">{t.footer.desc}</p>
+            <a data-field="footer.brand" className="font-lexend text-2xl text-[#191c1e]" href="#">{t.footer.brand}</a>
+            <p data-field="footer.desc" className="text-[#424752] text-base max-w-xs mt-3">{t.footer.desc}</p>
           </div>
           <div className="flex gap-10">
             <div className="flex flex-col gap-3">
@@ -320,7 +320,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
           </div>
         </div>
         <div className="max-w-[1280px] mx-auto px-10 mt-20 pt-10 border-t border-[#c2c6d4] text-center opacity-70">
-          <p className="text-base">{t.footer.copyright}</p>
+          <p data-field="footer.copyright" className="text-base">{t.footer.copyright}</p>
         </div>
       </footer>
 

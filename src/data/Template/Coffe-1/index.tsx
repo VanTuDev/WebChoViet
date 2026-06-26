@@ -30,9 +30,9 @@ export default function Coffe1({ lang = 'vi' }: Props) {
   return (
     <div className="bg-[#f7f9fb] font-inter text-[#191c1e] antialiased">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 backdrop-blur-md shadow-sm">
+      <header data-section="nav" className="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 backdrop-blur-md shadow-sm">
         <div className="flex justify-between items-center h-20 px-6 max-w-[1280px] mx-auto">
-          <div className="font-lexend text-2xl font-bold text-[#191c1e]">{t.nav.brand}</div>
+          <div data-field="nav.brand" className="font-lexend text-2xl font-bold text-[#191c1e]">{t.nav.brand}</div>
           <nav className="hidden md:flex gap-6 text-base">
             <a className="text-[#424752] hover:text-primary px-3 py-2 rounded-lg hover:bg-primary/5 transition-all duration-200" href="#">{t.nav.features}</a>
             <a className="text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2" href="#">{t.nav.templates}</a>
@@ -48,7 +48,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
 
       <main className="pt-20">
         {/* Hero */}
-        <section className="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+        <section data-section="hero" className="relative min-h-[921px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div
               className="bg-cover bg-center w-full h-full opacity-60"
@@ -58,21 +58,21 @@ export default function Coffe1({ lang = 'vi' }: Props) {
           </div>
           <div className="relative z-10 max-w-[1280px] mx-auto px-6 w-full flex flex-col md:flex-row items-center gap-20">
             <div className="flex-1 text-center md:text-left space-y-6">
-              <span className="inline-block py-1 px-3 rounded-full bg-[#E8F0E6] text-[#2E4E3F] text-sm font-medium tracking-[0.01em] border border-[#2E4E3F]/20">
+              <span data-field="hero.badge" className="inline-block py-1 px-3 rounded-full bg-[#E8F0E6] text-[#2E4E3F] text-sm font-medium tracking-[0.01em] border border-[#2E4E3F]/20">
                 {t.hero.badge}
               </span>
               <h1 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] text-[#191c1e]">
-                {t.hero.title}<br />
-                <span className="text-[#2E4E3F]">{t.hero.titleHighlight}</span>
+                <span data-field="hero.title">{t.hero.title}</span><br />
+                <span data-field="hero.titleHighlight" className="text-[#2E4E3F]">{t.hero.titleHighlight}</span>
               </h1>
-              <p className="text-lg leading-[1.6] text-[#424752] max-w-xl mx-auto md:mx-0">{t.hero.subtitle}</p>
+              <p data-field="hero.subtitle" className="text-lg leading-[1.6] text-[#424752] max-w-xl mx-auto md:mx-0">{t.hero.subtitle}</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-3">
-                <button className="text-sm font-medium bg-[#2E4E3F] text-white rounded-full px-8 py-4 hover:bg-[#2E4E3F]/90 transition-all shadow-md hover:shadow-lg active:scale-95">
+                <button data-field="hero.btnBook" className="text-sm font-medium bg-[#2E4E3F] text-white rounded-full px-8 py-4 hover:bg-[#2E4E3F]/90 transition-all shadow-md hover:shadow-lg active:scale-95">
                   {t.hero.btnBook}
                 </button>
                 <button className="text-sm font-medium bg-white border border-[#c2c6d4] text-[#191c1e] rounded-full px-8 py-4 hover:bg-[#f2f4f6] transition-all flex items-center justify-center gap-2">
                   <span className="material-symbols-outlined text-[#2E4E3F]">menu_book</span>
-                  {t.hero.btnMenu}
+                  <span data-field="hero.btnMenu">{t.hero.btnMenu}</span>
                 </button>
               </div>
             </div>
@@ -92,11 +92,11 @@ export default function Coffe1({ lang = 'vi' }: Props) {
         </section>
 
         {/* Signature Drinks */}
-        <section className="py-20 bg-[#f7f9fb]">
+        <section data-section="drinks" className="py-20 bg-[#f7f9fb]">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center space-y-3 mb-20">
-              <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.drinks.sectionTitle}</h2>
-              <p className="text-base leading-[1.6] text-[#424752] max-w-2xl mx-auto">{t.drinks.sectionSubtitle}</p>
+              <h2 data-field="drinks.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.drinks.sectionTitle}</h2>
+              <p data-field="drinks.sectionSubtitle" className="text-base leading-[1.6] text-[#424752] max-w-2xl mx-auto">{t.drinks.sectionSubtitle}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Item 1 */}
@@ -107,10 +107,10 @@ export default function Coffe1({ lang = 'vi' }: Props) {
                 </div>
                 <div className="p-10">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-lexend text-2xl leading-[1.4] font-semibold text-[#191c1e]">{t.drinks.items[0].name}</h3>
-                    <span className="text-sm font-medium text-[#8B5A2B] bg-[#f2f4f6] px-2 py-1 rounded-md">{t.drinks.items[0].price}</span>
+                    <h3 data-field="drinks.items.0.name" className="font-lexend text-2xl leading-[1.4] font-semibold text-[#191c1e]">{t.drinks.items[0].name}</h3>
+                    <span data-field="drinks.items.0.price" className="text-sm font-medium text-[#8B5A2B] bg-[#f2f4f6] px-2 py-1 rounded-md">{t.drinks.items[0].price}</span>
                   </div>
-                  <p className="text-base leading-[1.6] text-[#424752] mb-6">{t.drinks.items[0].desc}</p>
+                  <p data-field="drinks.items.0.desc" className="text-base leading-[1.6] text-[#424752] mb-6">{t.drinks.items[0].desc}</p>
                   <button className="w-full py-2 rounded-full border border-[#2E4E3F] text-[#2E4E3F] text-sm font-medium hover:bg-[#2E4E3F] hover:text-white transition-colors">{t.drinks.addToOrder}</button>
                 </div>
               </div>
@@ -122,10 +122,10 @@ export default function Coffe1({ lang = 'vi' }: Props) {
                 </div>
                 <div className="p-10">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-lexend text-2xl leading-[1.4] font-semibold text-[#191c1e]">{t.drinks.items[1].name}</h3>
-                    <span className="text-sm font-medium text-[#8B5A2B] bg-[#f2f4f6] px-2 py-1 rounded-md">{t.drinks.items[1].price}</span>
+                    <h3 data-field="drinks.items.1.name" className="font-lexend text-2xl leading-[1.4] font-semibold text-[#191c1e]">{t.drinks.items[1].name}</h3>
+                    <span data-field="drinks.items.1.price" className="text-sm font-medium text-[#8B5A2B] bg-[#f2f4f6] px-2 py-1 rounded-md">{t.drinks.items[1].price}</span>
                   </div>
-                  <p className="text-base leading-[1.6] text-[#424752] mb-6">{t.drinks.items[1].desc}</p>
+                  <p data-field="drinks.items.1.desc" className="text-base leading-[1.6] text-[#424752] mb-6">{t.drinks.items[1].desc}</p>
                   <button className="w-full py-2 rounded-full border border-[#2E4E3F] text-[#2E4E3F] text-sm font-medium hover:bg-[#2E4E3F] hover:text-white transition-colors">{t.drinks.addToOrder}</button>
                 </div>
               </div>
@@ -138,10 +138,10 @@ export default function Coffe1({ lang = 'vi' }: Props) {
                 </div>
                 <div className="p-10">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-lexend text-2xl leading-[1.4] font-semibold text-[#191c1e]">{t.drinks.items[2].name}</h3>
-                    <span className="text-sm font-medium text-[#8B5A2B] bg-[#f2f4f6] px-2 py-1 rounded-md">{t.drinks.items[2].price}</span>
+                    <h3 data-field="drinks.items.2.name" className="font-lexend text-2xl leading-[1.4] font-semibold text-[#191c1e]">{t.drinks.items[2].name}</h3>
+                    <span data-field="drinks.items.2.price" className="text-sm font-medium text-[#8B5A2B] bg-[#f2f4f6] px-2 py-1 rounded-md">{t.drinks.items[2].price}</span>
                   </div>
-                  <p className="text-base leading-[1.6] text-[#424752] mb-6">{t.drinks.items[2].desc}</p>
+                  <p data-field="drinks.items.2.desc" className="text-base leading-[1.6] text-[#424752] mb-6">{t.drinks.items[2].desc}</p>
                   <button className="w-full py-2 rounded-full border border-[#2E4E3F] text-[#2E4E3F] text-sm font-medium hover:bg-[#2E4E3F] hover:text-white transition-colors">{t.drinks.addToOrder}</button>
                 </div>
               </div>
@@ -150,12 +150,12 @@ export default function Coffe1({ lang = 'vi' }: Props) {
         </section>
 
         {/* Gallery */}
-        <section className="py-20 bg-[#E8F0E6]/30">
+        <section data-section="gallery" className="py-20 bg-[#E8F0E6]/30">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-3">
               <div className="space-y-3">
-                <h2 className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.gallery.sectionTitle}</h2>
-                <p className="text-base leading-[1.6] text-[#424752]">{t.gallery.sectionSubtitle}</p>
+                <h2 data-field="gallery.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.gallery.sectionTitle}</h2>
+                <p data-field="gallery.sectionSubtitle" className="text-base leading-[1.6] text-[#424752]">{t.gallery.sectionSubtitle}</p>
               </div>
               <button className="text-[#2E4E3F] text-sm font-medium flex items-center gap-1 hover:opacity-80">
                 {t.gallery.viewAll} <span className="material-symbols-outlined">arrow_forward</span>
@@ -183,10 +183,10 @@ export default function Coffe1({ lang = 'vi' }: Props) {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-20 bg-[#eceef0]">
+      <footer data-section="footer" className="w-full py-20 bg-[#eceef0]">
         <div className="flex flex-col md:flex-row justify-between items-center px-6 max-w-[1280px] mx-auto gap-6">
-          <div className="font-lexend text-2xl font-bold text-[#191c1e]">{t.footer.brand}</div>
-          <div className="text-sm font-medium text-secondary">{t.footer.copyright}</div>
+          <div data-field="footer.brand" className="font-lexend text-2xl font-bold text-[#191c1e]">{t.footer.brand}</div>
+          <div data-field="footer.copyright" className="text-sm font-medium text-secondary">{t.footer.copyright}</div>
           <nav className="flex gap-6 text-sm font-medium">
             <a className="text-[#424752] hover:text-primary hover:opacity-80 transition-opacity cursor-pointer" href="#">{t.footer.privacy}</a>
             <a className="text-[#424752] hover:text-primary hover:opacity-80 transition-opacity cursor-pointer" href="#">{t.footer.terms}</a>

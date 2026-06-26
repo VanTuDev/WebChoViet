@@ -24,7 +24,7 @@ export default function LoginPage() {
   const handleGoogleLogin = () => {
     // TODO: tích hợp Google OAuth thực tế
     showSnackbar('Đăng nhập thành công! Chào mừng bạn.', 'success');
-    navigate(ROUTES.DASHBOARD_PROJECTS);
+    navigate(ROUTES.MARKETPLACE);
   };
 
   return (

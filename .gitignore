@@ -22,3 +22,7 @@ logs/
 # Editor
 .idea/
 .vscode/settings.json
+
+# Published site data (large, environment-specific)
+data/sites/*.json
+data/db.json

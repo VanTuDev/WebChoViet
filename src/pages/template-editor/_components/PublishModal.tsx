@@ -50,7 +50,7 @@ export default function PublishModal({
   const [countdown, setCountdown] = useState(15 * 60);
   const isFree = templatePrice === 0;
   const slugPreview = slugify(name || siteName);
-  const liveUrl = `${window.location.origin}/p/${finalSlug || slugPreview}`;
+  const liveUrl = `${window.location.origin}/${finalSlug || slugPreview}`;
 
   useEffect(() => {
     if (step !== 'payment') return;
@@ -135,7 +135,7 @@ export default function PublishModal({
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-400">URL live</span>
-                  <span className="font-mono text-[#0056b3] truncate max-w-[150px]">/p/{slugPreview}</span>
+                  <span className="font-mono text-[#0056b3] truncate max-w-45">/{slugPreview}</span>
                 </div>
                 <div className="flex items-center justify-between pt-1.5 border-t border-gray-100">
                   <span className="text-gray-500 font-medium">Chi phí</span>

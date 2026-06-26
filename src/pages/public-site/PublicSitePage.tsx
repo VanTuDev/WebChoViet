@@ -98,7 +98,7 @@ export default function PublicSitePage() {
       <p className="text-gray-500 text-sm mb-2">
         Đường dẫn{' '}
         <code className="bg-white border border-gray-200 px-1.5 py-0.5 rounded font-mono text-xs">
-          /p/{slug}
+          /{slug}
         </code>{' '}
         chưa được xuất bản hoặc không tồn tại.
       </p>
