@@ -1,0 +1,29 @@
+{
+  "shopName": "Boba Station",
+  "tagline": "Trà Sữa Thủ Công Chuẩn Vị Đài Loan",
+  "nav": { "menu": "Thực Đơn", "about": "Về Chúng Tôi", "orderNow": "Đặt Ngay" },
+  "hero": {
+    "badge": "🧋 Thủ Công · Tươi Mới · Ngon",
+    "title": "Trà Sữa Chân Châu Handmade",
+    "desc": "Mỗi ly trà được pha chế tỉ mỉ với nguyên liệu tươi ngon nhất từ Đài Loan. Vị ngọt vừa phải, trân châu dẻo dai chuẩn vị.",
+    "btnOrder": "Đặt Hàng Ngay",
+    "btnMenu": "Xem Thực Đơn"
+  },
+  "menu": {
+    "title": "Thực Đơn Nổi Bật",
+    "items": [
+      { "name": "Classic Milk Tea", "price": "35.000đ", "desc": "Trà đen pha sữa tươi nguyên kem, chân châu trắng" },
+      { "name": "Taro Milk Tea", "price": "39.000đ", "desc": "Trà sữa khoai môn tím đặc biệt, vị béo ngậy" },
+      { "name": "Brown Sugar Boba", "price": "45.000đ", "desc": "Chân châu đường nâu xào caramel, sữa tươi nguyên chất" },
+      { "name": "Matcha Latte", "price": "42.000đ", "desc": "Matcha Nhật hảo hạng pha với sữa yến mạch" },
+      { "name": "Strawberry Fruit Tea", "price": "38.000đ", "desc": "Trà hoa quả dâu tây tươi, thanh mát" },
+      { "name": "Cheese Tea", "price": "48.000đ", "desc": "Trà đen với foam cream phô mai mặn ngọt đặc biệt" }
+    ]
+  },
+  "info": {
+    "hours": "08:00 – 22:00",
+    "phone": "0909 888 666",
+    "address": "123 Nguyễn Huệ, Q.1, TP.HCM"
+  },
+  "footer": { "copy": "© 2025 Boba Station. Được tạo bởi WebChoViet." }
+}

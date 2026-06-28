@@ -1,8 +1,28 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { Search, Plus, Menu, X } from 'lucide-react';
-import { useAppContext } from '../../store/AppContext';
+import { Search, Plus, Menu, X, LogOut } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
+
+// ── Shared Logo — dùng ở cả 2 variant ────────────────────────────────────────
+
+function Logo({ badge }: { badge?: string }) {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => navigate(ROUTES.MARKETPLACE)}
+      className="flex items-center gap-2 font-lexend font-extrabold text-xl tracking-tight text-slate-900 cursor-pointer select-none shrink-0 outline-none"
+    >
+      web<span className="text-primary">choviet</span>
+      {badge && (
+        <span className="hidden sm:inline-flex text-[9px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase tracking-wide">
+          {badge}
+        </span>
+      )}
+    </button>
+  );
+}
+
+// ── Types ─────────────────────────────────────────────────────────────────────
 
 interface SiteHeaderProps {
   variant?: 'landing' | 'app';
@@ -13,11 +33,13 @@ type NavLink =
   | { label: string; type: 'anchor'; href: string }
   | { label: string; type: 'route'; path: string };
 
+// ── Nav config ────────────────────────────────────────────────────────────────
+
 const LANDING_NAV: NavLink[] = [
   { label: 'Tính năng',     type: 'anchor', href: '#features' },
   { label: 'Kho giao diện', type: 'route',  path: ROUTES.MARKETPLACE },
-  { label: 'Bảng giá',     type: 'route',  path: ROUTES.PRICING },
-  { label: 'Tài nguyên',   type: 'route',  path: ROUTES.TUTORIALS },
+  { label: 'Bảng giá',      type: 'route',  path: ROUTES.PRICING },
+  { label: 'Hướng dẫn',     type: 'route',  path: ROUTES.TUTORIALS },
 ];
 
 const APP_NAV: NavLink[] = [
@@ -27,12 +49,24 @@ const APP_NAV: NavLink[] = [
   { label: 'Hướng Dẫn',     type: 'route', path: ROUTES.TUTORIALS },
 ];
 
+// ── Main component ────────────────────────────────────────────────────────────
+
 export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { openCreateModal } = useAppContext();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [avatarOpen, setAvatarOpen] = useState(false);
+  const avatarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!avatarOpen) return;
+    const close = (e: MouseEvent) => {
+      if (!avatarRef.current?.contains(e.target as Node)) setAvatarOpen(false);
+    };
+    document.addEventListener('mousedown', close);
+    return () => document.removeEventListener('mousedown', close);
+  }, [avatarOpen]);
 
   const isLanding = variant === 'landing';
   const isOnMarketplace = location.pathname.startsWith('/marketplace');
@@ -57,67 +91,74 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
 
   const navLinks = isLanding ? LANDING_NAV : APP_NAV;
   const handleLoginClick = onShowLogin ?? (() => navigate(ROUTES.LOGIN));
-
   const closeMobile = () => setMobileOpen(false);
 
-  /* ── Landing variant ────────────────────────────────────────────────── */
+  // ── Shared nav link renderer ────────────────────────────────────────────────
+  function NavItem({ link, mobile = false }: { link: NavLink; mobile?: boolean }) {
+    const baseClass = mobile
+      ? 'block w-full text-left py-3 text-sm font-medium border-b border-gray-50 last:border-0 transition-colors cursor-pointer'
+      : 'relative hover:text-slate-900 transition-colors cursor-pointer outline-none whitespace-nowrap';
+
+    if (link.type === 'anchor') {
+      return (
+        <a
+          href={link.href}
+          onClick={mobile ? closeMobile : undefined}
+          className={`${baseClass} text-gray-600 hover:text-primary`}
+        >
+          {link.label}
+        </a>
+      );
+    }
+
+    const active = !isLanding && isActive(link.path);
+    return (
+      <button
+        onClick={() => { navigate(link.path); if (mobile) closeMobile(); }}
+        className={`${baseClass} ${
+          active
+            ? 'text-primary font-semibold'
+            : mobile
+              ? 'text-gray-700 hover:text-primary'
+              : 'text-slate-500 hover:text-slate-900'
+        }`}
+      >
+        {link.label}
+        {active && !mobile && (
+          <span className="absolute -bottom-4.5 left-0 right-0 h-0.5 bg-primary rounded-full" />
+        )}
+      </button>
+    );
+  }
+
+  // ── Landing variant ─────────────────────────────────────────────────────────
   if (isLanding) {
     return (
       <nav className="fixed top-0 left-0 w-full z-40 bg-surface/80 backdrop-blur-md shadow-md shadow-primary/5">
-        <div className="max-w-[1280px] mx-auto px-5 py-3 flex items-center justify-between gap-4">
-          {/* Logo */}
-          <a
-            href="/"
-            className="flex items-center font-lexend font-extrabold text-xl tracking-tight text-on-surface select-none shrink-0"
-          >
-            web<span className="text-primary">choviet</span>
-          </a>
+        <div className="max-w-7xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
+          <Logo />
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6 flex-1 justify-center">
-            {navLinks.map(link => {
-              if (link.type === 'anchor') {
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-on-surface-variant font-inter font-medium text-sm hover:text-secondary-container transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                );
-              }
-              return (
-                <button
-                  key={link.label}
-                  onClick={() => navigate(link.path)}
-                  className="text-on-surface-variant font-inter font-medium text-sm hover:text-secondary-container transition-colors cursor-pointer outline-none"
-                >
-                  {link.label}
-                </button>
-              );
-            })}
+            {navLinks.map(link => <NavItem key={link.label} link={link} />)}
           </div>
 
-          {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <button
-              className="font-inter font-medium text-sm text-primary hover:text-secondary-container transition-colors px-3 py-1 cursor-pointer"
+              className="font-inter font-medium text-sm text-primary hover:text-primary/80 transition-colors px-3 py-1 cursor-pointer"
               onClick={handleLoginClick}
             >
               Đăng nhập
             </button>
             <button
-              className="bg-secondary-container text-on-secondary-container font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:brightness-105 transition-all cursor-pointer"
+              className="bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
               onClick={handleLoginClick}
             >
               Đăng ký
             </button>
           </div>
 
-          {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-lg text-on-surface hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-gray-100 transition-colors"
             onClick={() => setMobileOpen(v => !v)}
             aria-label="Menu"
           >
@@ -125,32 +166,9 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
           </button>
         </div>
 
-        {/* Mobile menu panel */}
         {mobileOpen && (
           <div className="md:hidden bg-white border-t border-gray-100 px-5 pb-5 pt-3 space-y-1 shadow-lg">
-            {navLinks.map(link => {
-              if (link.type === 'anchor') {
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={closeMobile}
-                    className="block py-2.5 text-sm font-medium text-gray-700 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                );
-              }
-              return (
-                <button
-                  key={link.label}
-                  onClick={() => { navigate(link.path); closeMobile(); }}
-                  className="block w-full text-left py-2.5 text-sm font-medium text-gray-700 hover:text-primary transition-colors cursor-pointer"
-                >
-                  {link.label}
-                </button>
-              );
-            })}
+            {navLinks.map(link => <NavItem key={link.label} link={link} mobile />)}
             <div className="flex flex-col gap-2 pt-3 border-t border-gray-100">
               <button
                 className="w-full py-2.5 text-sm font-semibold text-primary border border-primary rounded-full hover:bg-primary/5 transition-colors cursor-pointer"
@@ -171,92 +189,58 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
     );
   }
 
-  /* ── App variant ────────────────────────────────────────────────────── */
+  // ── App variant ─────────────────────────────────────────────────────────────
   return (
-    <>
-      <header className="shrink-0 z-40 w-full border-b border-slate-100/80 bg-white/95 backdrop-blur-md">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
+    <header className="shrink-0 z-40 w-full border-b border-slate-100/80 bg-white/95 backdrop-blur-md">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
 
-          {/* Logo */}
-          <button
-            onClick={() => navigate(ROUTES.HOME)}
-            className="flex items-center gap-2 font-lexend font-extrabold text-lg tracking-tight text-slate-900 cursor-pointer select-none shrink-0"
-          >
-            web<span className="text-[#0056b3]">choviet</span>
-            <span className="hidden sm:inline-flex text-[9px] font-bold bg-[#0056b3]/10 text-[#0056b3] px-2 py-0.5 rounded-full uppercase tracking-wide">
-              Beta
+        <Logo badge="Beta" />
+
+        <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium flex-1 justify-center">
+          {navLinks.map(link => <NavItem key={link.label} link={link} />)}
+        </nav>
+
+        <div className="flex items-center gap-2 shrink-0">
+          {/* Search */}
+          <div className="relative w-44 lg:w-60 hidden sm:block">
+            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 pointer-events-none">
+              <Search className="h-3.5 w-3.5" />
             </span>
+            <input
+              type="text"
+              placeholder="Tìm kiếm mẫu..."
+              value={searchQuery}
+              onChange={e => handleSearch(e.target.value)}
+              className="w-full rounded-full border border-gray-200 bg-gray-50/60 py-1.5 pl-8 pr-3 text-xs transition-colors focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary/20"
+            />
+          </div>
+
+          {/* CTA */}
+          <button
+            onClick={() => navigate(ROUTES.MARKETPLACE)}
+            className="flex items-center gap-1.5 rounded-full bg-primary hover:bg-primary/90 transition-all px-2.5 sm:px-3.5 py-2 text-xs font-semibold text-white cursor-pointer shadow-sm hover:shadow-md active:scale-95 whitespace-nowrap"
+          >
+            <Plus className="h-3.5 w-3.5 shrink-0" />
+            <span className="hidden sm:inline">Tạo Web Mới</span>
           </button>
 
-          {/* Desktop nav — center */}
-          <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium text-slate-500 flex-1 justify-center">
-            {navLinks.map(link => {
-              if (link.type === 'anchor') {
-                return (
-                  <a key={link.label} href={link.href} className="hover:text-slate-900 transition-colors whitespace-nowrap">
-                    {link.label}
-                  </a>
-                );
-              }
-              const active = isActive(link.path);
-              return (
-                <button
-                  key={link.label}
-                  onClick={() => navigate(link.path)}
-                  className={`relative hover:text-slate-900 transition-colors cursor-pointer outline-none whitespace-nowrap ${
-                    active ? 'text-[#0056b3] font-semibold' : ''
-                  }`}
-                >
-                  {link.label}
-                  {active && (
-                    <span className="absolute -bottom-[18px] left-0 right-0 h-0.5 bg-[#0056b3] rounded-full" />
-                  )}
-                </button>
-              );
-            })}
-          </nav>
-
-          {/* Right actions */}
-          <div className="flex items-center gap-2 shrink-0">
-            {/* Search — hidden on mobile */}
-            <div className="relative w-44 lg:w-60 hidden sm:block">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 pointer-events-none">
-                <Search className="h-3.5 w-3.5" />
-              </span>
-              <input
-                type="text"
-                placeholder="Tìm kiếm mẫu..."
-                value={searchQuery}
-                onChange={e => handleSearch(e.target.value)}
-                className="w-full rounded-full border border-gray-200 bg-gray-50/60 py-1.5 pl-8 pr-3 text-xs transition-colors focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#0056b3]/20"
-              />
-            </div>
-
-            {/* CTA button — icon-only on very small screens, full label from sm up */}
-            <button
-              onClick={openCreateModal}
-              id="create-new-btn"
-              className="flex items-center gap-1.5 rounded-full bg-[#0056b3] hover:bg-[#003f87] transition-all px-2.5 sm:px-3.5 py-2 text-xs font-semibold text-white cursor-pointer shadow-sm hover:shadow-md active:scale-95 whitespace-nowrap"
-            >
-              <Plus className="h-3.5 w-3.5 shrink-0" />
-              <span className="hidden sm:inline">Tạo Web Mới</span>
-            </button>
-
-            {/* Avatar */}
-            <div className="relative group cursor-pointer ml-1 pl-2 border-l border-gray-100">
-              <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
-                alt="Avatar"
-                referrerPolicy="no-referrer"
-                className="h-8 w-8 rounded-full border border-gray-200 object-cover hover:shadow transition-shadow"
-              />
-              <div className="absolute right-0 top-11 w-52 rounded-xl border border-gray-100 bg-white p-3 shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50">
+          {/* Avatar */}
+          <div ref={avatarRef} className="relative ml-1 pl-2 border-l border-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+              alt="Avatar"
+              referrerPolicy="no-referrer"
+              onClick={() => setAvatarOpen(v => !v)}
+              className="h-8 w-8 rounded-full border border-gray-200 object-cover hover:shadow transition-shadow cursor-pointer"
+            />
+            {avatarOpen && (
+              <div className="absolute right-0 top-11 w-52 rounded-xl border border-gray-100 bg-white p-3 shadow-xl z-50">
                 <p className="text-[11px] text-gray-400">Tài khoản</p>
                 <p className="text-xs font-semibold text-gray-800 truncate mt-0.5">tunv.sw@gmail.com</p>
                 <div className="mt-2 border-t border-gray-100 pt-2 flex flex-col gap-1">
                   <button
-                    onClick={() => navigate(ROUTES.DASHBOARD_PROJECTS)}
-                    className="text-left text-xs text-gray-600 hover:text-[#0056b3] py-1 transition-colors"
+                    onClick={() => { navigate(ROUTES.DASHBOARD_PROJECTS); setAvatarOpen(false); }}
+                    className="text-left text-xs text-gray-600 hover:text-primary py-1 transition-colors cursor-pointer"
                   >
                     Quản lý dự án
                   </button>
@@ -264,80 +248,59 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
                     Gói miễn phí dư dả
                   </span>
                 </div>
-              </div>
-            </div>
-
-            {/* Mobile hamburger */}
-            <button
-              className="md:hidden p-1.5 rounded-lg text-slate-600 hover:bg-gray-100 transition-colors ml-1"
-              onClick={() => setMobileOpen(v => !v)}
-              aria-label="Mở menu"
-            >
-              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu drawer */}
-        {mobileOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
-            {/* Search on mobile */}
-            <div className="px-4 pt-3 pb-2">
-              <div className="relative w-full">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 pointer-events-none">
-                  <Search className="h-4 w-4" />
-                </span>
-                <input
-                  type="text"
-                  placeholder="Tìm kiếm mẫu..."
-                  value={searchQuery}
-                  onChange={e => handleSearch(e.target.value)}
-                  className="w-full rounded-full border border-gray-200 bg-gray-50 py-2 pl-9 pr-4 text-sm focus:border-[#0056b3] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#0056b3]/20"
-                />
-              </div>
-            </div>
-
-            {/* Nav links */}
-            <nav className="px-4 pb-3 flex flex-col">
-              {navLinks.map(link => {
-                if (link.type === 'anchor') {
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      onClick={closeMobile}
-                      className="py-3 text-sm font-medium text-gray-700 hover:text-[#0056b3] border-b border-gray-50 last:border-0 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  );
-                }
-                const active = isActive(link.path);
-                return (
+                <div className="mt-2 border-t border-gray-100 pt-2">
                   <button
-                    key={link.label}
-                    onClick={() => { navigate(link.path); closeMobile(); }}
-                    className={`py-3 text-left text-sm font-medium border-b border-gray-50 last:border-0 transition-colors cursor-pointer ${
-                      active ? 'text-[#0056b3] font-semibold' : 'text-gray-700 hover:text-[#0056b3]'
-                    }`}
+                    onClick={() => { navigate('/landing'); setAvatarOpen(false); }}
+                    className="w-full flex items-center gap-2 text-left text-xs text-red-500 hover:text-red-600 hover:bg-red-50 px-2 py-1.5 rounded-lg transition-colors"
                   >
-                    {link.label}
+                    <LogOut className="h-3.5 w-3.5" />
+                    Đăng xuất
                   </button>
-                );
-              })}
-
-              {/* Mobile CTA */}
-              <button
-                onClick={() => { openCreateModal(); closeMobile(); }}
-                className="mt-3 w-full flex items-center justify-center gap-2 rounded-full bg-[#0056b3] hover:bg-[#003f87] px-4 py-2.5 text-sm font-semibold text-white cursor-pointer active:scale-95 transition-all shadow-sm"
-              >
-                <Plus className="h-4 w-4" />
-                Tạo Web Mới
-              </button>
-            </nav>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </header>
-    </>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-1.5 rounded-lg text-slate-600 hover:bg-gray-100 transition-colors ml-1"
+            onClick={() => setMobileOpen(v => !v)}
+            aria-label="Mở menu"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div className="px-4 pt-3 pb-2">
+            <div className="relative w-full">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 pointer-events-none">
+                <Search className="h-4 w-4" />
+              </span>
+              <input
+                type="text"
+                placeholder="Tìm kiếm mẫu..."
+                value={searchQuery}
+                onChange={e => handleSearch(e.target.value)}
+                className="w-full rounded-full border border-gray-200 bg-gray-50 py-2 pl-9 pr-4 text-sm focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary/20"
+              />
+            </div>
+          </div>
+          <nav className="px-4 pb-3 flex flex-col">
+            {navLinks.map(link => <NavItem key={link.label} link={link} mobile />)}
+            <button
+              onClick={() => { navigate(ROUTES.MARKETPLACE); closeMobile(); }}
+              className="mt-3 w-full flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary/90 px-4 py-2.5 text-sm font-semibold text-white cursor-pointer active:scale-95 transition-all shadow-sm"
+            >
+              <Plus className="h-4 w-4" />
+              Tạo Web Mới
+            </button>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }

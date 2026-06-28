@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Wedding Times - Hỷ &amp; Phúc Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Lexend:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fff8f7",
+                    "on-tertiary-fixed-variant": "#494646",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#ffe9e8",
+                    "primary-fixed-dim": "#ffb3b2",
+                    "surface-container-high": "#fce2e1",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffe088",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#735c00",
+                    "inverse-on-surface": "#ffedec",
+                    "primary-container": "#a82431",
+                    "inverse-surface": "#3c2d2c",
+                    "secondary-fixed-dim": "#e9c349",
+                    "inverse-primary": "#ffb3b2",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#ffbfbe",
+                    "surface": "#fff8f7",
+                    "tertiary-fixed": "#e8e1e0",
+                    "surface-tint": "#b02b36",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-background": "#251818",
+                    "surface-variant": "#f6dddc",
+                    "on-surface": "#251818",
+                    "surface-dim": "#edd4d3",
+                    "primary-fixed": "#ffdad9",
+                    "on-surface-variant": "#594140",
+                    "on-error": "#ffffff",
+                    "tertiary": "#434040",
+                    "tertiary-container": "#5b5757",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#e0bfbd",
+                    "tertiary-fixed-dim": "#cbc5c4",
+                    "surface-container-highest": "#f6dddc",
+                    "outline": "#8d706f",
+                    "surface-container-low": "#fff0ef",
+                    "background": "#fff8f7",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-fixed": "#1d1b1b",
+                    "primary": "#86041d",
+                    "on-primary-fixed": "#410008",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#fed65b",
+                    "on-secondary-container": "#745c00",
+                    "on-tertiary-container": "#d3cdcc",
+                    "on-primary-fixed-variant": "#8f0e22"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max": "1200px",
+                    "margin-mobile": "20px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Lexend"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Lexend"],
+                    "body-lg": ["Lexend"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fdfcf7; /* Newsprint cream */
+            color: #251818;
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+        }
+        .newspaper-border {
+            border-bottom: 2px solid #251818;
+            border-top: 2px solid #251818;
+        }
+        .newspaper-column {
+            column-rule: 1px solid #e0bfbd;
+        }
+        .dropcap::first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 8px;
+            font-family: 'Playfair Display', serif;
+            color: #86041d;
+            font-weight: 800;
+        }
+        .rsvp-dashed {
+            border: 2px dashed #8d706f;
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-primary-fixed-dim selection:text-primary overflow-x-hidden">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface docked full-width top-0 border-b-2 border-primary sticky z-50">
+<div class="flex justify-between items-center w-full px-gutter py-unit max-w-container-max mx-auto">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase tracking-tighter">THE WEDDING TIMES</h1>
+<div class="hidden md:flex gap-6 items-center">
+<span class="font-label-caps text-label-caps text-primary font-bold">TIN CHÍNH</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant hover:opacity-80 transition-opacity cursor-pointer">HÀNH TRÌNH</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant hover:opacity-80 transition-opacity cursor-pointer">SỰ KIỆN</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant hover:opacity-80 transition-opacity cursor-pointer">PHẢN HỒI</span>
+<div class="flex gap-2 ml-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-95 transition-transform" data-icon="share">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-95 transition-transform" data-icon="favorite">favorite</span>
+</div>
+</div>
+<button class="md:hidden material-symbols-outlined text-primary" data-icon="menu">menu</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-12 bg-white/40 shadow-xl my-8 relative">
+<!-- Newspaper Header Info -->
+<div class="flex flex-col md:flex-row justify-between items-center border-b-4 border-on-background pb-2 mb-1">
+<div class="font-label-caps text-label-caps uppercase">SỐ ĐẶC BIỆT: HỶ &amp; PHÚC</div>
+<div class="font-label-caps text-label-caps uppercase">CHỦ NHẬT, 24 THÁNG 12, 2024</div>
+<div class="font-label-caps text-label-caps uppercase font-bold text-primary">GIÁ: VÔ GIÁ</div>
+</div>
+<!-- Main Brand Branding Section -->
+<div class="text-center py-8 border-b-2 border-on-background mb-8">
+<h2 class="font-display-lg text-[60px] md:text-[120px] leading-none text-on-background tracking-tighter mb-2">HỶ &amp; PHÚC</h2>
+<p class="font-label-caps text-label-caps tracking-[0.3em] text-primary-container">WEDDING EDITION • PHIÊN BẢN GIỚI HẠN</p>
+</div>
+<!-- Headline -->
+<div class="mb-12 border-b border-outline-variant pb-6">
+<h3 class="font-headline-md md:text-display-lg text-center uppercase leading-tight italic text-on-background">
+                KẾT HÔN: MỘT CHƯƠNG MỚI BẮT ĐẦU
+            </h3>
+</div>
+<!-- News Layout (Bento-ish Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Column 1: The Couple (Left) -->
+<div class="lg:col-span-3 space-y-6">
+<div class="relative group overflow-hidden border border-outline p-1 bg-white">
+<img class="w-full grayscale transition-all duration-700 group-hover:grayscale-0" data-alt="A vintage-styled, black and white editorial wedding portrait of a stylish couple. The groom is in a classic tailored tuxedo and the bride wears a sophisticated silk gown with lace detailing. They are standing in a grand, sun-drenched colonial hallway with ornate tile flooring. The lighting is soft and cinematic, evoking a sense of timeless romance and high-end fashion photography with a grain texture typical of old film." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhwL0qrmUOg0D8AnlgRdHmrtoxA-uwNIR7rKfBX27zODVUpWJQYwofPV38viqUD6ZCEkypS_8bRUoLgB0xrDTc0QlGAkVbujMxivN18rafWeowS7RpjCIsmP-XK2IGtgrzGDKPXBRzg-Ybfkhq_e84QkQcTx3qrDVKxnsaxKbbdjEYDoKw3xzOWDrv8NcJaBUXgLCfPCE3Z8NAk8xU9RKL59PtcrJgxGngklwixW5ydi_7dK_dLwry7rK0QzgbMiDZ0gOs-FJwUrY"/>
+<div class="mt-4 text-center">
+<p class="font-headline-sm text-primary mb-1">Duy Mạnh &amp; Thu Phương</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant italic">Ảnh chụp tại Dinh Toàn Quyền, 2024</p>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-4">
+<h4 class="font-label-caps text-label-caps text-primary border-b border-primary mb-3 pb-1">NHÂN VẬT CHÍNH</h4>
+<div class="space-y-4">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant">CHÚ RỂ</p>
+<p class="font-body-md font-bold">NGUYỄN DUY MẠNH</p>
+<p class="font-body-md text-sm italic">"Kỹ sư cầu nối, người dẫn lối trái tim."</p>
+</div>
+<div class="h-px bg-outline-variant"></div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant">CÔ DÂU</p>
+<p class="font-body-md font-bold">PHẠM THU PHƯƠNG</p>
+<p class="font-body-md text-sm italic">"Kiến trúc sư của những giấc mơ hồng."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2 & 3: Story & Schedule (Middle & Right) -->
+<div class="lg:col-span-6 space-y-8 lg:px-6 lg:border-x lg:border-outline-variant">
+<article>
+<h4 class="font-headline-sm text-on-background mb-4 uppercase underline decoration-primary decoration-2 underline-offset-4">Câu Chuyện Của Chúng Tôi</h4>
+<div class="font-body-md text-on-surface text-justify md:columns-2 gap-6 space-y-4 newspaper-column">
+<p class="dropcap">Bắt đầu từ một buổi chiều mưa tại Hà Nội, hai tâm hồn xa lạ đã vô tình chạm mặt dưới hiên nhà cổ. Chẳng ai ngờ rằng, cuộc gặp gỡ định mệnh ấy lại là khởi đầu cho một hành trình dài 5 năm đầy ắp những kỷ niệm và thử thách.</p>
+<p>Chúng tôi đã cùng nhau đi qua những con phố cổ, chia sẻ từng tách cà phê trứng nóng hổi và những dự định tương lai. Tình yêu không chỉ là những lời hứa hẹn, mà là sự thấu hiểu thầm lặng qua từng ánh mắt.</p>
+<p>Ngày hôm nay, dưới sự chứng kiến của gia đình và bè bạn, chúng tôi chính thức đặt bút viết tiếp chương quan trọng nhất của cuộc đời mình. Một chương mang tên "Gia Đình".</p>
+</div>
+</article>
+<div class="p-6 bg-surface-container-low border-2 border-primary-container relative">
+<div class="absolute -top-3 -left-3 bg-primary text-white font-label-caps px-4 py-1 text-[10px]">TIN NÓNG</div>
+<h4 class="font-headline-sm text-primary mb-6 text-center border-b border-primary-container pb-2">Lịch Trình Lễ Cưới</h4>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="font-display-lg text-display-lg-mobile text-primary opacity-20">16:00</span>
+<div class="pt-2">
+<p class="font-body-md font-bold uppercase">Đón Khách</p>
+<p class="font-body-md text-sm text-on-surface-variant">Tiệc trà nhẹ và chụp ảnh kỷ niệm tại sảnh chính.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="font-display-lg text-display-lg-mobile text-primary opacity-20">17:30</span>
+<div class="pt-2">
+<p class="font-body-md font-bold uppercase">Hành Lễ</p>
+<p class="font-body-md text-sm text-on-surface-variant">Nghi thức trao nhẫn và thề nguyện thiêng liêng.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="font-display-lg text-display-lg-mobile text-primary opacity-20">18:30</span>
+<div class="pt-2">
+<p class="font-body-md font-bold uppercase">Tiệc Tối</p>
+<p class="font-body-md text-sm text-on-surface-variant">Khai tiệc mừng và những tiết mục âm nhạc đặc sắc.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 4: Map & Extras (Right) -->
+<div class="lg:col-span-3 space-y-8">
+<div class="border border-outline p-4 bg-white">
+<h4 class="font-label-caps text-label-caps text-primary border-b border-primary mb-4 pb-1 uppercase">Bản Đồ Chỉ Đường</h4>
+<div class="aspect-square bg-surface-variant mb-4 overflow-hidden relative border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A minimalist, hand-drawn style map of a luxury wedding venue in Ho Chi Minh City. The map features elegant calligraphic labels for landmarks, delicate floral illustrations in the corners, and a gold-line path leading to 'The Grand Palace'. The aesthetic is vintage architectural sketch with a soft cream background and subtle Heritage Red accents, looking like a printed insert from an old newspaper." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPgoTzgszuq6QtUSCvQCK7zI57UQu1ZkklTKXyCqGXSCkruw-16QYgRipTTxvnUAc7Zx6oMnSL-CadGdU631ZdEbWFnHQUEDJPHh4hksYAB8TqVImjhFEY_JZ4ApiA6Nt1sXMMF-JpE4k2Ct0vESp-1bEhIJmIA4XkmBgj7HFK9VhWlJxkWbxy-rsvmm726GR5PBEkMsQE9RBW3xlD_hed_jIISgispHAyEWCzs_bZYe-90DGfuGQ9Rj8hgdwB9qYrBUNPDh4QqEg')"></div>
+<div class="absolute bottom-2 right-2 bg-white/90 px-2 py-1 text-[10px] font-label-caps shadow-sm">VIEW ON GOOGLE MAPS</div>
+</div>
+<div class="text-sm font-body-md text-center">
+<p class="font-bold">The Grand Ballroom</p>
+<p class="text-on-surface-variant">123 Lê Lợi, Quận 1, TP. Hồ Chí Minh</p>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-6 rounded-none flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="apparel">apparel</span>
+<p class="font-label-caps text-label-caps mb-2">QUY ĐỊNH TRANG PHỤC</p>
+<p class="font-headline-sm italic">Black &amp; Red Tie</p>
+<p class="font-body-md text-xs mt-2 opacity-80">Chúng tôi trân trọng nếu quý khách mặc đúng tông màu để không gian thêm phần sang trọng.</p>
+</div>
+</div>
+</div>
+<!-- Floral Divider -->
+<div class="flex justify-center items-center my-16 gap-4">
+<div class="h-px w-24 bg-outline-variant"></div>
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_florist">local_florist</span>
+<div class="h-px w-24 bg-outline-variant"></div>
+</div>
+<!-- RSVP Section: Newspaper Cutout Style -->
+<section class="max-w-2xl mx-auto rsvp-dashed p-8 mb-12 bg-surface-container-low relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-surface-bright px-6 py-1 font-label-caps text-primary text-sm border-2 border-primary-container">
+                PHIẾU ĐĂNG KÝ THAM DỰ (RSVP)
+            </div>
+<div class="text-center mb-8 pt-4">
+<p class="font-body-md italic text-on-surface-variant">Làm ơn hãy phản hồi cho chúng tôi trước ngày 10/12/2024</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="font-label-caps text-[10px] text-primary">TÊN CỦA QUÝ KHÁCH</label>
+<input class="w-full bg-transparent border-b-2 border-outline focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-2 font-body-md placeholder:text-outline-variant transition-colors" placeholder="Nhập họ và tên..." type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-[10px] text-primary">SỐ LƯỢNG KHÁCH</label>
+<select class="w-full bg-transparent border-b-2 border-outline focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-2 font-body-md transition-colors">
+<option>01 Khách</option>
+<option>02 Khách</option>
+<option>Hơn 02 Khách</option>
+</select>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-[10px] text-primary">LỜI CHÚC GỬI ĐẾN CẶP ĐÔI</label>
+<textarea class="w-full bg-transparent border-b-2 border-outline focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-2 font-body-md placeholder:text-outline-variant resize-none transition-colors" placeholder="Gửi gắm tâm tình..." rows="3"></textarea>
+</div>
+<div class="flex justify-center pt-4">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-caps py-4 px-12 transition-all active:scale-95 shadow-md hover:shadow-lg" type="button">
+                        GỬI PHIẾU ĐĂNG KÝ
+                    </button>
+</div>
+</form>
+<div class="mt-8 flex justify-between items-center opacity-50">
+<span class="material-symbols-outlined text-4xl" data-icon="content_cut">content_cut</span>
+<div class="h-[2px] flex-grow mx-4 border-t-2 border-dashed border-outline-variant"></div>
+</div>
+</section>
+<!-- Weather / Astrology Corner (Small Extra) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t-2 border-on-background pt-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="sunny">sunny</span>
+<div class="font-label-caps text-[10px]">THỜI TIẾT DỰ BÁO: TRỜI ĐẸP, NHIỆT ĐỘ TÌNH YÊU 100°C</div>
+</div>
+<div class="flex items-center gap-3 justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<div class="font-label-caps text-[10px]">CUNG HOÀNG ĐẠO: SONG NGƯ &amp; XỬ NỮ - ĐỊNH MỆNH</div>
+</div>
+<div class="flex items-center gap-3 justify-end">
+<span class="material-symbols-outlined text-primary" data-icon="print">print</span>
+<div class="font-label-caps text-[10px]">HÃY IN TỜ BÁO NÀY LÀM KỶ NIỆM</div>
+</div>
+</div>
+</main>
+<!-- Footer Area -->
+<footer class="bg-surface-dim py-12">
+<div class="max-w-container-max mx-auto px-gutter text-center space-y-4">
+<p class="font-headline-sm text-primary">Cảm ơn vì đã là một phần của câu chuyện.</p>
+<div class="flex justify-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="facebook">face_nod</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="photo_camera">photo_camera</span>
+</div>
+<div class="pt-8 border-t border-outline-variant">
+<p class="font-label-caps text-[10px] text-on-tertiary-fixed-variant uppercase tracking-widest">
+                    © 2024 THE WEDDING TIMES • DESIGNED BY WEBCHOVIET • ALL LOVE RESERVED
+                </p>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-bright/90 backdrop-blur-xl border-t border-outline-variant flex justify-around items-center px-4 py-3 pb-safe shadow-[0_-4px_12px_rgba(168,36,49,0.05)] rounded-t-full">
+<div class="flex flex-col items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="newspaper">newspaper</span>
+<span class="font-label-caps text-[10px]">TIN CHÍNH</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-tertiary-fixed-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-caps text-[10px]">HÀNH TRÌNH</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-tertiary-fixed-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-caps text-[10px]">SỰ KIỆN</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-tertiary-fixed-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-caps text-[10px]">PHẢN HỒI</span>
+</div>
+</nav>
+<script>
+        // Simple Micro-interaction for form submission
+        const rsvpButton = document.querySelector('button[type="button"]');
+        if (rsvpButton) {
+            rsvpButton.addEventListener('click', () => {
+                rsvpButton.innerHTML = "ĐANG GỬI...";
+                setTimeout(() => {
+                    rsvpButton.innerHTML = "ĐÃ GỬI THÀNH CÔNG!";
+                    rsvpButton.classList.replace('bg-primary', 'bg-green-700');
+                    alert('Cảm ơn bạn đã phản hồi! Hẹn gặp lại tại lễ cưới.');
+                }, 1500);
+            });
+        }
+
+        // Add subtle parallax to images on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const images = document.querySelectorAll('img, [style*="background-image"]');
+            images.forEach(img => {
+                const speed = 0.1;
+                img.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body></html>

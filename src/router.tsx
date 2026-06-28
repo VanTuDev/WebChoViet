@@ -12,7 +12,6 @@ import SettingsPage from './pages/dashboard/settings/SettingsPage';
 import SupportPage from './pages/dashboard/support/SupportPage';
 import PricingPage from './pages/pricing/PricingPage';
 import TutorialsPage from './pages/tutorials/TutorialsPage';
-import EditorPage from './pages/editor/EditorPage';
 import TemplatePreviewPage from './pages/marketplace/TemplatePreviewPage';
 import TemplateEditorPage from './pages/template-editor/TemplateEditorPage';
 
@@ -25,9 +24,15 @@ import TransactionsPage from './pages/admin/transactions/TransactionsPage';
 import PublicSitePage from './pages/public-site/PublicSitePage';
 
 export const router = createBrowserRouter([
-  // ── Public — không dùng AppLayout ──────────────────────────────────────────
+  // ── Root redirect ───────────────────────────────────────────────────────────
   {
     path: ROUTES.HOME,
+    element: <Navigate to={ROUTES.MARKETPLACE} replace />,
+  },
+
+  // ── Public — không dùng AppLayout ──────────────────────────────────────────
+  {
+    path: '/landing',
     element: <LandingPage />,
   },
   {
@@ -50,12 +55,6 @@ export const router = createBrowserRouter([
       { path: ROUTES.TUTORIALS,            element: <TutorialsPage /> },
 
     ],
-  },
-
-  // ── Editor toàn màn hình — KHÔNG dùng AppLayout ─────────────────────────────
-  {
-    path: ROUTES.EDITOR,
-    element: <EditorPage />,
   },
 
   // ── Template preview — full-screen, no AppLayout ───────────────────────────

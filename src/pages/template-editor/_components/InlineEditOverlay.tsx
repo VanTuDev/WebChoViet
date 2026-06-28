@@ -50,14 +50,14 @@ export default function InlineEditOverlay({ initialValue, fieldLabel, rect, onCh
             <button
               onClick={onUndo}
               title="Hoàn tác (Esc)"
-              className="p-1 rounded text-gray-400 hover:text-orange-500 hover:bg-orange-50 transition-colors"
+              className="p-1 rounded text-gray-400 hover:text-orange-500 hover:bg-orange-50 transition-colors cursor-pointer"
             >
               <RotateCcw className="w-3 h-3" />
             </button>
             <button
               onClick={onClose}
               title="Xong"
-              className="p-1 rounded text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+              className="p-1 rounded text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
             >
               <X className="w-3.5 h-3.5" />
             </button>

@@ -21,7 +21,6 @@ export const ROUTES = {
   DASHBOARD_SUPPORT:    '/dashboard/support',
 
   // ── Standalone (không có Navbar/Sidebar) ────────────────────────────────────
-  EDITOR: '/editor/:projectId',                    // dùng editorPath() để build URL cụ thể
   TEMPLATE_PREVIEW: '/marketplace/preview/:templateId', // xem trước template thật
   TEMPLATE_EDITOR_NEW:  '/template-editor/new',          // tạo site mới từ template
   TEMPLATE_EDITOR_EDIT: '/template-editor/:siteId',      // chỉnh sửa site đã tạo
@@ -36,11 +35,6 @@ export const ROUTES = {
   ADMIN_PAYMENTS:     '/admin/payments',
   ADMIN_TRANSACTIONS: '/admin/transactions',
 } as const;
-
-// ── Helper builders ─────────────────────────────────────────────────────────────
-
-/** Tạo URL editor cho một project cụ thể: editorPath('proj-123') → '/editor/proj-123' */
-export const editorPath = (projectId: string) => `/editor/${projectId}` as const;
 
 // ── Type helpers ────────────────────────────────────────────────────────────────
 

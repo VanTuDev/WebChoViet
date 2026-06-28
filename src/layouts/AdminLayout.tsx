@@ -102,7 +102,7 @@ export default function AdminLayout() {
             )}
           </div>
           <div className="flex items-center gap-3">
-            <button className="relative p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">
+            <button className="relative p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors cursor-pointer">
               <Bell className="h-4.5 w-4.5" />
               <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-rose-500 rounded-full" />
             </button>

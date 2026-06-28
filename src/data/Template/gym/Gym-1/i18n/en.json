@@ -1,0 +1,55 @@
+{
+  "shopName": "Iron Zone",
+  "tagline": "Build Strength · Achieve Goals · Build Confidence",
+  "nav": { "programs": "Programs", "membership": "Membership", "join": "Join Now" },
+  "hero": {
+    "badge": "🏋️ The City's Most Modern Gym",
+    "title": "Push Beyond Your Limits",
+    "desc": "Modern equipment, professional trainers, and premium training space to help you achieve your goals fastest.",
+    "btnJoin": "Join Now",
+    "btnVisit": "Tour the Gym"
+  },
+  "programs": {
+    "title": "Training Programs",
+    "items": [
+      { "icon": "💪", "name": "Gym & Cardio", "level": "All levels", "desc": "Modern 500m² gym with 100+ professional equipment pieces" },
+      { "icon": "🥊", "name": "Boxing & MMA", "level": "Intermediate", "desc": "Martial arts combined with comprehensive fitness training" },
+      { "icon": "🧘", "name": "Yoga & Pilates", "level": "All levels", "desc": "Balance body and mind with diverse yoga and pilates classes" },
+      { "icon": "🚴", "name": "Cycling", "level": "All levels", "desc": "High-intensity indoor cycling to effectively burn fat" },
+      { "icon": "🏊", "name": "Swimming", "level": "All levels", "desc": "Standard 25m pool with professional swimming coaches" },
+      { "icon": "🤸", "name": "CrossFit", "level": "Advanced", "desc": "High-intensity functional training to maximize calorie burn" }
+    ]
+  },
+  "membership": {
+    "title": "Membership Plans",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "599,000₫",
+        "period": "/month",
+        "features": ["24/7 Gym & Cardio", "Premium changing rooms", "1 free PT session"],
+        "popular": false
+      },
+      {
+        "name": "Pro",
+        "price": "899,000₫",
+        "period": "/month",
+        "features": ["All Basic benefits", "20+ Group classes", "Sauna & Steam room", "3 free PT sessions"],
+        "popular": true
+      },
+      {
+        "name": "Elite",
+        "price": "1,499,000₫",
+        "period": "/month",
+        "features": ["All Pro benefits", "8 personal PT sessions", "Nutrition consultation", "Priority booking"],
+        "popular": false
+      }
+    ]
+  },
+  "info": {
+    "hours": "5 AM – 11 PM",
+    "phone": "0966 789 123",
+    "address": "200 Dien Bien Phu, Binh Thanh, HCMC"
+  },
+  "footer": { "copy": "© 2025 Iron Zone Fitness. Built with WebChoViet." }
+}

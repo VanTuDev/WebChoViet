@@ -2,43 +2,22 @@
 import { useState, useMemo } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Info, ChevronDown } from 'lucide-react';
-import { TEMPLATES } from '../../data';
-import { useAppContext } from '../../store/AppContext';
-import type { Template, TemplateCategory } from '../../types';
+import { TEMPLATES, type Template } from '../../data';
+import { CATEGORY_HEADING_MAP } from '../../data/templates/registry';
 import TemplateCard from './_components/TemplateCard';
 import TemplateFilters, { type PriceFilter, type SortBy } from './_components/TemplateFilters';
 
-// ── Heading per category ───────────────────────────────────────────────────────
-const HEADING: Record<TemplateCategory | 'all', { title: string; desc: string }> = {
-  all: {
-    title: 'Kho Giao Diện WebXịn Việt Nam',
-    desc: 'Hệ thống hàng trăm giao diện thiết kế chuyên sâu dành cho chủ doanh nghiệp vừa và nhỏ. Không cần lập trình, kéo thả tức thì.',
-  },
-  spa: {
-    title: 'Kho Giao Diện: Làm đẹp & Spa',
-    desc: 'Giao diện sang trọng, high-converting cho spa, salon và thẩm mỹ viện. Tích hợp đặt lịch hẹn.',
-  },
-  restaurant: {
-    title: 'Kho Giao Diện: Nhà Hàng & Quán Ăn',
-    desc: 'Website chuyên nghiệp cho nhà hàng, cafe, tiệm bánh. Đặt bàn trực tuyến, menu QR và tối ưu SEO.',
-  },
-  retail: {
-    title: 'Kho Giao Diện: Cửa Hàng Bán Lẻ',
-    desc: 'Mẫu giao diện cho siêu thị mini, tạp hóa và cửa hàng thời trang. Giỏ hàng và thanh toán nhanh.',
-  },
-  coffee: {
-    title: 'Kho Giao Diện: Cafe & Đồ Uống',
-    desc: 'Trưng bày menu cà phê, trà sữa đẹp mắt. Hỗ trợ gọi món quét QR tại bàn thông minh.',
-  },
+// Heading "Tất cả" — cố định, không thuộc category nào
+const ALL_HEADING = {
+  title: 'Kho Giao Diện WebXịn Việt Nam',
+  desc: 'Hệ thống hàng trăm giao diện thiết kế chuyên sâu dành cho chủ doanh nghiệp vừa và nhỏ. Không cần lập trình, kéo thả tức thì.',
 };
 
 export default function MarketplacePage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { openCreateModal } = useAppContext();
-
   // Đọc filter state từ URL — không cần useState riêng
-  const category = (searchParams.get('category') ?? 'all') as TemplateCategory | 'all';
+  const category = searchParams.get('category') ?? 'all';
   const searchQuery = searchParams.get('q') ?? '';
 
   // Local UI state (không cần share lên trên)
@@ -46,7 +25,7 @@ export default function MarketplacePage() {
   const [sortBy, setSortBy] = useState<SortBy>('newest');
   const [visibleCount, setVisibleCount] = useState(6);
 
-  const heading = HEADING[category] ?? HEADING['all'];
+  const heading = category === 'all' ? ALL_HEADING : (CATEGORY_HEADING_MAP[category] ?? ALL_HEADING);
 
   // ── Filter & Sort logic ────────────────────────────────────────────────────
   const filtered = useMemo(() => {
@@ -79,9 +58,8 @@ export default function MarketplacePage() {
 
   const visible = filtered.slice(0, visibleCount);
 
-  // Khi chọn template → mở wizard (template đã chọn được set trong wizard)
   const handleUseTemplate = (t: Template) => {
-    openCreateModal();
+    navigate(`/template-editor/new?template=${t.id}`);
   };
 
   return (
@@ -90,9 +68,9 @@ export default function MarketplacePage() {
       <div className="space-y-4 mb-8">
         {category !== 'all' && (
           <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500">
-            <button onClick={() => navigate('/marketplace')} className="hover:text-[#0056b3]">Marketplace</button>
+            <button onClick={() => navigate('/marketplace')} className="hover:text-primary-container">Marketplace</button>
             <span>&rsaquo;</span>
-            <span className="text-[#0056b3] capitalize">{heading.title.split(':')[1]?.trim() ?? category}</span>
+            <span className="text-primary-container capitalize">{heading.title.split(':')[1]?.trim() ?? category}</span>
           </nav>
         )}
         <h1 className="text-3xl font-display font-bold text-gray-900 leading-tight">{heading.title}</h1>

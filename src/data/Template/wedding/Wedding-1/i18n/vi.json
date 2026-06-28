@@ -1,0 +1,42 @@
+{
+  "shopName": "Thiệp Cưới",
+  "couple": {
+    "bride": "Ngọc Linh",
+    "groom": "Quốc Bảo",
+    "date": "14.02.2026",
+    "dateLong": "Chủ Nhật, 14 tháng 2 năm 2026",
+    "location": "Rex Saigon Hotel"
+  },
+  "nav": { "story": "Câu Chuyện", "event": "Sự Kiện", "rsvp": "RSVP" },
+  "hero": {
+    "badge": "💍 Thiệp Cưới Online",
+    "intro": "Chúng tôi trân trọng kính mời",
+    "tag": "Lễ Thành Hôn"
+  },
+  "story": {
+    "title": "Câu Chuyện Tình Yêu",
+    "text": "Chúng tôi gặp nhau trong một buổi chiều nắng vàng tháng Chín, cùng nhau vượt qua những thăng trầm của cuộc sống. Hôm nay, chúng tôi chính thức bước vào hành trình mới của tình yêu và hạnh phúc bên nhau mãi mãi."
+  },
+  "events": {
+    "title": "Lịch Trình Sự Kiện",
+    "items": [
+      { "time": "08:00", "name": "Lễ Rước Dâu", "desc": "Tại nhà gái, 25 Trần Hưng Đạo, Q.1" },
+      { "time": "10:30", "name": "Tiệc Trà & Trò Chuyện", "desc": "Sảnh Crystal, Rex Hotel Saigon" },
+      { "time": "12:00", "name": "Tiệc Cưới", "desc": "Grand Ballroom, Rex Hotel Saigon" },
+      { "time": "15:00", "name": "Cắt Bánh Cưới", "desc": "Grand Ballroom, Rex Hotel Saigon" }
+    ]
+  },
+  "rsvp": {
+    "title": "Xác Nhận Tham Dự",
+    "desc": "Vui lòng xác nhận trước ngày 01.02.2026",
+    "namePlaceholder": "Tên của bạn",
+    "attending": "Tôi sẽ tham dự",
+    "notAttending": "Tiếc không thể tham dự",
+    "send": "Gửi Xác Nhận"
+  },
+  "info": {
+    "phone": "0901 234 567",
+    "address": "141 Nguyễn Huệ, Q.1, TP.HCM"
+  },
+  "footer": { "copy": "© 2026 Ngọc Linh & Quốc Bảo. Được tạo bởi WebChoViet." }
+}

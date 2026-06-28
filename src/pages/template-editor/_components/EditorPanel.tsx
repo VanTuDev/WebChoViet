@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, Image as ImageIcon, Plus, Trash2, Link, Map, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { isGoogleMapsEmbedUrl } from '../../../utils/googleMaps';
-import type { ImageSlot } from '../../../data/Template/templateImageKeys';
+import type { ImageSlot } from '../../../data/templates/registry';
 import ImageCropModal from './ImageCropModal';
 
 interface Props {

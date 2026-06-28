@@ -1,0 +1,29 @@
+{
+  "shopName": "Phố Ẩm Thực",
+  "tagline": "Ẩm Thực Việt Nam Truyền Thống",
+  "nav": { "menu": "Thực Đơn", "about": "Về Chúng Tôi", "reserve": "Đặt Bàn" },
+  "hero": {
+    "badge": "🍜 Truyền Thống · Tươi Ngon · Đậm Đà",
+    "title": "Hương Vị Quê Hương Giữa Lòng Thành Phố",
+    "desc": "Chúng tôi mang đến những món ăn truyền thống Việt Nam được chế biến từ nguyên liệu tươi ngon, đảm bảo hương vị đậm đà, nguyên chất.",
+    "btnReserve": "Đặt Bàn Ngay",
+    "btnMenu": "Xem Thực Đơn"
+  },
+  "menu": {
+    "title": "Thực Đơn Đặc Sắc",
+    "items": [
+      { "name": "Phở Bò Đặc Biệt", "price": "75.000đ", "desc": "Nước dùng hầm 12 tiếng, thịt bò Wagyu tươi mềm" },
+      { "name": "Bún Bò Huế", "price": "65.000đ", "desc": "Đậm vị sả, cay nồng theo kiểu Huế chính thống" },
+      { "name": "Cơm Tấm Sài Gòn", "price": "70.000đ", "desc": "Sườn nướng than hoa kèm chả trứng hấp dẫn" },
+      { "name": "Gỏi Cuốn Tôm Thịt", "price": "45.000đ", "desc": "Cuốn tươi với tôm, thịt heo, bún và rau sống" },
+      { "name": "Bún Chả Hà Nội", "price": "60.000đ", "desc": "Chả nướng than, bún trắng, nước chấm đặc trưng" },
+      { "name": "Lẩu Thái Hải Sản", "price": "320.000đ", "desc": "Lẩu chua cay đặc biệt cho 2-3 người" }
+    ]
+  },
+  "info": {
+    "hours": "10:00 – 22:00",
+    "phone": "0988 123 456",
+    "address": "45 Lý Tự Trọng, Q.1, TP.HCM"
+  },
+  "footer": { "copy": "© 2025 Phố Ẩm Thực. Được tạo bởi WebChoViet." }
+}

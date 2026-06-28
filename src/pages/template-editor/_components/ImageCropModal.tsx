@@ -168,7 +168,7 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
             <h2 className="text-sm font-bold text-gray-900">Đổi ảnh: {label}</h2>
             <p className="text-xs text-gray-400 mt-0.5">Upload → chỉnh khung cắt → xác nhận</p>
           </div>
-          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100">
+          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 cursor-pointer">
             <X className="w-4 h-4 text-gray-500" />
           </button>
         </div>
@@ -187,7 +187,7 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
             </div>
             <input id="img-upload" type="file" accept="image/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
             {currentUrl && (
-              <button onClick={() => setStep('crop')} className="text-xs text-[#003f87] underline">
+              <button onClick={() => setStep('crop')} className="text-xs text-[#003f87] underline cursor-pointer">
                 Dùng ảnh hiện tại và điều chỉnh cắt
               </button>
             )}
@@ -217,13 +217,13 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
               <div className="flex gap-2">
                 <button
                   onClick={() => { setStep('upload'); setImgSrc(null); }}
-                  className="px-4 py-2 text-xs font-semibold text-gray-600 border border-gray-200 rounded-full hover:bg-gray-100"
+                  className="px-4 py-2 text-xs font-semibold text-gray-600 border border-gray-200 rounded-full hover:bg-gray-100 cursor-pointer"
                 >
                   Chọn lại
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className="px-5 py-2 text-xs font-bold text-white bg-[#003f87] rounded-full hover:bg-[#002d63] flex items-center gap-1.5"
+                  className="px-5 py-2 text-xs font-bold text-white bg-[#003f87] rounded-full hover:bg-[#002d63] flex items-center gap-1.5 cursor-pointer"
                 >
                   <Check className="w-3.5 h-3.5" /> Xác nhận cắt
                 </button>

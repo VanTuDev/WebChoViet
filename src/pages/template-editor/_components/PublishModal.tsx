@@ -95,7 +95,7 @@ export default function PublishModal({
                   </div>
                   <span className="text-sm font-bold">Xuất bản website</span>
                 </div>
-                <button onClick={onClose} className="p-1 rounded-full hover:bg-white/20 transition-colors">
+                <button onClick={onClose} className="p-1 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -147,13 +147,13 @@ export default function PublishModal({
               </div>
 
               <div className="flex gap-2.5 pt-1">
-                <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors">
+                <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
                   Hủy
                 </button>
                 <button
                   onClick={isFree ? doPublish : () => setStep('payment')}
                   disabled={!name.trim() || !!slugError || publishing}
-                  className="flex-1 py-2.5 text-sm font-bold text-white bg-[#003f87] rounded-xl hover:bg-[#002d63] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5"
+                  className="flex-1 py-2.5 text-sm font-bold text-white bg-[#003f87] rounded-xl hover:bg-[#002d63] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
                 >
                   {publishing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
                   {publishing ? 'Đang xuất bản...' : isFree ? 'Xuất bản ngay' : 'Tiếp theo →'}
@@ -169,12 +169,12 @@ export default function PublishModal({
             <div className="bg-gradient-to-r from-[#00b4a6] to-[#0096a0] p-5 text-white">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <button onClick={() => setStep('name')} className="p-1 rounded-full hover:bg-white/20 transition-colors">
+                  <button onClick={() => setStep('name')} className="p-1 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
                     <ArrowLeft className="w-4 h-4" />
                   </button>
                   <span className="text-sm font-bold">Thanh toán · PayOS</span>
                 </div>
-                <button onClick={onClose} className="p-1 rounded-full hover:bg-white/20 transition-colors">
+                <button onClick={onClose} className="p-1 rounded-full hover:bg-white/20 transition-colors cursor-pointer">
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -226,7 +226,7 @@ export default function PublishModal({
               <button
                 onClick={doPublish}
                 disabled={publishing}
-                className="w-full py-3 text-sm font-bold text-white bg-emerald-500 hover:bg-emerald-600 rounded-xl transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full py-3 text-sm font-bold text-white bg-emerald-500 hover:bg-emerald-600 rounded-xl transition-colors flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
               >
                 {publishing ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
                 {publishing ? 'Đang xử lý...' : 'Đã thanh toán (Demo)'}
@@ -255,7 +255,7 @@ export default function PublishModal({
                   <span className="flex-1 text-xs font-mono font-bold text-[#003f87] truncate">{liveUrl}</span>
                   <button
                     onClick={handleCopy}
-                    className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors text-gray-400"
+                    className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors text-gray-400 cursor-pointer"
                   >
                     {copied ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                   </button>
@@ -265,7 +265,7 @@ export default function PublishModal({
               <div className="flex gap-2.5">
                 <button
                   onClick={onClose}
-                  className="flex-1 py-2.5 text-xs font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+                  className="flex-1 py-2.5 text-xs font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer"
                 >
                   Về chỉnh sửa
                 </button>

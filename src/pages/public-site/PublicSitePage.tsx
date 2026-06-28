@@ -1,19 +1,15 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getSiteConfigBySlug } from '../../services/siteConfigService';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
+import { useAnalyticsTracker } from '../../hooks/useAnalyticsTracker';
 import type { SiteConfig } from '../../types';
 
-// ── Lazy template components ───────────────────────────────────────────────
-const COMPONENT_MAP: Record<string, React.LazyExoticComponent<React.ComponentType<{ lang?: string }>>> = {
-  'coffe-1': lazy(() => import('../../data/Template/Coffe-1/index')),
-  'coffe-2': lazy(() => import('../../data/Template/Coffe-2/index')),
-  'coffe-3': lazy(() => import('../../data/Template/Coffe-3/index')),
-  'coffe-4': lazy(() => import('../../data/Template/Coffe-4/index')),
-  'coffe-5': lazy(() => import('../../data/Template/Coffe-5/index')),
-};
+import { COMPONENT_MAP } from '../../data/templates/registry';
 
 function TemplateSite({ config }: { config: SiteConfig }) {
+  useAnalyticsTracker(config.slug);
+
   const Component = COMPONENT_MAP[config.templateId];
   if (!Component) return null;
 
@@ -27,7 +23,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
       <TemplateCustomProvider value={contextValue}>
         <Suspense fallback={
           <div className="min-h-screen flex items-center justify-center">
-            <div className="animate-spin w-8 h-8 border-4 border-[#003f87] border-t-transparent rounded-full" />
+            <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
           </div>
         }>
           <Component lang={config.lang} />
@@ -40,7 +36,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
         className="fixed bottom-5 right-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm shadow-lg border border-black/5 rounded-full pl-3 pr-4 py-2 text-xs font-semibold text-gray-600 hover:shadow-xl hover:text-gray-900 transition-all z-50"
       >
         <span className="text-base leading-none">☕</span>
-        <span>Made with <span className="font-bold text-[#003f87]">WebChoViet</span></span>
+        <span>Made with <span className="font-bold text-primary">WebChoViet</span></span>
       </a>
     </div>
   );
@@ -92,7 +88,7 @@ export default function PublicSitePage() {
 
   // 404
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center text-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center text-center px-4">
       <div className="text-7xl mb-6 select-none">☕</div>
       <h1 className="text-2xl font-bold text-gray-800 mb-2">Trang không tìm thấy</h1>
       <p className="text-gray-500 text-sm mb-2">

@@ -3,22 +3,23 @@ import React from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppContext } from '../../store/AppContext';
 import {
-  LayoutGrid, Coffee, Sparkles, Utensils, ShoppingBag,
+  LayoutGrid, Coffee, Sparkles, Utensils, Milk,
+  Dumbbell, Heart,
   TrendingUp, QrCode, Settings, HelpCircle, LogOut,
   FolderSymlink, Award,
 } from 'lucide-react';
-import type { TemplateCategory } from '../../types';
-
 import { ROUTES } from '../../config/routes';
 
 // ── Config constants ───────────────────────────────────────────────────────────
 
-const MARKETPLACE_CATEGORIES: { id: TemplateCategory; label: string; icon: React.ReactNode }[] = [
+const MARKETPLACE_CATEGORIES: { id: string; label: string; icon: React.ReactNode }[] = [
   { id: 'all',        label: 'Tất cả giao diện',    icon: <LayoutGrid className="h-4 w-4" /> },
-  { id: 'coffee',     label: 'Cafe & Đồ uống',       icon: <Coffee className="h-4 w-4" /> },
-  { id: 'spa',        label: 'Spa & Làm đẹp',        icon: <Sparkles className="h-4 w-4" /> },
-  { id: 'restaurant', label: 'Nhà hàng & Quán ăn',   icon: <Utensils className="h-4 w-4" /> },
-  { id: 'retail',     label: 'Cửa hàng bán lẻ',      icon: <ShoppingBag className="h-4 w-4" /> },
+  { id: 'coffee',     label: 'Cafe & Đồ Uống',      icon: <Coffee    className="h-4 w-4" /> },
+  { id: 'milk-tea',   label: 'Trà Sữa',             icon: <Milk      className="h-4 w-4" /> },
+  { id: 'restaurant', label: 'Nhà Hàng & Quán Ăn', icon: <Utensils  className="h-4 w-4" /> },
+  { id: 'spa',        label: 'Spa & Làm Đẹp',       icon: <Sparkles  className="h-4 w-4" /> },
+  { id: 'gym',        label: 'Gym & Thể Thao',      icon: <Dumbbell  className="h-4 w-4" /> },
+  { id: 'wedding',    label: 'Thiệp Cưới',          icon: <Heart     className="h-4 w-4" /> },
 ];
 
 const DASHBOARD_MENUS = [
@@ -45,9 +46,9 @@ function SidebarShell({ children }: { children: React.ReactNode }) {
 function MarketplaceSidebar() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const selected = (searchParams.get('category') ?? 'all') as TemplateCategory;
+  const selected = searchParams.get('category') ?? 'all';
 
-  const handleSelect = (cat: TemplateCategory) => {
+  const handleSelect = (cat: string) => {
     setSearchParams(prev => {
       const next = new URLSearchParams(prev);
       cat === 'all' ? next.delete('category') : next.set('category', cat);
@@ -151,7 +152,7 @@ function DashboardSidebar() {
             message: 'Bạn có chắc muốn đăng xuất khỏi WebChoViet?',
             confirmLabel: 'Đăng xuất',
             variant: 'danger',
-            onConfirm: () => navigate(ROUTES.LOGIN),
+            onConfirm: () => navigate('/landing'),
           })}
           className="w-full flex items-center gap-3 px-3 py-2 text-xs font-medium text-gray-500 hover:text-red-600 rounded-lg hover:bg-red-50/50 transition-colors cursor-pointer"
         >

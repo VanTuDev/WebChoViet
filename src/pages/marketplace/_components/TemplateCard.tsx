@@ -1,7 +1,7 @@
 // Card hiển thị một template trong grid — UI-only, nhận data qua props
 import { Star, Eye } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import type { Template } from '../../../types';
+import type { Template } from '../../../data/templates/registry';
 
 interface Props {
   template: Template;

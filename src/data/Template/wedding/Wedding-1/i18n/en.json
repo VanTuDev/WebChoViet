@@ -1,0 +1,42 @@
+{
+  "shopName": "Wedding",
+  "couple": {
+    "bride": "Ngoc Linh",
+    "groom": "Quoc Bao",
+    "date": "14.02.2026",
+    "dateLong": "Sunday, February 14, 2026",
+    "location": "Rex Saigon Hotel"
+  },
+  "nav": { "story": "Our Story", "event": "Events", "rsvp": "RSVP" },
+  "hero": {
+    "badge": "💍 Digital Wedding Invitation",
+    "intro": "We joyfully invite you to",
+    "tag": "Our Wedding Ceremony"
+  },
+  "story": {
+    "title": "Our Love Story",
+    "text": "We met on a sunny September afternoon and together navigated the ups and downs of life. Today, we officially begin a new journey of love and lasting happiness together, forever."
+  },
+  "events": {
+    "title": "Event Schedule",
+    "items": [
+      { "time": "8:00 AM", "name": "Bridal Procession", "desc": "At bride's home, 25 Tran Hung Dao, D.1" },
+      { "time": "10:30 AM", "name": "Tea Ceremony", "desc": "Crystal Hall, Rex Hotel Saigon" },
+      { "time": "12:00 PM", "name": "Wedding Reception", "desc": "Grand Ballroom, Rex Hotel Saigon" },
+      { "time": "3:00 PM", "name": "Cake Cutting", "desc": "Grand Ballroom, Rex Hotel Saigon" }
+    ]
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "desc": "Please confirm attendance by February 1, 2026",
+    "namePlaceholder": "Your name",
+    "attending": "I'll be there",
+    "notAttending": "Sorry, can't make it",
+    "send": "Send Confirmation"
+  },
+  "info": {
+    "phone": "0901 234 567",
+    "address": "141 Nguyen Hue, D.1, HCMC"
+  },
+  "footer": { "copy": "© 2026 Ngoc Linh & Quoc Bao. Built with WebChoViet." }
+}

@@ -1,0 +1,52 @@
+{
+  "shopName": "Thiệp Cưới",
+  "couple": {
+    "bride": "Hương Giang",
+    "groom": "Minh Tuấn",
+    "date": "20.09.2025",
+    "dateLong": "Thứ Bảy, 20 tháng 9 năm 2025",
+    "location": "Park Hyatt Saigon"
+  },
+  "nav": { "gallery": "Album", "event": "Lịch Trình", "rsvp": "RSVP" },
+  "hero": {
+    "badge": "💍 Thiệp Cưới Online",
+    "title": "Chúng Tôi Kết Hôn"
+  },
+  "countdown": {
+    "title": "Đếm Ngược Đến Ngày Trọng Đại",
+    "days": "Ngày",
+    "hours": "Giờ",
+    "minutes": "Phút",
+    "seconds": "Giây"
+  },
+  "gallery": {
+    "title": "Album Kỷ Niệm",
+    "items": [
+      { "caption": "Lần đầu gặp gỡ" },
+      { "caption": "Chuyến du lịch đầu tiên" },
+      { "caption": "Cầu hôn" },
+      { "caption": "Chụp ảnh pre-wedding" }
+    ]
+  },
+  "events": {
+    "title": "Lịch Trình Ngày Cưới",
+    "items": [
+      { "time": "08:00", "icon": "🏠", "name": "Lễ Gia Tiên", "desc": "Tại nhà gái, 15 Pasteur, Q.1, TP.HCM" },
+      { "time": "11:00", "icon": "⛪", "name": "Lễ Thành Hôn", "desc": "Nhà Thờ Đức Bà, Q.1, TP.HCM" },
+      { "time": "18:30", "icon": "🥂", "name": "Tiệc Cưới", "desc": "Park Hyatt Saigon, 2 Công Trường Lam Sơn, Q.1" }
+    ]
+  },
+  "rsvp": {
+    "title": "Xác Nhận Tham Dự",
+    "desc": "Vui lòng xác nhận trước ngày 10.09.2025",
+    "namePlaceholder": "Họ và tên của bạn",
+    "attending": "Xác Nhận Tham Dự",
+    "notAttending": "Tiếc Không Thể Tham Dự",
+    "send": "Gửi Xác Nhận"
+  },
+  "info": {
+    "phone": "0912 345 678",
+    "address": "2 Công Trường Lam Sơn, Q.1, TP.HCM"
+  },
+  "footer": { "copy": "© 2025 Hương Giang & Minh Tuấn · Được tạo bởi WebChoViet." }
+}

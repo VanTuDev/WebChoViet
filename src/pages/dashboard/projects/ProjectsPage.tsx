@@ -1,38 +1,14 @@
-import { useState } from 'react';
-import { Plus, Info, Globe, Loader2 } from 'lucide-react';
+import { Globe, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../store/AppContext';
-import MetricsRow from './_components/MetricsRow';
-import ProjectCard from './_components/ProjectCard';
-import QRPanel from './_components/QRPanel';
 import SiteConfigCard from './_components/SiteConfigCard';
 
 export default function ProjectsPage() {
   const navigate = useNavigate();
   const {
-    projects, metrics,
     siteConfigs, siteConfigsLoaded, removeSiteConfig,
-    deleteProject, toggleProjectStatus,
-    setPreviewingProject, openCreateModal,
     showConfirm, showSnackbar,
   } = useAppContext();
-
-  const [selectedProjectId, setSelectedProjectId] = useState<string>(projects[0]?.id ?? '');
-  const selectedProject = projects.find(p => p.id === selectedProjectId) ?? projects[0] ?? null;
-
-  const handleDeleteProject = (id: string) => {
-    showConfirm({
-      title: 'Xóa dự án?',
-      message: 'Thao tác này không thể khôi phục. Toàn bộ dữ liệu của dự án sẽ bị xóa vĩnh viễn.',
-      confirmLabel: 'Xóa dự án',
-      variant: 'danger',
-      onConfirm: () => {
-        deleteProject(id);
-        if (selectedProjectId === id) setSelectedProjectId(projects[1]?.id ?? '');
-        showSnackbar('Đã xóa dự án thành công.', 'success');
-      },
-    });
-  };
 
   const handleDeleteSiteConfig = (id: string) => {
     showConfirm({
@@ -67,32 +43,20 @@ export default function ProjectsPage() {
             Tổng quan hoạt động và hiệu năng kinh doanh của bạn hôm nay.
           </p>
         </div>
-        <div className="flex gap-3 flex-wrap self-start md:self-auto">
-          <button
-            onClick={() => navigate('/marketplace?category=coffee')}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#003f87] hover:bg-[#002d63] text-white text-xs font-semibold rounded-full shadow-sm hover:shadow transition-all cursor-pointer active:scale-95"
-          >
-            <Globe className="h-4 w-4" />
-            <span>Tạo Website Mới</span>
-          </button>
-          <button
-            onClick={openCreateModal}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-full shadow-sm hover:shadow transition-all cursor-pointer active:scale-95"
-          >
-            <Plus className="h-4 w-4" />
-            <span>Tạo trang đơn giản</span>
-          </button>
-        </div>
+        <button
+          onClick={() => navigate('/marketplace?category=coffee')}
+          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary hover:bg-[#002d63] text-white text-xs font-semibold rounded-full shadow-sm hover:shadow transition-all cursor-pointer active:scale-95 self-start md:self-auto"
+        >
+          <Globe className="h-4 w-4" />
+          <span>Tạo Website Mới</span>
+        </button>
       </div>
 
-      {/* ── Metrics ──────────────────────────────────────────────────────── */}
-      <MetricsRow metrics={metrics} />
-
-      {/* ── Template websites section ─────────────────────────────────────── */}
+      {/* ── Template websites ─────────────────────────────────────────────── */}
       <section className="space-y-4">
         <div className="flex items-center justify-between pb-2 border-b border-gray-100">
           <div className="flex items-center gap-2">
-            <h2 className="text-lg font-bold text-gray-900 font-display">Website từ Template</h2>
+            <h2 className="text-lg font-bold text-gray-900 font-display">Website của tôi</h2>
             {!siteConfigsLoaded && (
               <Loader2 className="h-4 w-4 animate-spin text-gray-400" />
             )}
@@ -103,18 +67,18 @@ export default function ProjectsPage() {
                 {publishedSites.length} đang live
               </span>
             )}
-            <span className="text-[#0056b3] text-xs font-semibold">{siteConfigs.length} website</span>
+            <span className="text-primary-container text-xs font-semibold">{siteConfigs.length} website</span>
           </div>
         </div>
 
         {siteConfigsLoaded && siteConfigs.length === 0 ? (
-          <div className="text-center py-12 bg-gradient-to-br from-gray-50 to-blue-50/30 rounded-2xl border border-dashed border-gray-200">
+          <div className="text-center py-12 bg-linear-to-br from-gray-50 to-blue-50/30 rounded-2xl border border-dashed border-gray-200">
             <Globe className="h-10 w-10 text-gray-300 mx-auto mb-3" />
-            <p className="text-sm font-medium text-gray-600">Bạn chưa có website template nào.</p>
+            <p className="text-sm font-medium text-gray-600">Bạn chưa có website nào.</p>
             <p className="text-xs text-gray-400 mt-1 mb-4">Chọn một template đẹp và tùy chỉnh theo thương hiệu của bạn.</p>
             <button
               onClick={() => navigate('/marketplace?category=coffee')}
-              className="px-5 py-2 bg-[#003f87] text-white text-xs font-bold rounded-full hover:bg-[#002d63] transition-colors"
+              className="px-5 py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-[#002d63] transition-colors"
             >
               Khám phá Template
             </button>
@@ -153,60 +117,6 @@ export default function ProjectsPage() {
           </div>
         )}
       </section>
-
-      {/* ── Old-style simple projects + QR panel ─────────────────────────── */}
-      {projects.length > 0 && (
-        <>
-          <div className="border-t border-gray-100" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 space-y-5">
-              <div className="flex items-center justify-between pb-2 border-b border-gray-100">
-                <h2 className="text-lg font-bold text-gray-900 font-display">Trang đơn giản</h2>
-                <span className="text-[#0056b3] text-xs font-semibold">{projects.length} dự án</span>
-              </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                {projects.map(proj => (
-                  <ProjectCard
-                    key={proj.id}
-                    project={proj}
-                    isSelected={selectedProjectId === proj.id}
-                    onSelect={() => setSelectedProjectId(proj.id)}
-                    onEdit={() => navigate(`/editor/${proj.id}`)}
-                    onPreview={() => setPreviewingProject(proj)}
-                    onDelete={() => handleDeleteProject(proj.id)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-5">
-              <div className="pb-2 border-b border-gray-100">
-                <h2 className="text-lg font-bold text-gray-900 font-display">Quản lý Mã QR</h2>
-              </div>
-              <QRPanel
-                project={selectedProject}
-                onToggleStatus={() => selectedProject && toggleProjectStatus(selectedProject.id)}
-              />
-            </div>
-          </div>
-        </>
-      )}
-
-      {/* ── Tip banner ───────────────────────────────────────────────────── */}
-      <div className="bg-[#e3f2fd] rounded-2xl p-5 flex items-start gap-4 border border-[#bbd0ff]">
-        <span className="p-2 bg-[#00aaff]/10 text-[#0056b3] rounded-xl shrink-0">
-          <Info className="h-5 w-5" />
-        </span>
-        <div>
-          <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wide">Mẹo tối ưu vận hành:</h4>
-          <p className="text-xs text-gray-600 leading-relaxed mt-1">
-            Sau khi xuất bản, website của bạn có thể truy cập ngay tại đường dẫn{' '}
-            <strong>/p/tên-slug</strong>. Bạn có thể chỉnh sửa nội dung bất kỳ lúc nào mà{' '}
-            <strong>không cần xuất bản lại</strong> — thay đổi Lưu nháp sẽ phản ánh tức thì khi Xuất bản.
-          </p>
-        </div>
-      </div>
     </div>
   );
 }

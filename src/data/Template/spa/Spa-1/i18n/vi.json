@@ -1,0 +1,29 @@
+{
+  "shopName": "Lotus Spa",
+  "tagline": "Thư Giãn · Phục Hồi · Làm Đẹp",
+  "nav": { "services": "Dịch Vụ", "about": "Về Chúng Tôi", "book": "Đặt Lịch" },
+  "hero": {
+    "badge": "✨ Thư Giãn Tuyệt Đối",
+    "title": "Không Gian Thư Giãn Cao Cấp Giữa Lòng Thành Phố",
+    "desc": "Trải nghiệm các liệu pháp spa đẳng cấp quốc tế, sử dụng nguyên liệu thiên nhiên thuần túy từ Việt Nam.",
+    "btnBook": "Đặt Lịch Ngay",
+    "btnLearn": "Tìm Hiểu Thêm"
+  },
+  "services": {
+    "title": "Dịch Vụ Của Chúng Tôi",
+    "items": [
+      { "icon": "💆", "name": "Massage Thư Giãn", "price": "350.000đ / 60 phút", "desc": "Liệu pháp massage toàn thân giảm căng thẳng, phục hồi năng lượng" },
+      { "icon": "🌿", "name": "Chăm Sóc Da Mặt", "price": "450.000đ / 75 phút", "desc": "Điều trị da chuyên sâu với sản phẩm hữu cơ cao cấp" },
+      { "icon": "🛁", "name": "Tắm Thảo Dược", "price": "280.000đ / 45 phút", "desc": "Ngâm mình trong bồn tắm thảo dược thư giãn tuyệt vời" },
+      { "icon": "💅", "name": "Chăm Sóc Móng", "price": "180.000đ / 45 phút", "desc": "Manicure và pedicure chuyên nghiệp với sản phẩm an toàn" },
+      { "icon": "🌸", "name": "Detox Toàn Thân", "price": "680.000đ / 90 phút", "desc": "Liệu trình thanh lọc cơ thể toàn diện với đất sét và tinh dầu" },
+      { "icon": "✨", "name": "Ánh Sáng Trị Liệu", "price": "320.000đ / 30 phút", "desc": "Công nghệ ánh sáng LED giảm nếp nhăn, làm sáng da" }
+    ]
+  },
+  "info": {
+    "hours": "09:00 – 21:00",
+    "phone": "0977 456 789",
+    "address": "88 Nam Kỳ Khởi Nghĩa, Q.3, TP.HCM"
+  },
+  "footer": { "copy": "© 2025 Lotus Spa. Được tạo bởi WebChoViet." }
+}

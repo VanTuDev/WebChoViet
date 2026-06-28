@@ -1,0 +1,29 @@
+{
+  "shopName": "Lotus Spa",
+  "tagline": "Relax · Restore · Rejuvenate",
+  "nav": { "services": "Services", "about": "About", "book": "Book Now" },
+  "hero": {
+    "badge": "✨ Ultimate Relaxation",
+    "title": "Premium Relaxation in the Heart of the City",
+    "desc": "Experience world-class spa therapies using pure natural ingredients sourced from Vietnam.",
+    "btnBook": "Book Now",
+    "btnLearn": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      { "icon": "💆", "name": "Relaxation Massage", "price": "350,000₫ / 60 min", "desc": "Full-body massage therapy to reduce stress and restore energy" },
+      { "icon": "🌿", "name": "Facial Treatment", "price": "450,000₫ / 75 min", "desc": "Deep skin treatment with premium organic products" },
+      { "icon": "🛁", "name": "Herbal Bath", "price": "280,000₫ / 45 min", "desc": "Immerse in a relaxing herbal soaking bath" },
+      { "icon": "💅", "name": "Nail Care", "price": "180,000₫ / 45 min", "desc": "Professional manicure and pedicure with safe products" },
+      { "icon": "🌸", "name": "Full Body Detox", "price": "680,000₫ / 90 min", "desc": "Complete body cleansing therapy with clay and essential oils" },
+      { "icon": "✨", "name": "Light Therapy", "price": "320,000₫ / 30 min", "desc": "LED light technology to reduce wrinkles and brighten skin" }
+    ]
+  },
+  "info": {
+    "hours": "9 AM – 9 PM",
+    "phone": "0977 456 789",
+    "address": "88 Nam Ky Khoi Nghia, D.3, HCMC"
+  },
+  "footer": { "copy": "© 2025 Lotus Spa. Built with WebChoViet." }
+}

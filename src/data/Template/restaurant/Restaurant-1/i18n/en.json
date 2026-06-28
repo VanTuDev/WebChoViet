@@ -1,0 +1,29 @@
+{
+  "shopName": "Pho Am Thuc",
+  "tagline": "Traditional Vietnamese Cuisine",
+  "nav": { "menu": "Menu", "about": "About", "reserve": "Reserve" },
+  "hero": {
+    "badge": "🍜 Traditional · Fresh · Flavorful",
+    "title": "Authentic Vietnamese Flavors in the Heart of the City",
+    "desc": "We bring you traditional Vietnamese dishes prepared with fresh ingredients, ensuring rich and authentic flavors.",
+    "btnReserve": "Reserve a Table",
+    "btnMenu": "View Menu"
+  },
+  "menu": {
+    "title": "Signature Dishes",
+    "items": [
+      { "name": "Special Beef Pho", "price": "75,000₫", "desc": "12-hour simmered broth with fresh Wagyu beef" },
+      { "name": "Hue Spicy Beef Noodle", "price": "65,000₫", "desc": "Authentic Hue-style lemongrass spicy broth" },
+      { "name": "Saigon Broken Rice", "price": "70,000₫", "desc": "Charcoal-grilled pork with steamed egg meatloaf" },
+      { "name": "Fresh Spring Rolls", "price": "45,000₫", "desc": "Fresh rolls with shrimp, pork, vermicelli and herbs" },
+      { "name": "Hanoi Grilled Pork Noodle", "price": "60,000₫", "desc": "Charcoal grilled pork with rice vermicelli" },
+      { "name": "Thai Seafood Hotpot", "price": "320,000₫", "desc": "Special spicy sour hotpot for 2-3 people" }
+    ]
+  },
+  "info": {
+    "hours": "10 AM – 10 PM",
+    "phone": "0988 123 456",
+    "address": "45 Ly Tu Trong, D.1, HCMC"
+  },
+  "footer": { "copy": "© 2025 Pho Am Thuc. Built with WebChoViet." }
+}

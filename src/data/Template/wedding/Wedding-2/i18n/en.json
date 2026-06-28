@@ -1,0 +1,52 @@
+{
+  "shopName": "Wedding",
+  "couple": {
+    "bride": "Huong Giang",
+    "groom": "Minh Tuan",
+    "date": "20.09.2025",
+    "dateLong": "Saturday, September 20, 2025",
+    "location": "Park Hyatt Saigon"
+  },
+  "nav": { "gallery": "Gallery", "event": "Schedule", "rsvp": "RSVP" },
+  "hero": {
+    "badge": "💍 Digital Wedding Invitation",
+    "title": "We Are Getting Married"
+  },
+  "countdown": {
+    "title": "Countdown to Our Big Day",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "gallery": {
+    "title": "Our Photo Album",
+    "items": [
+      { "caption": "First meeting" },
+      { "caption": "First trip together" },
+      { "caption": "The proposal" },
+      { "caption": "Pre-wedding shoot" }
+    ]
+  },
+  "events": {
+    "title": "Wedding Day Schedule",
+    "items": [
+      { "time": "8:00 AM", "icon": "🏠", "name": "Family Ceremony", "desc": "At bride's home, 15 Pasteur, D.1, HCMC" },
+      { "time": "11:00 AM", "icon": "⛪", "name": "Wedding Ceremony", "desc": "Notre-Dame Cathedral, D.1, HCMC" },
+      { "time": "6:30 PM", "icon": "🥂", "name": "Wedding Reception", "desc": "Park Hyatt Saigon, 2 Lam Son Square, D.1" }
+    ]
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "desc": "Please confirm your attendance by September 10, 2025",
+    "namePlaceholder": "Your full name",
+    "attending": "I Will Attend",
+    "notAttending": "Sorry, Can't Make It",
+    "send": "Send Confirmation"
+  },
+  "info": {
+    "phone": "0912 345 678",
+    "address": "2 Lam Son Square, D.1, HCMC"
+  },
+  "footer": { "copy": "© 2025 Huong Giang & Minh Tuan · Built with WebChoViet." }
+}

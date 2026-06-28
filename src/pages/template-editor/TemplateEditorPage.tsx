@@ -1,58 +1,23 @@
-import { lazy, Suspense, useState, useCallback, useEffect, useRef } from 'react';
+import { Suspense, useState, useCallback, useEffect, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Sparkles, Save, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle } from 'lucide-react';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
-import { TEMPLATE_IMAGE_KEYS } from '../../data/Template/templateImageKeys';
 import { saveSiteConfig, getSiteConfig, generateSlug, slugExists } from '../../services/siteConfigService';
-import type { SiteConfig, SiteTemplateId, SiteLang } from '../../types';
+import type { SiteConfig } from '../../types';
 import EditorPanel from './_components/EditorPanel';
 import PublishModal from './_components/PublishModal';
 import InlineEditOverlay from './_components/InlineEditOverlay';
-import { translateCustomData } from '../../services/geminiService';
 import { getUserId } from '../../utils/userId';
 import { generateUUID } from '../../utils/uuid';
 import { useAppContext } from '../../store/AppContext';
-import { TEMPLATES } from '../../data';
 import { ROUTES } from '../../config/routes';
-
-// ── i18n schemas (vi only, used as field schema) ───────────────────────────
-import coffe1Schema from '../../data/Template/Coffe-1/i18n/vi.json';
-import coffe2Schema from '../../data/Template/Coffe-2/i18n/vi.json';
-import coffe3Schema from '../../data/Template/Coffe-3/i18n/vi.json';
-import coffe4Schema from '../../data/Template/Coffe-4/i18n/vi.json';
-import coffe5Schema from '../../data/Template/Coffe-5/i18n/vi.json';
-
-// ── Lazy template components ───────────────────────────────────────────────
-const COMPONENT_MAP: Record<string, React.LazyExoticComponent<React.ComponentType<{ lang?: string }>>> = {
-  'coffe-1': lazy(() => import('../../data/Template/Coffe-1/index')),
-  'coffe-2': lazy(() => import('../../data/Template/Coffe-2/index')),
-  'coffe-3': lazy(() => import('../../data/Template/Coffe-3/index')),
-  'coffe-4': lazy(() => import('../../data/Template/Coffe-4/index')),
-  'coffe-5': lazy(() => import('../../data/Template/Coffe-5/index')),
-};
-
-const SCHEMA_MAP: Record<string, Record<string, unknown>> = {
-  'coffe-1': coffe1Schema as Record<string, unknown>,
-  'coffe-2': coffe2Schema as Record<string, unknown>,
-  'coffe-3': coffe3Schema as Record<string, unknown>,
-  'coffe-4': coffe4Schema as Record<string, unknown>,
-  'coffe-5': coffe5Schema as Record<string, unknown>,
-};
-
-const TEMPLATE_NAMES: Record<string, string> = {
-  'coffe-1': 'Garden Oasis',
-  'coffe-2': 'Tropical Chill',
-  'coffe-3': 'The Ocean Cafe',
-  'coffe-4': 'Koi Garden',
-  'coffe-5': 'Mật Ngọt Tea',
-};
-
-const LANGS: { value: SiteLang; label: string }[] = [
-  { value: 'vi', label: '🇻🇳 Tiếng Việt' },
-  { value: 'en', label: '🇬🇧 English' },
-  { value: 'zh', label: '🇨🇳 中文' },
-  { value: 'ko', label: '🇰🇷 한국어' },
-];
+import { TEMPLATES } from '../../data';
+import {
+  COMPONENT_MAP,
+  SCHEMA_MAP,
+  TEMPLATE_NAME_MAP,
+  TEMPLATE_IMAGE_KEYS,
+} from '../../data/templates/registry';
 
 // ── Utility: set any value at a dot-path in a nested object ──────────────
 
@@ -125,13 +90,13 @@ export default function TemplateEditorPage() {
           }
         }
 
-        const tId = (searchParams.get('template') ?? 'coffe-1') as SiteTemplateId;
-        const generatedSlug = await generateSlug(TEMPLATE_NAMES[tId] ?? tId);
+        const tId = searchParams.get('template') ?? 'coffe-1';
+        const generatedSlug = await generateSlug(TEMPLATE_NAME_MAP[tId] ?? tId);
         const base: SiteConfig = {
           id: generateUUID(),
           templateId: tId,
           slug: generatedSlug,
-          name: TEMPLATE_NAMES[tId] ?? tId,
+          name: TEMPLATE_NAME_MAP[tId] ?? tId,
           lang: 'vi',
           customData: { vi: {}, en: {}, zh: {}, ko: {} },
           images: {},
@@ -303,60 +268,6 @@ export default function TemplateEditorPage() {
     });
   };
 
-  // ── AI Translate with Gemini ──────────────────────────────────────────────
-  const [isTranslating, setIsTranslating] = useState(false);
-  const [showApiKeyModal, setShowApiKeyModal] = useState(false);
-  const [apiKeyInput, setApiKeyInput] = useState(localStorage.getItem('gemini_api_key') || '');
-  const [translationError, setTranslationError] = useState('');
-
-  const handleAiTranslate = async (keyToUse?: string) => {
-    const apiK = keyToUse || apiKeyInput || import.meta.env.VITE_GEMINI_API_KEY || '';
-    if (!apiK) { setShowApiKeyModal(true); return; }
-    if (!site) return;
-    setIsTranslating(true);
-    setTranslationError('');
-
-    try {
-      const sourceData = (site.customData.vi as Record<string, unknown>) || {};
-      if (Object.keys(sourceData).length === 0) {
-        alert('Vui lòng điền một số thông tin chỉnh sửa bằng Tiếng Việt trước khi dịch!');
-        setIsTranslating(false);
-        return;
-      }
-
-      const translated = await translateCustomData(sourceData, ['en', 'zh', 'ko'], apiK);
-
-      setSite(prev => {
-        if (!prev) return null;
-        return {
-          ...prev,
-          customData: {
-            ...prev.customData,
-            en: { ...(prev.customData.en as Record<string, unknown>), ...translated.en },
-            zh: { ...(prev.customData.zh as Record<string, unknown>), ...translated.zh },
-            ko: { ...(prev.customData.ko as Record<string, unknown>), ...translated.ko },
-          },
-        };
-      });
-
-      alert('Đã dịch tự động sang tiếng Anh, tiếng Trung và tiếng Hàn thành công bằng Gemini!');
-      if (keyToUse) {
-        localStorage.setItem('gemini_api_key', keyToUse);
-        setShowApiKeyModal(false);
-      }
-    } catch (err: unknown) {
-      console.error(err);
-      const msg = err instanceof Error ? err.message : 'Lỗi dịch thuật bằng AI. Vui lòng thử lại.';
-      if (msg === 'API_KEY_MISSING') {
-        setShowApiKeyModal(true);
-      } else {
-        setTranslationError(msg);
-      }
-    } finally {
-      setIsTranslating(false);
-    }
-  };
-
   // ── Context value ─────────────────────────────────────────────────────────
   const contextValue = {
     customData: (site?.customData[site?.lang] as Record<string, unknown>) ?? {},
@@ -366,7 +277,7 @@ export default function TemplateEditorPage() {
   if (isLoading || !site) {
     return (
       <div className="flex flex-col h-screen items-center justify-center bg-gray-50 gap-3 text-gray-500">
-        <Loader2 className="w-8 h-8 animate-spin text-[#003f87]" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
         <span className="text-sm font-semibold">Đang tải cấu hình...</span>
       </div>
     );
@@ -395,41 +306,21 @@ export default function TemplateEditorPage() {
             type="text"
             value={site.name}
             onChange={e => setSite(prev => prev ? { ...prev, name: e.target.value } : null)}
-            className="text-sm font-semibold text-gray-800 bg-transparent border-b border-transparent hover:border-gray-300 focus:border-[#003f87] focus:outline-none px-1 py-0.5 min-w-0 flex-1 md:flex-none md:w-44 transition-colors"
+            className="text-sm font-semibold text-gray-800 bg-transparent border-b border-transparent hover:border-gray-300 focus:border-primary focus:outline-none px-1 py-0.5 min-w-0 flex-1 md:flex-none md:w-44 transition-colors"
             placeholder="Tên trang web"
           />
 
           {/* Slug — lg+ only */}
           <div className="hidden lg:flex items-center gap-1 text-xs text-gray-400 shrink-0">
-            <span>/p/</span>
+            <span>/</span>
             <input
               type="text"
               value={site.slug}
               onChange={e => handleSlugChange(e.target.value)}
-              className={`text-xs font-mono bg-transparent border-b ${slugError ? 'border-red-400 text-red-500' : 'border-transparent hover:border-gray-300 focus:border-[#003f87]'} focus:outline-none px-1 py-0.5 w-28 transition-colors`}
+              className={`text-xs font-mono bg-transparent border-b ${slugError ? 'border-red-400 text-red-500' : 'border-transparent hover:border-gray-300 focus:border-primary'} focus:outline-none px-1 py-0.5 w-28 transition-colors`}
               placeholder="ten-trang"
             />
             {slugError && <AlertCircle className="w-3 h-3 text-red-500 shrink-0" />}
-          </div>
-
-          {/* Lang + AI — md+ inline */}
-          <div className="hidden md:flex items-center gap-1.5 shrink-0">
-            <select
-              value={site.lang}
-              onChange={e => setSite(prev => prev ? { ...prev, lang: e.target.value as SiteLang } : null)}
-              className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 bg-white text-gray-700 focus:outline-none focus:border-[#003f87] cursor-pointer"
-            >
-              {LANGS.map(l => <option key={l.value} value={l.value}>{l.label}</option>)}
-            </select>
-            <button
-              onClick={() => handleAiTranslate()}
-              disabled={isTranslating}
-              title="Dịch tự động Tiếng Việt sang EN / ZH / KO"
-              className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold text-[#0056b3] bg-[#0056b3]/10 hover:bg-[#0056b3]/20 rounded-lg disabled:opacity-50 transition-all"
-            >
-              {isTranslating ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5" />}
-              <span className="hidden lg:inline">{isTranslating ? 'Đang dịch...' : 'Dịch AI'}</span>
-            </button>
           </div>
 
           {/* Right actions */}
@@ -453,7 +344,7 @@ export default function TemplateEditorPage() {
             </div>
 
             {/* Template name — xl+ */}
-            <span className="hidden xl:block text-xs text-gray-400">{TEMPLATE_NAMES[templateId]}</span>
+            <span className="hidden xl:block text-xs text-gray-400">{TEMPLATE_NAME_MAP[templateId]}</span>
 
             {/* Published badge — sm+ */}
             {site.status === 'published' && (
@@ -485,7 +376,7 @@ export default function TemplateEditorPage() {
             <button
               onClick={() => setShowPublishModal(true)}
               disabled={!!slugError}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-white bg-[#003f87] rounded-full hover:bg-[#002d63] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#002d63] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Globe className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Xuất bản</span>
@@ -493,29 +384,6 @@ export default function TemplateEditorPage() {
           </div>
         </div>
 
-        {/* Row 2 — mobile only: lang + AI */}
-        <div className="md:hidden flex items-center gap-2 px-3 py-2 border-t border-gray-100">
-          <select
-            value={site.lang}
-            onChange={e => setSite(prev => prev ? { ...prev, lang: e.target.value as SiteLang } : null)}
-            className="flex-1 text-xs border border-gray-200 rounded-lg px-2 py-1.5 bg-white text-gray-700 focus:outline-none"
-          >
-            {LANGS.map(l => <option key={l.value} value={l.value}>{l.label}</option>)}
-          </select>
-          <button
-            onClick={() => handleAiTranslate()}
-            disabled={isTranslating}
-            className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold text-[#0056b3] bg-[#0056b3]/10 rounded-lg disabled:opacity-50 shrink-0"
-          >
-            {isTranslating ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5" />}
-            {isTranslating ? 'Đang dịch...' : 'Dịch AI'}
-          </button>
-          {slugError && (
-            <span className="flex items-center gap-1 text-[10px] text-red-500 shrink-0">
-              <AlertCircle className="w-3 h-3" />Slug lỗi
-            </span>
-          )}
-        </div>
       </header>
 
       {/* ── Mobile tab switcher ───────────────────────────────────────────── */}
@@ -524,7 +392,7 @@ export default function TemplateEditorPage() {
           onClick={() => setMobileTab('editor')}
           className={`flex-1 py-2.5 text-xs font-bold flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
             mobileTab === 'editor'
-              ? 'border-[#003f87] text-[#003f87]'
+              ? 'border-primary text-primary'
               : 'border-transparent text-gray-400 hover:text-gray-600'
           }`}
         >
@@ -534,7 +402,7 @@ export default function TemplateEditorPage() {
           onClick={() => setMobileTab('preview')}
           className={`flex-1 py-2.5 text-xs font-bold flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
             mobileTab === 'preview'
-              ? 'border-[#003f87] text-[#003f87]'
+              ? 'border-primary text-primary'
               : 'border-transparent text-gray-400 hover:text-gray-600'
           }`}
         >
@@ -599,7 +467,7 @@ export default function TemplateEditorPage() {
           <div
             className={`preview-edit-mode transition-all duration-300 ${
               viewport === 'mobile'
-                ? 'max-w-[390px] mx-auto my-4 rounded-[2rem] overflow-hidden shadow-2xl ring-4 ring-gray-300'
+                ? 'max-w-97.5 mx-auto my-4 rounded-4xl overflow-hidden shadow-2xl ring-4 ring-gray-300'
                 : 'min-h-full'
             }`}
             onDoubleClick={handlePreviewDblClick}
@@ -637,7 +505,7 @@ export default function TemplateEditorPage() {
         <PublishModal
           siteName={site.name}
           siteSlug={site.slug}
-          templateName={TEMPLATE_NAMES[templateId] ?? templateId}
+          templateName={TEMPLATE_NAME_MAP[templateId] ?? templateId}
           templatePrice={TEMPLATES.find(t => t.id === templateId)?.price ?? 0}
           slugError={slugError}
           onPublish={handlePublish}
@@ -645,45 +513,6 @@ export default function TemplateEditorPage() {
         />
       )}
 
-      {/* ── API Key Modal ─────────────────────────────────────────────────── */}
-      {showApiKeyModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="bg-white w-full max-w-md rounded-2xl p-6 shadow-xl space-y-4">
-            <div className="flex items-center gap-2 text-amber-600">
-              <AlertCircle className="w-5 h-5" />
-              <h3 className="font-bold text-sm">Nhập Gemini API Key</h3>
-            </div>
-            <p className="text-xs text-gray-500 leading-relaxed">
-              Dịch thuật tự động bằng AI yêu cầu bạn cung cấp một <strong>Gemini API Key</strong> (từ Google AI Studio). Khóa này sẽ được lưu ở trình duyệt của bạn và không tải lên máy chủ của chúng tôi.
-            </p>
-            <input
-              type="password"
-              placeholder="AIzaSy..."
-              value={apiKeyInput}
-              onChange={e => setApiKeyInput(e.target.value)}
-              className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 focus:outline-none focus:border-blue-400 transition-all font-mono"
-            />
-            {translationError && (
-              <p className="text-[10px] text-red-500 font-semibold bg-red-50 p-2 rounded-lg">{translationError}</p>
-            )}
-            <div className="flex justify-end gap-2 text-xs">
-              <button
-                onClick={() => { setShowApiKeyModal(false); setTranslationError(''); }}
-                className="px-4 py-2 border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50"
-              >
-                Hủy
-              </button>
-              <button
-                onClick={() => handleAiTranslate(apiKeyInput)}
-                disabled={isTranslating}
-                className="px-4 py-2 bg-[#003f87] hover:bg-[#002d63] text-white font-bold rounded-lg disabled:opacity-50"
-              >
-                {isTranslating ? 'Đang dịch...' : 'Xác nhận dịch'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

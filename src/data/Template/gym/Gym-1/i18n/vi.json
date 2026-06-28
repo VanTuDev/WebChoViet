@@ -1,0 +1,55 @@
+{
+  "shopName": "Iron Zone",
+  "tagline": "Nâng Cao Thể Lực · Đạt Mục Tiêu · Tự Tin Hơn",
+  "nav": { "programs": "Chương Trình", "membership": "Gói Tập", "join": "Tham Gia Ngay" },
+  "hero": {
+    "badge": "🏋️ Phòng Gym Hiện Đại Nhất Thành Phố",
+    "title": "Nâng Cao Giới Hạn Của Bản Thân",
+    "desc": "Trang thiết bị hiện đại, huấn luyện viên chuyên nghiệp, không gian tập luyện đẳng cấp để bạn đạt mục tiêu nhanh nhất.",
+    "btnJoin": "Tham Gia Ngay",
+    "btnVisit": "Tham Quan Phòng Gym"
+  },
+  "programs": {
+    "title": "Chương Trình Tập Luyện",
+    "items": [
+      { "icon": "💪", "name": "Gym & Cardio", "level": "Mọi cấp độ", "desc": "Phòng tập hiện đại 500m² với 100+ thiết bị chuyên nghiệp" },
+      { "icon": "🥊", "name": "Boxing & MMA", "level": "Trung cấp", "desc": "Học võ kết hợp rèn luyện thể lực toàn diện" },
+      { "icon": "🧘", "name": "Yoga & Pilates", "level": "Mọi cấp độ", "desc": "Cân bằng cơ thể và tinh thần với các lớp yoga đa dạng" },
+      { "icon": "🚴", "name": "Cycling", "level": "Mọi cấp độ", "desc": "Lớp đạp xe indoor cường độ cao đốt cháy mỡ thừa hiệu quả" },
+      { "icon": "🏊", "name": "Bơi Lội", "level": "Mọi cấp độ", "desc": "Bể bơi 25m tiêu chuẩn với HLV bơi lội chuyên nghiệp" },
+      { "icon": "🤸", "name": "CrossFit", "level": "Nâng cao", "desc": "Luyện tập chức năng cường độ cao đốt cháy tối đa calo" }
+    ]
+  },
+  "membership": {
+    "title": "Gói Thành Viên",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "599.000đ",
+        "period": "/tháng",
+        "features": ["Gym & Cardio 24/7", "Phòng thay đồ cao cấp", "1 buổi PT miễn phí"],
+        "popular": false
+      },
+      {
+        "name": "Pro",
+        "price": "899.000đ",
+        "period": "/tháng",
+        "features": ["Tất cả dịch vụ Basic", "Lớp học Group 20+", "Sauna & Steam room", "3 buổi PT miễn phí"],
+        "popular": true
+      },
+      {
+        "name": "Elite",
+        "price": "1.499.000đ",
+        "period": "/tháng",
+        "features": ["Tất cả dịch vụ Pro", "8 buổi PT cá nhân", "Tư vấn dinh dưỡng", "Ưu tiên đặt lịch"],
+        "popular": false
+      }
+    ]
+  },
+  "info": {
+    "hours": "05:00 – 23:00",
+    "phone": "0966 789 123",
+    "address": "200 Điện Biên Phủ, Q.Bình Thạnh, TP.HCM"
+  },
+  "footer": { "copy": "© 2025 Iron Zone Fitness. Được tạo bởi WebChoViet." }
+}
