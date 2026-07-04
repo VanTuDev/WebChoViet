@@ -6,6 +6,7 @@ import koJson from './i18n/ko.json';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+import { useTemplateLang } from '../../_shared/LanguageSwitcher';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -34,8 +35,9 @@ const IMGS = {
   map: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBM5nLP9FCaASSJXsC23E01Q9z8694iAzzNLxRluVRwoT80lrLqYrtfzRiu1xT0_BzeG_qgrMLs1PYy-msnaRewk-ec7tLelo3HygNaBb4JH92jmcAvbbR5W9yKQgu9blHNtgwsBrwLGa1Q0qzYmqmKpnbQg4QNk4vChQuEz7g8485WlSYRSxJjRlIiA3-tjE4HZBGrU4pP6hUV_TelC9IjdRSiEYMJMP0aEJy7_bRRtJ4viKGb7BCddWvW70R4tdW8-WTjpANilFE',
 };
 
-export default function Coffe4({ lang: initialLang = 'vi' }: Props) {
-  const [lang, setLang] = useState<Lang>(initialLang);
+export default function Coffe4({ lang: propLang = 'vi' }: Props) {
+  // Đồng bộ với prop lang (PublicSitePage/editor đổi ngôn ngữ) nhưng switcher nội bộ vẫn hoạt động
+  const { activeLang: lang, setActiveLang: setLang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
   const [activeTab, setActiveTab] = useState<TabKey>('signature');

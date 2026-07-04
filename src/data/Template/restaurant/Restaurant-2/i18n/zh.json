@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Bep Viet Premium",
+    "about": "关于我们",
+    "menu": "菜单",
+    "reviews": "顾客评价",
+    "contact": "联系我们",
+    "cta": "立即订座"
+  },
+  "hero": {
+    "badge": "Bep Viet Premium",
+    "title": "越南美食之精华",
+    "subtitle": "在优雅精致的空间里，体验以当代烹饪视角升华的传统风味。",
+    "btnReserve": "立即订座",
+    "btnMenu": "查看菜单"
+  },
+  "about": {
+    "title": "我们的故事",
+    "p1": "在 Bep Viet Premium，我们不仅供应美味佳肴，更在讲述越南丰富饮食文化遗产的故事。每一种食材都经过严格挑选，每一道配方都经过数代人的传承提炼，并结合现代烹饪技艺。",
+    "p2": "我们的目标是带来完整的美食体验——传统风味与当代设计的优雅相互交融，为所有感官谱写一曲美妙的交响乐。",
+    "caption": "精致空间，浓郁东方韵味。",
+    "features": [
+      {
+        "title": "新鲜美味",
+        "desc": "每日严选食材"
+      },
+      {
+        "title": "尊贵品质",
+        "desc": "五星级服务水准"
+      }
+    ]
+  },
+  "menu": {
+    "title": "招牌菜单",
+    "subtitle": "由我们著名主厨精心打造的美食杰作。",
+    "viewAll": "查看完整菜单",
+    "items": [
+      {
+        "name": "特级牛肉河粉",
+        "desc": "熬制24小时的高汤、和牛里脊、新鲜河粉。",
+        "price": "350.000₫"
+      },
+      {
+        "name": "鲜虾春卷",
+        "desc": "清爽开胃前菜。",
+        "price": "120.000₫"
+      },
+      {
+        "name": "河内烤鱼",
+        "desc": "河内著名特色菜。",
+        "price": "280.000₫"
+      },
+      {
+        "name": "莲子银耳甜汤",
+        "desc": "清雅滋补的甜品。",
+        "price": "90.000₫"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "顾客心声",
+    "subtitle": "食客的满意是我们最大的成功标尺。",
+    "items": [
+      {
+        "quote": "一次美妙的用餐体验！这里的牛肉河粉味道浓郁，汤头清澈地道。高雅的环境非常适合宴请宾客。",
+        "name": "Minh Tu 女士",
+        "role": "市场总监"
+      },
+      {
+        "quote": "服务人员极其专业周到。每道菜的摆盘都精美如艺术品。我们一定会再来。",
+        "name": "Hoang Nam 先生",
+        "role": "企业家"
+      },
+      {
+        "quote": "我们全家在这里度过了一个难忘的生日晚宴。环境安静温馨，菜单也非常丰富。",
+        "name": "Thu Ha 女士",
+        "role": "忠实顾客"
+      }
+    ]
+  },
+  "reservation": {
+    "title": "立即订座",
+    "subtitle": "请填写以下信息，以便我们为您的用餐做好最周到的准备。",
+    "nameLabel": "姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "phoneLabel": "电话号码",
+    "phonePlaceholder": "请输入电话号码",
+    "dateLabel": "日期",
+    "guestsLabel": "人数",
+    "guestOptions": [
+      {
+        "label": "2 位"
+      },
+      {
+        "label": "3 - 4 位"
+      },
+      {
+        "label": "5 - 8 位"
+      },
+      {
+        "label": "8 位以上"
+      }
+    ],
+    "noteLabel": "备注",
+    "notePlaceholder": "特殊要求（过敏、儿童椅等）",
+    "submit": "确认订座"
+  },
+  "contact": {
+    "title": "联系方式",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡 Tinh Hoa 路 123 号",
+    "phoneLabel": "热线",
+    "phone": "0909 123 456",
+    "hoursLabel": "营业时间",
+    "hours": "10:00 - 22:00（每天营业）",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Bep Viet Premium",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "partner": "合作洽谈",
+    "copy": "© 2025 Bep Viet Premium. 由 WebChoViet 创建。"
+  }
+}

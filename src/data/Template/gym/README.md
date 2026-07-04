@@ -14,7 +14,9 @@ sân bóng, sân tennis, hồ bơi, trung tâm thể thao đa năng.
 
 ## Templates hiện có
 
-> Chưa có template. Xem hướng dẫn thêm template trong `docs/skill-add-template.md`.
+| ID | Tên | Giá | Đặc điểm nổi bật |
+|----|-----|-----|-------------------|
+| `gym-1` | Iron Zone | Miễn phí | Tông tối accent cam, hero fullscreen tối, grid 6 chương trình tập, bảng giá 3 gói |
 
 ---
 

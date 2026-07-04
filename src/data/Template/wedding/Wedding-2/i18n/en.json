@@ -48,5 +48,9 @@
     "phone": "0912 345 678",
     "address": "2 Lam Son Square, D.1, HCMC"
   },
+  "location": {
+    "title": "Directions to the Venue",
+    "mapUrl": ""
+  },
   "footer": { "copy": "© 2025 Huong Giang & Minh Tuan · Built with WebChoViet." }
 }

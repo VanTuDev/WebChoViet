@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
-  Eye, Users, MousePointerClick, Clock,
-  TrendingUp, TrendingDown, Smartphone, Monitor, Tablet,
+  Eye, Users, MousePointerClick, Clock, LogOut,
+  Smartphone, Monitor, Tablet,
   Globe, Loader2,
 } from 'lucide-react';
 import { useAppContext } from '../../../store/AppContext';
@@ -37,26 +37,14 @@ interface StatCardProps {
   label: string;
   value: string | number;
   sub?: string;
-  trend?: number;
 }
 
-function StatCard({ icon, iconBg, label, value, sub, trend }: StatCardProps) {
-  const up = trend !== undefined && trend >= 0;
+// Trend % đã bị gỡ: giá trị cũ là số hardcode giả (12/8/-3), không tính từ dữ liệu thật.
+// Muốn khôi phục cần backend trả thêm số liệu kỳ trước để so sánh.
+function StatCard({ icon, iconBg, label, value, sub }: StatCardProps) {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow">
-      <div className="flex items-start justify-between">
-        <span className={`p-2.5 rounded-xl ${iconBg}`}>{icon}</span>
-        {trend !== undefined && (
-          <span
-            className={`flex items-center gap-0.5 text-[11px] font-bold px-2 py-1 rounded-full ${
-              up ? 'text-emerald-700 bg-emerald-50' : 'text-red-600 bg-red-50'
-            }`}
-          >
-            {up ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
-            {Math.abs(trend)}%
-          </span>
-        )}
-      </div>
+      <span className={`p-2.5 rounded-xl self-start ${iconBg}`}>{icon}</span>
       <div>
         <p className="text-2xl font-bold text-gray-900 leading-none">{value}</p>
         <p className="text-xs text-gray-500 mt-1">{label}</p>
@@ -219,15 +207,7 @@ export default function AnalyticsPage() {
           <span className="text-base leading-none mt-0.5">⚠️</span>
           <div>
             <span className="font-semibold">Đang hiển thị dữ liệu mẫu.</span>{' '}
-            API analytics chưa được kết nối. Xem ghi chú trong{' '}
-            <code className="bg-amber-100 border border-amber-200 px-1 py-0.5 rounded font-mono text-[11px]">
-              api/routes.ts
-            </code>{' '}
-            và{' '}
-            <code className="bg-amber-100 border border-amber-200 px-1 py-0.5 rounded font-mono text-[11px]">
-              src/services/analyticsService.ts
-            </code>{' '}
-            để build BE.
+            Không gọi được API analytics từ backend (chưa đăng nhập, mất mạng, hoặc backend chưa chạy).
           </div>
         </div>
       )}
@@ -258,15 +238,33 @@ export default function AnalyticsPage() {
       {/* ── Dashboard ────────────────────────────────────────────────────────── */}
       {analytics && !loading && (
         <>
+          {/* ── Khách truy cập: hôm nay / tuần này / tháng này ─────────────────── */}
+          <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+            <h3 className="text-sm font-bold text-gray-800 mb-4">Khách truy cập</h3>
+            <div className="grid grid-cols-3 gap-4">
+              {([
+                { label: 'Hôm nay', value: analytics.visitors.today, sub: undefined },
+                { label: 'Tuần này', value: analytics.visitors.thisWeek, sub: '7 ngày gần nhất' },
+                { label: 'Tháng này', value: analytics.visitors.thisMonth, sub: '30 ngày gần nhất' },
+              ] as const).map(({ label, value, sub }) => (
+                <div key={label} className="text-center border-r last:border-r-0 border-gray-50">
+                  <p className="text-2xl font-bold text-gray-900">{value.toLocaleString('vi-VN')}</p>
+                  <p className="text-xs text-gray-500 mt-1">{label}</p>
+                  {sub && <p className="text-[10px] text-gray-400 mt-0.5">{sub}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* ── Stat cards ──────────────────────────────────────────────────── */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             <StatCard
               icon={<Eye className="h-4 w-4 text-blue-600" />}
               iconBg="bg-blue-50"
               label="Tổng lượt xem"
               value={analytics.total.views.toLocaleString('vi-VN')}
               sub={`${days} ngày gần nhất`}
-              trend={12}
+
             />
             <StatCard
               icon={<Users className="h-4 w-4 text-violet-600" />}
@@ -274,7 +272,7 @@ export default function AnalyticsPage() {
               label="Khách độc lập"
               value={analytics.total.uniqueVisitors.toLocaleString('vi-VN')}
               sub="Unique visitors"
-              trend={8}
+
             />
             <StatCard
               icon={<MousePointerClick className="h-4 w-4 text-emerald-600" />}
@@ -282,7 +280,14 @@ export default function AnalyticsPage() {
               label="Lượt tương tác"
               value={analytics.total.clicks.toLocaleString('vi-VN')}
               sub="Clicks có ý nghĩa"
-              trend={-3}
+
+            />
+            <StatCard
+              icon={<LogOut className="h-4 w-4 text-red-500" />}
+              iconBg="bg-red-50"
+              label="Tỉ lệ rời trang"
+              value={`${analytics.total.bounceRate}%`}
+              sub="Vào rồi rời đi, không thao tác"
             />
             <StatCard
               icon={<Clock className="h-4 w-4 text-orange-500" />}

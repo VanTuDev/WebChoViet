@@ -1,83 +1,20 @@
-// ─── Analytics Service ─────────────────────────────────────────────────────────
-//
-// ╔══════════════════════════════════════════════════════════════════════════════╗
-// ║  BE ENDPOINTS CẦN BUILD — thêm vào api/routes.ts                           ║
-// ╠══════════════════════════════════════════════════════════════════════════════╣
-// ║                                                                              ║
-// ║  POST /api/analytics/track                                                   ║
-// ║    Body: TrackEvent                                                           ║
-// ║    Logic:                                                                     ║
-// ║      const ANALYTICS_DIR = path.resolve(cwd, 'data/analytics');              ║
-// ║      Tạo thư mục nếu chưa có.                                                ║
-// ║      Đọc data/analytics/[slug].json (hoặc tạo mới với cấu trúc rỗng).       ║
-// ║      today = new Date().toISOString().slice(0, 10)   // "YYYY-MM-DD"         ║
-// ║      if (!db.daily[today]) db.daily[today] = emptyDayRecord()               ║
-// ║                                                                              ║
-// ║      Nếu type === 'pageview':                                                 ║
-// ║        db.daily[today].views++                                                ║
-// ║        // unique: Set<sessionId> lưu per-day, độ dài Set = uniqueVisitors    ║
-// ║        db.daily[today].sessionIds.add(body.sessionId)                        ║
-// ║        db.daily[today].uniqueVisitors = sessionIds.size                      ║
-// ║        db.daily[today].devices[body.data.deviceType]++                       ║
-// ║                                                                              ║
-// ║      Nếu type === 'click':                                                    ║
-// ║        db.daily[today].clicks++                                               ║
-// ║        const label = body.data.element ?? 'unknown'                          ║
-// ║        db.interactions[label] = (db.interactions[label] ?? 0) + 1            ║
-// ║                                                                              ║
-// ║      Nếu type === 'session_end':                                              ║
-// ║        db.daily[today].totalSessions++                                        ║
-// ║        db.daily[today].totalTimeSeconds += body.data.durationSeconds ?? 0    ║
-// ║        // avgTime = totalTimeSeconds / totalSessions khi query                ║
-// ║                                                                              ║
-// ║      Lưu lại file. Response: { ok: true }                                    ║
-// ║                                                                              ║
-// ║  GET /api/analytics/:slug?days=7                                             ║
-// ║    Logic:                                                                     ║
-// ║      Đọc data/analytics/[slug].json                                           ║
-// ║      Lọc N ngày gần nhất từ db.daily                                         ║
-// ║      Tổng hợp total { views, uniqueVisitors, clicks, avgTimeSeconds }        ║
-// ║      topInteractions: Object.entries(db.interactions)                        ║
-// ║                         .sort(([,a],[,b]) => b-a).slice(0,5)                ║
-// ║      deviceBreakdown: tổng devices từ tất cả daily records                  ║
-// ║    Response: SlugAnalytics (xem interface bên dưới)                         ║
-// ║                                                                              ║
-// ║  Cấu trúc file data/analytics/[slug].json:                                  ║
-// ║  {                                                                            ║
-// ║    "slug": "my-coffee",                                                       ║
-// ║    "daily": {                                                                 ║
-// ║      "2026-06-26": {                                                          ║
-// ║        "views": 45,                                                           ║
-// ║        "uniqueVisitors": 32,                                                  ║
-// ║        "sessionIds": ["uuid1", "uuid2", ...],  // dedup ở đây               ║
-// ║        "clicks": 12,                                                          ║
-// ║        "totalSessions": 30,                                                   ║
-// ║        "totalTimeSeconds": 2610,                                              ║
-// ║        "devices": { "mobile": 24, "tablet": 4, "desktop": 4 }               ║
-// ║      }                                                                        ║
-// ║    },                                                                         ║
-// ║    "interactions": {                                                          ║
-// ║      "phone": 136,                                                            ║
-// ║      "social-fb": 68,                                                         ║
-// ║      "map": 51                                                                ║
-// ║    }                                                                          ║
-// ║  }                                                                            ║
-// ╚══════════════════════════════════════════════════════════════════════════════╝
+// ─── Analytics / Log Service ────────────────────────────────────────────────────
+// sendLog() là hàm CHUNG duy nhất để gửi mọi loại sự kiện thống kê lên backend
+// (BackEnd-WebChoViet/src/analytics — POST /analytics/track). Muốn track thêm 1
+// hành vi mới của user, chỉ cần gọi sendLog(slug, '<Loại-Mới>', { ...data }) —
+// không cần đổi schema hay endpoint (xem LogEventType bên dưới để thêm loại mới).
+import { getApiBaseUrl, getToken } from './authService';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-export interface TrackEvent {
-  slug: string;
-  type: 'pageview' | 'click' | 'session_end';
-  sessionId: string;      // UUID lưu trong sessionStorage, không lưu PII
-  timestamp: string;      // ISO 8601
-  data?: {
-    element?: string;           // 'phone' | 'cta' | 'social-fb' | 'map' | v.v.
-    durationSeconds?: number;   // chỉ dùng với session_end
-    referrer?: string;          // document.referrer, chỉ dùng với pageview
-    deviceType?: 'mobile' | 'tablet' | 'desktop';
-  };
-}
+export type LogEventType =
+  | 'User-View'          // Vào trang
+  | 'User-Leave'          // Rời đi mà KHÔNG tương tác gì (bounce)
+  | 'User-Click'          // Click 1 element có ý nghĩa (phone, social, map, CTA...)
+  | 'User-Session-End'    // Rời đi SAU KHI đã tương tác — tách khỏi bounce
+  | 'User-Scroll-Depth'   // Cuộn tới mốc 25/50/75/100%
+  | 'User-Conversion'     // Hoàn thành mục tiêu marketing (đặt bàn, gọi, liên hệ...)
+  | 'User-Language-Switch'; // Khách đổi ngôn ngữ xem trang public
 
 export interface DailyStats {
   date: string;           // "YYYY-MM-DD"
@@ -89,21 +26,27 @@ export interface DailyStats {
 
 export interface SlugAnalytics {
   slug: string;
-  isMock?: boolean;       // true nếu BE chưa kết nối
+  isMock?: boolean;       // true nếu BE không gọi được → đang hiển thị dữ liệu mẫu
   total: {
     views: number;
     uniqueVisitors: number;
     clicks: number;
     avgTimeSeconds: number;
+    bounceRate: number;   // % phiên rời đi mà không tương tác gì, luôn trong [0, 100]
   };
-  daily: DailyStats[];    // mảng N ngày gần nhất, đã điền ngày trống = 0
+  visitors: {
+    today: number;
+    thisWeek: number;
+    thisMonth: number;
+  };
+  daily: DailyStats[];
   topInteractions: { element: string; label: string; count: number }[];
   deviceBreakdown: { mobile: number; tablet: number; desktop: number };
 }
 
 // ── Session ID ────────────────────────────────────────────────────────────────
-// Lưu trong sessionStorage → mất khi đóng tab, không theo dõi giữa các session.
-// Không lưu PII (tên/email/IP). Đủ để đếm unique visitors per day.
+// Lưu trong sessionStorage → mất khi đóng tab. Không lưu PII (tên/email/IP).
+// Đủ để đếm unique visitors và phân biệt các phiên.
 
 function getOrCreateSessionId(): string {
   const KEY = 'wcv_sid';
@@ -115,24 +58,31 @@ function getOrCreateSessionId(): string {
   return sid;
 }
 
-// ── Track ─────────────────────────────────────────────────────────────────────
+// ── sendLog — hàm chung duy nhất để gửi log ─────────────────────────────────────
 
 /**
- * Gửi event tracking lên BE. Fire-and-forget, không throw.
- * keepalive: true → gửi được kể cả khi tab đang đóng (dùng cho session_end).
+ * Gửi 1 sự kiện thống kê lên backend. Fire-and-forget, không throw — lỗi mạng
+ * không được phép ảnh hưởng UX của trang public.
+ * keepalive: true → vẫn gửi được khi tab đang đóng (quan trọng cho User-Leave).
  */
-export async function trackEvent(
-  event: Omit<TrackEvent, 'sessionId' | 'timestamp'>,
+export async function sendLog(
+  slug: string,
+  type: LogEventType,
+  data?: Record<string, unknown>,
 ): Promise<void> {
   try {
-    await fetch('/api/analytics/track', {
+    await fetch(`${getApiBaseUrl()}/analytics/track`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+      },
       body: JSON.stringify({
-        ...event,
+        slug,
+        type,
         sessionId: getOrCreateSessionId(),
-        timestamp: new Date().toISOString(),
-      } satisfies TrackEvent),
+        data: data ?? {},
+      }),
       keepalive: true,
     });
   } catch {
@@ -140,31 +90,50 @@ export async function trackEvent(
   }
 }
 
-// ── Fetch ─────────────────────────────────────────────────────────────────────
+// ── Fetch (dashboard chủ site) ──────────────────────────────────────────────────
 
-/**
- * Lấy analytics của một slug. Fallback sang mock nếu API chưa build.
- */
+const INTERACTION_LABELS: Record<string, string> = {
+  phone:          'Số điện thoại',
+  cta:            'Nút đặt bàn',
+  'social-fb':    'Facebook',
+  map:            'Xem bản đồ',
+  'social-ig':    'Instagram',
+  'social-zalo':  'Zalo',
+  'social-tiktok':'TikTok',
+  'social-youtube':'YouTube',
+  email:          'Email',
+};
+
+/** Lấy analytics của 1 site — yêu cầu đăng nhập (chỉ chủ site xem được). Fallback mock nếu lỗi. */
 export async function fetchAnalytics(slug: string, days = 7): Promise<SlugAnalytics> {
   try {
-    const res = await fetch(`/api/analytics/${slug}?days=${days}`);
-    if (res.ok) return res.json() as Promise<SlugAnalytics>;
+    const token = getToken();
+    const res = await fetch(`${getApiBaseUrl()}/analytics/${encodeURIComponent(slug)}?days=${days}`, {
+      headers: {
+        'ngrok-skip-browser-warning': 'true',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+    });
+    const body = await res.json().catch(() => null);
+    if (res.ok && body?.success) {
+      const raw = body.data as Omit<SlugAnalytics, 'topInteractions'> & {
+        topInteractions: { element: string; count: number }[];
+      };
+      return {
+        ...raw,
+        topInteractions: raw.topInteractions.map(t => ({
+          ...t,
+          label: INTERACTION_LABELS[t.element] ?? t.element,
+        })),
+      };
+    }
   } catch {
     // fall through to mock
   }
   return { ...buildMockAnalytics(slug, days), isMock: true };
 }
 
-// ── Mock data (dùng khi BE chưa sẵn sàng) ─────────────────────────────────────
-
-const INTERACTION_LABELS: Record<string, string> = {
-  phone:        'Số điện thoại',
-  'cta':        'Nút đặt bàn',
-  'social-fb':  'Facebook',
-  map:          'Xem bản đồ',
-  'social-ig':  'Instagram',
-  'social-zalo':'Zalo',
-};
+// ── Mock data (dùng khi BE chưa gọi được — mất mạng, chưa đăng nhập...) ────────
 
 function buildMockAnalytics(slug: string, days: number): SlugAnalytics {
   const daily: DailyStats[] = [];
@@ -207,9 +176,17 @@ function buildMockAnalytics(slug: string, days: number): SlugAnalytics {
     { element: 'map',         label: INTERACTION_LABELS['map'],        count: Math.floor(totals.clicks * 0.13) },
   ];
 
+  const last = (n: number) => daily.slice(Math.max(0, daily.length - n));
+  const sumUnique = (arr: DailyStats[]) => arr.reduce((s, d) => s + d.uniqueVisitors, 0);
+
   return {
     slug,
-    total: { ...totals, avgTimeSeconds },
+    total: { ...totals, avgTimeSeconds, bounceRate: 38 },
+    visitors: {
+      today: daily[daily.length - 1]?.uniqueVisitors ?? 0,
+      thisWeek: sumUnique(last(7)),
+      thisMonth: sumUnique(last(30)),
+    },
     daily,
     topInteractions,
     deviceBreakdown: { mobile: 62, tablet: 15, desktop: 23 },

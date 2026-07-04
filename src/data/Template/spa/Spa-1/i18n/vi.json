@@ -22,8 +22,15 @@
   },
   "info": {
     "hours": "09:00 – 21:00",
+    "hoursLabel": "Giờ hoạt động",
     "phone": "0977 456 789",
-    "address": "88 Nam Kỳ Khởi Nghĩa, Q.3, TP.HCM"
+    "phoneLabel": "Hotline",
+    "address": "88 Nam Kỳ Khởi Nghĩa, Q.3, TP.HCM",
+    "addressLabel": "Địa chỉ"
+  },
+  "location": {
+    "title": "Tìm Đường Tới Spa",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2025 Lotus Spa. Được tạo bởi WebChoViet." }
 }

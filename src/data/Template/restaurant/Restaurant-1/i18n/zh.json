@@ -1,0 +1,36 @@
+{
+  "shopName": "Pho Am Thuc",
+  "tagline": "传统越南美食",
+  "nav": { "menu": "菜单", "about": "关于我们", "reserve": "订座" },
+  "hero": {
+    "badge": "🍜 传统 · 新鲜 · 浓郁",
+    "title": "市中心的正宗越南风味",
+    "desc": "我们为您呈现用新鲜食材烹制的传统越南菜肴，确保浓郁正宗的风味。",
+    "btnReserve": "立即订座",
+    "btnMenu": "查看菜单"
+  },
+  "menu": {
+    "title": "招牌菜品",
+    "items": [
+      { "name": "特色牛肉河粉", "price": "75,000₫", "desc": "熬制12小时的汤底，配新鲜和牛肉" },
+      { "name": "顺化辣牛肉米线", "price": "65,000₫", "desc": "正宗顺化风味，香茅辛辣汤底" },
+      { "name": "西贡碎米饭", "price": "70,000₫", "desc": "炭烤猪排配蒸蛋肉饼" },
+      { "name": "鲜虾春卷", "price": "45,000₫", "desc": "鲜虾、猪肉、米粉和香草的新鲜春卷" },
+      { "name": "河内烤肉米线", "price": "60,000₫", "desc": "炭火烤肉配白米线和特制蘸汁" },
+      { "name": "泰式海鲜火锅", "price": "320,000₫", "desc": "特制酸辣火锅，适合2-3人" }
+    ]
+  },
+  "info": {
+    "hours": "10:00 – 22:00",
+    "hoursLabel": "营业时间",
+    "phone": "0988 123 456",
+    "phoneLabel": "热线电话",
+    "address": "胡志明市第一郡李自重街45号",
+    "addressLabel": "地址"
+  },
+  "location": {
+    "title": "餐厅位置",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Pho Am Thuc. 由 WebChoViet 创建。" }
+}

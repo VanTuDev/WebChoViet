@@ -1,0 +1,56 @@
+{
+  "shopName": "청첩장",
+  "couple": {
+    "bride": "Hương Giang",
+    "groom": "Minh Tuấn",
+    "date": "20.09.2025",
+    "dateLong": "2025년 9월 20일 토요일",
+    "location": "파크 하얏트 사이공"
+  },
+  "nav": { "gallery": "앨범", "event": "일정", "rsvp": "참석 확인" },
+  "hero": {
+    "badge": "💍 모바일 청첩장",
+    "title": "저희 결혼합니다"
+  },
+  "countdown": {
+    "title": "결혼식까지 남은 시간",
+    "days": "일",
+    "hours": "시간",
+    "minutes": "분",
+    "seconds": "초"
+  },
+  "gallery": {
+    "title": "추억 앨범",
+    "items": [
+      { "caption": "첫 만남" },
+      { "caption": "첫 여행" },
+      { "caption": "프러포즈" },
+      { "caption": "웨딩 촬영" }
+    ]
+  },
+  "events": {
+    "title": "결혼식 당일 일정",
+    "items": [
+      { "time": "08:00", "icon": "🏠", "name": "가족 예식", "desc": "신부 집, 호치민시 1군 파스퇴르 15" },
+      { "time": "11:00", "icon": "⛪", "name": "결혼식", "desc": "호치민시 1군 노트르담 대성당" },
+      { "time": "18:30", "icon": "🥂", "name": "결혼 피로연", "desc": "파크 하얏트 사이공, 1군 람선 광장 2" }
+    ]
+  },
+  "rsvp": {
+    "title": "참석 확인",
+    "desc": "2025년 9월 10일까지 참석 여부를 알려주세요",
+    "namePlaceholder": "성함",
+    "attending": "참석하겠습니다",
+    "notAttending": "아쉽지만 참석이 어렵습니다",
+    "send": "확인 보내기"
+  },
+  "info": {
+    "phone": "0912 345 678",
+    "address": "호치민시 1군 람선 광장 2"
+  },
+  "location": {
+    "title": "오시는 길",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Hương Giang & Minh Tuấn · WebChoViet으로 제작되었습니다." }
+}

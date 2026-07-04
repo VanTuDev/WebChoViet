@@ -5,10 +5,11 @@ import { useAppContext } from '../../store/AppContext';
 import {
   LayoutGrid, Coffee, Sparkles, Utensils, Milk,
   Dumbbell, Heart,
-  TrendingUp, QrCode, Settings, HelpCircle, LogOut,
-  FolderSymlink, Award,
+  TrendingUp, QrCode, Settings, HelpCircle,
+  FolderSymlink,
 } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
+import SidebarPlanCard from './SidebarPlanCard';
 
 // ── Config constants ───────────────────────────────────────────────────────────
 
@@ -44,8 +45,8 @@ function SidebarShell({ children }: { children: React.ReactNode }) {
 // ── Marketplace Sidebar (lọc theo danh mục) ────────────────────────────────────
 
 function MarketplaceSidebar() {
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { user } = useAppContext();
   const selected = searchParams.get('category') ?? 'all';
 
   const handleSelect = (cat: string) => {
@@ -87,22 +88,7 @@ function MarketplaceSidebar() {
         </nav>
       </div>
 
-      {/* Card nâng cấp WebPro */}
-      <div className="bg-[#003f87] text-white rounded-2xl p-5 shadow-sm text-center space-y-3 mt-8 relative overflow-hidden">
-        <div className="absolute -right-2.5 -top-2.5 opacity-10">
-          <Award className="h-20 w-20" />
-        </div>
-        <div className="text-sm font-bold">Nâng cấp gói WebPro</div>
-        <p className="text-xs text-[#bbd0ff] leading-relaxed">
-          Mở khóa miền riêng biệt (.vn, .com) & loại bỏ hoàn toàn logo WebChoViet.
-        </p>
-        <button
-          onClick={() => navigate(ROUTES.PRICING)}
-          className="w-full py-2 bg-white text-[#003f87] hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95"
-        >
-          Đăng ký gói Pro
-        </button>
-      </div>
+      <SidebarPlanCard plan={user?.plan ?? null} />
     </SidebarShell>
   );
 }
@@ -112,7 +98,7 @@ function MarketplaceSidebar() {
 function DashboardSidebar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { showConfirm } = useAppContext();
+  const { user } = useAppContext();
 
   return (
     <SidebarShell>
@@ -138,28 +124,7 @@ function DashboardSidebar() {
         </nav>
       </div>
 
-      <div className="space-y-2 pt-6 border-t border-gray-100">
-        <button
-          onClick={() => navigate(ROUTES.PRICING)}
-          className="w-full flex items-center justify-center gap-2 py-2.5 bg-linear-to-r from-[#003f87] to-[#00aaff] text-white rounded-xl text-xs font-bold hover:opacity-90 active:scale-95 shadow-sm cursor-pointer transition-all"
-        >
-          <Award className="h-4 w-4 text-yellow-300 fill-yellow-300" />
-          <span>Gói WebPro Đang Mở</span>
-        </button>
-        <button
-          onClick={() => showConfirm({
-            title: 'Đăng xuất?',
-            message: 'Bạn có chắc muốn đăng xuất khỏi WebChoViet?',
-            confirmLabel: 'Đăng xuất',
-            variant: 'danger',
-            onConfirm: () => navigate('/landing'),
-          })}
-          className="w-full flex items-center gap-3 px-3 py-2 text-xs font-medium text-gray-500 hover:text-red-600 rounded-lg hover:bg-red-50/50 transition-colors cursor-pointer"
-        >
-          <LogOut className="h-4 w-4" />
-          <span>Đăng xuất tài khoản</span>
-        </button>
-      </div>
+      <SidebarPlanCard plan={user?.plan ?? null} />
     </SidebarShell>
   );
 }

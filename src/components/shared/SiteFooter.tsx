@@ -1,15 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, Globe, MessageCircle } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
+import { CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, DOMAIN, BUSINESS_REG_NUMBER, BUSINESS_REG_AUTHORITY } from '../../config/contact';
 
 interface SiteFooterProps {
   variant?: 'landing' | 'app';
 }
-
-const CONTACT_PHONE = '0347 868 656';
-const CONTACT_PHONE_RAW = '0347868656';
-const CONTACT_EMAIL = 'hotro@webchoviet.com';
-const DOMAIN = 'webchoviet.com';
 
 const PRODUCT_LINKS = [
   { label: 'Kho Giao Diện',  path: ROUTES.MARKETPLACE },
@@ -19,10 +15,10 @@ const PRODUCT_LINKS = [
 ];
 
 const POLICY_LINKS = [
-  { label: 'Chính Sách Bảo Mật',   path: '/policy/privacy' },
-  { label: 'Điều Khoản Sử Dụng',   path: '/policy/terms' },
-  { label: 'Chính Sách Hoàn Tiền', path: '/policy/refund' },
-  { label: 'Quy Định Cookie',       path: '/policy/cookies' },
+  { label: 'Chính Sách Bảo Mật',   path: ROUTES.POLICY_PRIVACY },
+  { label: 'Điều Khoản Sử Dụng',   path: ROUTES.POLICY_TERMS },
+  { label: 'Chính Sách Hoàn Tiền', path: ROUTES.POLICY_REFUND },
+  { label: 'Quy Định Cookie',       path: ROUTES.POLICY_COOKIES },
 ];
 
 export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
@@ -47,8 +43,8 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
         {/* Links */}
         <div className="flex items-center gap-6">
           {[
-            { label: 'Điều khoản', path: '/policy/terms' },
-            { label: 'Bảo mật',   path: '/policy/privacy' },
+            { label: 'Điều khoản', path: ROUTES.POLICY_TERMS },
+            { label: 'Bảo mật',   path: ROUTES.POLICY_PRIVACY },
             { label: 'Liên hệ',   path: ROUTES.DASHBOARD_SUPPORT },
             { label: 'Hướng dẫn', path: ROUTES.TUTORIALS },
           ].map(({ label, path }) => (
@@ -162,8 +158,8 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
 
             <div className="mt-5 pt-4 border-t border-slate-100">
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                Đăng ký kinh doanh số <span className="font-medium text-slate-500">0123456789</span>
-                <br />cấp bởi Sở KH&ĐT TP. Hồ Chí Minh.
+                Đăng ký kinh doanh số <span className="font-medium text-slate-500">{BUSINESS_REG_NUMBER}</span>
+                <br />cấp bởi {BUSINESS_REG_AUTHORITY}.
               </p>
             </div>
           </div>
@@ -177,14 +173,14 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-400 font-medium">
             <button
-              onClick={() => navigate('/policy/privacy')}
+              onClick={() => navigate(ROUTES.POLICY_PRIVACY)}
               className="hover:text-slate-700 transition-colors cursor-pointer"
             >
               Bảo mật
             </button>
             <span className="w-px h-3 bg-slate-200" />
             <button
-              onClick={() => navigate('/policy/terms')}
+              onClick={() => navigate(ROUTES.POLICY_TERMS)}
               className="hover:text-slate-700 transition-colors cursor-pointer"
             >
               Điều khoản

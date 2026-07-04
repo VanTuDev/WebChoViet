@@ -22,8 +22,15 @@
   },
   "info": {
     "hours": "9 AM – 9 PM",
+    "hoursLabel": "Open hours",
     "phone": "0977 456 789",
-    "address": "88 Nam Ky Khoi Nghia, D.3, HCMC"
+    "phoneLabel": "Hotline",
+    "address": "88 Nam Ky Khoi Nghia, D.3, HCMC",
+    "addressLabel": "Address"
+  },
+  "location": {
+    "title": "Find Our Spa",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2025 Lotus Spa. Built with WebChoViet." }
 }

@@ -4,7 +4,7 @@ import { SiteConfig } from '../types';
 import Snackbar, { type SnackbarState } from '../components/Snackbar/Snackbar';
 import ConfirmDialog, { type ConfirmDialogState } from '../components/ConfirmDialog/ConfirmDialog';
 import { getAllSiteConfigs, deleteSiteConfig as apiDeleteSiteConfig } from '../services/siteConfigService';
-import { getUserId } from '../utils/userId';
+import { type AuthUser, fetchMe, getToken, setToken, logoutRequest } from '../services/authService';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -19,6 +19,13 @@ interface AppContextType {
   showSnackbar: (message: string, type?: 'success' | 'error') => void;
   // ConfirmDialog — replaces window.confirm
   showConfirm: (dialog: ConfirmDialogState) => void;
+  // Auth — Google OAuth session
+  user: AuthUser | null;
+  authLoading: boolean;
+  isAuthenticated: boolean;
+  login: (token: string) => Promise<void>;
+  logout: () => Promise<void>;
+  refreshUser: () => Promise<void>;
 }
 
 // ── Context ────────────────────────────────────────────────────────────────────
@@ -30,16 +37,45 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [confirmDialog, setConfirmDialog] = useState<ConfirmDialogState | null>(null);
   const snackbarCounter = useRef(0);
 
+  // ── Auth state ──────────────────────────────────────────────────────────────
+  const [user, setUser] = useState<AuthUser | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    if (!getToken()) { setAuthLoading(false); return; }
+    fetchMe()
+      .then(setUser)
+      .finally(() => setAuthLoading(false));
+  }, []);
+
+  const login = async (token: string) => {
+    setToken(token);
+    setAuthLoading(true);
+    const me = await fetchMe();
+    setUser(me);
+    setAuthLoading(false);
+  };
+
+  /** Gọi lại /auth/me — dùng sau khi gói thay đổi (vd vừa thanh toán xong) để cập nhật user.plan ngay. */
+  const refreshUser = async () => {
+    setUser(await fetchMe());
+  };
+
+  const logout = async () => {
+    await logoutRequest(); // đã tự xoá token phía client bên trong
+    setUser(null);
+    setSiteConfigs([]);
+    setSiteConfigsLoaded(false);
+  };
+
   // ── SiteConfig state ────────────────────────────────────────────────────────
+  // Backend scope sẵn theo owner qua JWT (GET /sites/my) — không cần lọc phía client.
   const [siteConfigs, setSiteConfigs] = useState<SiteConfig[]>([]);
   const [siteConfigsLoaded, setSiteConfigsLoaded] = useState(false);
 
   const loadSiteConfigs = async () => {
     try {
-      const userId = getUserId();
-      const all = await getAllSiteConfigs();
-      const mine = all.filter(c => !c.createdBy || c.createdBy === userId);
-      setSiteConfigs(mine);
+      setSiteConfigs(await getAllSiteConfigs());
     } catch {
       setSiteConfigs([]);
     } finally {
@@ -47,7 +83,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  useEffect(() => { loadSiteConfigs(); }, []);
+  // Chỉ load site sau khi biết chắc trạng thái đăng nhập — /sites/my cần JWT hợp lệ.
+  useEffect(() => {
+    if (authLoading) return;
+    if (!user) { setSiteConfigs([]); setSiteConfigsLoaded(true); return; }
+    loadSiteConfigs();
+  }, [authLoading, user]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const upsertSiteConfig = (config: SiteConfig) => {
     setSiteConfigs(prev => {
@@ -74,6 +115,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         upsertSiteConfig, removeSiteConfig,
         showSnackbar,
         showConfirm,
+        user, authLoading, isAuthenticated: !!user,
+        login, logout, refreshUser,
       }}
     >
       {children}

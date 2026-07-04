@@ -1,0 +1,36 @@
+{
+  "shopName": "Lotus Spa",
+  "tagline": "放松 · 恢复 · 焕颜",
+  "nav": { "services": "服务项目", "about": "关于我们", "book": "预约" },
+  "hero": {
+    "badge": "✨ 极致放松",
+    "title": "市中心的高端放松空间",
+    "desc": "体验国际级水疗护理，采用来自越南的纯天然原料。",
+    "btnBook": "立即预约",
+    "btnLearn": "了解更多"
+  },
+  "services": {
+    "title": "我们的服务",
+    "items": [
+      { "icon": "💆", "name": "放松按摩", "price": "350,000₫ / 60分钟", "desc": "全身按摩护理，缓解压力，恢复活力" },
+      { "icon": "🌿", "name": "面部护理", "price": "450,000₫ / 75分钟", "desc": "使用高级有机产品的深层皮肤护理" },
+      { "icon": "🛁", "name": "草药浴", "price": "280,000₫ / 45分钟", "desc": "沉浸在放松的草药浴中" },
+      { "icon": "💅", "name": "美甲护理", "price": "180,000₫ / 45分钟", "desc": "使用安全产品的专业手部和足部护理" },
+      { "icon": "🌸", "name": "全身排毒", "price": "680,000₫ / 90分钟", "desc": "使用矿物泥和精油的全面身体排毒疗程" },
+      { "icon": "✨", "name": "光疗护理", "price": "320,000₫ / 30分钟", "desc": "LED光疗技术，减少皱纹，提亮肤色" }
+    ]
+  },
+  "info": {
+    "hours": "09:00 – 21:00",
+    "hoursLabel": "营业时间",
+    "phone": "0977 456 789",
+    "phoneLabel": "热线电话",
+    "address": "胡志明市第三郡南圻起义街88号",
+    "addressLabel": "地址"
+  },
+  "location": {
+    "title": "水疗中心位置",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Lotus Spa. 由 WebChoViet 创建。" }
+}

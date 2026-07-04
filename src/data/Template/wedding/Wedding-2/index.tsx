@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
+import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
+import zhJson from './i18n/zh.json';
+import koJson from './i18n/ko.json';
 
-type Lang = 'vi' | 'en';
-const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson };
+type Lang = 'vi' | 'en' | 'zh' | 'ko';
+const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
 interface Props { lang?: string }
 
 function useCountdown(isoDate: string) {
@@ -28,10 +31,10 @@ function useCountdown(isoDate: string) {
   return time;
 }
 
-export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
-  const [lang, setLang] = useState<Lang>(initialLang as Lang);
+export default function Wedding2({ lang = 'vi' }: Props) {
+  const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
   const { customData, images } = useTemplateCustom();
-  const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
+  const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
 
   const IMG = {
     hero:      images.hero      ?? 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400&auto=format&fit=crop&q=75',
@@ -49,9 +52,9 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
     <div className="min-h-screen bg-[#FFFEF9] font-serif">
 
       {/* ── Nav ──────────────────────────────────────────────────────────── */}
-      <nav className="sticky top-0 z-50 bg-[#1B3A6B]/96 backdrop-blur-md px-6 py-3 flex items-center justify-between">
+      <nav data-section="nav" className="sticky top-0 z-50 bg-[#1B3A6B]/96 backdrop-blur-md px-6 py-3 flex items-center justify-between">
         <span className="font-bold text-[#C5A028] tracking-[0.18em] text-sm uppercase font-sans">
-          {t.couple.bride} <span className="text-white/30">&amp;</span> {t.couple.groom}
+          <span data-field="couple.bride">{t.couple.bride}</span> <span className="text-white/30">&amp;</span> <span data-field="couple.groom">{t.couple.groom}</span>
         </span>
 
         <div className="hidden md:flex items-center gap-7 text-[11px] font-sans font-semibold text-white/60 tracking-[0.15em] uppercase">
@@ -59,24 +62,10 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
           <a href="#events"  className="hover:text-[#C5A028] cursor-pointer transition-colors">{t.nav.event}</a>
           <a href="#rsvp"    className="hover:text-[#C5A028] cursor-pointer transition-colors">{t.nav.rsvp}</a>
         </div>
-
-        <div className="flex items-center font-sans text-xs font-medium gap-0.5">
-          {(['vi', 'en'] as Lang[]).map((l, i) => (
-            <span key={l} className="flex items-center">
-              {i > 0 && <span className="text-white/25 mx-1">|</span>}
-              <button
-                onClick={() => setLang(l)}
-                className={`cursor-pointer transition-colors ${lang === l ? 'text-[#C5A028] font-bold' : 'text-white/40 hover:text-white'}`}
-              >
-                {l.toUpperCase()}
-              </button>
-            </span>
-          ))}
-        </div>
       </nav>
 
       {/* ── Hero — fullscreen ─────────────────────────────────────────────── */}
-      <section className="relative h-screen min-h-[600px]">
+      <section data-section="hero" className="relative h-screen min-h-[600px]">
         <img src={IMG.hero} alt="couple" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#1B3A6B]/58" />
 
@@ -88,14 +77,14 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
             <div className="h-px w-16 bg-[#C5A028]/50" />
           </div>
 
-          <p className="text-white/60 text-xs font-sans tracking-[0.3em] uppercase mb-5">{t.hero.title}</p>
+          <p data-field="hero.title" className="text-white/60 text-xs font-sans tracking-[0.3em] uppercase mb-5">{t.hero.title}</p>
 
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-none">{t.couple.bride}</h1>
           <div className="text-[#C5A028] text-4xl my-3">♥</div>
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-none mb-10">{t.couple.groom}</h1>
 
           <div className="border border-white/25 px-8 py-3 text-white/70 text-sm font-sans tracking-widest">
-            {t.couple.dateLong} &nbsp;·&nbsp; {t.couple.location}
+            <span data-field="couple.dateLong">{t.couple.dateLong}</span> &nbsp;·&nbsp; <span data-field="couple.location">{t.couple.location}</span>
           </div>
         </div>
 
@@ -106,7 +95,7 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* ── Countdown ────────────────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-[#1B3A6B] text-white text-center">
+      <section data-section="countdown" className="py-16 px-6 bg-[#1B3A6B] text-white text-center">
         <p className="text-[11px] font-sans tracking-[0.3em] uppercase text-[#C5A028] mb-10">
           {t.countdown.title}
         </p>
@@ -161,7 +150,7 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* ── Events ───────────────────────────────────────────────────────── */}
-      <section id="events" className="py-20 px-6 bg-[#FFFEF9]">
+      <section id="events" data-section="events" className="py-20 px-6 bg-[#FFFEF9]">
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-12">
             <div className="h-px w-12 bg-[#C5A028]/40" />
@@ -189,7 +178,7 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* ── RSVP ─────────────────────────────────────────────────────────── */}
-      <section id="rsvp" className="py-20 px-6 bg-[#1B3A6B]">
+      <section id="rsvp" data-section="rsvp" className="py-20 px-6 bg-[#1B3A6B]">
         <div className="max-w-md mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-[#C5A028]/40" />
@@ -212,7 +201,7 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
                 {t.rsvp.notAttending}
               </button>
             </div>
-            <button className="w-full py-3 bg-[#C5A028] text-[#1B3A6B] rounded-xl font-sans font-black text-sm hover:bg-[#D4AF37] transition-colors cursor-pointer tracking-wide">
+            <button data-track="rsvp" className="w-full py-3 bg-[#C5A028] text-[#1B3A6B] rounded-xl font-sans font-black text-sm hover:bg-[#D4AF37] transition-colors cursor-pointer tracking-wide">
               {t.rsvp.send}
             </button>
           </div>
@@ -235,6 +224,35 @@ export default function Wedding2({ lang: initialLang = 'vi' }: Props) {
           <div>
             <div className="text-2xl mb-1">📅</div>
             <div className="font-bold font-sans">{t.couple.dateLong}</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Google Maps ──────────────────────────────────────────────────── */}
+      <section data-section="location" className="py-20 px-6 bg-[#FFFEF9]">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="h-px w-12 bg-[#C5A028]/40" />
+            <span data-field="location.title" className="text-[#C5A028] text-[11px] font-sans tracking-[0.25em] uppercase">{t.location.title}</span>
+            <div className="h-px w-12 bg-[#C5A028]/40" />
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-[#1B3A6B]/10 h-[380px]">
+            {t.location.mapUrl ? (
+              <iframe
+                src={toGoogleMapsEmbedUrl(t.location.mapUrl)}
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps"
+              />
+            ) : (
+              <div className="w-full h-full bg-[#1B3A6B]/4 flex flex-col items-center justify-center gap-3 text-center px-6">
+                <span className="text-4xl">📍</span>
+                <p className="font-bold text-[#1B3A6B] text-lg font-sans">{t.info.address}</p>
+                <p className="text-sm text-gray-500 font-sans">{t.couple.dateLong}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -2,11 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
-import wcvApiPlugin from './api/plugin';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss(), wcvApiPlugin()],
+    plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

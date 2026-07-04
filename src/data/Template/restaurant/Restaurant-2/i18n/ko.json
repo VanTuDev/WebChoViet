@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Bep Viet Premium",
+    "about": "소개",
+    "menu": "메뉴",
+    "reviews": "고객 후기",
+    "contact": "문의하기",
+    "cta": "지금 예약"
+  },
+  "hero": {
+    "badge": "Bep Viet Premium",
+    "title": "베트남 미식의 정수",
+    "subtitle": "우아하고 세련된 공간에서, 현대적 감각으로 재해석한 전통의 맛을 경험해 보세요.",
+    "btnReserve": "테이블 예약",
+    "btnMenu": "메뉴 보기"
+  },
+  "about": {
+    "title": "우리의 이야기",
+    "p1": "Bep Viet Premium은 단순히 맛있는 요리를 제공하는 것을 넘어, 베트남의 풍부한 미식 유산 이야기를 전합니다. 엄선된 식재료와 여러 세대에 걸쳐 다듬어진 레시피에 현대적인 조리 기법을 더했습니다.",
+    "p2": "전통의 맛과 현대적 디자인의 우아함이 어우러져 모든 감각을 위한 아름다운 심포니를 만들어내는, 완벽한 다이닝 경험을 선사하는 것이 우리의 목표입니다.",
+    "caption": "동양의 정취가 가득한 세련된 공간.",
+    "features": [
+      {
+        "title": "신선함",
+        "desc": "매일 엄선하는 식재료"
+      },
+      {
+        "title": "프리미엄",
+        "desc": "5성급 서비스 품질"
+      }
+    ]
+  },
+  "menu": {
+    "title": "시그니처 메뉴",
+    "subtitle": "명성 있는 셰프들이 정성껏 만들어내는 미식의 걸작들.",
+    "viewAll": "전체 메뉴 보기",
+    "items": [
+      {
+        "name": "프리미엄 소고기 쌀국수",
+        "desc": "24시간 우려낸 육수, 와규 안심, 신선한 쌀국수.",
+        "price": "350.000₫"
+      },
+      {
+        "name": "새우 스프링롤",
+        "desc": "산뜻한 애피타이저.",
+        "price": "120.000₫"
+      },
+      {
+        "name": "짜까라봉",
+        "desc": "하노이의 명물 요리.",
+        "price": "280.000₫"
+      },
+      {
+        "name": "연꽃씨 은이버섯 째",
+        "desc": "담백하고 영양가 있는 디저트.",
+        "price": "90.000₫"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "고객의 목소리",
+    "subtitle": "고객의 즐거움이 저희 성공의 가장 큰 척도입니다.",
+    "items": [
+      {
+        "quote": "훌륭한 미식 경험이었습니다! 이곳 쌀국수는 육수가 맑고 깊은 맛이 일품이에요. 고급스러운 공간은 손님 접대에 안성맞춤입니다.",
+        "name": "Minh Tu 님",
+        "role": "마케팅 디렉터"
+      },
+      {
+        "quote": "직원들이 매우 전문적이고 세심합니다. 모든 요리가 예술 작품처럼 아름답게 플레이팅되어 나와요. 꼭 다시 방문할 거예요.",
+        "name": "Hoang Nam 님",
+        "role": "사업가"
+      },
+      {
+        "quote": "가족과 함께 잊지 못할 생일 파티를 보냈습니다. 조용하고 아늑한 공간에 메뉴도 무척 다양해요.",
+        "name": "Thu Ha 님",
+        "role": "단골 고객"
+      }
+    ]
+  },
+  "reservation": {
+    "title": "테이블 예약",
+    "subtitle": "정성껏 준비할 수 있도록 아래 정보를 입력해 주세요.",
+    "nameLabel": "성함",
+    "namePlaceholder": "성함을 입력하세요",
+    "phoneLabel": "전화번호",
+    "phonePlaceholder": "전화번호를 입력하세요",
+    "dateLabel": "날짜",
+    "guestsLabel": "인원",
+    "guestOptions": [
+      {
+        "label": "2명"
+      },
+      {
+        "label": "3 - 4명"
+      },
+      {
+        "label": "5 - 8명"
+      },
+      {
+        "label": "8명 이상"
+      }
+    ],
+    "noteLabel": "추가 요청사항",
+    "notePlaceholder": "특별 요청 (알레르기, 유아용 의자 등)",
+    "submit": "예약 확정"
+  },
+  "contact": {
+    "title": "연락처 정보",
+    "addressLabel": "주소",
+    "address": "호치민시 1군 Tinh Hoa로 123",
+    "phoneLabel": "핫라인",
+    "phone": "0909 123 456",
+    "hoursLabel": "영업시간",
+    "hours": "10:00 - 22:00 (연중무휴)",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Bep Viet Premium",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "partner": "파트너십",
+    "copy": "© 2025 Bep Viet Premium. WebChoViet으로 제작되었습니다."
+  }
+}

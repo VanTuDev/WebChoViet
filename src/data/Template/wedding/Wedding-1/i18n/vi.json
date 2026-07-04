@@ -36,7 +36,14 @@
   },
   "info": {
     "phone": "0901 234 567",
-    "address": "141 Nguyễn Huệ, Q.1, TP.HCM"
+    "phoneLabel": "Liên hệ",
+    "address": "141 Nguyễn Huệ, Q.1, TP.HCM",
+    "addressLabel": "Địa điểm",
+    "dateLabel": "Ngày tổ chức"
+  },
+  "location": {
+    "title": "Chỉ Đường Tới Tiệc Cưới",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2026 Ngọc Linh & Quốc Bảo. Được tạo bởi WebChoViet." }
 }

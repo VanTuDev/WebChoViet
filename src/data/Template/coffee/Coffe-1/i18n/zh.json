@@ -46,6 +46,12 @@
     "viewAll": "查看所有照片",
     "labelIndoor": "室内座位区"
   },
+  "location": {
+    "sectionTitle": "我们的位置",
+    "sectionSubtitle": "欢迎光临——通过下方地图快速导航。",
+    "mapPlaceholder": "在编辑器中粘贴 Google 地图嵌入链接即可显示地图。",
+    "mapUrl": ""
+  },
   "footer": {
     "brand": "webchoviet",
     "copyright": "© 2024 webchoviet. 保留所有权利。",

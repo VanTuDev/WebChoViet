@@ -24,10 +24,14 @@
 
 ### Nguyên lý cốt lõi
 
-**1 nguồn sự thật duy nhất** = `src/data/templates/registry.ts`
+**1 nguồn sự thật duy nhất** = `src/data/templates/registry.ts` — nhưng file này chỉ
+**gộp** dữ liệu lại. Dữ liệu thật của từng template nằm trong
+`src/data/templates/categories/<category>.ts` (1 file/category, xem
+`src/data/templates/README.md` để hiểu vì sao tách vậy).
 
-Toàn bộ hệ thống (Marketplace, Editor, PublicSite, Analytics) đều import từ đây.
-Không có file nào khác giữ danh sách template hay category.
+Toàn bộ hệ thống (Marketplace, Editor, PublicSite, Analytics) đều import từ
+`registry.ts` (không import thẳng `categories/*.ts`). Không có file nào khác
+giữ danh sách template hay category.
 
 ### Luồng dữ liệu
 
@@ -51,7 +55,16 @@ Tất cả các map trên được **tự sinh** bằng `.map()` và `Object.fro
 ```
 src/data/
 ├── templates/
-│   └── registry.ts              ← CHỈ SỬA FILE NÀY khi thêm template/category
+│   ├── types.ts                  ← Type dùng chung (Template, TemplateDefinition, ImageSlot, CategoryMeta)
+│   ├── registry.ts                ← Chỉ GỘP category lại + export các Map — hiếm khi cần sửa
+│   └── categories/
+│       ├── _meta.ts               ← CATEGORY_REGISTRY — SỬA FILE NÀY khi thêm category mới
+│       ├── coffee.ts              ← SỬA FILE NÀY khi thêm template vào category coffee
+│       ├── milk-tea.ts
+│       ├── restaurant.ts
+│       ├── spa.ts
+│       ├── gym.ts
+│       └── wedding.ts
 │
 └── Template/
     ├── coffee/
@@ -184,17 +197,21 @@ File này có 2 vai trò:
 
 ---
 
-### Bước 4: Thêm vào `registry.ts`
+### Bước 4: Thêm vào `categories/<category>.ts`
 
-Mở `src/data/templates/registry.ts` và làm 2 việc:
+Mở `src/data/templates/categories/<category>.ts` (ví dụ `categories/spa.ts`) và làm 2 việc.
+**Không sửa `registry.ts`** — file đó chỉ gộp các category lại.
 
 **4a. Thêm import schema ở đầu file (sau các import schema hiện có):**
 
 ```ts
-import schema_spa1 from '../Template/spa/Spa-1/i18n/vi.json';
+import schema_spa1 from '../../Template/spa/Spa-1/i18n/vi.json';
 ```
 
-**4b. Thêm object vào `TEMPLATE_REGISTRY` (trước comment `// ══ THÊM TEMPLATE MỚI Ở ĐÂY`):**
+> Lưu ý độ sâu: từ `categories/<category>.ts` lên `Template/` là `../../` (2 cấp),
+> khác với `../Template/` khi registry.ts từng nằm phẳng ở 1 file.
+
+**4b. Thêm object vào mảng `<TEN>_TEMPLATES` export ở cuối file (ví dụ `SPA_TEMPLATES`):**
 
 ```ts
 {
@@ -211,7 +228,7 @@ import schema_spa1 from '../Template/spa/Spa-1/i18n/vi.json';
   imageUrl: 'https://...',        // ảnh thumbnail trên marketplace (tỉ lệ 4:3 hoặc 16:9)
 
   // ── Runtime (chỉ registry biết) ──────────────────────────────────────────
-  component: lazy(() => import('../Template/spa/Spa-1/index')),
+  component: lazy(() => import('../../Template/spa/Spa-1/index')),
   schema: schema_spa1 as Record<string, unknown>,
   imageSlots: [
     // Mỗi slot = 1 ảnh user có thể thay thế trong Editor
@@ -229,11 +246,12 @@ import schema_spa1 from '../Template/spa/Spa-1/i18n/vi.json';
 
 ## 5. Thêm category mới — Step by step
 
-Cần làm **2 việc** (thay vì 1 khi thêm template):
+Cần làm **4 việc** (thay vì 1 khi thêm template vào category đã có):
 
-### Bước 1: Thêm vào `CATEGORY_REGISTRY` trong `registry.ts`
+### Bước 1: Thêm vào `CATEGORY_REGISTRY` trong `categories/_meta.ts`
 
 ```ts
+// src/data/templates/categories/_meta.ts
 export const CATEGORY_REGISTRY: CategoryMeta[] = [
   { id: 'coffee', ... },  // đã có
 
@@ -249,7 +267,26 @@ export const CATEGORY_REGISTRY: CategoryMeta[] = [
 ];
 ```
 
-### Bước 2: Thêm 1 dòng vào `Sidebar.tsx`
+### Bước 2: Tạo `categories/<category-moi>.ts`
+
+Copy cấu trúc từ 1 category có 1 template (ví dụ `categories/spa.ts`), export
+`<TEN>_TEMPLATES: TemplateDefinition[]` chứa template đầu tiên của category này
+(xem Bước 3-4 ở mục 4 phía trên để viết `TemplateDefinition`).
+
+### Bước 3: Import + gộp vào `registry.ts`
+
+```ts
+// src/data/templates/registry.ts
+import { SPA_TEMPLATES } from './categories/spa';   // thêm dòng import
+
+const TEMPLATE_REGISTRY: TemplateDefinition[] = [
+  ...COFFEE_TEMPLATES,
+  ...SPA_TEMPLATES,   // thêm vào mảng gộp
+  ...
+];
+```
+
+### Bước 4: Thêm 1 dòng vào `Sidebar.tsx`
 
 File: `src/components/Sidebar/Sidebar.tsx`
 
@@ -277,13 +314,11 @@ import { LayoutGrid, Coffee, Sparkles, Dumbbell, Utensils, Heart, ... } from 'lu
 
 ## 6. Bảng tóm tắt — files cần sửa
 
-| Việc | registry.ts | Sidebar.tsx | Các file khác |
-|------|:-----------:|:-----------:|:-------------:|
-| Thêm template mới (category đã có) | ✅ | ❌ | ❌ |
-| Thêm template mới (category mới) | ✅ | ✅ | ❌ |
-| Thêm category (chưa có template) | ✅ | ✅ | ❌ |
-| Đổi tên template | ✅ | ❌ | ❌ |
-| Đổi giá template | ✅ | ❌ | ❌ |
+| Việc | categories/\<cat\>.ts | categories/_meta.ts | registry.ts | Sidebar.tsx |
+|------|:---:|:---:|:---:|:---:|
+| Thêm template mới (category đã có) | ✅ | ❌ | ❌ | ❌ |
+| Thêm template mới (category mới) | ✅ (file mới) | ✅ | ✅ (thêm import+spread) | ✅ |
+| Đổi tên/giá template | ✅ | ❌ | ❌ | ❌ |
 
 ---
 
@@ -390,25 +425,15 @@ npm run dev
 
 ---
 
-## 10. Categories đã có sẵn (stubs trong registry.ts)
-
-Các category sau đã được comment sẵn trong `CATEGORY_REGISTRY`, chỉ cần bỏ comment:
-
-```
-milk-tea    → Trà Sữa & Đồ Uống
-restaurant  → Nhà Hàng & Quán Ăn
-spa         → Spa & Làm Đẹp
-gym         → Gym & Fitness
-wedding     → Thiệp Cưới Online
-```
-
----
-
-## 11. Key files reference
+## 10. Key files reference
 
 | File | Vai trò |
 |------|---------|
-| `src/data/templates/registry.ts` | **Nguồn sự thật duy nhất** — sửa để thêm template/category |
+| `src/data/templates/registry.ts` | Gộp mọi category + export các Map (`TEMPLATES`, `COMPONENT_MAP`, ...) |
+| `src/data/templates/types.ts` | Type dùng chung: `Template`, `TemplateDefinition`, `ImageSlot`, `CategoryMeta` |
+| `src/data/templates/categories/_meta.ts` | `CATEGORY_REGISTRY` — sửa khi thêm category mới |
+| `src/data/templates/categories/<category>.ts` | **Sửa file này** để thêm/sửa template của 1 category |
+| `src/data/templates/README.md` | Giải thích chi tiết cấu trúc `templates/` + lý do tách theo category |
 | `src/components/Sidebar/Sidebar.tsx` | Sidebar filter marketplace — sửa khi thêm category |
 | `src/data/Template/<cat>/<Name>/index.tsx` | React component của template |
 | `src/data/Template/<cat>/<Name>/i18n/vi.json` | Schema + nội dung mặc định |

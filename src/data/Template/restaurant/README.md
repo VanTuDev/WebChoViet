@@ -14,7 +14,10 @@ quán ăn đặc sản vùng miền, fast food, food court.
 
 ## Templates hiện có
 
-> Chưa có template. Xem hướng dẫn thêm template trong `docs/skill-add-template.md`.
+| ID | Tên | Giá | Đặc điểm nổi bật |
+|----|-----|-----|-------------------|
+| `restaurant-1` | Phố Ẩm Thực | Miễn phí | Tông nâu gỗ ấm cúng, hero fullscreen overlay, menu 6 món dạng card |
+| `restaurant-2` | Bếp Việt Premium | 399,000đ | Corporate hiện đại, menu bento, đánh giá glassmorphism, 4 ngôn ngữ Việt/Anh/Trung/Hàn |
 
 ---
 

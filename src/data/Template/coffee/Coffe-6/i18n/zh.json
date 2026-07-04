@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "brand": "Garden Oasis",
+    "home": "首页",
+    "menu": "菜单",
+    "gallery": "空间",
+    "contact": "联系我们",
+    "reserve": "订座"
+  },
+  "hero": {
+    "badge": "欢迎光临 GARDEN OASIS",
+    "title": "Garden Oasis Coffee - 一场关于",
+    "titleHighlight": "咖啡与自然的交响曲",
+    "subtitle": "在城市中心的绿意空间里，细品精选咖啡的香醇，享受片刻的宁静时光。",
+    "btnMenu": "探索菜单",
+    "btnGallery": "参观咖啡馆"
+  },
+  "menuSection": {
+    "title": "丰富精致的菜单",
+    "categories": [
+      {
+        "title": "意式咖啡",
+        "items": [
+          {
+            "name": "Espresso",
+            "price": "35K",
+            "desc": "来自大叻高原阿拉比卡豆的浓郁原味。"
+          },
+          {
+            "name": "Latte",
+            "price": "45K",
+            "desc": "浓缩咖啡与热鲜奶的丝滑融合。"
+          },
+          {
+            "name": "Cappuccino",
+            "price": "45K",
+            "desc": "厚实绵密的奶泡覆盖浓郁咖啡。"
+          },
+          {
+            "name": "焦糖玛奇朵",
+            "price": "55K",
+            "desc": "焦糖的甜蜜与牛奶、咖啡交织缠绵。"
+          }
+        ]
+      },
+      {
+        "title": "越南传统咖啡",
+        "items": [
+          {
+            "name": "黑咖啡",
+            "price": "30K",
+            "desc": "传统滴漏咖啡，罗布斯塔浓郁风味。"
+          },
+          {
+            "name": "炼乳咖啡",
+            "price": "35K",
+            "desc": "苦咖啡与香甜炼乳的完美交融。"
+          },
+          {
+            "name": "白咖啡",
+            "price": "38K",
+            "desc": "奶多咖啡少，男女老少都喜爱的饮品。"
+          },
+          {
+            "name": "鸡蛋咖啡",
+            "price": "55K",
+            "desc": "香浓丝滑的蛋奶霜浮于热咖啡之上。"
+          }
+        ]
+      },
+      {
+        "title": "茶与草本",
+        "items": [
+          {
+            "name": "香茅橙子蜜桃茶",
+            "price": "45K",
+            "desc": "蜜桃茶香配以香茅与鲜橙，清爽宜人。"
+          },
+          {
+            "name": "金莲乌龙茶",
+            "price": "50K",
+            "desc": "乌龙茶配上绵软莲子与爽脆马蹄。"
+          },
+          {
+            "name": "红茶拿铁",
+            "price": "40K",
+            "desc": "浓郁红茶与香醇牛奶的融合。"
+          },
+          {
+            "name": "菊花茶",
+            "price": "55K",
+            "desc": "舒缓身心、清热降火的草本茶。"
+          }
+        ]
+      },
+      {
+        "title": "甜点与轻食",
+        "items": [
+          {
+            "name": "牛角包",
+            "price": "35K",
+            "desc": "千层酥皮，散发法式黄油香气。"
+          },
+          {
+            "name": "提拉米苏",
+            "price": "50K",
+            "desc": "浸透咖啡的蛋糕层与马斯卡彭奶油交融。"
+          },
+          {
+            "name": "芝士蛋糕",
+            "price": "55K",
+            "desc": "香浓烤芝士蛋糕，佐草莓酱汁。"
+          },
+          {
+            "name": "蜜桃慕斯",
+            "price": "48K",
+            "desc": "轻盈慕斯，散发清新蜜桃香气。"
+          }
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "title": "我们的空间",
+    "subtitle": "城市中心的一处静谧角落。",
+    "caption": "绿意盎然的主厅"
+  },
+  "testimonials": {
+    "title": "顾客心声",
+    "items": [
+      {
+        "quote": "这里的空间真的很放松。鸡蛋咖啡香浓丝滑毫无腥味，非常值得一试！",
+        "name": "Minh Anh",
+        "role": "忠实顾客"
+      },
+      {
+        "quote": "香茅橙子蜜桃茶超级清爽，店内装潢无可挑剔，每个角落都能拍出美照。",
+        "name": "Hoang Nam",
+        "role": "自由职业者"
+      },
+      {
+        "quote": "白咖啡正合我的口味。店员热情周到，环境安静，非常适合办公。",
+        "name": "Thu Trang",
+        "role": "上班族"
+      }
+    ]
+  },
+  "contact": {
+    "title": "位置与联系方式",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡 Cay Coi 坊 Xanh Mat 路 123 号",
+    "phoneLabel": "电话",
+    "phone": "0123 456 789",
+    "hoursLabel": "营业时间",
+    "hours": "周一至周日：07:00 - 22:30",
+    "btnMessage": "给我们留言",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Oasis",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "support": "客服支持",
+    "copy": "© 2025 Garden Oasis. 由 WebChoViet 创建。"
+  }
+}

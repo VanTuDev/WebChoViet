@@ -22,6 +22,8 @@
   },
   "membership": {
     "title": "Membership Plans",
+    "popularBadge": "Most Popular",
+    "signUp": "Sign Up Now",
     "plans": [
       {
         "name": "Basic",
@@ -48,8 +50,15 @@
   },
   "info": {
     "hours": "5 AM – 11 PM",
+    "hoursLabel": "Open hours",
     "phone": "0966 789 123",
-    "address": "200 Dien Bien Phu, Binh Thanh, HCMC"
+    "phoneLabel": "Hotline",
+    "address": "200 Dien Bien Phu, Binh Thanh, HCMC",
+    "addressLabel": "Address"
+  },
+  "location": {
+    "title": "Find Our Gym",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2025 Iron Zone Fitness. Built with WebChoViet." }
 }

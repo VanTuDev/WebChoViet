@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "brand": "Thành Hỷ",
+    "home": "The Wedding",
+    "gallery": "Gallery",
+    "timeline": "Timeline",
+    "rsvp": "RSVP",
+    "giftBtn": "Gift Registry"
+  },
+  "hero": {
+    "eyebrow": "Trăm Năm Tình Viên Mãn",
+    "coupleNames": "Minh & Anh",
+    "invitation": "Trân trọng kính mời quý khách đến dự buổi tiệc chung vui cùng gia đình chúng tôi.",
+    "dayLabel": "Thứ Bảy",
+    "month": "Tháng 10",
+    "day": "12",
+    "yearLabel": "Năm",
+    "year": "2024"
+  },
+  "calendar": {
+    "title": "Save The Date",
+    "monthYear": "Tháng 10 - 2024",
+    "weekdays": [
+      "CN",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7"
+    ],
+    "highlightDay": 12
+  },
+  "gallery": {
+    "title": "Khoảnh Khắc",
+    "subtitle": "Những kỷ niệm tuyệt vời nhất của chúng tôi."
+  },
+  "timeline": {
+    "title": "Chương Trình Lễ Cưới",
+    "subtitle": "Sự hiện diện của quý vị là niềm vinh hạnh lớn nhất cho gia đình chúng tôi.",
+    "items": [
+      {
+        "time": "17:00",
+        "name": "Đón Khách",
+        "desc": "Chụp hình lưu niệm cùng cô dâu chú rể tại sảnh chờ.",
+        "icon": "🤝"
+      },
+      {
+        "time": "18:30",
+        "name": "Làm Lễ",
+        "desc": "Nghi thức thành hôn chính thức bắt đầu.",
+        "icon": "💍"
+      },
+      {
+        "time": "19:30",
+        "name": "Khai Tiệc",
+        "desc": "Thưởng thức tiệc tối thân mật và chung vui.",
+        "icon": "🥂"
+      }
+    ]
+  },
+  "rsvp": {
+    "title": "Sổ Lưu Bút",
+    "subtitle": "Gửi những lời chúc tốt đẹp nhất đến chúng tôi.",
+    "nameLabel": "Tên của bạn",
+    "namePlaceholder": "Vui lòng nhập tên",
+    "relationLabel": "Mối quan hệ",
+    "relationOptions": [
+      "Gia đình",
+      "Bạn bè",
+      "Đồng nghiệp"
+    ],
+    "messageLabel": "Lời chúc",
+    "messagePlaceholder": "Viết lời chúc của bạn...",
+    "submit": "Gửi Lời Chúc"
+  },
+  "location": {
+    "title": "Địa Điểm Tổ Chức",
+    "subtitle": "Rất hân hạnh được đón tiếp quý khách.",
+    "address": "Trung Tâm Tiệc Cưới White Palace, 194 Hoàng Văn Thụ, Q.Phú Nhuận, TP.HCM",
+    "mapUrl": ""
+  },
+  "mobileNav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "gallery": "Gallery",
+    "gift": "Gift"
+  }
+}

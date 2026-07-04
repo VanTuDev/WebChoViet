@@ -3,14 +3,24 @@
 
 export const ROUTES = {
   // ── Public ──────────────────────────────────────────────────────────────────
-  HOME:        '/',
-  LOGIN:       '/login',
-  NOT_FOUND:   '*',
+  HOME:          '/',
+  LOGIN:         '/login',
+  AUTH_CALLBACK: '/auth/callback', // BE redirect về đây sau khi Google OAuth thành công
+  NOT_FOUND:     '*',
 
   // ── App shell (dùng AppLayout: Navbar + Sidebar) ────────────────────────────
   MARKETPLACE: '/marketplace',
   PRICING:     '/pricing',
   TUTORIALS:   '/tutorials',
+
+  // ── Thanh toán (PayOS) ───────────────────────────────────────────────────────
+  PAYMENT_RESULT: '/payment-result', // returnUrl/cancelUrl PayOS đều trỏ về đây
+
+  // ── Chính sách & pháp lý ─────────────────────────────────────────────────────
+  POLICY_PRIVACY: '/policy/privacy',
+  POLICY_TERMS:   '/policy/terms',
+  POLICY_REFUND:  '/policy/refund',
+  POLICY_COOKIES: '/policy/cookies',
 
   // ── Dashboard group ─────────────────────────────────────────────────────────
   DASHBOARD:            '/dashboard',              // redirect → DASHBOARD_PROJECTS
@@ -31,6 +41,7 @@ export const ROUTES = {
   // ── Admin portal (luồng riêng biệt) ─────────────────────────────────────────
   ADMIN_LOGIN:        '/admin/login',
   ADMIN_DASHBOARD:    '/admin/dashboard',
+  ADMIN_ANALYTICS:    '/admin/analytics',
   ADMIN_USERS:        '/admin/users',
   ADMIN_PAYMENTS:     '/admin/payments',
   ADMIN_TRANSACTIONS: '/admin/transactions',

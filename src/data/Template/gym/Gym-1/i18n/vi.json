@@ -22,6 +22,8 @@
   },
   "membership": {
     "title": "Gói Thành Viên",
+    "popularBadge": "Phổ Biến Nhất",
+    "signUp": "Đăng Ký Ngay",
     "plans": [
       {
         "name": "Basic",
@@ -48,8 +50,15 @@
   },
   "info": {
     "hours": "05:00 – 23:00",
+    "hoursLabel": "Giờ hoạt động",
     "phone": "0966 789 123",
-    "address": "200 Điện Biên Phủ, Q.Bình Thạnh, TP.HCM"
+    "phoneLabel": "Hotline",
+    "address": "200 Điện Biên Phủ, Q.Bình Thạnh, TP.HCM",
+    "addressLabel": "Địa chỉ"
+  },
+  "location": {
+    "title": "Tìm Đường Tới Phòng Gym",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2025 Iron Zone Fitness. Được tạo bởi WebChoViet." }
 }

@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "brand": "타인히",
+    "home": "결혼식",
+    "gallery": "갤러리",
+    "timeline": "일정",
+    "rsvp": "방명록",
+    "giftBtn": "축의금 안내"
+  },
+  "hero": {
+    "eyebrow": "백년가약의 행복",
+    "coupleNames": "Minh & Anh",
+    "invitation": "저희 가족과 함께 이 특별한 저녁을 축하해 주시길 정중히 초대합니다.",
+    "dayLabel": "토요일",
+    "month": "10월",
+    "day": "12",
+    "yearLabel": "년도",
+    "year": "2024"
+  },
+  "calendar": {
+    "title": "결혼식 날짜",
+    "monthYear": "2024년 10월",
+    "weekdays": ["일", "월", "화", "수", "목", "금", "토"],
+    "highlightDay": 12
+  },
+  "gallery": {
+    "title": "소중한 순간들",
+    "subtitle": "우리의 가장 소중한 추억들입니다."
+  },
+  "timeline": {
+    "title": "결혼식 순서",
+    "subtitle": "귀하의 참석은 저희 가족에게 가장 큰 영광입니다.",
+    "items": [
+      { "time": "17:00", "name": "하객 맞이", "desc": "리셉션 홀에서 신랑 신부와 기념 촬영.", "icon": "🤝" },
+      { "time": "18:30", "name": "결혼식", "desc": "공식 결혼식이 시작됩니다.", "icon": "💍" },
+      { "time": "19:30", "name": "피로연", "desc": "함께하는 따뜻한 저녁 축하연.", "icon": "🥂" }
+    ]
+  },
+  "rsvp": {
+    "title": "방명록",
+    "subtitle": "따뜻한 축하 메시지를 남겨주세요.",
+    "nameLabel": "성함",
+    "namePlaceholder": "성함을 입력해주세요",
+    "relationLabel": "관계",
+    "relationOptions": ["가족", "친구", "직장 동료"],
+    "messageLabel": "축하 메시지",
+    "messagePlaceholder": "축하의 말을 적어주세요...",
+    "submit": "메시지 보내기"
+  },
+  "location": {
+    "title": "오시는 길",
+    "subtitle": "귀한 걸음 해주시면 감사하겠습니다.",
+    "address": "화이트 팰리스 컨벤션 센터, 호치민시 푸년군 호앙반투 194",
+    "mapUrl": ""
+  },
+  "mobileNav": {
+    "home": "홈",
+    "schedule": "일정",
+    "gallery": "갤러리",
+    "gift": "축의금"
+  }
+}

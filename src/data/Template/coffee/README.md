@@ -21,6 +21,7 @@ Từ quán nhỏ vỉa hè đến chuỗi coffee shop sang trọng.
 | `coffe-3` | The Ocean Cafe | 499,000đ | Phong cách biển, 3 danh mục menu, testimonials sao |
 | `coffe-4` | Koi Garden | 399,000đ | Tông Forest Green, gallery koi, menu 4 tabs |
 | `coffe-5` | Mật Ngọt Tea | Miễn phí | Trà sữa amber, carousel sản phẩm, newsletter |
+| `coffe-6` | Oasis Symphony | 349,000đ | Menu đầy đủ 4 nhóm × 4 món, gallery bento, 4 ngôn ngữ Việt/Anh/Trung/Hàn |
 
 ---
 

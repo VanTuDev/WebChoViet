@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "brand": "Thanh Hy",
+    "home": "The Wedding",
+    "gallery": "Gallery",
+    "timeline": "Timeline",
+    "rsvp": "RSVP",
+    "giftBtn": "Gift Registry"
+  },
+  "hero": {
+    "eyebrow": "A Lifetime of Happiness",
+    "coupleNames": "Minh & Anh",
+    "invitation": "We joyfully invite you to celebrate this special evening with our families.",
+    "dayLabel": "Saturday",
+    "month": "October",
+    "day": "12",
+    "yearLabel": "Year",
+    "year": "2024"
+  },
+  "calendar": {
+    "title": "Save The Date",
+    "monthYear": "October - 2024",
+    "weekdays": [
+      "Su",
+      "Mo",
+      "Tu",
+      "We",
+      "Th",
+      "Fr",
+      "Sa"
+    ],
+    "highlightDay": 12
+  },
+  "gallery": {
+    "title": "Moments",
+    "subtitle": "Some of our most cherished memories together."
+  },
+  "timeline": {
+    "title": "Wedding Program",
+    "subtitle": "Your presence is the greatest honor our families could ask for.",
+    "items": [
+      {
+        "time": "5:00 PM",
+        "name": "Guest Arrival",
+        "desc": "Photos with the bride and groom at the reception hall.",
+        "icon": "🤝"
+      },
+      {
+        "time": "6:30 PM",
+        "name": "Ceremony",
+        "desc": "The official wedding ceremony begins.",
+        "icon": "💍"
+      },
+      {
+        "time": "7:30 PM",
+        "name": "Reception",
+        "desc": "An intimate dinner celebration together.",
+        "icon": "🥂"
+      }
+    ]
+  },
+  "rsvp": {
+    "title": "Guestbook",
+    "subtitle": "Send us your warmest wishes.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Please enter your name",
+    "relationLabel": "Relationship",
+    "relationOptions": [
+      "Family",
+      "Friend",
+      "Colleague"
+    ],
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your wishes...",
+    "submit": "Send Wishes"
+  },
+  "location": {
+    "title": "Venue & Directions",
+    "subtitle": "We look forward to welcoming you.",
+    "address": "White Palace Convention Center, 194 Hoang Van Thu, Phu Nhuan, HCMC",
+    "mapUrl": ""
+  },
+  "mobileNav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "gallery": "Gallery",
+    "gift": "Gift"
+  }
+}

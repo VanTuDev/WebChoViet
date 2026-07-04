@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
+import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
+import zhJson from './i18n/zh.json';
+import koJson from './i18n/ko.json';
 
-type Lang = 'vi' | 'en';
-const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson };
+type Lang = 'vi' | 'en' | 'zh' | 'ko';
+const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
 interface Props { lang?: string }
 
-export default function Wedding1({ lang: initialLang = 'vi' }: Props) {
-  const [lang, setLang] = useState<Lang>(initialLang as Lang);
+export default function Wedding1({ lang = 'vi' }: Props) {
+  const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
   const { customData, images } = useTemplateCustom();
-  const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
+  const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
   const [attending, setAttending] = useState<'yes' | 'no' | null>(null);
   const [guestName, setGuestName] = useState('');
   const IMG = { hero: images.hero ?? 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop&q=70' };
@@ -19,58 +22,45 @@ export default function Wedding1({ lang: initialLang = 'vi' }: Props) {
   return (
     <div className="min-h-screen bg-[#FDF8F3] font-serif">
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-amber-100 px-6 py-3 flex items-center justify-between shadow-sm">
+      <nav data-section="nav" className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-amber-100 px-6 py-3 flex items-center justify-between shadow-sm">
         <span className="font-bold text-[#B7935F] text-lg">
-          {t.couple.bride} <span className="text-gray-300">&amp;</span> {t.couple.groom}
+          <span data-field="couple.bride">{t.couple.bride}</span> <span className="text-gray-300">&amp;</span> <span data-field="couple.groom">{t.couple.groom}</span>
         </span>
         <div className="hidden md:flex items-center gap-6 text-sm font-sans font-medium text-gray-600">
           <a href="#story" className="hover:text-[#B7935F] cursor-pointer transition-colors">{t.nav.story}</a>
           <a href="#events" className="hover:text-[#B7935F] cursor-pointer transition-colors">{t.nav.event}</a>
           <a href="#rsvp" className="hover:text-[#B7935F] cursor-pointer transition-colors">{t.nav.rsvp}</a>
         </div>
-        <div className="flex items-center text-xs font-sans font-medium gap-0.5">
-          {(['vi', 'en'] as Lang[]).map((l, i) => (
-            <span key={l} className="flex items-center">
-              {i > 0 && <span className="text-amber-200 mx-1">|</span>}
-              <button
-                onClick={() => setLang(l)}
-                className={`cursor-pointer transition-colors ${lang === l ? 'text-[#B7935F] font-bold' : 'text-gray-400 hover:text-[#B7935F]'}`}
-              >
-                {l.toUpperCase()}
-              </button>
-            </span>
-          ))}
-        </div>
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section data-section="hero" className="relative overflow-hidden">
         <div className="relative h-[580px] lg:h-[700px]">
           <img src={IMG.hero} alt="couple" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#FDF8F3]" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-sans font-bold px-4 py-1.5 rounded-full tracking-widest border border-white/30 mb-6">
+            <span data-field="hero.badge" className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-sans font-bold px-4 py-1.5 rounded-full tracking-widest border border-white/30 mb-6">
               {t.hero.badge}
             </span>
-            <p className="text-white/80 text-sm font-sans mb-2">{t.hero.intro}</p>
+            <p data-field="hero.intro" className="text-white/80 text-sm font-sans mb-2">{t.hero.intro}</p>
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-2">
               {t.couple.bride} <span className="text-[#F9D89C]">&amp;</span> {t.couple.groom}
             </h1>
-            <p className="text-white/60 text-sm font-sans mb-4">{t.hero.tag}</p>
+            <p data-field="hero.tag" className="text-white/60 text-sm font-sans mb-4">{t.hero.tag}</p>
             <div className="border-t border-white/30 pt-4 mt-2">
-              <div className="text-white text-lg font-sans font-light">{t.couple.dateLong}</div>
-              <div className="text-white/70 text-sm font-sans mt-1">📍 {t.couple.location}</div>
+              <div data-field="couple.dateLong" className="text-white text-lg font-sans font-light">{t.couple.dateLong}</div>
+              <div data-field="couple.location" className="text-white/70 text-sm font-sans mt-1">📍 {t.couple.location}</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Story */}
-      <section id="story" className="py-20 px-6">
+      <section id="story" data-section="story" className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="text-4xl mb-4">💍</div>
-          <h2 className="text-3xl font-bold text-[#B7935F] mb-6">{t.story.title}</h2>
-          <p className="text-gray-600 leading-relaxed text-lg">{t.story.text}</p>
+          <h2 data-field="story.title" className="text-3xl font-bold text-[#B7935F] mb-6">{t.story.title}</h2>
+          <p data-field="story.text" className="text-gray-600 leading-relaxed text-lg">{t.story.text}</p>
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="h-px w-24 bg-amber-200" />
             <span className="text-2xl">🌸</span>
@@ -80,9 +70,9 @@ export default function Wedding1({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* Events */}
-      <section id="events" className="py-16 px-6 bg-white">
+      <section id="events" data-section="events" className="py-16 px-6 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#B7935F] text-center mb-10">{t.events.title}</h2>
+          <h2 data-field="events.title" className="text-3xl font-bold text-[#B7935F] text-center mb-10">{t.events.title}</h2>
           <div className="space-y-4">
             {t.events.items.map((event, i) => (
               <div key={i} className="flex items-start gap-5 p-5 rounded-2xl bg-amber-50 border border-amber-100">
@@ -101,11 +91,11 @@ export default function Wedding1({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* RSVP */}
-      <section id="rsvp" className="py-20 px-6">
+      <section id="rsvp" data-section="rsvp" className="py-20 px-6">
         <div className="max-w-lg mx-auto text-center">
           <div className="text-4xl mb-4">✉️</div>
-          <h2 className="text-3xl font-bold text-[#B7935F] mb-2">{t.rsvp.title}</h2>
-          <p className="text-gray-500 font-sans mb-8">{t.rsvp.desc}</p>
+          <h2 data-field="rsvp.title" className="text-3xl font-bold text-[#B7935F] mb-2">{t.rsvp.title}</h2>
+          <p data-field="rsvp.desc" className="text-gray-500 font-sans mb-8">{t.rsvp.desc}</p>
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-amber-100 space-y-4 text-left">
             <input
               type="text"
@@ -137,6 +127,7 @@ export default function Wedding1({ lang: initialLang = 'vi' }: Props) {
               </button>
             </div>
             <button
+              data-track="rsvp"
               disabled={!guestName || !attending}
               className="w-full py-3 bg-[#B7935F] text-white rounded-xl font-sans font-bold text-sm hover:bg-[#9E7E4E] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -147,29 +138,56 @@ export default function Wedding1({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* Info bar */}
-      <section className="bg-[#B7935F] text-white py-10 px-6">
+      <section data-section="info" className="bg-[#B7935F] text-white py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
             <div className="text-2xl mb-1">📞</div>
-            <div className="font-bold font-sans">{t.info.phone}</div>
-            <div className="text-amber-100 text-sm mt-0.5 font-sans">{lang === 'vi' ? 'Liên hệ' : 'Contact'}</div>
+            <div data-field="info.phone" className="font-bold font-sans">{t.info.phone}</div>
+            <div className="text-amber-100 text-sm mt-0.5 font-sans">{t.info.phoneLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
             <div className="text-2xl mb-1">📍</div>
-            <div className="font-bold font-sans">{t.info.address}</div>
-            <div className="text-amber-100 text-sm mt-0.5 font-sans">{lang === 'vi' ? 'Địa điểm' : 'Venue'}</div>
+            <div data-field="info.address" className="font-bold font-sans">{t.info.address}</div>
+            <div className="text-amber-100 text-sm mt-0.5 font-sans">{t.info.addressLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
             <div className="text-2xl mb-1">📅</div>
             <div className="font-bold font-sans">{t.couple.dateLong}</div>
-            <div className="text-amber-100 text-sm mt-0.5 font-sans">{lang === 'vi' ? 'Ngày tổ chức' : 'Wedding date'}</div>
+            <div className="text-amber-100 text-sm mt-0.5 font-sans">{t.info.dateLabel}</div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-gray-400 text-center py-5 text-sm font-sans">{t.footer.copy}</footer>
+      {/* Google Maps */}
+      <section data-section="location" className="py-16 px-6 bg-[#FDF8F3]">
+        <div className="max-w-4xl mx-auto">
+          <h2 data-field="location.title" className="text-3xl font-bold text-[#B7935F] text-center mb-10">{t.location.title}</h2>
+          <div className="rounded-3xl overflow-hidden shadow-lg border border-amber-100 h-[380px]">
+            {t.location.mapUrl ? (
+              <iframe
+                src={toGoogleMapsEmbedUrl(t.location.mapUrl)}
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps"
+              />
+            ) : (
+              <div className="w-full h-full bg-amber-50 flex flex-col items-center justify-center gap-3 text-center px-6">
+                <span className="text-4xl">📍</span>
+                <p className="font-bold text-[#B7935F] text-lg">{t.info.address}</p>
+                <p className="text-sm text-gray-500 font-sans">{t.couple.dateLong}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <footer data-section="footer" className="bg-gray-900 text-gray-400 text-center py-5 text-sm font-sans">
+        <span data-field="footer.copy">{t.footer.copy}</span>
+      </footer>
     </div>
   );
 }

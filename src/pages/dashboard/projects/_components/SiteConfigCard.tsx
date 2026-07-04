@@ -1,7 +1,8 @@
-import { Edit3, ExternalLink, Trash2, Globe, FileEdit } from 'lucide-react';
+import { Edit3, ExternalLink, Trash2, Globe, FileEdit, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { SiteConfig } from '../../../../types';
 import { TEMPLATES } from '../../../../data';
+import { ROUTES } from '../../../../config/routes';
 
 interface Props {
   site: SiteConfig;
@@ -23,7 +24,7 @@ const LANG_LABELS: Record<string, string> = {
 export default function SiteConfigCard({ site, onDelete }: Props) {
   const navigate = useNavigate();
   const template = TEMPLATES.find(t => t.id === site.templateId);
-  const liveUrl = `/p/${site.slug}`;
+  const liveUrl = `/${site.slug}`;
   const isPublished = site.status === 'published';
 
   const updatedDate = new Date(site.updatedAt).toLocaleDateString('vi-VN', {
@@ -48,10 +49,10 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
         )}
 
         {/* Status badge */}
-        <span className={`absolute top-3 right-3 text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full shadow-sm text-white ${
-          isPublished ? 'bg-emerald-500' : 'bg-gray-400'
+        <span className={`absolute top-3 right-3 flex items-center gap-1 text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full shadow-sm text-white ${
+          site.planLocked ? 'bg-orange-500' : isPublished ? 'bg-emerald-500' : 'bg-gray-400'
         }`}>
-          {isPublished ? '● Live' : '○ Nháp'}
+          {site.planLocked ? (<><Lock className="h-2.5 w-2.5" /> Đã khóa</>) : isPublished ? '● Live' : '○ Nháp'}
         </span>
 
         {/* Template badge */}
@@ -70,7 +71,7 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
           {/* URL slug */}
           <div className="flex items-center gap-1.5 text-[11px] text-gray-400">
             <Globe className="w-3 h-3 flex-shrink-0" />
-            <span className="font-mono truncate">/p/{site.slug}</span>
+            <span className="font-mono truncate">/{site.slug}</span>
           </div>
 
           {/* Meta row */}
@@ -79,6 +80,12 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
             <span>·</span>
             <span>Cập nhật: {updatedDate}</span>
           </div>
+
+          {site.planLocked && (
+            <p className="text-[10px] text-orange-600 bg-orange-50 border border-orange-100 rounded-lg px-2 py-1.5 leading-relaxed">
+              Vượt giới hạn gói Free nên tạm khóa, không hiển thị công khai. Nâng cấp gói hoặc xóa bớt website khác để mở lại.
+            </p>
+          )}
         </div>
 
         {/* Actions */}
@@ -91,7 +98,15 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
             Chỉnh sửa
           </button>
 
-          {isPublished ? (
+          {site.planLocked ? (
+            <button
+              onClick={() => navigate(ROUTES.PRICING)}
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-bold bg-orange-500 hover:bg-orange-600 text-white transition-colors cursor-pointer"
+            >
+              <Lock className="h-3.5 w-3.5" />
+              Nâng cấp để mở
+            </button>
+          ) : isPublished ? (
             <a
               href={liveUrl}
               target="_blank"

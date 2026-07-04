@@ -1,37 +1,43 @@
-import { useState } from 'react';
+// Đăng nhập admin — dùng chung Google OAuth với user thường, chỉ khác ở chỗ
+// kiểm tra role=admin sau khi xác thực. KHÔNG có mật khẩu riêng: quyền admin
+// được gán thủ công trong MongoDB (users.role = 'admin'), backend AdminGuard
+// là lớp bảo vệ thật sự.
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ShieldCheck, Eye, EyeOff, Lock, Mail, AlertCircle } from 'lucide-react';
+import { ShieldCheck, ShieldX, Loader2, LogOut } from 'lucide-react';
 import { ROUTES } from '../../../config/routes';
+import { useAppContext } from '../../../store/AppContext';
+import { getGoogleLoginUrl, setPostLoginRedirect } from '../../../services/authService';
+
+function GoogleLogo() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+    </svg>
+  );
+}
 
 export default function AdminLoginPage() {
   const navigate = useNavigate();
-  const [email, setEmail]       = useState('');
-  const [password, setPassword] = useState('');
-  const [showPw, setShowPw]     = useState(false);
-  const [error, setError]       = useState('');
-  const [loading, setLoading]   = useState(false);
+  const { user, authLoading, isAuthenticated, logout } = useAppContext();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-
-    if (!email || !password) {
-      setError('Vui lòng nhập đầy đủ email và mật khẩu.');
-      return;
+  // Đã là admin → vào thẳng dashboard, không hiện lại trang login
+  useEffect(() => {
+    if (!authLoading && user?.role === 'admin') {
+      navigate(ROUTES.ADMIN_DASHBOARD, { replace: true });
     }
+  }, [authLoading, user, navigate]);
 
-    setLoading(true);
-    // Giả lập network delay
-    await new Promise(r => setTimeout(r, 900));
-
-    // Hardcode credentials cho UI demo
-    if (email === 'admin@webchoviet.com' && password === 'admin123') {
-      navigate(ROUTES.ADMIN_DASHBOARD);
-    } else {
-      setError('Email hoặc mật khẩu không chính xác.');
-    }
-    setLoading(false);
+  const handleGoogleLogin = () => {
+    // Sau OAuth, AuthCallbackPage sẽ đưa user quay lại đây thay vì Marketplace
+    setPostLoginRedirect(ROUTES.ADMIN_LOGIN);
+    window.location.href = getGoogleLoginUrl();
   };
+
+  const isNonAdminUser = !authLoading && isAuthenticated && user?.role !== 'admin';
 
   return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4 antialiased">
@@ -53,87 +59,48 @@ export default function AdminLoginPage() {
         {/* Card */}
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
 
-          {/* Error banner */}
-          {error && (
-            <div className="flex items-center gap-2.5 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium px-4 py-3 rounded-xl mb-5">
-              <AlertCircle className="h-4 w-4 shrink-0" />
-              {error}
+          {authLoading ? (
+            <div className="flex items-center justify-center gap-2 py-6 text-slate-400 text-sm">
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Đang kiểm tra phiên đăng nhập...
+            </div>
+          ) : isNonAdminUser ? (
+            /* Đã đăng nhập nhưng không có quyền admin */
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-rose-500/10">
+                <ShieldX className="h-6 w-6 text-rose-400" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white">Không có quyền truy cập</p>
+                <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                  Tài khoản <span className="text-slate-300 font-medium">{user?.email}</span> không phải
+                  quản trị viên. Đăng xuất và thử lại bằng tài khoản khác.
+                </p>
+              </div>
+              <button
+                onClick={() => logout()}
+                className="w-full h-11 flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold rounded-xl transition-colors cursor-pointer"
+              >
+                <LogOut className="h-4 w-4" />
+                Đăng xuất
+              </button>
+            </div>
+          ) : (
+            /* Chưa đăng nhập */
+            <div className="space-y-5">
+              <button
+                onClick={handleGoogleLogin}
+                className="w-full flex items-center justify-center gap-3 h-12 bg-white hover:bg-slate-100 text-slate-800 text-sm font-semibold rounded-xl transition-all active:scale-[0.98] cursor-pointer"
+              >
+                <GoogleLogo />
+                Đăng nhập bằng Google
+              </button>
+              <p className="text-center text-[11px] text-slate-500 leading-relaxed">
+                Chỉ tài khoản được cấp quyền quản trị mới truy cập được.
+                Đăng nhập bằng tài khoản khác sẽ bị từ chối.
+              </p>
             </div>
           )}
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-
-            {/* Email */}
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                Email quản trị
-              </label>
-              <div className="relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="admin@webchoviet.com"
-                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-[#0056b3] focus:ring-1 focus:ring-[#0056b3]/30 transition-all"
-                  autoComplete="username"
-                />
-              </div>
-            </div>
-
-            {/* Password */}
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                Mật khẩu
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
-                <input
-                  type={showPw ? 'text' : 'password'}
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 text-sm rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-[#0056b3] focus:ring-1 focus:ring-[#0056b3]/30 transition-all"
-                  autoComplete="current-password"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPw(v => !v)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer"
-                >
-                  {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                </button>
-              </div>
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full mt-2 h-11 bg-[#0056b3] hover:bg-[#004699] disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-xl transition-all active:scale-[0.98] shadow-md shadow-[#0056b3]/25 flex items-center justify-center gap-2"
-            >
-              {loading ? (
-                <>
-                  <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
-                  </svg>
-                  Đang xác thực...
-                </>
-              ) : (
-                'Đăng nhập hệ thống'
-              )}
-            </button>
-          </form>
-
-          {/* Demo hint */}
-          <div className="mt-6 pt-5 border-t border-slate-800">
-            <p className="text-center text-[11px] text-slate-500">
-              Demo: <span className="text-slate-400 font-mono">admin@webchoviet.com</span>
-              {' / '}
-              <span className="text-slate-400 font-mono">admin123</span>
-            </p>
-          </div>
         </div>
 
         {/* Footer note */}

@@ -14,7 +14,9 @@ Thương hiệu trẻ trung, màu sắc tươi vui, target khách hàng 16-30 tu
 
 ## Templates hiện có
 
-> Chưa có template. Xem hướng dẫn thêm template trong `docs/skill-add-template.md`.
+| ID | Tên | Giá | Đặc điểm nổi bật |
+|----|-----|-----|-------------------|
+| `milk-tea-1` | Boba Station | Miễn phí | Tông hồng-tím tươi sáng, menu 6 món dạng card, hero gradient pastel |
 
 ---
 

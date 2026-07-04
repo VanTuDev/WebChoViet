@@ -1,9 +1,11 @@
 // Trang đăng nhập — standalone, chỉ hỗ trợ Google OAuth
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ShieldCheck } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
 import { useAppContext } from '../../store/AppContext';
+import { getGoogleLoginUrl } from '../../services/authService';
 
 // SVG logo Google chính thức
 function GoogleLogo() {
@@ -19,12 +21,17 @@ function GoogleLogo() {
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const { showSnackbar } = useAppContext();
+  const { isAuthenticated, authLoading } = useAppContext();
+
+  // Đã đăng nhập sẵn (còn token hợp lệ) → khỏi hiện lại trang login
+  useEffect(() => {
+    if (!authLoading && isAuthenticated) navigate(ROUTES.MARKETPLACE, { replace: true });
+  }, [authLoading, isAuthenticated, navigate]);
 
   const handleGoogleLogin = () => {
-    // TODO: tích hợp Google OAuth thực tế
-    showSnackbar('Đăng nhập thành công! Chào mừng bạn.', 'success');
-    navigate(ROUTES.MARKETPLACE);
+    // Điều hướng cả trang (không phải fetch) — bắt buộc để trình duyệt theo redirect
+    // của Google OAuth và gửi cookie/session cần thiết cho luồng Passport ở backend.
+    window.location.href = getGoogleLoginUrl();
   };
 
   return (

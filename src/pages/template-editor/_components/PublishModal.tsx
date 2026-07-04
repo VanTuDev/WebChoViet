@@ -67,6 +67,8 @@ export default function PublishModal({
       const slug = await onPublish(name.trim() || siteName);
       setFinalSlug(slug);
       setStep('success');
+    } catch {
+      // Lỗi đã được hiển thị qua snackbar ở TemplateEditorPage.handlePublish
     } finally {
       setPublishing(false);
     }

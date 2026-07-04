@@ -4,6 +4,7 @@ import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
+import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -177,6 +178,33 @@ export default function Coffe1({ lang = 'vi' }: Props) {
               <div className="md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery4')} alt="Gallery 4" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Location / Google Maps */}
+        <section data-section="location" className="py-20 bg-[#f7f9fb]">
+          <div className="max-w-[1280px] mx-auto px-6">
+            <div className="text-center space-y-3 mb-10">
+              <h2 data-field="location.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#191c1e]">{t.location.sectionTitle}</h2>
+              <p data-field="location.sectionSubtitle" className="text-base leading-[1.6] text-[#424752] max-w-2xl mx-auto">{t.location.sectionSubtitle}</p>
+            </div>
+            <div className="rounded-2xl overflow-hidden h-[420px] border border-[#e0e3e5] shadow-sm">
+              {t.location.mapUrl ? (
+                <iframe
+                  src={toGoogleMapsEmbedUrl(t.location.mapUrl)}
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps"
+                />
+              ) : (
+                <div className="w-full h-full bg-[#E8F0E6]/40 flex items-center justify-center flex-col gap-3">
+                  <span aria-hidden className="text-6xl">🗺️</span>
+                  <p className="text-sm font-medium text-[#424752]">{t.location.mapPlaceholder}</p>
+                </div>
+              )}
             </div>
           </div>
         </section>

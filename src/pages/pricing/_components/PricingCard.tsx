@@ -1,21 +1,33 @@
-import { Check } from 'lucide-react';
+import { Check, Loader2 } from 'lucide-react';
+import type { BillingCycle } from '../../../services/billingService';
 
-interface Plan {
+export interface PricingPlanDef {
+  id: 'free' | 'pro' | 'ultra';
   name: string;
-  price: string;
-  period: string;
+  color: string;
   desc: string;
   features: string[];
-  cta: string;
+  /** null = gói miễn phí, không có giá theo chu kỳ */
+  price: { monthly: number; yearly: number } | null;
   popular: boolean;
-  color: string;
 }
 
 interface Props {
-  plan: Plan;
+  plan: PricingPlanDef;
+  cycle: BillingCycle;
+  cta: string;
+  disabled: boolean;
+  loading: boolean;
+  onSelect: () => void;
 }
 
-export default function PricingCard({ plan }: Props) {
+const fmt = (n: number) => n.toLocaleString('vi-VN') + 'đ';
+
+export default function PricingCard({ plan, cycle, cta, disabled, loading, onSelect }: Props) {
+  const amount = plan.price ? plan.price[cycle] : 0;
+  const periodLabel = plan.price ? (cycle === 'monthly' ? 'tháng' : 'năm') : 'mãi mãi';
+  const savings = plan.price && cycle === 'yearly' ? plan.price.monthly * 12 - plan.price.yearly : 0;
+
   return (
     <div className={`rounded-3xl border p-6 flex flex-col justify-between relative bg-white transition-all hover:shadow-xl ${
       plan.popular
@@ -24,7 +36,7 @@ export default function PricingCard({ plan }: Props) {
     }`}>
       {plan.popular && (
         <span className="absolute top-[-14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#003f87] to-[#00aaff] text-white text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full tracking-wider shadow">
-          Khuyên Dùng Nhiều Nhất ⭐
+          Khuyên Dùng Nhiều Nhất
         </span>
       )}
 
@@ -34,9 +46,16 @@ export default function PricingCard({ plan }: Props) {
           <p className="text-xs text-gray-400 mt-1">{plan.desc}</p>
         </div>
 
-        <div className="flex items-baseline gap-1 py-2 border-b border-gray-50">
-          <span className="text-3xl font-display font-extrabold text-gray-900">{plan.price}</span>
-          <span className="text-xs text-gray-500">/ {plan.period}</span>
+        <div className="py-2 border-b border-gray-50">
+          <div className="flex items-baseline gap-1">
+            <span className="text-3xl font-display font-extrabold text-gray-900">{plan.price ? fmt(amount) : '0đ'}</span>
+            <span className="text-xs text-gray-500">/ {periodLabel}</span>
+          </div>
+          {savings > 0 && (
+            <p className="text-[11px] text-emerald-600 font-semibold mt-1">
+              Tiết kiệm {fmt(savings)} mỗi năm so với trả theo tháng
+            </p>
+          )}
         </div>
 
         <ul className="space-y-2.5 pt-2">
@@ -50,14 +69,18 @@ export default function PricingCard({ plan }: Props) {
       </div>
 
       <button
-        className={`w-full py-3.5 rounded-full text-xs font-bold mt-8 transition-colors active:scale-95 cursor-pointer ${
-          plan.popular
-            ? 'bg-[#00aaff] hover:bg-[#003f87] text-white shadow-md'
-            : 'bg-gray-100 hover:bg-gray-200/80 text-gray-700'
+        disabled={disabled}
+        onClick={onSelect}
+        className={`w-full py-3.5 rounded-full text-xs font-bold mt-8 transition-colors active:scale-95 flex items-center justify-center gap-2 ${
+          disabled
+            ? 'bg-gray-50 text-gray-300 cursor-not-allowed'
+            : plan.popular
+              ? 'bg-[#00aaff] hover:bg-[#003f87] text-white shadow-md cursor-pointer'
+              : 'bg-gray-100 hover:bg-gray-200/80 text-gray-700 cursor-pointer'
         }`}
-        onClick={() => alert(`Cảm ơn bạn đã quan tâm đến ${plan.name}!`)}
       >
-        {plan.cta}
+        {loading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+        {cta}
       </button>
     </div>
   );

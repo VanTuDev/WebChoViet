@@ -36,7 +36,14 @@
   },
   "info": {
     "phone": "0901 234 567",
-    "address": "141 Nguyen Hue, D.1, HCMC"
+    "phoneLabel": "Contact",
+    "address": "141 Nguyen Hue, D.1, HCMC",
+    "addressLabel": "Venue",
+    "dateLabel": "Wedding date"
+  },
+  "location": {
+    "title": "Directions to the Venue",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2026 Ngoc Linh & Quoc Bao. Built with WebChoViet." }
 }

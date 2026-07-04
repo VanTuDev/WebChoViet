@@ -1,0 +1,56 @@
+{
+  "shopName": "婚礼请柬",
+  "couple": {
+    "bride": "Hương Giang",
+    "groom": "Minh Tuấn",
+    "date": "20.09.2025",
+    "dateLong": "2025年9月20日 星期六",
+    "location": "西贡柏悦酒店"
+  },
+  "nav": { "gallery": "相册", "event": "流程", "rsvp": "回复邀请" },
+  "hero": {
+    "badge": "💍 电子婚礼请柬",
+    "title": "我们结婚啦"
+  },
+  "countdown": {
+    "title": "婚礼倒计时",
+    "days": "天",
+    "hours": "小时",
+    "minutes": "分钟",
+    "seconds": "秒"
+  },
+  "gallery": {
+    "title": "纪念相册",
+    "items": [
+      { "caption": "初次相遇" },
+      { "caption": "第一次旅行" },
+      { "caption": "求婚时刻" },
+      { "caption": "婚纱照拍摄" }
+    ]
+  },
+  "events": {
+    "title": "婚礼当天流程",
+    "items": [
+      { "time": "08:00", "icon": "🏠", "name": "家庭仪式", "desc": "新娘家，胡志明市第一郡巴斯德街15号" },
+      { "time": "11:00", "icon": "⛪", "name": "婚礼仪式", "desc": "胡志明市第一郡圣母大教堂" },
+      { "time": "18:30", "icon": "🥂", "name": "婚宴", "desc": "西贡柏悦酒店，第一郡林山广场2号" }
+    ]
+  },
+  "rsvp": {
+    "title": "确认出席",
+    "desc": "请于2025年9月10日前确认出席",
+    "namePlaceholder": "您的姓名",
+    "attending": "确认出席",
+    "notAttending": "很遗憾无法出席",
+    "send": "发送确认"
+  },
+  "info": {
+    "phone": "0912 345 678",
+    "address": "胡志明市第一郡林山广场2号"
+  },
+  "location": {
+    "title": "婚礼场地路线",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Hương Giang & Minh Tuấn · 由 WebChoViet 创建。" }
+}

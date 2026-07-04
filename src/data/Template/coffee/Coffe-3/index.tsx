@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
@@ -6,6 +5,7 @@ import koJson from './i18n/ko.json';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+import { useTemplateLang } from '../../_shared/LanguageSwitcher';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -54,8 +54,9 @@ const IMAGES = {
 
 type Category = 'coffee' | 'tea' | 'pastries';
 
-export default function Coffe3({ lang: initialLang = 'vi' }: Props) {
-  const [lang, setLang] = useState<Lang>(initialLang);
+export default function Coffe3({ lang: propLang = 'vi' }: Props) {
+  // Đồng bộ với prop lang (PublicSitePage/editor đổi ngôn ngữ) nhưng switcher nội bộ vẫn hoạt động
+  const { activeLang: lang, setActiveLang: setLang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
 

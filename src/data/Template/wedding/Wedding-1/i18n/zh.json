@@ -1,0 +1,49 @@
+{
+  "shopName": "婚礼请柬",
+  "couple": {
+    "bride": "Ngọc Linh",
+    "groom": "Quốc Bảo",
+    "date": "14.02.2026",
+    "dateLong": "2026年2月14日 星期日",
+    "location": "西贡Rex酒店"
+  },
+  "nav": { "story": "爱情故事", "event": "婚礼流程", "rsvp": "回复邀请" },
+  "hero": {
+    "badge": "💍 电子婚礼请柬",
+    "intro": "我们诚挚邀请您",
+    "tag": "参加我们的婚礼"
+  },
+  "story": {
+    "title": "我们的爱情故事",
+    "text": "我们相识于九月一个阳光明媚的午后，一起走过生活的起起伏伏。今天，我们正式踏上爱与幸福的新旅程，携手相伴，直到永远。"
+  },
+  "events": {
+    "title": "婚礼流程",
+    "items": [
+      { "time": "08:00", "name": "迎亲仪式", "desc": "新娘家，第一郡陈兴道街25号" },
+      { "time": "10:30", "name": "茶话会", "desc": "西贡Rex酒店水晶厅" },
+      { "time": "12:00", "name": "婚宴", "desc": "西贡Rex酒店大宴会厅" },
+      { "time": "15:00", "name": "切婚礼蛋糕", "desc": "西贡Rex酒店大宴会厅" }
+    ]
+  },
+  "rsvp": {
+    "title": "确认出席",
+    "desc": "请于2026年2月1日前确认",
+    "namePlaceholder": "您的姓名",
+    "attending": "我会出席",
+    "notAttending": "很遗憾无法出席",
+    "send": "发送确认"
+  },
+  "info": {
+    "phone": "0901 234 567",
+    "phoneLabel": "联系方式",
+    "address": "胡志明市第一郡阮惠街141号",
+    "addressLabel": "婚礼地点",
+    "dateLabel": "婚礼日期"
+  },
+  "location": {
+    "title": "婚礼场地路线",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2026 Ngọc Linh & Quốc Bảo. 由 WebChoViet 创建。" }
+}

@@ -14,6 +14,9 @@ export interface SiteConfig {
   /** imageKey → dataURL hoặc uploaded URL */
   images: Record<string, string>;
   status: 'draft' | 'published';
+  isPending?: boolean;
+  /** Vượt giới hạn gói Free sau khi hạ gói — không hiển thị public tới khi nâng cấp lại hoặc xóa bớt site */
+  planLocked?: boolean;
   createdBy?: string;
   createdAt: string;
   updatedAt: string;

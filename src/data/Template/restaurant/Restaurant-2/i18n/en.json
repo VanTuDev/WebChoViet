@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Bep Viet Premium",
+    "about": "About",
+    "menu": "Menu",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "cta": "Book a table"
+  },
+  "hero": {
+    "badge": "Bep Viet Premium",
+    "title": "The Essence of Vietnamese Cuisine",
+    "subtitle": "Experience traditional flavors elevated through a contemporary culinary lens, in an elegant and refined space.",
+    "btnReserve": "Book a Table",
+    "btnMenu": "View Menu"
+  },
+  "about": {
+    "title": "Our Story",
+    "p1": "At Bep Viet Premium, we don't just serve delicious food — we retell the story of Vietnam's rich culinary heritage. Every ingredient is rigorously selected, every recipe refined through generations, combined with modern cooking techniques.",
+    "p2": "Our goal is to deliver a complete dining experience, where traditional flavors intertwine with the elegance of contemporary design, creating a wonderful symphony for all the senses.",
+    "caption": "A refined space with a distinctly East Asian soul.",
+    "features": [
+      {
+        "title": "Fresh",
+        "desc": "Ingredients hand-picked daily"
+      },
+      {
+        "title": "First-Class",
+        "desc": "5-star service quality"
+      }
+    ]
+  },
+  "menu": {
+    "title": "Signature Menu",
+    "subtitle": "Culinary masterpieces meticulously crafted by our renowned chefs.",
+    "viewAll": "View Full Menu",
+    "items": [
+      {
+        "name": "Premium Beef Pho",
+        "desc": "24-hour simmered broth, Wagyu tenderloin, fresh rice noodles.",
+        "price": "350.000₫"
+      },
+      {
+        "name": "Fresh Spring Rolls",
+        "desc": "A light, refreshing starter.",
+        "price": "120.000₫"
+      },
+      {
+        "name": "Cha Ca La Vong",
+        "desc": "Hanoi's legendary specialty.",
+        "price": "280.000₫"
+      },
+      {
+        "name": "Lotus & Snow Fungus Sweet Soup",
+        "desc": "A delicate, nourishing dessert.",
+        "price": "90.000₫"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Our guests' delight is the greatest measure of our success.",
+    "items": [
+      {
+        "quote": "A wonderful dining experience! The beef pho here is rich and flavorful with perfectly clear broth. The elegant space is ideal for entertaining guests.",
+        "name": "Ms. Minh Tu",
+        "role": "Marketing Director"
+      },
+      {
+        "quote": "The service staff are extremely professional and attentive. Every dish is presented beautifully like a work of art. We will definitely return.",
+        "name": "Mr. Hoang Nam",
+        "role": "Entrepreneur"
+      },
+      {
+        "quote": "My family had a memorable birthday dinner here. The space is quiet and cozy, and the menu is incredibly diverse.",
+        "name": "Mrs. Thu Ha",
+        "role": "Loyal customer"
+      }
+    ]
+  },
+  "reservation": {
+    "title": "Book a Table",
+    "subtitle": "Please fill in the details below so we can prepare the most thoughtful experience for your meal.",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Enter your name",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "Enter your phone number",
+    "dateLabel": "Date",
+    "guestsLabel": "Guests",
+    "guestOptions": [
+      {
+        "label": "2 guests"
+      },
+      {
+        "label": "3 - 4 guests"
+      },
+      {
+        "label": "5 - 8 guests"
+      },
+      {
+        "label": "More than 8"
+      }
+    ],
+    "noteLabel": "Additional notes",
+    "notePlaceholder": "Special requests (allergies, high chair...)",
+    "submit": "Confirm Reservation"
+  },
+  "contact": {
+    "title": "Contact Information",
+    "addressLabel": "Address",
+    "address": "123 Tinh Hoa Street, District 1, Ho Chi Minh City",
+    "phoneLabel": "Hotline",
+    "phone": "0909 123 456",
+    "hoursLabel": "Opening hours",
+    "hours": "10:00 - 22:00 (every day of the week)",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Bep Viet Premium",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "partner": "Partnership",
+    "copy": "© 2025 Bep Viet Premium. Made with WebChoViet."
+  }
+}

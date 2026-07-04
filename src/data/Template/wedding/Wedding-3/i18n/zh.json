@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "brand": "成囍",
+    "home": "婚礼",
+    "gallery": "相册",
+    "timeline": "流程",
+    "rsvp": "留言",
+    "giftBtn": "礼金登记"
+  },
+  "hero": {
+    "eyebrow": "百年好合 幸福美满",
+    "coupleNames": "Minh & Anh",
+    "invitation": "诚挚邀请您与我们的家人共度这个特别的夜晚。",
+    "dayLabel": "星期六",
+    "month": "十月",
+    "day": "12",
+    "yearLabel": "年份",
+    "year": "2024"
+  },
+  "calendar": {
+    "title": "婚礼之日",
+    "monthYear": "2024年10月",
+    "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
+    "highlightDay": 12
+  },
+  "gallery": {
+    "title": "美好时刻",
+    "subtitle": "我们最珍贵的共同回忆。"
+  },
+  "timeline": {
+    "title": "婚礼流程",
+    "subtitle": "您的光临是我们全家最大的荣幸。",
+    "items": [
+      { "time": "17:00", "name": "宾客入场", "desc": "在迎宾厅与新郎新娘合影留念。", "icon": "🤝" },
+      { "time": "18:30", "name": "婚礼仪式", "desc": "正式婚礼仪式开始。", "icon": "💍" },
+      { "time": "19:30", "name": "婚宴开始", "desc": "共享温馨的晚宴，同庆佳缘。", "icon": "🥂" }
+    ]
+  },
+  "rsvp": {
+    "title": "留言簿",
+    "subtitle": "请给我们送上您最美好的祝福。",
+    "nameLabel": "您的姓名",
+    "namePlaceholder": "请输入姓名",
+    "relationLabel": "关系",
+    "relationOptions": ["家人", "朋友", "同事"],
+    "messageLabel": "祝福语",
+    "messagePlaceholder": "写下您的祝福...",
+    "submit": "发送祝福"
+  },
+  "location": {
+    "title": "婚礼地点",
+    "subtitle": "期待您的光临。",
+    "address": "White Palace会议中心，胡志明市富润郡黄文树街194号",
+    "mapUrl": ""
+  },
+  "mobileNav": {
+    "home": "首页",
+    "schedule": "流程",
+    "gallery": "相册",
+    "gift": "礼金"
+  }
+}

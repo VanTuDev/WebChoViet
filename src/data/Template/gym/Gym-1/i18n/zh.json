@@ -1,0 +1,64 @@
+{
+  "shopName": "Iron Zone",
+  "tagline": "增强体质 · 达成目标 · 更加自信",
+  "nav": { "programs": "训练课程", "membership": "会员方案", "join": "立即加入" },
+  "hero": {
+    "badge": "🏋️ 全市最现代化的健身房",
+    "title": "突破自我极限",
+    "desc": "现代化设备、专业教练、高端训练空间，助您最快达成目标。",
+    "btnJoin": "立即加入",
+    "btnVisit": "参观健身房"
+  },
+  "programs": {
+    "title": "训练课程",
+    "items": [
+      { "icon": "💪", "name": "健身 & 有氧", "level": "所有级别", "desc": "500平方米现代健身房，配备100多台专业设备" },
+      { "icon": "🥊", "name": "拳击 & MMA", "level": "中级", "desc": "武术结合全面体能训练" },
+      { "icon": "🧘", "name": "瑜伽 & 普拉提", "level": "所有级别", "desc": "多样化瑜伽课程，平衡身心" },
+      { "icon": "🚴", "name": "动感单车", "level": "所有级别", "desc": "高强度室内骑行，高效燃烧脂肪" },
+      { "icon": "🏊", "name": "游泳", "level": "所有级别", "desc": "标准25米泳池，专业游泳教练指导" },
+      { "icon": "🤸", "name": "CrossFit", "level": "高级", "desc": "高强度功能性训练，最大化卡路里燃烧" }
+    ]
+  },
+  "membership": {
+    "title": "会员方案",
+    "popularBadge": "最受欢迎",
+    "signUp": "立即注册",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "599,000₫",
+        "period": "/月",
+        "features": ["24/7 健身 & 有氧", "高级更衣室", "1节免费私教课"],
+        "popular": false
+      },
+      {
+        "name": "Pro",
+        "price": "899,000₫",
+        "period": "/月",
+        "features": ["包含Basic全部权益", "20+团体课程", "桑拿 & 蒸汽房", "3节免费私教课"],
+        "popular": true
+      },
+      {
+        "name": "Elite",
+        "price": "1,499,000₫",
+        "period": "/月",
+        "features": ["包含Pro全部权益", "8节一对一私教课", "营养咨询", "优先预约"],
+        "popular": false
+      }
+    ]
+  },
+  "info": {
+    "hours": "05:00 – 23:00",
+    "hoursLabel": "营业时间",
+    "phone": "0966 789 123",
+    "phoneLabel": "热线电话",
+    "address": "胡志明市平盛郡奠边府街200号",
+    "addressLabel": "地址"
+  },
+  "location": {
+    "title": "健身房位置",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Iron Zone Fitness. 由 WebChoViet 创建。" }
+}

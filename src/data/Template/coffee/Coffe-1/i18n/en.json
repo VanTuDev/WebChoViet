@@ -46,6 +46,12 @@
     "viewAll": "View all photos",
     "labelIndoor": "Indoor seating area"
   },
+  "location": {
+    "sectionTitle": "Find Us",
+    "sectionSubtitle": "Visit our cafe — get directions with the map below.",
+    "mapPlaceholder": "Paste a Google Maps embed link in the editor to show the map.",
+    "mapUrl": ""
+  },
   "footer": {
     "brand": "webchoviet",
     "copyright": "© 2024 webchoviet. All rights reserved.",

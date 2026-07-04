@@ -22,8 +22,15 @@
   },
   "info": {
     "hours": "8 AM – 10 PM",
+    "hoursLabel": "Open hours",
     "phone": "0909 888 666",
-    "address": "123 Nguyen Hue, D.1, HCMC"
+    "phoneLabel": "Hotline",
+    "address": "123 Nguyen Hue, D.1, HCMC",
+    "addressLabel": "Address"
+  },
+  "location": {
+    "title": "Find Us",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2025 Boba Station. Built with WebChoViet." }
 }

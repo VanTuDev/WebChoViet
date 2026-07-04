@@ -46,6 +46,12 @@
     "viewAll": "모든 사진 보기",
     "labelIndoor": "실내 좌석 공간"
   },
+  "location": {
+    "sectionTitle": "오시는 길",
+    "sectionSubtitle": "아래 지도를 통해 빠르게 길을 찾아보세요.",
+    "mapPlaceholder": "편집기에서 Google 지도 삽입 링크를 붙여넣으면 지도가 표시됩니다.",
+    "mapUrl": ""
+  },
   "footer": {
     "brand": "webchoviet",
     "copyright": "© 2024 webchoviet. 모든 권리 보유.",

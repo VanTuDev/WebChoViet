@@ -1,61 +1,48 @@
-import { useState } from 'react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
+import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
+import zhJson from './i18n/zh.json';
+import koJson from './i18n/ko.json';
 
-type Lang = 'vi' | 'en';
-const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson };
+type Lang = 'vi' | 'en' | 'zh' | 'ko';
+const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
 interface Props { lang?: string }
 
-export default function Gym1({ lang: initialLang = 'vi' }: Props) {
-  const [lang, setLang] = useState<Lang>(initialLang as Lang);
+export default function Gym1({ lang = 'vi' }: Props) {
+  const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
   const { customData, images } = useTemplateCustom();
-  const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
+  const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
   const IMG = { hero: images.hero ?? 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&auto=format&fit=crop&q=70' };
 
   return (
     <div className="min-h-screen bg-[#0F0F0F] font-sans text-white">
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-3 flex items-center justify-between">
-        <span className="font-black text-xl text-[#F97316] tracking-wider">{t.shopName}</span>
+      <nav data-section="nav" className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-3 flex items-center justify-between">
+        <span data-field="shopName" className="font-black text-xl text-[#F97316] tracking-wider">{t.shopName}</span>
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
           <a href="#programs" className="hover:text-[#F97316] cursor-pointer transition-colors">{t.nav.programs}</a>
           <a href="#membership" className="hover:text-[#F97316] cursor-pointer transition-colors">{t.nav.membership}</a>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center text-xs font-medium gap-0.5">
-            {(['vi', 'en'] as Lang[]).map((l, i) => (
-              <span key={l} className="flex items-center">
-                {i > 0 && <span className="text-gray-600 mx-1">|</span>}
-                <button
-                  onClick={() => setLang(l)}
-                  className={`cursor-pointer transition-colors ${lang === l ? 'text-[#F97316] font-bold' : 'text-gray-500 hover:text-[#F97316]'}`}
-                >
-                  {l.toUpperCase()}
-                </button>
-              </span>
-            ))}
-          </div>
-          <button className="bg-[#F97316] text-white text-sm font-black px-5 py-2 rounded-full hover:bg-[#EA6E0C] transition-colors cursor-pointer tracking-wide">
-            {t.nav.join}
-          </button>
-        </div>
+        <button data-track="join" className="bg-[#F97316] text-white text-sm font-black px-5 py-2 rounded-full hover:bg-[#EA6E0C] transition-colors cursor-pointer tracking-wide">
+          {t.nav.join}
+        </button>
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden h-[550px] lg:h-[650px]">
+      <section data-section="hero" className="relative overflow-hidden h-[550px] lg:h-[650px]">
         <img src={IMG.hero} alt={t.shopName} className="w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
         <div className="absolute inset-0 flex items-center px-8 lg:px-20">
           <div className="max-w-2xl space-y-5">
-            <span className="inline-block bg-[#F97316]/20 text-[#F97316] text-xs font-bold px-4 py-1.5 rounded-full tracking-widest border border-[#F97316]/30">
+            <span data-field="hero.badge" className="inline-block bg-[#F97316]/20 text-[#F97316] text-xs font-bold px-4 py-1.5 rounded-full tracking-widest border border-[#F97316]/30">
               {t.hero.badge}
             </span>
-            <h1 className="text-4xl lg:text-6xl font-black text-white leading-tight uppercase tracking-tight">
+            <h1 data-field="hero.title" className="text-4xl lg:text-6xl font-black text-white leading-tight uppercase tracking-tight">
               {t.hero.title}
             </h1>
-            <p className="text-base text-gray-300 leading-relaxed max-w-lg">{t.hero.desc}</p>
+            <p data-field="hero.desc" className="text-base text-gray-300 leading-relaxed max-w-lg">{t.hero.desc}</p>
             <div className="flex flex-wrap gap-3 pt-2">
               <button className="bg-[#F97316] text-white font-black px-8 py-3 rounded-full hover:bg-[#EA6E0C] transition-colors cursor-pointer tracking-wide uppercase text-sm">
                 {t.hero.btnJoin}
@@ -69,9 +56,9 @@ export default function Gym1({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* Programs */}
-      <section id="programs" className="py-20 px-6 bg-[#111827]">
+      <section id="programs" data-section="programs" className="py-20 px-6 bg-[#111827]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-black text-white text-center mb-12 uppercase tracking-wide">
+          <h2 data-field="programs.title" className="text-3xl font-black text-white text-center mb-12 uppercase tracking-wide">
             {t.programs.title}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -91,9 +78,9 @@ export default function Gym1({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* Membership */}
-      <section id="membership" className="py-20 px-6 bg-[#0F0F0F]">
+      <section id="membership" data-section="membership" className="py-20 px-6 bg-[#0F0F0F]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-black text-white text-center mb-12 uppercase tracking-wide">
+          <h2 data-field="membership.title" className="text-3xl font-black text-white text-center mb-12 uppercase tracking-wide">
             {t.membership.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -108,7 +95,7 @@ export default function Gym1({ lang: initialLang = 'vi' }: Props) {
               >
                 {plan.popular && (
                   <div className="text-xs font-black uppercase tracking-widest mb-3 text-white/80">
-                    ⭐ {lang === 'vi' ? 'Phổ Biến Nhất' : 'Most Popular'}
+                    ⭐ {t.membership.popularBadge}
                   </div>
                 )}
                 <div className="font-black text-2xl text-white mb-1">{plan.name}</div>
@@ -131,7 +118,7 @@ export default function Gym1({ lang: initialLang = 'vi' }: Props) {
                       : 'bg-[#F97316] text-white hover:bg-[#EA6E0C]'
                   }`}
                 >
-                  {lang === 'vi' ? 'Đăng Ký Ngay' : 'Sign Up Now'}
+                  {t.membership.signUp}
                 </button>
               </div>
             ))}
@@ -140,29 +127,56 @@ export default function Gym1({ lang: initialLang = 'vi' }: Props) {
       </section>
 
       {/* Info bar */}
-      <section className="bg-[#F97316] text-white py-10 px-6">
+      <section data-section="info" className="bg-[#F97316] text-white py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
             <div className="text-2xl mb-1">🕐</div>
-            <div className="font-black">{t.info.hours}</div>
-            <div className="text-orange-100 text-sm mt-0.5">{lang === 'vi' ? 'Giờ hoạt động' : 'Open hours'}</div>
+            <div data-field="info.hours" className="font-black">{t.info.hours}</div>
+            <div className="text-orange-100 text-sm mt-0.5">{t.info.hoursLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
             <div className="text-2xl mb-1">📞</div>
-            <div className="font-black">{t.info.phone}</div>
-            <div className="text-orange-100 text-sm mt-0.5">Hotline</div>
+            <div data-field="info.phone" className="font-black">{t.info.phone}</div>
+            <div className="text-orange-100 text-sm mt-0.5">{t.info.phoneLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
             <div className="text-2xl mb-1">📍</div>
-            <div className="font-black">{t.info.address}</div>
-            <div className="text-orange-100 text-sm mt-0.5">{lang === 'vi' ? 'Địa chỉ' : 'Address'}</div>
+            <div data-field="info.address" className="font-black">{t.info.address}</div>
+            <div className="text-orange-100 text-sm mt-0.5">{t.info.addressLabel}</div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-black text-gray-500 text-center py-5 text-sm">{t.footer.copy}</footer>
+      {/* Google Maps */}
+      <section data-section="location" className="py-16 px-6 bg-[#111827]">
+        <div className="max-w-5xl mx-auto">
+          <h2 data-field="location.title" className="text-3xl font-black text-white text-center mb-10 uppercase tracking-wide">{t.location.title}</h2>
+          <div className="rounded-2xl overflow-hidden border border-white/10 h-[380px]">
+            {t.location.mapUrl ? (
+              <iframe
+                src={toGoogleMapsEmbedUrl(t.location.mapUrl)}
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps"
+              />
+            ) : (
+              <div className="w-full h-full bg-white/5 flex flex-col items-center justify-center gap-3 text-center px-6">
+                <span className="text-4xl">📍</span>
+                <p className="font-black text-white text-lg">{t.info.address}</p>
+                <p className="text-sm text-gray-400">{t.info.hours} · {t.info.phone}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <footer data-section="footer" className="bg-black text-gray-500 text-center py-5 text-sm">
+        <span data-field="footer.copy">{t.footer.copy}</span>
+      </footer>
     </div>
   );
 }

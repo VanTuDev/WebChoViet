@@ -48,5 +48,9 @@
     "phone": "0912 345 678",
     "address": "2 Công Trường Lam Sơn, Q.1, TP.HCM"
   },
+  "location": {
+    "title": "Chỉ Đường Tới Tiệc Cưới",
+    "mapUrl": ""
+  },
   "footer": { "copy": "© 2025 Hương Giang & Minh Tuấn · Được tạo bởi WebChoViet." }
 }

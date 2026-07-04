@@ -1,0 +1,36 @@
+{
+  "shopName": "Boba Station",
+  "tagline": "정통 대만 수제 버블티",
+  "nav": { "menu": "메뉴", "about": "소개", "orderNow": "주문하기" },
+  "hero": {
+    "badge": "🧋 수제 · 신선함 · 맛있음",
+    "title": "수제 펄 밀크티",
+    "desc": "모든 잔은 대만 최고급 신선한 재료로 정성껏 만들어집니다. 적당한 단맛, 쫄깃한 펄, 정통의 맛.",
+    "btnOrder": "지금 주문하기",
+    "btnMenu": "메뉴 보기"
+  },
+  "menu": {
+    "title": "대표 메뉴",
+    "items": [
+      { "name": "클래식 밀크티", "price": "35,000₫", "desc": "홍차에 생크림 우유, 화이트 펄" },
+      { "name": "타로 밀크티", "price": "39,000₫", "desc": "특제 자색 타로 밀크티, 진하고 부드러운 맛" },
+      { "name": "흑당 버블 밀크", "price": "45,000₫", "desc": "카라멜 흑당 펄, 신선한 우유" },
+      { "name": "말차 라떼", "price": "42,000₫", "desc": "일본 프리미엄 말차와 귀리 우유" },
+      { "name": "딸기 과일차", "price": "38,000₫", "desc": "신선한 딸기 과일차, 상큼한 맛" },
+      { "name": "치즈티", "price": "48,000₫", "desc": "특제 단짠 치즈폼을 올린 홍차" }
+    ]
+  },
+  "info": {
+    "hours": "08:00 – 22:00",
+    "hoursLabel": "영업시간",
+    "phone": "0909 888 666",
+    "phoneLabel": "핫라인",
+    "address": "호치민시 1군 응우옌후에 123",
+    "addressLabel": "주소"
+  },
+  "location": {
+    "title": "오시는 길",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Boba Station. WebChoViet으로 제작되었습니다." }
+}

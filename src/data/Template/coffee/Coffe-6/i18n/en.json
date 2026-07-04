@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "brand": "Garden Oasis",
+    "home": "Home",
+    "menu": "Menu",
+    "gallery": "Our Space",
+    "contact": "Contact",
+    "reserve": "Reserve"
+  },
+  "hero": {
+    "badge": "WELCOME TO GARDEN OASIS",
+    "title": "Garden Oasis Coffee - A symphony of",
+    "titleHighlight": "Coffee and Nature",
+    "subtitle": "Savor moments of tranquility in the heart of the city, surrounded by lush greenery and exquisitely crafted coffee.",
+    "btnMenu": "Explore the menu",
+    "btnGallery": "Tour our café"
+  },
+  "menuSection": {
+    "title": "A Diverse & Refined Menu",
+    "categories": [
+      {
+        "title": "Espresso-Based Coffee",
+        "items": [
+          {
+            "name": "Espresso",
+            "price": "35K",
+            "desc": "Bold, original flavor from Cau Dat Arabica beans."
+          },
+          {
+            "name": "Latte",
+            "price": "45K",
+            "desc": "A silky blend of espresso and steamed fresh milk."
+          },
+          {
+            "name": "Cappuccino",
+            "price": "45K",
+            "desc": "A thick layer of velvety milk foam over rich espresso."
+          },
+          {
+            "name": "Caramel Macchiato",
+            "price": "55K",
+            "desc": "Sweet caramel intertwined with milk and coffee."
+          }
+        ]
+      },
+      {
+        "title": "Traditional Vietnamese Coffee",
+        "items": [
+          {
+            "name": "Black Coffee",
+            "price": "30K",
+            "desc": "Traditional phin-brewed coffee, bold Robusta flavor."
+          },
+          {
+            "name": "Milk Coffee",
+            "price": "35K",
+            "desc": "The perfect harmony of bitter coffee and sweet condensed milk."
+          },
+          {
+            "name": "Bac Xiu",
+            "price": "38K",
+            "desc": "More milk, less coffee — a favorite for all ages."
+          },
+          {
+            "name": "Egg Coffee",
+            "price": "55K",
+            "desc": "Rich, silky egg cream layered over hot coffee."
+          }
+        ]
+      },
+      {
+        "title": "Tea & Herbal",
+        "items": [
+          {
+            "name": "Peach Orange Lemongrass Tea",
+            "price": "45K",
+            "desc": "Fragrant peach tea with refreshing lemongrass and fresh orange."
+          },
+          {
+            "name": "Golden Lotus Tea",
+            "price": "50K",
+            "desc": "Oolong tea with nutty lotus seeds and crunchy water chestnuts."
+          },
+          {
+            "name": "Black Milk Tea",
+            "price": "40K",
+            "desc": "Robust black tea blended with creamy milk."
+          },
+          {
+            "name": "Chrysanthemum Tea",
+            "price": "55K",
+            "desc": "A calming herbal tea to relax the mind and cool the body."
+          }
+        ]
+      },
+      {
+        "title": "Pastries & Light Bites",
+        "items": [
+          {
+            "name": "Croissant",
+            "price": "35K",
+            "desc": "Flaky, thousand-layer pastry with fragrant French butter."
+          },
+          {
+            "name": "Tiramisu",
+            "price": "50K",
+            "desc": "Coffee-soaked sponge layered with Mascarpone cream."
+          },
+          {
+            "name": "Cheesecake",
+            "price": "55K",
+            "desc": "Rich baked cheesecake with strawberry sauce."
+          },
+          {
+            "name": "Peach Mousse",
+            "price": "48K",
+            "desc": "A light, airy mousse with fresh peach aroma."
+          }
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Our Space",
+    "subtitle": "A quiet little corner in the heart of the city.",
+    "caption": "Main hall filled with greenery"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "quote": "The space here is truly relaxing. The egg coffee is rich and silky without any eggy taste — a must-try!",
+        "name": "Minh Anh",
+        "role": "Loyal customer"
+      },
+      {
+        "quote": "The peach orange lemongrass tea is incredibly refreshing, and the décor is flawless — every corner is photo-worthy.",
+        "name": "Hoang Nam",
+        "role": "Freelancer"
+      },
+      {
+        "quote": "The bac xiu is exactly to my taste. Friendly staff and a wonderfully quiet space for getting work done.",
+        "name": "Thu Trang",
+        "role": "Office worker"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Location & Contact",
+    "addressLabel": "Address",
+    "address": "123 Xanh Mat Street, Cay Coi Ward, District 1, HCMC",
+    "phoneLabel": "Phone",
+    "phone": "0123 456 789",
+    "hoursLabel": "Opening hours",
+    "hours": "Mon - Sun: 07:00 - 22:30",
+    "btnMessage": "Send us a message",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Oasis",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Support",
+    "copy": "© 2025 Garden Oasis. Made with WebChoViet."
+  }
+}

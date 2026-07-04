@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from 'react';
-import { X, Upload, Crop, Check } from 'lucide-react';
+import { X, Upload, Crop, Check, Loader2 } from 'lucide-react';
+import { uploadImage } from '../../../services/uploadService';
 
 interface Props {
   imageKey: string;
@@ -17,6 +18,8 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
   const [dragging, setDragging] = useState<'move' | 'resize' | null>(null);
   const [dragStart, setDragStart] = useState({ mx: 0, my: 0, cx: 0, cy: 0, cw: 0, ch: 0 });
   const [step, setStep] = useState<'upload' | 'crop'>(currentUrl ? 'crop' : 'upload');
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState('');
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imgElRef = useRef<HTMLImageElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -142,7 +145,7 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
     }
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     const img = imgElRef.current;
     if (!img) return;
     const out = document.createElement('canvas');
@@ -155,8 +158,20 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
       out.width, out.height,
       0, 0, out.width, out.height,
     );
-    onConfirm(imageKey, out.toDataURL('image/jpeg', 0.85));
-    onClose();
+
+    setUploadError('');
+    setUploading(true);
+    try {
+      const blob = await new Promise<Blob | null>(resolve => out.toBlob(resolve, 'image/jpeg', 0.85));
+      if (!blob) throw new Error('Không thể xử lý ảnh đã cắt.');
+      const url = await uploadImage(blob, `${imageKey}.jpg`);
+      onConfirm(imageKey, url);
+      onClose();
+    } catch (err) {
+      setUploadError(err instanceof Error ? err.message : 'Tải ảnh lên thất bại. Vui lòng thử lại.');
+    } finally {
+      setUploading(false);
+    }
   };
 
   return (
@@ -210,22 +225,32 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
               />
             </div>
             <div className="px-6 py-3 bg-gray-50 flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <Crop className="w-4 h-4 text-gray-400" />
-                <span className="text-xs text-gray-500">Kéo ảnh để di chuyển · Kéo góc dưới-phải để thay đổi kích thước</span>
+              <div className="flex items-center gap-2 min-w-0">
+                {uploadError ? (
+                  <span className="text-xs text-red-500 truncate">{uploadError}</span>
+                ) : (
+                  <>
+                    <Crop className="w-4 h-4 text-gray-400 shrink-0" />
+                    <span className="text-xs text-gray-500">Kéo ảnh để di chuyển · Kéo góc dưới-phải để thay đổi kích thước</span>
+                  </>
+                )}
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 shrink-0">
                 <button
                   onClick={() => { setStep('upload'); setImgSrc(null); }}
-                  className="px-4 py-2 text-xs font-semibold text-gray-600 border border-gray-200 rounded-full hover:bg-gray-100 cursor-pointer"
+                  disabled={uploading}
+                  className="px-4 py-2 text-xs font-semibold text-gray-600 border border-gray-200 rounded-full hover:bg-gray-100 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Chọn lại
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className="px-5 py-2 text-xs font-bold text-white bg-[#003f87] rounded-full hover:bg-[#002d63] flex items-center gap-1.5 cursor-pointer"
+                  disabled={uploading}
+                  className="px-5 py-2 text-xs font-bold text-white bg-[#003f87] rounded-full hover:bg-[#002d63] flex items-center gap-1.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <Check className="w-3.5 h-3.5" /> Xác nhận cắt
+                  {uploading
+                    ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> Đang tải lên...</>
+                    : <><Check className="w-3.5 h-3.5" /> Xác nhận cắt</>}
                 </button>
               </div>
             </div>

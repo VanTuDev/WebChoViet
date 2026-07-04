@@ -22,8 +22,15 @@
   },
   "info": {
     "hours": "10 AM – 10 PM",
+    "hoursLabel": "Open hours",
     "phone": "0988 123 456",
-    "address": "45 Ly Tu Trong, D.1, HCMC"
+    "phoneLabel": "Hotline",
+    "address": "45 Ly Tu Trong, D.1, HCMC",
+    "addressLabel": "Address"
+  },
+  "location": {
+    "title": "Find Our Restaurant",
+    "mapUrl": ""
   },
   "footer": { "copy": "© 2025 Pho Am Thuc. Built with WebChoViet." }
 }

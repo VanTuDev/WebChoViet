@@ -1,12 +1,14 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Users, CreditCard, ArrowLeftRight,
-  LogOut, ShieldCheck, Bell, ChevronRight,
+  LogOut, ShieldCheck, Bell, ChevronRight, BarChart3, ArrowLeft,
 } from 'lucide-react';
 import { ROUTES } from '../config/routes';
+import { useAppContext } from '../store/AppContext';
 
 const NAV = [
   { path: ROUTES.ADMIN_DASHBOARD,    label: 'Tổng quan',        Icon: LayoutDashboard },
+  { path: ROUTES.ADMIN_ANALYTICS,    label: 'Thống kê',         Icon: BarChart3 },
   { path: ROUTES.ADMIN_USERS,        label: 'Người dùng',       Icon: Users },
   { path: ROUTES.ADMIN_PAYMENTS,     label: 'Thanh toán',       Icon: CreditCard },
   { path: ROUTES.ADMIN_TRANSACTIONS, label: 'Dòng tiền',        Icon: ArrowLeftRight },
@@ -15,10 +17,14 @@ const NAV = [
 export default function AdminLayout() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, logout } = useAppContext();
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleLogout = () => navigate(ROUTES.ADMIN_LOGIN);
+  const handleLogout = async () => {
+    await logout();
+    navigate(ROUTES.ADMIN_LOGIN, { replace: true });
+  };
 
   return (
     <div className="h-screen flex bg-slate-950 text-white overflow-hidden font-sans">
@@ -71,10 +77,17 @@ export default function AdminLayout() {
               <ShieldCheck className="h-3.5 w-3.5 text-[#60a5fa]" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-semibold text-white leading-none">Super Admin</p>
-              <p className="text-[10px] text-slate-400 truncate mt-0.5">admin@webchoviet.com</p>
+              <p className="text-xs font-semibold text-white leading-none truncate">{user?.name ?? 'Admin'}</p>
+              <p className="text-[10px] text-slate-400 truncate mt-0.5">{user?.email ?? ''}</p>
             </div>
           </div>
+          <button
+            onClick={() => navigate(ROUTES.MARKETPLACE)}
+            className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-slate-400 hover:text-sky-400 hover:bg-sky-500/10 transition-colors cursor-pointer"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Về trang người dùng</span>
+          </button>
           <button
             onClick={handleLogout}
             className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"

@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Bếp Việt Premium",
+    "about": "Giới thiệu",
+    "menu": "Thực đơn",
+    "reviews": "Đánh giá",
+    "contact": "Liên hệ",
+    "cta": "Đặt bàn ngay"
+  },
+  "hero": {
+    "badge": "Bếp Việt Premium",
+    "title": "Tinh Hoa Ẩm Thực Việt",
+    "subtitle": "Trải nghiệm hương vị truyền thống được nâng tầm qua lăng kính ẩm thực đương đại, trong không gian sang trọng và tinh tế.",
+    "btnReserve": "Đặt Bàn Ngay",
+    "btnMenu": "Xem Thực Đơn"
+  },
+  "about": {
+    "title": "Câu Chuyện Của Chúng Tôi",
+    "p1": "Tại Bếp Việt Premium, chúng tôi không chỉ phục vụ những món ăn ngon, mà còn kể lại câu chuyện về di sản ẩm thực phong phú của Việt Nam. Từng nguyên liệu được lựa chọn khắt khe, từng công thức được chắt lọc qua nhiều thế hệ, kết hợp cùng kỹ thuật nấu nướng hiện đại.",
+    "p2": "Mục tiêu của chúng tôi là mang đến một trải nghiệm ẩm thực trọn vẹn, nơi hương vị truyền thống giao thoa cùng sự thanh lịch của thiết kế đương đại, tạo nên một bản giao hưởng tuyệt vời cho mọi giác quan.",
+    "caption": "Không gian tinh tế, đậm chất Á Đông.",
+    "features": [
+      {
+        "title": "Tươi Ngon",
+        "desc": "Nguyên liệu chọn lọc mỗi ngày"
+      },
+      {
+        "title": "Đẳng Cấp",
+        "desc": "Chất lượng dịch vụ 5 sao"
+      }
+    ]
+  },
+  "menu": {
+    "title": "Thực Đơn Đặc Sắc",
+    "subtitle": "Những tuyệt tác ẩm thực được chế tác tỉ mỉ bởi các đầu bếp trứ danh của chúng tôi.",
+    "viewAll": "Xem Toàn Bộ Thực Đơn",
+    "items": [
+      {
+        "name": "Phở Bò Thượng Hạng",
+        "desc": "Nước dùng hầm 24 giờ, thăn nội bò Wagyu, bánh phở tươi.",
+        "price": "350.000₫"
+      },
+      {
+        "name": "Gỏi Cuốn Tôm Thịt",
+        "desc": "Khai vị thanh mát.",
+        "price": "120.000₫"
+      },
+      {
+        "name": "Chả Cá Lã Vọng",
+        "desc": "Đặc sản Hà Nội trứ danh.",
+        "price": "280.000₫"
+      },
+      {
+        "name": "Chè Sen Tuyết Nhĩ",
+        "desc": "Tráng miệng thanh tao, bổ dưỡng.",
+        "price": "90.000₫"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Khách Hàng Nói Gì",
+    "subtitle": "Niềm vui của thực khách là thước đo thành công lớn nhất của chúng tôi.",
+    "items": [
+      {
+        "quote": "Một trải nghiệm ẩm thực tuyệt vời! Phở bò ở đây có hương vị đậm đà, nước dùng trong vắt đúng chuẩn. Không gian sang trọng rất hợp để tiếp khách.",
+        "name": "Chị Minh Tú",
+        "role": "Giám đốc Marketing"
+      },
+      {
+        "quote": "Nhân viên phục vụ cực kỳ chuyên nghiệp và chu đáo. Các món ăn được trình bày đẹp mắt như những tác phẩm nghệ thuật. Chắc chắn sẽ quay lại.",
+        "name": "Anh Hoàng Nam",
+        "role": "Doanh nhân"
+      },
+      {
+        "quote": "Gia đình tôi đã có một bữa tiệc sinh nhật đáng nhớ tại đây. Không gian yên tĩnh, ấm cúng và thực đơn vô cùng phong phú.",
+        "name": "Cô Thu Hà",
+        "role": "Khách hàng thân thiết"
+      }
+    ]
+  },
+  "reservation": {
+    "title": "Đặt Bàn Ngay",
+    "subtitle": "Vui lòng điền thông tin dưới đây để chúng tôi chuẩn bị chu đáo nhất cho bữa ăn của bạn.",
+    "nameLabel": "Họ và tên",
+    "namePlaceholder": "Nhập tên của bạn",
+    "phoneLabel": "Số điện thoại",
+    "phonePlaceholder": "Nhập số điện thoại",
+    "dateLabel": "Ngày",
+    "guestsLabel": "Số khách",
+    "guestOptions": [
+      {
+        "label": "2 người"
+      },
+      {
+        "label": "3 - 4 người"
+      },
+      {
+        "label": "5 - 8 người"
+      },
+      {
+        "label": "Trên 8 người"
+      }
+    ],
+    "noteLabel": "Ghi chú thêm",
+    "notePlaceholder": "Yêu cầu đặc biệt (dị ứng, ghế trẻ em...)",
+    "submit": "Xác Nhận Đặt Bàn"
+  },
+  "contact": {
+    "title": "Thông Tin Liên Hệ",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Tinh Hoa, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Hotline",
+    "phone": "0909 123 456",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "10:00 - 22:00 (Tất cả các ngày trong tuần)",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Bếp Việt Premium",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "partner": "Hợp tác",
+    "copy": "© 2025 Bếp Việt Premium. Được tạo bởi WebChoViet."
+  }
+}

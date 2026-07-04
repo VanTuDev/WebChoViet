@@ -1,14 +1,18 @@
 import { Suspense, useState, useCallback, useEffect, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle, Languages, MapPin } from 'lucide-react';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
 import { saveSiteConfig, getSiteConfig, generateSlug, slugExists } from '../../services/siteConfigService';
+import { translateCustomData } from '../../services/translateService';
+import type { AutofillResult } from '../../services/googleMapsImportService';
+import { LANGUAGES, TRANSLATABLE_LANGS, hasContent } from '../../constants/languages';
 import type { SiteConfig } from '../../types';
 import EditorPanel from './_components/EditorPanel';
 import PublishModal from './_components/PublishModal';
 import InlineEditOverlay from './_components/InlineEditOverlay';
-import { getUserId } from '../../utils/userId';
+import GoogleMapsImportModal from './_components/GoogleMapsImportModal';
 import { generateUUID } from '../../utils/uuid';
+import { deepMerge } from '../../utils/deepMerge';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
 import { TEMPLATES } from '../../data';
@@ -37,7 +41,7 @@ export default function TemplateEditorPage() {
   const navigate = useNavigate();
   const { siteId } = useParams<{ siteId?: string }>();
   const [searchParams] = useSearchParams();
-  const { upsertSiteConfig } = useAppContext();
+  const { upsertSiteConfig, showSnackbar, showConfirm } = useAppContext();
 
   const isEdit = !!siteId && siteId !== 'new';
 
@@ -48,6 +52,7 @@ export default function TemplateEditorPage() {
   const [viewport, setViewport] = useState<'desktop' | 'mobile'>('desktop');
   const [mobileTab, setMobileTab] = useState<'editor' | 'preview'>('editor');
   const [showPublishModal, setShowPublishModal] = useState(false);
+  const [showGmapsModal, setShowGmapsModal] = useState(false);
   const [inlineEdit, setInlineEdit] = useState<{
     path: string[];
     originalValue: string;
@@ -55,7 +60,10 @@ export default function TemplateEditorPage() {
     fieldLabel: string;
   } | null>(null);
   const [autoSaveStatus, setAutoSaveStatus] = useState<'idle' | 'pending' | 'saved'>('idle');
+  const [isTranslating, setIsTranslating] = useState(false);
   const autoSaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Chống spam snackbar: chỉ báo lỗi autosave 1 lần cho mỗi chuỗi thất bại liên tiếp
+  const autoSaveErrorNotified = useRef(false);
   const isMounted = useRef(false);
   const pendingScrollKey = useRef<string | null>(null);
 
@@ -101,7 +109,6 @@ export default function TemplateEditorPage() {
           customData: { vi: {}, en: {}, zh: {}, ko: {} },
           images: {},
           status: 'draft',
-          createdBy: getUserId(),
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         };
@@ -156,10 +163,18 @@ export default function TemplateEditorPage() {
         const toSave: SiteConfig = { ...site, updatedAt: new Date().toISOString() };
         await saveSiteConfig(toSave);
         upsertSiteConfig(toSave);
+        autoSaveErrorNotified.current = false;
         setAutoSaveStatus('saved');
         setTimeout(() => setAutoSaveStatus('idle'), 2500);
-      } catch {
+      } catch (error) {
+        // KHÔNG nuốt lỗi im lặng: nếu autosave thất bại (vd vượt giới hạn site của gói),
+        // nội dung chỉ còn trong trình duyệt — user phải được biết để xử lý trước khi thoát.
         setAutoSaveStatus('idle');
+        if (!autoSaveErrorNotified.current) {
+          autoSaveErrorNotified.current = true;
+          const msg = error instanceof Error ? error.message : 'Không rõ nguyên nhân.';
+          showSnackbar(`Tự động lưu thất bại: ${msg} Nội dung chưa được lưu lên máy chủ.`, 'error');
+        }
       }
     }, 1500);
     return () => { if (autoSaveTimer.current) clearTimeout(autoSaveTimer.current); };
@@ -168,35 +183,108 @@ export default function TemplateEditorPage() {
   // ── Manual save ───────────────────────────────────────────────────────────
   const handleSave = async () => {
     if (!site) return;
-    const toSave: SiteConfig = {
-      ...site,
-      createdBy: site.createdBy ?? getUserId(),
-      updatedAt: new Date().toISOString(),
-    };
-    const saved = await saveSiteConfig(toSave);
-    setSite(saved);
-    upsertSiteConfig(saved);
-    setSavedPulse(true);
-    setTimeout(() => setSavedPulse(false), 2000);
+    try {
+      const toSave: SiteConfig = { ...site, updatedAt: new Date().toISOString() };
+      const saved = await saveSiteConfig(toSave);
+      setSite(saved);
+      upsertSiteConfig(saved);
+      setSavedPulse(true);
+      setTimeout(() => setSavedPulse(false), 2000);
+    } catch (error) {
+      showSnackbar(error instanceof Error ? error.message : 'Không thể lưu. Vui lòng thử lại.', 'error');
+    }
   };
 
   // ── Publish (called from PublishModal) ────────────────────────────────────
   const handlePublish = async (name: string): Promise<string> => {
     if (!site) return '';
-    const slug = await generateSlug(name, site.id);
-    const toSave: SiteConfig = {
-      ...site,
-      name,
-      slug,
-      status: 'published',
-      createdBy: site.createdBy ?? getUserId(),
-      updatedAt: new Date().toISOString(),
-    };
-    const saved = await saveSiteConfig(toSave);
-    setSite(saved);
-    upsertSiteConfig(saved);
-    return slug;
+    try {
+      const slug = await generateSlug(name, site.id);
+      const toSave: SiteConfig = {
+        ...site,
+        name,
+        slug,
+        status: 'published',
+        updatedAt: new Date().toISOString(),
+      };
+      const saved = await saveSiteConfig(toSave);
+      setSite(saved);
+      upsertSiteConfig(saved);
+      return slug;
+    } catch (error) {
+      showSnackbar(error instanceof Error ? error.message : 'Không thể xuất bản. Vui lòng thử lại.', 'error');
+      throw error;
+    }
   };
+
+  // ── Dịch tự động vi → en/zh/ko qua Gemini ─────────────────────────────────
+  const runTranslate = async () => {
+    if (!site) return;
+    const viData = (site.customData.vi as Record<string, unknown>) ?? {};
+    setIsTranslating(true);
+    try {
+      const result = await translateCustomData(viData, TRANSLATABLE_LANGS);
+      setSite(prev => (prev ? { ...prev, customData: { ...prev.customData, ...result } } : null));
+      showSnackbar('Đã dịch xong English / 中文 / 한국어. Kiểm tra lại từng tab nhé.', 'success');
+    } catch (error) {
+      showSnackbar(error instanceof Error ? error.message : 'Dịch thất bại. Vui lòng thử lại.', 'error');
+    } finally {
+      setIsTranslating(false);
+    }
+  };
+
+  const handleTranslate = () => {
+    if (!site) return;
+    const viData = (site.customData.vi as Record<string, unknown>) ?? {};
+    if (!hasContent(viData)) {
+      showSnackbar('Chưa có nội dung tiếng Việt để dịch. Hãy nhập nội dung trước.', 'error');
+      return;
+    }
+
+    const alreadyTranslated = TRANSLATABLE_LANGS.some(l => hasContent(site.customData[l]));
+    if (alreadyTranslated) {
+      showConfirm({
+        title: 'Ghi đè bản dịch hiện có?',
+        message: 'EN / 中文 / 한국어 đã có nội dung — dịch lại sẽ THAY THẾ toàn bộ, mất các chỉnh sửa thủ công trước đó ở các ngôn ngữ này.',
+        confirmLabel: 'Dịch lại',
+        variant: 'danger',
+        onConfirm: runTranslate,
+      });
+    } else {
+      runTranslate();
+    }
+  };
+
+  // ── Tạo tự động từ Google Maps: cào dữ liệu qua Apify + điền bằng Gemini ──
+  const applyAutofillResult = useCallback((result: AutofillResult) => {
+    setSite(prev => {
+      if (!prev) return null;
+      const mergedVi = deepMerge((prev.customData.vi as Record<string, unknown>) ?? {}, result.customData);
+      return {
+        ...prev,
+        lang: 'vi',
+        customData: { ...prev.customData, vi: mergedVi },
+        images: { ...prev.images, ...result.images },
+      };
+    });
+    showSnackbar('Đã tạo nội dung tự động từ Google Maps. Kiểm tra và chỉnh sửa lại nếu cần.', 'success');
+  }, [showSnackbar]);
+
+  const handleGmapsAutofillSuccess = useCallback((result: AutofillResult) => {
+    setShowGmapsModal(false);
+    const viData = (site?.customData.vi as Record<string, unknown>) ?? {};
+    if (hasContent(viData)) {
+      showConfirm({
+        title: 'Ghi đè nội dung hiện có?',
+        message: 'Nội dung tiếng Việt đã có sẵn — áp dụng dữ liệu từ Google Maps sẽ GHI ĐÈ nội dung này.',
+        confirmLabel: 'Ghi đè',
+        variant: 'danger',
+        onConfirm: () => applyAutofillResult(result),
+      });
+    } else {
+      applyAutofillResult(result);
+    }
+  }, [site, showConfirm, applyAutofillResult]);
 
   // ── Inline edit: double-click on template to edit text ───────────────────
   const handlePreviewDblClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -384,6 +472,47 @@ export default function TemplateEditorPage() {
           </div>
         </div>
 
+        {/* Row 2 – language tabs + dịch tự động */}
+        <div className="flex items-center gap-2 px-3 h-10 border-t border-gray-100">
+          <div className="flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5">
+            {LANGUAGES.map(l => (
+              <button
+                key={l.code}
+                onClick={() => setSite(prev => (prev ? { ...prev, lang: l.code } : null))}
+                title={l.label}
+                className={`flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-bold transition-colors ${
+                  site.lang === l.code ? 'bg-white shadow-sm text-gray-800' : 'text-gray-400 hover:text-gray-600'
+                }`}
+              >
+                <span>{l.flag}</span>
+                <span>{l.shortLabel}</span>
+                {l.code !== 'vi' && hasContent(site.customData[l.code]) && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                )}
+              </button>
+            ))}
+          </div>
+
+          <div className="ml-auto flex items-center gap-2">
+            <button
+              onClick={() => setShowGmapsModal(true)}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors"
+            >
+              <MapPin className="w-3.5 h-3.5" /> <span className="hidden sm:inline">Tạo từ Google Maps</span>
+            </button>
+
+            <button
+              onClick={handleTranslate}
+              disabled={isTranslating}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-bold text-primary bg-primary/10 hover:bg-primary/15 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {isTranslating
+                ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> Đang dịch...</>
+                : <><Languages className="w-3.5 h-3.5" /> <span className="hidden sm:inline">Dịch tự động</span></>}
+            </button>
+          </div>
+        </div>
+
       </header>
 
       {/* ── Mobile tab switcher ───────────────────────────────────────────── */}
@@ -497,6 +626,16 @@ export default function TemplateEditorPage() {
           onChange={handleInlineEditChange}
           onClose={() => setInlineEdit(null)}
           onUndo={handleInlineEditUndo}
+        />
+      )}
+
+      {/* ── Google Maps Import Modal ──────────────────────────────────────── */}
+      {showGmapsModal && (
+        <GoogleMapsImportModal
+          templateSchema={schema}
+          imageSlots={imageSlots}
+          onSuccess={handleGmapsAutofillSuccess}
+          onClose={() => setShowGmapsModal(false)}
         />
       )}
 

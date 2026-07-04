@@ -1,0 +1,36 @@
+{
+  "shopName": "Boba Station",
+  "tagline": "正宗台湾手工珍珠奶茶",
+  "nav": { "menu": "菜单", "about": "关于我们", "orderNow": "立即下单" },
+  "hero": {
+    "badge": "🧋 手工制作 · 新鲜 · 美味",
+    "title": "手工珍珠奶茶",
+    "desc": "每一杯茶都精心调制，选用台湾最优质的新鲜原料。甜度适中，珍珠Q弹，正宗风味。",
+    "btnOrder": "立即下单",
+    "btnMenu": "查看菜单"
+  },
+  "menu": {
+    "title": "招牌菜单",
+    "items": [
+      { "name": "经典奶茶", "price": "35,000₫", "desc": "红茶配鲜奶油牛奶，白珍珠" },
+      { "name": "香芋奶茶", "price": "39,000₫", "desc": "特制紫芋奶茶，香浓顺滑" },
+      { "name": "黑糖珍珠鲜奶", "price": "45,000₫", "desc": "焦糖黑糖珍珠，纯鲜牛奶" },
+      { "name": "抹茶拿铁", "price": "42,000₫", "desc": "日本顶级抹茶配燕麦奶" },
+      { "name": "草莓果茶", "price": "38,000₫", "desc": "新鲜草莓果茶，清爽怡人" },
+      { "name": "芝士奶盖茶", "price": "48,000₫", "desc": "红茶配特制咸甜芝士奶盖" }
+    ]
+  },
+  "info": {
+    "hours": "08:00 – 22:00",
+    "hoursLabel": "营业时间",
+    "phone": "0909 888 666",
+    "phoneLabel": "热线电话",
+    "address": "胡志明市第一郡阮惠街123号",
+    "addressLabel": "地址"
+  },
+  "location": {
+    "title": "门店位置",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Boba Station. 由 WebChoViet 创建。" }
+}

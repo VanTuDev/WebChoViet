@@ -14,7 +14,9 @@ massage trị liệu, yoga studio, wellness center.
 
 ## Templates hiện có
 
-> Chưa có template. Xem hướng dẫn thêm template trong `docs/skill-add-template.md`.
+| ID | Tên | Giá | Đặc điểm nổi bật |
+|----|-----|-----|-------------------|
+| `spa-1` | Lotus Spa | Miễn phí | Tông xanh sage tinh tế, hero fullscreen overlay xanh mướt, grid 6 dịch vụ |
 
 ---
 

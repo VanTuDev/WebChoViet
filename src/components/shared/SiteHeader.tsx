@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { Search, Plus, Menu, X, LogOut } from 'lucide-react';
+import { Search, Plus, Menu, X, LogOut, Shield } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
+import { useAppContext } from '../../store/AppContext';
+import PlanBadge from './PlanBadge';
 
 // ── Shared Logo — dùng ở cả 2 variant ────────────────────────────────────────
 
@@ -58,6 +60,21 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
   const [mobileOpen, setMobileOpen] = useState(false);
   const [avatarOpen, setAvatarOpen] = useState(false);
   const avatarRef = useRef<HTMLDivElement>(null);
+  const { user, isAuthenticated, logout, showConfirm } = useAppContext();
+
+  const handleLogout = () => {
+    setAvatarOpen(false);
+    showConfirm({
+      title: 'Đăng xuất?',
+      message: 'Bạn có chắc muốn đăng xuất khỏi WebChoViet?',
+      confirmLabel: 'Đăng xuất',
+      variant: 'danger',
+      onConfirm: async () => {
+        await logout();
+        navigate(ROUTES.LOGIN, { replace: true });
+      },
+    });
+  };
 
   useEffect(() => {
     if (!avatarOpen) return;
@@ -224,42 +241,58 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
             <span className="hidden sm:inline">Tạo Web Mới</span>
           </button>
 
-          {/* Avatar */}
-          <div ref={avatarRef} className="relative ml-1 pl-2 border-l border-gray-100">
-            <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
-              alt="Avatar"
-              referrerPolicy="no-referrer"
-              onClick={() => setAvatarOpen(v => !v)}
-              className="h-8 w-8 rounded-full border border-gray-200 object-cover hover:shadow transition-shadow cursor-pointer"
-            />
-            {avatarOpen && (
-              <div className="absolute right-0 top-11 w-52 rounded-xl border border-gray-100 bg-white p-3 shadow-xl z-50">
-                <p className="text-[11px] text-gray-400">Tài khoản</p>
-                <p className="text-xs font-semibold text-gray-800 truncate mt-0.5">tunv.sw@gmail.com</p>
-                <div className="mt-2 border-t border-gray-100 pt-2 flex flex-col gap-1">
-                  <button
-                    onClick={() => { navigate(ROUTES.DASHBOARD_PROJECTS); setAvatarOpen(false); }}
-                    className="text-left text-xs text-gray-600 hover:text-primary py-1 transition-colors cursor-pointer"
-                  >
-                    Quản lý dự án
-                  </button>
-                  <span className="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded font-medium self-start">
-                    Gói miễn phí dư dả
-                  </span>
+          {/* Auth: avatar user thật nếu đã đăng nhập, nút Đăng nhập nếu chưa */}
+          {isAuthenticated && user ? (
+            <div ref={avatarRef} className="relative ml-1 pl-2 border-l border-gray-100">
+              <img
+                src={user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=0056b3&color=fff`}
+                alt={user.name}
+                referrerPolicy="no-referrer"
+                onClick={() => setAvatarOpen(v => !v)}
+                className="h-8 w-8 rounded-full border border-gray-200 object-cover hover:shadow transition-shadow cursor-pointer"
+              />
+              {avatarOpen && (
+                <div className="absolute right-0 top-11 w-52 rounded-xl border border-gray-100 bg-white p-3 shadow-xl z-50">
+                  <p className="text-[11px] text-gray-400">Tài khoản</p>
+                  <p className="text-xs font-semibold text-gray-800 truncate mt-0.5">{user.email}</p>
+                  <div className="mt-2 border-t border-gray-100 pt-2 flex flex-col gap-1.5">
+                    <button
+                      onClick={() => { navigate(ROUTES.DASHBOARD_PROJECTS); setAvatarOpen(false); }}
+                      className="text-left text-xs text-gray-600 hover:text-primary py-1 transition-colors cursor-pointer"
+                    >
+                      Quản lý dự án
+                    </button>
+                    {user.role === 'admin' && (
+                      <button
+                        onClick={() => { navigate(ROUTES.ADMIN_DASHBOARD); setAvatarOpen(false); }}
+                        className="flex items-center gap-1.5 text-left text-xs text-indigo-600 hover:text-indigo-800 py-1 transition-colors cursor-pointer font-medium"
+                      >
+                        <Shield className="h-3 w-3" />
+                        Quản lý hệ thống
+                      </button>
+                    )}
+                    <PlanBadge plan={user.plan} />
+                  </div>
+                  <div className="mt-2 border-t border-gray-100 pt-2">
+                    <button
+                      onClick={handleLogout}
+                      className="w-full flex items-center gap-2 text-left text-xs text-red-500 hover:text-red-600 hover:bg-red-50 px-2 py-1.5 rounded-lg transition-colors cursor-pointer"
+                    >
+                      <LogOut className="h-3.5 w-3.5" />
+                      Đăng xuất
+                    </button>
+                  </div>
                 </div>
-                <div className="mt-2 border-t border-gray-100 pt-2">
-                  <button
-                    onClick={() => { navigate('/landing'); setAvatarOpen(false); }}
-                    className="w-full flex items-center gap-2 text-left text-xs text-red-500 hover:text-red-600 hover:bg-red-50 px-2 py-1.5 rounded-lg transition-colors"
-                  >
-                    <LogOut className="h-3.5 w-3.5" />
-                    Đăng xuất
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          ) : (
+            <button
+              onClick={() => navigate(ROUTES.LOGIN)}
+              className="ml-1 pl-3 border-l border-gray-100 text-xs font-semibold text-primary hover:text-primary/80 transition-colors cursor-pointer whitespace-nowrap"
+            >
+              Đăng nhập
+            </button>
+          )}
 
           {/* Mobile hamburger */}
           <button

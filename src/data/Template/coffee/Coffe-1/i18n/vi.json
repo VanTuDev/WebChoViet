@@ -46,6 +46,12 @@
     "viewAll": "Xem tất cả ảnh",
     "labelIndoor": "Khu vực trong nhà"
   },
+  "location": {
+    "sectionTitle": "Vị Trí Của Chúng Tôi",
+    "sectionSubtitle": "Ghé thăm quán — chỉ đường nhanh qua bản đồ bên dưới.",
+    "mapPlaceholder": "Dán link nhúng Google Maps trong trình chỉnh sửa để hiển thị bản đồ.",
+    "mapUrl": ""
+  },
   "footer": {
     "brand": "webchoviet",
     "copyright": "© 2024 webchoviet. All rights reserved.",

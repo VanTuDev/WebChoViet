@@ -1,0 +1,64 @@
+{
+  "shopName": "Iron Zone",
+  "tagline": "체력 향상 · 목표 달성 · 자신감 상승",
+  "nav": { "programs": "프로그램", "membership": "멤버십", "join": "지금 가입하기" },
+  "hero": {
+    "badge": "🏋️ 도시에서 가장 현대적인 헬스장",
+    "title": "당신의 한계를 뛰어넘으세요",
+    "desc": "최신 장비, 전문 트레이너, 프리미엄 운동 공간으로 가장 빠르게 목표를 달성하세요.",
+    "btnJoin": "지금 가입하기",
+    "btnVisit": "헬스장 둘러보기"
+  },
+  "programs": {
+    "title": "트레이닝 프로그램",
+    "items": [
+      { "icon": "💪", "name": "헬스 & 유산소", "level": "모든 레벨", "desc": "100대 이상의 전문 장비를 갖춘 500m² 현대식 헬스장" },
+      { "icon": "🥊", "name": "복싱 & MMA", "level": "중급", "desc": "무술과 종합 체력 단련의 결합" },
+      { "icon": "🧘", "name": "요가 & 필라테스", "level": "모든 레벨", "desc": "다양한 요가 수업으로 몸과 마음의 균형" },
+      { "icon": "🚴", "name": "사이클링", "level": "모든 레벨", "desc": "고강도 실내 사이클로 효과적인 지방 연소" },
+      { "icon": "🏊", "name": "수영", "level": "모든 레벨", "desc": "전문 수영 코치와 함께하는 표준 25m 수영장" },
+      { "icon": "🤸", "name": "크로스핏", "level": "고급", "desc": "최대 칼로리 연소를 위한 고강도 기능성 트레이닝" }
+    ]
+  },
+  "membership": {
+    "title": "멤버십 플랜",
+    "popularBadge": "가장 인기",
+    "signUp": "지금 등록하기",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "599,000₫",
+        "period": "/월",
+        "features": ["24/7 헬스 & 유산소", "프리미엄 탈의실", "무료 PT 1회"],
+        "popular": false
+      },
+      {
+        "name": "Pro",
+        "price": "899,000₫",
+        "period": "/월",
+        "features": ["Basic 모든 혜택", "20개 이상 그룹 수업", "사우나 & 스팀룸", "무료 PT 3회"],
+        "popular": true
+      },
+      {
+        "name": "Elite",
+        "price": "1,499,000₫",
+        "period": "/월",
+        "features": ["Pro 모든 혜택", "개인 PT 8회", "영양 상담", "우선 예약"],
+        "popular": false
+      }
+    ]
+  },
+  "info": {
+    "hours": "05:00 – 23:00",
+    "hoursLabel": "영업시간",
+    "phone": "0966 789 123",
+    "phoneLabel": "핫라인",
+    "address": "호치민시 빈탄군 디엔비엔푸 200",
+    "addressLabel": "주소"
+  },
+  "location": {
+    "title": "오시는 길",
+    "mapUrl": ""
+  },
+  "footer": { "copy": "© 2025 Iron Zone Fitness. WebChoViet으로 제작되었습니다." }
+}

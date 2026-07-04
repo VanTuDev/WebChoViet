@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "brand": "Garden Oasis",
+    "home": "Trang chủ",
+    "menu": "Thực đơn",
+    "gallery": "Không gian",
+    "contact": "Liên hệ",
+    "reserve": "Đặt bàn"
+  },
+  "hero": {
+    "badge": "CHÀO MỪNG ĐẾN VỚI GARDEN OASIS",
+    "title": "Garden Oasis Coffee - Bản giao hưởng của",
+    "titleHighlight": "Cà phê và Thiên nhiên",
+    "subtitle": "Tận hưởng những giây phút tĩnh lặng giữa lòng thành phố trong không gian xanh mát và hương vị cà phê tinh tuyển.",
+    "btnMenu": "Khám phá thực đơn",
+    "btnGallery": "Tham quan quán"
+  },
+  "menuSection": {
+    "title": "Thực Đơn Đa Dạng & Tinh Tế",
+    "categories": [
+      {
+        "title": "Cà Phê Pha Máy",
+        "items": [
+          {
+            "name": "Espresso",
+            "price": "35K",
+            "desc": "Hương vị đậm đà, nguyên bản từ hạt Arabica Cầu Đất."
+          },
+          {
+            "name": "Latte",
+            "price": "45K",
+            "desc": "Sự kết hợp mượt mà của Espresso và sữa tươi đánh nóng."
+          },
+          {
+            "name": "Cappuccino",
+            "price": "45K",
+            "desc": "Lớp bọt sữa dày mịn phủ trên nền Espresso đậm vị."
+          },
+          {
+            "name": "Caramel Macchiato",
+            "price": "55K",
+            "desc": "Vị ngọt ngào của caramel hòa quyện cùng sữa và cà phê."
+          }
+        ]
+      },
+      {
+        "title": "Cà Phê Truyền Thống",
+        "items": [
+          {
+            "name": "Cà phê Đen",
+            "price": "30K",
+            "desc": "Cà phê phin truyền thống, đậm đà vị Robusta."
+          },
+          {
+            "name": "Cà phê Sữa",
+            "price": "35K",
+            "desc": "Sự giao thoa hoàn hảo giữa cà phê đắng và sữa đặc ngọt ngào."
+          },
+          {
+            "name": "Bạc Xỉu",
+            "price": "38K",
+            "desc": "Nhiều sữa ít cà phê, món uống yêu thích của mọi lứa tuổi."
+          },
+          {
+            "name": "Cà phê Trứng",
+            "price": "55K",
+            "desc": "Lớp kem trứng béo ngậy, mịn màng trên nền cà phê nóng."
+          }
+        ]
+      },
+      {
+        "title": "Trà & Thảo Mộc",
+        "items": [
+          {
+            "name": "Trà Đào Cam Sả",
+            "price": "45K",
+            "desc": "Trà đào thơm nức hòa cùng vị sả và cam tươi thanh mát."
+          },
+          {
+            "name": "Trà Sen Vàng",
+            "price": "50K",
+            "desc": "Trà ô long kết hợp cùng hạt sen bùi và củ năng giòn."
+          },
+          {
+            "name": "Hồng Trà Sữa",
+            "price": "40K",
+            "desc": "Hồng trà đậm vị quyện cùng sữa thơm béo."
+          },
+          {
+            "name": "Trà Hoa Cúc",
+            "price": "55K",
+            "desc": "Trà thảo mộc giúp thư giãn tâm trí và thanh nhiệt."
+          }
+        ]
+      },
+      {
+        "title": "Bánh Ngọt & Ăn Nhẹ",
+        "items": [
+          {
+            "name": "Croissant",
+            "price": "35K",
+            "desc": "Bánh sừng bò ngàn lớp thơm mùi bơ Pháp."
+          },
+          {
+            "name": "Tiramisu",
+            "price": "50K",
+            "desc": "Cốt bánh thấm đẫm cà phê quyện kem Mascarpone."
+          },
+          {
+            "name": "Cheesecake",
+            "price": "55K",
+            "desc": "Bánh phô mai nướng béo ngậy với sốt dâu tây."
+          },
+          {
+            "name": "Mousse Đào",
+            "price": "48K",
+            "desc": "Bánh mousse nhẹ nhàng, thơm hương đào tươi mát."
+          }
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Không Gian Của Chúng Tôi",
+    "subtitle": "Một góc nhỏ tĩnh lặng giữa lòng thành phố.",
+    "caption": "Sảnh chính ngập tràn cây xanh"
+  },
+  "testimonials": {
+    "title": "Cảm Nhận Khách Hàng",
+    "items": [
+      {
+        "quote": "Không gian ở đây thực sự rất thư giãn. Cà phê trứng béo mịn mà không bị tanh, rất đáng để thử!",
+        "name": "Minh Anh",
+        "role": "Khách hàng thân thiết"
+      },
+      {
+        "quote": "Trà đào cam sả cực kỳ tươi mát, decor quán thì đẹp miễn chê, góc nào cũng có thể sống ảo được.",
+        "name": "Hoàng Nam",
+        "role": "Freelancer"
+      },
+      {
+        "quote": "Bạc xỉu rất đúng vị mình thích. Nhân viên nhiệt tình và không gian thì cực kỳ yên tĩnh để làm việc.",
+        "name": "Thu Trang",
+        "role": "Nhân viên văn phòng"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vị Trí & Liên Hệ",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Xanh Mát, Phường Cây Cối, Quận 1, TP. HCM",
+    "phoneLabel": "Số điện thoại",
+    "phone": "0123 456 789",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "Thứ 2 - Chủ Nhật: 07:00 - 22:30",
+    "btnMessage": "Gửi lời nhắn cho chúng tôi",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Oasis",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "support": "Hỗ trợ",
+    "copy": "© 2025 Garden Oasis. Được tạo bởi WebChoViet."
+  }
+}
