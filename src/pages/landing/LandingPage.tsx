@@ -27,8 +27,12 @@ export default function LandingPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
   const [showLogin, setShowLogin] = useState(false);
+  const [loginTab, setLoginTab] = useState<'login' | 'register'>('login');
 
-  const openLogin = () => setShowLogin(true);
+  const openLogin = (tab: 'login' | 'register' = 'login') => {
+    setLoginTab(tab);
+    setShowLogin(true);
+  };
   const goToDashboard = () => navigate(ROUTES.DASHBOARD_PROJECTS);
 
   /* Scroll-reveal */
@@ -325,7 +329,7 @@ export default function LandingPage() {
 
       <SiteFooter variant="landing" />
 
-      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+      {showLogin && <LoginModal defaultTab={loginTab} onClose={() => setShowLogin(false)} />}
     </div>
   );
 }

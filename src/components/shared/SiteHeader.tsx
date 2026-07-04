@@ -28,7 +28,7 @@ function Logo({ badge }: { badge?: string }) {
 
 interface SiteHeaderProps {
   variant?: 'landing' | 'app';
-  onShowLogin?: () => void;
+  onShowLogin?: (tab: 'login' | 'register') => void;
 }
 
 type NavLink =
@@ -107,7 +107,13 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
   };
 
   const navLinks = isLanding ? LANDING_NAV : APP_NAV;
-  const handleLoginClick = onShowLogin ?? (() => navigate(ROUTES.LOGIN));
+  const handleLoginClick = (tab: 'login' | 'register') => {
+    if (onShowLogin) {
+      onShowLogin(tab);
+    } else {
+      navigate(ROUTES.LOGIN);
+    }
+  };
   const closeMobile = () => setMobileOpen(false);
 
   // ── Shared nav link renderer ────────────────────────────────────────────────
@@ -162,13 +168,13 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <button
               className="font-inter font-medium text-sm text-primary hover:text-primary/80 transition-colors px-3 py-1 cursor-pointer"
-              onClick={handleLoginClick}
+              onClick={() => handleLoginClick('login')}
             >
               Đăng nhập
             </button>
             <button
               className="bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
-              onClick={handleLoginClick}
+              onClick={() => handleLoginClick('register')}
             >
               Đăng ký
             </button>
@@ -189,13 +195,13 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
             <div className="flex flex-col gap-2 pt-3 border-t border-gray-100">
               <button
                 className="w-full py-2.5 text-sm font-semibold text-primary border border-primary rounded-full hover:bg-primary/5 transition-colors cursor-pointer"
-                onClick={() => { handleLoginClick(); closeMobile(); }}
+                onClick={() => { handleLoginClick('login'); closeMobile(); }}
               >
                 Đăng nhập
               </button>
               <button
                 className="w-full py-2.5 text-sm font-semibold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
-                onClick={() => { handleLoginClick(); closeMobile(); }}
+                onClick={() => { handleLoginClick('register'); closeMobile(); }}
               >
                 Đăng ký
               </button>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { X, Mail, Lock, User, Eye, EyeOff, Loader2, ShieldCheck } from 'lucide-react';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
+import { getGoogleLoginUrl, setPostLoginRedirect } from '../../services/authService';
 
 type Tab = 'login' | 'register';
 
@@ -39,10 +40,10 @@ export default function LoginModal({ onClose, defaultTab = 'login' }: Props) {
     navigate(ROUTES.MARKETPLACE);
   };
 
-  const handleGoogle = async () => {
+  const handleGoogle = () => {
     setLoading(true);
-    await new Promise(r => setTimeout(r, 900));
-    afterSuccess('Đăng nhập Google thành công! Chào mừng bạn.');
+    setPostLoginRedirect(window.location.pathname + window.location.search);
+    window.location.href = getGoogleLoginUrl();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
