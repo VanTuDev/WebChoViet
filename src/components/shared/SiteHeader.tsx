@@ -71,7 +71,7 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
       variant: 'danger',
       onConfirm: async () => {
         await logout();
-        navigate(ROUTES.LOGIN, { replace: true });
+        navigate(ROUTES.HOME, { replace: true });
       },
     });
   };

@@ -33,16 +33,14 @@ import TransactionsPage from './pages/admin/transactions/TransactionsPage';
 import PublicSitePage from './pages/public-site/PublicSitePage';
 
 export const router = createBrowserRouter([
-  // ── Root redirect ───────────────────────────────────────────────────────────
-  {
-    path: ROUTES.HOME,
-    element: <Navigate to={ROUTES.MARKETPLACE} replace />,
-  },
-
   // ── Public — không dùng AppLayout ──────────────────────────────────────────
   {
-    path: '/landing',
+    path: ROUTES.HOME,
     element: <LandingPage />,
+  },
+  {
+    path: '/landing',
+    element: <Navigate to={ROUTES.HOME} replace />,
   },
   {
     path: ROUTES.LOGIN,
