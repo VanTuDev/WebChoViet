@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import {
   Eye, Users, MousePointerClick, Clock, LogOut,
   Smartphone, Monitor, Tablet,
-  Globe, Loader2,
+  Globe, Loader2, AlertTriangle,
+  Phone, UtensilsCrossed, ThumbsUp, Map, Camera, MessageCircle, Music, Mail, MousePointer,
 } from 'lucide-react';
 import { useAppContext } from '../../../store/AppContext';
 import { fetchAnalytics } from '../../../services/analyticsService';
@@ -94,15 +95,15 @@ function BarChart({ data, days }: { data: DailyStats[]; days: number }) {
 
 // ── Interaction Icon mapping ──────────────────────────────────────────────────
 
-const INTERACTION_ICONS: Record<string, string> = {
-  phone:          '📞',
-  cta:            '🍽️',
-  'social-fb':    '👍',
-  map:            '🗺️',
-  'social-ig':    '📷',
-  'social-zalo':  '💬',
-  'social-tiktok':'🎵',
-  email:          '✉️',
+const INTERACTION_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  phone:          Phone,
+  cta:            UtensilsCrossed,
+  'social-fb':    ThumbsUp,
+  map:            Map,
+  'social-ig':    Camera,
+  'social-zalo':  MessageCircle,
+  'social-tiktok':Music,
+  email:          Mail,
 };
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
@@ -204,7 +205,7 @@ export default function AnalyticsPage() {
       {/* ── Mock data notice ─────────────────────────────────────────────────── */}
       {analytics?.isMock && (
         <div className="flex items-start gap-2.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs rounded-xl px-4 py-3">
-          <span className="text-base leading-none mt-0.5">⚠️</span>
+          <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
           <div>
             <span className="font-semibold">Đang hiển thị dữ liệu mẫu.</span>{' '}
             Không gọi được API analytics từ backend (chưa đăng nhập, mất mạng, hoặc backend chưa chạy).
@@ -325,10 +326,12 @@ export default function AnalyticsPage() {
                 {analytics.topInteractions.map((item, i) => {
                   const maxCount = analytics.topInteractions[0]?.count || 1;
                   const pct = Math.round((item.count / maxCount) * 100);
-                  const icon = INTERACTION_ICONS[item.element] ?? '👆';
+                  const IconComp = INTERACTION_ICONS[item.element] ?? MousePointer;
                   return (
                     <div key={i} className="flex items-center gap-3">
-                      <span className="text-lg shrink-0 w-7 text-center">{icon}</span>
+                      <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-lg bg-gray-50 text-gray-500">
+                        <IconComp className="h-4 w-4" />
+                      </span>
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-center mb-1.5">
                           <span className="text-xs font-medium text-gray-700 truncate pr-2">

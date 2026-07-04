@@ -21,7 +21,7 @@ export default function AuthCallbackPage() {
 
     if (!token) {
       showSnackbar('Đăng nhập thất bại. Vui lòng thử lại.', 'error');
-      navigate(ROUTES.LOGIN, { replace: true });
+      navigate(ROUTES.HOME, { replace: true });
       return;
     }
 

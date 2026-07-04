@@ -1071,12 +1071,12 @@ export const LANDING_TEMPLATES: LandingTemplate[] = [
 
 ];
 
-export const LANDING_CATEGORIES: { id: LandingCategory | 'all'; label: string; emoji: string }[] = [
-  { id: 'all',        label: 'Tất cả',         emoji: '✦' },
-  { id: 'coffee',     label: 'Cafe & Đồ Uống', emoji: '☕' },
-  { id: 'spa',        label: 'Spa & Làm Đẹp',  emoji: '✿' },
-  { id: 'restaurant', label: 'Nhà Hàng',        emoji: '🍽' },
-  { id: 'retail',     label: 'Cửa Hàng',        emoji: '🛍' },
+export const LANDING_CATEGORIES: { id: LandingCategory | 'all'; label: string }[] = [
+  { id: 'all',        label: 'Tất cả' },
+  { id: 'coffee',     label: 'Cafe & Đồ Uống' },
+  { id: 'spa',        label: 'Spa & Làm Đẹp' },
+  { id: 'restaurant', label: 'Nhà Hàng' },
+  { id: 'retail',     label: 'Cửa Hàng' },
 ];
 
 export const getLandingTemplate = (id: string) =>

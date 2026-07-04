@@ -1,6 +1,6 @@
 import { Suspense, useState, useCallback, useEffect, useRef } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle, Languages, MapPin } from 'lucide-react';
+import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle, Languages, MapPin, Pencil, Eye } from 'lucide-react';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
 import { saveSiteConfig, getSiteConfig, generateSlug, slugExists } from '../../services/siteConfigService';
 import { translateCustomData } from '../../services/translateService';
@@ -484,7 +484,6 @@ export default function TemplateEditorPage() {
                   site.lang === l.code ? 'bg-white shadow-sm text-gray-800' : 'text-gray-400 hover:text-gray-600'
                 }`}
               >
-                <span>{l.flag}</span>
                 <span>{l.shortLabel}</span>
                 {l.code !== 'vi' && hasContent(site.customData[l.code]) && (
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
@@ -525,7 +524,7 @@ export default function TemplateEditorPage() {
               : 'border-transparent text-gray-400 hover:text-gray-600'
           }`}
         >
-          ✏️ Chỉnh sửa
+          <Pencil className="w-3.5 h-3.5" /> Chỉnh sửa
         </button>
         <button
           onClick={() => setMobileTab('preview')}
@@ -535,7 +534,7 @@ export default function TemplateEditorPage() {
               : 'border-transparent text-gray-400 hover:text-gray-600'
           }`}
         >
-          👁️ Xem trước
+          <Eye className="w-3.5 h-3.5" /> Xem trước
         </button>
       </div>
 
@@ -560,6 +559,7 @@ export default function TemplateEditorPage() {
             customData={(site.customData[site.lang] as Record<string, unknown>) ?? {}}
             images={site.images}
             imageSlots={imageSlots}
+            shopName={site.name}
             onChange={handleFieldChange}
             onArrayChange={handleArrayChange}
             onImageChange={handleImageChange}
@@ -593,12 +593,23 @@ export default function TemplateEditorPage() {
             .preview-edit-mode [data-field]:hover { outline: 2px dashed #3b82f6; outline-offset: 3px; border-radius: 3px; }
           `}</style>
 
+          {/*
+            Preview KHÔNG render trong iframe — cùng cây DOM với toolbar editor.
+            Một số template dùng `position: fixed` cho navbar (vd Coffee-3/4). Nếu khung
+            preview này không có transform/containing-block riêng, phần tử fixed đó thoát
+            khỏi khung preview và so z-index trực tiếp với header editor (z-40) ở cấp
+            document — đè lên nút "Tạo từ Google Maps"/"Dịch tự động" bất kể z-index template
+            là bao nhiêu. `transform` (dù translateZ(0), coi như no-op) khiến div này trở
+            thành containing block cho mọi con `position: fixed` bên trong — chúng chỉ còn
+            "dính" vào khung preview, không thể thoát ra ngoài đè lên UI editor nữa.
+          */}
           <div
-            className={`preview-edit-mode transition-all duration-300 ${
+            className={`preview-edit-mode isolate transition-all duration-300 ${
               viewport === 'mobile'
                 ? 'max-w-97.5 mx-auto my-4 rounded-4xl overflow-hidden shadow-2xl ring-4 ring-gray-300'
                 : 'min-h-full'
             }`}
+            style={{ transform: 'translateZ(0)' }}
             onDoubleClick={handlePreviewDblClick}
           >
             <TemplateCustomProvider value={contextValue}>

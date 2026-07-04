@@ -20,11 +20,13 @@ import { useEffect, useRef, useState } from 'react';
 export const ALL_LANGS = ['vi', 'en', 'zh', 'ko'] as const;
 export type TemplateLang = (typeof ALL_LANGS)[number];
 
-const LANG_META: Record<TemplateLang, { flag: string; name: string; short: string }> = {
-  vi: { flag: '🇻🇳', name: 'Tiếng Việt', short: 'VI' },
-  en: { flag: '🇬🇧', name: 'English', short: 'EN' },
-  zh: { flag: '🇨🇳', name: '中文', short: '中文' },
-  ko: { flag: '🇰🇷', name: '한국어', short: '한국어' },
+// Không dùng emoji cờ quốc gia — Windows không render được (hiện thành chữ 2 ký tự),
+// quy ước dự án: chỉ dùng nhãn chữ + icon vector.
+const LANG_META: Record<TemplateLang, { name: string; short: string; code: string }> = {
+  vi: { name: 'Tiếng Việt', short: 'VI', code: 'VI' },
+  en: { name: 'English', short: 'EN', code: 'EN' },
+  zh: { name: '中文', short: '中文', code: 'ZH' },
+  ko: { name: '한국어', short: '한국어', code: 'KO' },
 };
 
 /**
@@ -128,7 +130,7 @@ export default function LanguageSwitcher<L extends TemplateLang>({
                 code === value ? 'bg-gray-100 font-semibold text-gray-900' : 'text-gray-700'
               }`}
             >
-              <span aria-hidden>{LANG_META[code].flag}</span>
+              <span aria-hidden className="w-7 text-[10px] font-bold text-gray-400">{LANG_META[code].code}</span>
               <span>{LANG_META[code].name}</span>
             </button>
           ))}

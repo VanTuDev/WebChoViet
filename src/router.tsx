@@ -1,7 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { ROUTES } from './config/routes';
 import LandingPage from './pages/landing/LandingPage';
-import LoginPage from './pages/login/LoginPage';
 import AuthCallbackPage from './pages/auth-callback/AuthCallbackPage';
 import NotFoundPage from './pages/not-found/NotFoundPage';
 import AppLayout from './layouts/AppLayout';
@@ -43,8 +42,9 @@ export const router = createBrowserRouter([
     element: <Navigate to={ROUTES.HOME} replace />,
   },
   {
-    path: ROUTES.LOGIN,
-    element: <LoginPage />,
+    // Trang /login riêng đã bỏ — dùng LoginModal (mở qua AppContext.openLoginModal) thay thế.
+    path: '/login',
+    element: <Navigate to={ROUTES.HOME} replace />,
   },
   {
     path: ROUTES.AUTH_CALLBACK,

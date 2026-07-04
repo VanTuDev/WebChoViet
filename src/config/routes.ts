@@ -4,7 +4,6 @@
 export const ROUTES = {
   // ── Public ──────────────────────────────────────────────────────────────────
   HOME:          '/',
-  LOGIN:         '/login',
   AUTH_CALLBACK: '/auth/callback', // BE redirect về đây sau khi Google OAuth thành công
   NOT_FOUND:     '*',
 

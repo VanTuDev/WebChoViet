@@ -28,7 +28,6 @@ function Logo({ badge }: { badge?: string }) {
 
 interface SiteHeaderProps {
   variant?: 'landing' | 'app';
-  onShowLogin?: (tab: 'login' | 'register') => void;
 }
 
 type NavLink =
@@ -53,14 +52,14 @@ const APP_NAV: NavLink[] = [
 
 // ── Main component ────────────────────────────────────────────────────────────
 
-export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderProps) {
+export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [avatarOpen, setAvatarOpen] = useState(false);
   const avatarRef = useRef<HTMLDivElement>(null);
-  const { user, isAuthenticated, logout, showConfirm } = useAppContext();
+  const { user, isAuthenticated, logout, showConfirm, openLoginModal } = useAppContext();
 
   const handleLogout = () => {
     setAvatarOpen(false);
@@ -107,13 +106,6 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
   };
 
   const navLinks = isLanding ? LANDING_NAV : APP_NAV;
-  const handleLoginClick = (tab: 'login' | 'register') => {
-    if (onShowLogin) {
-      onShowLogin(tab);
-    } else {
-      navigate(ROUTES.LOGIN);
-    }
-  };
   const closeMobile = () => setMobileOpen(false);
 
   // ── Shared nav link renderer ────────────────────────────────────────────────
@@ -167,16 +159,10 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
 
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <button
-              className="font-inter font-medium text-sm text-primary hover:text-primary/80 transition-colors px-3 py-1 cursor-pointer"
-              onClick={() => handleLoginClick('login')}
+              className="bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+              onClick={openLoginModal}
             >
               Đăng nhập
-            </button>
-            <button
-              className="bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
-              onClick={() => handleLoginClick('register')}
-            >
-              Đăng ký
             </button>
           </div>
 
@@ -194,16 +180,10 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
             {navLinks.map(link => <NavItem key={link.label} link={link} mobile />)}
             <div className="flex flex-col gap-2 pt-3 border-t border-gray-100">
               <button
-                className="w-full py-2.5 text-sm font-semibold text-primary border border-primary rounded-full hover:bg-primary/5 transition-colors cursor-pointer"
-                onClick={() => { handleLoginClick('login'); closeMobile(); }}
+                className="w-full py-2.5 text-sm font-semibold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
+                onClick={() => { openLoginModal(); closeMobile(); }}
               >
                 Đăng nhập
-              </button>
-              <button
-                className="w-full py-2.5 text-sm font-semibold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
-                onClick={() => { handleLoginClick('register'); closeMobile(); }}
-              >
-                Đăng ký
               </button>
             </div>
           </div>
@@ -293,7 +273,7 @@ export default function SiteHeader({ variant = 'app', onShowLogin }: SiteHeaderP
             </div>
           ) : (
             <button
-              onClick={() => navigate(ROUTES.LOGIN)}
+              onClick={openLoginModal}
               className="ml-1 pl-3 border-l border-gray-100 text-xs font-semibold text-primary hover:text-primary/80 transition-colors cursor-pointer whitespace-nowrap"
             >
               Đăng nhập

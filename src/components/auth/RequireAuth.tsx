@@ -1,13 +1,19 @@
 // Layout route: chặn truy cập nếu chưa đăng nhập — dùng cho Dashboard + Template Editor
 // (những trang cần gọi API backend có JWT guard: /sites/my, POST /sites...).
+import { useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { ROUTES } from '../../config/routes';
 import { useAppContext } from '../../store/AppContext';
 
 export default function RequireAuth() {
-  const { isAuthenticated, authLoading } = useAppContext();
+  const { isAuthenticated, authLoading, openLoginModal } = useAppContext();
   const location = useLocation();
+
+  // Không còn trang /login riêng — mở modal đăng nhập global rồi đưa về Landing Page.
+  useEffect(() => {
+    if (!authLoading && !isAuthenticated) openLoginModal();
+  }, [authLoading, isAuthenticated, openLoginModal]);
 
   if (authLoading) {
     return (
@@ -18,7 +24,7 @@ export default function RequireAuth() {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to={ROUTES.LOGIN} replace state={{ from: location }} />;
+    return <Navigate to={ROUTES.HOME} replace state={{ from: location }} />;
   }
 
   return <Outlet />;

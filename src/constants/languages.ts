@@ -1,19 +1,20 @@
 // Dùng chung giữa Template Editor (chủ site chỉnh/dịch nội dung) và PublicSitePage
-// (khách xem web tự đổi ngôn ngữ) — 1 nguồn duy nhất, tránh lệch nhãn/flag giữa 2 nơi.
+// (khách xem web tự đổi ngôn ngữ) — 1 nguồn duy nhất, tránh lệch nhãn giữa 2 nơi.
+// Không dùng emoji cờ quốc gia: Windows không render được (hiện thành chữ "VN GB" xấu),
+// và quy ước dự án là không dùng emoji trong UI — chỉ dùng nhãn chữ + icon lucide.
 import type { SiteLang } from '../types';
 
 export interface LangMeta {
   code: SiteLang;
-  flag: string;
   label: string;       // Tên đầy đủ — "Tiếng Việt"
   shortLabel: string;  // Nhãn ngắn cho tab/nút — "VI"
 }
 
 export const LANGUAGES: LangMeta[] = [
-  { code: 'vi', flag: '🇻🇳', label: 'Tiếng Việt', shortLabel: 'VI' },
-  { code: 'en', flag: '🇬🇧', label: 'English',     shortLabel: 'EN' },
-  { code: 'zh', flag: '🇨🇳', label: '中文',         shortLabel: 'ZH' },
-  { code: 'ko', flag: '🇰🇷', label: '한국어',        shortLabel: 'KO' },
+  { code: 'vi', label: 'Tiếng Việt', shortLabel: 'VI' },
+  { code: 'en', label: 'English',     shortLabel: 'EN' },
+  { code: 'zh', label: '中文',         shortLabel: 'ZH' },
+  { code: 'ko', label: '한국어',        shortLabel: 'KO' },
 ];
 
 /** Các ngôn ngữ Gemini dịch tới — nguồn luôn là 'vi' nên không tự dịch chính nó */

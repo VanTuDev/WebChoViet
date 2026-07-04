@@ -15,6 +15,11 @@ import { useAppContext } from '../../../store/AppContext';
 
 const nf = (n: number) => n.toLocaleString('vi-VN');
 const fmtVnd = (n: number) => `${nf(n)}đ`;
+const fmtDateTime = (iso: string) =>
+  new Date(iso).toLocaleString('vi-VN', {
+    day: '2-digit', month: '2-digit', year: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+  });
 
 const PLAN_BADGE: Record<string, string> = {
   free:  'bg-slate-700 text-slate-300',
@@ -187,11 +192,11 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-4 sm:p-6 space-y-5 sm:space-y-6">
 
       {/* ── Header ── */}
       <div>
-        <h1 className="text-xl font-bold text-white">Tổng quan hệ thống</h1>
+        <h1 className="text-lg sm:text-xl font-bold text-white">Tổng quan hệ thống</h1>
         <p className="text-sm text-slate-400 mt-0.5">
           Cập nhật lần cuối: {new Date().toLocaleString('vi-VN')}
         </p>
@@ -265,70 +270,44 @@ export default function AdminDashboard() {
           <p className="text-center text-slate-500 text-sm py-10">Chưa có website nào.</p>
         ) : (
           <>
-            {/* Table header */}
-            <div className="hidden sm:grid grid-cols-[1fr_140px_130px_110px_150px] gap-3 px-5 py-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 border-b border-slate-800/50">
+            {/* Table header — md+ (mobile dùng layout card riêng bên dưới) */}
+            <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_200px_110px_150px] lg:grid-cols-[minmax(0,1fr)_200px_130px_110px_150px] xl:grid-cols-[minmax(0,1fr)_200px_120px_130px_110px_150px] gap-3 px-5 py-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 border-b border-slate-800/50">
               <span>Website</span>
               <span>Chủ sở hữu</span>
-              <span>Template</span>
+              <span className="hidden xl:block">Template</span>
+              <span className="hidden lg:block">Ngày tạo</span>
               <span>Trạng thái</span>
               <span className="text-right">Hành động</span>
             </div>
 
             <div className="divide-y divide-slate-800/50">
-              {sites.map(site => (
-                <div
-                  key={site.id}
-                  className="grid grid-cols-1 sm:grid-cols-[1fr_140px_130px_110px_150px] gap-2 sm:gap-3 items-center px-5 py-3 hover:bg-slate-800/30 transition-colors group"
-                >
-                  {/* Site info */}
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-white truncate">{site.name}</p>
-                    <p className="text-[11px] text-slate-500 truncate font-mono">/{site.slug}</p>
-                  </div>
+              {sites.map(site => {
+                const statusBadge = site.isPending ? (
+                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full">
+                    <Lock className="h-2.5 w-2.5" />
+                    Tạm khóa
+                  </span>
+                ) : site.planLocked ? (
+                  <span
+                    className="inline-flex items-center gap-1 text-[10px] font-semibold text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded-full"
+                    title="Vượt giới hạn gói Free sau khi hạ gói — không hiển thị public"
+                  >
+                    <Lock className="h-2.5 w-2.5" />
+                    Khóa do gói
+                  </span>
+                ) : site.status === 'published' ? (
+                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                    <CircleDot className="h-2.5 w-2.5" />
+                    Xuất bản
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                    <FileEdit className="h-2.5 w-2.5" />
+                    Nháp
+                  </span>
+                );
 
-                  {/* Owner */}
-                  <div className="flex items-center gap-2 min-w-0">
-                    <img
-                      src={avatarUrl({ ownerAvatar: site.ownerAvatar, ownerName: site.ownerName })}
-                      alt=""
-                      className="w-5 h-5 rounded-full border border-slate-700 shrink-0"
-                      referrerPolicy="no-referrer"
-                    />
-                    <span className="text-xs text-slate-400 truncate">{site.ownerName}</span>
-                  </div>
-
-                  {/* Template */}
-                  <span className="text-[11px] text-slate-500 truncate">{site.templateId}</span>
-
-                  {/* Status */}
-                  <div>
-                    {site.isPending ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full">
-                        <Lock className="h-2.5 w-2.5" />
-                        Tạm khóa
-                      </span>
-                    ) : site.planLocked ? (
-                      <span
-                        className="inline-flex items-center gap-1 text-[10px] font-semibold text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded-full"
-                        title="Vượt giới hạn gói Free sau khi hạ gói — không hiển thị public"
-                      >
-                        <Lock className="h-2.5 w-2.5" />
-                        Khóa do gói
-                      </span>
-                    ) : site.status === 'published' ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
-                        <CircleDot className="h-2.5 w-2.5" />
-                        Xuất bản
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">
-                        <FileEdit className="h-2.5 w-2.5" />
-                        Nháp
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Actions */}
+                const actions = (
                   <div className="flex items-center justify-end gap-1.5">
                     {site.status === 'published' && (
                       <a
@@ -363,13 +342,82 @@ export default function AdminDashboard() {
                       <span>Xóa</span>
                     </button>
                   </div>
-                </div>
-              ))}
+                );
+
+                return (
+                  <div key={site.id} className="hover:bg-slate-800/30 transition-colors">
+
+                    {/* ── Mobile card (<md) ── */}
+                    <div className="md:hidden px-4 py-3 space-y-2.5">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium text-white truncate">{site.name}</p>
+                          <p className="text-[11px] text-slate-500 truncate font-mono">/{site.slug}</p>
+                        </div>
+                        <div className="shrink-0">{statusBadge}</div>
+                      </div>
+                      <div className="flex items-center gap-2 min-w-0">
+                        <img
+                          src={avatarUrl({ ownerAvatar: site.ownerAvatar, ownerName: site.ownerName })}
+                          alt=""
+                          className="w-6 h-6 rounded-full border border-slate-700 shrink-0"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="min-w-0">
+                          <p className="text-xs text-slate-300 truncate">{site.ownerName}</p>
+                          <p className="text-[11px] text-slate-500 truncate">{site.ownerEmail}</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-[11px] text-slate-500">Tạo: {fmtDateTime(site.createdAt)}</p>
+                        {actions}
+                      </div>
+                    </div>
+
+                    {/* ── Desktop row (md+) ── */}
+                    <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_200px_110px_150px] lg:grid-cols-[minmax(0,1fr)_200px_130px_110px_150px] xl:grid-cols-[minmax(0,1fr)_200px_120px_130px_110px_150px] gap-3 items-center px-5 py-3">
+                      {/* Site info */}
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-white truncate">{site.name}</p>
+                        <p className="text-[11px] text-slate-500 truncate font-mono">/{site.slug}</p>
+                      </div>
+
+                      {/* Owner: tên + email */}
+                      <div className="flex items-center gap-2 min-w-0">
+                        <img
+                          src={avatarUrl({ ownerAvatar: site.ownerAvatar, ownerName: site.ownerName })}
+                          alt=""
+                          className="w-6 h-6 rounded-full border border-slate-700 shrink-0"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="min-w-0">
+                          <p className="text-xs text-slate-300 truncate">{site.ownerName}</p>
+                          <p className="text-[11px] text-slate-500 truncate" title={site.ownerEmail}>{site.ownerEmail}</p>
+                        </div>
+                      </div>
+
+                      {/* Template — chỉ hiện xl+ */}
+                      <span className="hidden xl:block text-[11px] text-slate-500 truncate">{site.templateId}</span>
+
+                      {/* Ngày giờ tạo — chỉ hiện lg+ */}
+                      <span className="hidden lg:block text-[11px] text-slate-400 tabular-nums" title={`Cập nhật: ${fmtDateTime(site.updatedAt)}`}>
+                        {fmtDateTime(site.createdAt)}
+                      </span>
+
+                      {/* Status */}
+                      <div>{statusBadge}</div>
+
+                      {/* Actions */}
+                      {actions}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Pagination */}
             {totalSitesPages > 1 && (
-              <div className="flex items-center justify-between px-5 py-3 border-t border-slate-800">
+              <div className="flex flex-wrap items-center justify-between gap-2 px-4 sm:px-5 py-3 border-t border-slate-800">
                 <p className="text-[11px] text-slate-500">
                   Trang {sitesPage}/{totalSitesPages} · {sitesTotal} website
                 </p>

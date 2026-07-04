@@ -1,3 +1,4 @@
+import { Clock, Phone, MapPin, Hand, Leaf, Bath, Brush, Flower2, Sun } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -5,6 +6,9 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+
+// Icon dịch vụ gán theo thứ tự item — icon trang trí, không phải nội dung nên không nằm trong i18n
+const SERVICE_ICONS = [Hand, Leaf, Bath, Brush, Flower2, Sun];
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -60,17 +64,20 @@ export default function Spa1({ lang = 'vi' }: Props) {
         <div className="max-w-6xl mx-auto">
           <h2 data-field="services.title" className="text-3xl font-bold text-center text-[#3D7A5E] mb-12">{t.services.title}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.services.items.map((item, i) => (
+            {t.services.items.map((item, i) => {
+              const ServiceIcon = SERVICE_ICONS[i % SERVICE_ICONS.length];
+              return (
               <div
                 key={i}
                 className="bg-white rounded-2xl p-6 shadow-sm border border-green-100 hover:shadow-md hover:border-green-200 transition-all group cursor-pointer"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="mb-3"><ServiceIcon className="w-8 h-8 text-[#3D7A5E]" /></div>
                 <div className="font-bold text-gray-900 mb-1 group-hover:text-[#3D7A5E] transition-colors">{item.name}</div>
                 <div className="text-sm text-gray-500 mb-3 leading-relaxed">{item.desc}</div>
                 <div className="font-semibold text-[#3D7A5E]">{item.price}</div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -79,19 +86,19 @@ export default function Spa1({ lang = 'vi' }: Props) {
       <section data-section="info" className="bg-[#3D7A5E] text-white py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
-            <div className="text-2xl mb-1">🕐</div>
+            <Clock className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.hours" className="font-bold">{t.info.hours}</div>
             <div className="text-green-200 text-sm mt-0.5">{t.info.hoursLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📞</div>
+            <Phone className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.phone" className="font-bold">{t.info.phone}</div>
             <div className="text-green-200 text-sm mt-0.5">{t.info.phoneLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📍</div>
+            <MapPin className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.address" className="font-bold">{t.info.address}</div>
             <div className="text-green-200 text-sm mt-0.5">{t.info.addressLabel}</div>
           </div>
@@ -114,7 +121,7 @@ export default function Spa1({ lang = 'vi' }: Props) {
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-green-50 to-emerald-50 flex flex-col items-center justify-center gap-3 text-center px-6">
-                <span className="text-4xl">📍</span>
+                <MapPin className="w-10 h-10 text-[#3D7A5E]" />
                 <p className="font-bold text-[#3D7A5E] text-lg">{t.info.address}</p>
                 <p className="text-sm text-gray-500">{t.info.hours} · {t.info.phone}</p>
               </div>

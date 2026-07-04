@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { X, RotateCcw } from 'lucide-react';
+import { X, RotateCcw, Pencil } from 'lucide-react';
 
 interface Props {
   initialValue: string;
@@ -43,8 +43,8 @@ export default function InlineEditOverlay({ initialValue, fieldLabel, rect, onCh
         onMouseDown={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">
-            ✏️ {fieldLabel.replace(/[._]/g, ' ')}
+          <span className="flex items-center gap-1 text-[10px] font-bold text-blue-600 uppercase tracking-wider">
+            <Pencil className="w-2.5 h-2.5" /> {fieldLabel.replace(/[._]/g, ' ')}
           </span>
           <div className="flex items-center gap-1">
             <button

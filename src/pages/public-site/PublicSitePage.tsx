@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
-import { ShieldAlert, Mail, ArrowLeft } from 'lucide-react';
+import { ShieldAlert, Mail, ArrowLeft, Coffee, SearchX, Globe as GlobeIcon } from 'lucide-react';
 import { getSiteConfigBySlug } from '../../services/siteConfigService';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
 import { useAnalyticsTracker } from '../../hooks/useAnalyticsTracker';
@@ -40,7 +40,7 @@ function LanguageSwitcher({
         onClick={() => setOpen(v => !v)}
         className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm shadow-lg border border-black/5 rounded-full pl-3 pr-2.5 py-2 text-xs font-semibold text-gray-700 hover:shadow-xl transition-all"
       >
-        <span>{currentMeta.flag}</span>
+        <GlobeIcon className="w-3.5 h-3.5 text-gray-500" />
         <span>{currentMeta.shortLabel}</span>
       </button>
       {open && (
@@ -55,7 +55,7 @@ function LanguageSwitcher({
                   code === current ? 'font-bold text-primary' : 'text-gray-600'
                 }`}
               >
-                <span>{meta.flag}</span>
+                <span className="w-7 text-[10px] font-bold text-gray-400">{meta.shortLabel}</span>
                 <span>{meta.label}</span>
               </button>
             );
@@ -117,7 +117,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
         href="/"
         className="fixed bottom-5 right-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm shadow-lg border border-black/5 rounded-full pl-3 pr-4 py-2 text-xs font-semibold text-gray-600 hover:shadow-xl hover:text-gray-900 transition-all z-50"
       >
-        <span className="text-base leading-none">☕</span>
+        <Coffee className="w-4 h-4 text-primary" />
         <span>Made with <span className="font-bold text-primary">WebChoViet</span></span>
       </a>
     </div>
@@ -206,7 +206,7 @@ export default function PublicSitePage() {
   // 404
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center text-center px-4">
-      <div className="text-7xl mb-6 select-none">☕</div>
+      <SearchX className="w-16 h-16 text-gray-300 mb-6" />
       <h1 className="text-2xl font-bold text-gray-800 mb-2">Trang không tìm thấy</h1>
       <p className="text-gray-500 text-sm mb-2">
         Đường dẫn{' '}

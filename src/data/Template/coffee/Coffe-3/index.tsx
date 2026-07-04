@@ -55,8 +55,9 @@ const IMAGES = {
 type Category = 'coffee' | 'tea' | 'pastries';
 
 export default function Coffe3({ lang: propLang = 'vi' }: Props) {
-  // Đồng bộ với prop lang (PublicSitePage/editor đổi ngôn ngữ) nhưng switcher nội bộ vẫn hoạt động
-  const { activeLang: lang, setActiveLang: setLang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
+  // Ngôn ngữ đổi qua LanguageSwitcher chung của PublicSitePage (truyền xuống bằng prop lang),
+  // không có switcher riêng trong template này.
+  const { activeLang: lang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
 
@@ -97,19 +98,6 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
             <a className="text-base text-[#424752] hover:text-primary transition-colors" href="#gallery">{t.nav.gallery}</a>
             <a className="text-base text-[#424752] hover:text-primary transition-colors" href="#reviews">{t.nav.reviews}</a>
             <a className="text-base text-[#424752] hover:text-primary transition-colors" href="#contact">{t.nav.contact}</a>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="hidden lg:flex items-center text-sm font-medium">
-              {(['vi','en','zh','ko'] as Lang[]).map((l, i) => (
-                <span key={l} className="flex items-center">
-                  {i > 0 && <span className="text-[#c2c6d4] mx-1">|</span>}
-                  <button onClick={() => setLang(l)}
-                    className={`cursor-pointer transition-colors ${lang === l ? 'text-primary font-bold' : 'text-[#424752] hover:text-primary'}`}>
-                    {['VN','EN','ZH','KO'][i]}
-                  </button>
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </nav>

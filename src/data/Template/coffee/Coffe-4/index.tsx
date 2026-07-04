@@ -36,8 +36,9 @@ const IMGS = {
 };
 
 export default function Coffe4({ lang: propLang = 'vi' }: Props) {
-  // Đồng bộ với prop lang (PublicSitePage/editor đổi ngôn ngữ) nhưng switcher nội bộ vẫn hoạt động
-  const { activeLang: lang, setActiveLang: setLang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
+  // Ngôn ngữ đổi qua LanguageSwitcher chung của PublicSitePage (truyền xuống bằng prop lang),
+  // không có switcher riêng trong template này.
+  const { activeLang: lang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
   const [activeTab, setActiveTab] = useState<TabKey>('signature');
@@ -59,17 +60,6 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
             <a className="text-[#424752] hover:text-primary transition-colors duration-200 text-sm font-medium" href="#lien-he">{t.nav.contact}</a>
           </div>
           <div className="flex items-center gap-6">
-            <div className="hidden md:flex items-center text-sm font-medium">
-              {(['vi','en','zh','ko'] as Lang[]).map((l, i) => (
-                <span key={l} className="flex items-center">
-                  {i > 0 && <span className="text-[#c2c6d4] mx-1">|</span>}
-                  <button onClick={() => setLang(l)}
-                    className={`cursor-pointer transition-colors ${lang === l ? 'text-primary font-bold' : 'text-[#727784] hover:text-primary'}`}>
-                    {['VN','EN','ZH','KO'][i]}
-                  </button>
-                </span>
-              ))}
-            </div>
             <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-primary-container transition-all cursor-pointer">{t.nav.contactBtn}</button>
           </div>
         </div>

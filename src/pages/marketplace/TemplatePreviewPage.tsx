@@ -6,11 +6,11 @@ import { COMPONENT_MAP } from '../../data/templates/registry';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 
-const LANG_OPTIONS: { value: Lang; flag: string; label: string }[] = [
-  { value: 'vi', flag: '🇻🇳', label: 'VN' },
-  { value: 'en', flag: '🇬🇧', label: 'EN' },
-  { value: 'zh', flag: '🇨🇳', label: 'ZH' },
-  { value: 'ko', flag: '🇰🇷', label: 'KO' },
+const LANG_OPTIONS: { value: Lang; label: string }[] = [
+  { value: 'vi', label: 'VN' },
+  { value: 'en', label: 'EN' },
+  { value: 'zh', label: 'ZH' },
+  { value: 'ko', label: 'KO' },
 ];
 
 export default function TemplatePreviewPage() {
@@ -89,8 +89,7 @@ export default function TemplatePreviewPage() {
                     : 'text-gray-400 hover:text-gray-600'
                 }`}
               >
-                <span>{opt.flag}</span>
-                <span className="hidden sm:inline">{opt.label}</span>
+                <span>{opt.label}</span>
               </button>
             ))}
           </div>

@@ -4,7 +4,6 @@ import { TEMPLATES } from '../../data';
 import { ROUTES } from '../../config/routes';
 import SiteHeader from '../../components/shared/SiteHeader';
 import SiteFooter from '../../components/shared/SiteFooter';
-import LoginModal from '../../components/shared/LoginModal';
 
 /* ── Material Symbol icon wrapper ──────────────────────────────────────── */
 function MI({ name, className = '' }: { name: string; className?: string }) {
@@ -26,13 +25,7 @@ const TMPL_CATS  = ['Cafe & Trà sữa', 'Phòng Gym & Yoga', 'Cửa hàng Hoa',
 export default function LandingPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
-  const [showLogin, setShowLogin] = useState(false);
-  const [loginTab, setLoginTab] = useState<'login' | 'register'>('login');
 
-  const openLogin = (tab: 'login' | 'register' = 'login') => {
-    setLoginTab(tab);
-    setShowLogin(true);
-  };
   const goToDashboard = () => navigate(ROUTES.DASHBOARD_PROJECTS);
 
   /* Scroll-reveal */
@@ -61,7 +54,7 @@ export default function LandingPage() {
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-fixed/30 blur-[100px] -z-10 pointer-events-none" />
       <div className="fixed bottom-[-10%] right-[-10%] w-[30%] h-[50%] rounded-full bg-secondary-fixed/20 blur-[120px] -z-10 pointer-events-none" />
 
-      <SiteHeader variant="landing" onShowLogin={openLogin} />
+      <SiteHeader variant="landing" />
 
       <main className="pt-[100px] pb-20">
 
@@ -328,8 +321,6 @@ export default function LandingPage() {
       </main>
 
       <SiteFooter variant="landing" />
-
-      {showLogin && <LoginModal defaultTab={loginTab} onClose={() => setShowLogin(false)} />}
     </div>
   );
 }

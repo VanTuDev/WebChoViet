@@ -1,6 +1,11 @@
+import { Clock, Phone, MapPin, Star, Check, Dumbbell, Swords, Flower2, Bike, Waves, Activity } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+
+// Icon chương trình tập gán theo thứ tự item (Gym & Cardio, Boxing & MMA, Yoga & Pilates,
+// Cycling, Bơi Lội, CrossFit) — icon trang trí, không phải nội dung nên không nằm trong i18n
+const PROGRAM_ICONS = [Dumbbell, Swords, Flower2, Bike, Waves, Activity];
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
@@ -62,12 +67,14 @@ export default function Gym1({ lang = 'vi' }: Props) {
             {t.programs.title}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {t.programs.items.map((item, i) => (
+            {t.programs.items.map((item, i) => {
+              const ProgramIcon = PROGRAM_ICONS[i % PROGRAM_ICONS.length];
+              return (
               <div
                 key={i}
                 className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-[#F97316]/50 hover:bg-white/10 transition-all group cursor-pointer"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="mb-3"><ProgramIcon className="w-8 h-8 text-[#F97316]" /></div>
                 <div className="font-black text-white mb-0.5 group-hover:text-[#F97316] transition-colors text-lg">{item.name}</div>
                 <div className="text-xs text-[#F97316] font-semibold mb-2 uppercase tracking-wider">{item.level}</div>
                 <div className="text-sm text-gray-400 leading-relaxed">{item.desc}</div>

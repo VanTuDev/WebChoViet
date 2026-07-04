@@ -63,9 +63,9 @@ export default function MarketplacePage() {
   };
 
   return (
-    <div className="flex-1 py-8 px-6 xl:px-10 w-full">
+    <div className="flex-1 py-5 sm:py-8 px-4 sm:px-6 xl:px-10 w-full">
       {/* ── Category breadcrumb + Heading ────────────────────────────────── */}
-      <div className="space-y-4 mb-8">
+      <div className="space-y-2.5 sm:space-y-4 mb-6 sm:mb-8">
         {category !== 'all' && (
           <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500">
             <button onClick={() => navigate('/marketplace')} className="hover:text-primary-container">Marketplace</button>
@@ -73,8 +73,8 @@ export default function MarketplacePage() {
             <span className="text-primary-container capitalize">{heading.title.split(':')[1]?.trim() ?? category}</span>
           </nav>
         )}
-        <h1 className="text-3xl font-display font-bold text-gray-900 leading-tight">{heading.title}</h1>
-        <p className="text-sm text-gray-600 max-w-3xl leading-relaxed">{heading.desc}</p>
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gray-900 leading-tight">{heading.title}</h1>
+        <p className="text-xs sm:text-sm text-gray-600 max-w-3xl leading-relaxed">{heading.desc}</p>
       </div>
 
       {/* ── Filters ──────────────────────────────────────────────────────── */}
@@ -87,7 +87,7 @@ export default function MarketplacePage() {
 
       {/* ── Grid ─────────────────────────────────────────────────────────── */}
       {visible.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {visible.map(t => (
             <TemplateCard key={t.id} template={t} onUse={handleUseTemplate} />
           ))}

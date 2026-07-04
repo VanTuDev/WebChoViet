@@ -45,8 +45,9 @@ const AVATAR_IMGS = [
 const MAP_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBM5nLP9FCaASSJXsC23E01Q9z8694iAzzNLxRluVRwoT80lrLqYrtfzRiu1xT0_BzeG_qgrMLs1PYy-msnaRewk-ec7tLelo3HygNaBb4JH92jmcAvbbR5W9yKQgu9blHNtgwsBrwLGa1Q0qzYmqmKpnbQg4QNk4vChQuEz7g8485WlSYRSxJjRlIiA3-tjE4HZBGrU4pP6hUV_TelC9IjdRSiEYMJMP0aEJy7_bRRtJ4viKGb7BCddWvW70R4tdW8-WTjpANilFE';
 
 export default function Coffe5({ lang: propLang = 'vi' }: Props) {
-  // Đồng bộ với prop lang (PublicSitePage/editor đổi ngôn ngữ) nhưng switcher nội bộ vẫn hoạt động
-  const { activeLang: lang, setActiveLang: setLang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
+  // Ngôn ngữ đổi qua LanguageSwitcher chung của PublicSitePage (truyền xuống bằng prop lang),
+  // không có switcher riêng trong template này.
+  const { activeLang: lang } = useTemplateLang(propLang, ['vi', 'en', 'zh', 'ko'] as const);
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[lang] as Record<string, unknown>, customData) as typeof viJson;
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -78,17 +79,6 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
             <a className="text-[#57534e] hover:text-[#92400e] transition-colors text-sm" href="#menu">{t.nav.menu}</a>
             <a className="text-[#57534e] hover:text-[#92400e] transition-colors text-sm" href="#gallery">{t.nav.space}</a>
             <a className="text-[#57534e] hover:text-[#92400e] transition-colors text-sm" href="#contact">{t.nav.contact}</a>
-          </div>
-          <div className="flex items-center gap-3 text-sm font-medium text-[#92400e]">
-            {(['vi','en','zh','ko'] as Lang[]).map((l, i) => (
-              <span key={l} className="flex items-center">
-                {i > 0 && <span className="opacity-50 mx-1">|</span>}
-                <button onClick={() => setLang(l)}
-                  className={`cursor-pointer transition-colors ${lang === l ? 'font-bold text-[#78350f]' : 'text-[#92400e] hover:text-[#78350f]'}`}>
-                  {['VN','EN','ZH','KO'][i]}
-                </button>
-              </span>
-            ))}
           </div>
         </nav>
       </header>

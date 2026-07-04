@@ -90,7 +90,7 @@ function resolveCardState(planId: PricingPlanDef['id'], cycle: BillingCycle, sub
 
 export default function PricingPage() {
   const navigate = useNavigate();
-  const { isAuthenticated, showSnackbar } = useAppContext();
+  const { isAuthenticated, showSnackbar, openLoginModal } = useAppContext();
   const [cycle, setCycle] = useState<BillingCycle>('monthly');
   const [subscription, setSubscription] = useState<MySubscription | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<PaidPlanId | null>(null);
@@ -122,7 +122,7 @@ export default function PricingPage() {
   const handleUpgrade = async (plan: PaidPlanId) => {
     if (!isAuthenticated) {
       setPostLoginRedirect(ROUTES.PRICING);
-      navigate(ROUTES.LOGIN);
+      openLoginModal();
       return;
     }
     setCheckoutLoading(plan);

@@ -1,4 +1,6 @@
 // Sidebar thích ứng: hiển thị khác nhau dựa trên URL hiện tại (useLocation)
+// Responsive: desktop/tablet (md+) là sidebar dọc bên trái; mobile (<md) ẩn sidebar,
+// thay bằng thanh chip cuộn ngang MobileSidebarNav (render bên trong <main> ở AppLayout).
 import React from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppContext } from '../../store/AppContext';
@@ -31,12 +33,30 @@ const DASHBOARD_MENUS = [
   { path: ROUTES.DASHBOARD_SUPPORT,   label: 'Kênh hỗ trợ 24/7',  icon: <HelpCircle className="h-4 w-4" /> },
 ];
 
+// ── Shared state hooks (dùng chung cho sidebar dọc lẫn thanh chip mobile) ──────
+
+function useMarketplaceCategory() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selected = searchParams.get('category') ?? 'all';
+
+  const select = (cat: string) => {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev);
+      cat === 'all' ? next.delete('category') : next.set('category', cat);
+      return next;
+    });
+  };
+
+  return { selected, select };
+}
+
 // ── Shared wrapper ─────────────────────────────────────────────────────────────
 
 function SidebarShell({ children }: { children: React.ReactNode }) {
   return (
     // h-full: lấp đầy chiều cao body container (đã được giới hạn bởi h-screen ở AppLayout)
-    <aside className="h-full w-64 shrink-0 border-r border-[#e2e8f0] bg-gray-50/50 flex flex-col justify-between py-6 px-4 overflow-y-auto">
+    // hidden md:flex — mobile dùng MobileSidebarNav thay thế; md thu gọn w-56, lg đủ w-64
+    <aside className="hidden md:flex h-full w-56 lg:w-64 shrink-0 border-r border-[#e2e8f0] bg-gray-50/50 flex-col justify-between py-6 px-4 overflow-y-auto">
       {children}
     </aside>
   );
@@ -45,17 +65,8 @@ function SidebarShell({ children }: { children: React.ReactNode }) {
 // ── Marketplace Sidebar (lọc theo danh mục) ────────────────────────────────────
 
 function MarketplaceSidebar() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { selected, select } = useMarketplaceCategory();
   const { user } = useAppContext();
-  const selected = searchParams.get('category') ?? 'all';
-
-  const handleSelect = (cat: string) => {
-    setSearchParams(prev => {
-      const next = new URLSearchParams(prev);
-      cat === 'all' ? next.delete('category') : next.set('category', cat);
-      return next;
-    });
-  };
 
   return (
     <SidebarShell>
@@ -73,7 +84,7 @@ function MarketplaceSidebar() {
             return (
               <button
                 key={cat.id}
-                onClick={() => handleSelect(cat.id)}
+                onClick={() => select(cat.id)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all outline-none cursor-pointer ${
                   active
                     ? 'bg-[#00aaff] text-white shadow-sm font-semibold'
@@ -127,6 +138,72 @@ function DashboardSidebar() {
       <SidebarPlanCard plan={user?.plan ?? null} />
     </SidebarShell>
   );
+}
+
+// ── Mobile: thanh chip cuộn ngang thay cho sidebar (chỉ hiện < md) ─────────────
+
+function MobileChipBar({ items }: {
+  items: { key: string; label: string; icon: React.ReactNode; active: boolean; onSelect: () => void }[];
+}) {
+  return (
+    <nav
+      className="md:hidden sticky top-0 z-30 shrink-0 flex items-center gap-2 overflow-x-auto bg-[#f7f9fb]/95 backdrop-blur-sm border-b border-gray-100 px-4 py-2.5 scrollbar-none"
+      aria-label="Điều hướng nhanh"
+    >
+      {items.map(item => (
+        <button
+          key={item.key}
+          onClick={item.onSelect}
+          className={`flex items-center gap-1.5 shrink-0 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+            item.active
+              ? 'bg-[#00aaff] text-white shadow-sm'
+              : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:text-gray-900'
+          }`}
+        >
+          {item.icon}
+          <span>{item.label}</span>
+        </button>
+      ))}
+    </nav>
+  );
+}
+
+function MobileMarketplaceNav() {
+  const { selected, select } = useMarketplaceCategory();
+  return (
+    <MobileChipBar
+      items={MARKETPLACE_CATEGORIES.map(cat => ({
+        key: cat.id,
+        label: cat.label,
+        icon: cat.icon,
+        active: selected === cat.id,
+        onSelect: () => select(cat.id),
+      }))}
+    />
+  );
+}
+
+function MobileDashboardNav() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  return (
+    <MobileChipBar
+      items={DASHBOARD_MENUS.map(menu => ({
+        key: menu.path,
+        label: menu.label,
+        icon: menu.icon,
+        active: location.pathname === menu.path,
+        onSelect: () => navigate(menu.path),
+      }))}
+    />
+  );
+}
+
+/** Thanh điều hướng ngang cho mobile — render bên trong <main> ở AppLayout, trước <Outlet /> */
+export function MobileSidebarNav() {
+  const location = useLocation();
+  if (location.pathname.startsWith('/marketplace')) return <MobileMarketplaceNav />;
+  return <MobileDashboardNav />;
 }
 
 // ── Root Sidebar — tự quyết định loại sidebar theo URL ────────────────────────

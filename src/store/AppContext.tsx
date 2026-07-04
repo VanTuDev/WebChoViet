@@ -3,6 +3,7 @@ import { AnimatePresence } from 'motion/react';
 import { SiteConfig } from '../types';
 import Snackbar, { type SnackbarState } from '../components/Snackbar/Snackbar';
 import ConfirmDialog, { type ConfirmDialogState } from '../components/ConfirmDialog/ConfirmDialog';
+import LoginModal from '../components/shared/LoginModal';
 import { getAllSiteConfigs, deleteSiteConfig as apiDeleteSiteConfig } from '../services/siteConfigService';
 import { type AuthUser, fetchMe, getToken, setToken, logoutRequest } from '../services/authService';
 
@@ -19,6 +20,8 @@ interface AppContextType {
   showSnackbar: (message: string, type?: 'success' | 'error') => void;
   // ConfirmDialog — replaces window.confirm
   showConfirm: (dialog: ConfirmDialogState) => void;
+  // LoginModal — thay cho trang /login riêng, mở được từ bất kỳ đâu trong app
+  openLoginModal: () => void;
   // Auth — Google OAuth session
   user: AuthUser | null;
   authLoading: boolean;
@@ -35,6 +38,7 @@ const AppContext = createContext<AppContextType | null>(null);
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [snackbar, setSnackbar] = useState<SnackbarState | null>(null);
   const [confirmDialog, setConfirmDialog] = useState<ConfirmDialogState | null>(null);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
   const snackbarCounter = useRef(0);
 
   // ── Auth state ──────────────────────────────────────────────────────────────
@@ -107,6 +111,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setSnackbar({ id: ++snackbarCounter.current, message, type });
 
   const showConfirm = (dialog: ConfirmDialogState) => setConfirmDialog(dialog);
+  const openLoginModal = () => setLoginModalOpen(true);
 
   return (
     <AppContext.Provider
@@ -115,6 +120,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         upsertSiteConfig, removeSiteConfig,
         showSnackbar,
         showConfirm,
+        openLoginModal,
         user, authLoading, isAuthenticated: !!user,
         login, logout, refreshUser,
       }}
@@ -126,6 +132,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       </AnimatePresence>
 
       <ConfirmDialog dialog={confirmDialog} onCancel={() => setConfirmDialog(null)} />
+
+      {loginModalOpen && <LoginModal onClose={() => setLoginModalOpen(false)} />}
     </AppContext.Provider>
   );
 }

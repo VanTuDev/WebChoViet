@@ -1,3 +1,4 @@
+import { Clock, Phone, MapPin, UtensilsCrossed } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -65,7 +66,7 @@ export default function Restaurant1({ lang = 'vi' }: Props) {
                 key={i}
                 className="bg-white rounded-2xl p-6 shadow-sm border border-amber-100 hover:shadow-md hover:border-amber-200 transition-all group cursor-pointer"
               >
-                <div className="text-3xl mb-3">🍽️</div>
+                <div className="mb-3"><UtensilsCrossed className="w-8 h-8 text-[#7C3A1A]" /></div>
                 <div className="font-bold text-gray-900 mb-1 group-hover:text-[#7C3A1A] transition-colors">{item.name}</div>
                 <div className="text-sm text-gray-500 mb-3 leading-relaxed">{item.desc}</div>
                 <div className="font-bold text-[#7C3A1A] text-lg">{item.price}</div>
@@ -79,19 +80,19 @@ export default function Restaurant1({ lang = 'vi' }: Props) {
       <section data-section="info" className="bg-[#7C3A1A] text-white py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
-            <div className="text-2xl mb-1">🕐</div>
+            <Clock className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.hours" className="font-bold">{t.info.hours}</div>
             <div className="text-amber-300 text-sm mt-0.5">{t.info.hoursLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📞</div>
+            <Phone className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.phone" className="font-bold">{t.info.phone}</div>
             <div className="text-amber-300 text-sm mt-0.5">{t.info.phoneLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📍</div>
+            <MapPin className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.address" className="font-bold">{t.info.address}</div>
             <div className="text-amber-300 text-sm mt-0.5">{t.info.addressLabel}</div>
           </div>
@@ -114,7 +115,7 @@ export default function Restaurant1({ lang = 'vi' }: Props) {
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 flex flex-col items-center justify-center gap-3 text-center px-6">
-                <span className="text-4xl">📍</span>
+                <MapPin className="w-10 h-10 text-[#7C3A1A]" />
                 <p className="font-bold text-[#7C3A1A] text-lg">{t.info.address}</p>
                 <p className="text-sm text-gray-500">{t.info.hours} · {t.info.phone}</p>
               </div>

@@ -18,7 +18,7 @@ const TEMPLATE_NAMES: Record<string, string> = {
 };
 
 const LANG_LABELS: Record<string, string> = {
-  vi: '🇻🇳 VI', en: '🇬🇧 EN', zh: '🇨🇳 ZH', ko: '🇰🇷 KO',
+  vi: 'VI', en: 'EN', zh: 'ZH', ko: 'KO',
 };
 
 export default function SiteConfigCard({ site, onDelete }: Props) {
