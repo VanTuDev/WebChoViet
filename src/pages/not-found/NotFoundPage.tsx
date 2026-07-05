@@ -1,6 +1,7 @@
 // Trang 404 — standalone, không dùng AppLayout
 import { motion } from 'motion/react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Home, LayoutDashboard, ArrowLeft, MapPin } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
 
@@ -10,6 +11,10 @@ export default function NotFoundPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6 font-sans antialiased relative overflow-hidden">
+      <Helmet>
+        <title>Không tìm thấy trang — WebChoViet</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
 
       {/* Ambient glow */}
       <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-sky-200/20 blur-[130px] pointer-events-none" />

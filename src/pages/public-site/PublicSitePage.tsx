@@ -8,8 +8,9 @@ import { useAnalyticsTracker } from '../../hooks/useAnalyticsTracker';
 import { sendLog } from '../../services/analyticsService';
 import { LANGUAGES, hasContent, langMeta } from '../../constants/languages';
 import type { SiteConfig, SiteLang } from '../../types';
+import { extractSeoFacts, buildLocalBusinessJsonLd, ogLocaleForLang } from '../../utils/seo';
 
-import { COMPONENT_MAP } from '../../data/templates/registry';
+import { COMPONENT_MAP, TEMPLATES } from '../../data/templates/registry';
 
 // ── Language switcher — chỉ hiện nếu site có từ 2 ngôn ngữ có nội dung trở lên ──
 
@@ -100,17 +101,44 @@ function TemplateSite({ config }: { config: SiteConfig }) {
   };
 
   const ogImage = Object.values(config.images)[0];
+  const canonicalUrl = `https://webchoviet.com/${config.slug}`;
+  const category = TEMPLATES.find(t => t.id === config.templateId)?.category;
+  const activeCustomData = (config.customData[activeLang] as Record<string, unknown>) ?? config.customData;
+  const seoFacts = extractSeoFacts(activeCustomData);
+  const description = seoFacts.tagline || `${config.name} — website được tạo bởi WebChoViet.`;
+  const jsonLd = buildLocalBusinessJsonLd({
+    name: config.name,
+    url: canonicalUrl,
+    category,
+    image: ogImage,
+    facts: seoFacts,
+  });
 
   return (
     <div className="relative">
       <Helmet>
         <title>{config.name} — WebChoViet</title>
-        <meta name="description" content={`${config.name} — website được tạo bởi WebChoViet.`} />
-        <link rel="canonical" href={`https://webchoviet.com/${config.slug}`} />
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalUrl} />
+        {availableLangs.map(code => (
+          <link
+            key={code}
+            rel="alternate"
+            hrefLang={code}
+            href={code === config.lang ? canonicalUrl : `${canonicalUrl}?lang=${code}`}
+          />
+        ))}
+        <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content={ogLocaleForLang(activeLang)} />
         <meta property="og:title" content={config.name} />
-        <meta property="og:url" content={`https://webchoviet.com/${config.slug}`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
         {ogImage && <meta property="og:image" content={ogImage} />}
+        <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+        <meta name="twitter:title" content={config.name} />
+        <meta name="twitter:description" content={description} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <TemplateCustomProvider value={contextValue}>
         <Suspense fallback={

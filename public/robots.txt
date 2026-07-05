@@ -6,6 +6,7 @@ Disallow: /admin
 Disallow: /template-editor
 Disallow: /auth/callback
 Disallow: /payment-result
+Disallow: /marketplace/preview/
 
 # Sitemap tĩnh — các trang core của webchoviet.com (Home, Pricing, Tutorials, Policy...)
 Sitemap: https://webchoviet.com/sitemap.xml
