@@ -1,5 +1,16 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "https://webchoviet-server.onrender.com/sitemap_index.xml"
+    },
+    {
+      "source": "/sitemaps/:path*",
+      "destination": "https://webchoviet-server.onrender.com/sitemaps/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

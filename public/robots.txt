@@ -7,4 +7,8 @@ Disallow: /template-editor
 Disallow: /auth/callback
 Disallow: /payment-result
 
+# Sitemap tĩnh — các trang core của webchoviet.com (Home, Pricing, Tutorials, Policy...)
 Sitemap: https://webchoviet.com/sitemap.xml
+
+# Sitemap Index (động) — quản lý tất cả sub-sitemap bao gồm gian hàng (stores)
+Sitemap: https://webchoviet.com/sitemap_index.xml
