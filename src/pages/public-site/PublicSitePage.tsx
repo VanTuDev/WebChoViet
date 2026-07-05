@@ -1,5 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ShieldAlert, Mail, ArrowLeft, Coffee, SearchX, Globe as GlobeIcon } from 'lucide-react';
 import { getSiteConfigBySlug } from '../../services/siteConfigService';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
@@ -98,8 +99,19 @@ function TemplateSite({ config }: { config: SiteConfig }) {
     images: config.images,
   };
 
+  const ogImage = Object.values(config.images)[0];
+
   return (
     <div className="relative">
+      <Helmet>
+        <title>{config.name} — WebChoViet</title>
+        <meta name="description" content={`${config.name} — website được tạo bởi WebChoViet.`} />
+        <link rel="canonical" href={`https://webchoviet.com/${config.slug}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={config.name} />
+        <meta property="og:url" content={`https://webchoviet.com/${config.slug}`} />
+        {ogImage && <meta property="og:image" content={ogImage} />}
+      </Helmet>
       <TemplateCustomProvider value={contextValue}>
         <Suspense fallback={
           <div className="min-h-screen flex items-center justify-center">
@@ -142,7 +154,6 @@ export default function PublicSitePage() {
         // 1. Check new template-based sites
         const config = await getSiteConfigBySlug(slug);
         if (config && config.status === 'published') {
-          document.title = `${config.name} — WebChoViet`;
           setState({ kind: 'template', config });
           return;
         }
@@ -168,6 +179,9 @@ export default function PublicSitePage() {
     if (state.config.isPending) {
       return (
         <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
+          <Helmet>
+            <meta name="robots" content="noindex, nofollow" />
+          </Helmet>
           <div className="max-w-md w-full bg-slate-800/80 backdrop-blur-md border border-slate-700/50 rounded-3xl p-8 shadow-2xl text-center space-y-6">
             <div className="w-16 h-16 bg-rose-500/10 border border-rose-500/20 text-rose-500 rounded-2xl flex items-center justify-center mx-auto animate-pulse">
               <ShieldAlert className="h-8 w-8" />
@@ -206,6 +220,9 @@ export default function PublicSitePage() {
   // 404
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center text-center px-4">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <SearchX className="w-16 h-16 text-gray-300 mb-6" />
       <h1 className="text-2xl font-bold text-gray-800 mb-2">Trang không tìm thấy</h1>
       <p className="text-gray-500 text-sm mb-2">

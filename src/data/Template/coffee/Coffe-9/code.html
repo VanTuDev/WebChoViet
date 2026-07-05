@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Garden Sanctuary Coffee - Khối óc thư thái, tâm hồn bình yên</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef1ee",
+                        "on-primary-fixed-variant": "#374b43",
+                        "tertiary": "#55615c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#94a19b",
+                        "surface": "#f7faf7",
+                        "on-primary-fixed": "#0b1f18",
+                        "surface-tint": "#4e635a",
+                        "surface-variant": "#e0e3e0",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#263932",
+                        "outline-variant": "#c2c8c4",
+                        "background": "#f7faf7",
+                        "surface-bright": "#f7faf7",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f1f4f1",
+                        "on-surface": "#181c1b",
+                        "primary-fixed-dim": "#b5ccc1",
+                        "on-surface-variant": "#424845",
+                        "surface-container-highest": "#e0e3e0",
+                        "on-secondary-fixed": "#101e19",
+                        "secondary-container": "#d5e7de",
+                        "primary": "#4e635a",
+                        "secondary": "#52625b",
+                        "primary-container": "#8da399",
+                        "surface-dim": "#d8dbd8",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#121e1a",
+                        "on-secondary-container": "#586861",
+                        "outline": "#727875",
+                        "tertiary-fixed-dim": "#bcc9c3",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#d8e5df",
+                        "inverse-primary": "#b5ccc1",
+                        "on-secondary-fixed-variant": "#3b4a44",
+                        "on-background": "#181c1b",
+                        "surface-container-high": "#e6e9e6",
+                        "primary-fixed": "#d1e8dd",
+                        "secondary-fixed-dim": "#b9cac2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#3d4945",
+                        "on-tertiary-container": "#2c3834",
+                        "surface-container": "#ecefec",
+                        "inverse-surface": "#2d3130",
+                        "secondary-fixed": "#d5e7de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Lexend"],
+                        "label-sm": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "label-md": ["Lexend"],
+                        "headline-xl": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "300"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .soft-lift {
+            box-shadow: 0 10px 40px -10px rgba(141, 163, 153, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f7faf7; }
+        ::-webkit-scrollbar-thumb { background: #bcc9c3; border-radius: 10px; }
+        .parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center px-margin-desktop py-base w-full max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md text-primary font-bold tracking-tight">Garden Sanctuary</div>
+<div class="hidden md:flex items-center space-x-md">
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary transition-all duration-200" href="#coffee">Coffee</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#menu">Menu</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#space">Space</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#reviews">Reviews</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-base rounded-full font-label-md transition-all duration-300 hover:opacity-90">Visit Us</button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center pt-xl">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="w-full h-full parallax-bg transition-transform duration-1000 scale-105" data-alt="A lush and tranquil indoor cafe sanctuary filled with diverse tropical plants, hanging vines, and natural wooden furniture. Soft morning sunlight filters through a glass ceiling, casting gentle shadows across a clean stone floor. Several people are sitting quietly, reading and sipping coffee, creating an atmosphere of ultimate peace and botanical elegance in a modern light-mode setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdB27d9Pn_rM-EpTqt-KpZmRwU8-9xBrPxpISCHBXPY2Bs78ToDr2uRCrYHfLHavKcjpc3T2Bwk9yIX5lNX3aUuHTcptC9aZRIj_acME9Dd3e_f31KMifmeXY92bO1OBnwqrWz_UlubfwOZRIcwPjeSlZPY3SuYNXPKuQ2dj0EEYhwvJtQiZp7hWOhACSIIhaEg6mofF-obg238UoBddGzmK-wvJIjF8_UBtGkaigT0yRxBYNz4by1')">
+</div>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl">
+<h1 class="font-headline-xl text-headline-xl text-white mb-md drop-shadow-lg">Khối óc thư thái, tâm hồn bình yên.</h1>
+<p class="font-body-lg text-body-lg text-surface-container-low mb-lg max-w-2xl mx-auto">Tận hưởng hương vị cà phê nguyên bản giữa không gian xanh mướt của một khu vườn nhiệt đới thu nhỏ.</p>
+<div class="flex flex-col md:flex-row gap-base justify-center">
+<button class="bg-primary text-on-primary px-xl py-md rounded-full font-label-md text-lg soft-lift hover:scale-105 transition-transform">Khám phá ngay</button>
+<button class="border-2 border-white text-white px-xl py-md rounded-full font-label-md text-lg backdrop-blur-sm hover:bg-white/10 transition-all">Đặt bàn</button>
+</div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-xl px-margin-desktop max-w-7xl mx-auto" id="menu">
+<div class="text-center mb-xl">
+<span class="text-primary font-label-md tracking-widest uppercase">Hương vị chọn lọc</span>
+<h2 class="font-headline-lg text-headline-lg mt-base">Thực đơn đặc sắc</h2>
+<div class="w-16 h-1 bg-primary-container mx-auto mt-md rounded-full"></div>
+</div>
+<!-- Category Tabs -->
+<div class="flex flex-wrap justify-center gap-base mb-xl">
+<button class="px-md py-base rounded-full bg-primary text-on-primary font-label-md">Cà phê</button>
+<button class="px-md py-base rounded-full bg-surface-container-low text-on-surface-variant font-label-md hover:bg-primary-fixed transition-colors">Nước uống</button>
+<button class="px-md py-base rounded-full bg-surface-container-low text-on-surface-variant font-label-md hover:bg-primary-fixed transition-colors">Đá xay</button>
+<button class="px-md py-base rounded-full bg-surface-container-low text-on-surface-variant font-label-md hover:bg-primary-fixed transition-colors">Thức ăn</button>
+</div>
+<!-- Bento Grid Menu Items -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Featured Item -->
+<div class="md:col-span-2 relative h-96 rounded-xl overflow-hidden soft-lift group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A macro close-up of a beautifully layered cappuccino in a transparent glass cup on a rustic wooden table. The thick milk foam is dusted with fine cocoa powder. In the background, soft-focus monstera leaves and warm golden sunlight create a nurturing, serene botanical atmosphere typical of a high-end wellness cafe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7BHE2MzdhG4Vdi97dbPirRMzCnV1pqC5mUphxrRcO97834hgZNUHC6HGZX5A9BsisjmIPWW_J3logXCV1QrqHcm8DIx3NmWZIhZJpRIPP1DzABG9oWGLnZfkEVmem6QdaGdY-5NtROhNAc9moL55zQ6uaNXUUtxC8G1EJIkGxDp-9rh_amozxTomgL1-zAg1Xy2tpxzwMXbitmV0GHLouqKwt7adUbvDdbixyM2FXIo04WkpoNXQG')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg text-white">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm mb-base inline-block">Best Seller</span>
+<h3 class="font-headline-md text-headline-md">Signature Latte</h3>
+<p class="font-body-md opacity-80 max-w-md">Sự kết hợp hoàn hảo giữa Arabica thượng hạng và sữa tươi sánh mịn.</p>
+</div>
+</div>
+<!-- Standard Items -->
+<div class="bg-surface-container-lowest p-md rounded-xl soft-lift flex flex-col justify-between border border-outline-variant/30">
+<div>
+<h4 class="font-headline-md text-primary mb-xs">Cà Phê Muối</h4>
+<p class="text-on-surface-variant text-body-md">Vị béo của kem, chút mặn của muối biển hòa quyện cùng vị đắng đậm đà.</p>
+</div>
+<div class="flex justify-between items-center mt-md">
+<span class="font-headline-md text-primary">55.000đ</span>
+<span class="material-symbols-outlined text-primary-container cursor-pointer">add_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl soft-lift flex flex-col justify-between border border-outline-variant/30">
+<div>
+<h4 class="font-headline-md text-primary mb-xs">Cold Brew Cam Sả</h4>
+<p class="text-on-surface-variant text-body-md">Thanh mát và tỉnh táo cho những buổi trưa oi ả.</p>
+</div>
+<div class="flex justify-between items-center mt-md">
+<span class="font-headline-md text-primary">65.000đ</span>
+<span class="material-symbols-outlined text-primary-container cursor-pointer">add_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl soft-lift flex flex-col justify-between border border-outline-variant/30">
+<div>
+<h4 class="font-headline-md text-primary mb-xs">Trà Đào Cam Sả</h4>
+<p class="text-on-surface-variant text-body-md">Lựa chọn truyền thống với những miếng đào giòn ngọt và hương sả nồng nàn.</p>
+</div>
+<div class="flex justify-between items-center mt-md">
+<span class="font-headline-md text-primary">50.000đ</span>
+<span class="material-symbols-outlined text-primary-container cursor-pointer">add_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl soft-lift flex flex-col justify-between border border-outline-variant/30">
+<div>
+<h4 class="font-headline-md text-primary mb-xs">Bánh Sừng Bò</h4>
+<p class="text-on-surface-variant text-body-md">Thơm nồng mùi bơ, xốp mềm từng lớp bánh, nướng mới mỗi ngày.</p>
+</div>
+<div class="flex justify-between items-center mt-md">
+<span class="font-headline-md text-primary">45.000đ</span>
+<span class="material-symbols-outlined text-primary-container cursor-pointer">add_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Space Gallery -->
+<section class="py-xl bg-surface-container-low overflow-hidden" id="space">
+<div class="px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between mb-xl">
+<div>
+<span class="text-primary font-label-md tracking-widest uppercase">Tầm nhìn &amp; Không gian</span>
+<h2 class="font-headline-lg text-headline-lg mt-base">Góc nhìn đa chiều</h2>
+</div>
+<button class="hidden md:flex items-center gap-xs text-primary font-label-md group hover:translate-x-2 transition-transform">
+                Xem thêm <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="flex flex-nowrap md:grid md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop overflow-x-auto pb-md">
+<div class="flex-none w-72 md:w-full aspect-[3/4] rounded-xl overflow-hidden soft-lift bg-primary-fixed-dim relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene outdoor cafe patio surrounded by lush garden foliage and ancient trees. Elegant string lights are draped above comfortable wicker armchairs with neutral-toned cushions and cozy blankets. Small candles glow on wooden coffee tables, creating a magical, warm, and inviting evening ambiance in a sophisticated light-mode garden setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBExuNaVtcGjuwhR_vuZces8_c4ZUQsy1dZ-zaaK6_3oYFsnMbDqIJFXlAJBPBeB-Ky8iWYSxZb5s0gKsK9KAi5BM2rM9dgdYbY91n8thxqI1TYkTfAMEN3tMGXWW7igbdIl6avvSQqQ7SIC9hH_mwKzVoeJoqLR1jA3yuGWSnGUOmZnyey-ZWCYTIAElMTSe34anAD-ToSkfsxAucnSx84X2tLcDnHkLYH_q5-Io3KShSISI28EACs"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-none w-72 md:w-full aspect-[3/4] rounded-xl overflow-hidden soft-lift bg-primary-fixed-dim relative group md:mt-xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist outdoor seating area features a simple wooden table and a cushioned armchair against a clean white wall. Dappled sunlight filters through overhead greenery, creating poetic shadow patterns on the wall. A book and a cup of tea sit on the table, embodying a slow-living aesthetic and quiet confidence within a monochromatic sage-tinted palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTvOYUmV004DMzbKe69PBneRvW5h0xnVfrJyEUjd1my8dvLUBdJ6THn3nhZhBnh48sYOrKwOiZemQGlNx7pT4tdKHM-vQqF52Co6bjRMHqBSWimC2ofE9t0WnavbA9su-e89sPOU0GYDOLTusmDY9FceREboM9HLBQpPQDA-R-H-2POzMOrKGuK2ZR6dw_xZbbULxtnsuBXd6TeyHmFicH2DXLXFu-ObsXKF780WDsILkqApu93aj7"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-none w-72 md:w-full aspect-[3/4] rounded-xl overflow-hidden soft-lift bg-primary-fixed-dim relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An exquisite Japanese-style garden with a crystal-clear koi pond as the centerpiece. Vibrant orange and white koi fish swim gracefully among moss-covered stones and lush ferns. A wooden pergola with dining tables overlooks the pond, surrounded by delicate Japanese maple trees with red and green leaves, all bathed in soft, natural morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIA9kptxLgFzda2Wu_Xaddedw7polRkt3cK8JZNdSdkwGsmzNnM8yJEs_VY0nYdy568oex6J7qb4DwFDix7uZOLO7RDlW09PGXAXWjDkYb3F6kBYullvV-Au8fitCR6gBphdBVLeOExSngFx9sSRr4WOBDU0WFHwPkeHzqnN2yZBPaAoUTrUjtvAndtZUPZFTd8Pq6Fa-JrXXV9dHUwJJj1Yo9EObvH5gDnY-0y1ha6us-Awy9fPAx"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-none w-72 md:w-full aspect-[3/4] rounded-xl overflow-hidden soft-lift bg-primary-fixed-dim relative group md:mt-xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A macro shot focused on the texture of a concrete wall in the cafe, partially covered by delicate climbing ivy. The light is soft and diffused, emphasizing the contrast between the industrial material and the organic growth. The overall mood is nurturing and intentional, reflecting a design system built on breathability and minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqxcywH71Q_54l7OO_eMpNZ26BBR9p14So035GBJtVayZnFBP7kJYJ_HapckPXfbbs10AIM8PlxaFRpeRG_IvBYDQvTq4B_GpSU-R7YT30XPTyfUEythPNwqevlzscFDQhwaFLQNXwUpDoM0qg1imbyuSs_AGGPijlbFZdSroCEChX7xCNFxmNPE3xgaLDur0r3HH4Y-zQGU2FJ95WKDuXDqOrcVrpquBkqUYKtuKWNqc94pKv8-89"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-xl px-margin-desktop max-w-7xl mx-auto" id="reviews">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg">Trải nghiệm từ khách hàng</h2>
+<p class="text-on-surface-variant mt-sm">Những chia sẻ chân thực từ cộng đồng yêu mến Garden Sanctuary.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl soft-lift border border-outline-variant/20 relative">
+<span class="material-symbols-outlined text-primary-container text-4xl absolute -top-4 left-lg bg-surface px-2">format_quote</span>
+<p class="font-body-md text-on-surface-variant mb-lg italic">"Một không gian thực sự khác biệt giữa lòng Sài Gòn. Tôi thường đến đây vào sáng sớm để đọc sách, không gian rất yên tĩnh và dễ chịu."</p>
+<div class="flex items-center gap-md">
+<img alt="Khách hàng" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida/AP1WRLtI_ne1U9Nsu3H4YBzSiooK5BQSogLCPk7t4W31d9iHudjuGq_aBgPiUIAKfyCKmJbyBiAA-0a5i-ZEI_r-3emipT3UhDKcqLgmspeS0aqvNubCt1nC8MCFerm9sJZOCmPdXHncxlYz4PmFR1xehQjw_DTIA3__NDuFs0SgUi-fmqfjSx_pzCtuKXUv0VHRa8VS33P0f9P3g8im8BUTAJQjyGew5xmaujuKTACBqkfXVIzK1OFkiNjryG4"/>
+<div>
+<h4 class="font-label-md text-primary">Linh Chi</h4>
+<p class="text-label-sm text-on-surface-variant">Chủ doanh nghiệp</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl soft-lift border border-outline-variant/20 relative">
+<span class="material-symbols-outlined text-primary-container text-4xl absolute -top-4 left-lg bg-surface px-2">format_quote</span>
+<p class="font-body-md text-on-surface-variant mb-lg italic">"Cà phê muối ở đây đỉnh nhất mình từng uống. Thêm nữa là góc nào cũng có thể sống ảo được, ảnh chụp lên rất 'nghệ' và sang trọng."</p>
+<div class="flex items-center gap-md">
+<img alt="Khách hàng" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida/AP1WRLvKom7znxLJXRYK6ogR18f3P1yRDUmhAadVjCYfjm9zk-RQIsJdXZzQjXTxPg3UBMyZB-ZkOnGCY17QMvgLlpcHMmH5KXmIbi5xZClguuiC6OGlsZaoFxfpLNVeqMXx4J49ljJhFq28TB0oaQB8q9dpI-xJlLHKgdJU4IjCgTXna55MsPHLQ6c1kPvmRIUqZZl444y-iXX8HTzmDk1ou7M04nd6UVkbwnC0I5dOrnzy6go8VzUQU6FHZmo"/>
+<div>
+<h4 class="font-label-md text-primary">Minh Nhật</h4>
+<p class="text-label-sm text-on-surface-variant">Freelancer Sáng tạo</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl soft-lift border border-outline-variant/20 relative">
+<span class="material-symbols-outlined text-primary-container text-4xl absolute -top-4 left-lg bg-surface px-2">format_quote</span>
+<p class="font-body-md text-on-surface-variant mb-lg italic">"Dịch vụ rất tận tâm, nhân viên luôn mỉm cười và tư vấn món rất nhiệt tình. Một nơi tuyệt vời để nạp lại năng lượng sau một ngày làm việc."</p>
+<div class="flex items-center gap-md">
+<img alt="Khách hàng" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida/AP1WRLtnqGi6iEPr_VHu33rdGQXmBeI4Yi4ZgH2doQnqMCYmqdbl5ZQjJouy9NbZz82ORWPUaxjvouZulgWuNuVMUYJWm0KBTksB_FkVNX0ffvN0YhyyCNQL4f_QvdcJ9qE4-HonbuOLxFxv527sjFdzk3Xo77NeaLMNWUzS6qTS9XdgTHKmzf70jsk0T8mV2wOCYtq37L9USQZt30aAYDGoGUMUzjXcfyXwa06vp0ztejAZ0CMECNKbRQqQzs8"/>
+<div>
+<h4 class="font-label-md text-primary">Khánh Vy</h4>
+<p class="text-label-sm text-on-surface-variant">Nhiếp ảnh gia</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-xl bg-surface" id="contact">
+<div class="px-margin-desktop max-w-7xl mx-auto">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-xl">
+<div class="p-lg md:p-xl md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg mb-md">Kết nối với chúng tôi</h2>
+<p class="text-on-surface-variant mb-xl">Ghé thăm khu vườn nhỏ của Garden Sanctuary để trực tiếp trải nghiệm sự yên bình.</p>
+<div class="space-y-lg">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-sm rounded-xl">location_on</span>
+<div>
+<h4 class="font-label-md">Địa chỉ</h4>
+<p class="text-body-md text-on-surface-variant">123 Đường Nam Kỳ Khởi Nghĩa, Quận 1, TP. HCM</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-sm rounded-xl">schedule</span>
+<div>
+<h4 class="font-label-md">Giờ mở cửa</h4>
+<p class="text-body-md text-on-surface-variant">Thứ Hai - Chủ Nhật: 07:00 - 22:30</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-sm rounded-xl">phone</span>
+<div>
+<h4 class="font-label-md">Điện thoại</h4>
+<p class="text-body-md text-on-surface-variant">+84 123 456 789</p>
+</div>
+</div>
+</div>
+<div class="mt-xl flex gap-md">
+<a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:opacity-80 transition-opacity" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:opacity-80 transition-opacity" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div class="md:w-1/2 h-96 md:h-auto relative bg-surface-dim">
+<div class="absolute inset-0 grayscale opacity-70 hover:grayscale-0 transition-all duration-500">
+<!-- Simulated Map placeholder -->
+<div class="w-full h-full bg-cover bg-center" data-alt="A detailed, clean, and modern map representation of District 1 in Ho Chi Minh City, rendered in a minimalist sage-green color palette to match the brand identity. The map highlights key landmarks and streets around Nam Ky Khoi Nghia, maintaining a high-key, airy light-mode look consistent with professional architectural visualizations." data-location="Ho Chi Minh City" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKSa0FasIRr2UZ78VX4rjaURc1PNP-ExL4TosQmaz42IPGjR504WFADEhYupbMPJp-0caaFBUAhVTzkYy6cM6GOrrz9DIgtFle3j2_P3ngRvLeFECoVxIzjl8OtdKs7G5wT2MVvMNCzs_MkN8YCYjzSyG0to_pDfQXFhYloKvHHN1DmfkRdC_yI7dcX4SWG_gZyjnrbiJncdNsVh83uGEhO48mrnDaHzp-9oBv5O7HXGbbhDaqVkgB')"></div>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-xl animate-bounce">
+<span class="material-symbols-outlined">local_cafe</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-lg mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop w-full max-w-7xl mx-auto border-t border-outline-variant/10 pt-lg">
+<div class="font-headline-md text-headline-md text-primary font-bold mb-md md:mb-0">Garden Sanctuary</div>
+<div class="flex flex-wrap justify-center gap-md mb-md md:mb-0">
+<a class="text-on-surface-variant font-body-md hover:text-primary underline transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary underline transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary underline transition-opacity" href="#">Sustainability</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary underline transition-opacity" href="#">Careers</a>
+</div>
+<p class="text-on-surface-variant font-body-md opacity-70">© 2024 Garden Sanctuary Coffee. All rights reserved.</p>
+</div>
+</footer>
+<!-- FAB for Quick Actions -->
+<button class="fixed bottom-margin-mobile right-margin-mobile bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform z-40 md:hidden">
+<span class="material-symbols-outlined text-3xl">add_shopping_cart</span>
+</button>
+<script>
+        // Simple scroll reveal interaction
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.soft-lift');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    el.classList.add('opacity-100', 'translate-y-0');
+                    el.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        });
+
+        // Initialize micro-animations
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

@@ -1,36 +1,120 @@
 {
-  "shopName": "Lotus Spa",
-  "tagline": "Relax · Restore · Rejuvenate",
-  "nav": { "services": "Services", "about": "About", "book": "Book Now" },
-  "hero": {
-    "badge": "✨ Ultimate Relaxation",
-    "title": "Premium Relaxation in the Heart of the City",
-    "desc": "Experience world-class spa therapies using pure natural ingredients sourced from Vietnam.",
-    "btnBook": "Book Now",
-    "btnLearn": "Learn More"
+  "nav": {
+    "brand": "Aura Wellness",
+    "linkServices": "Services",
+    "linkAbout": "About",
+    "linkPrices": "Pricing",
+    "linkLocation": "Location",
+    "getAdvice": "Free Consultation",
+    "bookNow": "Book Now"
   },
-  "services": {
-    "title": "Our Services",
+  "hero": {
+    "badge": "Medical-Grade Acne Treatment",
+    "title": "Clear Skin,",
+    "titleHighlight": "Confident Glow",
+    "subtitle": "Reclaim smooth, healthy skin with a personalized acne treatment plan at Aura Wellness. We guarantee visible results after your very first session.",
+    "ctaText": "Get a Free Consultation",
+    "socialProofCount": "1,200+",
+    "socialProofText": "clients successfully treated"
+  },
+  "highlights": {
+    "title": "Why Choose Us?",
+    "subtitle": "We combine cutting-edge technology with leading medical expertise to deliver the best possible results for your skin.",
     "items": [
-      { "icon": "💆", "name": "Relaxation Massage", "price": "350,000₫ / 60 min", "desc": "Full-body massage therapy to reduce stress and restore energy" },
-      { "icon": "🌿", "name": "Facial Treatment", "price": "450,000₫ / 75 min", "desc": "Deep skin treatment with premium organic products" },
-      { "icon": "🛁", "name": "Herbal Bath", "price": "280,000₫ / 45 min", "desc": "Immerse in a relaxing herbal soaking bath" },
-      { "icon": "💅", "name": "Nail Care", "price": "180,000₫ / 45 min", "desc": "Professional manicure and pedicure with safe products" },
-      { "icon": "🌸", "name": "Full Body Detox", "price": "680,000₫ / 90 min", "desc": "Complete body cleansing therapy with clay and essential oils" },
-      { "icon": "✨", "name": "Light Therapy", "price": "320,000₫ / 30 min", "desc": "LED light technology to reduce wrinkles and brighten skin" }
+      {
+        "title": "Personalized Treatment Plans",
+        "desc": "Every skin tells its own story. We design each treatment plan based on your real skin condition after a 3D skin scan."
+      },
+      {
+        "title": "Guaranteed Results",
+        "desc": "Reduce inflammatory acne by 80% after just 3 intensive sessions using biological light therapy."
+      },
+      {
+        "title": "Laser Technology",
+        "desc": "Treats acne at the root"
+      },
+      {
+        "title": "Pharmaceutical-Grade Products",
+        "desc": "100% imported"
+      }
     ]
   },
-  "info": {
-    "hours": "9 AM – 9 PM",
-    "hoursLabel": "Open hours",
-    "phone": "0977 456 789",
+  "gallery": {
+    "title": "Our Treatment Spaces",
+    "subtitle": "Real photos from the treatment rooms at Aura Wellness Spa.",
+    "steps": [
+      { "label": "Step 01", "title": "Cleansing & Disinfection" },
+      { "label": "Step 02", "title": "Intensive Therapy" },
+      { "label": "Step 03", "title": "Recovery & Protection" }
+    ]
+  },
+  "services": {
+    "title": "Service Price List",
+    "subtitle": "Transparent pricing, no hidden fees during your treatment.",
+    "note": "Note: Prices shown do not include package discounts for clients enrolled in a treatment program.",
+    "colService": "Service",
+    "colDuration": "Duration",
+    "colPrice": "Price",
+    "items": [
+      {
+        "name": "Medical-Grade Extraction",
+        "duration": "60 Minutes",
+        "price": "350,000đ",
+        "desc": "Deep cleansing, sebum extraction, UV-light disinfection."
+      },
+      {
+        "name": "IPL Acne Treatment",
+        "duration": "75 Minutes",
+        "price": "850,000đ",
+        "desc": "Instant inflammation relief, eliminates P. acnes bacteria."
+      },
+      {
+        "name": "Biological Skin Peel",
+        "duration": "45 Minutes",
+        "price": "1,200,000đ",
+        "desc": "Fades acne scarring and evens out skin tone quickly."
+      },
+      {
+        "name": "RF Needling Scar Treatment",
+        "duration": "90 Minutes",
+        "price": "2,500,000đ",
+        "desc": "The most advanced skin regeneration technology available today."
+      }
+    ]
+  },
+  "credibility": {
+    "title": "Professional Licensed Therapist",
+    "desc": "Aura Wellness's doctors and technicians all hold internationally recognized medical licenses, ensuring absolute safety and effectiveness for every client.",
+    "stats": [
+      { "value": "100%", "label": "Safe" },
+      { "value": "5+", "label": "Years of Experience" },
+      { "value": "VIP", "label": "Service" }
+    ]
+  },
+  "contact": {
+    "title": "Our Location",
+    "subtitle": "Located in the heart of District 1, Aura Wellness offers a calm, convenient space for your treatment journey.",
+    "addressLabel": "Address",
+    "address": "123 Sac Dep Street, District 1, Ho Chi Minh City",
+    "hoursLabel": "Working Hours",
+    "hours": "Mon - Sun: 9:00 AM - 8:00 PM",
     "phoneLabel": "Hotline",
-    "address": "88 Nam Ky Khoi Nghia, D.3, HCMC",
-    "addressLabel": "Address"
+    "phone": "1900 123 456",
+    "btnDirections": "Get Directions on Google Maps",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4478777432!2d106.7017555!3d10.7731493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40a7b66bb5%3A0x13c58002e77195d!2zQuG6v24gVGjDoG5oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s",
+    "mapLoading": "Loading interactive map...",
+    "floatingTitle": "Come Visit Us"
   },
-  "location": {
-    "title": "Find Our Spa",
-    "mapUrl": ""
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "A leading, trusted skincare and acne treatment system, helping Vietnamese women feel more confident in their natural beauty.",
+    "servicesTitle": "Services",
+    "servicesLinks": ["Medical Acne Treatment", "Facial Care", "Permanent Hair Removal", "Relaxing Massage"],
+    "infoTitle": "Information",
+    "infoLinks": ["About Us", "Privacy Policy", "Terms of Service", "Book an Appointment"],
+    "copyright": "© 2024 Aura Wellness Spa. Licensed Therapeutic Professionals."
   },
-  "footer": { "copy": "© 2025 Lotus Spa. Built with WebChoViet." }
+  "booking": {
+    "fabText": "Book Now"
+  }
 }

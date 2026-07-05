@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sizzling Hearth | Lẩu Hot Pot Cao Cấp</title>
+<!-- Google Fonts: Lexend & Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "surface-container-low": "#f6f3ec",
+                    "secondary": "#795900",
+                    "surface-tint": "#b52424",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#5a403e",
+                    "secondary-container": "#ffbf00",
+                    "inverse-surface": "#31312c",
+                    "on-surface": "#1c1c18",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#5d5c5c",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdad6",
+                    "on-primary-fixed-variant": "#92030f",
+                    "background": "#fcf9f2",
+                    "on-secondary-container": "#6d5000",
+                    "surface-bright": "#fcf9f2",
+                    "primary": "#8f000d",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb4ac",
+                    "surface-container": "#f0eee7",
+                    "on-primary-container": "#ffc8c2",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "outline-variant": "#e2beba",
+                    "secondary-fixed": "#ffdfa0",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "secondary-fixed-dim": "#fbbc00",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#454545",
+                    "on-tertiary-container": "#d7d5d4",
+                    "surface-variant": "#e5e2db",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f3f0ea",
+                    "primary-container": "#b22222",
+                    "outline": "#8e706d",
+                    "surface": "#fcf9f2",
+                    "surface-container-highest": "#e5e2db",
+                    "surface-dim": "#dcdad3",
+                    "on-secondary-fixed": "#261a00",
+                    "on-background": "#1c1c18",
+                    "surface-container-high": "#ebe8e1",
+                    "on-primary-fixed": "#410003"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter-lg": "24px",
+                    "gutter-xs": "8px",
+                    "gutter-md": "16px",
+                    "unit": "4px",
+                    "margin-desktop": "48px",
+                    "container-max-width": "1200px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "headline-lg": ["Lexend"],
+                    "display-lg": ["Lexend"],
+                    "headline-lg-mobile": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "label-md": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrolling-touch {
+            -webkit-overflow-scrolling: touch;
+        }
+        .text-shadow-hero {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .dashed-divider {
+            background-image: linear-gradient(to right, #8e706d 50%, transparent 50%);
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface/90 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop py-gutter-md">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                Sizzling Hearth
+            </div>
+<div class="hidden md:flex items-center space-x-gutter-lg">
+<a class="font-body-lg text-body-lg text-primary border-b-2 border-primary pb-1 hover:text-secondary transition-colors duration-200" href="#">Menu</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Reservations</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Private Dining</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Locations</a>
+</div>
+<div class="flex items-center gap-gutter-md">
+<button class="hidden sm:block font-label-md text-label-md text-secondary hover:underline">Loyalty</button>
+<button class="bg-primary text-on-primary px-gutter-md py-gutter-xs rounded-lg font-label-md text-label-md active:scale-95 transition-transform">Order Now</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[819px] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A warm and inviting wide shot of a traditional hot pot restaurant interior during the evening. A steaming pot of vibrant red broth sits at the center of a rustic wooden table, surrounded by plates of fresh marbled beef and green vegetables. In the soft-focus background, a family is laughing and sharing a meal under warm, amber-toned pendant lights, creating a cozy and hospitable atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiaJgeHhbOFHgymMN0SFz6mD_9gmm1R9mGz51tE7yR63holMlbe10AL9W4V-sAsFsIN-o7F-KUPSCSJzJyQm5FxWGNCQyNtJjNoBYN_qzGYO8XZSXIs3nXNrFMW_X-yyHk7LW_-Y4pqmkYwbEGzJzTFOBWjUL5oYmip7wWZLsnFQ1i37CHp76O9Qw9VRaAPD6d5D8XUvCSdWvYt8kIS3i_xtWxNGANSeKSOGiyMlfTJrUNSi1Np2rW"/>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile max-w-3xl">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-white text-shadow-hero mb-gutter-md">Sum Vầy Bên Nồi Lẩu Nghi Ngút Khói</h1>
+<p class="font-body-lg text-body-lg text-surface-bright mb-gutter-lg">Trải nghiệm hương vị lẩu truyền thống tinh tế trong không gian hiện đại và ấm cúng.</p>
+<div class="flex flex-wrap justify-center gap-gutter-md">
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-label-md text-label-md shadow-lg hover:bg-primary transition-all active:scale-95">Đặt Bàn Ngay</button>
+<button class="bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-white/30 transition-all active:scale-95">Xem Thực Đơn</button>
+</div>
+</div>
+</section>
+<!-- Menu Categories Section -->
+<section class="py-margin-desktop bg-surface-bright">
+<div class="max-w-[1200px] mx-auto px-margin-mobile">
+<div class="mb-gutter-lg flex flex-col md:flex-row md:items-end justify-between gap-gutter-md">
+<div>
+<span class="text-primary font-label-md tracking-widest uppercase">Thực Đơn Đặc Sắc</span>
+<h2 class="font-headline-lg text-headline-lg mt-unit">Hương Vị Sizzling Hearth</h2>
+</div>
+<div class="flex gap-gutter-xs scrolling-touch overflow-x-auto pb-gutter-xs">
+<button class="whitespace-nowrap px-gutter-md py-gutter-xs rounded-full bg-primary text-on-primary font-label-md text-label-md">Signature Broths</button>
+<button class="whitespace-nowrap px-gutter-md py-gutter-xs rounded-full bg-surface-container border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-primary-fixed-dim">Premium Beef</button>
+<button class="whitespace-nowrap px-gutter-md py-gutter-xs rounded-full bg-surface-container border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-primary-fixed-dim">Seafood</button>
+<button class="whitespace-nowrap px-gutter-md py-gutter-xs rounded-full bg-surface-container border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-primary-fixed-dim">Vegetables</button>
+</div>
+</div>
+<!-- Bento Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-lg">
+<!-- Feature Card: Signature Broth -->
+<div class="md:col-span-8 group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 min-h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic extreme close-up of a boiling spicy hot pot broth, captured in high detail. The red chili oil bubbles vigorously, with star anise, cinnamon sticks, and dried red chilies swirling in the rich, deep red liquid. Steam rises in elegant plumes, illuminated by a warm side-light that emphasizes the texture and vibrant colors of the aromatic spices." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2ObKvxndK7fecM3kDPru86xKM1NjAHReehC28qUrFTp0dZluXLKWjMy7eR3exlTt2rU3vE1c68jdpVoi0rCZXl2jaq_ux75jJLuDq-yweQYFV4AN97taxpjA8UcTkvbITpExomnj3z7GOH3ef0_rLlUKXdbDkkATMY7Te4kTJmUBlFa8VWvDoXPSG1i9QwgCWhmPxADV6SGdLUaYXkyJzqtyLk8K7txL-O3xnDI5YGFL54OXQzSh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-gutter-lg w-full">
+<div class="flex items-center gap-unit mb-unit">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<h3 class="font-headline-lg text-white">Nước Lẩu Cay Tứ Xuyên</h3>
+<p class="text-surface-variant font-body-md max-w-md">Vị cay nồng nàn từ 12 loại thảo mộc quý hiếm, mang đến trải nghiệm bùng nổ vị giác.</p>
+</div>
+</div>
+<!-- Right Column Menu Items -->
+<div class="md:col-span-4 flex flex-col gap-gutter-lg">
+<div class="bg-white rounded-3xl p-gutter-md shadow-sm border border-surface-container-high flex gap-gutter-md items-center group cursor-pointer hover:border-primary transition-all">
+<div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Close up of premium wagyu beef slices arranged beautifully on a black ceramic plate. The meat has exquisite marbling of white fat against deep red muscle, looking fresh and high-quality in a bright, clean studio lighting setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY_232H2L2Ank8Ddb1cl54JdGNm2NhXY-zHgCDYBDLUbOd7KcGf1q6-mdQuXoK1JxGTLmQ1LGAY19UO2Z4iSwcPeyXTh6X-XEEGnSEGC0y2jieWIq5NlI70lBgLEkBqwF7i2rERQVbfUqcPv89rTbc2lnLtwwtX2E9qQhVpO7a7Gx9WsUvYP6X5_sTlyxUgNix_AN8AM1SyhvVytf2AYspX_MtvksUvA3fgE63V2GlMHEZn9XNpkcI"/>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface">Thịt Bò Wagyu A5</h4>
+<p class="text-on-surface-variant text-label-sm">Mềm tan trong miệng</p>
+<span class="text-primary font-bold mt-2 block">450.000đ</span>
+</div>
+</div>
+<div class="bg-white rounded-3xl p-gutter-md shadow-sm border border-surface-container-high flex gap-gutter-md items-center group cursor-pointer hover:border-primary transition-all">
+<div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="A platter of fresh seafood including large king prawns, green mussels, and tender scallops arranged on a bed of crushed ice. The lighting is bright and clean, highlighting the freshness and iridescent shells of the shellfish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6vc1XIo5GcSaJlK7jtYax3u73WPrlVYpDojbpbDV6CGWTTXRWrqpuid99qErCGRcxNjmjX7_EuO5V335KNxsTZG4g2lNibpMB4tnBxD1GgYRjKZn0l8MLH5ajRPc1LDwgpQxn2oKTv7SQkqzIOF9G3cGaAjRWrA45cib-2voJmofvocrI8ikZ5jxxPPlf7FeCDiJt0ikueC0pK6lfnhHn4MjMygfuixVY4r0LKRKB-aL9EDe28o-4"/>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface">Khay Hải Sản Tổng Hợp</h4>
+<p class="text-on-surface-variant text-label-sm">Tươi ngon từ biển cả</p>
+<span class="text-primary font-bold mt-2 block">320.000đ</span>
+</div>
+</div>
+<div class="bg-primary-container rounded-3xl p-gutter-lg flex flex-col justify-center items-center text-center text-on-primary h-full">
+<span class="material-symbols-outlined text-4xl mb-unit">restaurant_menu</span>
+<h4 class="font-headline-md">Xem Toàn Bộ Thực Đơn</h4>
+<p class="text-primary-fixed text-label-sm mt-unit">Hơn 50+ món nhúng hấp dẫn</p>
+<button class="mt-gutter-md bg-white text-primary px-gutter-md py-unit rounded-full font-label-md active:scale-95 transition-transform">Khám phá</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cozy Space Section -->
+<section class="py-margin-desktop bg-surface-container-low">
+<div class="max-w-[1200px] mx-auto px-margin-mobile">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-margin-desktop items-center">
+<div class="order-2 lg:order-1">
+<div class="grid grid-cols-2 gap-gutter-md">
+<div class="space-y-gutter-md">
+<div class="rounded-2xl overflow-hidden h-64 shadow-md">
+<img class="w-full h-full object-cover" data-alt="A cozy interior shot of a private dining room in a hot pot restaurant. The room features a round wooden table with a built-in induction stove, soft ambient lighting, and traditional Vietnamese wall art. The atmosphere is warm, intimate, and upscale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPcX-9srf7yVKVs1n90ZIW50GMUGcWsGVmkFrNJL0yc8m2raiHbnTrJoXXO-SEZdGdUZuSfGzREHqfa56XKU6Tt-TK8DPu3R1UtWVESMvuUoZaS2dkLcBrw0wFr2PydY8YSz8uNtoA6fU4VIFRwUpK9IdbgeTwpelb2_ch0RXNBDtW_L91VMftV05CuZ_bC6CwXafjzwyrYgKXPtLFTj4jjcI3DzTLljaeYPa91-ZTdUhrufGQy-yW"/>
+</div>
+<div class="rounded-2xl overflow-hidden h-48 shadow-md">
+<img class="w-full h-full object-cover" data-alt="A high-angle shot of a large group of friends laughing and sharing a hot pot meal. They are raising their glasses for a toast over a large pot of steaming broth. The lighting is lively and warm, capturing the joy of communal dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-9LQ5Js6lARZILNsvsVI79qyXwD0Ay_GZZri0ZoA1d0cwFLdVK6kUYR-HcLKrV0sO_zIAG_TJObQXu8lTqbChNSHvwl9iRFvGPtBuBqYAD-Lgct1TynuHnQa3Bd-AhrXXK33uMuf2g3L6gOfu9UqWI0-Dao7SdIFY86L2jcYLcofjQ75xqJgIzBeH0_KUVa2z6A78IDO77HO5hAkkSYZam3nSCtmgq2oJLGLx0B9i4xMJxRbsFMdY"/>
+</div>
+</div>
+<div class="pt-gutter-lg">
+<div class="rounded-2xl overflow-hidden h-[450px] shadow-md">
+<img class="w-full h-full object-cover" data-alt="A beautifully lit shot of a restaurant's semi-outdoor dining terrace at dusk. String lights hang above wooden tables, and lush green plants surround the seating area, creating a refreshing yet cozy evening vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi-qjwlhYAKsJHp9SGTJDv9LCaJfTKYSfGMlNNz8_in7les75ZJ9tAWZgzXjBTuMEkMPclHwMpwbuBDREzTin89rMCGl9AcmPCrDdyrSShx455EQ9CuuB9ANUWJlOVBIVGeUgHAnrw_Yce57xVSbrVzH2MaftOqHrbzwBuywXeKSqoNZK1yapMXs0VwfV2LsHDwBCkOz3i3TSNecYaeq3hNoUeSPqKy9qE1fBtgsREu-7xlfN3oPx4"/>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="text-secondary font-label-md tracking-widest uppercase">Không Gian Nhà Hàng</span>
+<h2 class="font-display-lg text-on-surface mt-unit mb-gutter-md">Nơi Gắn Kết Tình Thân</h2>
+<p class="font-body-lg text-on-surface-variant mb-gutter-lg">
+                            Tại Sizzling Hearth, chúng tôi tin rằng mỗi bữa ăn là một dịp để kết nối. Không gian được thiết kế với tông màu trầm ấm, kết hợp giữa nét truyền thống và hơi thở hiện đại, mang lại cảm giác thư thái tuyệt đối cho quý khách.
+                        </p>
+<div class="space-y-gutter-md">
+<div class="flex items-start gap-gutter-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">groups</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface">Phòng Riêng Sang Trọng</h4>
+<p class="text-label-sm text-on-surface-variant">Thích hợp cho các buổi họp mặt gia đình hoặc tiếp khách đối tác.</p>
+</div>
+</div>
+<div class="flex items-start gap-gutter-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">deck</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface">Khu Vực Ngoài Trời</h4>
+<p class="text-label-sm text-on-surface-variant">Thoáng đãng và gần gũi với thiên nhiên, lý tưởng cho những tối cuối tuần.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews & Map Section -->
+<section class="py-margin-desktop bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin-mobile">
+<div class="text-center mb-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg">Khách Hàng Nói Gì Về Chúng Tôi</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg mb-margin-desktop">
+<!-- Review Card -->
+<div class="bg-white p-gutter-lg rounded-3xl shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+<div class="flex text-secondary-container mb-gutter-xs">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-gutter-md">"Nước lẩu ở đây thực sự khác biệt, vị ngọt thanh tự nhiên từ xương hầm. Thịt bò wagyu thì tươi ngon, thái lát vừa vặn. Sẽ còn quay lại nhiều lần!"</p>
+<div class="flex items-center gap-gutter-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<span class="font-label-md block">Anh Tuấn</span>
+<span class="text-label-sm text-on-surface-variant">Khách hàng thân thiết</span>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-white p-gutter-lg rounded-3xl shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+<div class="flex text-secondary-container mb-gutter-xs">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-gutter-md">"Không gian quán cực kỳ ấm cúng, nhân viên phục vụ rất nhiệt tình và chu đáo. Rất hài lòng về chất lượng dịch vụ ở Sizzling Hearth."</p>
+<div class="flex items-center gap-gutter-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<span class="font-label-md block">Chị Lan Hương</span>
+<span class="text-label-sm text-on-surface-variant">Food Blogger</span>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-white p-gutter-lg rounded-3xl shadow-sm border border-surface-container hover:shadow-md transition-shadow">
+<div class="flex text-secondary-container mb-gutter-xs">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant italic mb-gutter-md">"Địa điểm lý tưởng cho những buổi liên hoan công ty. Đồ ăn đa dạng, từ hải sản đến các loại rau nhúng đều rất tươi."</p>
+<div class="flex items-center gap-gutter-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<span class="font-label-md block">Anh Minh Hoàng</span>
+<span class="text-label-sm text-on-surface-variant">Khách hàng</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Location Map Area -->
+<div class="rounded-[2rem] overflow-hidden bg-surface-container-high h-[400px] relative shadow-lg group">
+<img class="w-full h-full object-cover" data-alt="A stylized, clean map view showing the location of Sizzling Hearth hot pot restaurant in a vibrant city district. The map features modern UI elements with a red pin highlight and nearby landmarks indicated in a minimalist design." data-location="Ho Chi Minh City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw1eA4bgTMZ-Os7wxTYHaZ0bljZ4jocO4oDn0vxQ6IjC0X6h_t9Qsdde7QTjc5uGidpode4-AuaXuxiwwb6QucRIim6r8a4LSEsFt6mGCVyjUUqS0MianucUFF3tfnnehexI2XojfnkFQQ3F6SoGlyPm2aOBcyxktZcG8jrKgqbC60KCODzzGUq7mC1iCwUGSbKnMO59XNqxJs9j-jYpo1PIV7H978bHIn2pzXQ6wPQv-ZtZPvOkMT"/>
+<div class="absolute bottom-gutter-lg left-gutter-lg right-gutter-lg bg-white/90 backdrop-blur-md p-gutter-md rounded-2xl md:max-w-md shadow-xl flex items-center justify-between">
+<div>
+<h4 class="font-label-md text-primary">Sizzling Hearth - Chi Nhánh Quận 1</h4>
+<p class="text-label-sm text-on-surface-variant">123 Lê Lợi, Phường Bến Thành, Quận 1, TP.HCM</p>
+</div>
+<button class="bg-primary text-on-primary p-gutter-xs rounded-full active:scale-90 transition-transform">
+<span class="material-symbols-outlined">directions</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-highest dark:bg-inverse-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg px-margin-desktop py-margin-desktop max-w-[1200px] mx-auto">
+<div class="space-y-gutter-md">
+<div class="font-headline-md text-headline-md text-primary">Sizzling Hearth</div>
+<p class="font-label-md text-label-md text-on-surface-variant max-w-sm">
+                    Mang tinh hoa lẩu Á Đông đến gần hơn với mọi gia đình. Chất lượng tạo nên sự khác biệt.
+                </p>
+<div class="flex gap-gutter-md">
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter-md">
+<div class="space-y-unit">
+<h5 class="font-label-md text-on-surface">Công Ty</h5>
+<ul class="space-y-unit">
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-unit">
+<h5 class="font-label-md text-on-surface">Khám Phá</h5>
+<ul class="space-y-unit">
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Careers</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Press Kit</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 max-w-[1200px] mx-auto px-margin-desktop py-gutter-md">
+<p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left">
+                © 2024 Sizzling Hearth Hot Pot. All rights reserved.
+            </p>
+</div>
+</footer>
+<!-- FAB for Quick Reservation -->
+<div class="fixed bottom-gutter-lg right-gutter-lg z-50">
+<button class="bg-secondary-container text-on-secondary-container shadow-2xl p-4 rounded-full flex items-center gap-gutter-xs group active:scale-95 transition-all">
+<span class="material-symbols-outlined">event_seat</span>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-label-md whitespace-nowrap">Đặt Bàn Ngay</span>
+</button>
+</div>
+</body></html>

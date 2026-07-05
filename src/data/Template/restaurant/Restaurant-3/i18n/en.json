@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "brand": "Sizzling Hearth",
+    "menu": "Menu",
+    "reservations": "Reservations",
+    "privateDining": "Private Dining",
+    "locations": "Locations",
+    "loyalty": "Loyalty",
+    "cta": "Order Now"
+  },
+  "hero": {
+    "title": "Gather Around a Steaming Pot of Comfort",
+    "subtitle": "Experience the refined flavors of traditional hot pot in a warm, modern setting.",
+    "btnReserve": "Book a Table",
+    "btnMenu": "View Menu"
+  },
+  "menuSection": {
+    "eyebrow": "Signature Menu",
+    "title": "The Flavors of Sizzling Hearth",
+    "chips": ["Signature Broths", "Premium Beef", "Seafood", "Vegetables"],
+    "featured": {
+      "name": "Sichuan Fiery Broth",
+      "desc": "A bold, fiery kick from 12 rare herbs and spices, delivering an explosive flavor experience.",
+      "heatLevel": 3
+    },
+    "items": [
+      {
+        "name": "Wagyu A5 Beef",
+        "desc": "Melts in your mouth",
+        "price": "$18.00"
+      },
+      {
+        "name": "Mixed Seafood Platter",
+        "desc": "Fresh from the ocean",
+        "price": "$13.00"
+      }
+    ],
+    "viewAll": {
+      "title": "See the Full Menu",
+      "desc": "50+ mouthwatering dishes to dip",
+      "cta": "Explore"
+    }
+  },
+  "space": {
+    "eyebrow": "Our Space",
+    "title": "A Place That Brings Families Together",
+    "desc": "At Sizzling Hearth, we believe every meal is a chance to connect. Our space blends warm, earthy tones with a modern touch traditional charm, offering guests total relaxation.",
+    "features": [
+      {
+        "title": "Elegant Private Rooms",
+        "desc": "Perfect for family gatherings or hosting business partners."
+      },
+      {
+        "title": "Open-Air Terrace",
+        "desc": "Airy and close to nature, ideal for a relaxed weekend evening."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "quote": "The broth here is truly different, with a naturally sweet flavor from long-simmered bones. The wagyu beef is fresh and perfectly sliced. Definitely coming back!",
+        "name": "Mr. Tuan",
+        "role": "Loyal Customer"
+      },
+      {
+        "quote": "The space is incredibly cozy, and the staff are attentive and warm. Very happy with the service quality at Sizzling Hearth.",
+        "name": "Ms. Lan Huong",
+        "role": "Food Blogger"
+      },
+      {
+        "quote": "The ideal spot for company gatherings. Food is diverse, from seafood to hot pot vegetables, everything is fresh.",
+        "name": "Mr. Minh Hoang",
+        "role": "Guest"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Visit Us",
+    "branchName": "Sizzling Hearth - District 1 Branch",
+    "addressLabel": "Address",
+    "address": "123 Le Loi, Ben Thanh Ward, District 1, Ho Chi Minh City",
+    "phoneLabel": "Phone Number",
+    "phone": "028 3822 1234",
+    "hoursLabel": "Opening Hours",
+    "hours": "10:00 AM - 10:30 PM daily",
+    "btnDirections": "Get Directions",
+    "btnReserve": "Call to Book",
+    "mapUrl": "",
+    "mapLoading": "Loading map..."
+  },
+  "footer": {
+    "brand": "Sizzling Hearth",
+    "desc": "Bringing the essence of Asian hot pot closer to every family. Quality makes the difference.",
+    "companyTitle": "Company",
+    "companyLinks": ["Privacy Policy", "Terms of Service", "Sustainability"],
+    "exploreTitle": "Explore",
+    "exploreLinks": ["Careers", "Press Kit"],
+    "copy": "© 2026 Sizzling Hearth Hot Pot. Built with WebChoViet."
+  },
+  "fab": {
+    "label": "Book a Table"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "linkCoffee": "Cà Phê",
+    "linkMenu": "Thực Đơn",
+    "linkSpace": "Không Gian",
+    "linkReviews": "Đánh Giá",
+    "linkContact": "Liên Hệ",
+    "cta": "Ghé Thăm"
+  },
+  "hero": {
+    "title": "Khối óc thư thái, tâm hồn bình yên.",
+    "subtitle": "Tận hưởng hương vị cà phê nguyên bản giữa không gian xanh mướt của một khu vườn nhiệt đới thu nhỏ.",
+    "btnPrimary": "Khám phá ngay",
+    "btnSecondary": "Đặt bàn"
+  },
+  "menu": {
+    "label": "Hương vị chọn lọc",
+    "title": "Thực đơn đặc sắc",
+    "tabs": ["Cà phê", "Nước uống", "Đá xay", "Thức ăn"],
+    "featured": {
+      "badge": "Best Seller",
+      "name": "Signature Latte",
+      "desc": "Sự kết hợp hoàn hảo giữa Arabica thượng hạng và sữa tươi sánh mịn."
+    },
+    "items": [
+      {
+        "name": "Cà Phê Muối",
+        "desc": "Vị béo của kem, chút mặn của muối biển hòa quyện cùng vị đắng đậm đà.",
+        "price": "55.000đ"
+      },
+      {
+        "name": "Cold Brew Cam Sả",
+        "desc": "Thanh mát và tỉnh táo cho những buổi trưa oi ả.",
+        "price": "65.000đ"
+      },
+      {
+        "name": "Trà Đào Cam Sả",
+        "desc": "Lựa chọn truyền thống với những miếng đào giòn ngọt và hương sả nồng nàn.",
+        "price": "50.000đ"
+      },
+      {
+        "name": "Bánh Sừng Bò",
+        "desc": "Thơm nồng mùi bơ, xốp mềm từng lớp bánh, nướng mới mỗi ngày.",
+        "price": "45.000đ"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Tầm nhìn & Không gian",
+    "title": "Góc nhìn đa chiều",
+    "viewMore": "Xem thêm"
+  },
+  "testimonials": {
+    "title": "Trải nghiệm từ khách hàng",
+    "subtitle": "Những chia sẻ chân thực từ cộng đồng yêu mến Garden Sanctuary.",
+    "items": [
+      {
+        "quote": "Một không gian thực sự khác biệt giữa lòng Sài Gòn. Tôi thường đến đây vào sáng sớm để đọc sách, không gian rất yên tĩnh và dễ chịu.",
+        "name": "Linh Chi",
+        "role": "Chủ doanh nghiệp"
+      },
+      {
+        "quote": "Cà phê muối ở đây đỉnh nhất mình từng uống. Thêm nữa là góc nào cũng có thể sống ảo được, ảnh chụp lên rất 'nghệ' và sang trọng.",
+        "name": "Minh Nhật",
+        "role": "Freelancer Sáng tạo"
+      },
+      {
+        "quote": "Dịch vụ rất tận tâm, nhân viên luôn mỉm cười và tư vấn món rất nhiệt tình. Một nơi tuyệt vời để nạp lại năng lượng sau một ngày làm việc.",
+        "name": "Khánh Vy",
+        "role": "Nhiếp ảnh gia"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kết nối với chúng tôi",
+    "subtitle": "Ghé thăm khu vườn nhỏ của Garden Sanctuary để trực tiếp trải nghiệm sự yên bình.",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Nam Kỳ Khởi Nghĩa, Quận 1, TP. HCM",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "Thứ Hai - Chủ Nhật: 07:00 - 22:30",
+    "phoneLabel": "Điện thoại",
+    "phone": "+84 123 456 789",
+    "btnCall": "Gọi ngay",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "sustainability": "Phát triển bền vững",
+    "careers": "Tuyển dụng",
+    "copy": "© 2026 Garden Sanctuary Coffee. Bản quyền thuộc về chúng tôi."
+  }
+}

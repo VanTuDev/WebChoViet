@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crimson Sushi | Nghệ Thuật Ẩm Thực Nhật Bản Cao Cấp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#1a1c1c",
+                    "secondary": "#c6c6c7",
+                    "on-primary-fixed": "#40000a",
+                    "background": "#131313",
+                    "tertiary": "#c8c6c6",
+                    "primary-fixed-dim": "#ffb3b4",
+                    "primary-fixed": "#ffdad9",
+                    "on-secondary-container": "#b4b5b5",
+                    "outline": "#aa8989",
+                    "on-secondary": "#2f3131",
+                    "surface-tint": "#ffb3b4",
+                    "surface-container-highest": "#353535",
+                    "error-container": "#93000a",
+                    "on-tertiary": "#303030",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface": "#131313",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-primary-fixed-variant": "#920023",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "on-surface-variant": "#e3bebd",
+                    "outline-variant": "#5b4040",
+                    "surface-variant": "#353535",
+                    "primary-container": "#c41e3a",
+                    "primary": "#ffb3b4",
+                    "tertiary-container": "#666565",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "surface-bright": "#393939",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface": "#e5e2e1",
+                    "inverse-primary": "#ba1434",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "secondary-container": "#454747",
+                    "on-primary-container": "#ffdada",
+                    "on-tertiary-container": "#e5e3e2",
+                    "on-background": "#e5e2e1",
+                    "surface-dim": "#131313",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-surface": "#e5e2e1",
+                    "on-primary": "#680016",
+                    "on-error": "#690005",
+                    "surface-container": "#20201f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "display-lg-mobile": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "body-lg": ["Lexend"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "300"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .shibui-gradient {
+            background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, rgba(19, 19, 19, 1) 100%);
+        }
+        .crimson-glow {
+            box-shadow: inset 0 0 15px rgba(196, 30, 58, 0.2);
+        }
+        .menu-border {
+            border-bottom: 1px solid #2d2d2d;
+        }
+        .lacquer-hover:hover {
+            background-color: #c41e3a;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .stagger-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<a class="font-display-lg text-display-lg text-primary uppercase tracking-tighter" href="#">Crimson Sushi</a>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors duration-300" href="#menu">Thực đơn</a>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors duration-300" href="#story">Câu chuyện</a>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors duration-300" href="#location">Vị trí</a>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 font-headline-md text-headline-md rounded-none lacquer-hover active:scale-95 transition-transform">
+                    Liên hệ
+                </button>
+</div>
+<!-- Mobile Menu Icon (Visual Only) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Premium Sushi Hero" class="w-full h-full object-cover opacity-60 scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvWGLzS4GDNPNs6dtEzfgiEs2NLzqNcAm2-St4v1GXWLoNVEfZFNi6kmeMxOy83S_jlLOdaqOkfkJOkEmu919gm3YQXfqv1Sgm1xv0IhA5Ke_Hx6M4Bi9Qm25HAuZ_34SnpQ6fU4hVUvMI3T36GoBL82qjMxYGoytkEYcKfFQjnK1pJOPJIwtOuKykL7d5EmHe4SV5PBnJHQIk5LPXxK4WzdWQXue0tia-vTPsbxG0qTzfddtdk0-wI_A"/>
+<div class="absolute inset-0 shibui-gradient"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.4em] mb-4 block stagger-in" style="animation-delay: 0.1s;">Tinh Hoa Nhật Bản</span>
+<h1 class="font-display-lg text-display-lg md:text-[64px] leading-tight mb-8 stagger-in" style="animation-delay: 0.3s;">
+                Nghệ Thuật Ẩm Thực <br/> Khơi Nguồn Cảm Xúc
+            </h1>
+<div class="w-24 h-1 bg-primary-container mx-auto mb-8 stagger-in" style="animation-delay: 0.5s;"></div>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto text-secondary stagger-in" style="animation-delay: 0.7s;">
+                Mỗi miếng sushi tại Crimson là một tác phẩm điêu khắc tinh vi, nơi sự tươi ngon của đại dương hòa quyện cùng kỹ thuật bậc thầy của các nghệ nhân.
+            </p>
+</div>
+</section>
+<!-- Visual Story Section -->
+<section class="py-stack-lg bg-surface" id="story">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="relative group">
+<div class="absolute -inset-4 border border-outline-variant opacity-30 group-hover:opacity-100 transition-opacity duration-700"></div>
+<img alt="High-end Interior Shot" class="w-full h-[600px] object-cover relative z-10" src="https://lh3.googleusercontent.com/aida/AP1WRLsk1-akQjPqvE_eK92bQiR4DflPO8rjkzLPWw2LcmOVhYtPDClh2rXkvhhk29X0aPMBoPuvsAxBbYdOjXSsTWXsJxwtxziK6bMiInWyS_cdjKohapRreKfRn2pqviKIDJUR_fB8l3N4By503vZsO3fPlwWIB_BqBNUgrK72F5tUP-1SlKOY6C-qW6JAqgV5-YYTaBZry16MSTcNzP7uGFf-JHG6GCMmlc1kKE-Wm7fWgsc3cobg2UyNVQI"/>
+</div>
+<div class="md:pl-margin-desktop">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Không Gian "Shibui"</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-8 leading-relaxed">
+                    Bước vào Crimson Sushi là bước vào một thế giới của sự tĩnh lặng và sang trọng kín đáo. Kiến trúc của chúng tôi tôn vinh sự tối giản, sử dụng ánh sáng đỏ ấm áp để tạo nên một không gian Omakase thân mật, nơi thời gian dường như ngưng đọng để quý khách thưởng thức trọn vẹn hương vị.
+                </p>
+<div class="flex items-center gap-4 text-primary">
+<span class="w-12 h-px bg-primary"></span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Trải nghiệm thượng lưu</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Diverse Menu Section (The Core) -->
+<section class="py-stack-lg bg-surface-container-lowest" id="menu">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-stack-lg">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Thực Đơn Đa Dạng</h2>
+<div class="flex justify-center gap-8 border-b border-outline-variant pb-2 overflow-x-auto no-scrollbar">
+<button class="text-primary border-b-2 border-primary px-4 pb-2 whitespace-nowrap">TẤT CẢ</button>
+<button class="text-on-surface hover:text-primary transition-colors px-4 pb-2 whitespace-nowrap">SASHIMI</button>
+<button class="text-on-surface hover:text-primary transition-colors px-4 pb-2 whitespace-nowrap">NIGIRI</button>
+<button class="text-on-surface hover:text-primary transition-colors px-4 pb-2 whitespace-nowrap">SPECIAL ROLLS</button>
+<button class="text-on-surface hover:text-primary transition-colors px-4 pb-2 whitespace-nowrap">SETS</button>
+</div>
+</div>
+<!-- Bento Grid Menu -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Highlight Image -->
+<div class="lg:col-span-7 h-full">
+<div class="relative h-full min-h-[400px] overflow-hidden group">
+<img alt="Menu Spread Visual" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZD_g73ewOx_veijkevHIA-X-Ghl9_ydaJHgQHA8M_c5RAvpf9E1QGTmvsYQ0grr7M1cfTQip5-TWYF3fnRO4PrgKNv0IrN9k1wG_orwx07SmJDvGShcBULZKjwON3_QP03O_aW2ghnUjx3GMthxR65BWXKwqXlQQxy-Yz_hVc57TMaL2nllQgeLJUv1f-VYS8Qjvll-3EDz9viz2jcsPpeATQoAxMJ2qHA_oQtTQgj79Ttab3Fgu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-sm text-label-sm mb-2 inline-block">BÁN CHẠY</span>
+<h3 class="font-headline-md text-headline-md text-white">Omakase Signature Set</h3>
+</div>
+</div>
+</div>
+<!-- Menu List -->
+<div class="lg:col-span-5 space-y-8">
+<div class="menu-border pb-6 flex justify-between items-end group cursor-pointer">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Bluefin Tuna Nigiri</h4>
+<span class="bg-outline-variant text-[10px] px-2 py-0.5 text-white tracking-tighter">PREMIUM</span>
+</div>
+<p class="text-secondary font-body-md text-body-md italic">Cá ngừ vây xanh thượng hạng, gạo Koshihikari</p>
+</div>
+<span class="text-primary font-headline-md text-headline-md">280k</span>
+</div>
+<div class="menu-border pb-6 flex justify-between items-end group cursor-pointer">
+<div>
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Uni Roll</h4>
+<p class="text-secondary font-body-md text-body-md italic">Cầu gai tươi từ vùng Hokkaido, rong biển Nori cao cấp</p>
+</div>
+<span class="text-primary font-headline-md text-headline-md">450k</span>
+</div>
+<div class="menu-border pb-6 flex justify-between items-end group cursor-pointer">
+<div>
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Dragon Roll</h4>
+<p class="text-secondary font-body-md text-body-md italic">Lươn nướng Unagi, bơ sáp, sốt Teriyaki đặc trưng</p>
+</div>
+<span class="text-primary font-headline-md text-headline-md">320k</span>
+</div>
+<div class="menu-border pb-6 flex justify-between items-end group cursor-pointer">
+<div>
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Wagyu Beef Tataki</h4>
+<p class="text-secondary font-body-md text-body-md italic">Thịt bò Wagyu A5 tái nhẹ với sốt Ponzu</p>
+</div>
+<span class="text-primary font-headline-md text-headline-md">680k</span>
+</div>
+<div class="flex justify-center md:justify-end mt-4">
+<button class="border border-white px-10 py-4 font-headline-md text-headline-md hover:bg-white hover:text-background transition-all duration-300">
+                            XEM TOÀN BỘ THỰC ĐƠN
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Reviews Section -->
+<section class="py-stack-lg bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg text-center text-primary mb-stack-lg">Đánh Giá Chuyên Gia</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-background border border-outline-variant p-8 relative">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">format_quote</span>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8">
+                        "Crimson Sushi không chỉ là một nhà hàng, đó là một hành trình văn hóa. Sự tỉ mỉ trong từng lát cắt cá là điều hiếm thấy tại Việt Nam."
+                    </p>
+<div>
+<p class="font-headline-md text-headline-md text-primary">Nguyễn Hoàng Nam</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Chuyên gia phê bình ẩm thực</p>
+</div>
+</div>
+<div class="bg-background border border-outline-variant p-8 relative">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">format_quote</span>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8">
+                        "Không gian tối giản nhưng cực kỳ sang trọng. Trải nghiệm Omakase ở đây thực sự xứng tầm đẳng cấp quốc tế."
+                    </p>
+<div>
+<p class="font-headline-md text-headline-md text-primary">Tạp chí Gourmet</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Reviewer Ẩm Thực Cao Cấp</p>
+</div>
+</div>
+<div class="bg-background border border-outline-variant p-8 relative">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">format_quote</span>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8">
+                        "Sự kết hợp hoàn hảo giữa nguyên liệu nhập khẩu tươi sống và bàn tay tài hoa của đầu bếp tạo nên hương vị khó quên."
+                    </p>
+<div>
+<p class="font-headline-md text-headline-md text-primary">Elena Trương</p>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Blogger Lifestyle</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-stack-lg bg-background" id="location">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-stretch">
+<div class="bg-surface-container-high p-12 flex flex-col justify-center">
+<h2 class="font-display-lg text-display-lg text-primary mb-8">Tìm Thấy Chúng Tôi</h2>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<h5 class="font-headline-md text-headline-md mb-1">Địa chỉ</h5>
+<p class="text-secondary font-body-lg text-body-lg">123 Đường Nghệ Thuật, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<h5 class="font-headline-md text-headline-md mb-1">Số điện thoại</h5>
+<p class="text-secondary font-body-lg text-body-lg">+84 28 3456 7890</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<h5 class="font-headline-md text-headline-md mb-1">Email</h5>
+<p class="text-secondary font-body-lg text-body-lg">hello@crimsonsushi.vn</p>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant">
+<h5 class="font-headline-md text-headline-md mb-4">Giờ mở cửa</h5>
+<div class="flex justify-between text-secondary">
+<span>Thứ Hai - Thứ Sáu:</span>
+<span>11:00 - 22:00</span>
+</div>
+<div class="flex justify-between text-secondary mt-2">
+<span>Thứ Bảy - Chủ Nhật:</span>
+<span>10:00 - 23:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative min-h-[500px]">
+<div class="absolute inset-0 bg-secondary-container flex items-center justify-center grayscale">
+<!-- Location Map Placeholder -->
+<img class="w-full h-full object-cover opacity-80" data-alt="A sophisticated, dark-themed minimal map of District 1 in Ho Chi Minh City, showing only major streets in thin white lines over a deep charcoal background with a single glowing crimson pin indicating the Crimson Sushi location. The map style is sleek, architectural, and high-contrast to match the brand aesthetic." data-location="District 1, Ho Chi Minh City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfjB3kVuTfnV8-5iyqYjZPXqSXnyXaMYmWmtT1oKmzcad4wMQhPqTKuFvWNMNtfVx2o22Z_dQQBXEkzgy84ZqTIAkkiaiZd-Wb8Awl-jzMkqA-jps3y-Li-qrDUa74rQije-1kDuXhUQvab0QUPMxtzz99x3jqR3V0hOuJuNjN0_2YwHKbFUR-AgR8_5rIhfr8qawuBXIL-tshoBR3Y0NyHpsHD6jei1bTwGRsum2F4NU9Gx_C5mnk"/>
+<div class="absolute inset-0 pointer-events-none border-[20px] border-background"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full pt-stack-lg pb-stack-md border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div>
+<span class="font-display-lg text-display-lg text-primary uppercase tracking-tighter mb-6 block">Crimson Sushi</span>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-xs leading-relaxed">
+                    Nơi hội tụ tinh hoa ẩm thực xứ Phù Tang giữa lòng Sài Gòn. Chúng tôi cam kết mang đến trải nghiệm sushi chuẩn vị và đẳng cấp nhất.
+                </p>
+</div>
+<div>
+<h6 class="font-headline-md text-headline-md text-on-surface mb-6">Liên kết</h6>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Quy định chung</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Tuyển dụng</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-headline-md text-headline-md text-on-surface mb-6">Mạng xã hội</h6>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-all hover:-translate-y-1" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-all hover:-translate-y-1" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-all hover:-translate-y-1" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-stack-lg pt-stack-md border-t border-outline-variant text-center">
+<p class="text-on-surface-variant font-body-md text-body-md">© 2024 Crimson Sushi. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('stagger-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => observer.observe(el));
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

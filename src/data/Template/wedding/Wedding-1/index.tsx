@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { MapPin, Heart, Flower2, Mail, Phone, Calendar } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -49,7 +50,9 @@ export default function Wedding1({ lang = 'vi' }: Props) {
             <p data-field="hero.tag" className="text-white/60 text-sm font-sans mb-4">{t.hero.tag}</p>
             <div className="border-t border-white/30 pt-4 mt-2">
               <div data-field="couple.dateLong" className="text-white text-lg font-sans font-light">{t.couple.dateLong}</div>
-              <div data-field="couple.location" className="text-white/70 text-sm font-sans mt-1">📍 {t.couple.location}</div>
+              <div data-field="couple.location" className="flex items-center justify-center gap-1 text-white/70 text-sm font-sans mt-1">
+                <MapPin className="w-3.5 h-3.5" /> {t.couple.location}
+              </div>
             </div>
           </div>
         </div>
@@ -58,12 +61,12 @@ export default function Wedding1({ lang = 'vi' }: Props) {
       {/* Story */}
       <section id="story" data-section="story" className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="text-4xl mb-4">💍</div>
+          <Heart className="w-9 h-9 mx-auto mb-4 text-[#B7935F]" />
           <h2 data-field="story.title" className="text-3xl font-bold text-[#B7935F] mb-6">{t.story.title}</h2>
           <p data-field="story.text" className="text-gray-600 leading-relaxed text-lg">{t.story.text}</p>
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="h-px w-24 bg-amber-200" />
-            <span className="text-2xl">🌸</span>
+            <Flower2 className="w-6 h-6 text-[#B7935F]" />
             <div className="h-px w-24 bg-amber-200" />
           </div>
         </div>
@@ -93,7 +96,7 @@ export default function Wedding1({ lang = 'vi' }: Props) {
       {/* RSVP */}
       <section id="rsvp" data-section="rsvp" className="py-20 px-6">
         <div className="max-w-lg mx-auto text-center">
-          <div className="text-4xl mb-4">✉️</div>
+          <Mail className="w-9 h-9 mx-auto mb-4 text-[#B7935F]" />
           <h2 data-field="rsvp.title" className="text-3xl font-bold text-[#B7935F] mb-2">{t.rsvp.title}</h2>
           <p data-field="rsvp.desc" className="text-gray-500 font-sans mb-8">{t.rsvp.desc}</p>
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-amber-100 space-y-4 text-left">
@@ -141,19 +144,19 @@ export default function Wedding1({ lang = 'vi' }: Props) {
       <section data-section="info" className="bg-[#B7935F] text-white py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
-            <div className="text-2xl mb-1">📞</div>
+            <Phone className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.phone" className="font-bold font-sans">{t.info.phone}</div>
             <div className="text-amber-100 text-sm mt-0.5 font-sans">{t.info.phoneLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📍</div>
+            <MapPin className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.address" className="font-bold font-sans">{t.info.address}</div>
             <div className="text-amber-100 text-sm mt-0.5 font-sans">{t.info.addressLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📅</div>
+            <Calendar className="w-6 h-6 mx-auto mb-1" />
             <div className="font-bold font-sans">{t.couple.dateLong}</div>
             <div className="text-amber-100 text-sm mt-0.5 font-sans">{t.info.dateLabel}</div>
           </div>
@@ -176,7 +179,7 @@ export default function Wedding1({ lang = 'vi' }: Props) {
               />
             ) : (
               <div className="w-full h-full bg-amber-50 flex flex-col items-center justify-center gap-3 text-center px-6">
-                <span className="text-4xl">📍</span>
+                <MapPin className="w-10 h-10 text-[#B7935F]" />
                 <p className="font-bold text-[#B7935F] text-lg">{t.info.address}</p>
                 <p className="text-sm text-gray-500 font-sans">{t.couple.dateLong}</p>
               </div>

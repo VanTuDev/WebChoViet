@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "Thực Đơn",
+    "space": "Không Gian",
+    "reviews": "Đánh Giá",
+    "contact": "Liên Hệ",
+    "orderNow": "Đặt Món",
+    "bookTable": "Đặt Bàn"
+  },
+  "hero": {
+    "badge": "VỊ NGON ĐƯỜNG PHỐ BANGKOK",
+    "titlePrefix": "Hương Vị",
+    "titleHighlight": "Nồng Cháy",
+    "titleSuffix": "Giữa Lòng Sài Gòn",
+    "subtitle": "Đưa bạn đến những con hẻm rực rỡ ánh đèn neon tại Bangkok, nơi những chảo hủ tiếu nghi ngút khói và hương vị cay nồng quyến rũ.",
+    "btnMenu": "Khám Phá Menu",
+    "btnGallery": "Xem Gallery",
+    "spicyBadge": "Siêu Cay"
+  },
+  "menuSection": {
+    "title": "Thực Đơn Đường Phố",
+    "tabs": ["Tất Cả", "Món Nước & Xào", "Gỏi Chua Cay", "Trà & Tráng Miệng"],
+    "featured": {
+      "label": "MÓN CHÍNH NỔI BẬT",
+      "name": "Pad Thai Jai Yen",
+      "desc": "Hủ tiếu xào kiểu Thái truyền thống với tôm tươi, đậu hũ, giá đỗ và xốt me chua ngọt đặc trưng. Một biểu tượng của ẩm thực đường phố Bangkok.",
+      "tag": "Hương vị nguyên bản",
+      "price": "129.000đ"
+    },
+    "sideCards": [
+      { "title": "Xiên Nướng Than Hoa", "desc": "Thịt xiên nướng than hồng thơm lừng" },
+      { "title": "Trà Sữa Thái", "desc": "Trà sữa Thái thơm béo, đậm vị" }
+    ],
+    "promo": {
+      "title": "Ưu Đãi Đặc Biệt",
+      "desc": "Tặng kèm 1 ly trà sữa Thái khi đặt bàn từ 4 người trở lên",
+      "cta": "Đặt Ngay"
+    },
+    "itemsTitle": "Toàn Bộ Thực Đơn",
+    "items": [
+      {
+        "name": "Tom Yum Goong",
+        "desc": "Súp chua cay Thái với tôm tươi, sả, riềng và lá chanh Thái đặc trưng.",
+        "price": "89.000đ",
+        "category": "Món Nước & Xào"
+      },
+      {
+        "name": "Som Tam",
+        "desc": "Gỏi đu đủ xanh bào sợi trộn ớt, tỏi, đậu phộng rang và nước mắm chua ngọt.",
+        "price": "65.000đ",
+        "category": "Gỏi Chua Cay"
+      },
+      {
+        "name": "Pad Krapow Moo",
+        "desc": "Thịt heo xào lá húng quế cay nồng, dùng kèm trứng ốp la và cơm trắng nóng.",
+        "price": "79.000đ",
+        "category": "Món Nước & Xào"
+      },
+      {
+        "name": "Gai Yang",
+        "desc": "Gà nướng ướp sả nghệ trên than hồng, chấm cùng sốt me chua ngọt.",
+        "price": "95.000đ",
+        "category": "Món Nước & Xào"
+      },
+      {
+        "name": "Larb Moo",
+        "desc": "Thịt heo bằm trộn thính gạo rang, chanh, ớt khô và rau thơm Thái.",
+        "price": "72.000đ",
+        "category": "Gỏi Chua Cay"
+      },
+      {
+        "name": "Xôi Xoài Nước Cốt Dừa",
+        "desc": "Xôi nếp dẻo thơm ăn kèm xoài chín mọng và nước cốt dừa béo ngậy.",
+        "price": "55.000đ",
+        "category": "Trà & Tráng Miệng"
+      }
+    ]
+  },
+  "space": {
+    "title": "Cảm Nhận \"Bangkok Vibe\"",
+    "subtitle": "Một không gian rực rỡ, náo nhiệt như chính thủ đô Thái Lan",
+    "caption": "Phố Lên Đèn"
+  },
+  "testimonials": {
+    "title": "Khách Hàng Nói Gì Về Siam Flavors?",
+    "ratingScore": "4.9/5",
+    "ratingCount": "(2k+ đánh giá)",
+    "ctaGoogle": "Xem tất cả trên Google Maps",
+    "items": [
+      {
+        "quote": "Hương vị Pad Thai ở đây thực sự giống hệt như mình ăn ở các chợ đêm Bangkok. Không quá ngọt, xốt me đậm đà và tôm cực kỳ tươi.",
+        "name": "Minh Lan",
+        "role": "Local Guide"
+      },
+      {
+        "quote": "Không gian decor rất có gu, ánh sáng neon cam làm món ăn trông hấp dẫn hơn hẳn. Nhất định sẽ quay lại cùng bạn bè!",
+        "name": "Trần Hoàng",
+        "role": "Food Blogger"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Tìm Thấy Chúng Tôi",
+    "addressLabel": "Địa Chỉ",
+    "address": "123 Đường Neon, Phường Đa Kao, Quận 1, TP. Hồ Chí Minh",
+    "hoursLabel": "Giờ Mở Cửa",
+    "hours": "Thứ 2 - Chủ Nhật: 10:30 - 23:00",
+    "phoneLabel": "Liên Hệ",
+    "phone": "028 3899 9999",
+    "email": "hello@siamflavors.vn",
+    "mapUrl": "",
+    "mapLoading": "Bản đồ đang được tải...",
+    "openNowLabel": "ĐANG MỞ CỬA",
+    "openNowText": "Ghé thăm chúng tôi ngay bây giờ!"
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "tagline": "Hương vị Thái đích thực - Phục vụ tận tâm.",
+    "privacy": "Chính Sách Bảo Mật",
+    "terms": "Điều Khoản Dịch Vụ",
+    "support": "Hỗ Trợ",
+    "copy": "© 2026 Siam Flavors. Được tạo bởi WebChoViet."
+  },
+  "mobileNav": {
+    "menu": "Menu",
+    "space": "Không Gian",
+    "reviews": "Đánh Giá",
+    "direction": "Chỉ Đường"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "Thực đơn",
+    "space": "Không gian",
+    "reviews": "Đánh giá",
+    "contact": "Liên hệ",
+    "cta": "Đặt Bàn"
+  },
+  "hero": {
+    "title": "Tinh Hoa Ẩm Thực Thái Trong Lòng Thành Phố",
+    "subtitle": "Trải nghiệm không gian sang trọng với nội thất gỗ Teak chạm khắc thủ công, nơi mỗi món ăn là một tác phẩm nghệ thuật truyền thống.",
+    "btnReserve": "Đặt Bàn Ngay",
+    "btnMenu": "Xem Thực Đơn"
+  },
+  "categories": {
+    "title": "Khám Phá Hương Vị",
+    "items": [
+      { "title": "Món Khai Vị" },
+      { "title": "Cà Ri Thái" },
+      { "title": "Hải Sản" }
+    ]
+  },
+  "signature": {
+    "eyebrow": "Món Ngon Phải Thử",
+    "title": "Menu Đặc Sắc: Tom Yum Kung",
+    "desc": "Món súp biểu tượng của Thái Lan với sự kết hợp hoàn hảo giữa tôm càng tươi rói, sả, lá chanh chúc và vị cay nồng của ớt. Tại Siam Flavors, chúng tôi giữ nguyên công thức truyền thống để mang đến hương vị chuẩn mực nhất.",
+    "badge1": "Chuẩn vị Thái",
+    "badge2": "Nguyên liệu sạch",
+    "cta": "Xem Toàn Bộ Thực Đơn"
+  },
+  "menuSection": {
+    "title": "Thực Đơn Siam Flavors",
+    "subtitle": "Tinh tuyển những món ăn Thái chuẩn vị nhất, chế biến từ nguyên liệu tươi mỗi ngày.",
+    "categories": [
+      {
+        "title": "Món Khai Vị",
+        "items": [
+          {
+            "name": "Gỏi Đu Đủ Som Tam",
+            "price": "89.000đ",
+            "desc": "Gỏi đu đủ xanh trộn ớt, tỏi, đậu phộng và nước mắm chua ngọt chuẩn vị Thái."
+          },
+          {
+            "name": "Chả Giò Tôm Thái",
+            "price": "79.000đ",
+            "desc": "Chả giò giòn rụm nhân tôm tươi, ăn kèm sốt chua ngọt đặc trưng."
+          },
+          {
+            "name": "Xiên Gà Sa Tế Satay",
+            "price": "85.000đ",
+            "desc": "Thịt gà ướp sốt sa tế nướng than hoa, chấm sốt đậu phộng béo ngậy."
+          }
+        ]
+      },
+      {
+        "title": "Cà Ri Thái",
+        "items": [
+          {
+            "name": "Cà Ri Xanh Gà",
+            "price": "145.000đ",
+            "desc": "Cà ri xanh cay nhẹ nấu cùng nước cốt dừa, cà tím và ức gà mềm."
+          },
+          {
+            "name": "Cà Ri Đỏ Bò",
+            "price": "165.000đ",
+            "desc": "Vị cay nồng đặc trưng của ớt đỏ Thái hòa cùng thịt bò mềm và rau củ."
+          },
+          {
+            "name": "Cà Ri Vàng Hải Sản",
+            "price": "175.000đ",
+            "desc": "Cà ri vàng nghệ thơm lừng nấu cùng tôm, mực tươi và khoai tây."
+          }
+        ]
+      },
+      {
+        "title": "Hải Sản",
+        "items": [
+          {
+            "name": "Tôm Sốt Me Thái",
+            "price": "195.000đ",
+            "desc": "Tôm càng chiên giòn áo sốt me chua ngọt, điểm xuyết ớt tươi."
+          },
+          {
+            "name": "Mực Nướng Sả Ớt",
+            "price": "175.000đ",
+            "desc": "Mực tươi nướng thơm cùng sả, ớt và lá chanh Kaffir."
+          },
+          {
+            "name": "Cá Hấp Sả Chanh Thái",
+            "price": "220.000đ",
+            "desc": "Cá tươi hấp cùng sả, ớt, chanh theo phong cách Thái truyền thống."
+          }
+        ]
+      },
+      {
+        "title": "Tráng Miệng",
+        "items": [
+          {
+            "name": "Xôi Xoài Thái",
+            "price": "79.000đ",
+            "desc": "Xôi nếp dẻo thơm ăn cùng xoài chín mọng và nước cốt dừa béo ngậy."
+          },
+          {
+            "name": "Chè Chuối Nướng Kiểu Thái",
+            "price": "65.000đ",
+            "desc": "Chuối nướng caramel hóa quyện nước cốt dừa thơm béo."
+          },
+          {
+            "name": "Tàu Hũ Nước Gừng Thái",
+            "price": "55.000đ",
+            "desc": "Tàu hũ mềm mịn dùng cùng nước gừng ấm nóng, thanh dịu."
+          }
+        ]
+      }
+    ]
+  },
+  "team": {
+    "title": "Đội Ngũ Đầu Bếp",
+    "subtitle": "Những nghệ nhân thầm lặng đứng sau những hương vị tuyệt mỹ",
+    "members": [
+      {
+        "name": "Bếp trưởng Anan",
+        "role": "Bếp trưởng điều hành",
+        "quote": "Nấu ăn là cách chúng tôi kể câu chuyện về văn hóa Thái Lan cho thực khách."
+      },
+      {
+        "name": "Đầu bếp Malee",
+        "role": "Chuyên gia bánh ngọt",
+        "quote": "Món tráng miệng là lời chào tạm biệt ngọt ngào nhất từ trái tim Siam."
+      },
+      {
+        "name": "Team Siam",
+        "role": "Đội ngũ ẩm thực",
+        "quote": "Sự phối hợp hoàn hảo mang đến trải nghiệm đồng nhất cho mỗi dĩa ăn."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Cảm Nhận Từ Thực Khách",
+    "items": [
+      {
+        "quote": "Không gian ở đây thật sự choáng ngợp. Cảm giác như đang dùng bữa trong một cung điện cổ ở Bangkok. Đồ ăn thì không có gì để chê, cực kỳ chuẩn vị.",
+        "name": "Anh Hoàng Nam",
+        "rating": 5
+      },
+      {
+        "quote": "Món Pad Thai và Tom Yum là đỉnh nhất. Nhân viên phục vụ rất nhiệt tình, chu đáo đúng kiểu hiếu khách của người Thái.",
+        "name": "Chị Lan Phương",
+        "rating": 4.5
+      },
+      {
+        "quote": "Tuyệt vời cho các dịp kỷ niệm gia đình. Không gian riêng tư, ấm cúng và sang trọng. Tôi sẽ quay lại nhiều lần nữa.",
+        "name": "Bác Minh Thành",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Saffron, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Điện thoại",
+    "phone": "+84 (0) 90 123 4567",
+    "emailLabel": "Email",
+    "email": "hello@siamflavors.com",
+    "hoursTitle": "Giờ Mở Cửa",
+    "lunchLabel": "Trưa",
+    "lunchHours": "11:00 - 14:30",
+    "dinnerLabel": "Tối",
+    "dinnerHours": "17:30 - 22:30 (Mỗi ngày)",
+    "mapUrl": "",
+    "mapLoading": "Bản đồ đang được tải..."
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "copy": "© 2024 Siam Flavors. Được vận hành bởi WebChoViet.",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản dịch vụ",
+    "careers": "Tuyển dụng",
+    "press": "Báo chí"
+  },
+  "fab": {
+    "label": "Đặt bàn nhanh"
+  }
+}

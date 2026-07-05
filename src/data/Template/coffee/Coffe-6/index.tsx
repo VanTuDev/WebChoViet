@@ -1,3 +1,4 @@
+import { Coffee, Bean, Leaf, CakeSlice, MapPin, Phone, Clock, Map as MapIcon } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -20,7 +21,8 @@ const DEFAULT_IMGS = {
 };
 
 /** Icon cho 4 nhóm menu — nằm ngoài i18n vì không phải nội dung dịch */
-const CATEGORY_ICONS = ['☕', '🫘', '🍵', '🍰'];
+const CATEGORY_ICONS = [Coffee, Bean, Leaf, CakeSlice];
+const CONTACT_ICONS = [MapPin, Phone, Clock];
 
 export default function Coffe6({ lang = 'vi' }: Props) {
   const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
@@ -86,10 +88,12 @@ export default function Coffe6({ lang = 'vi' }: Props) {
               <div className="w-20 h-1 bg-[#003f87] mx-auto rounded-full" />
             </div>
 
-            {t.menuSection.categories.map((cat, ci) => (
+            {t.menuSection.categories.map((cat, ci) => {
+              const CatIcon = CATEGORY_ICONS[ci] ?? Coffee;
+              return (
               <div key={ci} className={ci < t.menuSection.categories.length - 1 ? 'mb-16' : ''}>
                 <h3 className="font-lexend text-2xl font-semibold text-[#003f87] mb-8 flex items-center gap-3">
-                  <span aria-hidden>{CATEGORY_ICONS[ci] ?? '☕'}</span>
+                  <CatIcon aria-hidden className="w-6 h-6" />
                   <span data-field={`menuSection.categories.${ci}.title`}>{cat.title}</span>
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -104,7 +108,8 @@ export default function Coffe6({ lang = 'vi' }: Props) {
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -165,18 +170,21 @@ export default function Coffe6({ lang = 'vi' }: Props) {
                 <h2 data-field="contact.title" className="font-lexend text-3xl font-semibold text-[#191c1e]">{t.contact.title}</h2>
                 <div className="space-y-6">
                   {([
-                    { icon: '📍', label: t.contact.addressLabel, value: t.contact.address, valueField: 'contact.address' },
-                    { icon: '📞', label: t.contact.phoneLabel, value: t.contact.phone, valueField: 'contact.phone' },
-                    { icon: '🕐', label: t.contact.hoursLabel, value: t.contact.hours, valueField: 'contact.hours' },
-                  ]).map(row => (
+                    { label: t.contact.addressLabel, value: t.contact.address, valueField: 'contact.address' },
+                    { label: t.contact.phoneLabel, value: t.contact.phone, valueField: 'contact.phone' },
+                    { label: t.contact.hoursLabel, value: t.contact.hours, valueField: 'contact.hours' },
+                  ]).map((row, ri) => {
+                    const RowIcon = CONTACT_ICONS[ri];
+                    return (
                     <div key={row.valueField} className="flex items-start gap-6">
-                      <span aria-hidden className="text-xl mt-0.5">{row.icon}</span>
+                      <RowIcon aria-hidden className="w-5 h-5 mt-0.5 text-[#003f87]" />
                       <div>
                         <h4 className="text-sm font-medium text-[#191c1e]">{row.label}</h4>
                         <p data-field={row.valueField} className="text-[#424752]">{row.value}</p>
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 <div className="pt-3">
                   <a data-track="cta" data-field="contact.btnMessage" href={`tel:${t.contact.phone.replace(/\s/g, '')}`}
@@ -197,7 +205,7 @@ export default function Coffe6({ lang = 'vi' }: Props) {
                   />
                 ) : (
                   <div className="w-full h-full bg-[#e0e3e5] flex items-center justify-center flex-col gap-3">
-                    <span aria-hidden className="text-6xl">🗺️</span>
+                    <MapIcon aria-hidden className="w-14 h-14 text-[#003f87]" />
                     <p className="text-sm font-medium text-[#424752]">{t.contact.mapLoading}</p>
                   </div>
                 )}

@@ -116,11 +116,11 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     priceText: 'Miễn phí',
     badge: 'MỚI',
     tags: ['Trà Sữa', 'Menu Carousel', 'Newsletter'],
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR5n9B0_RVMJxE2RqfpBBcJi60BO0k3wk_GecmGPTjBbXxDaQz_1lIQq9gALjkaSGJQvj_vb3OM0qKp1t36oTPjPi9LLQK9b7YWsNbLO-s-nTBvKBCGxaO_1Z5h8aKSLrfKiqXS1RX3bBHZC9MnXKqQ9SqEpBiX0uRJhVIqp_i7WT9sEV4y9A2Dp8cxSQTYjZ_SL6v0rkCbEoJHK2w8cePMfqyU0Jh5VFcmyeE6bI1bVqRlKHKBPkCZP1JmA6OAHyvf6Toi_TM',
+    imageUrl: 'https://20sfvn.com/wp-content/uploads/2022/08/thiet-ke-quan-tra-sua.jpeg',
     component: lazy(() => import('../../Template/coffee/Coffe-5/index')),
     schema: schema_coffe5 as Record<string, unknown>,
     imageSlots: [
-      { key: 'hero',      label: 'Ảnh Hero',           defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR5n9B0_RVMJxE2RqfpBBcJi60BO0k3wk_GecmGPTjBbXxDaQz_1lIQq9gALjkaSGJQvj_vb3OM0qKp1t36oTPjPi9LLQK9b7YWsNbLO-s-nTBvKBCGxaO_1Z5h8aKSLrfKiqXS1RX3bBHZC9MnXKqQ9SqEpBiX0uRJhVIqp_i7WT9sEV4y9A2Dp8cxSQTYjZ_SL6v0rkCbEoJHK2w8cePMfqyU0Jh5VFcmyeE6bI1bVqRlKHKBPkCZP1JmA6OAHyvf6Toi_TM' },
+      { key: 'hero',      label: 'Ảnh Hero',           defaultUrl: 'https://20sfvn.com/wp-content/uploads/2022/08/thiet-ke-quan-tra-sua.jpeg' },
       { key: 'gallery_0', label: 'Gallery 1',          defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBktsMp5r2HBD_yrSARsoytd_YLBAW6osqvP_5nKZMKwTsWg2YfpbfKTEC_rXZXdJW1FME7MLZ1vfzav33Ri-8UoiK1quVVkUAtcr-t4Y_HdspYbAkvS-IKp1mhNsfWJy4fTLYAX-8zC9xTRC_16_2IK1SopXufZKXEK-kTruD15RMAZaeWg8YBQ7kSi0O-SQFY5aLTdEmgE-iR-W1QKjAcWUZ6t7uiyTHOZnsLCcSAVtK252-AkA6lmPvWWfxtywl7SKMjSsTi34g' },
       { key: 'gallery_1', label: 'Gallery 2',          defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCyluc5rhJPBPrNhYCLLFC7FIvZhGhfChP_1kPBpzxayKir2zIxr1-PElv1FxgM6IWfjZanl-49znLWUrcIGJoGwqN6xVU7-x5-r7Vb3juDFmafLOgaWc4O4i3S-naIu9JV7C9b-Fw2MqwgLnmfCz5X6bQNeD7SX5ipQLALVM5SOBbbqmiemQ4TtqyznMYZdUpoi-97sG9HPRxszS9Ljb8yc0lqXRNHgZwT6TQRrdzceoSV2HPsRYRpwF3yCOAgGTEgfHBrbpJpO0Y' },
       { key: 'gallery_2', label: 'Gallery 3',          defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBnAQry9HFK-ecJVcL9_kCL39ztrOI_NPUAIx1WlEsgt48fuFEzwyiX1BDvIPNccCOK_Kk2pfYSuz-7HaQ7meN5MEnKMvAbxSi_1Ndz6WP4N1vNHnI74O4v6BW-VSgcOtmFF4zY63YJLieNGuIwK3emcg8BjIvzDBhYz_7UOSFn9GXpeo4KBCtsIogZg6jhhg4jD_Nkn1LtnQr0nSRuJHKbbmd1pBeN4YmKXPY9giLecrpiKCDcJjEUJhKR_s2WBt3Ob4B5WRXQQ4Q' },

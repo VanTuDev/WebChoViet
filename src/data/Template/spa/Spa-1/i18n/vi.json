@@ -1,36 +1,120 @@
 {
-  "shopName": "Lotus Spa",
-  "tagline": "Thư Giãn · Phục Hồi · Làm Đẹp",
-  "nav": { "services": "Dịch Vụ", "about": "Về Chúng Tôi", "book": "Đặt Lịch" },
-  "hero": {
-    "badge": "✨ Thư Giãn Tuyệt Đối",
-    "title": "Không Gian Thư Giãn Cao Cấp Giữa Lòng Thành Phố",
-    "desc": "Trải nghiệm các liệu pháp spa đẳng cấp quốc tế, sử dụng nguyên liệu thiên nhiên thuần túy từ Việt Nam.",
-    "btnBook": "Đặt Lịch Ngay",
-    "btnLearn": "Tìm Hiểu Thêm"
+  "nav": {
+    "brand": "Aura Wellness",
+    "linkServices": "Dịch vụ",
+    "linkAbout": "Giới thiệu",
+    "linkPrices": "Bảng giá",
+    "linkLocation": "Vị trí",
+    "getAdvice": "Tư Vấn Miễn Phí",
+    "bookNow": "Đặt Lịch Ngay"
   },
-  "services": {
-    "title": "Dịch Vụ Của Chúng Tôi",
+  "hero": {
+    "badge": "Công Nghệ Trị Mụn Chuẩn Y Khoa",
+    "title": "Dứt Điểm Mụn",
+    "titleHighlight": "Tự Tin Tỏa Sáng",
+    "subtitle": "Lấy lại làn da mịn màng, khỏe khoắn với liệu trình điều trị mụn cá nhân hóa tại Aura Wellness. Chúng tôi cam kết mang lại hiệu quả rõ rệt sau lần điều trị đầu tiên.",
+    "ctaText": "Đăng Ký Tư Vấn Miễn Phí",
+    "socialProofCount": "1,200+",
+    "socialProofText": "khách hàng đã điều trị thành công"
+  },
+  "highlights": {
+    "title": "Tại Sao Chọn Chúng Tôi?",
+    "subtitle": "Kết hợp giữa công nghệ hiện đại và chuyên môn y khoa hàng đầu để mang đến kết quả tối ưu nhất cho làn da của bạn.",
     "items": [
-      { "icon": "💆", "name": "Massage Thư Giãn", "price": "350.000đ / 60 phút", "desc": "Liệu pháp massage toàn thân giảm căng thẳng, phục hồi năng lượng" },
-      { "icon": "🌿", "name": "Chăm Sóc Da Mặt", "price": "450.000đ / 75 phút", "desc": "Điều trị da chuyên sâu với sản phẩm hữu cơ cao cấp" },
-      { "icon": "🛁", "name": "Tắm Thảo Dược", "price": "280.000đ / 45 phút", "desc": "Ngâm mình trong bồn tắm thảo dược thư giãn tuyệt vời" },
-      { "icon": "💅", "name": "Chăm Sóc Móng", "price": "180.000đ / 45 phút", "desc": "Manicure và pedicure chuyên nghiệp với sản phẩm an toàn" },
-      { "icon": "🌸", "name": "Detox Toàn Thân", "price": "680.000đ / 90 phút", "desc": "Liệu trình thanh lọc cơ thể toàn diện với đất sét và tinh dầu" },
-      { "icon": "✨", "name": "Ánh Sáng Trị Liệu", "price": "320.000đ / 30 phút", "desc": "Công nghệ ánh sáng LED giảm nếp nhăn, làm sáng da" }
+      {
+        "title": "Phác Đồ Cá Nhân Hóa",
+        "desc": "Mỗi làn da là một câu chuyện riêng. Chúng tôi thiết kế liệu trình điều trị dựa trên tình trạng thực tế của từng khách hàng sau khi soi da 3D."
+      },
+      {
+        "title": "Kết Quả Cam Kết",
+        "desc": "Giảm 80% mụn viêm chỉ sau 3 buổi liệu trình chuyên sâu với công nghệ ánh sáng sinh học."
+      },
+      {
+        "title": "Công Nghệ Laser",
+        "desc": "Xử lý mụn tận gốc"
+      },
+      {
+        "title": "Dược Mỹ Phẩm",
+        "desc": "Nhập khẩu 100%"
+      }
     ]
   },
-  "info": {
-    "hours": "09:00 – 21:00",
-    "hoursLabel": "Giờ hoạt động",
-    "phone": "0977 456 789",
+  "gallery": {
+    "title": "Không Gian Trị Liệu",
+    "subtitle": "Hình ảnh thực tế từ các phòng liệu trình tại Aura Wellness Spa.",
+    "steps": [
+      { "label": "Bước 01", "title": "Làm Sạch & Diệt Khuẩn" },
+      { "label": "Bước 02", "title": "Trị Liệu Chuyên Sâu" },
+      { "label": "Bước 03", "title": "Phục Hồi & Bảo Vệ" }
+    ]
+  },
+  "services": {
+    "title": "Bảng Giá Dịch Vụ",
+    "subtitle": "Chi phí minh bạch, không phát sinh phụ phí trong quá trình điều trị.",
+    "note": "Lưu ý: Giá trên chưa bao gồm ưu đãi cho khách hàng đăng ký theo liệu trình.",
+    "colService": "Tên Dịch Vụ",
+    "colDuration": "Thời Gian",
+    "colPrice": "Đơn Giá",
+    "items": [
+      {
+        "name": "Lấy Nhân Mụn Chuẩn Y Khoa",
+        "duration": "60 Phút",
+        "price": "350.000đ",
+        "desc": "Làm sạch sâu, hút bã nhờn, sát khuẩn tia điện tím."
+      },
+      {
+        "name": "Trị Mụn Công Nghệ IPL",
+        "duration": "75 Phút",
+        "price": "850.000đ",
+        "desc": "Giảm viêm tức thì, tiêu diệt vi khuẩn P.Acnes."
+      },
+      {
+        "name": "Peel Da Thay Da Sinh Học",
+        "duration": "45 Phút",
+        "price": "1.200.000đ",
+        "desc": "Điều trị thâm mụn, làm đều màu da nhanh chóng."
+      },
+      {
+        "name": "Trị Sẹo Rỗ Bằng RF Needling",
+        "duration": "90 Phút",
+        "price": "2.500.000đ",
+        "desc": "Công nghệ tái tạo da chuyên sâu nhất hiện nay."
+      }
+    ]
+  },
+  "credibility": {
+    "title": "Professional Licensed Therapist",
+    "desc": "Đội ngũ bác sĩ và kỹ thuật viên tại Aura Wellness đều sở hữu chứng chỉ hành nghề y khoa quốc tế, cam kết mang lại sự an toàn và hiệu quả tuyệt đối cho mọi khách hàng.",
+    "stats": [
+      { "value": "100%", "label": "An Toàn" },
+      { "value": "5+", "label": "Năm Kinh Nghiệm" },
+      { "value": "VIP", "label": "Dịch Vụ" }
+    ]
+  },
+  "contact": {
+    "title": "Vị Trí Của Chúng Tôi",
+    "subtitle": "Tọa lạc tại trung tâm Quận 1, Aura Wellness mang đến không gian yên tĩnh và thuận tiện cho quá trình trị liệu của bạn.",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Sắc Đẹp, Quận 1, TP. Hồ Chí Minh",
+    "hoursLabel": "Giờ làm việc",
+    "hours": "Thứ 2 - Chủ Nhật: 09:00 - 20:00",
     "phoneLabel": "Hotline",
-    "address": "88 Nam Kỳ Khởi Nghĩa, Q.3, TP.HCM",
-    "addressLabel": "Địa chỉ"
+    "phone": "1900 123 456",
+    "btnDirections": "Chỉ Đường Trên Google Maps",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4478777432!2d106.7017555!3d10.7731493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40a7b66bb5%3A0x13c58002e77195d!2zQuG6v24gVGjDoG5oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s",
+    "mapLoading": "Bản đồ tương tác đang tải...",
+    "floatingTitle": "Ghé Thăm Chúng Tôi"
   },
-  "location": {
-    "title": "Tìm Đường Tới Spa",
-    "mapUrl": ""
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "Hệ thống chăm sóc da và trị liệu mụn uy tín hàng đầu, giúp phụ nữ Việt tự tin hơn với vẻ đẹp tự nhiên.",
+    "servicesTitle": "Dịch Vụ",
+    "servicesLinks": ["Trị Mụn Y Khoa", "Chăm Sóc Da Mặt", "Triệt Lông Vĩnh Viễn", "Massage Thư Giãn"],
+    "infoTitle": "Thông Tin",
+    "infoLinks": ["Về Chúng Tôi", "Chính Sách Bảo Mật", "Điều Khoản Dịch Vụ", "Liên Hệ Đặt Lịch"],
+    "copyright": "© 2024 Aura Wellness Spa. Licensed Therapeutic Professionals."
   },
-  "footer": { "copy": "© 2025 Lotus Spa. Được tạo bởi WebChoViet." }
+  "booking": {
+    "fabText": "Đặt Lịch Ngay"
+  }
 }

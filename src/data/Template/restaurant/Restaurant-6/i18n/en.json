@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "Menu",
+    "space": "Ambiance",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "cta": "Reserve"
+  },
+  "hero": {
+    "title": "The Essence of Thai Cuisine in the Heart of the City",
+    "subtitle": "Experience refined elegance amid hand-carved Teak wood interiors, where every dish is a piece of traditional culinary art.",
+    "btnReserve": "Reserve a Table",
+    "btnMenu": "View Menu"
+  },
+  "categories": {
+    "title": "Discover the Flavors",
+    "items": [
+      { "title": "Appetizers" },
+      { "title": "Thai Curries" },
+      { "title": "Seafood" }
+    ]
+  },
+  "signature": {
+    "eyebrow": "A Must-Try Dish",
+    "title": "Signature Menu: Tom Yum Kung",
+    "desc": "Thailand's iconic soup, a perfect balance of fresh river prawns, lemongrass, kaffir lime leaves and fiery chili heat. At Siam Flavors, we honor the traditional recipe to deliver the most authentic flavor.",
+    "badge1": "Authentic Thai Taste",
+    "badge2": "Fresh Ingredients",
+    "cta": "View Full Menu"
+  },
+  "menuSection": {
+    "title": "Siam Flavors Menu",
+    "subtitle": "A curated selection of the most authentic Thai dishes, made fresh every day.",
+    "categories": [
+      {
+        "title": "Appetizers",
+        "items": [
+          {
+            "name": "Som Tam Papaya Salad",
+            "price": "89,000₫",
+            "desc": "Shredded green papaya tossed with chili, garlic, peanuts and tangy-sweet fish sauce, true to Thai flavor."
+          },
+          {
+            "name": "Thai Shrimp Spring Rolls",
+            "price": "79,000₫",
+            "desc": "Crispy spring rolls filled with fresh shrimp, served with a signature sweet and sour dipping sauce."
+          },
+          {
+            "name": "Chicken Satay Skewers",
+            "price": "85,000₫",
+            "desc": "Charcoal-grilled chicken marinated in satay spices, served with rich peanut sauce."
+          }
+        ]
+      },
+      {
+        "title": "Thai Curries",
+        "items": [
+          {
+            "name": "Green Curry Chicken",
+            "price": "145,000₫",
+            "desc": "Mildly spicy green curry simmered in coconut milk with eggplant and tender chicken breast."
+          },
+          {
+            "name": "Red Curry Beef",
+            "price": "165,000₫",
+            "desc": "The signature fiery kick of Thai red chili blended with tender beef and vegetables."
+          },
+          {
+            "name": "Yellow Curry Seafood",
+            "price": "175,000₫",
+            "desc": "Fragrant turmeric yellow curry cooked with shrimp, fresh squid and potatoes."
+          }
+        ]
+      },
+      {
+        "title": "Seafood",
+        "items": [
+          {
+            "name": "Tamarind Prawns",
+            "price": "195,000₫",
+            "desc": "Crispy fried king prawns coated in sweet-and-sour tamarind sauce, topped with fresh chili."
+          },
+          {
+            "name": "Grilled Squid with Lemongrass Chili",
+            "price": "175,000₫",
+            "desc": "Fresh squid grilled with fragrant lemongrass, chili and kaffir lime leaves."
+          },
+          {
+            "name": "Steamed Fish with Lemongrass and Lime",
+            "price": "220,000₫",
+            "desc": "Fresh fish steamed with lemongrass, chili and lime in classic Thai style."
+          }
+        ]
+      },
+      {
+        "title": "Desserts",
+        "items": [
+          {
+            "name": "Thai Mango Sticky Rice",
+            "price": "79,000₫",
+            "desc": "Fragrant glutinous rice served with ripe mango and rich coconut cream."
+          },
+          {
+            "name": "Thai-Style Grilled Banana",
+            "price": "65,000₫",
+            "desc": "Caramelized grilled banana blended with fragrant, creamy coconut milk."
+          },
+          {
+            "name": "Thai Ginger Tofu Pudding",
+            "price": "55,000₫",
+            "desc": "Silky-smooth tofu pudding served in warm, soothing ginger syrup."
+          }
+        ]
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Kitchen Team",
+    "subtitle": "The quiet artisans behind every exquisite flavor",
+    "members": [
+      {
+        "name": "Chef Anan",
+        "role": "Executive Head Chef",
+        "quote": "Cooking is how we tell the story of Thai culture to every guest."
+      },
+      {
+        "name": "Chef Malee",
+        "role": "Pastry Specialist",
+        "quote": "Dessert is the sweetest farewell from the heart of Siam."
+      },
+      {
+        "name": "Team Siam",
+        "role": "Culinary Team",
+        "quote": "Perfect teamwork brings a consistent experience to every plate."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "quote": "The space here is truly breathtaking. It feels like dining in an old Bangkok palace. The food is flawless, incredibly authentic.",
+        "name": "Mr. Hoang Nam",
+        "rating": 5
+      },
+      {
+        "quote": "The Pad Thai and Tom Yum are the best. The staff are attentive and warm, true Thai hospitality.",
+        "name": "Ms. Lan Phuong",
+        "rating": 4.5
+      },
+      {
+        "quote": "Wonderful for family celebrations. Private, cozy and elegant space. I'll definitely be back many more times.",
+        "name": "Mr. Minh Thanh",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "addressLabel": "Address",
+    "address": "123 Saffron Street, District 1, Ho Chi Minh City",
+    "phoneLabel": "Phone",
+    "phone": "+84 (0) 90 123 4567",
+    "emailLabel": "Email",
+    "email": "hello@siamflavors.com",
+    "hoursTitle": "Opening Hours",
+    "lunchLabel": "Lunch",
+    "lunchHours": "11:00 AM - 2:30 PM",
+    "dinnerLabel": "Dinner",
+    "dinnerHours": "5:30 PM - 10:30 PM (Daily)",
+    "mapUrl": "",
+    "mapLoading": "Loading map..."
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "copy": "© 2024 Siam Flavors. Powered by WebChoViet.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "careers": "Careers",
+    "press": "Press"
+  },
+  "fab": {
+    "label": "Quick Reservation"
+  }
+}

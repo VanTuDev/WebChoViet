@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Siam Flavors - Golden Lotus Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#ffb599",
+                    "primary-container": "#ff9900",
+                    "on-surface-variant": "#554434",
+                    "primary-fixed-dim": "#ffb86f",
+                    "on-tertiary-container": "#204d1c",
+                    "inverse-surface": "#392f25",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#8a5100",
+                    "secondary-fixed": "#ffdbce",
+                    "primary": "#8a5100",
+                    "inverse-on-surface": "#ffeee0",
+                    "surface-container-highest": "#f1dfd1",
+                    "secondary-container": "#ff5e00",
+                    "on-secondary-fixed-variant": "#7f2b00",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#231a11",
+                    "on-secondary-fixed": "#370e00",
+                    "on-tertiary-fixed": "#002201",
+                    "on-primary-fixed": "#2c1600",
+                    "primary-fixed": "#ffdcbd",
+                    "tertiary": "#3b6934",
+                    "surface-container": "#fdebdc",
+                    "background": "#fff8f4",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#f1dfd1",
+                    "outline": "#887361",
+                    "surface": "#fff8f4",
+                    "tertiary-fixed-dim": "#a1d494",
+                    "inverse-primary": "#ffb86f",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#dbc2ad",
+                    "on-primary-fixed-variant": "#693c00",
+                    "tertiary-fixed": "#bcf0ae",
+                    "surface-bright": "#fff8f4",
+                    "on-surface": "#231a11",
+                    "surface-dim": "#e8d7c9",
+                    "on-error-container": "#93000a",
+                    "secondary": "#a63b00",
+                    "on-secondary-container": "#531900",
+                    "surface-container-high": "#f7e5d7",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#fff1e7",
+                    "on-tertiary-fixed-variant": "#23501e",
+                    "on-primary-container": "#653a00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#8cbe80"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "label-md": ["Lexend"],
+                    "headline-lg-mobile": ["Lexend"],
+                    "display": ["Lexend"],
+                    "headline-lg": ["Lexend"],
+                    "body-lg": ["Lexend"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .silk-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(136, 115, 97, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed silk-pattern overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-background/95 backdrop-blur-md border-b border-outline/10 full-width top-0 sticky z-50 shadow-sm">
+<nav class="flex justify-between items-center px-margin-desktop py-unit max-w-screen-2xl mx-auto">
+<div class="font-headline-lg text-headline-lg font-bold text-primary">Siam Flavors</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-label-md" href="#menu">Menu</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#space">Space</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#reviews">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="hidden md:block px-6 py-2 bg-primary text-on-primary rounded-lg font-bold hover:bg-primary-container transition-all active:scale-95">Book a Table</button>
+<button class="px-6 py-2 border-2 border-primary text-primary rounded-lg font-bold hover:bg-surface-container-low transition-all active:scale-95">Order Now</button>
+<button class="md:hidden flex items-center justify-center p-2 text-primary" onclick="document.getElementById('mobile-nav').classList.toggle('translate-x-0')">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<!-- Side Navigation (Mobile Only) -->
+<aside class="fixed inset-y-0 left-0 w-64 bg-surface-container-high shadow-xl transform -translate-x-full transition-transform duration-300 z-[60] md:hidden" id="mobile-nav">
+<div class="flex flex-col h-full p-stack-md">
+<div class="flex items-center justify-between mb-stack-lg">
+<span class="font-headline-md text-headline-md text-primary">Siam Flavors</span>
+<button onclick="document.getElementById('mobile-nav').classList.add('-translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-unit">
+<a class="flex items-center gap-stack-md p-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-stack-md p-3 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-transform hover:translate-x-1" href="#menu">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-label-md text-label-md">Menu</span>
+</a>
+<a class="flex items-center gap-stack-md p-3 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-transform hover:translate-x-1" href="#space">
+<span class="material-symbols-outlined">chair</span>
+<span class="font-label-md text-label-md">Space</span>
+</a>
+<a class="flex items-center gap-stack-md p-3 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-transform hover:translate-x-1" href="#reviews">
+<span class="material-symbols-outlined">star</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-stack-md p-3 text-on-surface-variant hover:bg-surface-variant rounded-lg transition-transform hover:translate-x-1" href="#contact">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md">Contact</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold shadow-lg">Reserve Now</button>
+</div>
+</div>
+</aside>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A sophisticated Thai restaurant interior with warm, golden ambient lighting illuminating intricate teak wood carvings and plush white linens. The atmosphere is serene and high-end, featuring large floral arrangements of white lotuses and tropical greenery. Refined minimalist architecture blends with traditional Thai craftsmanship to create an elegant, inviting atmosphere for modern fine dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVnViOD58Q78qpSKvZTufwNEOPzBpJijYrH-bmIVOqx0eZ1YOqdrWb_CbuiF_RWfKXN72Vp2S19wwJ7lkujKM00qeTSwHKuj6mte8fZvc26eBTSjMGXEL3JhnbP7XpjP4miZGdNlZ6F5yQ4mVLsx_v2LkMfnUCJdinrH2dggyt6U5kCjQoNLBGSt4JtBfexA9M4ang9LCcPm7nhgaN-Bmac_qB9V9Fo71eWSjQxtfjFCfBiX8mVUeQ"/>
+</div>
+<div class="relative z-20 px-margin-desktop max-w-screen-2xl mx-auto w-full">
+<div class="max-w-2xl scroll-reveal active">
+<span class="text-secondary font-bold uppercase tracking-widest text-label-md mb-stack-sm block">Authentic Thai Hospitality</span>
+<h1 class="font-display text-display text-on-background leading-tight mb-stack-md">
+                        The Golden Lotus <br/>
+<span class="text-primary">Culinary Sanctuary</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg leading-relaxed">
+                        Nơi nghệ thuật ẩm thực Thái Lan giao thoa với sự thanh tao của không gian hiện đại. Trải nghiệm hương vị tinh hoa được chế tác từ nguyên liệu thuần khiết nhất.
+                    </p>
+<div class="flex flex-wrap gap-stack-md">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-lg font-bold text-lg hover:bg-primary-container transition-all hover:shadow-xl hover:-translate-y-1">
+                            Đặt bàn ngay
+                        </button>
+<button class="px-8 py-4 border-2 border-primary text-primary rounded-lg font-bold text-lg hover:bg-surface-container-low transition-all">
+                            Khám phá Menu
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Feature Section -->
+<section class="py-24 px-margin-desktop max-w-screen-2xl mx-auto" id="space">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 scroll-reveal">
+<div class="group relative h-[400px] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A macro shot of a signature Thai dish featuring vibrant saffron gold curry and fresh lime green garnish. The food is presented on an elegant white ceramic plate with gold trim, captured with soft, shallow depth of field lighting to emphasize texture and professional culinary craft. Modern minimalist setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgrkgBZ8mgq5zYeXg6TjtnK2iSZBap4YpCuXQcrjDfnFFjgjOOPPPxgR3-sFMSIQTYtkdUMeZTEXsyHSIc-XmBa8jRx4dyimkMKsfK8UPmVgDQ5qlZGTYbRonwWlurcvlr7rG7eR8MUNy7Et9EHck5cEPi10ld2Jk8yK-X3JOkFEAkV0N57bRY1VsdpYohMxTNhtg8Cp1l2zimS3PwhqJpFIA6NZkHq0LDal6w9KV3JyZTISdt26xd')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-stack-lg">
+<h3 class="text-white font-headline-lg text-headline-lg">Hương vị Bản sắc</h3>
+<p class="text-white/80 font-body-md">Mỗi món ăn là một bản giao hưởng của 5 tầng hương vị đặc trưng Thái Lan.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 scroll-reveal">
+<div class="bg-surface-container h-[400px] rounded-xl p-stack-lg flex flex-col justify-center border border-outline/5 relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 opacity-10">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1">local_florist</span>
+</div>
+<span class="text-tertiary font-bold font-label-md mb-stack-sm">Sức khỏe &amp; Tinh thần</span>
+<h3 class="font-headline-md text-headline-md mb-stack-md">Organic Greens</h3>
+<p class="text-on-surface-variant font-body-md mb-stack-lg">Rau củ được tuyển chọn từ các nông trại hữu cơ tại địa phương, đảm bảo độ tươi ngon thuần khiết nhất.</p>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                            Xem thêm <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-4 scroll-reveal">
+<div class="bg-secondary-container/10 h-[300px] rounded-xl p-stack-lg flex flex-col border border-secondary/10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-stack-md">workspace_premium</span>
+<h4 class="font-headline-md text-headline-md text-on-secondary-container mb-stack-sm">Signature Lotus</h4>
+<p class="text-on-surface-variant font-body-md">Bộ sưu tập những món ăn tinh túy nhất được lưu truyền qua nhiều thế hệ đầu bếp hoàng gia.</p>
+</div>
+</div>
+<div class="md:col-span-8 scroll-reveal">
+<div class="group relative h-[300px] rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A wide panoramic view of a luxury Thai dining hall featuring elegant white table linens, gold-rimmed glassware, and warm ambient lighting. The background shows a modern minimalist architectural detail with lime green accents and a subtle Thai silk pattern on the walls. The scene is quiet, sophisticated, and radiates tropical warmth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPfUXNc6xy0Er-whdMTCA5VdWFBWvvtbra9lQJEYrSWiQx4YRPgQxD607bR32oZLptR8Jy5t9E-I-kdfnYlBhU2fo02ChHGaJE1TyO_-d-WVytV4tJqqHUEFI0he64BIHJLiU1wvlrDZXA__1uKijk8zyqXmj2M3TU3rkd4d4r1dUCrFAcuOUgl3kQ0n9wOLvkKHtF10MAeLVxCCs-eBlov2S1jw5IaAXKN8MVVtabOmCtzPZG8MVo')"></div>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<div class="bg-background/90 backdrop-blur-md px-12 py-6 rounded-lg text-center shadow-2xl">
+<span class="font-headline-md text-headline-md text-primary">Không gian Thư thái</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-24 bg-surface-container-low" id="menu">
+<div class="px-margin-desktop max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-md scroll-reveal">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-stack-sm">Thực đơn Đặc sắc</h2>
+<div class="w-24 h-1 bg-primary mb-stack-md"></div>
+<p class="text-on-surface-variant">Sự kết hợp tinh tế giữa nguyên liệu truyền thống và phong cách trình bày hiện đại.</p>
+</div>
+<div class="flex gap-stack-md overflow-x-auto pb-2 w-full md:w-auto">
+<button class="px-6 py-2 bg-secondary text-on-secondary rounded-full whitespace-nowrap font-label-md">Tất cả</button>
+<button class="px-6 py-2 hover:bg-surface-variant rounded-full whitespace-nowrap font-label-md transition-colors">Signature Lotus</button>
+<button class="px-6 py-2 hover:bg-surface-variant rounded-full whitespace-nowrap font-label-md transition-colors">Seafood Elegance</button>
+<button class="px-6 py-2 hover:bg-surface-variant rounded-full whitespace-nowrap font-label-md transition-colors">Organic Greens</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Menu Item 1 -->
+<div class="group scroll-reveal">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-stack-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gourmet presentation of Thai Red Curry with Duck. The dish is served in a handcrafted ceramic bowl on a gold platter, garnished with fresh basil leaves and red chili. The background is a soft-focus minimalist dining table with elegant cutlery. Warm, sophisticated lighting highlights the vibrant colors of the dish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn5Ns9MWghtXbIfhIIVWxf0J-cReQ-T7MjXqP5xmolMncWNBTJZbzXrFzbXIi5Vcio1WDRS3DiM9L906TRtEcZGO97T77Arz6rt1pT0yYCRe7n3NiWjlNTIf_0jVMuOFlCCJv6Fq11rDm4VgDLckT_Vy2_ecvuYqwgSxdnvxJuwq5yUllQpMmgzDmTvBUw4sZxq03kHDQdcyczPiFwhOCHgnRplynez8PpLdLTFcWCmC0r2WKzdXdF"/>
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-tertiary text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full">Organic</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Cà Ri Vịt Hoàng Gia</h4>
+<span class="text-secondary font-bold">450.000đ</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Vịt quay thảo mộc hầm trong nước cốt dừa béo ngậy, dứa thơm và cà chua bi hữu cơ.</p>
+<div class="mt-4 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0">local_fire_department</span>
+</div>
+</div>
+<!-- Menu Item 2 -->
+<div class="group scroll-reveal">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-stack-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A luxury seafood platter featuring giant river prawns and scallops, grilled to perfection and served with a lime-green spicy Thai dipping sauce. The platter is decorated with edible flowers and herbs on a pristine white marble surface. Bright, high-key lighting creates a fresh and premium visual feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUIh8aphtyp99iz3GAW9hkzwzbypDyOuye-JAoL-rUEtQqjb2sPX83uymqXqrJusBzHY5a_BFKkCxrcwvbQS2B7v1OB3BhRFPdTSrawZry96RQ5OlSINU1tGDBAf_kYNf1QJIVg-D3NYdm7mNMOuFBOHuNcZqo56s1Ykd_GvYnQbQU9H78kOJcT3TMbonc2cXdQI2BfCrzA5DAA2BdnWtKx2OlwMRLvcZQCHpnkTOa4PUmKuDpBV8P"/>
+<div class="absolute top-4 right-4">
+<span class="bg-secondary text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full">Bán chạy</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Tôm Sông Nướng Muối</h4>
+<span class="text-secondary font-bold">890.000đ</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Tôm sông khổng lồ nướng than hoa, dùng kèm nước sốt hải sản chanh ớt đặc trưng.</p>
+<div class="mt-4 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0">local_fire_department</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0">local_fire_department</span>
+</div>
+</div>
+<!-- Menu Item 3 -->
+<div class="group scroll-reveal">
+<div class="relative aspect-square rounded-xl overflow-hidden mb-stack-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A minimalist Thai appetizer plate with Lotus Stem Salad. The light, crispy lotus stems are tossed with peanuts, herbs, and a clear lime dressing, served in a delicate glass bowl. The styling is contemporary Thai, using soft lime green and white tones to emphasize the freshness of the organic greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEJwTWshO0mjow4tNZjLSlV7GLg29oAoAiv41zlhZmkWW7G9GvGrOE9IZa3lXyCseoUPoT2IfvyNmsgYGG5ExlFywy2GZWBLGI2jeZ_l2LiiMUxMACjlWTPOLAt5niOFpfgGiwcbwXLcF-ascL9OsTVmntwhVbiNWcIDjr_DfkOxkUMzGeEkPfHvba75pQC0cAiCS4eGqytIfN8T4NWLjzd35bM_S1-KiKfV4HWScfbibjmEHvxhtA"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md group-hover:text-primary transition-colors">Gỏi Ngó Sen Hoàng Triều</h4>
+<span class="text-secondary font-bold">220.000đ</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Ngó sen tươi giòn quyện cùng tôm thịt và nước mắm chua ngọt thanh tao.</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[10px] rounded font-bold uppercase">Vegan Option</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservations Section -->
+<section class="py-24 px-margin-desktop relative overflow-hidden" id="reservations">
+<div class="absolute top-0 left-0 w-full h-full silk-pattern opacity-10 pointer-events-none"></div>
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row relative z-10 border border-outline/5 scroll-reveal">
+<div class="md:w-1/3 bg-primary p-stack-lg text-on-primary flex flex-col justify-between">
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-stack-md">Đặt bàn</h3>
+<p class="font-body-md opacity-90">Hãy để chúng tôi chuẩn bị cho bạn một trải nghiệm ẩm thực đáng nhớ nhất.</p>
+</div>
+<div class="space-y-4 mt-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">call</span>
+<span class="font-label-md">024 3999 XXXX</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md">hello@goldenlotus.com</span>
+</div>
+</div>
+</div>
+<div class="md:w-2/3 p-stack-lg">
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold uppercase">Họ và tên</label>
+<input class="bg-surface-container-low border border-outline/10 rounded-lg p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Nguyễn Văn A" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold uppercase">Số điện thoại</label>
+<input class="bg-surface-container-low border border-outline/10 rounded-lg p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="090 123 4567" type="tel"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold uppercase">Ngày đến</label>
+<input class="bg-surface-container-low border border-outline/10 rounded-lg p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="date"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold uppercase">Số khách</label>
+<select class="bg-surface-container-low border border-outline/10 rounded-lg p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option>2 người</option>
+<option>4 người</option>
+<option>6 người</option>
+<option>Khác</option>
+</select>
+</div>
+<div class="sm:col-span-2 flex flex-col gap-1">
+<label class="text-label-sm text-on-surface-variant font-bold uppercase">Yêu cầu đặc biệt</label>
+<textarea class="bg-surface-container-low border border-outline/10 rounded-lg p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Ghi chú về dị ứng hoặc yêu cầu không gian..." rows="3"></textarea>
+</div>
+<button class="sm:col-span-2 py-4 bg-primary text-on-primary rounded-lg font-bold hover:bg-primary-container transition-all shadow-md active:scale-95" type="submit">
+                            Xác nhận Đặt bàn
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="py-24 px-margin-desktop bg-surface-container overflow-hidden" id="reviews">
+<div class="max-w-screen-2xl mx-auto">
+<div class="text-center mb-16 scroll-reveal">
+<h2 class="font-headline-lg text-headline-lg mb-4">Chia sẻ từ Thực khách</h2>
+<div class="flex justify-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Review 1 -->
+<div class="bg-background p-stack-lg rounded-xl shadow-sm border border-outline/5 scroll-reveal">
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center font-bold text-primary">MH</div>
+<div>
+<h5 class="font-bold">Minh Huy</h5>
+<span class="text-label-sm text-on-surface-variant">Thực khách thân thiết</span>
+</div>
+</div>
+<p class="italic text-on-surface-variant">"Không gian ở đây thực sự mang lại cảm giác thư thái. Món Cà ri vịt có hương vị rất tinh tế, không quá nồng nhưng đọng lại rất lâu."</p>
+</div>
+<!-- Review 2 -->
+<div class="bg-background p-stack-lg rounded-xl shadow-sm border border-outline/5 scroll-reveal" style="transition-delay: 100ms">
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center font-bold text-primary">AN</div>
+<div>
+<h5 class="font-bold">Ánh Ngọc</h5>
+<span class="text-label-sm text-on-surface-variant">Local Guide</span>
+</div>
+</div>
+<p class="italic text-on-surface-variant">"Best Thai food in Hanoi! Cách phục vụ chuyên nghiệp và tỉ mỉ từ những chi tiết nhỏ nhất như khăn trải bàn và hoa sen tươi."</p>
+</div>
+<!-- Review 3 -->
+<div class="bg-background p-stack-lg rounded-xl shadow-sm border border-outline/5 scroll-reveal" style="transition-delay: 200ms">
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center font-bold text-primary">TP</div>
+<div>
+<h5 class="font-bold">Thanh Phương</h5>
+<span class="text-label-sm text-on-surface-variant">Food Blogger</span>
+</div>
+</div>
+<p class="italic text-on-surface-variant">"Trải nghiệm ẩm thực hoàn hảo. Các món hải sản rất tươi, gia vị nêm nếm rất chuẩn vị Thái nhưng vẫn hài hòa với khẩu vị người Việt."</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline/10 text-on-surface" id="contact">
+<div class="px-margin-desktop py-stack-lg max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg mb-16">
+<div class="md:col-span-1">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Siam Flavors</h2>
+<p class="text-on-surface-variant mb-stack-md font-body-md">Kiến tạo không gian ẩm thực Thái Lan cao cấp với sự trân trọng tuyệt đối dành cho nguyên liệu bản địa.</p>
+<div class="flex gap-stack-md">
+<a class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">location_on</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-stack-md">Khám phá</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#menu">Thực đơn đặc sắc</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#reservations">Đặt bàn riêng</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#space">Không gian nhà hàng</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#">Dịch vụ sự kiện</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-stack-md">Thông tin</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-all" href="#">Press Kit</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-stack-md">Liên hệ</h5>
+<p class="text-on-surface-variant mb-2">123 Phố Huế, Hai Bà Trưng, Hà Nội</p>
+<p class="text-on-surface-variant mb-2">Giờ mở cửa: 10:00 - 22:30</p>
+<p class="text-primary font-bold">Hotline: 024 3999 XXXX</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-stack-lg border-t border-outline/10 gap-stack-md">
+<span class="text-label-sm text-on-surface-variant">© 2024 Siam Flavors. Powered by webchoviet.</span>
+<div class="flex gap-stack-lg">
+<img alt="Visa" class="h-6 opacity-60 grayscale hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAtTqmpTxq759gcbRUCdJqxcbPnVA5Dud2swoI6y7ohKMIEToNp9ZDiS0lxD3h-M5YCCW8wWwA-RQnlUDf4t1tJ6qVuSUdnLqZp0c_2UTAEEnjTgtCbltCy-Nj_arAvL8LbyPyVt6KmgdB4bDltrxtunGutfMJCliH4pVlR6gPKYyJChjgKPd1ui_LIDtGfGtFG0Yd0VSBXoT96J0lPfZgKbkjNapcUDTOsNTDT29iAf4GtPKBMqaT"/>
+<img alt="Mastercard" class="h-6 opacity-60 grayscale hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDp-knw6fmZPRKaiDRZvOvBDbnHl6BmRI8Db_B4cnFj043FVmP2Abto74bD6fNWaoVmXZbAnaIN35VJM6nmkNuQQVaRbBj8-0E9eQhsZyrT-KzoJ34KXUDddA8gOjrkUb4OafVodHCcHH9tVye3KKX-WLO-2BhNhvEu-28syDxNZbdn_d7pdUcXDOKSZiQf7K00TImHZ4OPyWoQNR5DafpG6eicmKEgdS6m4HIDo-7xllzks5JB-AV"/>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scroll Interaction Script -->
+<script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body></html>

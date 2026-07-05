@@ -1,3 +1,4 @@
+import { UtensilsCrossed, Leaf, Star, Sparkles, MapPin, Phone, Clock } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import LanguageSwitcher, { useTemplateLang } from '../../_shared/LanguageSwitcher';
@@ -34,7 +35,8 @@ const BENTO_LAYOUT = [
   { span: 'md:col-span-2', height: 'h-75',  showDesc: true },
 ];
 
-const FEATURE_ICONS = ['🌿', '⭐'];
+const FEATURE_ICONS = [Leaf, Star];
+const CONTACT_ICONS = [MapPin, Phone, Clock];
 
 export default function Restaurant2({ lang = 'vi' }: Props) {
   // Ngôn ngữ hiển thị: theo editor (prop lang), khách có thể tự đổi qua LanguageSwitcher
@@ -89,7 +91,7 @@ export default function Restaurant2({ lang = 'vi' }: Props) {
               </a>
               <a data-field="hero.btnMenu" href="#menu"
                 className="bg-[#f7f9fb] text-[#003f87] border border-[#003f87]/20 px-12 py-3 rounded-full text-sm font-medium shadow-sm hover:bg-[#e0e3e5] transition-colors inline-flex items-center justify-center gap-1.5">
-                <span aria-hidden>🍽️</span> {t.hero.btnMenu}
+                <UtensilsCrossed className="w-4 h-4" aria-hidden /> {t.hero.btnMenu}
               </a>
             </div>
           </div>
@@ -109,13 +111,16 @@ export default function Restaurant2({ lang = 'vi' }: Props) {
               <p data-field="about.p1" className="text-base leading-relaxed text-[#424752]">{t.about.p1}</p>
               <p data-field="about.p2" className="text-base leading-relaxed text-[#424752]">{t.about.p2}</p>
               <div className="grid grid-cols-2 gap-6 pt-3">
-                {t.about.features.map((f, i) => (
+                {t.about.features.map((f, i) => {
+                  const FeatureIcon = FEATURE_ICONS[i] ?? Sparkles;
+                  return (
                   <div key={i} className="p-6 rounded-2xl text-center bg-white/70 backdrop-blur border border-white/30 shadow-sm">
-                    <span aria-hidden className="text-4xl block mb-3">{FEATURE_ICONS[i] ?? '✨'}</span>
+                    <FeatureIcon aria-hidden className="w-9 h-9 mx-auto mb-3 text-[#003f87]" />
                     <h3 data-field={`about.features.${i}.title`} className="font-lexend text-xl font-semibold text-[#191c1e] mb-1">{f.title}</h3>
                     <p data-field={`about.features.${i}.desc`} className="text-xs font-semibold text-[#424752]">{f.desc}</p>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -175,7 +180,9 @@ export default function Restaurant2({ lang = 'vi' }: Props) {
                 <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full overflow-hidden border-4 border-[#f7f9fb] shadow-sm">
                   <img className="w-full h-full object-cover" src={AVATARS[i]} alt={item.name} referrerPolicy="no-referrer" />
                 </div>
-                <div aria-hidden className="flex justify-center text-[#006398] mb-3 text-lg tracking-widest">★★★★★</div>
+                <div aria-hidden className="flex justify-center gap-0.5 text-[#006398] mb-3">
+                  {Array.from({ length: 5 }).map((_, si) => <Star key={si} className="w-4 h-4 fill-current" />)}
+                </div>
                 <p data-field={`testimonials.items.${i}.quote`} className="text-base text-[#191c1e] text-center mb-6 italic leading-relaxed">"{item.quote}"</p>
                 <p data-field={`testimonials.items.${i}.name`} className="text-sm text-[#003f87] text-center font-bold">{item.name}</p>
                 <p data-field={`testimonials.items.${i}.role`} className="text-xs font-semibold text-[#424752] text-center">{item.role}</p>
@@ -235,18 +242,21 @@ export default function Restaurant2({ lang = 'vi' }: Props) {
                 <div className="space-y-6">
                   <h3 data-field="contact.title" className="font-lexend text-2xl font-semibold text-[#003f87]">{t.contact.title}</h3>
                   {([
-                    { icon: '📍', label: t.contact.addressLabel, value: t.contact.address, valueField: 'contact.address' },
-                    { icon: '📞', label: t.contact.phoneLabel, value: t.contact.phone, valueField: 'contact.phone' },
-                    { icon: '🕐', label: t.contact.hoursLabel, value: t.contact.hours, valueField: 'contact.hours' },
-                  ]).map(row => (
+                    { label: t.contact.addressLabel, value: t.contact.address, valueField: 'contact.address' },
+                    { label: t.contact.phoneLabel, value: t.contact.phone, valueField: 'contact.phone' },
+                    { label: t.contact.hoursLabel, value: t.contact.hours, valueField: 'contact.hours' },
+                  ]).map((row, ri) => {
+                    const RowIcon = CONTACT_ICONS[ri];
+                    return (
                     <div key={row.valueField} className="flex items-start gap-3">
-                      <span aria-hidden className="text-lg mt-0.5">{row.icon}</span>
+                      <RowIcon aria-hidden className="w-5 h-5 mt-0.5 text-[#003f87]" />
                       <div>
                         <p className="text-sm font-medium text-[#191c1e]">{row.label}</p>
                         <p data-field={row.valueField} className="text-base text-[#424752]">{row.value}</p>
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 <div className="w-full flex-grow min-h-62 bg-[#eceef0] rounded-3xl overflow-hidden shadow-sm relative">
                   {t.contact.mapUrl ? (
@@ -263,7 +273,7 @@ export default function Restaurant2({ lang = 'vi' }: Props) {
                       <img className="w-full h-full object-cover" src={IMG.map} alt="Map" />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/5">
                         <div className="bg-white p-2 rounded-full shadow-md">
-                          <span aria-hidden className="text-2xl">📍</span>
+                          <MapPin aria-hidden className="w-6 h-6 text-[#003f87]" />
                         </div>
                       </div>
                     </>

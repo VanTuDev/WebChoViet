@@ -2,6 +2,7 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import { Map as MapIcon } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -201,7 +202,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
                 />
               ) : (
                 <div className="w-full h-full bg-[#E8F0E6]/40 flex items-center justify-center flex-col gap-3">
-                  <span aria-hidden className="text-6xl">🗺️</span>
+                  <MapIcon aria-hidden className="w-14 h-14 text-[#424752]" />
                   <p className="text-sm font-medium text-[#424752]">{t.location.mapPlaceholder}</p>
                 </div>
               )}

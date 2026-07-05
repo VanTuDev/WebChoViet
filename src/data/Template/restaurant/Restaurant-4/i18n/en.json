@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "Menu",
+    "space": "Space",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "orderNow": "Order Now",
+    "bookTable": "Book a Table"
+  },
+  "hero": {
+    "badge": "BANGKOK STREET FOOD EXPERIENCE",
+    "titlePrefix": "Bold Flavors,",
+    "titleHighlight": "Blazing",
+    "titleSuffix": "Right in the Heart of Saigon",
+    "subtitle": "Step into neon-lit Bangkok alleys, where steaming woks of stir-fried noodles and fiery, addictive flavors are always waiting for you.",
+    "btnMenu": "Explore the Menu",
+    "btnGallery": "View Gallery",
+    "spicyBadge": "Extra Spicy"
+  },
+  "menuSection": {
+    "title": "Street Food Menu",
+    "tabs": ["All", "Noodles & Stir-Fry", "Spicy Salads", "Tea & Desserts"],
+    "featured": {
+      "label": "SIGNATURE MAIN DISH",
+      "name": "Pad Thai Jai Yen",
+      "desc": "Traditional Thai stir-fried noodles with fresh shrimp, tofu, bean sprouts and a signature sweet-and-sour tamarind sauce. An icon of Bangkok street food.",
+      "tag": "Authentic flavor",
+      "price": "129,000d"
+    },
+    "sideCards": [
+      { "title": "Charcoal-Grilled Skewers", "desc": "Skewered meat grilled over glowing charcoal" },
+      { "title": "Thai Milk Tea", "desc": "Rich, creamy and fragrant Thai milk tea" }
+    ],
+    "promo": {
+      "title": "Special Offer",
+      "desc": "Get a free Thai milk tea when you book a table for 4 or more",
+      "cta": "Order Now"
+    },
+    "itemsTitle": "Full Menu",
+    "items": [
+      {
+        "name": "Tom Yum Goong",
+        "desc": "A hot and sour Thai soup with fresh shrimp, lemongrass, galangal and kaffir lime leaves.",
+        "price": "89,000d",
+        "category": "Noodles & Stir-Fry"
+      },
+      {
+        "name": "Som Tam",
+        "desc": "Shredded green papaya salad tossed with chili, garlic, roasted peanuts and a tangy fish sauce dressing.",
+        "price": "65,000d",
+        "category": "Spicy Salads"
+      },
+      {
+        "name": "Pad Krapow Moo",
+        "desc": "Minced pork stir-fried with fiery Thai basil, served with a fried egg and steamed rice.",
+        "price": "79,000d",
+        "category": "Noodles & Stir-Fry"
+      },
+      {
+        "name": "Gai Yang",
+        "desc": "Charcoal-grilled chicken marinated with lemongrass and turmeric, served with a tangy tamarind dip.",
+        "price": "95,000d",
+        "category": "Noodles & Stir-Fry"
+      },
+      {
+        "name": "Larb Moo",
+        "desc": "Minced pork tossed with toasted rice powder, lime, dried chili and fragrant Thai herbs.",
+        "price": "72,000d",
+        "category": "Spicy Salads"
+      },
+      {
+        "name": "Mango Sticky Rice",
+        "desc": "Soft, fragrant sticky rice served with ripe mango and rich coconut cream.",
+        "price": "55,000d",
+        "category": "Tea & Desserts"
+      }
+    ]
+  },
+  "space": {
+    "title": "Feel the \"Bangkok Vibe\"",
+    "subtitle": "A vibrant, buzzing space that channels the energy of Thailand's capital",
+    "caption": "Streets Lit Up"
+  },
+  "testimonials": {
+    "title": "What Guests Say About Siam Flavors",
+    "ratingScore": "4.9/5",
+    "ratingCount": "(2k+ reviews)",
+    "ctaGoogle": "See all reviews on Google Maps",
+    "items": [
+      {
+        "quote": "The Pad Thai here genuinely tastes like the night markets in Bangkok. Not too sweet, the tamarind sauce is rich, and the shrimp is incredibly fresh.",
+        "name": "Minh Lan",
+        "role": "Local Guide"
+      },
+      {
+        "quote": "The decor has real taste, the orange neon lighting makes the food look even more irresistible. Definitely coming back with friends!",
+        "name": "Tran Hoang",
+        "role": "Food Blogger"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Find Us",
+    "addressLabel": "Address",
+    "address": "123 Neon Street, Da Kao Ward, District 1, Ho Chi Minh City",
+    "hoursLabel": "Opening Hours",
+    "hours": "Mon - Sun: 10:30 AM - 11:00 PM",
+    "phoneLabel": "Contact",
+    "phone": "028 3899 9999",
+    "email": "hello@siamflavors.vn",
+    "mapUrl": "",
+    "mapLoading": "Loading map...",
+    "openNowLabel": "OPEN NOW",
+    "openNowText": "Come visit us right now!"
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "tagline": "Authentic Thai flavors - Served with heart.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Support",
+    "copy": "(c) 2026 Siam Flavors. Powered by WebChoViet."
+  },
+  "mobileNav": {
+    "menu": "Menu",
+    "space": "Space",
+    "reviews": "Reviews",
+    "direction": "Directions"
+  }
+}

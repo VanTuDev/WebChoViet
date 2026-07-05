@@ -1,7 +1,11 @@
+import { Sparkles, Heart, Handshake, PartyPopper, MapPin, Home, Calendar, Image, Gift } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import LanguageSwitcher, { useTemplateLang } from '../../_shared/LanguageSwitcher';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+
+/** Icon cho 3 mốc timeline (Đón khách / Lễ cưới / Tiệc) — nằm ngoài i18n vì không phải nội dung dịch */
+const TIMELINE_ICONS = [Handshake, Heart, PartyPopper];
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
@@ -92,7 +96,7 @@ export default function Wedding3({ lang = 'vi' }: Props) {
 
         {/* Divider */}
         <div className="flex justify-center mb-24 opacity-70">
-          <span aria-hidden className="text-[#B8860B] text-5xl font-light">✨</span>
+          <Sparkles aria-hidden className="w-10 h-10 text-[#B8860B]" />
         </div>
 
         {/* Calendar */}
@@ -112,7 +116,7 @@ export default function Wedding3({ lang = 'vi' }: Props) {
                   return (
                     <div key={day} className="py-1 relative z-10 text-white font-bold">
                       <span className="absolute inset-0 bg-[#86041d] rounded-full z-[-1] scale-125" />
-                      <span aria-hidden className="absolute -top-4 -right-3 text-[#B8860B] text-sm rotate-12">♥</span>
+                      <Heart aria-hidden className="absolute -top-4 -right-3 w-3.5 h-3.5 text-[#B8860B] rotate-12 fill-current" />
                       {day}
                     </div>
                   );
@@ -159,12 +163,13 @@ export default function Wedding3({ lang = 'vi' }: Props) {
               );
               const time = <p className="text-4xl text-[#B8860B] opacity-80">{item.time}</p>;
               const isEven = i % 2 === 0;
+              const TimelineIcon = TIMELINE_ICONS[i % TIMELINE_ICONS.length];
 
               return (
                 <div key={i} className="relative flex items-center justify-between w-full">
                   <div className="w-5/12 text-right pr-8">{isEven ? detail : time}</div>
                   <div className="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-2 border-[#D4AF37] bg-[#FCF9F2] flex items-center justify-center shadow-md z-10">
-                    <span aria-hidden className="text-xl">{item.icon}</span>
+                    <TimelineIcon aria-hidden className="w-5 h-5 text-[#86041d]" />
                   </div>
                   <div className="w-5/12 pl-8">{isEven ? time : detail}</div>
                 </div>
@@ -227,7 +232,7 @@ export default function Wedding3({ lang = 'vi' }: Props) {
                 />
               ) : (
                 <div className="w-full h-full bg-[#F8F1E5] flex flex-col items-center justify-center gap-3 text-center px-6">
-                  <span aria-hidden className="text-4xl">📍</span>
+                  <MapPin aria-hidden className="w-10 h-10 text-[#86041d]" />
                   <p data-field="location.address" className="font-semibold text-[#86041d] text-lg">{t.location.address}</p>
                 </div>
               )}
@@ -239,19 +244,19 @@ export default function Wedding3({ lang = 'vi' }: Props) {
       {/* Bottom nav — mobile */}
       <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pt-2 pb-6 px-4 md:hidden bg-[#FCF9F2]/95 backdrop-blur-2xl rounded-t-2xl border-t border-[#D4AF37]/30 shadow-[0_-4px_20px_rgba(212,175,55,0.1)]">
         <a href="#" className="flex flex-col items-center justify-center text-[#594140] p-2">
-          <span aria-hidden className="text-xl">🏠</span>
+          <Home aria-hidden className="w-5 h-5" />
           <span className="text-[10px] mt-1">{t.mobileNav.home}</span>
         </a>
         <a href="#timeline" className="flex flex-col items-center justify-center text-[#86041d] bg-[#F8F1E5] rounded-full px-4 py-2 shadow-sm border border-[#D4AF37]/20">
-          <span aria-hidden className="text-xl">📅</span>
+          <Calendar aria-hidden className="w-5 h-5" />
           <span className="text-[10px] mt-1">{t.mobileNav.schedule}</span>
         </a>
         <a href="#gallery" className="flex flex-col items-center justify-center text-[#594140] p-2">
-          <span aria-hidden className="text-xl">🖼️</span>
+          <Image aria-hidden className="w-5 h-5" />
           <span className="text-[10px] mt-1">{t.mobileNav.gallery}</span>
         </a>
         <a href="#" className="flex flex-col items-center justify-center text-[#594140] p-2">
-          <span aria-hidden className="text-xl">🎁</span>
+          <Gift aria-hidden className="w-5 h-5" />
           <span className="text-[10px] mt-1">{t.mobileNav.gift}</span>
         </a>
       </nav>

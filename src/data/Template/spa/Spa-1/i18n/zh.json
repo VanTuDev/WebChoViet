@@ -1,36 +1,120 @@
 {
-  "shopName": "Lotus Spa",
-  "tagline": "放松 · 恢复 · 焕颜",
-  "nav": { "services": "服务项目", "about": "关于我们", "book": "预约" },
-  "hero": {
-    "badge": "✨ 极致放松",
-    "title": "市中心的高端放松空间",
-    "desc": "体验国际级水疗护理，采用来自越南的纯天然原料。",
-    "btnBook": "立即预约",
-    "btnLearn": "了解更多"
+  "nav": {
+    "brand": "Aura Wellness",
+    "linkServices": "服务项目",
+    "linkAbout": "关于我们",
+    "linkPrices": "价目表",
+    "linkLocation": "门店位置",
+    "getAdvice": "免费咨询",
+    "bookNow": "立即预约"
   },
-  "services": {
-    "title": "我们的服务",
+  "hero": {
+    "badge": "医学级祛痘技术",
+    "title": "告别痘痘",
+    "titleHighlight": "自信绽放",
+    "subtitle": "在 Aura Wellness，通过为您量身定制的祛痘疗程，重新拥有细腻健康的肌肤。我们承诺首次治疗后即可看到明显效果。",
+    "ctaText": "立即预约免费咨询",
+    "socialProofCount": "1,200+",
+    "socialProofText": "位顾客成功祛痘"
+  },
+  "highlights": {
+    "title": "为什么选择我们？",
+    "subtitle": "融合前沿科技与顶尖医学专业知识，为您的肌肤带来最理想的效果。",
     "items": [
-      { "icon": "💆", "name": "放松按摩", "price": "350,000₫ / 60分钟", "desc": "全身按摩护理，缓解压力，恢复活力" },
-      { "icon": "🌿", "name": "面部护理", "price": "450,000₫ / 75分钟", "desc": "使用高级有机产品的深层皮肤护理" },
-      { "icon": "🛁", "name": "草药浴", "price": "280,000₫ / 45分钟", "desc": "沉浸在放松的草药浴中" },
-      { "icon": "💅", "name": "美甲护理", "price": "180,000₫ / 45分钟", "desc": "使用安全产品的专业手部和足部护理" },
-      { "icon": "🌸", "name": "全身排毒", "price": "680,000₫ / 90分钟", "desc": "使用矿物泥和精油的全面身体排毒疗程" },
-      { "icon": "✨", "name": "光疗护理", "price": "320,000₫ / 30分钟", "desc": "LED光疗技术，减少皱纹，提亮肤色" }
+      {
+        "title": "个性化治疗方案",
+        "desc": "每一种肌肤都有自己的故事。我们通过 3D 肌肤检测，根据您的实际状况设计专属治疗方案。"
+      },
+      {
+        "title": "效果承诺",
+        "desc": "采用生物光疗技术，仅需 3 次强化疗程即可减少 80% 的炎症性痘痘。"
+      },
+      {
+        "title": "激光技术",
+        "desc": "从根源清除痘痘"
+      },
+      {
+        "title": "医美级护肤品",
+        "desc": "100% 进口"
+      }
     ]
   },
-  "info": {
-    "hours": "09:00 – 21:00",
+  "gallery": {
+    "title": "治疗空间",
+    "subtitle": "Aura Wellness Spa 治疗室的真实照片。",
+    "steps": [
+      { "label": "步骤 01", "title": "清洁与杀菌" },
+      { "label": "步骤 02", "title": "深层治疗" },
+      { "label": "步骤 03", "title": "修复与保护" }
+    ]
+  },
+  "services": {
+    "title": "服务价目表",
+    "subtitle": "价格透明，治疗过程中不产生任何附加费用。",
+    "note": "备注：以上价格不含疗程套餐优惠。",
+    "colService": "服务项目",
+    "colDuration": "时长",
+    "colPrice": "价格",
+    "items": [
+      {
+        "name": "医学级清痘",
+        "duration": "60 分钟",
+        "price": "350,000 越南盾",
+        "desc": "深层清洁、清除皮脂、紫外线杀菌消毒。"
+      },
+      {
+        "name": "IPL 光子祛痘",
+        "duration": "75 分钟",
+        "price": "850,000 越南盾",
+        "desc": "即时舒缓炎症，消灭痤疮丙酸杆菌。"
+      },
+      {
+        "name": "生物换肤焕肤",
+        "duration": "45 分钟",
+        "price": "1,200,000 越南盾",
+        "desc": "淡化痘印，快速均匀肤色。"
+      },
+      {
+        "name": "RF 微针祛痘坑",
+        "duration": "90 分钟",
+        "price": "2,500,000 越南盾",
+        "desc": "当今最先进的肌肤再生技术。"
+      }
+    ]
+  },
+  "credibility": {
+    "title": "专业持证治疗师",
+    "desc": "Aura Wellness 的医生和技师均持有国际认可的医学从业资格证书，为每一位顾客带来绝对的安全与效果保障。",
+    "stats": [
+      { "value": "100%", "label": "安全保障" },
+      { "value": "5+", "label": "年经验" },
+      { "value": "VIP", "label": "尊享服务" }
+    ]
+  },
+  "contact": {
+    "title": "我们的位置",
+    "subtitle": "Aura Wellness 坐落于第一郡市中心，为您的治疗旅程提供安静便利的空间。",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡 Sac Dep 路 123 号",
     "hoursLabel": "营业时间",
-    "phone": "0977 456 789",
+    "hours": "周一至周日：09:00 - 20:00",
     "phoneLabel": "热线电话",
-    "address": "胡志明市第三郡南圻起义街88号",
-    "addressLabel": "地址"
+    "phone": "1900 123 456",
+    "btnDirections": "在谷歌地图上导航",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4478777432!2d106.7017555!3d10.7731493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40a7b66bb5%3A0x13c58002e77195d!2zQuG6v24gVGjDoG5oLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s",
+    "mapLoading": "地图加载中...",
+    "floatingTitle": "欢迎光临"
   },
-  "location": {
-    "title": "水疗中心位置",
-    "mapUrl": ""
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "领先且值得信赖的护肤祛痘体系，助力越南女性以自然之美更加自信。",
+    "servicesTitle": "服务项目",
+    "servicesLinks": ["医学祛痘", "面部护理", "永久脱毛", "舒缓按摩"],
+    "infoTitle": "相关信息",
+    "infoLinks": ["关于我们", "隐私政策", "服务条款", "预约咨询"],
+    "copyright": "© 2024 Aura Wellness Spa。持证治疗专业团队。"
   },
-  "footer": { "copy": "© 2025 Lotus Spa. 由 WebChoViet 创建。" }
+  "booking": {
+    "fabText": "立即预约"
+  }
 }

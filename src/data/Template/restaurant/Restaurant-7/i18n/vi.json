@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "brand": "Crimson Sushi",
+    "menu": "Thực đơn",
+    "story": "Câu chuyện",
+    "location": "Vị trí",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "badge": "Tinh Hoa Nhật Bản",
+    "titleLine1": "Nghệ Thuật Ẩm Thực",
+    "titleLine2": "Khơi Nguồn Cảm Xúc",
+    "subtitle": "Mỗi miếng sushi tại Crimson là một tác phẩm điêu khắc tinh vi, nơi sự tươi ngon của đại dương hòa quyện cùng kỹ thuật bậc thầy của các nghệ nhân."
+  },
+  "story": {
+    "title": "Không Gian \"Shibui\"",
+    "description": "Bước vào Crimson Sushi là bước vào một thế giới của sự tĩnh lặng và sang trọng kín đáo. Kiến trúc của chúng tôi tôn vinh sự tối giản, sử dụng ánh sáng đỏ ấm áp để tạo nên một không gian Omakase thân mật, nơi thời gian dường như ngưng đọng để quý khách thưởng thức trọn vẹn hương vị.",
+    "tag": "Trải nghiệm thượng lưu"
+  },
+  "menuSection": {
+    "title": "Thực Đơn Đa Dạng",
+    "tabs": ["Tất Cả", "Sashimi", "Nigiri", "Special Rolls", "Sets"],
+    "highlightBadge": "Bán Chạy",
+    "highlightName": "Omakase Signature Set",
+    "items": [
+      {
+        "name": "Bluefin Tuna Nigiri",
+        "tag": "Premium",
+        "desc": "Cá ngừ vây xanh thượng hạng, gạo Koshihikari",
+        "price": "280.000đ"
+      },
+      {
+        "name": "Uni Roll",
+        "tag": "",
+        "desc": "Cầu gai tươi từ vùng Hokkaido, rong biển Nori cao cấp",
+        "price": "450.000đ"
+      },
+      {
+        "name": "Dragon Roll",
+        "tag": "",
+        "desc": "Lươn nướng Unagi, bơ sáp, sốt Teriyaki đặc trưng",
+        "price": "320.000đ"
+      },
+      {
+        "name": "Wagyu Beef Tataki",
+        "tag": "",
+        "desc": "Thịt bò Wagyu A5 tái nhẹ với sốt Ponzu",
+        "price": "680.000đ"
+      }
+    ],
+    "viewAllBtn": "Xem Toàn Bộ Thực Đơn"
+  },
+  "testimonials": {
+    "title": "Đánh Giá Chuyên Gia",
+    "items": [
+      {
+        "quote": "Crimson Sushi không chỉ là một nhà hàng, đó là một hành trình văn hóa. Sự tỉ mỉ trong từng lát cắt cá là điều hiếm thấy tại Việt Nam.",
+        "name": "Nguyễn Hoàng Nam",
+        "role": "Chuyên gia phê bình ẩm thực"
+      },
+      {
+        "quote": "Không gian tối giản nhưng cực kỳ sang trọng. Trải nghiệm Omakase ở đây thực sự xứng tầm đẳng cấp quốc tế.",
+        "name": "Tạp chí Gourmet",
+        "role": "Reviewer Ẩm Thực Cao Cấp"
+      },
+      {
+        "quote": "Sự kết hợp hoàn hảo giữa nguyên liệu nhập khẩu tươi sống và bàn tay tài hoa của đầu bếp tạo nên hương vị khó quên.",
+        "name": "Elena Trương",
+        "role": "Blogger Lifestyle"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Tìm Thấy Chúng Tôi",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Nghệ Thuật, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Số điện thoại",
+    "phone": "+84 28 3456 7890",
+    "emailLabel": "Email",
+    "email": "hello@crimsonsushi.vn",
+    "hoursTitle": "Giờ mở cửa",
+    "hoursWeekdayLabel": "Thứ Hai - Thứ Sáu:",
+    "hoursWeekdayTime": "11:00 - 22:00",
+    "hoursWeekendLabel": "Thứ Bảy - Chủ Nhật:",
+    "hoursWeekendTime": "10:00 - 23:00",
+    "btnContact": "Gọi Đặt Bàn",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Crimson Sushi",
+    "description": "Nơi hội tụ tinh hoa ẩm thực xứ Phù Tang giữa lòng Sài Gòn. Chúng tôi cam kết mang đến trải nghiệm sushi chuẩn vị và đẳng cấp nhất.",
+    "linksTitle": "Liên kết",
+    "links": ["Quy định chung", "Chính sách bảo mật", "Tuyển dụng"],
+    "socialTitle": "Mạng xã hội",
+    "copy": "© 2026 Crimson Sushi. Được tạo bởi WebChoViet."
+  }
+}

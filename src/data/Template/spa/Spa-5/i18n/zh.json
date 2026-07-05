@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Zenith",
+    "services": "服务项目",
+    "pricing": "价目表",
+    "space": "空间环境",
+    "reviews": "客户评价",
+    "cta": "免费咨询"
+  },
+  "hero": {
+    "titleLine1": "寻回",
+    "titleLine2": "绝对的平静",
+    "subtitle": "一处精心打造的空间，透过极简艺术净化心灵、恢复身体活力。",
+    "btnPrimary": "立即探索",
+    "btnSecondary": "观看介绍视频"
+  },
+  "categories": {
+    "title": "护理项目分类",
+    "groups": [
+      {
+        "title": "冥想与瑜伽",
+        "desc": "专注于呼吸与动作之间的连接，进入宁静安定的状态。",
+        "items": [
+          { "name": "禅意冥想", "desc": "在绝对的寂静中练习坐禅技巧。" },
+          { "name": "阴瑜伽", "desc": "缓慢深层的伸展动作，释放身体紧张。" }
+        ]
+      },
+      {
+        "title": "理疗按摩",
+        "desc": "结合传统手法与有机精油，帮助肌肉恢复活力。",
+        "items": [
+          { "name": "禅意热石", "desc": "天然玄武岩的热能有助于平衡身体能量。" },
+          { "name": "瑞典式理疗", "desc": "绵长的推抚手法促进血液循环。" }
+        ]
+      },
+      {
+        "title": "身体排毒",
+        "desc": "透过草本疗程与健康饮食排出体内毒素。",
+        "items": [
+          { "name": "草本排毒", "desc": "使用来自热带地区的天然草本冷萃茶。" },
+          { "name": "草本泡脚", "desc": "结合矿物盐与温姜促进气血循环。" }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "服务价目表",
+    "subtitle": "每一项疗程都公开透明，带来最完整的放松体验。",
+    "categories": [
+      {
+        "title": "脸部护理",
+        "items": [
+          { "name": "深层祛痘护理", "duration": "90 分钟", "price": "¥128", "desc": "深层清洁、控油并预防痘痘复发。" },
+          { "name": "焕肤紧致疗程", "duration": "60 分钟", "price": "¥238", "desc": "促进胶原蛋白生成，改善弹性与光泽。" },
+          { "name": "即效保湿护理", "duration": "45 分钟", "price": "¥98", "desc": "即刻恢复水分，舒缓疲惫肌肤。" }
+        ]
+      },
+      {
+        "title": "理疗按摩",
+        "items": [
+          { "name": "热石按摩", "duration": "75 分钟", "price": "¥168", "desc": "温热玄武岩帮助放松肌肉、促进血液循环。" },
+          { "name": "颈肩理疗", "duration": "45 分钟", "price": "¥108", "desc": "缓解长时间工作后的颈肩僵硬。" },
+          { "name": "精油舒缓按摩", "duration": "60 分钟", "price": "¥138", "desc": "纯天然有机精油安神并恢复元气。" }
+        ]
+      },
+      {
+        "title": "Zenith 套餐组合",
+        "highlight": true,
+        "note": "预订套餐组合最高可享 20% 优惠",
+        "items": [
+          { "name": "全面护理套餐", "duration": "150 分钟", "price": "¥428", "desc": "结合按摩、脸部护理与草本泡脚。" },
+          { "name": "Zenith 招牌体验", "duration": "120 分钟", "price": "¥338", "desc": "体验 Zenith 独有的招牌疗程。" }
+        ]
+      }
+    ],
+    "btnCta": "立即预约咨询"
+  },
+  "space": {
+    "title": "静谧空间",
+    "subtitle": "建筑设计源自侘寂哲学，尊重简约与自然之美。",
+    "tourBtn": "探索 360° 虚拟导览"
+  },
+  "testimonials": {
+    "title": "客户真实分享",
+    "items": [
+      {
+        "quote": "我在 Zenith 找到了真正的平静。极简的空间让我放下了外界的所有烦恼。",
+        "name": "明英",
+        "role": "常客"
+      },
+      {
+        "quote": "热石按摩非常棒。第一次疗程后，我肩膀上的压力仿佛完全消散了。",
+        "name": "黎黄",
+        "role": "企业主"
+      },
+      {
+        "quote": "这里的建筑本身就是一件艺术品。光是走进大厅就让我感到彻底放松。",
+        "name": "青云",
+        "role": "建筑师"
+      }
+    ]
+  },
+  "contact": {
+    "title": "我们的位置",
+    "subtitle": "坐落于宁静的街角，远离都市喧嚣的快节奏生活。",
+    "addressLabel": "地址",
+    "address": "越南胡志明市第二郡禅意街123号",
+    "hoursLabel": "营业时间",
+    "hours": "每日 08:00 - 21:00",
+    "phoneLabel": "联系电话",
+    "phone": "028 1234 5678",
+    "btnDirections": "在 Google 地图上导航",
+    "mapUrl": "",
+    "mapLoading": "地图加载中..."
+  },
+  "footer": {
+    "brand": "Zenith",
+    "copy": "© 2025 Zenith 极简养生空间。寻回内心的平静。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们",
+    "socialWebsite": "网站",
+    "socialEmail": "电子邮件"
+  }
+}

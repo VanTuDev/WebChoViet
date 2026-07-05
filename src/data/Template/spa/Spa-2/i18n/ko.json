@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "brand": "Aura Wellness",
+    "services": "서비스",
+    "about": "회사 소개",
+    "prices": "요금 안내",
+    "location": "오시는 길",
+    "btnAdvice": "무료 상담",
+    "btnBook": "지금 예약하기"
+  },
+  "hero": {
+    "badge": "전문 테라피 트리트먼트",
+    "title": "당신의 자연스러운 아름다움을",
+    "titleHighlight": "깨우는 여정",
+    "subtitle": "Aura Wellness에서는 심층 피부 테라피 과학과 고요한 휴식 공간을 결합하여 진정한 회복의 경험을 선사합니다.",
+    "cta": "서비스 둘러보기",
+    "badgeYears": "15년+",
+    "badgeYearsSub": "테라피 경력",
+    "imageAlt": "부드러운 흰 벽과 아치형 목재 문, 연한 파란색 포인트가 돋보이는 고급스러운 스파 리셉션"
+  },
+  "highlights": {
+    "title": "인기 서비스",
+    "subtitle": "피부 고민에 맞춘 심층 솔루션",
+    "acne": {
+      "tag1": "베스트셀러",
+      "tag2": "메디컬 등급",
+      "title": "집중 여드름 케어",
+      "desc": "생체광 기술과 의료 수준의 압출 기법을 활용한 맞춤형 트리트먼트입니다.",
+      "link": "자세히 보기",
+      "imageAlt": "프리미엄 페이셜 트리트먼트 클로즈업"
+    },
+    "skinCare": {
+      "title": "피부 케어",
+      "desc": "수분을 회복시켜 자연스러운 피부 광채를 되찾아 드립니다.",
+      "imageAlt": "테라피스트가 고객에게 영양 마스크를 도포하는 모습"
+    },
+    "bodyTherapy": {
+      "title": "바디 테라피",
+      "desc": "핫스톤과 유기농 에센셜 오일로 근육 긴장을 풀어드립니다.",
+      "imageAlt": "테라피스트가 핫스톤 마사지를 진행하는 모습"
+    },
+    "customPlan": {
+      "title": "맞춤형 케어 플랜",
+      "desc": "저희는 모두에게 똑같은 해결책이 통한다고 믿지 않습니다. 모든 피부는 귀 기울여 이해받아야 할 저마다의 이야기를 가지고 있습니다.",
+      "features": ["무료 피부 진단", "1:1 사후 관리"],
+      "statValue": "100%",
+      "statLabel": "유기농 제품"
+    }
+  },
+  "services": {
+    "title": "서비스 요금표",
+    "subtitle": "투명한 가격 - 숨겨진 비용 없음",
+    "categories": [
+      {
+        "title": "페이셜 케어",
+        "items": [
+          { "name": "리주버네이팅 트리트먼트", "desc": "비타민C + 콜라겐 이온영동", "duration": "60분", "price": "45,000원" },
+          { "name": "페이셜 디톡스", "desc": "미세먼지에 노출된 피부 회복", "duration": "45분", "price": "19,000원" },
+          { "name": "딥 하이드레이션", "desc": "히알루론산 + 실크 시트 마스크", "duration": "60분", "price": "27,000원" }
+        ]
+      },
+      {
+        "title": "여드름 케어",
+        "items": [
+          { "name": "집중 여드름 케어", "desc": "압출 + 생체광 테라피", "duration": "90분", "price": "24,000원" },
+          { "name": "등 여드름 케어", "desc": "딥 클렌징 + 허브 필링", "duration": "60분", "price": "29,000원" }
+        ]
+      },
+      {
+        "title": "테라피 마사지",
+        "items": [
+          { "name": "아로마 바디 마사지", "desc": "에센셜 오일 테라피", "duration": "75분", "price": "32,000원" },
+          { "name": "핫스톤 마사지", "desc": "혈액 순환 개선", "duration": "90분", "price": "40,000원" },
+          { "name": "목·어깨 마사지", "desc": "사무직 근육 통증 완화", "duration": "45분", "price": "21,000원" }
+        ]
+      },
+      {
+        "title": "스페셜 패키지",
+        "items": [
+          { "name": "Aura 시그니처 콤보", "desc": "페이셜 트리트먼트 + 바디 마사지", "duration": "150분", "price": "63,000원" },
+          { "name": "풀 리커버리 패키지", "desc": "디톡스 + 리주버네이션 + 마사지", "duration": "180분", "price": "79,000원" }
+        ]
+      }
+    ],
+    "promo": "첫 방문 고객 20% 할인",
+    "promoCta": "지금 혜택 받기"
+  },
+  "gallery": {
+    "title": "편안한 공간",
+    "subtitle": "절대적인 평온함을 선사하는 미니멀하고 세련된 건축",
+    "items": [
+      { "alt": "리셉션 로비" },
+      { "alt": "트리트먼트 룸" },
+      { "alt": "마사지 공간" }
+    ]
+  },
+  "team": {
+    "title": "헌신적인 전문가 팀",
+    "desc": "Aura의 테크니션은 뛰어난 기술뿐만 아니라 고객의 요구를 경청하고 이해하는 동반자입니다. 모든 직원은 전문 자격증을 보유하고 정기적으로 교육을 받습니다.",
+    "cert": { "title": "국제 자격증", "sub": "5성급 기술 표준" },
+    "care": { "title": "1:1 세심한 케어", "sub": "트리트먼트 전 과정 세심한 관리" },
+    "portrait1Alt": "전문 스파 테라피스트 초상",
+    "portrait2Alt": "고급 리셉션 공간에 서 있는 스파 팀"
+  },
+  "contact": {
+    "title": "오시는 길",
+    "subtitle": "도심 한복판에서 프리미엄 테라피를 경험할 수 있는 Aura Wellness를 방문해 보세요.",
+    "addressLabel": "주소",
+    "address": "호치민시 1군 레러이 거리 123번지",
+    "phoneLabel": "전화번호",
+    "phone": "1900 1234",
+    "hoursLabel": "영업시간",
+    "hours": "매일 09:00 - 21:00",
+    "btnDirection": "구글 지도에서 길찾기",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447877432445!2d106.70175551471845!3d10.7756586923221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4693f7a111%3A0xdb304566640235d5!2zTMOqIEzhu6NpLCBC4bq_biBUaMOgbmgsIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1625123456789!5m2!1svi!2s",
+    "mapLoading": "지도를 불러오는 중..."
+  },
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "심층 테라피 트리트먼트와 고요한 마음으로 지속되는 아름다움을 만듭니다.",
+    "servicesTitle": "서비스",
+    "servicesLinks": ["여드름 케어", "피부 재생", "바디 마사지"],
+    "policyTitle": "정책 안내",
+    "policyLinks": ["개인정보처리방침", "이용약관", "환불규정"],
+    "contactTitle": "연락처",
+    "contactCity": "호치민시",
+    "contactPhone": "1900 1234",
+    "copyright": "© 2026 Aura Wellness Spa. 공인 전문 테라피스트.",
+    "tagline1": "전문 테라피스트",
+    "tagline2": "개인정보처리방침"
+  }
+}

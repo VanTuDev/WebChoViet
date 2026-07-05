@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { TEMPLATES } from '../../data';
 import { ROUTES } from '../../config/routes';
 import SiteHeader from '../../components/shared/SiteHeader';
@@ -49,6 +50,11 @@ export default function LandingPage() {
 
   return (
     <div className="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container relative min-h-screen">
+      <Helmet>
+        <title>WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt</title>
+        <meta name="description" content="Tạo website chuyên nghiệp cho quán cafe, nhà hàng, shop hoa và doanh nghiệp Việt Nam chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
+        <link rel="canonical" href="https://webchoviet.com/" />
+      </Helmet>
 
       {/* ── Decorative background blobs ────────────────────────────────── */}
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-fixed/30 blur-[100px] -z-10 pointer-events-none" />

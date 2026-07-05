@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "menu": "菜单",
+    "ourStory": "品牌故事",
+    "reservations": "预订座位",
+    "locations": "门店位置",
+    "orderOnline": "在线点餐",
+    "fabLabel": "快速下单"
+  },
+  "hero": {
+    "title": "自然与咖啡的交汇之地",
+    "subtitle": "在城市中心体验静谧的花园时光，每一杯咖啡都是回归宁静的旅程。",
+    "btnMenu": "探索菜单",
+    "btnReserve": "立即预订"
+  },
+  "menu": {
+    "eyebrow": "精选风味",
+    "title": "招牌菜单",
+    "tabs": ["咖啡", "饮品", "冰沙", "轻食"],
+    "featured": {
+      "badge": "人气第一",
+      "name": "招牌鸡蛋咖啡",
+      "desc": "浓郁顺滑的蛋奶霜与醇厚罗布斯塔咖啡完美融合，演绎传统风味的精致新境。",
+      "price": "65,000 越南盾"
+    },
+    "items": [
+      {
+        "name": "冰黑咖啡",
+        "desc": "选用优质阿拉比卡咖啡豆萃取，回甘悠长。",
+        "price": "45,000 越南盾"
+      },
+      {
+        "name": "仙草炼奶咖啡",
+        "desc": "炼奶与咖啡交融，搭配清凉爽滑的仙草冻。",
+        "price": "55,000 越南盾"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "静谧空间",
+    "subtitle": "Garden Sanctuary 的每一个角落都用心打造，为您带来彻底的放松体验。"
+  },
+  "testimonials": {
+    "title": "顾客真实体验",
+    "items": [
+      {
+        "name": "明英（Minh Anh）",
+        "role": "企业主",
+        "quote": "Garden Sanctuary 是我专心工作的首选之地。这里的绿意空间总能让我思绪焕然一新。",
+        "rating": 5
+      },
+      {
+        "name": "黄南（Hoang Nam）",
+        "role": "自由职业者",
+        "quote": "这里的咖啡真的很出色，风味浓郁，服务也非常专业热情。",
+        "rating": 5
+      },
+      {
+        "name": "草薇（Thao Vy）",
+        "role": "摄影师",
+        "quote": "Garden 的光线和每一处装饰都非常上镜，是热爱美学的人绝佳的打卡地点。",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "我们的位置",
+    "addressLabel": "地址",
+    "address": "胡志明市第1郡 Sac Mau 街123号",
+    "hoursLabel": "营业时间",
+    "hours": "周一至周日：07:00 - 22:00",
+    "phoneLabel": "联系方式",
+    "phone": "028.1234.5678",
+    "email": "hello@gardensanctuary.vn",
+    "formName": "姓名",
+    "formEmail": "您的邮箱",
+    "formMessage": "有什么可以帮您？",
+    "formSubmit": "发送留言",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "copy": "© 2024 Garden Sanctuary Coffee。用心打造，静享时光。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "sustainability": "可持续发展",
+    "contactUs": "联系我们"
+  }
+}

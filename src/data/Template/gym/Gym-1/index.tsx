@@ -79,7 +79,8 @@ export default function Gym1({ lang = 'vi' }: Props) {
                 <div className="text-xs text-[#F97316] font-semibold mb-2 uppercase tracking-wider">{item.level}</div>
                 <div className="text-sm text-gray-400 leading-relaxed">{item.desc}</div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -101,8 +102,8 @@ export default function Gym1({ lang = 'vi' }: Props) {
                 }`}
               >
                 {plan.popular && (
-                  <div className="text-xs font-black uppercase tracking-widest mb-3 text-white/80">
-                    ⭐ {t.membership.popularBadge}
+                  <div className="flex items-center gap-1 text-xs font-black uppercase tracking-widest mb-3 text-white/80">
+                    <Star className="w-3 h-3 fill-current" /> {t.membership.popularBadge}
                   </div>
                 )}
                 <div className="font-black text-2xl text-white mb-1">{plan.name}</div>
@@ -113,7 +114,7 @@ export default function Gym1({ lang = 'vi' }: Props) {
                 <ul className="space-y-2 mb-6">
                   {plan.features.map((f, fi) => (
                     <li key={fi} className="flex items-center gap-2 text-sm text-white/90">
-                      <span className={plan.popular ? 'text-white' : 'text-[#F97316]'}>✓</span>
+                      <Check className={`w-4 h-4 shrink-0 ${plan.popular ? 'text-white' : 'text-[#F97316]'}`} />
                       {f}
                     </li>
                   ))}
@@ -137,19 +138,19 @@ export default function Gym1({ lang = 'vi' }: Props) {
       <section data-section="info" className="bg-[#F97316] text-white py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
-            <div className="text-2xl mb-1">🕐</div>
+            <Clock className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.hours" className="font-black">{t.info.hours}</div>
             <div className="text-orange-100 text-sm mt-0.5">{t.info.hoursLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📞</div>
+            <Phone className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.phone" className="font-black">{t.info.phone}</div>
             <div className="text-orange-100 text-sm mt-0.5">{t.info.phoneLabel}</div>
           </div>
           <div className="w-px h-12 bg-white/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📍</div>
+            <MapPin className="w-6 h-6 mx-auto mb-1" />
             <div data-field="info.address" className="font-black">{t.info.address}</div>
             <div className="text-orange-100 text-sm mt-0.5">{t.info.addressLabel}</div>
           </div>
@@ -172,7 +173,7 @@ export default function Gym1({ lang = 'vi' }: Props) {
               />
             ) : (
               <div className="w-full h-full bg-white/5 flex flex-col items-center justify-center gap-3 text-center px-6">
-                <span className="text-4xl">📍</span>
+                <MapPin className="w-10 h-10 text-[#F97316]" />
                 <p className="font-black text-white text-lg">{t.info.address}</p>
                 <p className="text-sm text-gray-400">{t.info.hours} · {t.info.phone}</p>
               </div>

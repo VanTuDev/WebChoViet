@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "menu": "Menu",
+    "ourStory": "Our Story",
+    "reservations": "Reservations",
+    "locations": "Locations",
+    "orderOnline": "Order Online",
+    "fabLabel": "Quick order"
+  },
+  "hero": {
+    "title": "Where Nature Meets Coffee",
+    "subtitle": "Experience a tranquil garden retreat in the heart of the city, where every cup is a journey back to stillness.",
+    "btnMenu": "Explore the Menu",
+    "btnReserve": "Reserve a Table"
+  },
+  "menu": {
+    "eyebrow": "Handpicked Flavors",
+    "title": "Signature Menu",
+    "tabs": ["Coffee", "Drinks", "Frappes", "Food"],
+    "featured": {
+      "badge": "Best Seller",
+      "name": "Signature Egg Coffee",
+      "desc": "Rich, silky egg cream layered over bold Robusta coffee for a refined take on a beloved tradition.",
+      "price": "65,000 VND"
+    },
+    "items": [
+      {
+        "name": "Iced Black Coffee",
+        "desc": "Brewed from premium Arabica beans with a lingering sweet finish.",
+        "price": "45,000 VND"
+      },
+      {
+        "name": "Bac Xiu with Grass Jelly",
+        "desc": "Condensed milk and coffee paired with cool, chewy grass jelly.",
+        "price": "55,000 VND"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "A Peaceful Space",
+    "subtitle": "Every corner of Garden Sanctuary is thoughtfully crafted to bring you complete ease of mind."
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "name": "Minh Anh",
+        "role": "Business Owner",
+        "quote": "Garden Sanctuary is where I always come to focus on my work. The lush green space keeps my mind refreshed.",
+        "rating": 5
+      },
+      {
+        "name": "Hoang Nam",
+        "role": "Freelancer",
+        "quote": "The coffee here is genuinely excellent. Bold flavor paired with warm, professional service.",
+        "rating": 5
+      },
+      {
+        "name": "Thao Vy",
+        "role": "Photographer",
+        "quote": "The lighting and every decor corner at Garden photograph beautifully. A wonderful spot for aesthetics lovers.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Find Us At",
+    "addressLabel": "Address",
+    "address": "123 Sac Mau Street, District 1, Ho Chi Minh City",
+    "hoursLabel": "Opening hours",
+    "hours": "Mon - Sun: 07:00 - 22:00",
+    "phoneLabel": "Contact",
+    "phone": "028.1234.5678",
+    "email": "hello@gardensanctuary.vn",
+    "formName": "Full name",
+    "formEmail": "Your email",
+    "formMessage": "How can we help?",
+    "formSubmit": "Send Message",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "copy": "© 2024 Garden Sanctuary Coffee. Crafted for calm.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sustainability": "Sustainability",
+    "contactUs": "Contact Us"
+  }
+}

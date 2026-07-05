@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "brand": "Luminous Precision 精密美肌诊所",
+    "links": ["技术", "疗程", "价目表", "地址"],
+    "cta": "立即预约"
+  },
+  "hero": {
+    "badge": "医学级护肤科技",
+    "title": "唤醒您的",
+    "titleHighlight": "完美肌肤",
+    "subtitle": "融合现代美容科技与医学级临床流程，为您提供持久美丽的个性化解决方案。",
+    "btnPrimary": "探索疗程",
+    "btnSecondary": "免费咨询"
+  },
+  "trust": {
+    "items": [
+      {
+        "title": "先进设备",
+        "desc": "采用通过美国FDA与欧盟CE认证的仪器系统。"
+      },
+      {
+        "title": "正品药妆产品",
+        "desc": "承诺100%采用全球顶级药妆品牌产品。"
+      },
+      {
+        "title": "专业执业资质",
+        "desc": "技术团队经验丰富，接受系统培训并持有专业证书。"
+      }
+    ]
+  },
+  "services": {
+    "title": "详细服务价目表",
+    "subtitle": "费用透明，效果优化",
+    "categories": [
+      {
+        "title": "科技祛痘疗程",
+        "items": [
+          { "name": "医学标准清痘", "price": "350,000越盾", "duration": "30分钟", "desc": "在专业放大镜下安全清除粉刺与痘痘。" },
+          { "name": "SkinClinic 化学换肤", "price": "1,200,000越盾", "duration": "45分钟", "desc": "重塑肌肤表面，改善痘印与痘疤。" },
+          { "name": "生物光照疗法", "price": "450,000越盾", "duration": "30分钟", "desc": "利用生物光消炎，减轻红肿。" },
+          { "name": "IPL 淡化痘印", "price": "1,800,000越盾", "duration": "45分钟", "desc": "高强度脉冲光技术分解色素沉淀。" }
+        ]
+      },
+      {
+        "title": "深层修复护理",
+        "items": [
+          { "name": "维生素C/玻尿酸导入", "price": "600,000越盾", "duration": "45分钟", "desc": "通过生物电流将养分深层导入肌肤。" },
+          { "name": "高级B5修复护理", "price": "950,000越盾", "duration": "60分钟", "desc": "舒缓并重建受损肌肤的屏障功能。" },
+          { "name": "专属修复面膜", "price": "300,000越盾", "duration": "30分钟", "desc": "深层补水，舒缓敏感肌肤。" },
+          { "name": "天然锁水膜再生", "price": "1,500,000越盾", "duration": "75分钟", "desc": "深层疗程恢复肌肤弹性。" }
+        ]
+      },
+      {
+        "title": "基础护肤",
+        "items": [
+          { "name": "深层洁面护理", "price": "400,000越盾", "duration": "45分钟", "desc": "深层清洁毛孔，去除堆积污垢。" },
+          { "name": "物理去角质", "price": "250,000越盾", "duration": "20分钟", "desc": "去除老废角质，即时提亮肌肤。" },
+          { "name": "舒缓面部按摩", "price": "350,000越盾", "duration": "30分钟", "desc": "放松面部肌肉，促进血液循环。" },
+          { "name": "肌肤排毒吸附护理", "price": "550,000越盾", "duration": "40分钟", "desc": "排出化妆品与污染积累的毒素。" }
+        ]
+      },
+      {
+        "title": "组合套餐",
+        "featured": true,
+        "ctaText": "立即报名",
+        "items": [
+          { "name": "10次祛痘套餐", "price": "2,900,000越盾", "oldPrice": "3,500,000越盾", "duration": "10次", "desc": "长效控痘的完整套餐方案。" },
+          { "name": "焕亮肌肤组合", "price": "1,950,000越盾", "oldPrice": "2,400,000越盾", "duration": "5次", "desc": "结合清洁、修复与美白护理。" },
+          { "name": "5次焕活套餐", "price": "4,200,000越盾", "oldPrice": "5,500,000越盾", "duration": "5次", "desc": "高科技深层护理，焕活年轻肌肤。" }
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "护理旅程",
+    "subtitle": "用心执行每一个步骤，为客户带来最优质的效果。",
+    "steps": [
+      { "caption": "第一步：深层清洁与排毒" },
+      { "caption": "第二步：专属治疗方案" },
+      { "caption": "第三步：高科技修复" }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "addressLabel": "地址：",
+    "address": "越南胡志明市第1郡黎利街123号",
+    "phoneLabel": "热线：",
+    "phone": "1900 8888 - 0901 234 567",
+    "hoursLabel": "营业时间：",
+    "hours": "09:00 - 20:00（周一至周日）",
+    "btnDirection": "获取诊所路线",
+    "mapUrl": "",
+    "mapFallback": "网站所有者添加谷歌地图链接后，地图将在此显示。"
+  },
+  "footer": {
+    "brand": "Luminous Precision 精密美肌诊所",
+    "desc": "我们相信每一寸肌肤都值得由专业双手与最先进的科技悉心呵护。",
+    "infoTitle": "相关信息",
+    "infoLinks": ["隐私政策", "使用条款", "常见问题", "联系我们"],
+    "newsletterTitle": "订阅资讯",
+    "newsletterDesc": "第一时间获取我们的最新优惠",
+    "emailPlaceholder": "您的邮箱",
+    "sendBtn": "发送",
+    "copy": "© 2026 Luminous Precision 精密美肌诊所。保留所有权利。臻致临床美肌典范。"
+  }
+}

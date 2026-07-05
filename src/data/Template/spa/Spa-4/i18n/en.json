@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "brand": "Luminous Precision Clinic",
+    "links": ["Technology", "Treatments", "Pricing", "Location"],
+    "cta": "Book Now"
+  },
+  "hero": {
+    "badge": "Medical Grade Skincare",
+    "title": "Awaken Your",
+    "titleHighlight": "Flawless Skin",
+    "subtitle": "Experience modern aesthetic technology paired with medical-grade clinical protocols. We deliver personalized solutions for lasting beauty.",
+    "btnPrimary": "Explore Treatments",
+    "btnSecondary": "Free Consultation"
+  },
+  "trust": {
+    "items": [
+      {
+        "title": "Advanced Equipment",
+        "desc": "FDA (USA) and CE (Europe) certified device systems."
+      },
+      {
+        "title": "Authentic Cosmeceuticals",
+        "desc": "100% guaranteed products from the world's leading dermo-cosmetic brands."
+      },
+      {
+        "title": "Licensed Practitioners",
+        "desc": "Experienced technicians, thoroughly trained and professionally certified."
+      }
+    ]
+  },
+  "services": {
+    "title": "Detailed Service Pricing",
+    "subtitle": "Transparent costs, optimized results",
+    "categories": [
+      {
+        "title": "Advanced Acne Treatment",
+        "items": [
+          { "name": "Medical-Grade Extraction", "price": "350,000₫", "duration": "30 min", "desc": "Safe blackhead and acne extraction under a specialized magnifying lamp." },
+          { "name": "SkinClinic Chemical Peel", "price": "1,200,000₫", "duration": "45 min", "desc": "Resurfaces skin texture and improves acne scars and dark spots." },
+          { "name": "Biological Light Therapy", "price": "450,000₫", "duration": "30 min", "desc": "Anti-inflammatory light therapy to reduce redness and swelling." },
+          { "name": "IPL Acne Dark Spot Removal", "price": "1,800,000₫", "duration": "45 min", "desc": "High-intensity pulsed light technology breaks down pigmentation." }
+        ]
+      },
+      {
+        "title": "Intensive Skin Recovery",
+        "items": [
+          { "name": "Vitamin C/HA Iontophoresis", "price": "600,000₫", "duration": "45 min", "desc": "Delivers active nutrients deep into the skin via bio-electric current." },
+          { "name": "Premium B5 Skin Recovery", "price": "950,000₫", "duration": "60 min", "desc": "Soothes and rebuilds the barrier of damaged, stressed skin." },
+          { "name": "Specialized Recovery Mask", "price": "300,000₫", "duration": "30 min", "desc": "Deep hydration that calms sensitive skin." },
+          { "name": "Natural Moisture Barrier Renewal", "price": "1,500,000₫", "duration": "75 min", "desc": "Intensive protocol restoring skin elasticity." }
+        ]
+      },
+      {
+        "title": "Essential Skincare",
+        "items": [
+          { "name": "Deep Cleansing Facial", "price": "400,000₫", "duration": "45 min", "desc": "Deep pore cleansing that removes accumulated impurities." },
+          { "name": "Physical Exfoliation", "price": "250,000₫", "duration": "20 min", "desc": "Removes dead skin cells for instantly brighter, smoother skin." },
+          { "name": "Relaxing Facial Massage", "price": "350,000₫", "duration": "30 min", "desc": "Relaxes facial muscles and stimulates blood circulation." },
+          { "name": "Skin Detox Suction Therapy", "price": "550,000₫", "duration": "40 min", "desc": "Draws out toxins built up from cosmetics and pollution." }
+        ]
+      },
+      {
+        "title": "Treatment Combos",
+        "featured": true,
+        "ctaText": "Sign Up Now",
+        "items": [
+          { "name": "10-Session Acne Package", "price": "2,900,000₫", "oldPrice": "3,500,000₫", "duration": "10 sessions", "desc": "A complete package for long-term acne control." },
+          { "name": "Instant Radiance Combo", "price": "1,950,000₫", "oldPrice": "2,400,000₫", "duration": "5 sessions", "desc": "Combines cleansing, recovery and brightening care." },
+          { "name": "5-Session Rejuvenation Package", "price": "4,200,000₫", "oldPrice": "5,500,000₫", "duration": "5 sessions", "desc": "Advanced technology for deeply rejuvenated skin." }
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "The Care Journey",
+    "subtitle": "Dedicated at every step to deliver the most optimal results for our clients.",
+    "steps": [
+      { "caption": "Step 1: Deep Cleansing & Detox" },
+      { "caption": "Step 2: Personalized Treatment Plan" },
+      { "caption": "Step 3: High-Tech Recovery" }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "addressLabel": "Address:",
+    "address": "123 Le Loi Street, District 1, Ho Chi Minh City",
+    "phoneLabel": "Hotline:",
+    "phone": "1900 8888 - 0901 234 567",
+    "hoursLabel": "Business Hours:",
+    "hours": "09:00 - 20:00 (Monday - Sunday)",
+    "btnDirection": "Get Directions to the Clinic",
+    "mapUrl": "",
+    "mapFallback": "The map will appear once the site owner adds a Google Maps link."
+  },
+  "footer": {
+    "brand": "Luminous Precision Clinic",
+    "desc": "We believe every skin deserves to be cared for by expert hands and the most advanced technology.",
+    "infoTitle": "Information",
+    "infoLinks": ["Privacy Policy", "Terms of Service", "FAQ", "Contact"],
+    "newsletterTitle": "Newsletter",
+    "newsletterDesc": "Get our latest offers first",
+    "emailPlaceholder": "Your email",
+    "sendBtn": "Send",
+    "copy": "© 2026 Luminous Precision Clinic. All rights reserved. Clinical Excellence in Beauty."
+  }
+}

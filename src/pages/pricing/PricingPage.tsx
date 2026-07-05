@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import PricingCard, { type PricingPlanDef } from './_components/PricingCard';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
@@ -137,6 +138,11 @@ export default function PricingPage() {
 
   return (
     <div className="py-10 px-6 xl:px-10 w-full space-y-8">
+      <Helmet>
+        <title>Bảng Giá — WebChoViet</title>
+        <meta name="description" content="So sánh các gói dịch vụ WebChoViet: miễn phí, WebPro và các gói doanh nghiệp — chọn gói phù hợp để xây dựng website chuyên nghiệp." />
+        <link rel="canonical" href="https://webchoviet.com/pricing" />
+      </Helmet>
       <div className="text-center space-y-3">
         <h1 className="text-3xl font-display font-extrabold text-gray-900 leading-tight">
           Bảng Giá Dịch Vụ WebChoViet

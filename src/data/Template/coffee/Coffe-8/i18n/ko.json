@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "linkCoffee": "커피",
+    "linkMenu": "메뉴",
+    "linkSpace": "매장 공간",
+    "linkReviews": "고객 후기",
+    "linkContact": "문의하기",
+    "cta": "매장 방문"
+  },
+  "hero": {
+    "title": "고요한 사색, 평온한 마음.",
+    "subtitle": "작은 열대 정원을 닮은 푸르른 공간에서 본연의 커피 향을 마음껏 즐겨보세요.",
+    "btnPrimary": "지금 둘러보기",
+    "btnSecondary": "테이블 예약"
+  },
+  "menu": {
+    "label": "엄선된 풍미",
+    "title": "시그니처 메뉴",
+    "tabs": ["커피", "음료", "프라페", "푸드"],
+    "featured": {
+      "badge": "베스트셀러",
+      "name": "시그니처 라떼",
+      "desc": "고급 아라비카 원두와 부드러운 우유의 완벽한 조화."
+    },
+    "items": [
+      {
+        "name": "소금 커피",
+        "desc": "고소한 크림과 은은한 바다 소금이 깊고 진한 쌉싸름함과 어우러집니다.",
+        "price": "55.000đ"
+      },
+      {
+        "name": "오렌지 레몬그라스 콜드브루",
+        "desc": "무더운 오후를 위한 시원하고 상쾌한 한 잔.",
+        "price": "65.000đ"
+      },
+      {
+        "name": "복숭아 오렌지 레몬그라스 티",
+        "desc": "아삭하고 달콤한 복숭아와 향긋한 레몬그라스가 어우러진 스테디셀러.",
+        "price": "50.000đ"
+      },
+      {
+        "name": "버터 크루아상",
+        "desc": "진한 버터 향과 겹겹이 바삭한 식감, 매일 신선하게 구워냅니다.",
+        "price": "45.000đ"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "비전 & 공간",
+    "title": "다각도로 만나는 풍경",
+    "viewMore": "더 보기"
+  },
+  "testimonials": {
+    "title": "고객들의 진솔한 경험",
+    "subtitle": "Garden Sanctuary를 사랑하는 분들의 진심 어린 이야기.",
+    "items": [
+      {
+        "quote": "사이공 시내 한복판에서 정말 특별한 공간이에요. 아침 일찍 책을 읽으러 자주 오는데, 매우 조용하고 편안해요.",
+        "name": "Linh Chi",
+        "role": "사업가"
+      },
+      {
+        "quote": "여기 소금 커피는 제가 마셔본 것 중 최고예요. 게다가 어느 자리든 사진이 정말 잘 나와서 세련되고 고급스러운 느낌이에요.",
+        "name": "Minh Nhat",
+        "role": "크리에이티브 프리랜서"
+      },
+      {
+        "quote": "서비스가 정말 정성스러워요. 직원분들이 늘 미소로 반겨주시고 메뉴 추천도 친절하게 해주세요. 하루의 피로를 풀기에 더없이 좋은 곳입니다.",
+        "name": "Khanh Vy",
+        "role": "사진작가"
+      }
+    ]
+  },
+  "contact": {
+    "title": "저희와 연결되세요",
+    "subtitle": "Garden Sanctuary의 작은 정원을 방문해 평온함을 직접 느껴보세요.",
+    "addressLabel": "주소",
+    "address": "호치민시 1군 남끼커이응이아 거리 123번지",
+    "hoursLabel": "영업시간",
+    "hours": "월요일 - 일요일: 07:00 - 22:30",
+    "phoneLabel": "전화번호",
+    "phone": "+84 123 456 789",
+    "btnCall": "지금 전화하기",
+    "mapLoading": "지도를 불러오는 중...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "sustainability": "지속가능성",
+    "careers": "채용정보",
+    "copy": "© 2026 Garden Sanctuary Coffee. All rights reserved."
+  }
+}

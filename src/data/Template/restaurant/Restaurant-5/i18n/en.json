@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "siteName": "Siam Flavors",
+    "tagline": "Upscale Thai fine dining in the heart of Hanoi"
+  },
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "Menu",
+    "space": "Space",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "bookTable": "Book a Table",
+    "orderNow": "Order Now"
+  },
+  "mobileNav": {
+    "home": "Home",
+    "menu": "Menu",
+    "space": "Space",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "reserveNow": "Reserve Now"
+  },
+  "hero": {
+    "badge": "Authentic Thai Hospitality",
+    "title": "The Golden Lotus",
+    "titleHighlight": "Culinary Sanctuary",
+    "subtitle": "Where the art of Thai cuisine meets the elegance of modern space. Experience refined flavors crafted from the purest ingredients.",
+    "btnReserve": "Reserve a Table",
+    "btnMenu": "Explore the Menu"
+  },
+  "space": {
+    "feature1": {
+      "title": "A Taste of Identity",
+      "desc": "Every dish is a symphony of the five layers of flavor that define Thai cuisine."
+    },
+    "feature2": {
+      "badge": "Health & Wellness",
+      "title": "Organic Greens",
+      "desc": "Vegetables handpicked from local organic farms, guaranteeing the purest, freshest quality.",
+      "link": "Learn more"
+    },
+    "feature3": {
+      "title": "Signature Lotus",
+      "desc": "A collection of our most refined dishes, handed down through generations of royal chefs."
+    },
+    "feature4": {
+      "title": "A Serene Space"
+    }
+  },
+  "menu": {
+    "title": "Signature Menu",
+    "subtitle": "A refined blend of traditional ingredients and contemporary presentation.",
+    "filters": ["All", "Signature Lotus", "Seafood Elegance", "Organic Greens"],
+    "items": [
+      {
+        "name": "Royal Duck Curry",
+        "price": "$18",
+        "desc": "Herb-roasted duck simmered in rich coconut milk with fragrant pineapple and organic cherry tomatoes.",
+        "tag": "Organic",
+        "spiceLevel": 2
+      },
+      {
+        "name": "Salt-Grilled River Prawns",
+        "price": "$36",
+        "desc": "Giant river prawns charcoal-grilled to perfection, served with our signature lime-chili seafood sauce.",
+        "tag": "Best Seller",
+        "spiceLevel": 1
+      },
+      {
+        "name": "Royal Lotus Stem Salad",
+        "price": "$9",
+        "desc": "Crisp fresh lotus stems tossed with shrimp, pork, and a delicate sweet-and-sour fish sauce dressing.",
+        "tag": "Vegan Option",
+        "spiceLevel": 0
+      }
+    ]
+  },
+  "reservation": {
+    "title": "Reservations",
+    "subtitle": "Let us prepare an unforgettable culinary experience just for you.",
+    "phone": "+84 24 3999 8888",
+    "email": "hello@goldenlotus.vn",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "John Smith",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "090 123 4567",
+    "dateLabel": "Arrival Date",
+    "guestsLabel": "Number of Guests",
+    "guestOptions": [
+      { "label": "2 guests" },
+      { "label": "4 guests" },
+      { "label": "6 guests" },
+      { "label": "Other" }
+    ],
+    "noteLabel": "Special Requests",
+    "notePlaceholder": "Notes on allergies or seating preferences...",
+    "submit": "Confirm Reservation"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "initials": "MH",
+        "name": "Minh Huy",
+        "role": "Regular Guest",
+        "quote": "The space here truly feels serene. The duck curry has such a refined flavor — not overpowering, yet it lingers wonderfully."
+      },
+      {
+        "initials": "AN",
+        "name": "Anh Ngoc",
+        "role": "Local Guide",
+        "quote": "Best Thai food in Hanoi! The service is professional and attentive down to the smallest details, like the linens and fresh lotus flowers."
+      },
+      {
+        "initials": "TP",
+        "name": "Thanh Phuong",
+        "role": "Food Blogger",
+        "quote": "A flawless culinary experience. The seafood is incredibly fresh and the seasoning is authentically Thai yet still suits the Vietnamese palate."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact & Map",
+    "addressLabel": "Address",
+    "address": "123 Pho Hue, Hai Ba Trung, Hanoi",
+    "phoneLabel": "Phone",
+    "phone": "+84 24 3999 8888",
+    "hoursLabel": "Opening Hours",
+    "hours": "10:00 AM - 10:30 PM daily",
+    "btnCall": "Call Now",
+    "mapUrl": "",
+    "mapLoading": "Map is being updated"
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "desc": "Crafting an upscale Thai dining space with the utmost respect for authentic local ingredients.",
+    "exploreTitle": "Explore",
+    "exploreLinks": ["Signature Menu", "Private Reservations", "Restaurant Space", "Event Services"],
+    "infoTitle": "Information",
+    "infoLinks": ["Privacy Policy", "Terms of Service", "Careers", "Press Kit"],
+    "contactTitle": "Contact",
+    "address": "123 Pho Hue, Hai Ba Trung, Hanoi",
+    "hours": "Hours: 10:00 AM - 10:30 PM",
+    "hotline": "Hotline: +84 24 3999 8888",
+    "copy": "© 2026 Siam Flavors. Powered by webchoviet."
+  }
+}

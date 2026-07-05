@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "brand": "Aura Wellness",
+    "services": "服务项目",
+    "about": "关于我们",
+    "prices": "价格表",
+    "location": "门店位置",
+    "btnAdvice": "免费咨询",
+    "btnBook": "立即预约"
+  },
+  "hero": {
+    "badge": "专业理疗护理",
+    "title": "唤醒",
+    "titleHighlight": "自然之美的旅程",
+    "subtitle": "在 Aura Wellness，我们将深层肌肤理疗科学与宁静的疗养空间相结合，为您带来全方位的身心恢复体验。",
+    "cta": "探索我们的服务",
+    "badgeYears": "15+ 年",
+    "badgeYearsSub": "理疗经验",
+    "imageAlt": "宁静奢华的水疗接待处，柔和的白墙、拱形木门和浅蓝色点缀"
+  },
+  "highlights": {
+    "title": "特色服务",
+    "subtitle": "针对每种肌肤问题的深层解决方案",
+    "acne": {
+      "tag1": "热门首选",
+      "tag2": "医疗级别",
+      "title": "深层祛痘护理",
+      "desc": "采用生物光技术与医疗级挤压手法，为您量身定制护理方案。",
+      "link": "查看详情",
+      "imageAlt": "高级面部护理特写"
+    },
+    "skinCare": {
+      "title": "肌肤护理",
+      "desc": "恢复肌肤水分，重现自然光彩。",
+      "imageAlt": "理疗师为客人敷上滋养面膜"
+    },
+    "bodyTherapy": {
+      "title": "身体理疗",
+      "desc": "以热石与天然精油舒缓肌肉紧张。",
+      "imageAlt": "理疗师正在进行热石按摩"
+    },
+    "customPlan": {
+      "title": "专属护理方案",
+      "desc": "我们不相信千篇一律的方案。每一种肌肤都有自己的故事，值得被聆听和理解。",
+      "features": ["免费肌肤检测", "一对一跟踪服务"],
+      "statValue": "100%",
+      "statLabel": "有机产品"
+    }
+  },
+  "services": {
+    "title": "服务价格表",
+    "subtitle": "价格透明 - 无隐藏费用",
+    "categories": [
+      {
+        "title": "面部护理",
+        "items": [
+          { "name": "焕肤疗程", "desc": "维他命C导入 + 胶原蛋白", "duration": "60 分钟", "price": "¥240" },
+          { "name": "面部排毒", "desc": "修复受城市污染影响的肌肤", "duration": "45 分钟", "price": "¥100" },
+          { "name": "深层补水", "desc": "透明质酸 + 蚕丝面膜", "duration": "60 分钟", "price": "¥140" }
+        ]
+      },
+      {
+        "title": "祛痘护理",
+        "items": [
+          { "name": "深层祛痘护理", "desc": "挤压清除 + 生物光疗法", "duration": "90 分钟", "price": "¥130" },
+          { "name": "背部祛痘护理", "desc": "深层清洁 + 草本焕肤", "duration": "60 分钟", "price": "¥155" }
+        ]
+      },
+      {
+        "title": "理疗按摩",
+        "items": [
+          { "name": "芳香身体按摩", "desc": "精油理疗", "duration": "75 分钟", "price": "¥170" },
+          { "name": "热石按摩", "desc": "促进血液循环", "duration": "90 分钟", "price": "¥210" },
+          { "name": "肩颈按摩", "desc": "缓解办公疲劳酸痛", "duration": "45 分钟", "price": "¥115" }
+        ]
+      },
+      {
+        "title": "特色套餐",
+        "items": [
+          { "name": "Aura 招牌套餐", "desc": "面部护理 + 身体按摩", "duration": "150 分钟", "price": "¥340" },
+          { "name": "全面修复套餐", "desc": "排毒 + 焕肤 + 按摩", "duration": "180 分钟", "price": "¥420" }
+        ]
+      }
+    ],
+    "promo": "首次体验享 20% 优惠",
+    "promoCta": "立即领取优惠"
+  },
+  "gallery": {
+    "title": "静谧空间",
+    "subtitle": "极简精致的建筑设计，带来绝对的安宁感受",
+    "items": [
+      { "alt": "接待大厅" },
+      { "alt": "理疗室" },
+      { "alt": "按摩区域" }
+    ]
+  },
+  "team": {
+    "title": "专业贴心的专家团队",
+    "desc": "在 Aura，我们的技师不仅技艺精湛，更是懂得倾听和理解客人需求的伙伴。所有人员均持有专业执业证书，并定期接受培训。",
+    "cert": { "title": "国际认证", "sub": "五星级技术标准" },
+    "care": { "title": "一对一贴心服务", "sub": "全程细致周到的护理" },
+    "portrait1Alt": "专业水疗理疗师肖像",
+    "portrait2Alt": "水疗团队站在豪华接待区"
+  },
+  "contact": {
+    "title": "我们的位置",
+    "subtitle": "欢迎莅临 Aura Wellness，在市中心尽享高端理疗体验。",
+    "addressLabel": "地址",
+    "address": "越南胡志明市第一郡黎利街123号",
+    "phoneLabel": "电话",
+    "phone": "1900 1234",
+    "hoursLabel": "营业时间",
+    "hours": "上午9:00 - 晚上9:00（每日）",
+    "btnDirection": "在谷歌地图上查看路线",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447877432445!2d106.70175551471845!3d10.7756586923221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4693f7a111%3A0xdb304566640235d5!2zTMOqIEzhu6NpLCBC4bq_biBUaMOgbmgsIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1625123456789!5m2!1svi!2s",
+    "mapLoading": "地图加载中..."
+  },
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "以深层理疗与静谧心境，打造持久之美。",
+    "servicesTitle": "服务项目",
+    "servicesLinks": ["祛痘护理", "肌肤焕活", "身体按摩"],
+    "policyTitle": "政策条款",
+    "policyLinks": ["隐私政策", "服务条款", "退款政策"],
+    "contactTitle": "联系方式",
+    "contactCity": "胡志明市",
+    "contactPhone": "1900 1234",
+    "copyright": "© 2026 Aura Wellness Spa. 持证专业理疗师。",
+    "tagline1": "专业理疗团队",
+    "tagline2": "隐私政策"
+  }
+}

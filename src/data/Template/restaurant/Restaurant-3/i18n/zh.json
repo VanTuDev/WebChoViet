@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "brand": "Sizzling Hearth 炙暖火锅",
+    "menu": "菜单",
+    "reservations": "预订餐位",
+    "privateDining": "包间雅座",
+    "locations": "门店位置",
+    "loyalty": "会员积分",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "title": "围炉共享,热气腾腾的团圆时光",
+    "subtitle": "在现代温馨的空间里,品味精致传统火锅的独特风味。",
+    "btnReserve": "立即订位",
+    "btnMenu": "查看菜单"
+  },
+  "menuSection": {
+    "eyebrow": "招牌菜单",
+    "title": "炙暖火锅的独家风味",
+    "chips": ["招牌锅底", "顶级牛肉", "海鲜", "时蔬"],
+    "featured": {
+      "name": "四川麻辣锅底",
+      "desc": "精选12种珍贵香料熬制,辛香浓烈,带来味蕾的极致绽放。",
+      "heatLevel": 3
+    },
+    "items": [
+      {
+        "name": "A5和牛肉片",
+        "desc": "入口即化",
+        "price": "128元"
+      },
+      {
+        "name": "综合海鲜拼盘",
+        "desc": "鲜美来自大海",
+        "price": "98元"
+      }
+    ],
+    "viewAll": {
+      "title": "查看完整菜单",
+      "desc": "50+道诱人涮品",
+      "cta": "立即探索"
+    }
+  },
+  "space": {
+    "eyebrow": "餐厅空间",
+    "title": "凝聚亲情的温暖角落",
+    "desc": "在炙暖火锅,我们相信每一顿饭都是联结彼此的契机。空间以暖调色系设计,融合传统韵味与现代气息,为宾客带来极致的放松体验。",
+    "features": [
+      {
+        "title": "尊享包间雅座",
+        "desc": "适合家庭聚会或商务接待。"
+      },
+      {
+        "title": "露天休闲区",
+        "desc": "通风怡人,亲近自然,是周末夜晚的理想去处。"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "顾客怎么说",
+    "items": [
+      {
+        "quote": "这里的锅底真的与众不同,长时间熬煮的骨汤带着自然的甘甜。和牛肉新鲜细嫩,切片恰到好处。一定会再来!",
+        "name": "阿俊先生",
+        "role": "忠实顾客"
+      },
+      {
+        "quote": "店内空间非常温馨,服务员热情周到。对炙暖火锅的服务品质十分满意。",
+        "name": "兰香女士",
+        "role": "美食博主"
+      },
+      {
+        "quote": "是公司聚餐的理想场所。菜品丰富多样,从海鲜到涮菜都非常新鲜。",
+        "name": "明煌先生",
+        "role": "顾客"
+      }
+    ]
+  },
+  "contact": {
+    "title": "欢迎光临",
+    "branchName": "炙暖火锅 - 第一郡分店",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡, 滨城坊, 黎利街123号",
+    "phoneLabel": "联系电话",
+    "phone": "028 3822 1234",
+    "hoursLabel": "营业时间",
+    "hours": "每日 10:00 - 22:30",
+    "btnDirections": "获取路线",
+    "btnReserve": "致电预订",
+    "mapUrl": "",
+    "mapLoading": "地图加载中..."
+  },
+  "footer": {
+    "brand": "Sizzling Hearth 炙暖火锅",
+    "desc": "让亚洲火锅的精髓走进每一个家庭。品质成就与众不同。",
+    "companyTitle": "公司信息",
+    "companyLinks": ["隐私政策", "服务条款", "可持续发展"],
+    "exploreTitle": "探索更多",
+    "exploreLinks": ["招聘信息", "媒体资料包"],
+    "copy": "© 2026 Sizzling Hearth 炙暖火锅。由 WebChoViet 构建。"
+  },
+  "fab": {
+    "label": "立即订位"
+  }
+}

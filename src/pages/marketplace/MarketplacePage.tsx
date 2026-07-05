@@ -1,6 +1,7 @@
 // Trang Kho Giao Diện — đọc category & query từ URL search params
 import { useState, useMemo } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Info, ChevronDown } from 'lucide-react';
 import { TEMPLATES, type Template } from '../../data';
 import { CATEGORY_HEADING_MAP } from '../../data/templates/registry';
@@ -64,6 +65,11 @@ export default function MarketplacePage() {
 
   return (
     <div className="flex-1 py-5 sm:py-8 px-4 sm:px-6 xl:px-10 w-full">
+      <Helmet>
+        <title>{heading.title} — WebChoViet</title>
+        <meta name="description" content={heading.desc} />
+        <link rel="canonical" href="https://webchoviet.com/marketplace" />
+      </Helmet>
       {/* ── Category breadcrumb + Heading ────────────────────────────────── */}
       <div className="space-y-2.5 sm:space-y-4 mb-6 sm:mb-8">
         {category !== 'all' && (

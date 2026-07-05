@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "siteName": "Siam Flavors",
+    "tagline": "河内市中心的高级泰式餐厅"
+  },
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "菜单",
+    "space": "空间",
+    "reviews": "评价",
+    "contact": "联系",
+    "bookTable": "预订餐桌",
+    "orderNow": "立即点餐"
+  },
+  "mobileNav": {
+    "home": "首页",
+    "menu": "菜单",
+    "space": "空间",
+    "reviews": "评价",
+    "contact": "联系",
+    "reserveNow": "立即预订"
+  },
+  "hero": {
+    "badge": "正宗泰式待客之道",
+    "title": "金莲花",
+    "titleHighlight": "美食圣殿",
+    "subtitle": "在这里，泰式烹饪艺术与现代空间的优雅交融。以最纯净的食材，为您呈现精致非凡的味觉体验。",
+    "btnReserve": "立即预订",
+    "btnMenu": "探索菜单"
+  },
+  "space": {
+    "feature1": {
+      "title": "风味的本色",
+      "desc": "每一道菜都是泰式五重风味的和谐交响。"
+    },
+    "feature2": {
+      "badge": "健康与身心",
+      "title": "有机时蔬",
+      "desc": "精选本地有机农场的新鲜蔬菜，只为呈现最纯粹的口感。",
+      "link": "了解更多"
+    },
+    "feature3": {
+      "title": "招牌莲花",
+      "desc": "汇集历代皇家御厨传承下来的至臻美味。"
+    },
+    "feature4": {
+      "title": "静谧空间"
+    }
+  },
+  "menu": {
+    "title": "特色菜单",
+    "subtitle": "传统食材与现代摆盘风格的精妙融合。",
+    "filters": ["全部", "招牌莲花", "海鲜臻选", "有机时蔬"],
+    "items": [
+      {
+        "name": "皇家鸭肉咖喱",
+        "price": "¥128",
+        "desc": "香草烤鸭慢炖于浓郁椰奶中，搭配清香菠萝与有机小番茄。",
+        "tag": "有机",
+        "spiceLevel": 2
+      },
+      {
+        "name": "炭烤椒盐河虾",
+        "price": "¥258",
+        "desc": "巨型河虾炭火烧烤至完美火候，佐以招牌青柠辣椒海鲜酱。",
+        "tag": "畅销",
+        "spiceLevel": 1
+      },
+      {
+        "name": "皇室莲藕沙拉",
+        "price": "¥68",
+        "desc": "清脆莲藕搭配虾肉与猪肉，淋上清雅酸甜鱼露酱汁。",
+        "tag": "素食可选",
+        "spiceLevel": 0
+      }
+    ]
+  },
+  "reservation": {
+    "title": "预订餐桌",
+    "subtitle": "让我们为您精心准备一场难忘的美食体验。",
+    "phone": "+84 24 3999 8888",
+    "email": "hello@goldenlotus.vn",
+    "nameLabel": "姓名",
+    "namePlaceholder": "王先生",
+    "phoneLabel": "电话号码",
+    "phonePlaceholder": "090 123 4567",
+    "dateLabel": "到店日期",
+    "guestsLabel": "用餐人数",
+    "guestOptions": [
+      { "label": "2位" },
+      { "label": "4位" },
+      { "label": "6位" },
+      { "label": "其他" }
+    ],
+    "noteLabel": "特殊需求",
+    "notePlaceholder": "请注明过敏信息或座位偏好……",
+    "submit": "确认预订"
+  },
+  "testimonials": {
+    "title": "顾客心声",
+    "items": [
+      {
+        "initials": "MH",
+        "name": "阮明辉",
+        "role": "忠实顾客",
+        "quote": "这里的空间真的让人身心放松。鸭肉咖喱的味道非常细腻，不过于浓烈却回味悠长。"
+      },
+      {
+        "initials": "AN",
+        "name": "陈映玉",
+        "role": "本地向导",
+        "quote": "河内最好吃的泰式料理！服务专业细致，连桌布和新鲜莲花这样的小细节都做得很到位。"
+      },
+      {
+        "initials": "TP",
+        "name": "黎清芳",
+        "role": "美食博主",
+        "quote": "一次完美的美食体验。海鲜非常新鲜，调味十分道地泰式，同时又很符合越南人的口味。"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系方式与地图",
+    "addressLabel": "地址",
+    "address": "越南河内市二征夫人郡顺化街123号",
+    "phoneLabel": "电话",
+    "phone": "+84 24 3999 8888",
+    "hoursLabel": "营业时间",
+    "hours": "每日 10:00 - 22:30",
+    "btnCall": "立即致电",
+    "mapUrl": "",
+    "mapLoading": "地图更新中"
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "desc": "以对本地食材的极致尊重，打造高级泰式餐饮空间。",
+    "exploreTitle": "探索",
+    "exploreLinks": ["特色菜单", "私人订位", "餐厅空间", "宴会服务"],
+    "infoTitle": "信息",
+    "infoLinks": ["隐私政策", "服务条款", "招聘信息", "新闻资料"],
+    "contactTitle": "联系",
+    "address": "越南河内市二征夫人郡顺化街123号",
+    "hours": "营业时间：10:00 - 22:30",
+    "hotline": "热线：+84 24 3999 8888",
+    "copy": "© 2026 Siam Flavors. Powered by webchoviet."
+  }
+}

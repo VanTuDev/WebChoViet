@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "brand": "Aura Wellness",
+    "services": "Dịch Vụ",
+    "about": "Về Chúng Tôi",
+    "prices": "Bảng Giá",
+    "location": "Vị Trí",
+    "btnAdvice": "Tư Vấn Miễn Phí",
+    "btnBook": "Đặt Lịch Ngay"
+  },
+  "hero": {
+    "badge": "Liệu Pháp Trị Liệu Chuyên Nghiệp",
+    "title": "Hành Trình Đánh Thức",
+    "titleHighlight": "Vẻ Đẹp Tự Nhiên",
+    "subtitle": "Tại Aura Wellness, chúng tôi kết hợp khoa học trị liệu làn da chuyên sâu với không gian nghỉ dưỡng tĩnh lặng, mang lại trải nghiệm phục hồi toàn diện.",
+    "cta": "Khám Phá Dịch Vụ",
+    "badgeYears": "15+ Năm",
+    "badgeYearsSub": "Kinh Nghiệm Trị Liệu",
+    "imageAlt": "Sảnh đón tiếp spa trị liệu sang trọng với tường trắng mềm mại, cửa vòm gỗ và điểm nhấn xanh nhạt"
+  },
+  "highlights": {
+    "title": "Dịch Vụ Nổi Bật",
+    "subtitle": "Giải pháp chuyên sâu cho từng vấn đề của bạn",
+    "acne": {
+      "tag1": "Bán Chạy Nhất",
+      "tag2": "Chuẩn Y Khoa",
+      "title": "Trị Mụn Chuyên Sâu",
+      "desc": "Liệu trình cá nhân hóa sử dụng công nghệ ánh sáng sinh học và kỹ thuật lấy nhân mụn chuẩn y khoa.",
+      "link": "Xem Chi Tiết",
+      "imageAlt": "Cận cảnh liệu trình chăm sóc da mặt cao cấp"
+    },
+    "skinCare": {
+      "title": "Chăm Sóc Da",
+      "desc": "Phục hồi độ ẩm và làm sáng da tự nhiên.",
+      "imageAlt": "Chuyên viên đắp mặt nạ dưỡng da cho khách hàng"
+    },
+    "bodyTherapy": {
+      "title": "Body Therapy",
+      "desc": "Giải tỏa căng thẳng cơ bắp với đá nóng và tinh dầu organic.",
+      "imageAlt": "Chuyên viên thực hiện massage đá nóng"
+    },
+    "customPlan": {
+      "title": "Phác Đồ Riêng",
+      "desc": "Chúng tôi không tin vào một giải pháp cho tất cả. Mỗi làn da là một câu chuyện riêng cần được lắng nghe và thấu hiểu.",
+      "features": ["Soi da miễn phí", "Theo dõi 1-1"],
+      "statValue": "100%",
+      "statLabel": "Sản Phẩm Organic"
+    }
+  },
+  "services": {
+    "title": "Bảng Giá Dịch Vụ",
+    "subtitle": "Cam kết minh bạch - Không phát sinh chi phí",
+    "categories": [
+      {
+        "title": "Chăm Sóc Da Mặt",
+        "items": [
+          { "name": "Liệu Trình Trẻ Hóa", "desc": "Điện di Vitamin C + Collagen", "duration": "60 phút", "price": "850.000đ" },
+          { "name": "Thải Độc Chì Da Mặt", "desc": "Phục hồi làn da nhiễm khói bụi", "duration": "45 phút", "price": "350.000đ" },
+          { "name": "Cấp Ẩm Chuyên Sâu", "desc": "Hyaluronic Acid + Mặt nạ lụa", "duration": "60 phút", "price": "500.000đ" }
+        ]
+      },
+      {
+        "title": "Điều Trị Mụn",
+        "items": [
+          { "name": "Trị Mụn Chuyên Sâu", "desc": "Lấy nhân mụn + Ánh sáng sinh học", "duration": "90 phút", "price": "450.000đ" },
+          { "name": "Trị Mụn Lưng", "desc": "Làm sạch sâu + Peel thảo dược", "duration": "60 phút", "price": "550.000đ" }
+        ]
+      },
+      {
+        "title": "Massage Trị Liệu",
+        "items": [
+          { "name": "Massage Body Aroma", "desc": "Trị liệu tinh dầu", "duration": "75 phút", "price": "600.000đ" },
+          { "name": "Massage Đá Nóng", "desc": "Lưu thông khí huyết", "duration": "90 phút", "price": "750.000đ" },
+          { "name": "Massage Cổ Vai Gáy", "desc": "Giảm đau mỏi văn phòng", "duration": "45 phút", "price": "400.000đ" }
+        ]
+      },
+      {
+        "title": "Gói Đặc Biệt",
+        "items": [
+          { "name": "Combo Aura Signature", "desc": "Chăm sóc da mặt + Massage Body", "duration": "150 phút", "price": "1.200.000đ" },
+          { "name": "Gói Phục Hồi Toàn Diện", "desc": "Thải độc + Trẻ hóa + Massage", "duration": "180 phút", "price": "1.500.000đ" }
+        ]
+      }
+    ],
+    "promo": "Ưu đãi 20% cho khách hàng lần đầu trải nghiệm",
+    "promoCta": "Nhận Ưu Đãi Ngay"
+  },
+  "gallery": {
+    "title": "Không Gian Thư Giãn",
+    "subtitle": "Kiến trúc tối giản, tinh tế mang lại sự an yên tuyệt đối",
+    "items": [
+      { "alt": "Sảnh đón tiếp" },
+      { "alt": "Phòng trị liệu" },
+      { "alt": "Khu vực massage" }
+    ]
+  },
+  "team": {
+    "title": "Đội Ngũ Chuyên Gia Tận Tâm",
+    "desc": "Tại Aura, đội ngũ kỹ thuật viên không chỉ giỏi tay nghề mà còn là những người bạn đồng hành, lắng nghe và thấu hiểu mong muốn của khách hàng. Tất cả đều sở hữu chứng chỉ hành nghề chuyên nghiệp và trải qua các khóa đào tạo định kỳ.",
+    "cert": { "title": "Chứng Chỉ Quốc Tế", "sub": "Kỹ thuật đạt chuẩn 5 sao" },
+    "care": { "title": "Tận Tâm 1-1", "sub": "Chăm sóc chu đáo suốt liệu trình" },
+    "portrait1Alt": "Chân dung chuyên viên trị liệu spa chuyên nghiệp",
+    "portrait2Alt": "Đội ngũ nhân viên spa trong không gian tiếp tân sang trọng"
+  },
+  "contact": {
+    "title": "Vị Trí Của Chúng Tôi",
+    "subtitle": "Ghé thăm Aura Wellness để tận hưởng không gian trị liệu đẳng cấp ngay tại trung tâm thành phố.",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Điện thoại",
+    "phone": "1900 1234",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "09:00 - 21:00 (Hàng ngày)",
+    "btnDirection": "Chỉ Đường Trên Google Maps",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447877432445!2d106.70175551471845!3d10.7756586923221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4693f7a111%3A0xdb304566640235d5!2zTMOqIEzhu6NpLCBC4bq_biBUaMOgbmgsIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1625123456789!5m2!1svi!2s",
+    "mapLoading": "Bản đồ đang được tải..."
+  },
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "Kiến tạo vẻ đẹp bền vững qua liệu pháp trị liệu chuyên sâu và tinh thần thư thái.",
+    "servicesTitle": "Dịch Vụ",
+    "servicesLinks": ["Trị Mụn", "Trẻ Hóa Da", "Massage Body"],
+    "policyTitle": "Chính Sách",
+    "policyLinks": ["Bảo Mật", "Điều Khoản", "Hoàn Tiền"],
+    "contactTitle": "Liên Hệ",
+    "contactCity": "TP. Hồ Chí Minh",
+    "contactPhone": "1900 1234",
+    "copyright": "© 2026 Aura Wellness Spa. Chuyên viên trị liệu được cấp phép.",
+    "tagline1": "Chuyên Viên Chuyên Nghiệp",
+    "tagline2": "Chính Sách Bảo Mật"
+  }
+}

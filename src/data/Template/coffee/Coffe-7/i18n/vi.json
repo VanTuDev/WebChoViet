@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "menu": "Menu",
+    "ourStory": "Câu Chuyện",
+    "reservations": "Đặt Bàn",
+    "locations": "Địa Điểm",
+    "orderOnline": "Đặt Hàng Online",
+    "fabLabel": "Đặt hàng nhanh"
+  },
+  "hero": {
+    "title": "Nơi Giao Thoa Giữa Thiên Nhiên Và Cà Phê",
+    "subtitle": "Trải nghiệm không gian sân vườn yên tĩnh ngay giữa lòng thành phố, nơi mỗi tách cà phê là một hành trình tìm về sự tĩnh lặng.",
+    "btnMenu": "Khám Phá Menu",
+    "btnReserve": "Đặt Bàn Ngay"
+  },
+  "menu": {
+    "eyebrow": "Hương Vị Chọn Lọc",
+    "title": "Thực Đơn Đặc Trưng",
+    "tabs": ["Cà Phê", "Nước Uống", "Đá Xay", "Thức Ăn"],
+    "featured": {
+      "badge": "Bán Chạy Nhất",
+      "name": "Cà Phê Trứng Đặc Sản",
+      "desc": "Lớp kem trứng béo ngậy hòa quyện cùng cà phê Robusta đậm đà, mang đến hương vị truyền thống tinh tế.",
+      "price": "65.000 VNĐ"
+    },
+    "items": [
+      {
+        "name": "Cà Phê Đen Đá",
+        "desc": "Chiết xuất từ hạt Arabica thượng hạng, hậu vị ngọt kéo dài.",
+        "price": "45.000 VNĐ"
+      },
+      {
+        "name": "Bạc Xỉu Sương Sáo",
+        "desc": "Sự kết hợp giữa sữa đặc, cà phê và thạch sương sáo mát lạnh.",
+        "price": "55.000 VNĐ"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Không Gian Bình Yên",
+    "subtitle": "Mỗi góc nhỏ tại Garden Sanctuary đều được chăm chút để mang lại sự thư thái tuyệt đối cho bạn."
+  },
+  "testimonials": {
+    "title": "Trải Nghiệm Từ Khách Hàng",
+    "items": [
+      {
+        "name": "Minh Anh",
+        "role": "Chủ doanh nghiệp",
+        "quote": "Garden Sanctuary là nơi tôi luôn tìm đến để tập trung làm việc. Không gian xanh mát giúp tâm trí tôi luôn được làm mới.",
+        "rating": 5
+      },
+      {
+        "name": "Hoàng Nam",
+        "role": "Freelancer",
+        "quote": "Cà phê ở đây thực sự chất lượng. Hương vị đậm đà và phong cách phục vụ vô cùng chuyên nghiệp, ấm áp.",
+        "rating": 5
+      },
+      {
+        "name": "Thảo Vy",
+        "role": "Nhiếp ảnh gia",
+        "quote": "Ánh sáng và mọi góc decor ở Garden đều lên hình rất đẹp. Một địa điểm tuyệt vời cho các bạn yêu thích sự duy mỹ.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Tìm Chúng Tôi Tại",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Sắc Màu, Quận 1, TP. Hồ Chí Minh",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "Thứ 2 - Chủ Nhật: 07:00 - 22:00",
+    "phoneLabel": "Liên hệ",
+    "phone": "028.1234.5678",
+    "email": "hello@gardensanctuary.vn",
+    "formName": "Họ và tên",
+    "formEmail": "Email của bạn",
+    "formMessage": "Bạn cần hỗ trợ gì?",
+    "formSubmit": "Gửi Lời Nhắn",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "copy": "© 2024 Garden Sanctuary Coffee. Crafted for calm.",
+    "privacy": "Chính Sách Bảo Mật",
+    "terms": "Điều Khoản Sử Dụng",
+    "sustainability": "Phát Triển Bền Vững",
+    "contactUs": "Liên Hệ"
+  }
+}

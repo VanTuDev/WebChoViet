@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "brand": "Luminous Precision Clinic",
+    "links": ["Công nghệ", "Liệu trình", "Bảng giá", "Địa chỉ"],
+    "cta": "Đặt hẹn"
+  },
+  "hero": {
+    "badge": "Medical Grade Skincare",
+    "title": "Đánh Thức Làn Da",
+    "titleHighlight": "Hoàn Hảo",
+    "subtitle": "Trải nghiệm công nghệ thẩm mỹ hiện đại kết hợp với quy trình lâm sàng chuẩn y khoa. Chúng tôi mang đến giải pháp cá nhân hóa cho vẻ đẹp bền vững.",
+    "btnPrimary": "Khám phá liệu trình",
+    "btnSecondary": "Tư vấn miễn phí"
+  },
+  "trust": {
+    "items": [
+      {
+        "title": "Thiết bị hiện đại",
+        "desc": "Sở hữu hệ thống máy móc đạt chuẩn FDA Hoa Kỳ và CE Châu Âu."
+      },
+      {
+        "title": "Dược mỹ phẩm chính hãng",
+        "desc": "Cam kết 100% sản phẩm từ các thương hiệu dược mỹ phẩm hàng đầu thế giới."
+      },
+      {
+        "title": "Giấy phép hành nghề",
+        "desc": "Đội ngũ kỹ thuật viên giàu kinh nghiệm, đào tạo bài bản và có chứng chỉ chuyên môn."
+      }
+    ]
+  },
+  "services": {
+    "title": "Bảng Giá Dịch Vụ Chi Tiết",
+    "subtitle": "Minh bạch trong chi phí, tối ưu trong hiệu quả",
+    "categories": [
+      {
+        "title": "Trị Mụn Công Nghệ",
+        "items": [
+          { "name": "Lấy nhân mụn chuẩn y khoa", "price": "350.000đ", "duration": "30 phút", "desc": "Làm sạch cồi mụn an toàn dưới kính lúp chuyên dụng." },
+          { "name": "Peel da hóa học SkinClinic", "price": "1.200.000đ", "duration": "45 phút", "desc": "Tái tạo bề mặt da, cải thiện mụn và thâm sẹo." },
+          { "name": "Chiếu ánh sáng sinh học", "price": "450.000đ", "duration": "30 phút", "desc": "Kháng viêm, giảm sưng đỏ bằng ánh sáng sinh học." },
+          { "name": "IPL trị thâm mụn", "price": "1.800.000đ", "duration": "45 phút", "desc": "Công nghệ xung ánh sáng cường độ cao đánh tan sắc tố." }
+        ]
+      },
+      {
+        "title": "Phục Hồi Chuyên Sâu",
+        "items": [
+          { "name": "Điện di Vitamin C/HA", "price": "600.000đ", "duration": "45 phút", "desc": "Đưa dưỡng chất vào sâu trong da bằng dòng điện sinh học." },
+          { "name": "Phục hồi da B5 cao cấp", "price": "950.000đ", "duration": "60 phút", "desc": "Làm dịu và tái tạo hàng rào bảo vệ da tổn thương." },
+          { "name": "Mặt nạ phục hồi chuyên biệt", "price": "300.000đ", "duration": "30 phút", "desc": "Cấp ẩm chuyên sâu, làm dịu da nhạy cảm." },
+          { "name": "Tái tạo màng ẩm tự nhiên", "price": "1.500.000đ", "duration": "75 phút", "desc": "Liệu trình chuyên sâu phục hồi độ đàn hồi cho da." }
+        ]
+      },
+      {
+        "title": "Chăm Sóc Cơ Bản",
+        "items": [
+          { "name": "Deep Cleansing Facial", "price": "400.000đ", "duration": "45 phút", "desc": "Làm sạch sâu lỗ chân lông, loại bỏ bụi bẩn tích tụ." },
+          { "name": "Tẩy tế bào chết vật lý", "price": "250.000đ", "duration": "20 phút", "desc": "Loại bỏ da chết, giúp da sáng mịn tức thì." },
+          { "name": "Massage mặt thư giãn", "price": "350.000đ", "duration": "30 phút", "desc": "Thư giãn cơ mặt, kích thích tuần hoàn máu." },
+          { "name": "Hút chì thải độc da", "price": "550.000đ", "duration": "40 phút", "desc": "Thải độc tố tích tụ do mỹ phẩm và ô nhiễm." }
+        ]
+      },
+      {
+        "title": "Combo Liệu Trình",
+        "featured": true,
+        "ctaText": "Đăng ký ngay",
+        "items": [
+          { "name": "Gói 10 buổi Trị Mụn", "price": "2.900.000đ", "oldPrice": "3.500.000đ", "duration": "10 buổi", "desc": "Liệu trình trọn gói kiểm soát mụn dài hạn." },
+          { "name": "Combo Sáng Da Tức Thì", "price": "1.950.000đ", "oldPrice": "2.400.000đ", "duration": "5 buổi", "desc": "Kết hợp làm sạch, phục hồi và dưỡng sáng." },
+          { "name": "Gói Trẻ Hóa 5 Buổi", "price": "4.200.000đ", "oldPrice": "5.500.000đ", "duration": "5 buổi", "desc": "Công nghệ cao chuyên sâu cho làn da trẻ hóa." }
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "title": "Hành Trình Chăm Sóc",
+    "subtitle": "Tận tâm trong từng bước thực hiện để mang lại kết quả tối ưu nhất cho khách hàng.",
+    "steps": [
+      { "caption": "Bước 1: Làm sạch & Thải độc sâu" },
+      { "caption": "Bước 2: Phác đồ điều trị chuyên biệt" },
+      { "caption": "Bước 3: Công nghệ cao & Phục hồi" }
+    ]
+  },
+  "contact": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "addressLabel": "Địa chỉ:",
+    "address": "123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Hotline:",
+    "phone": "1900 8888 - 0901 234 567",
+    "hoursLabel": "Giờ làm việc:",
+    "hours": "09:00 - 20:00 (Thứ 2 - Chủ Nhật)",
+    "btnDirection": "Chỉ đường tới phòng khám",
+    "mapUrl": "",
+    "mapFallback": "Bản đồ sẽ hiển thị sau khi chủ trang cập nhật liên kết Google Maps."
+  },
+  "footer": {
+    "brand": "Luminous Precision Clinic",
+    "desc": "Chúng tôi tin rằng mỗi làn da đều xứng đáng được chăm sóc bởi những bàn tay chuyên gia và công nghệ tiên tiến nhất.",
+    "infoTitle": "Thông Tin",
+    "infoLinks": ["Chính sách bảo mật", "Điều khoản sử dụng", "Câu hỏi thường gặp", "Liên hệ"],
+    "newsletterTitle": "Bản Tin",
+    "newsletterDesc": "Nhận ưu đãi sớm nhất từ chúng tôi",
+    "emailPlaceholder": "Email của bạn",
+    "sendBtn": "Gửi",
+    "copy": "© 2026 Luminous Precision Clinic. Bảo lưu mọi quyền. Clinical Excellence in Beauty."
+  }
+}

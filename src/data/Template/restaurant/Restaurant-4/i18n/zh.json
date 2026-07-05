@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "brand": "暹罗风味",
+    "menu": "菜单",
+    "space": "空间",
+    "reviews": "评价",
+    "contact": "联系我们",
+    "orderNow": "立即点餐",
+    "bookTable": "预订座位"
+  },
+  "hero": {
+    "badge": "曼谷街头美食体验",
+    "titlePrefix": "炽热的",
+    "titleHighlight": "风味",
+    "titleSuffix": "在西贡的心脏地带绽放",
+    "subtitle": "带您走进霓虹闪烁的曼谷小巷，热气腾腾的炒粉锅与迷人辛辣的味道时刻等候着您。",
+    "btnMenu": "探索菜单",
+    "btnGallery": "查看画廊",
+    "spicyBadge": "超级辣"
+  },
+  "menuSection": {
+    "title": "街头风味菜单",
+    "tabs": ["全部", "炒粉炒面", "酸辣沙拉", "茶饮甜品"],
+    "featured": {
+      "label": "招牌主打",
+      "name": "泰式炒河粉",
+      "desc": "传统泰式炒河粉，配新鲜虾仁、豆腐、豆芽，搭配招牌酸甜罗望子酱，是曼谷街头美食的代表之作。",
+      "tag": "原汁原味",
+      "price": "129,000越南盾"
+    },
+    "sideCards": [
+      { "title": "炭烤肉串", "desc": "炭火炙烤的香浓肉串" },
+      { "title": "泰式奶茶", "desc": "香浓顺滑的泰式奶茶" }
+    ],
+    "promo": {
+      "title": "特别优惠",
+      "desc": "预订4人以上餐桌即赠送一杯泰式奶茶",
+      "cta": "立即预订"
+    },
+    "itemsTitle": "完整菜单",
+    "items": [
+      {
+        "name": "冬阴功汤",
+        "desc": "酸辣泰式汤品，加入新鲜虾仁、香茅、南姜与青柠叶，风味浓郁。",
+        "price": "89,000越南盾",
+        "category": "炒粉炒面"
+      },
+      {
+        "name": "青木瓜沙拉",
+        "desc": "青木瓜丝拌辣椒、大蒜、烤花生与酸甜鱼露酱汁。",
+        "price": "65,000越南盾",
+        "category": "酸辣沙拉"
+      },
+      {
+        "name": "泰式打抛猪肉饭",
+        "desc": "猪肉末与泰式圣罗勒热炒，搭配煎蛋与热米饭。",
+        "price": "79,000越南盾",
+        "category": "炒粉炒面"
+      },
+      {
+        "name": "泰式烤鸡",
+        "desc": "以香茅与姜黄腌制的炭烤鸡肉，佐酸甜罗望子酱食用。",
+        "price": "95,000越南盾",
+        "category": "炒粉炒面"
+      },
+      {
+        "name": "泰式拌肉沫",
+        "desc": "猪肉末拌炒米粉、青柠、干辣椒与泰式香草。",
+        "price": "72,000越南盾",
+        "category": "酸辣沙拉"
+      },
+      {
+        "name": "芒果糯米饭",
+        "desc": "软糯香甜的糯米饭配熟芒果与浓郁椰浆。",
+        "price": "55,000越南盾",
+        "category": "茶饮甜品"
+      }
+    ]
+  },
+  "space": {
+    "title": "感受「曼谷氛围」",
+    "subtitle": "如泰国首都般绚丽热闹的空间氛围",
+    "caption": "华灯初上的街道"
+  },
+  "testimonials": {
+    "title": "顾客对暹罗风味的评价",
+    "ratingScore": "4.9/5",
+    "ratingCount": "（2000+条评价）",
+    "ctaGoogle": "在谷歌地图查看全部评价",
+    "items": [
+      {
+        "quote": "这里的泰式炒河粉味道真的和曼谷夜市吃到的一模一样，不会太甜，罗望子酱浓郁，虾仁也非常新鲜。",
+        "name": "阮明兰",
+        "role": "本地向导"
+      },
+      {
+        "quote": "装潢很有格调，橙色霓虹灯让食物看起来更加诱人，一定会再和朋友一起来！",
+        "name": "陈黄",
+        "role": "美食博主"
+      }
+    ]
+  },
+  "contact": {
+    "title": "找到我们",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡达高坊霓虹街123号",
+    "hoursLabel": "营业时间",
+    "hours": "周一至周日：10:30 - 23:00",
+    "phoneLabel": "联系方式",
+    "phone": "028 3899 9999",
+    "email": "hello@siamflavors.vn",
+    "mapUrl": "",
+    "mapLoading": "地图加载中...",
+    "openNowLabel": "营业中",
+    "openNowText": "现在就来品尝吧！"
+  },
+  "footer": {
+    "brand": "暹罗风味",
+    "tagline": "地道泰式风味 - 用心为您服务。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "support": "客户支持",
+    "copy": "© 2026 暹罗风味。由 WebChoViet 提供技术支持。"
+  },
+  "mobileNav": {
+    "menu": "菜单",
+    "space": "空间",
+    "reviews": "评价",
+    "direction": "导航"
+  }
+}

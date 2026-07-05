@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "linkCoffee": "Coffee",
+    "linkMenu": "Menu",
+    "linkSpace": "Space",
+    "linkReviews": "Reviews",
+    "linkContact": "Contact",
+    "cta": "Visit Us"
+  },
+  "hero": {
+    "title": "A tranquil mind, a peaceful soul.",
+    "subtitle": "Savor the taste of original coffee amid the lush greenery of a miniature tropical garden.",
+    "btnPrimary": "Discover Now",
+    "btnSecondary": "Reserve a Table"
+  },
+  "menu": {
+    "label": "Curated Flavors",
+    "title": "Signature Menu",
+    "tabs": ["Coffee", "Drinks", "Frappe", "Food"],
+    "featured": {
+      "badge": "Best Seller",
+      "name": "Signature Latte",
+      "desc": "A perfect blend of premium Arabica beans and silky fresh milk."
+    },
+    "items": [
+      {
+        "name": "Salted Coffee",
+        "desc": "The creamy richness of cream and a hint of sea salt blend with deep, bold bitterness.",
+        "price": "55.000đ"
+      },
+      {
+        "name": "Orange Lemongrass Cold Brew",
+        "desc": "Cool and refreshing, perfect for a sweltering afternoon.",
+        "price": "65.000đ"
+      },
+      {
+        "name": "Peach Orange Lemongrass Tea",
+        "desc": "A traditional favorite with crisp, sweet peach pieces and fragrant lemongrass.",
+        "price": "50.000đ"
+      },
+      {
+        "name": "Butter Croissant",
+        "desc": "Rich with buttery aroma, flaky and light, baked fresh daily.",
+        "price": "45.000đ"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Vision & Space",
+    "title": "A Multi-Angle View",
+    "viewMore": "See More"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Genuine reflections from the community who love Garden Sanctuary.",
+    "items": [
+      {
+        "quote": "A truly distinct space in the heart of Saigon. I often come here early in the morning to read — it's peaceful and calming.",
+        "name": "Linh Chi",
+        "role": "Business Owner"
+      },
+      {
+        "quote": "The salted coffee here is the best I've ever had. Plus, every corner is photo-worthy — the shots come out artistic and elegant.",
+        "name": "Minh Nhat",
+        "role": "Creative Freelancer"
+      },
+      {
+        "quote": "The service is so attentive — staff always greet you with a smile and give thoughtful recommendations. A wonderful place to recharge after a long day.",
+        "name": "Khanh Vy",
+        "role": "Photographer"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Connect With Us",
+    "subtitle": "Visit Garden Sanctuary's little garden to experience tranquility firsthand.",
+    "addressLabel": "Address",
+    "address": "123 Nam Ky Khoi Nghia Street, District 1, HCMC",
+    "hoursLabel": "Opening Hours",
+    "hours": "Monday - Sunday: 07:00 - 22:30",
+    "phoneLabel": "Phone",
+    "phone": "+84 123 456 789",
+    "btnCall": "Call Now",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sustainability": "Sustainability",
+    "careers": "Careers",
+    "copy": "© 2026 Garden Sanctuary Coffee. All rights reserved."
+  }
+}

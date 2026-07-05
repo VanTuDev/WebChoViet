@@ -1,4 +1,5 @@
 import { Sparkles } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import TutorialStep from './_components/TutorialStep';
 import { useAppContext } from '../../store/AppContext';
 
@@ -25,6 +26,11 @@ export default function TutorialsPage() {
   const { showSnackbar } = useAppContext();
   return (
     <div className="py-10 px-6 xl:px-10 w-full space-y-8">
+      <Helmet>
+        <title>Hướng Dẫn Số Hóa Cửa Hàng — WebChoViet</title>
+        <meta name="description" content="Hướng dẫn 4 bước tạo website, nhận mã QR và số hóa cửa hàng với WebChoViet — không cần biết lập trình, chỉ mất 5 phút." />
+        <link rel="canonical" href="https://webchoviet.com/tutorials" />
+      </Helmet>
       <div className="text-center space-y-3">
         <h1 className="text-3xl font-display font-extrabold text-gray-900 leading-tight">
           Hướng Dẫn Số Hóa Cửa Hàng Với WebChoViet

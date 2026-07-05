@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Zenith",
+    "services": "Dịch vụ",
+    "pricing": "Bảng giá",
+    "space": "Không gian",
+    "reviews": "Phản hồi",
+    "cta": "Tư vấn miễn phí"
+  },
+  "hero": {
+    "titleLine1": "Tìm Lại Sự Bình Yên",
+    "titleLine2": "Tuyệt Đối",
+    "subtitle": "Một không gian tinh tuyển được thiết kế để thanh lọc tâm trí và hồi phục cơ thể thông qua nghệ thuật tối giản.",
+    "btnPrimary": "Khám phá ngay",
+    "btnSecondary": "Xem video giới thiệu"
+  },
+  "categories": {
+    "title": "Danh Mục Chăm Sóc",
+    "groups": [
+      {
+        "title": "Thiền & Yoga",
+        "desc": "Tập trung vào sự kết nối giữa hơi thở và chuyển động để đạt tới trạng thái tĩnh lặng.",
+        "items": [
+          { "name": "Zen Meditation", "desc": "Kỹ thuật thiền tọa trong sự im lặng tuyệt đối." },
+          { "name": "Yin Yoga", "desc": "Chuyển động chậm giúp kéo giãn sâu và giải tỏa căng thẳng." }
+        ]
+      },
+      {
+        "title": "Massage Trị Liệu",
+        "desc": "Sử dụng các kỹ thuật truyền thống kết hợp tinh dầu hữu cơ để hồi phục cơ bắp.",
+        "items": [
+          { "name": "Đá Nóng Zen", "desc": "Nhiệt lượng từ đá bazan tự nhiên giúp cân bằng năng lượng." },
+          { "name": "Trị Liệu Thụy Điển", "desc": "Các thao tác xoa bóp dài giúp tăng cường lưu thông máu." }
+        ]
+      },
+      {
+        "title": "Thanh Lọc Cơ Thể",
+        "desc": "Loại bỏ độc tố thông qua các liệu trình thảo mộc và dinh dưỡng lành mạnh.",
+        "items": [
+          { "name": "Detox Thảo Mộc", "desc": "Sử dụng trà ủ lạnh từ thảo dược tự nhiên vùng nhiệt đới." },
+          { "name": "Ngâm Chân Thảo Dược", "desc": "Kết hợp muối khoáng và gừng ấm để lưu thông khí huyết." }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Bảng Giá Dịch Vụ",
+    "subtitle": "Sự minh bạch trong từng liệu trình, mang lại trải nghiệm thư giãn trọn vẹn nhất.",
+    "categories": [
+      {
+        "title": "Chăm Sóc Da Mặt",
+        "items": [
+          { "name": "Trị mụn chuyên sâu", "duration": "90 phút", "price": "450k", "desc": "Làm sạch sâu, kiểm soát dầu và ngăn ngừa mụn tái phát." },
+          { "name": "Liệu trình trẻ hóa", "duration": "60 phút", "price": "850k", "desc": "Kích thích sản sinh collagen, cải thiện độ đàn hồi và sáng da." },
+          { "name": "Cấp ẩm tức thì", "duration": "45 phút", "price": "350k", "desc": "Phục hồi độ ẩm, làm dịu làn da mệt mỏi tức thì." }
+        ]
+      },
+      {
+        "title": "Massage Trị Liệu",
+        "items": [
+          { "name": "Massage đá nóng", "duration": "75 phút", "price": "600k", "desc": "Đá bazan ấm nóng giúp thư giãn cơ bắp và lưu thông khí huyết." },
+          { "name": "Trị liệu cổ vai gáy", "duration": "45 phút", "price": "400k", "desc": "Giải phóng căng cứng vùng cổ vai gáy sau ngày dài làm việc." },
+          { "name": "Thư giãn tinh dầu", "duration": "60 phút", "price": "500k", "desc": "Tinh dầu hữu cơ nguyên chất giúp an thần và phục hồi năng lượng." }
+        ]
+      },
+      {
+        "title": "Gói Combo Zenith",
+        "highlight": true,
+        "note": "Tiết kiệm đến 20% khi đặt theo gói combo",
+        "items": [
+          { "name": "Combo Chăm Sóc Toàn Diện", "duration": "150 phút", "price": "1.500k", "desc": "Kết hợp massage, chăm sóc da mặt và ngâm chân thảo dược." },
+          { "name": "Zenith Signature Experience", "duration": "120 phút", "price": "1.200k", "desc": "Trải nghiệm liệu trình đặc trưng riêng biệt của Zenith." }
+        ]
+      }
+    ],
+    "btnCta": "Nhận tư vấn ngay"
+  },
+  "space": {
+    "title": "Không Gian Tĩnh Lặng",
+    "subtitle": "Kiến trúc được thiết kế dựa trên triết lý Wabi-sabi, tôn trọng vẻ đẹp của sự đơn giản và tự nhiên.",
+    "tourBtn": "Khám phá tour ảo 360°"
+  },
+  "testimonials": {
+    "title": "Những Lời Chia Sẻ",
+    "items": [
+      {
+        "quote": "Tôi đã tìm thấy sự bình yên thực sự tại Zenith. Không gian tối giản giúp tôi gạt bỏ mọi muộn phiền của thế giới bên ngoài.",
+        "name": "Minh Anh",
+        "role": "Khách hàng thường xuyên"
+      },
+      {
+        "quote": "Liệu trình massage đá nóng thật tuyệt vời. Mọi áp lực trên vai tôi dường như tan biến sau buổi trị liệu đầu tiên.",
+        "name": "Lê Hoàng",
+        "role": "Doanh nhân"
+      },
+      {
+        "quote": "Kiến trúc ở đây là một tác phẩm nghệ thuật. Chỉ cần bước vào sảnh thôi là tôi đã cảm thấy thư giãn hoàn toàn.",
+        "name": "Thanh Vân",
+        "role": "Kiến trúc sư"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vị Trí Của Chúng Tôi",
+    "subtitle": "Tọa lạc tại một góc phố yên tĩnh, tách biệt hoàn toàn với nhịp sống hối hả của đô thị.",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Thiền, Quận 2, TP. Hồ Chí Minh",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "08:00 - 21:00 (Mỗi ngày)",
+    "phoneLabel": "Liên hệ",
+    "phone": "028 1234 5678",
+    "btnDirections": "Chỉ đường trên Google Maps",
+    "mapUrl": "",
+    "mapLoading": "Bản đồ đang được tải..."
+  },
+  "footer": {
+    "brand": "Zenith",
+    "copy": "© 2025 Zenith Minimalist Wellness. Tìm lại sự bình yên trong tâm hồn.",
+    "privacy": "Quy định bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "contact": "Liên hệ",
+    "socialWebsite": "Website",
+    "socialEmail": "Email"
+  }
+}

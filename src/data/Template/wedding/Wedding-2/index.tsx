@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Heart, Phone, MapPin, Calendar, Home, Church, PartyPopper } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+
+/** Icon cho 3 mốc sự kiện (Lễ gia tiên / Lễ thành hôn / Tiệc cưới) — nằm ngoài i18n vì không phải nội dung dịch */
+const EVENT_ICONS = [Home, Church, PartyPopper];
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
@@ -80,7 +84,7 @@ export default function Wedding2({ lang = 'vi' }: Props) {
           <p data-field="hero.title" className="text-white/60 text-xs font-sans tracking-[0.3em] uppercase mb-5">{t.hero.title}</p>
 
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-none">{t.couple.bride}</h1>
-          <div className="text-[#C5A028] text-4xl my-3">♥</div>
+          <Heart className="w-9 h-9 my-3 mx-auto text-[#C5A028] fill-current" />
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-none mb-10">{t.couple.groom}</h1>
 
           <div className="border border-white/25 px-8 py-3 text-white/70 text-sm font-sans tracking-widest">
@@ -159,9 +163,11 @@ export default function Wedding2({ lang = 'vi' }: Props) {
           </div>
 
           <div className="space-y-5">
-            {t.events.items.map((event, i) => (
+            {t.events.items.map((event, i) => {
+              const EventIcon = EVENT_ICONS[i % EVENT_ICONS.length];
+              return (
               <div key={i} className="flex items-center gap-5 bg-white rounded-2xl p-5 shadow-sm border border-[#1B3A6B]/8">
-                <div className="text-3xl shrink-0">{event.icon}</div>
+                <EventIcon className="w-7 h-7 shrink-0 text-[#C5A028]" />
                 <div className="w-px h-10 bg-[#C5A028]/30 shrink-0" />
                 <div>
                   <div className="flex items-center gap-2 mb-0.5">
@@ -172,7 +178,8 @@ export default function Wedding2({ lang = 'vi' }: Props) {
                   <p className="text-xs text-gray-500 font-sans leading-relaxed">{event.desc}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -212,17 +219,17 @@ export default function Wedding2({ lang = 'vi' }: Props) {
       <section className="bg-[#C5A028] text-[#1B3A6B] py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 text-center">
           <div>
-            <div className="text-2xl mb-1">📞</div>
+            <Phone className="w-6 h-6 mx-auto mb-1" />
             <div className="font-bold font-sans">{t.info.phone}</div>
           </div>
           <div className="w-px h-12 bg-[#1B3A6B]/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📍</div>
+            <MapPin className="w-6 h-6 mx-auto mb-1" />
             <div className="font-bold font-sans">{t.info.address}</div>
           </div>
           <div className="w-px h-12 bg-[#1B3A6B]/20 hidden md:block" />
           <div>
-            <div className="text-2xl mb-1">📅</div>
+            <Calendar className="w-6 h-6 mx-auto mb-1" />
             <div className="font-bold font-sans">{t.couple.dateLong}</div>
           </div>
         </div>
@@ -248,7 +255,7 @@ export default function Wedding2({ lang = 'vi' }: Props) {
               />
             ) : (
               <div className="w-full h-full bg-[#1B3A6B]/4 flex flex-col items-center justify-center gap-3 text-center px-6">
-                <span className="text-4xl">📍</span>
+                <MapPin className="w-10 h-10 text-[#1B3A6B]" />
                 <p className="font-bold text-[#1B3A6B] text-lg font-sans">{t.info.address}</p>
                 <p className="text-sm text-gray-500 font-sans">{t.couple.dateLong}</p>
               </div>

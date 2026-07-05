@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "brand": "Crimson Sushi",
+    "menu": "Menu",
+    "story": "Our Story",
+    "location": "Location",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "The Art of Japan",
+    "titleLine1": "The Art of Cuisine",
+    "titleLine2": "That Stirs Emotion",
+    "subtitle": "Every piece of sushi at Crimson is a delicate sculpture, where the freshness of the ocean meets the master craftsmanship of our artisans."
+  },
+  "story": {
+    "title": "A \"Shibui\" Space",
+    "description": "Stepping into Crimson Sushi is stepping into a world of stillness and understated luxury. Our architecture celebrates minimalism, using warm crimson light to craft an intimate Omakase space where time seems to stand still so you can savor every flavor.",
+    "tag": "An elevated experience"
+  },
+  "menuSection": {
+    "title": "A Diverse Menu",
+    "tabs": ["All", "Sashimi", "Nigiri", "Special Rolls", "Sets"],
+    "highlightBadge": "Best Seller",
+    "highlightName": "Omakase Signature Set",
+    "items": [
+      {
+        "name": "Bluefin Tuna Nigiri",
+        "tag": "Premium",
+        "desc": "Premium bluefin tuna over Koshihikari rice",
+        "price": "280,000₫"
+      },
+      {
+        "name": "Uni Roll",
+        "tag": "",
+        "desc": "Fresh Hokkaido sea urchin, premium nori seaweed",
+        "price": "450,000₫"
+      },
+      {
+        "name": "Dragon Roll",
+        "tag": "",
+        "desc": "Grilled unagi eel, avocado, signature teriyaki sauce",
+        "price": "320,000₫"
+      },
+      {
+        "name": "Wagyu Beef Tataki",
+        "tag": "",
+        "desc": "Lightly seared A5 wagyu beef with ponzu sauce",
+        "price": "680,000₫"
+      }
+    ],
+    "viewAllBtn": "View Full Menu"
+  },
+  "testimonials": {
+    "title": "Expert Reviews",
+    "items": [
+      {
+        "quote": "Crimson Sushi isn't just a restaurant, it's a cultural journey. The precision in every cut of fish is rare to find in Vietnam.",
+        "name": "Nguyen Hoang Nam",
+        "role": "Culinary Critic"
+      },
+      {
+        "quote": "A minimalist space that still feels immensely luxurious. The Omakase experience here truly rivals international standards.",
+        "name": "Gourmet Magazine",
+        "role": "Fine Dining Reviewer"
+      },
+      {
+        "quote": "A perfect blend of fresh imported ingredients and the chef's masterful hands, creating an unforgettable flavor.",
+        "name": "Elena Truong",
+        "role": "Lifestyle Blogger"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Find Us",
+    "addressLabel": "Address",
+    "address": "123 Nghe Thuat Street, Ben Nghe Ward, District 1, Ho Chi Minh City",
+    "phoneLabel": "Phone",
+    "phone": "+84 28 3456 7890",
+    "emailLabel": "Email",
+    "email": "hello@crimsonsushi.vn",
+    "hoursTitle": "Opening Hours",
+    "hoursWeekdayLabel": "Monday - Friday:",
+    "hoursWeekdayTime": "11:00 AM - 10:00 PM",
+    "hoursWeekendLabel": "Saturday - Sunday:",
+    "hoursWeekendTime": "10:00 AM - 11:00 PM",
+    "btnContact": "Call to Reserve",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Crimson Sushi",
+    "description": "Where the essence of Japanese gastronomy meets the heart of Saigon. We are committed to delivering an authentic, world-class sushi experience.",
+    "linksTitle": "Links",
+    "links": ["General Terms", "Privacy Policy", "Careers"],
+    "socialTitle": "Social",
+    "copy": "© 2026 Crimson Sushi. Built with WebChoViet."
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "brand": "Zenith",
+    "services": "Services",
+    "pricing": "Pricing",
+    "space": "Our Space",
+    "reviews": "Reviews",
+    "cta": "Free Consultation"
+  },
+  "hero": {
+    "titleLine1": "Find Absolute",
+    "titleLine2": "Peace of Mind",
+    "subtitle": "A curated sanctuary designed to cleanse the mind and restore the body through the art of minimalism.",
+    "btnPrimary": "Explore Now",
+    "btnSecondary": "Watch Intro Video"
+  },
+  "categories": {
+    "title": "Our Care Categories",
+    "groups": [
+      {
+        "title": "Meditation & Yoga",
+        "desc": "Focused on the connection between breath and movement to reach a state of quiet stillness.",
+        "items": [
+          { "name": "Zen Meditation", "desc": "Seated meditation techniques practiced in absolute silence." },
+          { "name": "Yin Yoga", "desc": "Slow, deep stretching movements that release tension." }
+        ]
+      },
+      {
+        "title": "Therapeutic Massage",
+        "desc": "Traditional techniques combined with organic essential oils to restore the muscles.",
+        "items": [
+          { "name": "Zen Hot Stone", "desc": "Heat from natural basalt stones helps balance your energy." },
+          { "name": "Swedish Therapy", "desc": "Long, flowing strokes that boost blood circulation." }
+        ]
+      },
+      {
+        "title": "Body Detox",
+        "desc": "Eliminate toxins through herbal treatments and healthy nutrition.",
+        "items": [
+          { "name": "Herbal Detox", "desc": "Cold-brewed tea made from natural tropical herbs." },
+          { "name": "Herbal Foot Soak", "desc": "Mineral salts and warm ginger to improve circulation." }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Service Pricing",
+    "subtitle": "Transparency in every treatment, delivering the most complete relaxation experience.",
+    "categories": [
+      {
+        "title": "Facial Care",
+        "items": [
+          { "name": "Deep Acne Treatment", "duration": "90 mins", "price": "$18", "desc": "Deep cleansing, oil control and prevents acne recurrence." },
+          { "name": "Rejuvenation Therapy", "duration": "60 mins", "price": "$34", "desc": "Stimulates collagen production, improves elasticity and radiance." },
+          { "name": "Instant Hydration", "duration": "45 mins", "price": "$14", "desc": "Restores moisture and instantly soothes tired skin." }
+        ]
+      },
+      {
+        "title": "Therapeutic Massage",
+        "items": [
+          { "name": "Hot Stone Massage", "duration": "75 mins", "price": "$24", "desc": "Warm basalt stones relax the muscles and improve circulation." },
+          { "name": "Neck & Shoulder Therapy", "duration": "45 mins", "price": "$16", "desc": "Releases tension in the neck and shoulders after a long day." },
+          { "name": "Essential Oil Relaxation", "duration": "60 mins", "price": "$20", "desc": "Pure organic essential oils calm the mind and restore energy." }
+        ]
+      },
+      {
+        "title": "Zenith Combo Package",
+        "highlight": true,
+        "note": "Save up to 20% when booking a combo package",
+        "items": [
+          { "name": "Complete Care Combo", "duration": "150 mins", "price": "$60", "desc": "Combines massage, facial care and a herbal foot soak." },
+          { "name": "Zenith Signature Experience", "duration": "120 mins", "price": "$48", "desc": "Experience Zenith's own signature treatment." }
+        ]
+      }
+    ],
+    "btnCta": "Get a Consultation"
+  },
+  "space": {
+    "title": "A Tranquil Space",
+    "subtitle": "Architecture designed around the philosophy of Wabi-sabi, honoring the beauty of simplicity and nature.",
+    "tourBtn": "Explore the 360° Virtual Tour"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "quote": "I found true peace at Zenith. The minimalist space helped me let go of every worry from the outside world.",
+        "name": "Minh Anh",
+        "role": "Regular Guest"
+      },
+      {
+        "quote": "The hot stone massage was amazing. All the tension in my shoulders seemed to melt away after just one session.",
+        "name": "Le Hoang",
+        "role": "Business Owner"
+      },
+      {
+        "quote": "The architecture here is a work of art. Just stepping into the lobby made me feel completely relaxed.",
+        "name": "Thanh Van",
+        "role": "Architect"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Our Location",
+    "subtitle": "Nestled in a quiet corner, completely set apart from the hustle and bustle of the city.",
+    "addressLabel": "Address",
+    "address": "123 Thien Street, District 2, Ho Chi Minh City",
+    "hoursLabel": "Opening Hours",
+    "hours": "08:00 - 21:00 (Daily)",
+    "phoneLabel": "Contact",
+    "phone": "028 1234 5678",
+    "btnDirections": "Get Directions on Google Maps",
+    "mapUrl": "",
+    "mapLoading": "Loading map..."
+  },
+  "footer": {
+    "brand": "Zenith",
+    "copy": "© 2025 Zenith Minimalist Wellness. Find peace within your soul.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "socialWebsite": "Website",
+    "socialEmail": "Email"
+  }
+}

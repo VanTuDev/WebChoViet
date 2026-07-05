@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "siteName": "Siam Flavors",
+    "tagline": "하노이 중심가의 고급 태국 파인다이닝"
+  },
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "메뉴",
+    "space": "공간",
+    "reviews": "리뷰",
+    "contact": "문의",
+    "bookTable": "테이블 예약",
+    "orderNow": "지금 주문"
+  },
+  "mobileNav": {
+    "home": "홈",
+    "menu": "메뉴",
+    "space": "공간",
+    "reviews": "리뷰",
+    "contact": "문의",
+    "reserveNow": "지금 예약하기"
+  },
+  "hero": {
+    "badge": "정통 태국식 환대",
+    "title": "골든 로터스",
+    "titleHighlight": "미식의 안식처",
+    "subtitle": "태국 요리의 예술과 현대적 공간의 우아함이 만나는 곳. 가장 순수한 재료로 빚어낸 정교한 맛을 경험하세요.",
+    "btnReserve": "지금 예약하기",
+    "btnMenu": "메뉴 둘러보기"
+  },
+  "space": {
+    "feature1": {
+      "title": "정체성이 담긴 맛",
+      "desc": "모든 요리는 태국 특유의 다섯 겹 풍미가 이루는 하나의 교향곡입니다."
+    },
+    "feature2": {
+      "badge": "건강과 마음의 여유",
+      "title": "오가닉 그린",
+      "desc": "현지 유기농 농장에서 엄선한 채소로 가장 순수하고 신선한 맛을 보장합니다.",
+      "link": "더 알아보기"
+    },
+    "feature3": {
+      "title": "시그니처 로터스",
+      "desc": "왕실 셰프들이 여러 세대에 걸쳐 전수해온 가장 정제된 요리 컬렉션입니다."
+    },
+    "feature4": {
+      "title": "고요한 공간"
+    }
+  },
+  "menu": {
+    "title": "시그니처 메뉴",
+    "subtitle": "전통 재료와 현대적인 플레이팅 스타일의 세련된 조화.",
+    "filters": ["전체", "시그니처 로터스", "시푸드 엘레강스", "오가닉 그린"],
+    "items": [
+      {
+        "name": "로얄 덕 커리",
+        "price": "45,000원",
+        "desc": "허브에 로스팅한 오리고기를 진한 코코넛 밀크에 은은한 파인애플과 유기농 방울토마토와 함께 조려냈습니다.",
+        "tag": "유기농",
+        "spiceLevel": 2
+      },
+      {
+        "name": "소금구이 민물새우",
+        "price": "89,000원",
+        "desc": "숯불에 완벽하게 구운 대왕 민물새우에 시그니처 라임 칠리 해산물 소스를 곁들였습니다.",
+        "tag": "베스트셀러",
+        "spiceLevel": 1
+      },
+      {
+        "name": "로열 연근 샐러드",
+        "price": "22,000원",
+        "desc": "아삭한 연근에 새우와 돼지고기를 곁들이고 은은한 새콤달콤 피시소스 드레싱을 더했습니다.",
+        "tag": "비건 옵션",
+        "spiceLevel": 0
+      }
+    ]
+  },
+  "reservation": {
+    "title": "테이블 예약",
+    "subtitle": "잊지 못할 미식 경험을 위해 저희가 정성껏 준비하겠습니다.",
+    "phone": "+84 24 3999 8888",
+    "email": "hello@goldenlotus.vn",
+    "nameLabel": "성함",
+    "namePlaceholder": "홍길동",
+    "phoneLabel": "전화번호",
+    "phonePlaceholder": "090 123 4567",
+    "dateLabel": "방문 날짜",
+    "guestsLabel": "인원 수",
+    "guestOptions": [
+      { "label": "2명" },
+      { "label": "4명" },
+      { "label": "6명" },
+      { "label": "기타" }
+    ],
+    "noteLabel": "특별 요청 사항",
+    "notePlaceholder": "알레르기나 좌석 요청 사항을 적어주세요...",
+    "submit": "예약 확정하기"
+  },
+  "testimonials": {
+    "title": "고객 후기",
+    "items": [
+      {
+        "initials": "MH",
+        "name": "민 후이",
+        "role": "단골 고객",
+        "quote": "이곳의 공간은 정말 편안한 느낌을 줍니다. 덕 커리의 맛이 매우 섬세해서 자극적이지 않으면서도 여운이 오래 남았습니다."
+      },
+      {
+        "initials": "AN",
+        "name": "아잉 응옥",
+        "role": "로컬 가이드",
+        "quote": "하노이 최고의 태국 음식점입니다! 테이블보와 신선한 연꽃 장식 같은 사소한 디테일까지 세심하고 전문적인 서비스를 제공합니다."
+      },
+      {
+        "initials": "TP",
+        "name": "타잉 프엉",
+        "role": "푸드 블로거",
+        "quote": "완벽한 미식 경험이었습니다. 해산물이 매우 신선하고, 간이 정통 태국식이면서도 베트남인의 입맛에 잘 맞았습니다."
+      }
+    ]
+  },
+  "contact": {
+    "title": "연락처 및 지도",
+    "addressLabel": "주소",
+    "address": "하노이 하이바쭝군 포후에 거리 123번지",
+    "phoneLabel": "전화",
+    "phone": "+84 24 3999 8888",
+    "hoursLabel": "영업시간",
+    "hours": "매일 10:00 - 22:30",
+    "btnCall": "전화 걸기",
+    "mapUrl": "",
+    "mapLoading": "지도를 업데이트하는 중입니다"
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "desc": "현지 식재료에 대한 깊은 존중을 담아 고급 태국 다이닝 공간을 만들어갑니다.",
+    "exploreTitle": "둘러보기",
+    "exploreLinks": ["시그니처 메뉴", "프라이빗 예약", "레스토랑 공간", "이벤트 서비스"],
+    "infoTitle": "안내",
+    "infoLinks": ["개인정보 처리방침", "이용 약관", "채용 정보", "보도 자료"],
+    "contactTitle": "문의",
+    "address": "하노이 하이바쭝군 포후에 거리 123번지",
+    "hours": "영업시간: 10:00 - 22:30",
+    "hotline": "핫라인: +84 24 3999 8888",
+    "copy": "© 2026 Siam Flavors. Powered by webchoviet."
+  }
+}

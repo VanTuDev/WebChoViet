@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "menu": "메뉴",
+    "ourStory": "브랜드 스토리",
+    "reservations": "예약하기",
+    "locations": "매장 위치",
+    "orderOnline": "온라인 주문",
+    "fabLabel": "빠른 주문"
+  },
+  "hero": {
+    "title": "자연과 커피가 만나는 곳",
+    "subtitle": "도심 속 고요한 정원에서 잠시 쉬어가세요. 한 잔의 커피가 평온으로 향하는 여정이 됩니다.",
+    "btnMenu": "메뉴 둘러보기",
+    "btnReserve": "지금 예약하기"
+  },
+  "menu": {
+    "eyebrow": "엄선된 맛",
+    "title": "시그니처 메뉴",
+    "tabs": ["커피", "음료", "프라페", "푸드"],
+    "featured": {
+      "badge": "베스트셀러",
+      "name": "시그니처 에그 커피",
+      "desc": "진한 로부스타 커피 위에 부드럽고 풍부한 에그 크림을 얹어 전통의 맛을 세련되게 재해석했습니다.",
+      "price": "65,000동"
+    },
+    "items": [
+      {
+        "name": "아이스 블랙 커피",
+        "desc": "고급 아라비카 원두로 추출한, 은은한 단맛이 오래 남는 커피입니다.",
+        "price": "45,000동"
+      },
+      {
+        "name": "박씨우 그라스젤리",
+        "desc": "연유와 커피에 시원하고 쫄깃한 그라스젤리를 더했습니다.",
+        "price": "55,000동"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "평온한 공간",
+    "subtitle": "Garden Sanctuary의 모든 공간은 온전한 휴식을 드리기 위해 세심하게 꾸며졌습니다."
+  },
+  "testimonials": {
+    "title": "고객들의 생생한 후기",
+    "items": [
+      {
+        "name": "민아인",
+        "role": "사업가",
+        "quote": "Garden Sanctuary는 제가 일에 집중하고 싶을 때 항상 찾는 곳이에요. 푸르른 공간이 머리를 맑게 해줍니다.",
+        "rating": 5
+      },
+      {
+        "name": "호앙남",
+        "role": "프리랜서",
+        "quote": "이곳 커피는 정말 훌륭합니다. 진한 풍미와 따뜻하고 전문적인 서비스까지 완벽해요.",
+        "rating": 5
+      },
+      {
+        "name": "타오비",
+        "role": "사진작가",
+        "quote": "Garden의 조명과 인테리어 구석구석이 사진이 정말 잘 나와요. 감성을 좋아하는 분들께 최고의 장소입니다.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "오시는 길",
+    "addressLabel": "주소",
+    "address": "호치민시 1군 Sac Mau 거리 123번지",
+    "hoursLabel": "영업시간",
+    "hours": "월요일 - 일요일: 07:00 - 22:00",
+    "phoneLabel": "연락처",
+    "phone": "028.1234.5678",
+    "email": "hello@gardensanctuary.vn",
+    "formName": "이름",
+    "formEmail": "이메일 주소",
+    "formMessage": "무엇을 도와드릴까요?",
+    "formSubmit": "메시지 보내기",
+    "mapLoading": "지도를 불러오는 중...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "copy": "© 2024 Garden Sanctuary Coffee. 평온을 담은 공간.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "sustainability": "지속가능성",
+    "contactUs": "문의하기"
+  }
+}

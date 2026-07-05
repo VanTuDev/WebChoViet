@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "brand": "Ocean Oasis",
+    "home": "Sanctuary",
+    "link1": "Hydrotherapy",
+    "link2": "Rituals",
+    "link3": "Experience",
+    "cta": "Đặt Phòng Nghỉ Dưỡng"
+  },
+  "hero": {
+    "title": "Khám Phá Sức Mạnh Chữa Lành Từ Đại Dương",
+    "subtitle": "Đắm mình trong không gian tĩnh lặng, nơi tiếng sóng vỗ và liệu pháp thủy trị liệu mang lại sự cân bằng tuyệt đối cho thân, tâm và trí.",
+    "btnPrimary": "Bắt Đầu Hành Trình",
+    "btnSecondary": "Tìm Hiểu Thêm"
+  },
+  "highlights": {
+    "title": "Dịch Vụ Đặc Quyền",
+    "subtitle": "Trải nghiệm những liệu pháp độc bản từ tinh túy đại dương.",
+    "items": [
+      { "badge": "Nổi Bật", "title": "Hydrotherapy (Thủy Trị Liệu)", "desc": "Kích hoạt lưu thông khí huyết và thư giãn cơ bắp sâu với các dòng nước khoáng ấm.", "btnLabel": "" },
+      { "badge": "", "title": "Ocean Meditation", "desc": "Thiền định trong không gian âm thanh sóng biển nguyên bản.", "btnLabel": "" },
+      { "badge": "", "title": "Body Revitalization", "desc": "Đánh thức mọi giác quan với quy trình trị liệu toàn thân kết hợp bùn khoáng và tảo biển sâu.", "btnLabel": "Xem Chi Tiết" }
+    ]
+  },
+  "services": {
+    "title": "Danh Mục Trải Nghiệm",
+    "subtitle": "Lựa chọn gói dịch vụ phù hợp để bắt đầu hành trình tái tạo năng lượng của bạn.",
+    "categories": [
+      {
+        "title": "Chăm Sóc Da Biển Sâu",
+        "btnLabel": "Đặt Lịch",
+        "items": [
+          { "name": "Mặt Nạ Tảo Biển", "duration": "60 phút", "price": "1.200k", "desc": "Phục hồi và cấp ẩm chuyên sâu cho làn da mệt mỏi." },
+          { "name": "Tẩy Tế Bào Muối Khoáng", "duration": "45 phút", "price": "850k", "desc": "Loại bỏ tế bào chết, đánh thức làn da tươi sáng tự nhiên." },
+          { "name": "Oxygen Đại Dương", "duration": "90 phút", "price": "1.800k", "desc": "Bơm oxy sâu giúp da căng mịn, giảm lão hóa rõ rệt." }
+        ]
+      },
+      {
+        "title": "Liệu Pháp Thủy Trị Liệu",
+        "btnLabel": "Phổ Biến Nhất",
+        "items": [
+          { "name": "Tắm Khoáng Onsen", "duration": "60 phút", "price": "1.500k", "desc": "Thư giãn toàn thân trong làn nước khoáng ấm áp." },
+          { "name": "Hồ Thủy Lực Jet-Stream", "duration": "45 phút", "price": "1.200k", "desc": "Massage áp lực nước giúp giảm đau nhức cơ bắp." },
+          { "name": "Xông Hơi Đá Muối", "duration": "30 phút", "price": "600k", "desc": "Thanh lọc cơ thể, tăng cường tuần hoàn máu." }
+        ]
+      },
+      {
+        "title": "Gói Trải Nghiệm",
+        "btnLabel": "Đặt Lịch",
+        "items": [
+          { "name": "Ocean Escape (Nửa Ngày)", "duration": "3 dịch vụ", "price": "2.900k", "desc": "Kết hợp 3 liệu trình để tái tạo năng lượng toàn diện." },
+          { "name": "Deep Blue Bliss (Cả Ngày)", "duration": "Trọn gói & ăn nhẹ", "price": "4.500k", "desc": "Một ngày trọn vẹn chăm sóc thân - tâm - trí." },
+          { "name": "Cặp Đôi Gắn Kết", "duration": "120 phút", "price": "3.200k", "desc": "Trải nghiệm thư giãn lãng mạn dành cho hai người." }
+        ]
+      }
+    ]
+  },
+  "atmosphere": {
+    "title": "Không Gian Thuần Khiết",
+    "items": [
+      { "title": "Tầm Nhìn Vô Cực", "desc": "Tất cả các phòng trị liệu đều hướng biển, mang lại cảm giác giải phóng hoàn toàn cho tâm trí." },
+      { "title": "Thiết Kế Tối Giản", "desc": "Sử dụng vật liệu tự nhiên, đá cẩm thạch trắng và gỗ nhạt để tạo nên sự tĩnh lặng tuyệt đối." },
+      { "title": "Âm Thanh Trị Liệu", "desc": "Sự kết hợp giữa tiếng sóng thật và âm nhạc tần số thấp giúp cơ thể nhanh chóng rơi vào trạng thái thư giãn sâu." }
+    ]
+  },
+  "contact": {
+    "title": "Vị Trí Tĩnh Lặng",
+    "subtitle": "Tọa lạc tại bờ biển phía Đông, tách biệt khỏi sự ồn ào của đô thị.",
+    "brandName": "Ocean Oasis Wellness",
+    "address": "Đường Trần Phú, Phường Lộc Thọ, Nha Trang, Khánh Hòa",
+    "phone": "0258 123 4567",
+    "btnDirection": "Dẫn đường qua Google Maps",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Ocean Oasis",
+    "tagline": "Tận hưởng hành trình tìm lại chính mình qua sức mạnh của biển cả.",
+    "link1": "Privacy Policy",
+    "link2": "Terms of Serenity",
+    "link3": "Contact Us",
+    "link4": "Locations",
+    "copy": "© 2024 Ocean Oasis Wellness Sanctuary. Được tạo bởi WebChoViet."
+  }
+}

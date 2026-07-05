@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "brand": "Sizzling Hearth",
+    "menu": "Thực Đơn",
+    "reservations": "Đặt Bàn",
+    "privateDining": "Phòng Riêng",
+    "locations": "Chi Nhánh",
+    "loyalty": "Thành Viên",
+    "cta": "Đặt Bàn Ngay"
+  },
+  "hero": {
+    "title": "Sum Vầy Bên Nồi Lẩu Nghi Ngút Khói",
+    "subtitle": "Trải nghiệm hương vị lẩu truyền thống tinh tế trong không gian hiện đại và ấm cúng.",
+    "btnReserve": "Đặt Bàn Ngay",
+    "btnMenu": "Xem Thực Đơn"
+  },
+  "menuSection": {
+    "eyebrow": "Thực Đơn Đặc Sắc",
+    "title": "Hương Vị Sizzling Hearth",
+    "chips": ["Nước Lẩu Đặc Trưng", "Bò Cao Cấp", "Hải Sản", "Rau Củ"],
+    "featured": {
+      "name": "Nước Lẩu Cay Tứ Xuyên",
+      "desc": "Vị cay nồng nàn từ 12 loại thảo mộc quý hiếm, mang đến trải nghiệm bùng nổ vị giác.",
+      "heatLevel": 3
+    },
+    "items": [
+      {
+        "name": "Thịt Bò Wagyu A5",
+        "desc": "Mềm tan trong miệng",
+        "price": "450.000đ"
+      },
+      {
+        "name": "Khay Hải Sản Tổng Hợp",
+        "desc": "Tươi ngon từ biển cả",
+        "price": "320.000đ"
+      }
+    ],
+    "viewAll": {
+      "title": "Xem Toàn Bộ Thực Đơn",
+      "desc": "Hơn 50+ món nhúng hấp dẫn",
+      "cta": "Khám phá"
+    }
+  },
+  "space": {
+    "eyebrow": "Không Gian Nhà Hàng",
+    "title": "Nơi Gắn Kết Tình Thân",
+    "desc": "Tại Sizzling Hearth, chúng tôi tin rằng mỗi bữa ăn là một dịp để kết nối. Không gian được thiết kế với tông màu trầm ấm, kết hợp giữa nét truyền thống và hơi thở hiện đại, mang lại cảm giác thư thái tuyệt đối cho quý khách.",
+    "features": [
+      {
+        "title": "Phòng Riêng Sang Trọng",
+        "desc": "Thích hợp cho các buổi họp mặt gia đình hoặc tiếp khách đối tác."
+      },
+      {
+        "title": "Khu Vực Ngoài Trời",
+        "desc": "Thoáng đãng và gần gũi với thiên nhiên, lý tưởng cho những tối cuối tuần."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Khách Hàng Nói Gì Về Chúng Tôi",
+    "items": [
+      {
+        "quote": "Nước lẩu ở đây thực sự khác biệt, vị ngọt thanh tự nhiên từ xương hầm. Thịt bò wagyu thì tươi ngon, thái lát vừa vặn. Sẽ còn quay lại nhiều lần!",
+        "name": "Anh Tuấn",
+        "role": "Khách hàng thân thiết"
+      },
+      {
+        "quote": "Không gian quán cực kỳ ấm cúng, nhân viên phục vụ rất nhiệt tình và chu đáo. Rất hài lòng về chất lượng dịch vụ ở Sizzling Hearth.",
+        "name": "Chị Lan Hương",
+        "role": "Food Blogger"
+      },
+      {
+        "quote": "Địa điểm lý tưởng cho những buổi liên hoan công ty. Đồ ăn đa dạng, từ hải sản đến các loại rau nhúng đều rất tươi.",
+        "name": "Anh Minh Hoàng",
+        "role": "Khách hàng"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ghé Thăm Chúng Tôi",
+    "branchName": "Sizzling Hearth - Chi Nhánh Quận 1",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Lê Lợi, Phường Bến Thành, Quận 1, TP.HCM",
+    "phoneLabel": "Số điện thoại",
+    "phone": "028 3822 1234",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "10:00 - 22:30 hàng ngày",
+    "btnDirections": "Chỉ Đường",
+    "btnReserve": "Gọi Đặt Bàn",
+    "mapUrl": "",
+    "mapLoading": "Bản đồ đang được tải..."
+  },
+  "footer": {
+    "brand": "Sizzling Hearth",
+    "desc": "Mang tinh hoa lẩu Á Đông đến gần hơn với mọi gia đình. Chất lượng tạo nên sự khác biệt.",
+    "companyTitle": "Công Ty",
+    "companyLinks": ["Chính Sách Bảo Mật", "Điều Khoản Sử Dụng", "Phát Triển Bền Vững"],
+    "exploreTitle": "Khám Phá",
+    "exploreLinks": ["Tuyển Dụng", "Bộ Ấn Phẩm Báo Chí"],
+    "copy": "© 2026 Sizzling Hearth Hot Pot. Được tạo bởi WebChoViet."
+  },
+  "fab": {
+    "label": "Đặt Bàn Ngay"
+  }
+}

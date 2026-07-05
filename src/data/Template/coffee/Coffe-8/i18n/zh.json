@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "Garden Sanctuary",
+    "linkCoffee": "咖啡",
+    "linkMenu": "菜单",
+    "linkSpace": "空间",
+    "linkReviews": "评价",
+    "linkContact": "联系我们",
+    "cta": "立即到店"
+  },
+  "hero": {
+    "title": "让思绪安宁，让灵魂静谧。",
+    "subtitle": "在这座迷你热带花园般的葱郁空间里，细细品味最原始纯粹的咖啡风味。",
+    "btnPrimary": "立即探索",
+    "btnSecondary": "预订座位"
+  },
+  "menu": {
+    "label": "精选风味",
+    "title": "特色菜单",
+    "tabs": ["咖啡", "饮品", "冰沙", "轻食"],
+    "featured": {
+      "badge": "人气招牌",
+      "name": "招牌拿铁",
+      "desc": "顶级阿拉比卡咖啡豆与丝滑鲜奶的完美结合。"
+    },
+    "items": [
+      {
+        "name": "咸咖啡",
+        "desc": "奶油的醇厚与海盐的微咸，交融出浓郁深沉的苦香。",
+        "price": "55.000đ"
+      },
+      {
+        "name": "香茅橙子冷萃",
+        "desc": "清凉提神，是燥热午后的最佳选择。",
+        "price": "65.000đ"
+      },
+      {
+        "name": "蜜桃香茅茶",
+        "desc": "经典之选，脆甜蜜桃与浓郁香茅香气相得益彰。",
+        "price": "50.000đ"
+      },
+      {
+        "name": "牛角包",
+        "desc": "浓郁黄油香，层层酥松柔软，每日新鲜出炉。",
+        "price": "45.000đ"
+      }
+    ]
+  },
+  "gallery": {
+    "label": "视野与空间",
+    "title": "多维视角",
+    "viewMore": "查看更多"
+  },
+  "testimonials": {
+    "title": "顾客真实体验",
+    "subtitle": "来自热爱 Garden Sanctuary 的顾客们的真诚分享。",
+    "items": [
+      {
+        "quote": "在西贡市中心，这里真的是一处与众不同的空间。我常常一大早来这里看书，非常安静舒适。",
+        "name": "Linh Chi",
+        "role": "企业主"
+      },
+      {
+        "quote": "这里的咸咖啡是我喝过最好喝的。而且每个角落都能拍出美照，照片效果非常有格调、优雅大气。",
+        "name": "Minh Nhat",
+        "role": "自由创意工作者"
+      },
+      {
+        "quote": "服务非常用心，员工总是面带微笑，热情推荐菜品。是忙碌一天后充电的绝佳去处。",
+        "name": "Khanh Vy",
+        "role": "摄影师"
+      }
+    ]
+  },
+  "contact": {
+    "title": "与我们联系",
+    "subtitle": "欢迎光临 Garden Sanctuary 的小花园，亲身感受宁静时光。",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡南期起义街123号",
+    "hoursLabel": "营业时间",
+    "hours": "周一至周日：07:00 - 22:30",
+    "phoneLabel": "电话",
+    "phone": "+84 123 456 789",
+    "btnCall": "立即致电",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Garden Sanctuary",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "sustainability": "可持续发展",
+    "careers": "招聘信息",
+    "copy": "© 2026 Garden Sanctuary Coffee. 版权所有。"
+  }
+}

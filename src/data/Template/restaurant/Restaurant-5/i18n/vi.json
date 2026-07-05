@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "siteName": "Siam Flavors",
+    "tagline": "Ẩm thực Thái Lan cao cấp giữa lòng Hà Nội"
+  },
+  "nav": {
+    "brand": "Siam Flavors",
+    "menu": "Thực đơn",
+    "space": "Không gian",
+    "reviews": "Đánh giá",
+    "contact": "Liên hệ",
+    "bookTable": "Đặt bàn",
+    "orderNow": "Đặt món"
+  },
+  "mobileNav": {
+    "home": "Trang chủ",
+    "menu": "Thực đơn",
+    "space": "Không gian",
+    "reviews": "Đánh giá",
+    "contact": "Liên hệ",
+    "reserveNow": "Đặt bàn ngay"
+  },
+  "hero": {
+    "badge": "Tinh hoa Hiếu khách Thái Lan",
+    "title": "The Golden Lotus",
+    "titleHighlight": "Chốn An Yên Ẩm Thực",
+    "subtitle": "Nơi nghệ thuật ẩm thực Thái Lan giao thoa với sự thanh tao của không gian hiện đại. Trải nghiệm hương vị tinh hoa được chế tác từ nguyên liệu thuần khiết nhất.",
+    "btnReserve": "Đặt bàn ngay",
+    "btnMenu": "Khám phá Menu"
+  },
+  "space": {
+    "feature1": {
+      "title": "Hương vị Bản sắc",
+      "desc": "Mỗi món ăn là một bản giao hưởng của năm tầng hương vị đặc trưng xứ Thái."
+    },
+    "feature2": {
+      "badge": "Sức khỏe & Tinh thần",
+      "title": "Organic Greens",
+      "desc": "Rau củ được tuyển chọn từ các nông trại hữu cơ tại địa phương, đảm bảo độ tươi ngon thuần khiết nhất.",
+      "link": "Xem thêm"
+    },
+    "feature3": {
+      "title": "Signature Lotus",
+      "desc": "Bộ sưu tập những món ăn tinh túy nhất được lưu truyền qua nhiều thế hệ đầu bếp hoàng gia."
+    },
+    "feature4": {
+      "title": "Không gian Thư thái"
+    }
+  },
+  "menu": {
+    "title": "Thực đơn Đặc sắc",
+    "subtitle": "Sự kết hợp tinh tế giữa nguyên liệu truyền thống và phong cách trình bày hiện đại.",
+    "filters": ["Tất cả", "Signature Lotus", "Seafood Elegance", "Organic Greens"],
+    "items": [
+      {
+        "name": "Cà Ri Vịt Hoàng Gia",
+        "price": "450.000đ",
+        "desc": "Vịt quay thảo mộc hầm trong nước cốt dừa béo ngậy, dứa thơm và cà chua bi hữu cơ.",
+        "tag": "Organic",
+        "spiceLevel": 2
+      },
+      {
+        "name": "Tôm Sông Nướng Muối",
+        "price": "890.000đ",
+        "desc": "Tôm sông khổng lồ nướng than hoa, dùng kèm nước sốt hải sản chanh ớt đặc trưng.",
+        "tag": "Bán chạy",
+        "spiceLevel": 1
+      },
+      {
+        "name": "Gỏi Ngó Sen Hoàng Triều",
+        "price": "220.000đ",
+        "desc": "Ngó sen tươi giòn quyện cùng tôm thịt và nước mắm chua ngọt thanh tao.",
+        "tag": "Vegan Option",
+        "spiceLevel": 0
+      }
+    ]
+  },
+  "reservation": {
+    "title": "Đặt bàn",
+    "subtitle": "Hãy để chúng tôi chuẩn bị cho bạn một trải nghiệm ẩm thực đáng nhớ nhất.",
+    "phone": "024 3999 8888",
+    "email": "hello@goldenlotus.vn",
+    "nameLabel": "Họ và tên",
+    "namePlaceholder": "Nguyễn Văn A",
+    "phoneLabel": "Số điện thoại",
+    "phonePlaceholder": "090 123 4567",
+    "dateLabel": "Ngày đến",
+    "guestsLabel": "Số khách",
+    "guestOptions": [
+      { "label": "2 người" },
+      { "label": "4 người" },
+      { "label": "6 người" },
+      { "label": "Khác" }
+    ],
+    "noteLabel": "Yêu cầu đặc biệt",
+    "notePlaceholder": "Ghi chú về dị ứng hoặc yêu cầu không gian...",
+    "submit": "Xác nhận Đặt bàn"
+  },
+  "testimonials": {
+    "title": "Chia sẻ từ Thực khách",
+    "items": [
+      {
+        "initials": "MH",
+        "name": "Minh Huy",
+        "role": "Thực khách thân thiết",
+        "quote": "Không gian ở đây thực sự mang lại cảm giác thư thái. Món Cà ri vịt có hương vị rất tinh tế, không quá nồng nhưng đọng lại rất lâu."
+      },
+      {
+        "initials": "AN",
+        "name": "Ánh Ngọc",
+        "role": "Local Guide",
+        "quote": "Ẩm thực Thái ngon nhất Hà Nội! Cách phục vụ chuyên nghiệp và tỉ mỉ từ những chi tiết nhỏ nhất như khăn trải bàn và hoa sen tươi."
+      },
+      {
+        "initials": "TP",
+        "name": "Thanh Phương",
+        "role": "Food Blogger",
+        "quote": "Trải nghiệm ẩm thực hoàn hảo. Các món hải sản rất tươi, gia vị nêm nếm rất chuẩn vị Thái nhưng vẫn hài hòa với khẩu vị người Việt."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Liên hệ & Bản đồ",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Phố Huế, Hai Bà Trưng, Hà Nội",
+    "phoneLabel": "Điện thoại",
+    "phone": "024 3999 8888",
+    "hoursLabel": "Giờ mở cửa",
+    "hours": "10:00 - 22:30 hàng ngày",
+    "btnCall": "Gọi ngay",
+    "mapUrl": "",
+    "mapLoading": "Bản đồ đang được cập nhật"
+  },
+  "footer": {
+    "brand": "Siam Flavors",
+    "desc": "Kiến tạo không gian ẩm thực Thái Lan cao cấp với sự trân trọng tuyệt đối dành cho nguyên liệu bản địa.",
+    "exploreTitle": "Khám phá",
+    "exploreLinks": ["Thực đơn đặc sắc", "Đặt bàn riêng", "Không gian nhà hàng", "Dịch vụ sự kiện"],
+    "infoTitle": "Thông tin",
+    "infoLinks": ["Chính sách bảo mật", "Điều khoản dịch vụ", "Tuyển dụng", "Báo chí"],
+    "contactTitle": "Liên hệ",
+    "address": "123 Phố Huế, Hai Bà Trưng, Hà Nội",
+    "hours": "Giờ mở cửa: 10:00 - 22:30",
+    "hotline": "Hotline: 024 3999 8888",
+    "copy": "© 2026 Siam Flavors. Powered by webchoviet."
+  }
+}

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /template-editor
+Disallow: /auth/callback
+Disallow: /payment-result
+
+Sitemap: https://webchoviet.com/sitemap.xml

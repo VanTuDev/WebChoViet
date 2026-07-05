@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "brand": "绯红寿司",
+    "menu": "菜单",
+    "story": "品牌故事",
+    "location": "位置",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "badge": "日式匠心",
+    "titleLine1": "美食艺术",
+    "titleLine2": "触动味蕾的感动",
+    "subtitle": "Crimson 的每一贯寿司都是一件精雕细琢的艺术品，海洋的鲜美与匠人精湛的技艺完美交融。"
+  },
+  "story": {
+    "title": "「侘寂」空间",
+    "description": "踏入 Crimson Sushi，就如同踏入一个静谧而内敛奢华的世界。我们的空间设计推崇极简主义，以温暖的绯红灯光营造出私密的omakase氛围，让时光仿佛静止，只为让您尽情品味每一分风味。",
+    "tag": "尊享极致体验"
+  },
+  "menuSection": {
+    "title": "多元菜单",
+    "tabs": ["全部", "刺身", "握寿司", "特色卷", "套餐"],
+    "highlightBadge": "热销推荐",
+    "highlightName": "无菜单料理招牌套餐",
+    "items": [
+      {
+        "name": "蓝鳍金枪鱼握寿司",
+        "tag": "臻选",
+        "desc": "顶级蓝鳍金枪鱼配越光米",
+        "price": "280,000越南盾"
+      },
+      {
+        "name": "海胆卷",
+        "tag": "",
+        "desc": "北海道新鲜海胆，搭配优质海苔",
+        "price": "450,000越南盾"
+      },
+      {
+        "name": "龙卷",
+        "tag": "",
+        "desc": "炙烤鳗鱼、牛油果，佐招牌照烧酱",
+        "price": "320,000越南盾"
+      },
+      {
+        "name": "和牛炙烧薄片",
+        "tag": "",
+        "desc": "A5和牛轻炙，搭配柚子醋酱",
+        "price": "680,000越南盾"
+      }
+    ],
+    "viewAllBtn": "查看完整菜单"
+  },
+  "testimonials": {
+    "title": "专家评价",
+    "items": [
+      {
+        "quote": "Crimson Sushi 不仅仅是一家餐厅，更是一场文化之旅。每一片鱼的切工都极为讲究，这在越南实属罕见。",
+        "name": "阮黄南",
+        "role": "美食评论家"
+      },
+      {
+        "quote": "空间极简却极致奢华。这里的Omakase体验真正达到了国际水准。",
+        "name": "美食杂志",
+        "role": "高端美食评论员"
+      },
+      {
+        "quote": "新鲜进口食材与主厨精湛手艺的完美结合，成就令人难忘的风味。",
+        "name": "Elena Truong",
+        "role": "生活方式博主"
+      }
+    ]
+  },
+  "contact": {
+    "title": "找到我们",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡边艺坊街123号",
+    "phoneLabel": "电话",
+    "phone": "+84 28 3456 7890",
+    "emailLabel": "电子邮箱",
+    "email": "hello@crimsonsushi.vn",
+    "hoursTitle": "营业时间",
+    "hoursWeekdayLabel": "周一至周五：",
+    "hoursWeekdayTime": "11:00 - 22:00",
+    "hoursWeekendLabel": "周六至周日：",
+    "hoursWeekendTime": "10:00 - 23:00",
+    "btnContact": "致电订位",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "绯红寿司",
+    "description": "汇聚日本料理精髓，坐落于西贡市中心。我们致力于呈现最正宗、最顶级的寿司体验。",
+    "linksTitle": "相关链接",
+    "links": ["通用条款", "隐私政策", "招聘信息"],
+    "socialTitle": "社交媒体",
+    "copy": "© 2026 绯红寿司。由 WebChoViet 打造。"
+  }
+}

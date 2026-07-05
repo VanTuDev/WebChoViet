@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "brand": "Aura Wellness",
+    "services": "Services",
+    "about": "About Us",
+    "prices": "Pricing",
+    "location": "Location",
+    "btnAdvice": "Free Consultation",
+    "btnBook": "Book Now"
+  },
+  "hero": {
+    "badge": "Professional Therapeutic Treatment",
+    "title": "A Journey to Awaken",
+    "titleHighlight": "Your Natural Beauty",
+    "subtitle": "At Aura Wellness, we combine in-depth skin therapy science with a tranquil retreat atmosphere for a truly restorative experience.",
+    "cta": "Explore Our Services",
+    "badgeYears": "15+ Years",
+    "badgeYearsSub": "Of Therapeutic Experience",
+    "imageAlt": "Serene luxury spa reception with soft white walls, an arched wooden doorway and light blue accents"
+  },
+  "highlights": {
+    "title": "Featured Services",
+    "subtitle": "In-depth solutions tailored to your concerns",
+    "acne": {
+      "tag1": "Best Seller",
+      "tag2": "Medical Grade",
+      "title": "Advanced Acne Treatment",
+      "desc": "A personalized protocol using biological light technology and medically-graded extraction techniques.",
+      "link": "View Details",
+      "imageAlt": "Close-up of a premium facial treatment session"
+    },
+    "skinCare": {
+      "title": "Skin Care",
+      "desc": "Restore moisture and reveal your skin's natural radiance.",
+      "imageAlt": "Therapist applying a nourishing mask on a client"
+    },
+    "bodyTherapy": {
+      "title": "Body Therapy",
+      "desc": "Release muscle tension with hot stones and organic essential oils.",
+      "imageAlt": "Therapist performing a hot stone massage"
+    },
+    "customPlan": {
+      "title": "Tailored Treatment Plans",
+      "desc": "We don't believe in one-size-fits-all. Every skin has its own story that deserves to be heard and understood.",
+      "features": ["Free skin analysis", "1-on-1 follow-up"],
+      "statValue": "100%",
+      "statLabel": "Organic Products"
+    }
+  },
+  "services": {
+    "title": "Service Pricing",
+    "subtitle": "Transparent pricing - No hidden fees",
+    "categories": [
+      {
+        "title": "Facial Care",
+        "items": [
+          { "name": "Rejuvenating Treatment", "desc": "Vitamin C + Collagen electroporation", "duration": "60 min", "price": "$34" },
+          { "name": "Facial Detox", "desc": "Restores skin exposed to city pollution", "duration": "45 min", "price": "$14" },
+          { "name": "Deep Hydration", "desc": "Hyaluronic Acid + silk sheet mask", "duration": "60 min", "price": "$20" }
+        ]
+      },
+      {
+        "title": "Acne Treatment",
+        "items": [
+          { "name": "Advanced Acne Care", "desc": "Extraction + biological light therapy", "duration": "90 min", "price": "$18" },
+          { "name": "Back Acne Treatment", "desc": "Deep cleansing + herbal peel", "duration": "60 min", "price": "$22" }
+        ]
+      },
+      {
+        "title": "Therapeutic Massage",
+        "items": [
+          { "name": "Aroma Body Massage", "desc": "Essential oil therapy", "duration": "75 min", "price": "$24" },
+          { "name": "Hot Stone Massage", "desc": "Improves blood circulation", "duration": "90 min", "price": "$30" },
+          { "name": "Neck & Shoulder Massage", "desc": "Relieves office-related tension", "duration": "45 min", "price": "$16" }
+        ]
+      },
+      {
+        "title": "Special Packages",
+        "items": [
+          { "name": "Aura Signature Combo", "desc": "Facial treatment + Body massage", "duration": "150 min", "price": "$48" },
+          { "name": "Full Recovery Package", "desc": "Detox + Rejuvenation + Massage", "duration": "180 min", "price": "$60" }
+        ]
+      }
+    ],
+    "promo": "20% off for first-time guests",
+    "promoCta": "Claim Your Offer"
+  },
+  "gallery": {
+    "title": "Relaxing Spaces",
+    "subtitle": "Refined, minimalist architecture bringing absolute peace of mind",
+    "items": [
+      { "alt": "Reception lobby" },
+      { "alt": "Treatment room" },
+      { "alt": "Massage area" }
+    ]
+  },
+  "team": {
+    "title": "Our Dedicated Team of Experts",
+    "desc": "At Aura, our technicians are more than skilled hands - they are companions who listen and understand what our clients truly need. All hold professional licenses and undergo regular training.",
+    "cert": { "title": "International Certification", "sub": "Five-star technical standards" },
+    "care": { "title": "1-on-1 Dedication", "sub": "Attentive care throughout your treatment" },
+    "portrait1Alt": "Portrait of a professional spa therapist",
+    "portrait2Alt": "Spa team standing in a luxury reception area"
+  },
+  "contact": {
+    "title": "Our Location",
+    "subtitle": "Visit Aura Wellness to enjoy a premium therapeutic experience right in the city center.",
+    "addressLabel": "Address",
+    "address": "123 Le Loi Street, District 1, Ho Chi Minh City",
+    "phoneLabel": "Phone",
+    "phone": "1900 1234",
+    "hoursLabel": "Opening Hours",
+    "hours": "9:00 AM - 9:00 PM (Daily)",
+    "btnDirection": "Get Directions on Google Maps",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447877432445!2d106.70175551471845!3d10.7756586923221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4693f7a111%3A0xdb304566640235d5!2zTMOqIEzhu6NpLCBC4bq_biBUaMOgbmgsIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1625123456789!5m2!1svi!2s",
+    "mapLoading": "Loading map..."
+  },
+  "footer": {
+    "brand": "Aura Wellness",
+    "desc": "Building lasting beauty through in-depth therapeutic treatments and a spirit of calm.",
+    "servicesTitle": "Services",
+    "servicesLinks": ["Acne Treatment", "Skin Rejuvenation", "Body Massage"],
+    "policyTitle": "Policies",
+    "policyLinks": ["Privacy", "Terms", "Refunds"],
+    "contactTitle": "Contact",
+    "contactCity": "Ho Chi Minh City",
+    "contactPhone": "1900 1234",
+    "copyright": "© 2026 Aura Wellness Spa. Licensed Therapeutic Professionals.",
+    "tagline1": "Expert Therapists",
+    "tagline2": "Privacy Policy"
+  }
+}
