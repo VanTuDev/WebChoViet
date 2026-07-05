@@ -113,7 +113,7 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
   },
   {
     id: 'restaurant-4',
-    name: 'Siam Flavors',
+    name: 'Siam Street Food',
     description: 'Đưa bạn đến những con hẻm rực rỡ ánh đèn neon tại Bangkok, nơi những chảo hủ tiếu nghi ngút khói và hương vị cay nồng quyến rũ.',
     category: 'restaurant',
     price: 299000,
@@ -164,7 +164,7 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
   },
   {
     id: 'restaurant-5',
-    name: 'Siam Flavors',
+    name: 'Golden Lotus Dining',
     description: 'Nơi nghệ thuật ẩm thực Thái Lan giao thoa với sự thanh tao của không gian hiện đại. Trải nghiệm hương vị tinh hoa được chế tác từ nguyên liệu thuần khiết nhất.',
     category: 'restaurant',
     price: 0,
@@ -220,7 +220,7 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
   },
   {
     id: 'restaurant-6',
-    name: 'Siam Flavors',
+    name: 'Siam Teak House',
     description: 'Trải nghiệm không gian sang trọng với nội thất gỗ Teak chạm khắc thủ công, nơi mỗi món ăn là một tác phẩm nghệ thuật truyền thống.',
     category: 'restaurant',
     price: 299000,

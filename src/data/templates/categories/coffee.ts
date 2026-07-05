@@ -218,7 +218,7 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
   },
   {
     id: 'coffe-8',
-    name: 'Garden Sanctuary',
+    name: 'Sage Sanctuary',
     description: 'Tận hưởng hương vị cà phê nguyên bản giữa không gian xanh mướt của một khu vườn nhiệt đới thu nhỏ.',
     category: 'coffee',
     price: 299000,

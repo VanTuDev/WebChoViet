@@ -18,6 +18,11 @@ quán ăn đặc sản vùng miền, fast food, food court.
 |----|-----|-----|-------------------|
 | `restaurant-1` | Phố Ẩm Thực | Miễn phí | Tông nâu gỗ ấm cúng, hero fullscreen overlay, menu 6 món dạng card |
 | `restaurant-2` | Bếp Việt Premium | 399,000đ | Corporate hiện đại, menu bento, đánh giá glassmorphism, 4 ngôn ngữ Việt/Anh/Trung/Hàn |
+| `restaurant-3` | Sizzling Hearth | Miễn phí | Quán lẩu cao cấp, tông đỏ ấm, menu lẩu signature, không gian riêng tư |
+| `restaurant-4` | Siam Street Food | 299,000đ | Ẩm thực đường phố Thái, không khí neon Bangkok, menu bento |
+| `restaurant-5` | Golden Lotus Dining | Miễn phí | Fine dining Thái Lan thanh lịch, menu bento, thanh toán Visa/MC |
+| `restaurant-6` | Siam Teak House | 299,000đ | Nội thất gỗ Teak chạm khắc, món signature, đội ngũ đầu bếp |
+| `restaurant-7` | Crimson Sushi | Miễn phí | Sushi Nhật Bản tối giản, tông crimson & charcoal, menu bento sashimi |
 
 ---
 

@@ -13,18 +13,22 @@ import schema_spa6 from '../../Template/spa/Spa-6/i18n/vi.json';
 export const SPA_TEMPLATES: TemplateDefinition[] = [
   {
     id: 'spa-1',
-    name: 'Lotus Spa',
-    description: 'Thiết kế tinh tế tông xanh sage cho spa và thẩm mỹ viện cao cấp. Hero fullscreen overlay xanh mướt, grid 6 dịch vụ với icon, info bar emerald sang trọng. Phù hợp nail salon, massage.',
+    name: 'Aura Clinic',
+    description: 'Phòng khám da liễu thẩm mỹ chuyên trị mụn công nghệ cao. Hero với bằng chứng xã hội (1,200+ khách hàng), bento 4 điểm mạnh, gallery không gian, bảng dịch vụ chi tiết và khu vực tin cậy (chứng chỉ, bác sĩ).',
     category: 'spa',
     price: 0,
     priceText: 'Miễn phí',
     badge: 'MỚI',
-    tags: ['Spa', 'Thẩm Mỹ', 'Massage'],
-    imageUrl: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&auto=format&fit=crop&q=70',
+    tags: ['Trị Mụn', 'Da Liễu', 'Công Nghệ Cao'],
+    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmou1haC8jNjkiDUuGynK92mspCztxLFVfY1dYoGPMbAQATHwSvEC2cHgQiDz-BFVFrJtjEGErUhJR4llJmXQoCLVbpheItOoBW8q7IJgQM_DTy5y4lo8u9mNjxZgqD7UmW8ShyLOVH99lsTildOCUc0ciA_tQzOsM8gXGlffw6Vzzltu9w3ldYHJQgadAhlrIkiuSpIHFDkEsn4iAWADnhbTUlb_PP5knkwZDYEemW2IZWPiYYeB1',
     component: lazy(() => import('../../Template/spa/Spa-1/index')),
     schema: schema_spa1 as Record<string, unknown>,
     imageSlots: [
-      { key: 'hero', label: 'Ảnh Hero', defaultUrl: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&auto=format&fit=crop&q=70' },
+      { key: 'heroBg',  label: 'Ảnh nền Hero', defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmou1haC8jNjkiDUuGynK92mspCztxLFVfY1dYoGPMbAQATHwSvEC2cHgQiDz-BFVFrJtjEGErUhJR4llJmXQoCLVbpheItOoBW8q7IJgQM_DTy5y4lo8u9mNjxZgqD7UmW8ShyLOVH99lsTildOCUc0ciA_tQzOsM8gXGlffw6Vzzltu9w3ldYHJQgadAhlrIkiuSpIHFDkEsn4iAWADnhbTUlb_PP5knkwZDYEemW2IZWPiYYeB1' },
+      { key: 'bentoImg', label: 'Ảnh bento nổi bật', defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD801JhZRw5z8u53m-vgJ8N9AM0H02ODM7BWfFT7A5WEwjWF67bt3SDp_UUqltDLM3JY8boovhIykCcXwF7a01OUOGBwD1_GHI8rtGkJQ1ex5ypVF07qNnPJyVgeaF6wF1xnSHHpFnRjcYLZbTwdqZjQb5fs9TzYa9DRVsc0rdsQHZ_62tBaBpbOsbqAPd4NMaHpiXttVukTcxFedNZFABykK198VszzTb4mY3Mkh-Rpy-PZV_5qDPt' },
+      { key: 'gallery1', label: 'Không gian 1',   defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBmF58Vl8VWwhbGRAs-jnD8dAuJCA_JR_dyQGiAqWGmWHOk4CGw5SQQMpKvq184O-5ukFpOJDpQfW-nDicMZvSaQ_bHx8HM9zwu1G2CnmKoBIe0FAWuwhQyU9irc0iFa1a4U8VogEh4FDYPjQF8hXUEKGGHQ5Otdid83h894evGb_eNKV6QzaMhuQ5YWN958eBCzOOm9CgjsVHHoFHprs06o35uJTV6gyZQbm9hIKZg4A3A0deaYCSp' },
+      { key: 'gallery2', label: 'Không gian 2',   defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBd91O1YHSRbVHHsx7I_JfMDWqKg044MI4-fk_qDBuJe9ZjNZbS3SrHqLmjR0_mlIbPFsWQTBGBT3uBJDJSGWZcASPDK5IaHKxPkPVVbCEZI_VhzIOI_6wrXV7IzcvB6OYuI1Da9qyoldt8yW279RPcDhV_RWswC_qX9zrSFSptuoMFzPj-q_ukm9b5t1qyKCidKrTqnZbQYklHdZ00b-bexBdaSLQKBmY6DORWuY0ZeLTA28uas_7d' },
+      { key: 'gallery3', label: 'Không gian 3',   defaultUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuApFB7MPugIx4OqIBEa6wa9V40_9-140Gqryt4q-INF3l-eaaM4Nj7i3gegeIv9e3CWWnpqad5-1HB6AH5Jm75wmN1AmiLvxW73CQDbfJ-bDx8k5Llhe96B0emIXSmOwvP6yAQFTzyK-haIc7RQOP92kAXG1njHOUmCJqgyei86NrDsZKsmBd9udHo3d2jQziB4-ps4ZNOv_-O3sRVS6z05Uo299qzd99WDk_zmhfys1Y0FXxZ0PR8c' },
     ],
   },
   {

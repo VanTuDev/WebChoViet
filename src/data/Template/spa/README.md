@@ -16,7 +16,11 @@ massage trị liệu, yoga studio, wellness center.
 
 | ID | Tên | Giá | Đặc điểm nổi bật |
 |----|-----|-----|-------------------|
-| `spa-1` | Lotus Spa | Miễn phí | Tông xanh sage tinh tế, hero fullscreen overlay xanh mướt, grid 6 dịch vụ |
+| `spa-1` | Aura Clinic | Miễn phí | Phòng khám da liễu trị mụn công nghệ cao, bento điểm mạnh, khu vực tin cậy |
+| `spa-2` | Aura Wellness | 299,000đ | Hành trình làm đẹp tự nhiên, gallery không gian, đội ngũ chuyên viên |
+| `spa-4` | Luminous Precision Clinic | 299,000đ | Clinic thẩm mỹ công nghệ cao, quy trình lâm sàng, hành trình dịch vụ |
+| `spa-5` | Zenith | Miễn phí | Wellness tối giản, dịch vụ thiền/yoga/detox, không gian zen |
+| `spa-6` | Ocean Oasis | 299,000đ | Spa chủ đề đại dương, thủy trị liệu, không gian thư giãn |
 
 ---
 
