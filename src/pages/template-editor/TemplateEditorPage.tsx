@@ -1,4 +1,5 @@
 import { Suspense, useState, useCallback, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle, Languages, MapPin, Pencil, Eye } from 'lucide-react';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
@@ -11,6 +12,7 @@ import EditorPanel from './_components/EditorPanel';
 import PublishModal from './_components/PublishModal';
 import InlineEditOverlay from './_components/InlineEditOverlay';
 import GoogleMapsImportModal from './_components/GoogleMapsImportModal';
+import AiAssistantWidget from './_components/AiAssistantWidget';
 import { generateUUID } from '../../utils/uuid';
 import { deepMerge } from '../../utils/deepMerge';
 import { useAppContext } from '../../store/AppContext';
@@ -67,6 +69,14 @@ export default function TemplateEditorPage() {
   const isMounted = useRef(false);
   const pendingScrollKey = useRef<string | null>(null);
 
+  // ── Mobile preview: real iframe viewport so template CSS breakpoints
+  // (Tailwind sm:/md:/lg:) recompute against a real 390px width instead of
+  // the actual (wide) editor window — otherwise "mobile mode" just squeezes
+  // the desktop layout into a small box instead of truly re-laying it out.
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const iframeDocRef = useRef<Document | null>(null);
+  const [iframeDoc, setIframeDoc] = useState<Document | null>(null);
+
   const templateId = site?.templateId || 'coffe-1';
   const TemplateComponent = COMPONENT_MAP[templateId];
   const schema = SCHEMA_MAP[templateId] ?? {};
@@ -121,6 +131,47 @@ export default function TemplateEditorPage() {
     }
     load();
   }, [isEdit, siteId, searchParams]);
+
+  // ── Mobile preview iframe setup ─────────────────────────────────────────────
+  // Fires once per mount of the <iframe> (i.e. each time the user switches to
+  // mobile mode). Clones the app's current stylesheets into the iframe's own
+  // document so Tailwind classes render identically, but evaluated against the
+  // iframe's real (narrow) viewport — giving correct breakpoint switching and
+  // native touch/scroll behavior, like an actual phone.
+  const handleIframeLoad = useCallback(() => {
+    const doc = iframeRef.current?.contentDocument;
+    if (!doc) return;
+
+    const meta = doc.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1';
+    doc.head.appendChild(meta);
+
+    document.querySelectorAll('link[rel="stylesheet"], style').forEach(node => {
+      doc.head.appendChild(node.cloneNode(true));
+    });
+
+    const style = doc.createElement('style');
+    style.textContent = `
+      html, body { margin: 0; padding: 0; background: #fff; }
+      .preview-edit-mode [data-field] { cursor: text; }
+      .preview-edit-mode [data-field]:hover { outline: 2px dashed #3b82f6; outline-offset: 3px; border-radius: 3px; }
+    `;
+    doc.head.appendChild(style);
+    doc.body.className = 'preview-edit-mode';
+
+    iframeDocRef.current = doc;
+    setIframeDoc(doc);
+  }, []);
+
+  // Reset when leaving mobile mode so a stale (detached) document from the
+  // previous iframe instance can't be portaled into on the next switch.
+  useEffect(() => {
+    if (viewport !== 'mobile') {
+      iframeDocRef.current = null;
+      setIframeDoc(null);
+    }
+  }, [viewport]);
 
   // ── Field change ──────────────────────────────────────────────────────────
   const handleFieldChange = useCallback((path: string[], value: string) => {
@@ -286,6 +337,16 @@ export default function TemplateEditorPage() {
     }
   }, [site, showConfirm, applyAutofillResult]);
 
+  // ── Trợ lý AI (chat): áp dụng updates đã được người dùng xác nhận vào tab ngôn ngữ đang sửa ──
+  const handleAiAssistantApply = useCallback((updates: Record<string, unknown>) => {
+    setSite(prev => {
+      if (!prev) return null;
+      const merged = deepMerge((prev.customData[prev.lang] as Record<string, unknown>) ?? {}, updates);
+      return { ...prev, customData: { ...prev.customData, [prev.lang]: merged } };
+    });
+    showSnackbar('Đã áp dụng thay đổi từ trợ lý AI.', 'success');
+  }, [showSnackbar]);
+
   // ── Inline edit: double-click on template to edit text ───────────────────
   const handlePreviewDblClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     let target = e.target as HTMLElement | null;
@@ -294,10 +355,18 @@ export default function TemplateEditorPage() {
       if (field) {
         const path = field.split('.');
         const originalValue = target.textContent?.trim() ?? '';
+        let rect = target.getBoundingClientRect();
+        // Target lives inside the mobile-preview iframe's own document —
+        // its rect is relative to the iframe's viewport, so offset it by the
+        // iframe's position in the outer page (where the overlay is drawn).
+        if (target.ownerDocument !== document && iframeRef.current) {
+          const frameRect = iframeRef.current.getBoundingClientRect();
+          rect = new DOMRect(rect.left + frameRect.left, rect.top + frameRect.top, rect.width, rect.height);
+        }
         setInlineEdit({
           path,
           originalValue,
-          rect: target.getBoundingClientRect(),
+          rect,
           fieldLabel: path[path.length - 1],
         });
         e.preventDefault();
@@ -320,7 +389,8 @@ export default function TemplateEditorPage() {
 
   // ── Section focus: scroll preview to clicked section ─────────────────────
   const scrollToSection = (key: string) => {
-    const el = document.querySelector(`[data-section="${key}"]`);
+    const doc = viewport === 'mobile' && iframeDocRef.current ? iframeDocRef.current : document;
+    const el = doc.querySelector(`[data-section="${key}"]`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -559,7 +629,6 @@ export default function TemplateEditorPage() {
             customData={(site.customData[site.lang] as Record<string, unknown>) ?? {}}
             images={site.images}
             imageSlots={imageSlots}
-            shopName={site.name}
             onChange={handleFieldChange}
             onArrayChange={handleArrayChange}
             onImageChange={handleImageChange}
@@ -593,38 +662,64 @@ export default function TemplateEditorPage() {
             .preview-edit-mode [data-field]:hover { outline: 2px dashed #3b82f6; outline-offset: 3px; border-radius: 3px; }
           `}</style>
 
-          {/*
-            Preview KHÔNG render trong iframe — cùng cây DOM với toolbar editor.
-            Một số template dùng `position: fixed` cho navbar (vd Coffee-3/4). Nếu khung
-            preview này không có transform/containing-block riêng, phần tử fixed đó thoát
-            khỏi khung preview và so z-index trực tiếp với header editor (z-40) ở cấp
-            document — đè lên nút "Tạo từ Google Maps"/"Dịch tự động" bất kể z-index template
-            là bao nhiêu. `transform` (dù translateZ(0), coi như no-op) khiến div này trở
-            thành containing block cho mọi con `position: fixed` bên trong — chúng chỉ còn
-            "dính" vào khung preview, không thể thoát ra ngoài đè lên UI editor nữa.
-          */}
-          <div
-            className={`preview-edit-mode isolate transition-all duration-300 ${
-              viewport === 'mobile'
-                ? 'max-w-97.5 mx-auto my-4 rounded-4xl overflow-hidden shadow-2xl ring-4 ring-gray-300'
-                : 'min-h-full'
-            }`}
-            style={{ transform: 'translateZ(0)' }}
-            onDoubleClick={handlePreviewDblClick}
-          >
-            <TemplateCustomProvider value={contextValue}>
-              <Suspense
-                fallback={
-                  <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span className="text-sm">Đang tải template...</span>
-                  </div>
-                }
-              >
-                <TemplateComponent lang={site.lang} />
-              </Suspense>
-            </TemplateCustomProvider>
-          </div>
+          {viewport === 'mobile' ? (
+            /*
+              Mobile mode renders inside a real <iframe> so the template's
+              Tailwind breakpoints (sm:/md:/lg:) recompute against a real
+              390px viewport — a plain narrow div can't do this, since CSS
+              media queries evaluate against the browser window's actual
+              width, not a container's width. This also gives native
+              touch/scroll behavior inside the frame, like a real phone, and
+              contains any `position: fixed` template navbars for free
+              (no leaking on top of the editor header like the old
+              same-DOM approach needed a transform hack for).
+            */
+            <div className="mx-auto my-4 w-97.5 rounded-4xl overflow-hidden shadow-2xl ring-4 ring-gray-300">
+              <iframe
+                ref={iframeRef}
+                onLoad={handleIframeLoad}
+                title="Xem trước trên điện thoại"
+                style={{ width: 390, height: 844, border: 'none', display: 'block' }}
+              />
+              {iframeDoc &&
+                createPortal(
+                  <TemplateCustomProvider value={contextValue}>
+                    <div onDoubleClick={handlePreviewDblClick}>
+                      <Suspense
+                        fallback={
+                          <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                            <span className="text-sm">Đang tải template...</span>
+                          </div>
+                        }
+                      >
+                        <TemplateComponent lang={site.lang} />
+                      </Suspense>
+                    </div>
+                  </TemplateCustomProvider>,
+                  iframeDoc.body
+                )}
+            </div>
+          ) : (
+            <div
+              className="preview-edit-mode isolate min-h-full"
+              style={{ transform: 'translateZ(0)' }}
+              onDoubleClick={handlePreviewDblClick}
+            >
+              <TemplateCustomProvider value={contextValue}>
+                <Suspense
+                  fallback={
+                    <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span className="text-sm">Đang tải template...</span>
+                    </div>
+                  }
+                >
+                  <TemplateComponent lang={site.lang} />
+                </Suspense>
+              </TemplateCustomProvider>
+            </div>
+          )}
         </main>
       </div>
 
@@ -662,6 +757,14 @@ export default function TemplateEditorPage() {
           onClose={() => setShowPublishModal(false)}
         />
       )}
+
+      {/* ── Trợ lý AI (chat nổi, kéo được) ───────────────────────────────── */}
+      <AiAssistantWidget
+        shopName={site.name}
+        schema={schema}
+        currentData={(site.customData[site.lang] as Record<string, unknown>) ?? {}}
+        onApply={handleAiAssistantApply}
+      />
 
     </div>
   );

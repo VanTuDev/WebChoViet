@@ -2,17 +2,13 @@ import { useState } from 'react';
 import { ChevronDown, ChevronRight, Image as ImageIcon, Plus, Trash2, Link, Map, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { isGoogleMapsEmbedUrl } from '../../../utils/googleMaps';
 import type { ImageSlot } from '../../../data/templates/registry';
-import type { CopyFieldType } from '../../../services/aiCopywriterService';
 import ImageCropModal from './ImageCropModal';
-import AiGenerateButton from './AiGenerateButton';
 
 interface Props {
   schema: Record<string, unknown>;
   customData: Record<string, unknown>;
   imageSlots: ImageSlot[];
   images: Record<string, string>;
-  /** Tên quán — dùng làm ngữ cảnh khi gọi AI Copywriter sinh nội dung */
-  shopName: string;
   /** Called when a scalar field changes (path → string value) */
   onChange: (path: string[], value: string) => void;
   /** Called when an array-of-objects field changes (path → whole new array) */
@@ -21,32 +17,6 @@ interface Props {
   onImageChange: (key: string, dataUrl: string) => void;
   /** Called when a section header is clicked — scroll preview to that section */
   onSectionFocus?: (sectionKey: string) => void;
-}
-
-// ── AI Copywriter: nhận diện field nào nên có nút "Tạo bằng AI" dựa theo tên key ──
-
-/** Field cấp quán (slogan / giới thiệu) — không áp dụng cho field bên trong item của mảng object (menu/feature) */
-function classifyShopFieldType(key: string): CopyFieldType | null {
-  const k = key.toLowerCase();
-  if (/slogan|tagline|khauhieu|catchphrase/.test(k)) return 'slogan';
-  if (/intro|about|story|gioithieu|mota|description|desc|subtitle/.test(k)) return 'shop_intro';
-  return null;
-}
-
-/** Field mô tả bên trong 1 item của mảng object (menu món ăn hoặc feature/tiện ích) */
-function isItemDescriptionField(key: string): boolean {
-  return /desc|mota|detail/i.test(key);
-}
-
-/**
- * MenuArrayEditor được dùng chung cho cả mảng "món ăn thật" (có field giá) lẫn mảng
- * "feature/tiện ích" (vd Không Gian Xanh, Hồ Cá Koi...) không có giá — phân biệt để
- * chọn đúng fieldType khi gọi AI (dish_description vs feature_highlight), tránh Gemini
- * hiểu nhầm 1 đặc điểm quán thành 1 món ăn.
- */
-function isMenuLikeSchema(schemaItems: Record<string, unknown>[]): boolean {
-  const template = schemaItems[0] ?? {};
-  return Object.keys(template).some(k => /price|gia/i.test(k));
 }
 
 // ── Section toggle ──────────────────────────────────────────────────────────
@@ -83,29 +53,18 @@ function Section({
 
 // ── String field ─────────────────────────────────────────────────────────────
 
-function StringField({ label, value, path, onChange, aiFieldType, shopName }: {
+function StringField({ label, value, path, onChange }: {
   label: string;
   value: string;
   path: string[];
   onChange: (path: string[], value: string) => void;
-  aiFieldType?: CopyFieldType;
-  shopName?: string;
 }) {
   const isLong = value.length > 60;
   return (
     <div>
-      <div className="flex items-center justify-between gap-2 mb-1">
-        <label className="block text-xs font-medium text-gray-400 capitalize">
-          {label.replace(/_/g, ' ')}
-        </label>
-        {aiFieldType && shopName && (
-          <AiGenerateButton
-            fieldType={aiFieldType}
-            shopName={shopName}
-            onGenerate={text => onChange(path, text)}
-          />
-        )}
-      </div>
+      <label className="block text-xs font-medium text-gray-400 capitalize mb-1">
+        {label.replace(/_/g, ' ')}
+      </label>
       {isLong ? (
         <textarea
           className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:border-blue-400 transition-all"
@@ -235,7 +194,6 @@ function MenuArrayEditor({
   schemaItems,
   currentItems,
   images,
-  shopName,
   onArrayChange,
   onImageChange,
 }: {
@@ -244,7 +202,6 @@ function MenuArrayEditor({
   schemaItems: Record<string, unknown>[];
   currentItems: Record<string, unknown>[];
   images: Record<string, string>;
-  shopName: string;
   onArrayChange: (path: string[], arr: Record<string, unknown>[]) => void;
   onImageChange: (key: string, dataUrl: string) => void;
 }) {
@@ -269,8 +226,6 @@ function MenuArrayEditor({
   };
 
   const stringFields = Object.keys(template).filter(k => typeof template[k] === 'string');
-  const isMenuLike = isMenuLikeSchema(schemaItems);
-  const itemDescFieldType: CopyFieldType = isMenuLike ? 'dish_description' : 'feature_highlight';
 
   return (
     <div>
@@ -317,17 +272,7 @@ function MenuArrayEditor({
               <div className="p-3 space-y-2">
                 {stringFields.map(field => (
                   <div key={field}>
-                    <div className="flex items-center justify-between gap-2 mb-0.5">
-                      <label className="block text-[10px] text-gray-400 capitalize">{field}</label>
-                      {isItemDescriptionField(field) && (
-                        <AiGenerateButton
-                          fieldType={itemDescFieldType}
-                          shopName={shopName}
-                          itemName={(item['name'] as string) || (item['title'] as string) || undefined}
-                          onGenerate={text => updateItem(i, field, text)}
-                        />
-                      )}
-                    </div>
+                    <label className="block text-[10px] text-gray-400 capitalize mb-0.5">{field}</label>
                     <input
                       type="text"
                       className="w-full text-xs text-gray-800 bg-white border border-gray-200 rounded-md px-2 py-1.5 focus:outline-none focus:border-blue-400 transition-all"
@@ -405,7 +350,6 @@ function renderFields(
   onArrayChange: (path: string[], arr: Record<string, unknown>[]) => void,
   images: Record<string, string>,
   onImageChange: (key: string, dataUrl: string) => void,
-  shopName: string,
 ): React.ReactNode {
   return Object.entries(schemaObj).map(([key, val]) => {
     const currentPath = [...path, key];
@@ -447,8 +391,6 @@ function renderFields(
           value={displayVal}
           path={currentPath}
           onChange={onChange}
-          aiFieldType={classifyShopFieldType(key) ?? undefined}
-          shopName={shopName}
         />
       );
     }
@@ -466,7 +408,6 @@ function renderFields(
             schemaItems={schemaItems}
             currentItems={currentItems}
             images={images}
-            shopName={shopName}
             onArrayChange={onArrayChange}
             onImageChange={onImageChange}
           />
@@ -508,7 +449,6 @@ function renderFields(
               onArrayChange,
               images,
               onImageChange,
-              shopName,
             )}
           </div>
         </div>
@@ -526,7 +466,6 @@ export default function EditorPanel({
   customData,
   imageSlots,
   images,
-  shopName,
   onChange,
   onArrayChange,
   onImageChange,
@@ -569,7 +508,6 @@ export default function EditorPanel({
                 onArrayChange,
                 images,
                 onImageChange,
-                shopName,
               )}
             </Section>
           );
