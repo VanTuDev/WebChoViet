@@ -1,4 +1,4 @@
-import { getApiBaseUrl, getToken } from './authService';
+import { apiFetch } from './apiClient';
 import type { ImageSlot } from '../data/templates/registry';
 
 export interface NormalizedPlace {
@@ -41,29 +41,20 @@ export async function autofillTemplateFromGoogleMaps(
   imageSlots: ImageSlot[],
   signal?: AbortSignal,
 ): Promise<AutofillResult> {
-  const token = getToken();
   const timeoutSignal = AbortSignal.timeout(REQUEST_TIMEOUT_MS);
   const combinedSignal = signal ? AbortSignal.any([signal, timeoutSignal]) : timeoutSignal;
 
-  const res = await fetch(`${getApiBaseUrl()}/template-autofill/from-google-maps`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'ngrok-skip-browser-warning': 'true',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+  return apiFetch<AutofillResult>(
+    '/template-autofill/from-google-maps',
+    {
+      method: 'POST',
+      data: {
+        googleMapsUrl,
+        templateSchema,
+        imageSlots: imageSlots.map(s => ({ key: s.key, label: s.label })),
+      },
+      signal: combinedSignal,
     },
-    body: JSON.stringify({
-      googleMapsUrl,
-      templateSchema,
-      imageSlots: imageSlots.map(s => ({ key: s.key, label: s.label })),
-    }),
-    signal: combinedSignal,
-  });
-
-  const body = await res.json().catch(() => null);
-  if (!res.ok || !body?.success) {
-    const msg = Array.isArray(body?.message) ? body.message.join(', ') : body?.message;
-    throw new Error(msg || `Tạo tự động thất bại (${res.status})`);
-  }
-  return body.data;
+    'Tạo tự động thất bại.',
+  );
 }

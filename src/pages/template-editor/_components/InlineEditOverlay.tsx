@@ -35,10 +35,10 @@ export default function InlineEditOverlay({ initialValue, fieldLabel, rect, onCh
   return (
     <>
       {/* Click outside → confirm (changes already live) */}
-      <div className="fixed inset-0 z-[9998]" onMouseDown={onClose} />
+      <div className="fixed inset-0 z-[10000]" onMouseDown={onClose} />
 
       <div
-        className="fixed z-[9999] bg-white rounded-xl shadow-2xl border border-blue-300 p-3 w-72"
+        className="fixed z-[9999] bg- white rounded-xl shadow-2xl border border-blue-300 p-3 w-72"
         style={{ top, left }}
         onMouseDown={e => e.stopPropagation()}
       >

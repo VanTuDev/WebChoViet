@@ -1,4 +1,4 @@
-import { getApiBaseUrl, getToken } from './authService';
+import { apiFetch } from './apiClient';
 
 export interface AiChatTurn {
   role: 'user' | 'assistant';
@@ -62,23 +62,12 @@ Quy tắc bắt buộc:
 }
 
 async function callGemini(prompt: string): Promise<string> {
-  const token = getToken();
-  const res = await fetch(`${getApiBaseUrl()}/ai-proxy/generate`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'ngrok-skip-browser-warning': 'true',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    },
-    body: JSON.stringify({ prompt, json: true }),
-  });
-
-  const body = await res.json().catch(() => null);
-  if (!res.ok || !body?.success) {
-    const msg = Array.isArray(body?.message) ? body.message.join(', ') : body?.message;
-    throw new Error(msg || `Trợ lý AI thất bại (${res.status})`);
-  }
-  return body.data.text as string;
+  const result = await apiFetch<{ text: string }>(
+    '/ai-proxy/generate',
+    { method: 'POST', data: { prompt, json: true } },
+    'Trợ lý AI thất bại.',
+  );
+  return result.text;
 }
 
 export async function sendAiAssistantMessage(params: {

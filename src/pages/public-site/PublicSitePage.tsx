@@ -1,14 +1,16 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ShieldAlert, Mail, ArrowLeft, Coffee, SearchX, Globe as GlobeIcon } from 'lucide-react';
+import { ShieldAlert, Mail, ArrowLeft, Coffee, SearchX, Globe as GlobeIcon, Download } from 'lucide-react';
 import { getSiteConfigBySlug } from '../../services/siteConfigService';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
 import { useAnalyticsTracker } from '../../hooks/useAnalyticsTracker';
+import { useInstallPrompt } from '../../hooks/useInstallPrompt';
 import { sendLog } from '../../services/analyticsService';
 import { LANGUAGES, hasContent, langMeta } from '../../constants/languages';
 import type { SiteConfig, SiteLang } from '../../types';
 import { extractSeoFacts, buildLocalBusinessJsonLd, ogLocaleForLang } from '../../utils/seo';
+import { cloudinarySquareIcon } from '../../utils/cloudinaryIcon';
 
 import { COMPONENT_MAP, TEMPLATES } from '../../data/templates/registry';
 
@@ -114,6 +116,33 @@ function TemplateSite({ config }: { config: SiteConfig }) {
     facts: seoFacts,
   });
 
+  // ── PWA: cho khách "Thêm vào Màn hình chính" — hợp với use-case quét QR tại bàn,
+  // khách quay lại quán nhiều lần thì không cần quét QR lại mỗi lần. Manifest DỘNG
+  // theo từng site (tên/icon riêng), build ngay trên FE qua data: URI — không cần
+  // thêm endpoint backend nào.
+  const iconUrl = ogImage ? cloudinarySquareIcon(ogImage, 512) : `${window.location.origin}/favicon.svg`;
+  const manifestHref = `data:application/json,${encodeURIComponent(JSON.stringify({
+    name: config.name,
+    short_name: config.name.slice(0, 30),
+    start_url: `/${config.slug}`,
+    scope: `/${config.slug}`,
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#0056b3',
+    icons: [{ src: iconUrl, sizes: ogImage ? '512x512' : 'any', type: ogImage ? 'image/png' : 'image/svg+xml' }],
+  }))}`;
+
+  useEffect(() => {
+    if (!('serviceWorker' in navigator)) return;
+    // Scope hẹp đúng bằng slug — SW này KHÔNG được phép ảnh hưởng tới các route khác
+    // của app (dashboard/editor/admin), chỉ kiểm soát đúng trang site công khai này.
+    navigator.serviceWorker.register('/sw.js', { scope: `/${config.slug}` }).catch(() => {
+      // Cài đặt PWA là tính năng phụ trợ — lỗi ở đây không được phép ảnh hưởng tới việc xem site
+    });
+  }, [config.slug]);
+
+  const { canInstall, promptInstall } = useInstallPrompt();
+
   return (
     <div className="relative">
       <Helmet>
@@ -139,6 +168,14 @@ function TemplateSite({ config }: { config: SiteConfig }) {
         <meta name="twitter:title" content={config.name} />
         <meta name="twitter:description" content={description} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+
+        {/* PWA — cho phép "Thêm vào Màn hình chính". manifest động theo từng site (data: URI). */}
+        <link rel="manifest" href={manifestHref} />
+        <meta name="theme-color" content="#0056b3" />
+        {/* iOS Safari không đọc manifest.json cho Add to Home Screen — cần riêng bộ meta tag này */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content={config.name} />
+        <link rel="apple-touch-icon" href={iconUrl} />
       </Helmet>
       <TemplateCustomProvider value={contextValue}>
         <Suspense fallback={
@@ -151,6 +188,17 @@ function TemplateSite({ config }: { config: SiteConfig }) {
       </TemplateCustomProvider>
 
       <LanguageSwitcher current={activeLang} available={availableLangs} onChange={handleLangChange} />
+
+      {/* Cài đặt lên màn hình chính — chỉ hiện khi trình duyệt xác nhận có thể cài (Chrome/Edge/Android) */}
+      {canInstall && (
+        <button
+          onClick={promptInstall}
+          className="fixed top-4 left-4 z-50 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm shadow-lg border border-black/5 rounded-full pl-3 pr-3.5 py-2 text-xs font-semibold text-gray-700 hover:shadow-xl transition-all cursor-pointer"
+        >
+          <Download className="w-3.5 h-3.5 text-primary" />
+          Cài đặt
+        </button>
+      )}
 
       {/* "Made with WebChoViet" badge */}
       <a

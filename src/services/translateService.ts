@@ -1,4 +1,4 @@
-import { getApiBaseUrl, getToken } from './authService';
+import { apiFetch } from './apiClient';
 
 export type TranslatableLang = 'en' | 'zh' | 'ko';
 
@@ -10,21 +10,9 @@ export async function translateCustomData(
   data: Record<string, unknown>,
   targetLangs: TranslatableLang[],
 ): Promise<Record<TranslatableLang, Record<string, unknown>>> {
-  const token = getToken();
-  const res = await fetch(`${getApiBaseUrl()}/translate`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'ngrok-skip-browser-warning': 'true',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    },
-    body: JSON.stringify({ data, targetLangs }),
-  });
-
-  const body = await res.json().catch(() => null);
-  if (!res.ok || !body?.success) {
-    const msg = Array.isArray(body?.message) ? body.message.join(', ') : body?.message;
-    throw new Error(msg || `Dịch thất bại (${res.status})`);
-  }
-  return body.data;
+  return apiFetch<Record<TranslatableLang, Record<string, unknown>>>(
+    '/translate',
+    { method: 'POST', data: { data, targetLangs } },
+    'Dịch thất bại.',
+  );
 }

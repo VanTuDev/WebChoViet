@@ -3,10 +3,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
   Eye, Users, MousePointerClick, LogOut as LeaveIcon,
-  Loader2, AlertCircle, Globe, TrendingUp, UserPlus,
+  Globe, TrendingUp, UserPlus,
 } from 'lucide-react';
 import { fetchPlatformAnalytics, PlatformAnalytics } from '../../../services/adminService';
 import { TimeSeriesChart, BarChart, DonutChart, CHART_COLORS } from './_components/charts';
+import StatTile from '../../../components/common/StatTile';
+import LoadingState from '../../../components/common/LoadingState';
+import ErrorBanner from '../../../components/common/ErrorBanner';
 
 const nf = (n: number) => n.toLocaleString('vi-VN');
 const fmtVnd = (n: number) => `${nf(n)}đ`;
@@ -24,25 +27,6 @@ const daysAgoStr = (n: number) => {
   d.setDate(d.getDate() - n);
   return d.toISOString().slice(0, 10);
 };
-
-// ── Stat tile ───────────────────────────────────────────────────────────────────
-
-function StatTile({ icon, iconBg, label, value, sub }: {
-  icon: React.ReactNode; iconBg: string; label: string; value: string; sub: string;
-}) {
-  return (
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col gap-3">
-      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: iconBg }}>
-        {icon}
-      </div>
-      <div>
-        <p className="text-2xl font-bold text-white tabular-nums">{value}</p>
-        <p className="text-xs text-slate-400 mt-0.5">{label}</p>
-      </div>
-      <p className="text-[11px] text-slate-500 pt-2 border-t border-slate-800">{sub}</p>
-    </div>
-  );
-}
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -164,19 +148,9 @@ export default function AdminAnalyticsPage() {
         </div>
       </div>
 
-      {loading && (
-        <div className="flex items-center justify-center py-24 text-slate-400 gap-2">
-          <Loader2 className="h-5 w-5 animate-spin" />
-          <span className="text-sm">Đang tổng hợp dữ liệu...</span>
-        </div>
-      )}
+      {loading && <LoadingState message="Đang tổng hợp dữ liệu..." />}
 
-      {error && !loading && (
-        <div className="flex items-center gap-3 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm rounded-2xl px-5 py-4">
-          <AlertCircle className="h-5 w-5 shrink-0" />
-          {error}
-        </div>
-      )}
+      {error && !loading && <ErrorBanner message={error} />}
 
       {data && !loading && (
         <>

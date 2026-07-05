@@ -50,26 +50,37 @@ export function consumePostLoginRedirect(): string | null {
   return path;
 }
 
-/** Lấy profile user đang đăng nhập từ token hiện có. Trả về null nếu chưa đăng nhập/token hết hạn. */
+/**
+ * Lấy profile user đang đăng nhập từ token hiện có. Trả về null nếu chưa đăng
+ * nhập/token hết hạn — VÀ CẢ khi lỗi mạng (offline, DNS fail...), để giữ đúng
+ * hợp đồng "trả null khi thất bại" mà mọi nơi gọi hàm này đang giả định. Trước
+ * đây không try/catch: lỗi mạng làm hàm throw thay vì trả null, biến thành
+ * unhandled rejection ở các nơi gọi không có .catch() (vd lúc app khởi động).
+ */
 export async function fetchMe(): Promise<AuthUser | null> {
   const token = getToken();
   if (!token) return null;
 
-  const res = await fetch(`${getApiBaseUrl()}/auth/me`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      // Bỏ qua trang cảnh báo interstitial của ngrok free plan khi gọi qua tunnel
-      'ngrok-skip-browser-warning': 'true',
-    },
-  });
+  try {
+    const res = await fetch(`${getApiBaseUrl()}/auth/me`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        // Bỏ qua trang cảnh báo interstitial của ngrok free plan khi gọi qua tunnel
+        'ngrok-skip-browser-warning': 'true',
+      },
+    });
 
-  if (!res.ok) {
-    if (res.status === 401) clearToken();
+    if (!res.ok) {
+      if (res.status === 401) clearToken();
+      return null;
+    }
+
+    const body = await res.json();
+    return body.data as AuthUser;
+  } catch (err) {
+    console.error('fetchMe() thất bại:', err);
     return null;
   }
-
-  const body = await res.json();
-  return body.data as AuthUser;
 }
 
 /** Logout — báo backend (best-effort) rồi xoá token phía client. */

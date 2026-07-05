@@ -12,6 +12,8 @@ import {
 } from '../../../services/adminService';
 import { ROUTES } from '../../../config/routes';
 import { useAppContext } from '../../../store/AppContext';
+import PlanBadge from '../../../components/shared/PlanBadge';
+import StatTile from '../../../components/common/StatTile';
 
 const nf = (n: number) => n.toLocaleString('vi-VN');
 const fmtVnd = (n: number) => `${nf(n)}đ`;
@@ -20,13 +22,6 @@ const fmtDateTime = (iso: string) =>
     day: '2-digit', month: '2-digit', year: 'numeric',
     hour: '2-digit', minute: '2-digit',
   });
-
-const PLAN_BADGE: Record<string, string> = {
-  free:  'bg-slate-700 text-slate-300',
-  pro:   'bg-blue-500/20 text-blue-300',
-  ultra: 'bg-violet-500/20 text-violet-300',
-};
-const PLAN_LABEL: Record<string, string> = { free: 'Free', pro: 'Pro', ultra: 'Ultra' };
 
 function avatarUrl(u: Pick<AdminUserListItem, 'avatar' | 'name'> | { ownerAvatar?: string; ownerName: string }): string {
   const av = 'avatar' in u ? u.avatar : (u as any).ownerAvatar;
@@ -118,7 +113,11 @@ export default function AdminDashboard() {
         setSitesTotal(res.total);
         setSitesPage(res.page);
       })
-      .catch(() => {})
+      .catch(err => {
+        // Trước đây .catch(() => {}) nuốt mọi lỗi — search/phân trang thất bại chỉ
+        // âm thầm tắt spinner, người dùng tưởng không có kết quả thay vì biết là lỗi.
+        showSnackbar(err instanceof Error ? err.message : 'Không tải được danh sách website.', 'error');
+      })
       .finally(() => setSitesLoading(false));
   };
 
@@ -205,19 +204,14 @@ export default function AdminDashboard() {
       {/* ── KPI cards ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         {KPI.map(({ label, value, sub, Icon, color, bg }) => (
-          <div key={label} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col gap-3">
-            <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-              style={{ backgroundColor: bg }}
-            >
-              <Icon className="h-5 w-5" style={{ color }} />
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-white">{value}</p>
-              <p className="text-xs text-slate-400 mt-0.5">{label}</p>
-            </div>
-            <p className="text-[11px] text-slate-500 pt-2 border-t border-slate-800">{sub}</p>
-          </div>
+          <StatTile
+            key={label}
+            icon={<Icon className="h-5 w-5" style={{ color }} />}
+            iconBg={bg}
+            label={label}
+            value={value}
+            sub={sub}
+          />
         ))}
       </div>
 
@@ -506,9 +500,7 @@ export default function AdminDashboard() {
                       {new Date(u.createdAt).toLocaleDateString('vi-VN')}
                     </p>
                   </div>
-                  <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full shrink-0 ${PLAN_BADGE[u.plan]}`}>
-                    {PLAN_LABEL[u.plan]}
-                  </span>
+                  <span className="shrink-0"><PlanBadge plan={u.plan} variant="dark" /></span>
                 </div>
               ))}
             </div>

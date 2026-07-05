@@ -1,5 +1,5 @@
 import type { SiteConfig } from '../types';
-import { getApiBaseUrl, getToken } from './authService';
+import { apiFetch } from './apiClient';
 
 // ── Backend Site shape (BackEnd-WebChoViet/src/sites/schemas/site.schema.ts) ────
 
@@ -48,45 +48,16 @@ function toBackend(config: SiteConfig) {
   };
 }
 
-// ── API helper — gọi thẳng NestJS backend thật ──────────────────────────────────
-
-interface ApiEnvelope<T> {
-  success: boolean;
-  data?: T;
-  message?: string | string[];
-}
-
-async function api<T>(path: string, init?: RequestInit): Promise<T> {
-  const token = getToken();
-  const res = await fetch(`${getApiBaseUrl()}${path}`, {
-    ...init,
-    headers: {
-      'Content-Type': 'application/json',
-      // Bỏ qua trang cảnh báo interstitial của ngrok free plan khi gọi qua tunnel
-      'ngrok-skip-browser-warning': 'true',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...init?.headers,
-    },
-  });
-
-  const body: ApiEnvelope<T> | null = await res.json().catch(() => null);
-  if (!res.ok || !body?.success) {
-    const msg = Array.isArray(body?.message) ? body.message.join(', ') : body?.message;
-    throw new Error(msg || `API ${res.status}: ${path}`);
-  }
-  return body.data as T;
-}
-
 // ── Public service API ─────────────────────────────────────────────────────────
 
 export async function getAllSiteConfigs(): Promise<SiteConfig[]> {
-  const raw = await api<BackendSite[]>('/sites/my');
+  const raw = await apiFetch<BackendSite[]>('/sites/my');
   return raw.map(fromBackend);
 }
 
 export async function getSiteConfig(id: string): Promise<SiteConfig | null> {
   try {
-    return fromBackend(await api<BackendSite>(`/sites/${id}`));
+    return fromBackend(await apiFetch<BackendSite>(`/sites/${id}`));
   } catch {
     return null;
   }
@@ -94,7 +65,7 @@ export async function getSiteConfig(id: string): Promise<SiteConfig | null> {
 
 export async function getSiteConfigBySlug(slug: string): Promise<SiteConfig | null> {
   try {
-    return fromBackend(await api<BackendSite>(`/sites/public/${slug}`));
+    return fromBackend(await apiFetch<BackendSite>(`/sites/public/${slug}`));
   } catch {
     return null;
   }
@@ -102,20 +73,20 @@ export async function getSiteConfigBySlug(slug: string): Promise<SiteConfig | nu
 
 /** Tạo mới hoặc cập nhật — backend upsert theo id (xem SitesService.upsert) */
 export async function saveSiteConfig(config: SiteConfig): Promise<SiteConfig> {
-  const raw = await api<BackendSite>('/sites', {
+  const raw = await apiFetch<BackendSite>('/sites', {
     method: 'POST',
-    body: JSON.stringify(toBackend(config)),
+    data: toBackend(config),
   });
   return fromBackend(raw);
 }
 
 export async function deleteSiteConfig(id: string): Promise<void> {
-  await api(`/sites/${id}`, { method: 'DELETE' });
+  await apiFetch(`/sites/${id}`, { method: 'DELETE' });
 }
 
 export async function slugExists(slug: string, excludeId?: string): Promise<boolean> {
   const q = excludeId ? `?excludeId=${encodeURIComponent(excludeId)}` : '';
-  const { exists } = await api<{ exists: boolean }>(`/sites/slug-exists/${encodeURIComponent(slug)}${q}`);
+  const { exists } = await apiFetch<{ exists: boolean }>(`/sites/slug-exists/${encodeURIComponent(slug)}${q}`);
   return exists;
 }
 

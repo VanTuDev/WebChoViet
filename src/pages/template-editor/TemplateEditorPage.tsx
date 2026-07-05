@@ -441,6 +441,24 @@ export default function TemplateEditorPage() {
     );
   }
 
+  // templateId có thể trỏ tới 1 template đã bị gỡ khỏi registry (site cũ, đổi tên...) —
+  // trước đây không check, `<TemplateComponent lang={...} />` với giá trị undefined ném
+  // "invalid element type", crash render không có thông báo rõ ràng.
+  if (!TemplateComponent) {
+    return (
+      <div className="flex flex-col h-screen items-center justify-center bg-gray-50 gap-3 text-center px-4">
+        <AlertCircle className="w-8 h-8 text-red-400" />
+        <p className="text-sm font-semibold text-gray-600">Không tìm thấy template "{templateId}".</p>
+        <button
+          onClick={() => navigate(ROUTES.MARKETPLACE)}
+          className="mt-2 px-4 py-2 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#002d63] transition-colors"
+        >
+          Về Marketplace
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col h-screen bg-gray-50 overflow-hidden">
 

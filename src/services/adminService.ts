@@ -1,6 +1,6 @@
 // Admin service — gọi các endpoint /admin/* của backend (JWT + role admin bắt buộc,
 // xem BackEnd-WebChoViet/src/admin). Response backend đã bọc chuẩn { success, data }.
-import { getApiBaseUrl, getToken } from './authService';
+import { apiFetch } from './apiClient';
 
 // ── Types — khớp AdminService backend (admin.service.ts) ───────────────────────
 
@@ -65,31 +65,10 @@ export interface PlatformAnalytics {
   conversionFunnel: { registered: number; withSite: number; publishedSite: number; paying: number };
 }
 
-// ── API helper ──────────────────────────────────────────────────────────────────
-
-async function api<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${getApiBaseUrl()}${path}`, {
-    ...init,
-    headers: {
-      'Content-Type': 'application/json',
-      'ngrok-skip-browser-warning': 'true',
-      Authorization: `Bearer ${getToken() ?? ''}`,
-      ...init?.headers,
-    },
-  });
-
-  const body = await res.json().catch(() => null);
-  if (!res.ok || !body?.success) {
-    const msg = Array.isArray(body?.message) ? body.message.join(', ') : body?.message;
-    throw new Error(msg || `API ${res.status}: ${path}`);
-  }
-  return body.data as T;
-}
-
 // ── Public service API ──────────────────────────────────────────────────────────
 
 export function fetchAdminStats(): Promise<AdminStats> {
-  return api<AdminStats>('/admin/stats');
+  return apiFetch<AdminStats>('/admin/stats');
 }
 
 export function fetchAdminUsers(params: ListUsersParams = {}): Promise<AdminUserList> {
@@ -99,11 +78,11 @@ export function fetchAdminUsers(params: ListUsersParams = {}): Promise<AdminUser
   if (params.page) q.set('page', String(params.page));
   if (params.limit) q.set('limit', String(params.limit));
   const qs = q.toString();
-  return api<AdminUserList>(`/admin/users${qs ? `?${qs}` : ''}`);
+  return apiFetch<AdminUserList>(`/admin/users${qs ? `?${qs}` : ''}`);
 }
 
 export function toggleSuspendUser(userId: string): Promise<{ id: string; isSuspended: boolean }> {
-  return api(`/admin/users/${userId}/toggle-suspend`, { method: 'PATCH' });
+  return apiFetch(`/admin/users/${userId}/toggle-suspend`, { method: 'PATCH' });
 }
 
 export function fetchPlatformAnalytics(
@@ -112,7 +91,7 @@ export function fetchPlatformAnalytics(
   const qs = typeof range === 'number'
     ? `days=${range}`
     : `fromDate=${range.fromDate}&toDate=${range.toDate}`;
-  return api<PlatformAnalytics>(`/admin/analytics?${qs}`);
+  return apiFetch<PlatformAnalytics>(`/admin/analytics?${qs}`);
 }
 
 // ── Sites management ────────────────────────────────────────────────────────────
@@ -153,15 +132,15 @@ export function fetchAdminSites(params: ListSitesParams = {}): Promise<AdminSite
   if (params.page) q.set('page', String(params.page));
   if (params.limit) q.set('limit', String(params.limit));
   const qs = q.toString();
-  return api<AdminSiteList>(`/admin/sites${qs ? `?${qs}` : ''}`);
+  return apiFetch<AdminSiteList>(`/admin/sites${qs ? `?${qs}` : ''}`);
 }
 
 export function toggleSitePending(siteId: string): Promise<{ id: string; isPending: boolean }> {
-  return api(`/admin/sites/${siteId}/toggle-pending`, { method: 'PATCH' });
+  return apiFetch(`/admin/sites/${siteId}/toggle-pending`, { method: 'PATCH' });
 }
 
 export function deleteSite(siteId: string): Promise<{ message: string }> {
-  return api(`/admin/sites/${siteId}`, { method: 'DELETE' });
+  return apiFetch(`/admin/sites/${siteId}`, { method: 'DELETE' });
 }
 
 // ── Payments (real data — thay cho mock TRANSACTIONS trước đây) ────────────────
@@ -210,5 +189,5 @@ export function fetchAdminPayments(params: ListPaymentsParams = {}): Promise<Adm
   if (params.page) q.set('page', String(params.page));
   if (params.limit) q.set('limit', String(params.limit));
   const qs = q.toString();
-  return api<AdminPaymentList>(`/admin/payments${qs ? `?${qs}` : ''}`);
+  return apiFetch<AdminPaymentList>(`/admin/payments${qs ? `?${qs}` : ''}`);
 }

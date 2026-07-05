@@ -3,7 +3,8 @@
 // (BackEnd-WebChoViet/src/analytics — POST /analytics/track). Muốn track thêm 1
 // hành vi mới của user, chỉ cần gọi sendLog(slug, '<Loại-Mới>', { ...data }) —
 // không cần đổi schema hay endpoint (xem LogEventType bên dưới để thêm loại mới).
-import { getApiBaseUrl, getToken } from './authService';
+import { apiFetch } from './apiClient';
+import { getApiBaseUrl } from './authService';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -63,7 +64,11 @@ function getOrCreateSessionId(): string {
 /**
  * Gửi 1 sự kiện thống kê lên backend. Fire-and-forget, không throw — lỗi mạng
  * không được phép ảnh hưởng UX của trang public.
- * keepalive: true → vẫn gửi được khi tab đang đóng (quan trọng cho User-Leave).
+ *
+ * Cố tình dùng `fetch` thẳng thay vì `apiFetch` (axios) ở đây: `keepalive: true`
+ * (vẫn gửi được khi tab đang đóng — quan trọng cho User-Leave) là 1 flag riêng
+ * của Fetch API, axios (mặc định chạy trên XHR ở trình duyệt) không có khái
+ * niệm tương đương — dùng apiFetch sẽ âm thầm mất hành vi này.
  */
 export async function sendLog(
   slug: string,
@@ -107,26 +112,16 @@ const INTERACTION_LABELS: Record<string, string> = {
 /** Lấy analytics của 1 site — yêu cầu đăng nhập (chỉ chủ site xem được). Fallback mock nếu lỗi. */
 export async function fetchAnalytics(slug: string, days = 7): Promise<SlugAnalytics> {
   try {
-    const token = getToken();
-    const res = await fetch(`${getApiBaseUrl()}/analytics/${encodeURIComponent(slug)}?days=${days}`, {
-      headers: {
-        'ngrok-skip-browser-warning': 'true',
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      },
-    });
-    const body = await res.json().catch(() => null);
-    if (res.ok && body?.success) {
-      const raw = body.data as Omit<SlugAnalytics, 'topInteractions'> & {
-        topInteractions: { element: string; count: number }[];
-      };
-      return {
-        ...raw,
-        topInteractions: raw.topInteractions.map(t => ({
-          ...t,
-          label: INTERACTION_LABELS[t.element] ?? t.element,
-        })),
-      };
-    }
+    const raw = await apiFetch<Omit<SlugAnalytics, 'topInteractions'> & {
+      topInteractions: { element: string; count: number }[];
+    }>(`/analytics/${encodeURIComponent(slug)}?days=${days}`);
+    return {
+      ...raw,
+      topInteractions: raw.topInteractions.map(t => ({
+        ...t,
+        label: INTERACTION_LABELS[t.element] ?? t.element,
+      })),
+    };
   } catch {
     // fall through to mock
   }

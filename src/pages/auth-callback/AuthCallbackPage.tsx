@@ -25,12 +25,19 @@ export default function AuthCallbackPage() {
       return;
     }
 
-    login(token).then(() => {
-      // Xoá token khỏi URL để không lưu trong lịch sử trình duyệt
-      window.history.replaceState(null, '', ROUTES.AUTH_CALLBACK);
-      showSnackbar('Đăng nhập thành công! Chào mừng bạn.', 'success');
-      navigate(consumePostLoginRedirect() ?? ROUTES.MARKETPLACE, { replace: true });
-    });
+    login(token)
+      .then(() => {
+        // Xoá token khỏi URL để không lưu trong lịch sử trình duyệt
+        window.history.replaceState(null, '', ROUTES.AUTH_CALLBACK);
+        showSnackbar('Đăng nhập thành công! Chào mừng bạn.', 'success');
+        navigate(consumePostLoginRedirect() ?? ROUTES.MARKETPLACE, { replace: true });
+      })
+      .catch(() => {
+        // Trước đây không có .catch() — nếu login() reject (vd lỗi mạng), người dùng
+        // bị kẹt vĩnh viễn ở màn "Đang đăng nhập..." không có lối thoát.
+        showSnackbar('Đăng nhập thất bại. Vui lòng thử lại.', 'error');
+        navigate(ROUTES.HOME, { replace: true });
+      });
   }, [login, navigate, showSnackbar]);
 
   return (

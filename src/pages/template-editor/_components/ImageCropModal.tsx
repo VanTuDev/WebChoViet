@@ -69,13 +69,20 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
 
   useEffect(() => {
     if (step === 'crop' && imgSrc) {
+      setUploadError('');
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.src = imgSrc;
       img.onload = () => {
         imgElRef.current = img;
         drawCanvas();
       };
+      // Trước đây không có onerror — ảnh hỏng/URL không truy cập được (vd currentUrl
+      // trỏ tới ảnh Cloudinary đã bị xóa) làm khung crop mãi mãi trống trơn, không
+      // rõ lý do, và "Xác nhận cắt" sau đó chỉ lặng lẽ không làm gì (xem handleConfirm).
+      img.onerror = () => {
+        setUploadError('Không thể tải ảnh này. Vui lòng chọn ảnh khác.');
+      };
+      img.src = imgSrc;
     }
   }, [imgSrc, step]);
 
@@ -147,7 +154,12 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
 
   const handleConfirm = async () => {
     const img = imgElRef.current;
-    if (!img) return;
+    if (!img) {
+      // Trước đây return im lặng — nếu ảnh chưa kịp tải xong (hoặc lỗi) mà người
+      // dùng đã bấm "Xác nhận cắt", nút không phản hồi gì, trông như bị treo/hỏng.
+      setUploadError('Ảnh chưa tải xong hoặc bị lỗi. Vui lòng chọn lại ảnh.');
+      return;
+    }
     const out = document.createElement('canvas');
     out.width = Math.round(img.naturalWidth * cropBox.w);
     out.height = Math.round(img.naturalHeight * cropBox.h);

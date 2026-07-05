@@ -1,57 +1,42 @@
-import { useEffect, useState } from 'react';
-import { CheckCircle2, Clock, XCircle, RefreshCw, ChevronDown, Search, Loader2, AlertCircle } from 'lucide-react';
-import { fetchAdminPayments, type AdminPaymentListItem, type AdminPaymentTotals } from '../../../services/adminService';
+import { useState } from 'react';
+import { Search, ChevronDown, Receipt } from 'lucide-react';
+import { fetchAdminPayments, type AdminPaymentTotals } from '../../../services/adminService';
+import { PAYMENT_STATUS_META, PLAN_PURCHASE_LABEL, type PaymentStatus } from '../../../utils/paymentDisplay';
+import { avatarUrl } from '../../../utils/avatar';
+import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
+import { useFetchState } from '../../../hooks/useFetchState';
+import LoadingState from '../../../components/common/LoadingState';
+import EmptyState from '../../../components/common/EmptyState';
+import ErrorBanner from '../../../components/common/ErrorBanner';
+import Pagination from '../../../components/common/Pagination';
 
 const fmt = (n: number) => n.toLocaleString('vi-VN') + 'đ';
-const PLAN_LABEL: Record<string, string> = { pro: 'Kinh Doanh WebPro', ultra: 'Thương Hiệu Ultra' };
 const CYCLE_LABEL: Record<string, string> = { monthly: 'Hàng tháng', yearly: 'Hàng năm' };
-
-type TxStatus = 'pending' | 'success' | 'failed' | 'refunded';
-
-const TX_STATUS: Record<TxStatus, { label: string; cls: string; Icon: typeof CheckCircle2 }> = {
-  success:  { label: 'Thành công', cls: 'bg-emerald-500/10 text-emerald-400', Icon: CheckCircle2 },
-  pending:  { label: 'Đang chờ',   cls: 'bg-amber-500/10  text-amber-400',    Icon: Clock },
-  failed:   { label: 'Thất bại',   cls: 'bg-rose-500/10   text-rose-400',     Icon: XCircle },
-  refunded: { label: 'Hoàn tiền',  cls: 'bg-slate-500/20  text-slate-400',    Icon: RefreshCw },
-};
 
 const EMPTY_TOTALS: AdminPaymentTotals = { successAmount: 0, pendingAmount: 0, failedCount: 0, refundedAmount: 0 };
 const PAGE_LIMIT = 20;
+const SEARCH_DEBOUNCE_MS = 300;
 
 export default function PaymentsPage() {
   const [q, setQ] = useState('');
-  const [filterStatus, setFilterStatus] = useState<TxStatus | 'all'>('all');
+  const [filterStatus, setFilterStatus] = useState<PaymentStatus | 'all'>('all');
   const [page, setPage] = useState(1);
-  const [items, setItems] = useState<AdminPaymentListItem[]>([]);
-  const [total, setTotal] = useState(0);
-  const [totals, setTotals] = useState<AdminPaymentTotals>(EMPTY_TOTALS);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const debouncedQ = useDebouncedValue(q, q ? SEARCH_DEBOUNCE_MS : 0);
 
-  useEffect(() => {
-    let cancelled = false;
-    setLoading(true);
-    setError('');
-    const handle = setTimeout(() => {
-      fetchAdminPayments({
-        search: q || undefined,
-        status: filterStatus === 'all' ? undefined : filterStatus,
-        page, limit: PAGE_LIMIT,
-      })
-        .then(res => {
-          if (cancelled) return;
-          setItems(res.items);
-          setTotal(res.total);
-          setTotals(res.totals);
-        })
-        .catch(err => { if (!cancelled) setError(err instanceof Error ? err.message : 'Không tải được dữ liệu.'); })
-        .finally(() => { if (!cancelled) setLoading(false); });
-    }, 300);
-    return () => { cancelled = true; clearTimeout(handle); };
-  }, [q, filterStatus, page]);
+  const { data, loading, error } = useFetchState(
+    () => fetchAdminPayments({
+      search: debouncedQ || undefined,
+      status: filterStatus === 'all' ? undefined : filterStatus,
+      page, limit: PAGE_LIMIT,
+    }),
+    [debouncedQ, filterStatus, page],
+  );
+  const items = data?.items ?? [];
+  const total = data?.total ?? 0;
+  const totals = data?.totals ?? EMPTY_TOTALS;
 
   const handleSearch = (v: string) => { setQ(v); setPage(1); };
-  const handleStatus = (v: TxStatus | 'all') => { setFilterStatus(v); setPage(1); };
+  const handleStatus = (v: PaymentStatus | 'all') => { setFilterStatus(v); setPage(1); };
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_LIMIT));
 
@@ -94,7 +79,7 @@ export default function PaymentsPage() {
         <div className="relative">
           <select
             value={filterStatus}
-            onChange={e => handleStatus(e.target.value as TxStatus | 'all')}
+            onChange={e => handleStatus(e.target.value as PaymentStatus | 'all')}
             className="appearance-none bg-slate-900 border border-slate-800 text-slate-300 text-sm rounded-xl pl-4 pr-8 py-2.5 focus:outline-none focus:border-[#0056b3] cursor-pointer transition-all"
           >
             <option value="all">Tất cả trạng thái</option>
@@ -107,11 +92,7 @@ export default function PaymentsPage() {
         </div>
       </div>
 
-      {error && (
-        <div className="flex items-center gap-3 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm rounded-2xl px-5 py-4">
-          <AlertCircle className="h-5 w-5 shrink-0" /> {error}
-        </div>
-      )}
+      {error && <ErrorBanner message={error} />}
 
       {/* Table */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
@@ -128,26 +109,18 @@ export default function PaymentsPage() {
             </thead>
             <tbody className="divide-y divide-slate-800">
               {loading ? (
-                <tr>
-                  <td colSpan={7} className="text-center text-slate-500 text-sm py-12">
-                    <Loader2 className="h-4 w-4 animate-spin inline mr-2" /> Đang tải...
-                  </td>
-                </tr>
+                <LoadingState variant="row" colSpan={7} />
               ) : items.length === 0 ? (
-                <tr>
-                  <td colSpan={7} className="text-center text-slate-500 text-sm py-12">
-                    Không có giao dịch phù hợp
-                  </td>
-                </tr>
+                <EmptyState variant="row" colSpan={7} icon={Receipt} message="Không có giao dịch phù hợp" />
               ) : items.map(tx => {
-                const s = TX_STATUS[tx.status];
-                const SIcon = s.Icon;
+                const s = PAYMENT_STATUS_META[tx.status];
+                const SIcon = s.icon;
                 return (
                   <tr key={tx.id} className="hover:bg-slate-800/40 transition-colors">
                     <td className="px-5 py-3.5">
                       <div className="flex items-center gap-3">
                         <img
-                          src={tx.userAvatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(tx.userName)}&background=0056b3&color=fff`}
+                          src={avatarUrl(tx.userName, tx.userAvatar)}
                           alt="" className="w-7 h-7 rounded-full border border-slate-700 shrink-0" referrerPolicy="no-referrer"
                         />
                         <div className="min-w-0">
@@ -157,12 +130,12 @@ export default function PaymentsPage() {
                       </div>
                     </td>
                     <td className="px-5 py-3.5 text-slate-300 whitespace-nowrap text-xs">
-                      {PLAN_LABEL[tx.plan] ?? tx.plan} · {CYCLE_LABEL[tx.billingCycle] ?? tx.billingCycle}
+                      {PLAN_PURCHASE_LABEL[tx.plan] ?? tx.plan} · {CYCLE_LABEL[tx.billingCycle] ?? tx.billingCycle}
                     </td>
                     <td className="px-5 py-3.5 font-bold text-white whitespace-nowrap">{fmt(tx.amount)}</td>
                     <td className="px-5 py-3.5 text-slate-400 whitespace-nowrap text-xs font-mono">#{tx.orderCode}</td>
                     <td className="px-5 py-3.5">
-                      <span className={`flex items-center gap-1.5 w-fit text-[10px] font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${s.cls}`}>
+                      <span className={`flex items-center gap-1.5 w-fit text-[10px] font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${s.className}`}>
                         <SIcon className="h-3 w-3" />
                         {s.label}
                       </span>
@@ -183,27 +156,7 @@ export default function PaymentsPage() {
           </table>
         </div>
 
-        {totalPages > 1 && (
-          <div className="flex items-center justify-between px-5 py-3 border-t border-slate-800">
-            <p className="text-[11px] text-slate-500">Trang {page}/{totalPages} · {total} giao dịch</p>
-            <div className="flex items-center gap-1">
-              <button
-                onClick={() => setPage(p => Math.max(1, p - 1))}
-                disabled={page <= 1}
-                className="px-2.5 py-1 text-[11px] font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-              >
-                ← Trước
-              </button>
-              <button
-                onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-                disabled={page >= totalPages}
-                className="px-2.5 py-1 text-[11px] font-medium rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-              >
-                Sau →
-              </button>
-            </div>
-          </div>
-        )}
+        <Pagination page={page} totalPages={totalPages} total={total} itemLabel="giao dịch" onChange={setPage} disabled={loading} />
       </div>
     </div>
   );

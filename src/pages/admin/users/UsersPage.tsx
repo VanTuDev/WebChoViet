@@ -1,72 +1,49 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import {
-  Search, Ban, CheckCircle2, Users, ChevronDown,
-  ChevronLeft, ChevronRight, Loader2, AlertCircle, ShieldCheck,
+  Search, Ban, CheckCircle2, Users, ChevronDown, Loader2, ShieldCheck,
 } from 'lucide-react';
 import {
   fetchAdminUsers, toggleSuspendUser,
-  AdminUserListItem, ListUsersParams,
+  AdminUserListItem,
 } from '../../../services/adminService';
 import { useAppContext } from '../../../store/AppContext';
+import PlanBadge from '../../../components/shared/PlanBadge';
+import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
+import { useFetchState } from '../../../hooks/useFetchState';
+import LoadingState from '../../../components/common/LoadingState';
+import EmptyState from '../../../components/common/EmptyState';
+import ErrorBanner from '../../../components/common/ErrorBanner';
+import Pagination from '../../../components/common/Pagination';
+import { avatarUrl } from '../../../utils/avatar';
 
 type PlanFilter = 'all' | 'free' | 'pro' | 'ultra';
 
 const PAGE_SIZE = 20;
 const SEARCH_DEBOUNCE_MS = 400;
 
-const PLAN_BADGE: Record<string, string> = {
-  free:  'bg-slate-700 text-slate-300',
-  pro:   'bg-blue-500/20 text-blue-300',
-  ultra: 'bg-violet-500/20 text-violet-300',
-};
-const PLAN_LABEL: Record<string, string> = { free: 'Free', pro: 'Pro', ultra: 'Ultra' };
-
-function avatarUrl(u: Pick<AdminUserListItem, 'avatar' | 'name'>): string {
-  return u.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(u.name)}&background=0056b3&color=fff`;
-}
-
 export default function UsersPage() {
   const { showSnackbar, showConfirm } = useAppContext();
 
-  const [items, setItems] = useState<AdminUserListItem[]>([]);
-  const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [q, setQ] = useState('');
   const [filterPlan, setFilterPlan] = useState<PlanFilter>('all');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
   const [togglingId, setTogglingId] = useState<string | null>(null);
 
-  // Đánh số request để bỏ qua response cũ về sau response mới (search gõ nhanh)
-  const requestSeq = useRef(0);
+  // Debounce chỉ áp dụng cho ô tìm kiếm — xóa hết ô tìm kiếm thì thấy lại danh sách ngay (delay=0)
+  const debouncedQ = useDebouncedValue(q, q ? SEARCH_DEBOUNCE_MS : 0);
 
-  const load = useCallback(async (params: ListUsersParams) => {
-    const seq = ++requestSeq.current;
-    setLoading(true);
-    setError('');
-    try {
-      const data = await fetchAdminUsers({ ...params, limit: PAGE_SIZE });
-      if (seq !== requestSeq.current) return; // đã có request mới hơn
-      setItems(data.items);
-      setTotal(data.total);
-    } catch (err) {
-      if (seq !== requestSeq.current) return;
-      setError(err instanceof Error ? err.message : 'Không tải được danh sách.');
-    } finally {
-      if (seq === requestSeq.current) setLoading(false);
-    }
-  }, []);
-
-  // Search debounce — filter/page đổi thì gọi ngay, gõ chữ thì chờ 400ms
-  useEffect(() => {
-    const params: ListUsersParams = {
+  const { data, loading, error, setData } = useFetchState(
+    () => fetchAdminUsers({
       page,
-      search: q.trim() || undefined,
+      limit: PAGE_SIZE,
+      search: debouncedQ.trim() || undefined,
       plan: filterPlan === 'all' ? undefined : filterPlan,
-    };
-    const timer = setTimeout(() => load(params), q ? SEARCH_DEBOUNCE_MS : 0);
-    return () => clearTimeout(timer);
-  }, [q, filterPlan, page, load]);
+    }),
+    [page, debouncedQ, filterPlan],
+    'Không tải được danh sách.',
+  );
+  const items = data?.items ?? [];
+  const total = data?.total ?? 0;
 
   // Đổi search/filter → quay về trang 1
   const handleSearch = (val: string) => { setQ(val); setPage(1); };
@@ -76,7 +53,10 @@ export default function UsersPage() {
     setTogglingId(u.id);
     try {
       const { isSuspended } = await toggleSuspendUser(u.id);
-      setItems(prev => prev.map(item => (item.id === u.id ? { ...item, isSuspended } : item)));
+      setData(prev => prev && {
+        ...prev,
+        items: prev.items.map(item => (item.id === u.id ? { ...item, isSuspended } : item)),
+      });
       showSnackbar(isSuspended ? `Đã khóa tài khoản ${u.email}.` : `Đã mở khóa tài khoản ${u.email}.`, 'success');
     } catch (err) {
       showSnackbar(err instanceof Error ? err.message : 'Thao tác thất bại.', 'error');
@@ -139,12 +119,7 @@ export default function UsersPage() {
       </div>
 
       {/* Error */}
-      {error && (
-        <div className="flex items-center gap-2.5 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium px-4 py-3 rounded-xl">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          {error}
-        </div>
-      )}
+      {error && <ErrorBanner message={error} />}
 
       {/* Table */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
@@ -161,24 +136,14 @@ export default function UsersPage() {
             </thead>
             <tbody className="divide-y divide-slate-800">
               {loading ? (
-                <tr>
-                  <td colSpan={7} className="text-center text-slate-500 text-sm py-12">
-                    <Loader2 className="h-6 w-6 mx-auto mb-2 animate-spin opacity-50" />
-                    Đang tải danh sách...
-                  </td>
-                </tr>
+                <LoadingState variant="row" colSpan={7} message="Đang tải danh sách..." />
               ) : items.length === 0 ? (
-                <tr>
-                  <td colSpan={7} className="text-center text-slate-500 text-sm py-12">
-                    <Users className="h-8 w-8 mx-auto mb-2 opacity-30" />
-                    Không tìm thấy người dùng nào
-                  </td>
-                </tr>
+                <EmptyState variant="row" colSpan={7} icon={Users} message="Không tìm thấy người dùng nào" />
               ) : items.map(u => (
                 <tr key={u.id} className="hover:bg-slate-800/40 transition-colors">
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-3">
-                      <img src={avatarUrl(u)} alt="" className="w-8 h-8 rounded-full border border-slate-700 shrink-0" referrerPolicy="no-referrer" />
+                      <img src={avatarUrl(u.name, u.avatar)} alt="" className="w-8 h-8 rounded-full border border-slate-700 shrink-0" referrerPolicy="no-referrer" />
                       <div className="min-w-0">
                         <p className="font-medium text-white truncate">{u.name}</p>
                         <p className="text-xs text-slate-400 truncate">{u.email}</p>
@@ -186,9 +151,7 @@ export default function UsersPage() {
                     </div>
                   </td>
                   <td className="px-5 py-3.5">
-                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${PLAN_BADGE[u.plan]}`}>
-                      {PLAN_LABEL[u.plan]}
-                    </span>
+                    <PlanBadge plan={u.plan} variant="dark" />
                   </td>
                   <td className="px-5 py-3.5">
                     {u.role === 'admin' ? (
@@ -235,30 +198,7 @@ export default function UsersPage() {
           </table>
         </div>
 
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="flex items-center justify-between px-5 py-3 border-t border-slate-800">
-            <p className="text-xs text-slate-500">
-              Trang {page}/{totalPages} · {total.toLocaleString('vi-VN')} tài khoản
-            </p>
-            <div className="flex items-center gap-1">
-              <button
-                onClick={() => setPage(p => Math.max(1, p - 1))}
-                disabled={page <= 1 || loading}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-                disabled={page >= totalPages || loading}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-        )}
+        <Pagination page={page} totalPages={totalPages} total={total} itemLabel="tài khoản" onChange={setPage} disabled={loading} />
       </div>
     </div>
   );
