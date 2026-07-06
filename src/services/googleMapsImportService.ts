@@ -12,7 +12,14 @@ export interface NormalizedPlace {
   location: { lat: number; lng: number } | null;
   openingHours: { day: string; hours: string }[];
   images: string[];
-  reviews: { author: string; rating: number | null; text: string; publishedAt: string | null }[];
+  reviews: {
+    author: string;
+    rating: number | null;
+    text: string;
+    publishedAt: string | null;
+    /** Ảnh khách đính kèm review — backend dùng làm nguồn ảnh món cho slot menu */
+    imageUrls: string[];
+  }[];
   googleMapsUrl: string | null;
 }
 

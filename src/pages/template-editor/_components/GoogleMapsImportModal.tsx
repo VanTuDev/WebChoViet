@@ -67,7 +67,7 @@ export default function GoogleMapsImportModal({ templateSchema, imageSlots, onSu
               <X className="w-4 h-4" />
             </button>
           </div>
-          <p className="text-[11px] text-white/80">AI sẽ đọc thông tin quán trên Google Maps và tự điền vào template</p>
+          <p className="text-[11px] text-white/80">AI đọc thông tin, đánh giá và ảnh của quán trên Google Maps — tự điền nội dung, chọn ảnh món thật cho phần thực đơn</p>
         </div>
 
         <div className="p-5 space-y-4">

@@ -13,6 +13,7 @@ Khác với `src/components/` (UI của app WebChoViet), code ở đây render
 | File | Công dụng |
 |------|-----------|
 | `LanguageSwitcher.tsx` | Nút 🌐 chuyển ngôn ngữ trên header + hook `useTemplateLang` |
+| `Reveal.tsx` | Hiệu ứng xuất hiện/ẩn đi theo viewport (scroll reveal 2 chiều, stagger, tôn trọng `prefers-reduced-motion`) — KHÔNG bọc quanh phần tử chứa con `fixed`/`sticky` |
 
 ## Cách dùng `LanguageSwitcher`
 

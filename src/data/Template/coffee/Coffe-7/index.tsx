@@ -1,4 +1,5 @@
 import { Coffee, CupSoda, MapPin, Clock, Phone, Star, Share2, MessageCircle, ShoppingCart } from 'lucide-react';
+import Reveal from '../../_shared/Reveal';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -62,26 +63,26 @@ export default function Coffe7({ lang = 'vi' }: Props) {
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(27,28,26,0.4), rgba(27,28,26,0.7))' }} />
           </div>
           <div className="relative z-10 text-center max-w-3xl px-6">
-            <h1 data-field="hero.title" className="font-lexend text-4xl md:text-5xl font-semibold leading-tight text-white mb-6">
+            <Reveal as="h1" data-field="hero.title" variant="fade-up" className="font-lexend text-4xl md:text-5xl font-semibold leading-tight text-white mb-6">
               {t.hero.title}
-            </h1>
-            <p data-field="hero.subtitle" className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
+            </Reveal>
+            <Reveal as="p" data-field="hero.subtitle" variant="fade-up" delay={120} className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
               {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
+            </Reveal>
+            <Reveal variant="fade-up" delay={240} className="flex flex-col md:flex-row gap-4 justify-center">
               <a data-field="hero.btnMenu" href="#menu" className="bg-[#79542e] text-white px-10 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform text-center">
                 {t.hero.btnMenu}
               </a>
               <a data-field="hero.btnReserve" data-track="cta" href="#contact" className="border-2 border-white text-white px-10 py-3 rounded-full font-medium backdrop-blur-sm hover:bg-white hover:text-[#79542e] transition-all text-center">
                 {t.hero.btnReserve}
               </a>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* Menu */}
         <section data-section="menu" className="py-20 max-w-[1280px] mx-auto px-6" id="menu">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+          <Reveal variant="fade-up" className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
             <div>
               <span data-field="menu.eyebrow" className="text-[#79542e] text-xs font-semibold tracking-widest uppercase">{t.menu.eyebrow}</span>
               <h2 data-field="menu.title" className="font-lexend text-3xl md:text-4xl font-semibold mt-1">{t.menu.title}</h2>
@@ -101,11 +102,11 @@ export default function Coffe7({ lang = 'vi' }: Props) {
                 </button>
               ))}
             </div>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Featured item */}
-            <div className="md:col-span-8 group relative rounded-xl overflow-hidden h-[400px]">
+            <Reveal variant="zoom-in" className="md:col-span-8 group relative rounded-xl overflow-hidden h-[400px]">
               <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG.menuFeatured} alt={t.menu.featured.name} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-8">
                 <span data-field="menu.featured.badge" className="bg-[#536254] text-white px-3 py-1 rounded-full text-xs font-semibold w-fit mb-3">{t.menu.featured.badge}</span>
@@ -113,14 +114,15 @@ export default function Coffe7({ lang = 'vi' }: Props) {
                 <p data-field="menu.featured.desc" className="text-white/80 max-w-md">{t.menu.featured.desc}</p>
                 <span data-field="menu.featured.price" className="text-white font-bold mt-3">{t.menu.featured.price}</span>
               </div>
-            </div>
+            </Reveal>
 
             {/* Two column items */}
             <div className="md:col-span-4 flex flex-col gap-6">
               {t.menu.items.map((item, i) => {
                 const ItemIcon = MENU_ITEM_ICONS[i] ?? Coffee;
                 return (
-                  <div key={i} className="bg-[#f5f3ef] p-6 rounded-xl hover:shadow-md transition-shadow cursor-pointer group">
+                  <Reveal key={i} variant="fade-left" delay={120 + i * 120} className="flex-1">
+                  <div className="bg-[#f5f3ef] p-6 rounded-xl hover:shadow-md transition-shadow cursor-pointer group h-full">
                     <div className="flex justify-between items-start mb-3">
                       <div className="w-16 h-16 rounded-lg bg-[#eae8e4] flex items-center justify-center">
                         <ItemIcon aria-hidden className="w-7 h-7 text-[#79542e]" />
@@ -130,6 +132,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
                     <h4 data-field={`menu.items.${i}.name`} className="font-lexend text-lg font-medium mb-1 group-hover:text-[#79542e] transition-colors">{item.name}</h4>
                     <p data-field={`menu.items.${i}.desc`} className="text-sm text-[#50453b]">{item.desc}</p>
                   </div>
+                  </Reveal>
                 );
               })}
             </div>
@@ -139,15 +142,15 @@ export default function Coffe7({ lang = 'vi' }: Props) {
         {/* Gallery */}
         <section data-section="gallery" className="bg-[#fbf9f5] py-20" id="gallery">
           <div className="max-w-[1280px] mx-auto px-6">
-            <div className="text-center mb-10">
+            <Reveal variant="fade-up" className="text-center mb-10">
               <h2 data-field="gallery.title" className="font-lexend text-3xl md:text-4xl font-semibold">{t.gallery.title}</h2>
               <p data-field="gallery.subtitle" className="text-[#50453b] max-w-xl mx-auto mt-3">{t.gallery.subtitle}</p>
-            </div>
+            </Reveal>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {GALLERY_KEYS.map((key, i) => (
-                <div key={key} className={`h-[300px] md:h-[400px] rounded-xl overflow-hidden group ${i % 2 === 0 ? 'md:mt-12' : ''}`}>
+                <Reveal key={key} variant="zoom-in" delay={i * 90} className={`h-[300px] md:h-[400px] rounded-xl overflow-hidden group ${i % 2 === 0 ? 'md:mt-12' : ''}`}>
                   <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={IMG[key]} alt="" />
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -155,12 +158,12 @@ export default function Coffe7({ lang = 'vi' }: Props) {
 
         {/* Testimonials */}
         <section data-section="testimonials" className="py-20 max-w-[1280px] mx-auto px-6">
-          <h2 data-field="testimonials.title" className="font-lexend text-3xl md:text-4xl font-semibold text-center mb-12">{t.testimonials.title}</h2>
+          <Reveal as="h2" data-field="testimonials.title" variant="fade-up" className="font-lexend text-3xl md:text-4xl font-semibold text-center mb-12">{t.testimonials.title}</Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.testimonials.items.map((item, i) => {
               const avatarKey = AVATAR_KEYS[i] ?? 'avatar1';
               return (
-                <div key={i} className="bg-[#efeeea] p-8 rounded-2xl relative">
+                <Reveal key={i} variant="fade-up" delay={i * 120} className="bg-[#efeeea] p-8 rounded-2xl relative">
                   <div className="flex items-center gap-3 mb-4">
                     <img className="w-14 h-14 rounded-full object-cover border-2 border-[#ffdcbd]" src={IMG[avatarKey]} alt="" />
                     <div>
@@ -174,7 +177,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
                       <Star key={si} aria-hidden className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -183,7 +186,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
         {/* Contact */}
         <section data-section="contact" className="py-20 bg-[#f5f3ef]" id="contact">
           <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
+            <Reveal variant="fade-right">
               <h2 data-field="contact.title" className="font-lexend text-3xl md:text-4xl font-semibold mb-6">{t.contact.title}</h2>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
@@ -220,8 +223,8 @@ export default function Coffe7({ lang = 'vi' }: Props) {
                   {t.contact.formSubmit}
                 </button>
               </form>
-            </div>
-            <div className="h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-[#d4c4b7]">
+            </Reveal>
+            <Reveal variant="fade-left" delay={150} className="h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-[#d4c4b7]">
               {t.contact.mapUrl ? (
                 <iframe
                   src={toGoogleMapsEmbedUrl(t.contact.mapUrl)}
@@ -237,14 +240,14 @@ export default function Coffe7({ lang = 'vi' }: Props) {
                   <p className="text-sm font-medium text-[#50453b]">{t.contact.mapLoading}</p>
                 </div>
               )}
-            </div>
+            </Reveal>
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer data-section="footer" className="w-full py-16 px-6 border-t border-[#d4c4b7] bg-[#e4e2de]">
-        <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <Reveal variant="fade" className="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <h4 data-field="footer.brand" className="font-lexend text-xl font-bold text-[#79542e] mb-1">{t.footer.brand}</h4>
             <p data-field="footer.copy" className="text-sm text-[#50453b]">{t.footer.copy}</p>
@@ -263,7 +266,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
               <MessageCircle aria-hidden className="w-4 h-4 text-[#79542e]" />
             </a>
           </div>
-        </div>
+        </Reveal>
       </footer>
 
       {/* Mobile FAB */}

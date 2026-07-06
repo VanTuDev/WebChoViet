@@ -1,4 +1,5 @@
 import { PlusCircle, ArrowRight, Quote, MapPin, Clock, Phone, Facebook, Instagram, ShoppingCart } from 'lucide-react';
+import Reveal from '../../_shared/Reveal';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -62,13 +63,13 @@ export default function Coffe8({ lang = 'vi' }: Props) {
             <div className="absolute inset-0 bg-[#4e635a]/20 mix-blend-multiply" />
           </div>
           <div className="relative z-10 text-center px-6 md:px-16 max-w-4xl">
-            <h1 data-field="hero.title" className="text-4xl md:text-5xl font-medium leading-tight text-white mb-6 drop-shadow-lg">
+            <Reveal as="h1" data-field="hero.title" variant="fade-up" className="text-4xl md:text-5xl font-medium leading-tight text-white mb-6 drop-shadow-lg">
               {t.hero.title}
-            </h1>
-            <p data-field="hero.subtitle" className="text-lg font-light text-[#ecefec] mb-10 max-w-2xl mx-auto">
+            </Reveal>
+            <Reveal as="p" data-field="hero.subtitle" variant="fade-up" delay={120} className="text-lg font-light text-[#ecefec] mb-10 max-w-2xl mx-auto">
               {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col md:flex-row gap-3 justify-center">
+            </Reveal>
+            <Reveal variant="fade-up" delay={240} className="flex flex-col md:flex-row gap-3 justify-center">
               <a data-field="hero.btnPrimary" href="#menu"
                 className="bg-[#4e635a] text-white px-10 py-4 rounded-full text-sm font-medium shadow-[0_10px_40px_-10px_rgba(141,163,153,0.35)] hover:scale-105 transition-transform">
                 {t.hero.btnPrimary}
@@ -77,20 +78,20 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                 className="border-2 border-white text-white px-10 py-4 rounded-full text-sm font-medium backdrop-blur-sm hover:bg-white/10 transition-all">
                 {t.hero.btnSecondary}
               </a>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* Menu */}
         <section data-section="menu" className="py-20 px-6 md:px-16 max-w-7xl mx-auto" id="menu">
-          <div className="text-center mb-16">
+          <Reveal variant="fade-up" className="text-center mb-16">
             <span data-field="menu.label" className="text-[#4e635a] text-sm font-medium tracking-widest uppercase">{t.menu.label}</span>
             <h2 data-field="menu.title" className="text-3xl md:text-4xl font-medium mt-3">{t.menu.title}</h2>
             <div className="w-16 h-1 bg-[#8da399] mx-auto mt-6 rounded-full" />
-          </div>
+          </Reveal>
 
           {/* Category tabs (decorative) */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
+          <Reveal variant="fade-up" delay={100} className="flex flex-wrap justify-center gap-3 mb-16">
             {t.menu.tabs.map((tab, i) => (
               <span
                 key={i}
@@ -104,11 +105,11 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                 {tab}
               </span>
             ))}
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Featured item */}
-            <div className="md:col-span-2 relative h-96 rounded-xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(141,163,153,0.4)] group">
+            <Reveal variant="zoom-in" className="md:col-span-2 relative h-96 rounded-xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(141,163,153,0.4)] group">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                 style={{ backgroundImage: `url('${IMG.menuFeatured}')` }}
@@ -121,11 +122,11 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                 <h3 data-field="menu.featured.name" className="text-2xl font-medium">{t.menu.featured.name}</h3>
                 <p data-field="menu.featured.desc" className="font-light opacity-80 max-w-md">{t.menu.featured.desc}</p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Standard items */}
             {t.menu.items.map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-[0_10px_40px_-10px_rgba(141,163,153,0.25)] flex flex-col justify-between border border-[#c2c8c4]/30">
+              <Reveal key={i} variant="fade-up" delay={120 + i * 100} className="bg-white p-6 rounded-xl shadow-[0_10px_40px_-10px_rgba(141,163,153,0.25)] flex flex-col justify-between border border-[#c2c8c4]/30">
                 <div>
                   <h4 data-field={`menu.items.${i}.name`} className="text-lg font-medium text-[#4e635a] mb-1">{item.name}</h4>
                   <p data-field={`menu.items.${i}.desc`} className="text-[#424845] text-sm font-light">{item.desc}</p>
@@ -134,14 +135,14 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                   <span data-field={`menu.items.${i}.price`} className="font-medium text-[#4e635a]">{item.price}</span>
                   <PlusCircle aria-hidden className="w-6 h-6 text-[#8da399] cursor-pointer" />
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </section>
 
         {/* Space / Gallery */}
         <section data-section="gallery" className="py-20 bg-[#f1f4f1] overflow-hidden" id="space">
-          <div className="px-6 md:px-16 max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between mb-16">
+          <Reveal variant="fade-up" className="px-6 md:px-16 max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between mb-16">
             <div>
               <span data-field="gallery.label" className="text-[#4e635a] text-sm font-medium tracking-widest uppercase">{t.gallery.label}</span>
               <h2 data-field="gallery.title" className="text-3xl md:text-4xl font-medium mt-3">{t.gallery.title}</h2>
@@ -150,11 +151,13 @@ export default function Coffe8({ lang = 'vi' }: Props) {
               <span data-field="gallery.viewMore">{t.gallery.viewMore}</span>
               <ArrowRight aria-hidden className="w-4 h-4" />
             </button>
-          </div>
+          </Reveal>
           <div className="flex flex-nowrap md:grid md:grid-cols-4 gap-6 px-6 md:px-16 overflow-x-auto pb-4">
             {[IMG.gallery1, IMG.gallery2, IMG.gallery3, IMG.gallery4].map((src, i) => (
-              <div
+              <Reveal
                 key={i}
+                variant="zoom-in"
+                delay={i * 90}
                 className={`flex-none w-72 md:w-full aspect-[3/4] rounded-xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(141,163,153,0.3)] bg-[#b5ccc1] relative group ${i % 2 === 1 ? 'md:mt-20' : ''}`}
               >
                 <img
@@ -163,22 +166,22 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                   alt=""
                 />
                 <div className="absolute inset-0 bg-[#4e635a]/10 group-hover:bg-transparent transition-colors" />
-              </div>
+              </Reveal>
             ))}
           </div>
         </section>
 
         {/* Testimonials */}
         <section data-section="testimonials" className="py-20 px-6 md:px-16 max-w-7xl mx-auto" id="reviews">
-          <div className="text-center mb-16">
+          <Reveal variant="fade-up" className="text-center mb-16">
             <h2 data-field="testimonials.title" className="text-3xl md:text-4xl font-medium">{t.testimonials.title}</h2>
             <p data-field="testimonials.subtitle" className="text-[#424845] mt-3">{t.testimonials.subtitle}</p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.testimonials.items.map((item, i) => {
               const avatarSrc = IMG[REVIEW_AVATARS[i] as keyof typeof IMG] ?? IMG.avatar1;
               return (
-                <div key={i} className="bg-white p-10 rounded-xl shadow-[0_10px_40px_-10px_rgba(141,163,153,0.3)] border border-[#c2c8c4]/20 relative">
+                <Reveal key={i} variant="fade-up" delay={i * 120} className="bg-white p-10 rounded-xl shadow-[0_10px_40px_-10px_rgba(141,163,153,0.3)] border border-[#c2c8c4]/20 relative">
                   <Quote aria-hidden className="w-8 h-8 text-[#8da399]/40 absolute -top-4 left-8 bg-[#f7faf7] p-1 rounded-full" />
                   <p data-field={`testimonials.items.${i}.quote`} className="font-light text-[#424845] mb-6 italic leading-relaxed">
                     &ldquo;{item.quote}&rdquo;
@@ -190,7 +193,7 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#424845]">{item.role}</p>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -199,7 +202,7 @@ export default function Coffe8({ lang = 'vi' }: Props) {
         {/* Contact & Map */}
         <section data-section="contact" className="py-20 bg-[#f7faf7]" id="contact">
           <div className="px-6 md:px-16 max-w-7xl mx-auto">
-            <div className="bg-[#f1f4f1] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-xl">
+            <Reveal variant="fade-up" duration={800} className="bg-[#f1f4f1] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-xl">
               <div className="p-8 md:p-16 md:w-1/2">
                 <h2 data-field="contact.title" className="text-3xl font-medium mb-4">{t.contact.title}</h2>
                 <p data-field="contact.subtitle" className="text-[#424845] mb-10">{t.contact.subtitle}</p>
@@ -255,14 +258,14 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                   </div>
                 )}
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer data-section="footer" className="bg-white py-10 mt-4">
-        <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 w-full max-w-7xl mx-auto border-t border-[#c2c8c4]/20 pt-10 gap-6">
+        <Reveal variant="fade" className="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 w-full max-w-7xl mx-auto border-t border-[#c2c8c4]/20 pt-10 gap-6">
           <span data-field="footer.brand" className="text-2xl font-bold text-[#4e635a]">{t.footer.brand}</span>
           <div className="flex flex-wrap justify-center gap-6">
             <a className="text-[#424845] text-sm hover:text-[#4e635a] underline transition-colors" href="#">{t.footer.privacy}</a>
@@ -271,7 +274,7 @@ export default function Coffe8({ lang = 'vi' }: Props) {
             <a className="text-[#424845] text-sm hover:text-[#4e635a] underline transition-colors" href="#">{t.footer.careers}</a>
           </div>
           <p data-field="footer.copy" className="text-[#424845] text-sm opacity-70">{t.footer.copy}</p>
-        </div>
+        </Reveal>
       </footer>
 
       {/* Mobile quick-order FAB */}

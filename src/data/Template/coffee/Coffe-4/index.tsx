@@ -7,6 +7,7 @@ import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import { useTemplateLang } from '../../_shared/LanguageSwitcher';
+import Reveal from '../../_shared/Reveal';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -73,9 +74,9 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
         </div>
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 text-white">
           <div className="max-w-3xl">
-            <h1 data-field="hero.title" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mb-6">{t.hero.title}</h1>
-            <p data-field="hero.desc" className="text-lg leading-[1.6] mb-10 opacity-90">{t.hero.desc}</p>
-            <div className="flex flex-wrap gap-6">
+            <Reveal as="h1" data-field="hero.title" variant="fade-up" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mb-6">{t.hero.title}</Reveal>
+            <Reveal as="p" data-field="hero.desc" variant="fade-up" delay={120} className="text-lg leading-[1.6] mb-10 opacity-90">{t.hero.desc}</Reveal>
+            <Reveal variant="fade-up" delay={240} className="flex flex-wrap gap-6">
               <a
                 className="bg-[#1B4332] text-white px-8 py-4 rounded-full text-sm font-medium flex items-center gap-2 hover:scale-105 transition-transform shadow-xl"
                 href="#thuc-don"
@@ -89,7 +90,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
               >
                 <span className="material-symbols-outlined">camera_enhance</span> {t.hero.btnSpace}
               </a>
-            </div>
+            </Reveal>
           </div>
         </div>
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 animate-bounce">
@@ -102,13 +103,15 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {(Array.isArray(t.features.items) ? t.features.items : []).map((feat, i) => (
-              <div key={i} className={`flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm ${i === 1 ? 'border-t-4 border-[#00a9fd]' : ''}`}>
+              <Reveal key={i} variant="fade-up" delay={i * 110}>
+              <div className={`flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm h-full ${i === 1 ? 'border-t-4 border-[#00a9fd]' : ''}`}>
                 <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${i === 0 ? 'bg-[#1B4332]/10' : i === 1 ? 'bg-[#00a9fd]/10' : 'bg-primary/10'}`}>
                   <span className={`material-symbols-outlined text-3xl ${i === 0 ? 'text-[#1B4332]' : i === 1 ? 'text-secondary' : 'text-primary'}`}>{feat.icon}</span>
                 </div>
                 <h3 data-field={`features.items.${i}.title`} className={`font-lexend text-2xl font-semibold mb-3 ${i === 0 ? 'text-[#1B4332]' : i === 1 ? 'text-secondary' : 'text-primary'}`}>{feat.title}</h3>
                 <p data-field={`features.items.${i}.desc`} className="text-base leading-[1.6] text-[#424752]">{feat.desc}</p>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -117,11 +120,11 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
       {/* Menu Tabs */}
       <section data-section="menuSection" className="py-20 bg-white overflow-hidden" id="thuc-don">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="text-center mb-20">
+          <Reveal variant="fade-up" className="text-center mb-20">
             <h2 data-field="menuSection.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-3">{t.menuSection.sectionTitle}</h2>
             <div className="w-24 h-1 bg-[#1B4332] mx-auto rounded-full" />
-          </div>
-          <div className="flex justify-center flex-wrap gap-6 mb-20">
+          </Reveal>
+          <Reveal variant="fade-up" delay={100} className="flex justify-center flex-wrap gap-6 mb-20">
             {(Object.keys(t.menuSection.tabs) as TabKey[]).map((tab) => (
               <button
                 key={tab}
@@ -131,12 +134,13 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
                 {t.menuSection.tabs[tab]}
               </button>
             ))}
-          </div>
+          </Reveal>
 
           {activeTab === 'signature' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {(Array.isArray(t.menuSection.items) ? t.menuSection.items : []).map((item, i) => (
-                <div key={i} className="flex gap-6 p-2 hover:bg-[#f7f9fb] transition-colors rounded-2xl group">
+                <Reveal key={i} variant="fade-up" delay={i * 70}>
+                <div className="flex gap-6 p-2 hover:bg-[#f7f9fb] transition-colors rounded-2xl group">
                   <div className="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden">
                     <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={images[`menuSection_items_${i}`] ?? IMGS.menu[i]} alt={item.name} />
                   </div>
@@ -148,6 +152,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
                     <p data-field={`menuSection.items.${i}.desc`} className="text-base leading-[1.6] text-[#424752]">{item.desc}</p>
                   </div>
                 </div>
+                </Reveal>
               ))}
             </div>
           ) : (
@@ -161,7 +166,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
       {/* Gallery */}
       <section data-section="gallery" className="py-20 bg-[#f2f4f6]" id="khong-gian">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+          <Reveal variant="fade-up" className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
             <div className="max-w-2xl">
               <h2 data-field="gallery.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-3">{t.gallery.sectionTitle}</h2>
               <p data-field="gallery.sectionDesc" className="text-lg leading-[1.6] text-[#424752]">{t.gallery.sectionDesc}</p>
@@ -171,27 +176,27 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
               <div className="w-4 h-1 bg-[#c2c6d4] rounded-full" />
               <div className="w-4 h-1 bg-[#c2c6d4] rounded-full" />
             </div>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px]">
-            <div className="md:col-span-8 h-full rounded-2xl overflow-hidden group relative">
+            <Reveal variant="zoom-in" className="md:col-span-8 h-full rounded-2xl overflow-hidden group relative">
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={images['gallery_0'] ?? IMGS.gallery[0]} alt="Koi Pond" />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-10">
                 <p className="text-white font-lexend text-2xl font-semibold">{t.gallery.labelMain}</p>
               </div>
-            </div>
+            </Reveal>
             <div className="md:col-span-4 grid grid-rows-2 gap-6 h-full">
-              <div className="rounded-2xl overflow-hidden group relative">
+              <Reveal variant="zoom-in" delay={120} className="rounded-2xl overflow-hidden group relative">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={images['gallery_1'] ?? IMGS.gallery[1]} alt="Vintage Corner" />
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <p className="text-white text-sm font-medium">{t.gallery.labelCorner1}</p>
                 </div>
-              </div>
-              <div className="rounded-2xl overflow-hidden group relative">
+              </Reveal>
+              <Reveal variant="zoom-in" delay={220} className="rounded-2xl overflow-hidden group relative">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={images['gallery_2'] ?? IMGS.gallery[2]} alt="Green Veranda" />
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <p className="text-white text-sm font-medium">{t.gallery.labelCorner2}</p>
                 </div>
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -203,13 +208,13 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
           <span className="material-symbols-outlined text-[300px]" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
         </div>
         <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
+          <Reveal variant="fade-up" className="text-center mb-20">
             <h2 data-field="testimonials.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold mb-3">{t.testimonials.sectionTitle}</h2>
             <p data-field="testimonials.sectionSubtitle" className="text-base leading-[1.6] opacity-80">{t.testimonials.sectionSubtitle}</p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {(Array.isArray(t.testimonials.items) ? t.testimonials.items : []).map((item, i) => (
-              <div key={i} className="p-10 rounded-2xl border border-white/20" style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)' }}>
+              <Reveal key={i} variant="fade-up" delay={i * 120} className="p-10 rounded-2xl border border-white/20" style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)' }}>
                 <div className="flex gap-1 mb-6 text-[#00a9fd]">
                   {Array.from({ length: 5 }).map((_, si) => (
                     <span key={si} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -225,7 +230,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
                     <p className="text-xs font-semibold opacity-70">{item.role}</p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -235,7 +240,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
       <section data-section="contact" className="py-20 bg-white" id="lien-he">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+            <Reveal variant="fade-right" className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
               {t.contact.mapUrl ? (
                 <iframe
                   src={toGoogleMapsEmbedUrl(t.contact.mapUrl)}
@@ -248,8 +253,8 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
               ) : (
                 <img className="w-full h-full object-cover" src={images['map'] ?? IMGS.map} alt="Location Map" />
               )}
-            </div>
-            <div>
+            </Reveal>
+            <Reveal variant="fade-left" delay={150}>
               <h2 data-field="contact.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-[#1B4332] mb-10">{t.contact.sectionTitle}</h2>
               <div className="space-y-10">
                 <div className="flex items-start gap-6">
@@ -282,14 +287,14 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer data-section="footer" className="bg-white py-20 border-t border-[#c2c6d4]">
-        <div className="flex flex-col md:flex-row justify-between items-center px-6 max-w-[1280px] mx-auto gap-6">
+        <Reveal variant="fade" className="flex flex-col md:flex-row justify-between items-center px-6 max-w-[1280px] mx-auto gap-6">
           <div className="text-center md:text-left">
             <a data-field="footer.brand" className="font-lexend text-2xl font-bold text-primary mb-1 block" href="#">{t.footer.brand}</a>
             <p data-field="footer.desc" className="text-base leading-[1.6] text-[#424752] max-w-sm">{t.footer.desc}</p>
@@ -300,7 +305,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
             <a className="text-[#424752] hover:underline text-xs font-semibold" href="#">{t.footer.careers}</a>
             <a className="text-[#424752] hover:underline text-xs font-semibold" href="#">{t.footer.ads}</a>
           </div>
-        </div>
+        </Reveal>
         <div className="max-w-[1280px] mx-auto px-6 mt-10 pt-10 border-t border-[#c2c6d4] text-center">
           <p className="text-xs font-semibold text-[#727784]">{t.footer.copyright}</p>
         </div>

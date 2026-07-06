@@ -1,4 +1,5 @@
 import { Coffee, Bean, Leaf, CakeSlice, MapPin, Phone, Clock, Map as MapIcon } from 'lucide-react';
+import Reveal from '../../_shared/Reveal';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -58,24 +59,24 @@ export default function Coffe6({ lang = 'vi' }: Props) {
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-20 items-center">
             <div className="space-y-6 text-center md:text-left">
-              <span data-field="hero.badge" className="inline-block py-1 px-4 rounded-full bg-[#003f87]/10 text-[#003f87] text-xs font-semibold tracking-wide">
+              <Reveal as="span" data-field="hero.badge" variant="fade-up" className="inline-block py-1 px-4 rounded-full bg-[#003f87]/10 text-[#003f87] text-xs font-semibold tracking-wide">
                 {t.hero.badge}
-              </span>
-              <h1 className="font-lexend text-4xl lg:text-5xl font-bold leading-tight text-[#191c1e]">
+              </Reveal>
+              <Reveal as="h1" variant="fade-up" delay={100} className="font-lexend text-4xl lg:text-5xl font-bold leading-tight text-[#191c1e]">
                 <span data-field="hero.title">{t.hero.title}</span>{' '}
                 <span data-field="hero.titleHighlight" className="text-[#003f87]">{t.hero.titleHighlight}</span>
-              </h1>
-              <p data-field="hero.subtitle" className="text-lg leading-relaxed text-[#424752] max-w-lg mx-auto md:mx-0">
+              </Reveal>
+              <Reveal as="p" data-field="hero.subtitle" variant="fade-up" delay={200} className="text-lg leading-relaxed text-[#424752] max-w-lg mx-auto md:mx-0">
                 {t.hero.subtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+              </Reveal>
+              <Reveal variant="fade-up" delay={300} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
                 <a data-field="hero.btnMenu" className="bg-[#003f87] text-white text-sm font-medium px-8 py-4 rounded-full shadow-lg hover:bg-[#0056b3] transition-all text-center" href="#menu">
                   {t.hero.btnMenu}
                 </a>
                 <a data-field="hero.btnGallery" className="bg-white border border-[#c2c6d4] text-[#191c1e] text-sm font-medium px-8 py-4 rounded-full hover:bg-[#eceef0] transition-all text-center" href="#gallery">
                   {t.hero.btnGallery}
                 </a>
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -83,28 +84,30 @@ export default function Coffe6({ lang = 'vi' }: Props) {
         {/* Menu — 4 nhóm × 4 món */}
         <section data-section="menuSection" className="py-20 bg-white" id="menu">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center space-y-3 mb-16">
+            <Reveal variant="fade-up" className="text-center space-y-3 mb-16">
               <h2 data-field="menuSection.title" className="font-lexend text-3xl font-semibold text-[#191c1e]">{t.menuSection.title}</h2>
               <div className="w-20 h-1 bg-[#003f87] mx-auto rounded-full" />
-            </div>
+            </Reveal>
 
             {t.menuSection.categories.map((cat, ci) => {
               const CatIcon = CATEGORY_ICONS[ci] ?? Coffee;
               return (
               <div key={ci} className={ci < t.menuSection.categories.length - 1 ? 'mb-16' : ''}>
-                <h3 className="font-lexend text-2xl font-semibold text-[#003f87] mb-8 flex items-center gap-3">
+                <Reveal as="h3" variant="fade-up" className="font-lexend text-2xl font-semibold text-[#003f87] mb-8 flex items-center gap-3">
                   <CatIcon aria-hidden className="w-6 h-6" />
                   <span data-field={`menuSection.categories.${ci}.title`}>{cat.title}</span>
-                </h3>
+                </Reveal>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {cat.items.map((item, i) => (
-                    <div key={i} className="p-6 rounded-2xl border border-[#e0e3e5] hover:-translate-y-1 hover:shadow-lg transition-all">
+                    <Reveal key={i} variant="fade-up" delay={i * 80}>
+                    <div className="p-6 rounded-2xl border border-[#e0e3e5] hover:-translate-y-1 hover:shadow-lg transition-all h-full">
                       <div className="flex justify-between gap-2 mb-1">
                         <h4 data-field={`menuSection.categories.${ci}.items.${i}.name`} className="text-sm font-bold text-[#191c1e]">{item.name}</h4>
                         <span data-field={`menuSection.categories.${ci}.items.${i}.price`} className="text-[#003f87] font-bold shrink-0">{item.price}</span>
                       </div>
                       <p data-field={`menuSection.categories.${ci}.items.${i}.desc`} className="text-xs leading-relaxed text-[#424752]">{item.desc}</p>
                     </div>
+                    </Reveal>
                   ))}
                 </div>
               </div>
@@ -116,26 +119,26 @@ export default function Coffe6({ lang = 'vi' }: Props) {
         {/* Gallery bento */}
         <section data-section="gallery" className="py-20 bg-[#f2f4f6]" id="gallery">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="space-y-3 mb-10">
+            <Reveal variant="fade-up" className="space-y-3 mb-10">
               <h2 data-field="gallery.title" className="font-lexend text-3xl font-semibold text-[#191c1e]">{t.gallery.title}</h2>
               <p data-field="gallery.subtitle" className="text-base text-[#424752]">{t.gallery.subtitle}</p>
-            </div>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[600px]">
-              <div className="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group h-64 md:h-auto">
+              <Reveal variant="zoom-in" className="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group h-64 md:h-auto">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.galleryMain} alt={t.gallery.caption} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <span data-field="gallery.caption" className="text-white text-sm font-medium">{t.gallery.caption}</span>
                 </div>
-              </div>
-              <div className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
+              </Reveal>
+              <Reveal variant="zoom-in" delay={100} className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery2} alt="" />
-              </div>
-              <div className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
+              </Reveal>
+              <Reveal variant="zoom-in" delay={180} className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery3} alt="" />
-              </div>
-              <div className="md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
+              </Reveal>
+              <Reveal variant="zoom-in" delay={260} className="md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery4} alt="" />
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -143,10 +146,10 @@ export default function Coffe6({ lang = 'vi' }: Props) {
         {/* Testimonials */}
         <section data-section="testimonials" className="py-20 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 data-field="testimonials.title" className="font-lexend text-3xl font-semibold text-[#191c1e] text-center mb-16">{t.testimonials.title}</h2>
+            <Reveal as="h2" data-field="testimonials.title" variant="fade-up" className="font-lexend text-3xl font-semibold text-[#191c1e] text-center mb-16">{t.testimonials.title}</Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {t.testimonials.items.map((item, i) => (
-                <div key={i} className="p-10 rounded-2xl bg-white border border-[#c2c6d4]/30 relative shadow-sm">
+                <Reveal key={i} variant="fade-up" delay={i * 120} className="p-10 rounded-2xl bg-white border border-[#c2c6d4]/30 relative shadow-sm">
                   <span aria-hidden className="absolute top-4 right-5 text-4xl text-[#003f87]/20 font-serif leading-none">❝</span>
                   <p data-field={`testimonials.items.${i}.quote`} className="text-base text-[#191c1e] mb-6 italic leading-relaxed">"{item.quote}"</p>
                   <div className="flex items-center gap-3">
@@ -156,7 +159,7 @@ export default function Coffe6({ lang = 'vi' }: Props) {
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs font-semibold text-[#424752]">{item.role}</p>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -166,7 +169,7 @@ export default function Coffe6({ lang = 'vi' }: Props) {
         <section data-section="contact" className="py-20 bg-[#f7f9fb]" id="contact">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-              <div className="space-y-10">
+              <Reveal variant="fade-right" className="space-y-10">
                 <h2 data-field="contact.title" className="font-lexend text-3xl font-semibold text-[#191c1e]">{t.contact.title}</h2>
                 <div className="space-y-6">
                   {([
@@ -192,8 +195,8 @@ export default function Coffe6({ lang = 'vi' }: Props) {
                     {t.contact.btnMessage}
                   </a>
                 </div>
-              </div>
-              <div className="rounded-2xl overflow-hidden h-100 border border-[#c2c6d4]/30">
+              </Reveal>
+              <Reveal variant="fade-left" delay={150} className="rounded-2xl overflow-hidden h-100 border border-[#c2c6d4]/30">
                 {t.contact.mapUrl ? (
                   <iframe
                     src={toGoogleMapsEmbedUrl(t.contact.mapUrl)}
@@ -209,7 +212,7 @@ export default function Coffe6({ lang = 'vi' }: Props) {
                     <p className="text-sm font-medium text-[#424752]">{t.contact.mapLoading}</p>
                   </div>
                 )}
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -218,7 +221,7 @@ export default function Coffe6({ lang = 'vi' }: Props) {
       {/* Footer */}
       <footer data-section="footer" className="w-full py-16 bg-[#e0e3e5] border-t border-[#c2c6d4]/30">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <Reveal variant="fade" className="flex flex-col md:flex-row justify-between items-center gap-6">
             <span data-field="footer.brand" className="font-lexend text-2xl font-bold text-[#003f87]">{t.footer.brand}</span>
             <span data-field="footer.copy" className="text-sm text-[#424752]">{t.footer.copy}</span>
             <nav className="flex gap-6 text-sm">
@@ -226,7 +229,7 @@ export default function Coffe6({ lang = 'vi' }: Props) {
               <a className="text-[#424752] hover:text-[#003f87] transition-colors" href="#">{t.footer.terms}</a>
               <a className="text-[#424752] hover:text-[#003f87] transition-colors" href="#">{t.footer.support}</a>
             </nav>
-          </div>
+          </Reveal>
         </div>
       </footer>
     </div>

@@ -6,6 +6,7 @@ import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import { useTemplateLang } from '../../_shared/LanguageSwitcher';
+import Reveal from '../../_shared/Reveal';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -67,7 +68,8 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
     return items.map((item, i) => {
       const imgSrc = images[`menu_${category}_items_${i}`] ?? defaultImgs[i] ?? '';
       return (
-        <div key={i} className="group bg-white p-3 rounded-2xl hover:shadow-xl transition-all border border-[#c2c6d4]/30">
+        <Reveal key={i} variant="fade-up" delay={i * 90}>
+        <div className="group bg-white p-3 rounded-2xl hover:shadow-xl transition-all border border-[#c2c6d4]/30">
           <div className="relative h-48 mb-3 overflow-hidden rounded-xl">
             <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={imgSrc} alt={item.name} />
             {item.badge && (
@@ -82,6 +84,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
             <span data-field={`menu.${category}.items.${i}.price`} className="text-sm font-medium text-primary">{item.price}</span>
           </div>
         </div>
+        </Reveal>
       );
     });
   }
@@ -110,31 +113,31 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
         </div>
         <div className="relative z-10 max-w-[1280px] mx-auto px-10 w-full">
           <div className="max-w-2xl space-y-6">
-            <span data-field="hero.badge" className="inline-block px-3 py-1 bg-[#cce5ff] text-[#004b73] rounded-full text-xs font-semibold tracking-wider uppercase">
+            <Reveal as="span" data-field="hero.badge" variant="fade-up" className="inline-block px-3 py-1 bg-[#cce5ff] text-[#004b73] rounded-full text-xs font-semibold tracking-wider uppercase">
               {t.hero.badge}
-            </span>
-            <h1 className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] text-primary">
+            </Reveal>
+            <Reveal as="h1" variant="fade-up" delay={100} className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] text-primary">
               <span data-field="hero.title">{t.hero.title}</span><br />
               <span data-field="hero.titleHighlight" className="text-secondary">{t.hero.titleHighlight}</span>
-            </h1>
-            <p data-field="hero.subtitle" className="text-lg leading-[1.6] text-[#424752] max-w-lg">{t.hero.subtitle}</p>
-            <div className="flex gap-3 pt-6">
+            </Reveal>
+            <Reveal as="p" data-field="hero.subtitle" variant="fade-up" delay={200} className="text-lg leading-[1.6] text-[#424752] max-w-lg">{t.hero.subtitle}</Reveal>
+            <Reveal variant="fade-up" delay={300} className="flex gap-3 pt-6">
               <a className="bg-primary text-white px-20 py-6 rounded-2xl text-sm font-medium hover:scale-105 transition-all shadow-lg flex items-center gap-2" href="#menu">
                 <span data-field="hero.btnMenu">{t.hero.btnMenu}</span>
                 <span className="material-symbols-outlined">arrow_forward</span>
               </a>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Menu */}
       <section data-section="menu" className="py-20 max-w-[1280px] mx-auto px-10" id="menu">
-        <div className="text-center mb-20 space-y-3">
+        <Reveal variant="fade-up" className="text-center mb-20 space-y-3">
           <h2 data-field="menu.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-primary">{t.menu.sectionTitle}</h2>
           <div className="h-1 w-20 bg-secondary mx-auto rounded-full" />
           <p data-field="menu.sectionSubtitle" className="text-base leading-[1.6] text-[#424752]">{t.menu.sectionSubtitle}</p>
-        </div>
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-6">
@@ -163,39 +166,40 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
       {/* Gallery */}
       <section data-section="gallery" className="py-20 bg-[#f2f4f6]" id="gallery">
         <div className="max-w-[1280px] mx-auto px-10">
-          <div className="text-center mb-20">
+          <Reveal variant="fade-up" className="text-center mb-20">
             <h2 data-field="gallery.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-primary">{t.gallery.sectionTitle}</h2>
             <p data-field="gallery.sectionSubtitle" className="text-base leading-[1.6] text-[#424752] mt-3">{t.gallery.sectionSubtitle}</p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-[800px] md:h-[600px]">
-            <div className="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden group relative">
+            <Reveal variant="zoom-in" className="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden group relative">
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
                 <span className="text-white text-sm font-medium border border-white px-6 py-3 rounded-full">{t.gallery.viewAll}</span>
               </div>
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[0]} alt="Gallery Main" />
-            </div>
-            <div className="rounded-2xl overflow-hidden group">
+            </Reveal>
+            <Reveal variant="zoom-in" delay={100} className="rounded-2xl overflow-hidden group">
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[1]} alt="Gallery 2" />
-            </div>
-            <div className="rounded-2xl overflow-hidden group">
+            </Reveal>
+            <Reveal variant="zoom-in" delay={180} className="rounded-2xl overflow-hidden group">
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[2]} alt="Gallery 3" />
-            </div>
-            <div className="md:col-span-2 rounded-2xl overflow-hidden group">
+            </Reveal>
+            <Reveal variant="zoom-in" delay={260} className="md:col-span-2 rounded-2xl overflow-hidden group">
               <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[3]} alt="Gallery Bar" />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
       <section data-section="testimonials" className="py-20 max-w-[1280px] mx-auto px-10" id="reviews">
-        <div className="text-center mb-20">
+        <Reveal variant="fade-up" className="text-center mb-20">
           <h2 data-field="testimonials.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-primary">{t.testimonials.sectionTitle}</h2>
           <p data-field="testimonials.sectionSubtitle" className="text-base leading-[1.6] text-[#424752] mt-3">{t.testimonials.sectionSubtitle}</p>
-        </div>
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {(Array.isArray(t.testimonials.items) ? t.testimonials.items : []).map((item, i) => (
-            <div key={i} className="p-10 rounded-2xl shadow-sm border border-[#c2c6d4]/20 hover:-translate-y-2 transition-all" style={glassCard}>
+            <Reveal key={i} variant="fade-up" delay={i * 120}>
+            <div className="p-10 rounded-2xl shadow-sm border border-[#c2c6d4]/20 hover:-translate-y-2 transition-all h-full" style={glassCard}>
               <div className="flex items-center gap-6 mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-container">
                   <img className="w-full h-full object-cover" src={IMAGES.testimonials[i]} alt={item.name} />
@@ -214,6 +218,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
               </div>
               <p className="text-base leading-[1.6] text-[#424752] italic">"{item.text}"</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -222,7 +227,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
       <section data-section="contact" className="py-20 bg-[#e6e8ea] overflow-hidden" id="contact">
         <div className="max-w-[1280px] mx-auto px-10">
           <div className="flex flex-col lg:flex-row gap-20 items-stretch">
-            <div className="lg:w-1/3 space-y-10">
+            <Reveal variant="fade-right" className="lg:w-1/3 space-y-10">
               <div>
                 <h2 data-field="contact.sectionTitle" className="font-lexend text-[32px] leading-[1.3] font-semibold text-primary mb-3">{t.contact.sectionTitle}</h2>
                 <p data-field="contact.sectionSubtitle" className="text-base leading-[1.6] text-[#424752]">{t.contact.sectionSubtitle}</p>
@@ -250,8 +255,8 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="lg:w-2/3 min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#c2c6d4]/30">
+            </Reveal>
+            <Reveal variant="fade-left" delay={150} className="lg:w-2/3 min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-[#c2c6d4]/30">
               {t.contact.mapUrl ? (
                 <iframe
                   src={toGoogleMapsEmbedUrl(t.contact.mapUrl)}
@@ -264,14 +269,14 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
               ) : (
                 <img className="w-full h-full object-cover" src={IMAGES.map} alt="Location Map" />
               )}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer data-section="footer" className="w-full py-20 bg-[#e0e3e5]">
-        <div className="flex flex-col md:flex-row justify-between items-center px-10 gap-6 max-w-[1280px] mx-auto">
+        <Reveal variant="fade" className="flex flex-col md:flex-row justify-between items-center px-10 gap-6 max-w-[1280px] mx-auto">
           <div className="space-y-3 text-center md:text-left">
             <span data-field="footer.brand" className="font-lexend text-2xl font-bold text-primary block">{t.footer.brand}</span>
             <p data-field="footer.copyright" className="text-sm font-medium text-[#424752] max-w-xs">{t.footer.copyright}</p>
@@ -289,7 +294,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
               <span className="material-symbols-outlined text-[20px]">photo_camera</span>
             </a>
           </div>
-        </div>
+        </Reveal>
       </footer>
     </div>
   );

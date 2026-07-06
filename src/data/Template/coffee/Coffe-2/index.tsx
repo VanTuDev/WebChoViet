@@ -3,6 +3,7 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import Reveal from '../../_shared/Reveal';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -88,11 +89,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${images[`slide_${i}`] ?? SLIDE_IMGS[i]}')` }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="relative z-10 h-full flex flex-col justify-end p-10 md:p-20 text-white">
-                  <h1 data-field={`hero.slides.${i}.title`} className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] max-w-2xl mb-3">{slide.title}</h1>
-                  <p data-field={`hero.slides.${i}.desc`} className="text-lg leading-[1.6] max-w-xl opacity-90">{slide.desc}</p>
-                  <div className="mt-6">
+                  <Reveal as="h1" data-field={`hero.slides.${i}.title`} variant="fade-up" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] max-w-2xl mb-3">{slide.title}</Reveal>
+                  <Reveal as="p" data-field={`hero.slides.${i}.desc`} variant="fade-up" delay={120} className="text-lg leading-[1.6] max-w-xl opacity-90">{slide.desc}</Reveal>
+                  <Reveal variant="fade-up" delay={240} className="mt-6">
                     <button data-field={`hero.slides.${i}.btn`} className="bg-[#00a9fd] text-[#003a5c] px-10 py-3 rounded-full text-sm font-medium hover:bg-[#cce5ff] transition-colors cursor-pointer">{slide.btn}</button>
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             ))}
@@ -119,7 +120,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
 
         {/* Best Sellers */}
         <section data-section="bestsellers" className="py-20 px-6 max-w-[1280px] mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+          <Reveal variant="fade-up" className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
             <div>
               <span data-field="bestsellers.badge" className="text-secondary text-sm font-medium uppercase tracking-widest">{t.bestsellers.badge}</span>
               <h2 data-field="bestsellers.title" className="font-lexend text-[32px] leading-[1.3] font-semibold mt-1">{t.bestsellers.title}</h2>
@@ -132,10 +133,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {(Array.isArray(t.bestsellers.items) ? t.bestsellers.items : []).map((item, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-2xl p-6 hover:shadow-xl transition-all duration-500" style={glassCard}>
+              <Reveal key={i} variant="fade-up" delay={i * 110}>
+              <div className="group relative overflow-hidden rounded-2xl p-6 hover:shadow-xl transition-all duration-500 h-full" style={glassCard}>
                 <div className="aspect-square overflow-hidden rounded-xl mb-6">
                   <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`bestsellers_items_${i}`] ?? BESTSELLER_IMGS[i]} alt={item.name} />
                 </div>
@@ -148,6 +150,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                   </button>
                 </div>
               </div>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -155,11 +158,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         {/* Menu Tabs */}
         <section data-section="menuSection" className="py-20 bg-[#f2f4f6] relative z-10" id="menu">
           <div className="max-w-[1280px] mx-auto px-6">
-            <div className="text-center mb-20">
+            <Reveal variant="fade-up" className="text-center mb-20">
               <h2 data-field="menuSection.title" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em]">{t.menuSection.title}</h2>
               <p data-field="menuSection.subtitle" className="text-[#424752] mt-3 max-w-lg mx-auto">{t.menuSection.subtitle}</p>
-            </div>
-            <div className="flex justify-center mb-10">
+            </Reveal>
+            <Reveal variant="fade-up" delay={100} className="flex justify-center mb-10">
               <div className="inline-flex p-1 bg-white rounded-full shadow-sm border border-[#c2c6d4]">
                 {(Object.keys(t.menuSection.tabs) as TabKey[]).map((tab) => (
                   <button
@@ -171,10 +174,11 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                   </button>
                 ))}
               </div>
-            </div>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6">
               {(menuItems ?? []).map((item, i) => (
-                <div key={i} className="flex justify-between items-center p-6 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 group">
+                <Reveal key={i} variant="fade-up" delay={i * 60}>
+                <div className="flex justify-between items-center p-6 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 group">
                   <div className="flex-1">
                     <h4 className="font-bold text-2xl group-hover:text-primary transition-colors">{item.name}</h4>
                     <p className="text-[#424752] text-base">{item.desc}</p>
@@ -187,6 +191,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                     </button>
                   </div>
                 </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -195,13 +200,13 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         {/* Space Section */}
         <section data-section="space" className="py-20 px-6 max-w-[1280px] mx-auto relative z-10" id="space">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div className="relative">
+            <Reveal variant="fade-right" className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-20">
                 <img className="w-full h-[500px] object-cover" src={images['space'] ?? SPACE_IMG} alt="Cafe Space" />
               </div>
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#cce5ff] rounded-full -z-10 blur-3xl opacity-50" />
-            </div>
-            <div>
+            </Reveal>
+            <Reveal variant="fade-left" delay={150}>
               <span data-field="space.badge" className="text-secondary text-sm font-medium uppercase tracking-widest">{t.space.badge}</span>
               <h2 data-field="space.title" className="font-lexend text-[48px] leading-[1.2] font-bold tracking-[-0.02em] mt-1 mb-6">{t.space.title}</h2>
               <p data-field="space.desc" className="text-[#424752] text-lg leading-[1.6] mb-10">{t.space.desc}</p>
@@ -216,17 +221,17 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* Testimonials */}
         <section data-section="testimonials" className="py-20 bg-primary/10 relative z-10 overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-6 relative z-20">
-            <h2 data-field="testimonials.title" className="font-lexend text-[32px] leading-[1.3] font-semibold text-center mb-20">{t.testimonials.title}</h2>
+            <Reveal as="h2" data-field="testimonials.title" variant="fade-up" className="font-lexend text-[32px] leading-[1.3] font-semibold text-center mb-20">{t.testimonials.title}</Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {(Array.isArray(t.testimonials.items) ? t.testimonials.items : []).map((item, i) => (
-                <div key={i} className="p-10 rounded-2xl" style={glassCard}>
+                <Reveal key={i} variant="fade-up" delay={i * 120} className="p-10 rounded-2xl" style={glassCard}>
                   <div className="flex text-[#00a9fd] mb-3">
                     {Array.from({ length: 5 }).map((_, si) => (
                       <span key={si} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -242,7 +247,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                       <p className="text-xs font-semibold opacity-70">{item.role}</p>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -251,7 +256,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
         {/* Location */}
         <section data-section="location" className="py-20 px-6 max-w-[1280px] mx-auto relative z-10" id="location">
           <div className="flex flex-col md:flex-row gap-20">
-            <div className="md:w-1/3">
+            <Reveal variant="fade-right" className="md:w-1/3">
               <h2 data-field="location.title" className="font-lexend text-[32px] leading-[1.3] font-semibold mb-6">{t.location.title}</h2>
               <div className="space-y-6">
                 <div className="flex gap-6">
@@ -273,8 +278,8 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                   <button className="bg-primary text-white px-10 py-3 rounded-full text-sm font-medium hover:shadow-lg transition-all w-full cursor-pointer">{t.location.directionsBtn}</button>
                 </div>
               </div>
-            </div>
-            <div className="md:w-2/3 h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            </Reveal>
+            <Reveal variant="fade-left" delay={150} className="md:w-2/3 h-[400px] rounded-2xl overflow-hidden shadow-lg">
               {t.location.mapUrl ? (
                 <iframe
                   src={toGoogleMapsEmbedUrl(t.location.mapUrl)}
@@ -287,14 +292,14 @@ export default function Coffe2({ lang = 'vi' }: Props) {
               ) : (
                 <img className="w-full h-full object-cover" src={images['map'] ?? MAP_IMG} alt="Location Map" />
               )}
-            </div>
+            </Reveal>
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer data-section="footer" className="w-full relative border-t border-[#c2c6d4] bg-white py-20">
-        <div className="flex flex-col md:flex-row justify-between items-center px-10 max-w-[1280px] mx-auto gap-6">
+        <Reveal variant="fade" className="flex flex-col md:flex-row justify-between items-center px-10 max-w-[1280px] mx-auto gap-6">
           <div className="text-center md:text-left">
             <a data-field="footer.brand" className="font-lexend text-2xl text-[#191c1e]" href="#">{t.footer.brand}</a>
             <p data-field="footer.desc" className="text-[#424752] text-base max-w-xs mt-3">{t.footer.desc}</p>
@@ -318,7 +323,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
         <div className="max-w-[1280px] mx-auto px-10 mt-20 pt-10 border-t border-[#c2c6d4] text-center opacity-70">
           <p data-field="footer.copyright" className="text-base">{t.footer.copyright}</p>
         </div>
