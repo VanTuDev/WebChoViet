@@ -55,9 +55,71 @@
   --color-outline: #727784;
   --color-outline-variant: #c2c6d4;
 
+  /* ── FnB accent palette — dùng cho landing page & các trang hướng ẩm thực ── */
+  --color-fnb-red: #e8402a;
+  --color-fnb-orange: #ff6b2c;
+  --color-fnb-amber: #ffb400;
+  --color-fnb-green: #12a150;
+  --color-fnb-pink: #e94f8a;
+  --color-fnb-cream: #fff8f0;
+
   /* ── Font families ──────────────────────────────────────────────────── */
   --font-lexend: 'Lexend', sans-serif;
   --font-inter: 'Inter', sans-serif;
+}
+
+/* ── FnB theme scope ──────────────────────────────────────────────────────
+   Ghi đè design token trong phạm vi landing page (và mọi element con, gồm
+   SiteHeader/SiteFooter variant landing) sang bảng màu ấm nóng hướng ẩm thực.
+   Dashboard & các trang khác giữ nguyên tông xanh mặc định ở @theme trên. */
+.fnb-theme {
+  --color-primary: #e8491f;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #ff6b2c;
+  --color-on-primary-container: #ffe3d6;
+  --color-inverse-primary: #ffb693;
+  --color-primary-fixed: #ffe3d3;
+  --color-primary-fixed-dim: #ffb693;
+  --color-on-primary-fixed: #541b00;
+  --color-on-primary-fixed-variant: #b33912;
+
+  --color-secondary: #0e9f5c;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #ffc21a;
+  --color-on-secondary-container: #4a2d00;
+  --color-secondary-fixed: #d3f5e0;
+  --color-secondary-fixed-dim: #8ee6b6;
+  --color-on-secondary-fixed: #00301a;
+  --color-on-secondary-fixed-variant: #007140;
+
+  --color-tertiary: #c9327e;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #e35b9d;
+  --color-on-tertiary-container: #ffd9e8;
+  --color-tertiary-fixed: #ffd9e8;
+  --color-tertiary-fixed-dim: #ffaecf;
+  --color-on-tertiary-fixed: #3e0022;
+  --color-on-tertiary-fixed-variant: #a01560;
+
+  --color-surface: #fff9f3;
+  --color-surface-dim: #f2e4d8;
+  --color-surface-bright: #fff9f3;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fdf1e6;
+  --color-surface-container: #fae9db;
+  --color-surface-container-high: #f6e1cf;
+  --color-surface-container-highest: #f1d9c4;
+  --color-surface-variant: #f1e0d2;
+  --color-surface-tint: #e8491f;
+  --color-on-surface: #2b160c;
+  --color-on-surface-variant: #6b5245;
+  --color-inverse-surface: #3a2417;
+  --color-inverse-on-surface: #fdeee2;
+
+  --color-background: #fff9f3;
+  --color-on-background: #2b160c;
+  --color-outline: #8d7466;
+  --color-outline-variant: #ecd6c5;
 }
 
 /* Material Symbols filled variant */
@@ -75,14 +137,14 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* Glow hover card */
+/* Glow hover card — bóng đổ ăn theo màu primary của theme đang áp */
 .glow-hover {
   transition: all 0.3s ease;
 }
 .glow-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px -10px rgba(0, 63, 135, 0.3);
-  border-color: rgba(0, 63, 135, 0.2) !important;
+  box-shadow: 0 15px 30px -10px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 20%, transparent) !important;
 }
 
 /* Modal backdrop blur */
@@ -120,4 +182,37 @@
 
 .floating {
   animation: floatY 6s ease-in-out infinite;
+}
+
+/* ── 3D template carousel (landing page) ─────────────────────────────── */
+.carousel-3d {
+  perspective: 1800px;
+}
+.carousel-3d__slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.75s ease,
+    filter 0.75s ease;
+  will-change: transform, opacity;
+}
+
+/* Screenshot full-page: neo đầu trang, hover từ từ cuộn xuống cuối trang */
+.tmpl-screen img {
+  object-position: center top;
+  transition: object-position 6s ease-in-out;
+}
+.tmpl-screen:hover img {
+  object-position: center bottom;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.spin-slow {
+  animation: spinSlow 14s linear infinite;
 }

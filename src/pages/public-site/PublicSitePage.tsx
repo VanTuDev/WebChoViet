@@ -102,7 +102,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
     images: config.images,
   };
 
-  const ogImage = Object.values(config.images)[0];
+  const ogImage = Object.values(config.images || {})[0];
   const canonicalUrl = `https://webchoviet.com/${config.slug}`;
   const category = TEMPLATES.find(t => t.id === config.templateId)?.category;
   const activeCustomData = (config.customData[activeLang] as Record<string, unknown>) ?? config.customData;

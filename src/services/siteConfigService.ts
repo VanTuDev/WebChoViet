@@ -26,7 +26,7 @@ function fromBackend(raw: BackendSite): SiteConfig {
     name: raw.name,
     lang: raw.lang,
     customData: raw.customData,
-    images: raw.images,
+    images: raw.images || {},
     status: raw.status,
     isPending: raw.isPending,
     planLocked: raw.planLocked,

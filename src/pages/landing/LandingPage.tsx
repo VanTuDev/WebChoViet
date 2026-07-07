@@ -1,26 +1,239 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { TEMPLATES } from '../../data';
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  ClipboardPaste,
+  Coffee,
+  CupSoda,
+  Flame,
+  Languages,
+  LogIn,
+  MapPin,
+  PlayCircle,
+  QrCode,
+  Rocket,
+  Sparkles,
+  Star,
+  UtensilsCrossed,
+  Zap,
+} from 'lucide-react';
+import { TEMPLATES, CATEGORY_REGISTRY } from '../../data/templates/registry';
+import type { Template } from '../../data/templates/registry';
 import { ROUTES } from '../../config/routes';
 import SiteHeader from '../../components/shared/SiteHeader';
 import SiteFooter from '../../components/shared/SiteFooter';
 
-/* ── Material Symbol icon wrapper ──────────────────────────────────────── */
-function MI({ name, className = '' }: { name: string; className?: string }) {
-  return <span className={`material-symbols-outlined ${className}`}>{name}</span>;
+/* ═══════════════════════════════════════════════════════════════════════
+   Showcase data — quét toàn bộ screenshot thật của template trong
+   src/data/Template/<category>/<Name>/screen.png rồi ghép với metadata
+   trong registry (tên folder lowercase === template id).
+═══════════════════════════════════════════════════════════════════════ */
+const SCREENSHOTS = import.meta.glob('../../data/Template/*/*/screen.png', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>;
+
+const SHOT_BY_ID: Record<string, string> = {};
+for (const [path, url] of Object.entries(SCREENSHOTS)) {
+  const folder = path.split('/').at(-2);
+  if (folder) SHOT_BY_ID[folder.toLowerCase()] = url;
 }
 
-/* ── Filter chip config ────────────────────────────────────────────────── */
+const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
+  CATEGORY_REGISTRY.map(c => [c.id, c.label]),
+);
+
+type ShowcaseItem = Template & { screen: string };
+
+const SHOWCASE: ShowcaseItem[] = TEMPLATES.filter(t => SHOT_BY_ID[t.id]).map(t => ({
+  ...t,
+  screen: SHOT_BY_ID[t.id],
+}));
+
 const FILTER_CHIPS = [
-  { id: 'all',        label: 'Tất cả' },
-  { id: 'coffee',     label: 'Quán Cafe' },
-  { id: 'restaurant', label: 'Nhà hàng' },
-  { id: 'flower',     label: 'Shop hoa' },
+  { id: 'all', label: 'Tất cả' },
+  ...CATEGORY_REGISTRY.filter(c => SHOWCASE.some(t => t.category === c.id)).map(c => ({
+    id: c.id,
+    label: c.label,
+  })),
 ];
 
-const TMPL_NAMES = ['The Morning Brew', 'Iron Fitness', 'Bloom Studio', 'Bistro Locale'];
-const TMPL_CATS  = ['Cafe & Trà sữa', 'Phòng Gym & Yoga', 'Cửa hàng Hoa', 'Nhà hàng & Quán ăn'];
+/* ═══════════════════════════════════════════════════════════════════════
+   3D Coverflow carousel — trình diễn screenshot template
+═══════════════════════════════════════════════════════════════════════ */
+function TemplateCarousel3D({
+  items,
+  onOpen,
+}: {
+  items: ShowcaseItem[];
+  onOpen: () => void;
+}) {
+  const [active, setActive] = useState(0);
+  const pausedRef = useRef(false);
+  const n = items.length;
+
+  const go = useCallback(
+    (dir: 1 | -1) => setActive(a => (a + dir + n) % n),
+    [n],
+  );
+
+  /* Autoplay — dừng khi đang hover */
+  useEffect(() => {
+    if (n < 2) return;
+    const timer = setInterval(() => {
+      if (!pausedRef.current) setActive(a => (a + 1) % n);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [n]);
+
+  if (n === 0) return null;
+
+  /* Khoảng cách vòng ngắn nhất từ slide i tới slide active: [-n/2, n/2] */
+  const offsetOf = (i: number) => {
+    let off = i - active;
+    if (off > n / 2) off -= n;
+    if (off < -n / 2) off += n;
+    return off;
+  };
+
+  const current = items[active];
+
+  return (
+    <div
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+    >
+      {/* Sân khấu 3D */}
+      <div className="carousel-3d relative h-[460px] sm:h-[520px] overflow-hidden">
+        {items.map((tmpl, i) => {
+          const off = offsetOf(i);
+          const abs = Math.abs(off);
+          const hidden = abs > 2;
+          const isCenter = off === 0;
+          return (
+            <div
+              key={tmpl.id}
+              className="carousel-3d__slide"
+              style={{
+                transform: `translate(-50%, -50%) translateX(calc(${off} * min(270px, 31vw))) translateZ(${-abs * 170}px) rotateY(${off * -24}deg) scale(${isCenter ? 1 : 0.92})`,
+                opacity: hidden ? 0 : 1 - abs * 0.12,
+                filter: isCenter ? 'none' : 'saturate(0.85) brightness(0.92)',
+                zIndex: 10 - abs,
+                pointerEvents: hidden ? 'none' : 'auto',
+              }}
+            >
+              <button
+                onClick={() => (isCenter ? onOpen() : setActive(i))}
+                className="block w-[240px] sm:w-[300px] text-left cursor-pointer group outline-none"
+                aria-label={isCenter ? `Xem trước mẫu ${tmpl.name}` : `Chuyển tới mẫu ${tmpl.name}`}
+              >
+                <div className="rounded-2xl overflow-hidden bg-white shadow-2xl shadow-fnb-red/25 ring-1 ring-black/5">
+                  {/* Thanh trình duyệt giả lập */}
+                  <div className="flex items-center gap-1.5 px-3.5 py-2.5 bg-gradient-to-r from-fnb-cream to-white border-b border-outline-variant/40">
+                    <span className="w-2.5 h-2.5 rounded-full bg-fnb-red" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-fnb-amber" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-fnb-green" />
+                    <span className="ml-2 flex-1 truncate text-[10px] font-inter text-on-surface-variant bg-surface-container-low rounded-full px-2.5 py-0.5">
+                      webchoviet.com/{tmpl.id}
+                    </span>
+                  </div>
+
+                  {/* Screenshot full-page — hover sẽ cuộn từ từ xuống cuối trang */}
+                  <div className="tmpl-screen relative h-[300px] sm:h-[360px] overflow-hidden">
+                    <img
+                      src={tmpl.screen}
+                      alt={`Giao diện mẫu ${tmpl.name}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                    {tmpl.badge && (
+                      <span className="absolute top-3 left-3 bg-gradient-to-r from-fnb-red to-fnb-orange text-white text-[10px] font-inter font-bold px-2.5 py-1 rounded-full shadow-lg shadow-fnb-red/40">
+                        {tmpl.badge}
+                      </span>
+                    )}
+                    {isCenter && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-fnb-red/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-5">
+                        <span className="bg-white text-fnb-red font-inter font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg flex items-center gap-1.5">
+                          Xem trước mẫu này
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Info */}
+                  <div className="px-4 py-3 flex items-center justify-between gap-2 bg-white">
+                    <div className="min-w-0">
+                      <p className="font-lexend font-semibold text-sm text-on-surface truncate">{tmpl.name}</p>
+                      <p className="font-inter text-[11px] text-on-surface-variant truncate">
+                        {CATEGORY_LABEL[tmpl.category] ?? tmpl.category}
+                      </p>
+                    </div>
+                    <span
+                      className={`shrink-0 text-[11px] font-inter font-bold px-2.5 py-1 rounded-full ${
+                        tmpl.price === 0
+                          ? 'bg-fnb-green/10 text-fnb-green'
+                          : 'bg-fnb-amber/15 text-on-secondary-container'
+                      }`}
+                    >
+                      {tmpl.priceText}
+                    </span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          );
+        })}
+
+        {/* Nút điều hướng */}
+        <button
+          onClick={() => go(-1)}
+          aria-label="Mẫu trước"
+          className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-fnb-red shadow-lg shadow-fnb-red/20 flex items-center justify-center hover:bg-fnb-red hover:text-white hover:scale-110 transition-all cursor-pointer"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => go(1)}
+          aria-label="Mẫu sau"
+          className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-fnb-red shadow-lg shadow-fnb-red/20 flex items-center justify-center hover:bg-fnb-red hover:text-white hover:scale-110 transition-all cursor-pointer"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Chấm điều hướng + đánh giá mẫu đang chọn */}
+      <div className="flex flex-col items-center gap-3 mt-2">
+        <div className="flex flex-wrap justify-center items-center gap-1.5 max-w-md px-4">
+          {items.map((tmpl, i) => (
+            <button
+              key={tmpl.id}
+              onClick={() => setActive(i)}
+              aria-label={`Chọn mẫu ${tmpl.name}`}
+              className={`rounded-full transition-all cursor-pointer ${
+                i === active
+                  ? 'w-7 h-2.5 bg-gradient-to-r from-fnb-orange to-fnb-red'
+                  : 'w-2.5 h-2.5 bg-outline-variant hover:bg-fnb-orange/50'
+              }`}
+            />
+          ))}
+        </div>
+        {current?.rating && (
+          <div className="flex items-center gap-1 font-inter text-xs text-on-surface-variant">
+            <Star className="w-3.5 h-3.5 text-fnb-amber fill-fnb-amber" />
+            <span className="font-semibold text-on-surface">{current.rating}</span>
+            · Được các chủ quán tin dùng
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 /* ═══════════════════════════════════════════════════════════════════════ */
 export default function LandingPage() {
@@ -28,6 +241,7 @@ export default function LandingPage() {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const goToDashboard = () => navigate(ROUTES.DASHBOARD_PROJECTS);
+  const goToMarketplace = () => navigate(ROUTES.MARKETPLACE);
 
   /* Scroll-reveal */
   useEffect(() => {
@@ -46,19 +260,23 @@ export default function LandingPage() {
     return () => observer.disconnect();
   }, []);
 
-  const showcased = TEMPLATES.slice(0, 4);
+  const showcased = useMemo(
+    () => (activeFilter === 'all' ? SHOWCASE : SHOWCASE.filter(t => t.category === activeFilter)),
+    [activeFilter],
+  );
 
   return (
-    <div className="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container relative min-h-screen">
+    <div className="fnb-theme bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-fnb-amber/40 selection:text-on-secondary-container relative min-h-screen">
       <Helmet>
         <title>WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt</title>
         <meta name="description" content="Tạo website chuyên nghiệp cho quán cafe, nhà hàng, shop hoa và doanh nghiệp Việt Nam chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
         <link rel="canonical" href="https://webchoviet.com/" />
       </Helmet>
 
-      {/* ── Decorative background blobs ────────────────────────────────── */}
-      <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-fixed/30 blur-[100px] -z-10 pointer-events-none" />
-      <div className="fixed bottom-[-10%] right-[-10%] w-[30%] h-[50%] rounded-full bg-secondary-fixed/20 blur-[120px] -z-10 pointer-events-none" />
+      {/* ── Decorative background blobs — tông ấm nóng nhiều màu ─────────── */}
+      <div className="fixed top-[-10%] left-[-10%] w-[45%] h-[45%] rounded-full bg-fnb-orange/20 blur-[110px] -z-10 pointer-events-none" />
+      <div className="fixed top-[30%] right-[-15%] w-[35%] h-[45%] rounded-full bg-fnb-pink/15 blur-[120px] -z-10 pointer-events-none" />
+      <div className="fixed bottom-[-15%] left-[20%] w-[40%] h-[40%] rounded-full bg-fnb-amber/20 blur-[130px] -z-10 pointer-events-none" />
 
       <SiteHeader variant="landing" />
 
@@ -67,17 +285,21 @@ export default function LandingPage() {
         {/* ════════════════════════════════════════════════════════════════
             HERO
         ════════════════════════════════════════════════════════════════ */}
-        <section className="animate-on-scroll max-w-[1280px] mx-auto px-6 pt-20 pb-20 flex flex-col lg:flex-row items-center gap-20">
+        <section className="animate-on-scroll max-w-[1280px] mx-auto px-6 pt-16 pb-20 flex flex-col lg:flex-row items-center gap-16">
 
           {/* Left — text */}
           <div className="lg:w-1/2 flex flex-col items-start space-y-6">
-            <div className="inline-flex items-center gap-1 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-semibold font-inter">
-              <MI name="bolt" className="text-[16px]" />
-              Giải pháp nhanh gọn cho chủ shop
+            <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-fnb-orange/15 to-fnb-red/15 text-fnb-red border border-fnb-orange/30 px-4 py-1.5 rounded-full text-xs font-semibold font-inter">
+              <Zap className="w-3.5 h-3.5 fill-fnb-amber text-fnb-amber" />
+              Giải pháp nhanh gọn cho quán cafe, nhà hàng
             </div>
 
-            <h1 className="font-lexend font-bold text-[48px] leading-[1.2] tracking-tight text-primary">
-              Biến Google Maps thành Website &amp; Menu QR chuyên nghiệp trong 30 giây
+            <h1 className="font-lexend font-bold text-[42px] sm:text-[48px] leading-[1.15] tracking-tight text-on-surface">
+              Biến Google Maps thành{' '}
+              <span className="bg-gradient-to-r from-fnb-red via-fnb-orange to-fnb-amber bg-clip-text text-transparent">
+                Website &amp; Menu QR
+              </span>{' '}
+              chuyên nghiệp trong 30 giây
             </h1>
 
             <p className="font-inter text-[18px] leading-[1.6] text-on-surface-variant max-w-lg">
@@ -87,25 +309,38 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-3 pt-3 w-full sm:w-auto">
               <button
                 onClick={goToDashboard}
-                className="bg-secondary-container text-on-secondary-container font-inter font-medium text-sm px-10 py-3.5 rounded-full shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-1 cursor-pointer"
+                className="bg-gradient-to-r from-fnb-red to-fnb-orange text-white font-inter font-semibold text-sm px-10 py-3.5 rounded-full shadow-lg shadow-fnb-red/30 hover:shadow-xl hover:shadow-fnb-red/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 Bắt đầu miễn phí ngay
-                <MI name="arrow_forward" className="text-[20px]" />
+                <ArrowRight className="w-4.5 h-4.5" />
               </button>
               <button
-                onClick={goToDashboard}
-                className="bg-surface-container-lowest text-primary border border-outline-variant font-inter font-medium text-sm px-10 py-3.5 rounded-full hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1 cursor-pointer"
+                onClick={goToMarketplace}
+                className="bg-white text-fnb-red border-2 border-fnb-orange/40 font-inter font-semibold text-sm px-10 py-3.5 rounded-full hover:bg-fnb-cream hover:border-fnb-orange transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <MI name="play_circle" className="text-[20px]" />
+                <PlayCircle className="w-4.5 h-4.5" />
                 Xem demo
               </button>
+            </div>
+
+            {/* Mini social proof */}
+            <div className="flex items-center gap-4 pt-2 font-inter text-xs text-on-surface-variant">
+              <span className="flex items-center gap-1.5">
+                <Coffee className="w-4 h-4 text-fnb-orange" /> Quán cafe
+              </span>
+              <span className="flex items-center gap-1.5">
+                <UtensilsCrossed className="w-4 h-4 text-fnb-red" /> Nhà hàng
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CupSoda className="w-4 h-4 text-fnb-pink" /> Trà sữa
+              </span>
             </div>
           </div>
 
           {/* Right — floating image */}
           <div className="lg:w-1/2 w-full relative floating">
-            <div className="absolute inset-0 bg-gradient-to-tr from-secondary-fixed/40 to-primary-fixed/20 rounded-[3rem] rotate-3 scale-105 -z-10" />
-            <div className="bg-surface-container-lowest rounded-[2rem] p-3 shadow-xl shadow-primary/5 border border-outline-variant/30">
+            <div className="absolute inset-0 bg-gradient-to-tr from-fnb-amber/40 via-fnb-orange/25 to-fnb-pink/25 rounded-[3rem] rotate-3 scale-105 -z-10" />
+            <div className="bg-white rounded-[2rem] p-3 shadow-xl shadow-fnb-orange/15 border border-fnb-orange/15">
               <img
                 className="w-full h-auto rounded-[1rem] object-cover aspect-[4/3]"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQoMz0YvfyhaGdi32H71jL9Ok6eY0_9tC6zk5x7X6FGqokHK2kSKieZBf4XG6AMZyB2MuYkQbK7ircYWiC36iy8c-GWR3jhkrEg193FUumWy0qDg-qzzQDh4dt9ZVDUk0aPEVvU-E9JQhXhbNn9_43RUbXZtBwjzjwW3nFhyQ1rRIDDJbAbVMZQyyakFnZeNfzqfnZmzSqkY5TdV4XxdecblzkzWEYxt5q5x3jmMIuwC8Vw1_TQQFHor0Bm4DA5WkxyUatgZV0vWo"
@@ -113,40 +348,113 @@ export default function LandingPage() {
               />
             </div>
             <div
-              className="absolute -bottom-6 -left-6 glass-panel rounded-xl p-3 flex items-center gap-3 shadow-lg shadow-primary/10 animate-bounce"
+              className="absolute -bottom-6 -left-6 glass-panel rounded-xl p-3 flex items-center gap-3 shadow-lg shadow-fnb-red/15 animate-bounce"
               style={{ animationDuration: '3s' }}
             >
-              <div className="bg-green-100 text-green-700 rounded-full p-1 flex items-center justify-center">
-                <MI name="check_circle" className="text-[24px]" />
+              <div className="bg-fnb-green/15 text-fnb-green rounded-full p-1.5 flex items-center justify-center">
+                <CheckCircle2 className="w-5 h-5" />
               </div>
               <div>
                 <p className="font-inter font-semibold text-[12px] text-on-surface">Website đã sẵn sàng!</p>
                 <p className="text-[10px] text-on-surface-variant">Vừa tạo xong 2 phút trước</p>
               </div>
             </div>
+            <div className="absolute -top-5 -right-4 glass-panel rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg shadow-fnb-amber/20">
+              <QrCode className="w-6 h-6 text-fnb-red" />
+              <div>
+                <p className="font-inter font-semibold text-[11px] text-on-surface">Menu QR tại bàn</p>
+                <p className="text-[10px] text-fnb-green font-semibold">+128 lượt quét hôm nay</p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ════════════════════════════════════════════════════════════════
-            FEATURES — Bento Grid
+            TEMPLATE SHOWCASE — 3D carousel screenshot thật
         ════════════════════════════════════════════════════════════════ */}
         <section
-          className="animate-on-scroll max-w-[1280px] mx-auto px-6 py-20"
+          className="animate-on-scroll relative py-20 mt-4 overflow-hidden"
           style={{ animationDelay: '100ms' }}
         >
+          {/* Nền warm gradient cho khu trưng bày */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-fnb-orange/8 to-transparent -z-10" />
+
+          <div className="max-w-[1280px] mx-auto px-6">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-1.5 bg-fnb-amber/15 text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-semibold font-inter mb-4">
+                <Flame className="w-3.5 h-3.5 text-fnb-red" />
+                Sản phẩm thật, chạm là chạy
+              </div>
+              <h2 className="font-lexend font-bold text-[32px] sm:text-[38px] leading-[1.25] text-on-surface mb-3">
+                Kho giao diện{' '}
+                <span className="bg-gradient-to-r from-fnb-orange to-fnb-pink bg-clip-text text-transparent">
+                  tuyệt đẹp
+                </span>
+                , sẵn sàng sử dụng
+              </h2>
+              <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mx-auto">
+                Đây là ảnh chụp thật từ các mẫu website đang bán trên WebChoViet — di chuột lên mẫu chính giữa để cuộn xem toàn trang.
+              </p>
+            </div>
+
+            {/* Filter chips */}
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              {FILTER_CHIPS.map(f => (
+                <button
+                  key={f.id}
+                  onClick={() => setActiveFilter(f.id)}
+                  className={`font-inter font-semibold text-xs px-4 py-2 rounded-full cursor-pointer border transition-all ${
+                    activeFilter === f.id
+                      ? 'bg-gradient-to-r from-fnb-red to-fnb-orange text-white border-transparent shadow-md shadow-fnb-red/30 scale-105'
+                      : 'bg-white text-on-surface-variant border-outline-variant hover:border-fnb-orange hover:text-fnb-red'
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+
+            <TemplateCarousel3D
+              key={activeFilter}
+              items={showcased}
+              onOpen={goToMarketplace}
+            />
+
+            <div className="text-center mt-8">
+              <button
+                onClick={goToMarketplace}
+                className="inline-flex items-center gap-1.5 font-inter font-semibold text-sm text-fnb-red hover:text-fnb-orange transition-colors cursor-pointer"
+              >
+                Khám phá toàn bộ kho giao diện
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* ════════════════════════════════════════════════════════════════
+            FEATURES — Bento Grid nhiều màu
+        ════════════════════════════════════════════════════════════════ */}
+        <section
+          id="features"
+          className="animate-on-scroll max-w-[1280px] mx-auto px-6 py-20"
+          style={{ animationDelay: '200ms' }}
+        >
           <div className="text-center mb-10">
-            <h2 className="font-lexend font-semibold text-[32px] leading-[1.3] text-primary mb-3">
-              Mọi thứ bạn cần để tỏa sáng online
+            <h2 className="font-lexend font-bold text-[32px] leading-[1.3] text-on-surface mb-3">
+              Mọi thứ bạn cần để{' '}
+              <span className="bg-gradient-to-r from-fnb-red to-fnb-orange bg-clip-text text-transparent">tỏa sáng</span>{' '}
+              online
             </h2>
             <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mx-auto">
-              Công cụ mạnh mẽ nhưng cực kỳ dễ sử dụng, thiết kế dành riêng cho các chủ doanh nghiệp bận rộn.
+              Công cụ mạnh mẽ nhưng cực kỳ dễ sử dụng, thiết kế dành riêng cho các chủ quán bận rộn.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-surface-container-lowest rounded-[2rem] p-10 border border-outline-variant/30 shadow-md shadow-primary/5 glow-hover flex flex-col h-full group">
-              <div className="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MI name="map" />
+            <div className="bg-gradient-to-b from-fnb-orange/10 to-white rounded-[2rem] p-10 border border-fnb-orange/20 shadow-md shadow-fnb-orange/10 glow-hover flex flex-col h-full group">
+              <div className="w-13 h-13 p-3.5 rounded-2xl bg-gradient-to-br from-fnb-orange to-fnb-red text-white flex items-center justify-center mb-6 shadow-lg shadow-fnb-orange/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                <MapPin className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-3">
                 Tự động hóa từ Google Maps
@@ -156,9 +464,9 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="bg-surface-container-lowest rounded-[2rem] p-10 border border-outline-variant/30 shadow-md shadow-primary/5 glow-hover flex flex-col h-full group">
-              <div className="w-12 h-12 rounded-xl bg-secondary-fixed text-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MI name="translate" />
+            <div className="bg-gradient-to-b from-fnb-green/10 to-white rounded-[2rem] p-10 border border-fnb-green/20 shadow-md shadow-fnb-green/10 glow-hover flex flex-col h-full group">
+              <div className="w-13 h-13 p-3.5 rounded-2xl bg-gradient-to-br from-fnb-green to-emerald-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-fnb-green/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                <Languages className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-3">
                 Menu đa ngôn ngữ thông minh
@@ -168,9 +476,9 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="bg-surface-container-lowest rounded-[2rem] p-10 border border-outline-variant/30 shadow-md shadow-primary/5 glow-hover flex flex-col h-full group">
-              <div className="w-12 h-12 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MI name="qr_code_scanner" />
+            <div className="bg-gradient-to-b from-fnb-pink/10 to-white rounded-[2rem] p-10 border border-fnb-pink/20 shadow-md shadow-fnb-pink/10 glow-hover flex flex-col h-full group">
+              <div className="w-13 h-13 p-3.5 rounded-2xl bg-gradient-to-br from-fnb-pink to-fnb-red text-white flex items-center justify-center mb-6 shadow-lg shadow-fnb-pink/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                <QrCode className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-3">
                 Mã QR động &amp; Độc quyền
@@ -183,67 +491,6 @@ export default function LandingPage() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════
-            TEMPLATE GALLERY
-        ════════════════════════════════════════════════════════════════ */}
-        <section
-          className="animate-on-scroll bg-surface-container-low py-20 mt-6"
-          style={{ animationDelay: '200ms' }}
-        >
-          <div className="max-w-[1280px] mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-3">
-              <div>
-                <h2 className="font-lexend font-semibold text-[32px] leading-[1.3] text-primary mb-1">
-                  Giao diện tuyệt đẹp, sẵn sàng sử dụng
-                </h2>
-                <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
-                  Chọn từ kho giao diện được thiết kế chuyên biệt cho từng ngành hàng.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {FILTER_CHIPS.map(f => (
-                  <button
-                    key={f.id}
-                    onClick={() => setActiveFilter(f.id)}
-                    className={`font-inter font-semibold text-xs px-3 py-1 rounded-full cursor-pointer border transition-colors ${
-                      activeFilter === f.id
-                        ? 'bg-primary-fixed text-on-primary-fixed border-transparent'
-                        : 'bg-surface text-primary border-outline-variant hover:border-primary'
-                    }`}
-                  >
-                    {f.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {showcased.map((tmpl, i) => (
-                <div
-                  key={tmpl.id}
-                  className="group cursor-pointer glow-hover p-1 rounded-[1.25rem] bg-transparent"
-                  onClick={goToDashboard}
-                >
-                  <div className="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm shadow-primary/5 border border-outline-variant/30 mb-3 relative aspect-[3/4]">
-                    <img
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      src={tmpl.imageUrl}
-                      alt={TMPL_NAMES[i]}
-                    />
-                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <span className="bg-surface text-primary font-inter font-medium text-sm px-6 py-3 rounded-full shadow-lg">
-                        Xem trước
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="font-inter font-semibold text-[18px] text-on-surface">{TMPL_NAMES[i]}</h4>
-                  <p className="font-inter font-semibold text-xs text-on-surface-variant">{TMPL_CATS[i]}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ════════════════════════════════════════════════════════════════
             HOW IT WORKS
         ════════════════════════════════════════════════════════════════ */}
         <section
@@ -251,8 +498,9 @@ export default function LandingPage() {
           style={{ animationDelay: '300ms' }}
         >
           <div className="text-center mb-20">
-            <h2 className="font-lexend font-semibold text-[32px] leading-[1.3] text-primary mb-3">
-              Lên sóng chỉ trong 3 bước
+            <h2 className="font-lexend font-bold text-[32px] leading-[1.3] text-on-surface mb-3">
+              Lên sóng chỉ trong{' '}
+              <span className="bg-gradient-to-r from-fnb-orange to-fnb-amber bg-clip-text text-transparent">3 bước</span>
             </h2>
             <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mx-auto">
               Đơn giản hóa mọi quy trình kỹ thuật phức tạp, nhường chỗ cho sự sáng tạo của bạn.
@@ -260,14 +508,14 @@ export default function LandingPage() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between relative">
-            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-outline-variant/50 z-0" />
+            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-1 rounded-full bg-gradient-to-r from-fnb-orange/40 via-fnb-amber/40 to-fnb-green/40 z-0" />
 
             {/* Step 1 */}
             <div className="flex flex-col items-center text-center relative z-10 md:w-1/3 px-6 mb-10 md:mb-0">
-              <div className="w-24 h-24 rounded-full bg-surface border-4 border-primary-fixed flex items-center justify-center mb-6 shadow-md shadow-primary/10 text-primary">
-                <MI name="login" className="text-[40px]" />
+              <div className="w-24 h-24 rounded-full bg-white border-4 border-fnb-orange flex items-center justify-center mb-6 shadow-lg shadow-fnb-orange/25 text-fnb-orange">
+                <LogIn className="w-9 h-9" />
               </div>
-              <div className="bg-primary text-on-primary font-inter font-semibold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20">1</div>
+              <div className="bg-gradient-to-br from-fnb-orange to-fnb-red text-white font-inter font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-fnb-red/30">1</div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">Đăng nhập</h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
                 Tạo tài khoản nhanh chóng bằng Google hoặc Email của bạn.
@@ -276,10 +524,10 @@ export default function LandingPage() {
 
             {/* Step 2 */}
             <div className="flex flex-col items-center text-center relative z-10 md:w-1/3 px-6 mb-10 md:mb-0">
-              <div className="w-24 h-24 rounded-full bg-surface border-4 border-secondary-fixed flex items-center justify-center mb-6 shadow-md shadow-primary/10 text-secondary">
-                <MI name="content_paste" className="text-[40px]" />
+              <div className="w-24 h-24 rounded-full bg-white border-4 border-fnb-amber flex items-center justify-center mb-6 shadow-lg shadow-fnb-amber/25 text-fnb-amber">
+                <ClipboardPaste className="w-9 h-9" />
               </div>
-              <div className="bg-secondary text-on-secondary font-inter font-semibold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20">2</div>
+              <div className="bg-gradient-to-br from-fnb-amber to-fnb-orange text-white font-inter font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-fnb-amber/30">2</div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">Dán Link / Chỉnh sửa</h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
                 Dán link Google Maps để AI tự động tạo trang, hoặc chọn mẫu và tự tinh chỉnh theo ý thích.
@@ -288,10 +536,10 @@ export default function LandingPage() {
 
             {/* Step 3 */}
             <div className="flex flex-col items-center text-center relative z-10 md:w-1/3 px-6">
-              <div className="w-24 h-24 rounded-full bg-surface border-4 border-secondary-container/50 flex items-center justify-center mb-6 shadow-md shadow-primary/10 text-secondary-container">
-                <MI name="rocket_launch" className="text-[40px]" />
+              <div className="w-24 h-24 rounded-full bg-white border-4 border-fnb-green flex items-center justify-center mb-6 shadow-lg shadow-fnb-green/25 text-fnb-green">
+                <Rocket className="w-9 h-9" />
               </div>
-              <div className="bg-secondary-container text-on-secondary-container font-inter font-semibold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20">3</div>
+              <div className="bg-gradient-to-br from-fnb-green to-emerald-600 text-white font-inter font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-fnb-green/30">3</div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">Xuất bản</h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
                 Nhấn nút xuất bản, nhận mã QR và bắt đầu đón khách hàng mới ngay lập tức.
@@ -307,20 +555,25 @@ export default function LandingPage() {
           className="animate-on-scroll max-w-[1280px] mx-auto px-6 py-20"
           style={{ animationDelay: '400ms' }}
         >
-          <div className="bg-primary text-on-primary rounded-[2rem] p-20 text-center relative overflow-hidden shadow-xl shadow-primary/20">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-            <h2 className="font-lexend font-bold text-[48px] leading-[1.2] tracking-tight mb-3 relative z-10">
-              Sẵn sàng để chuyên nghiệp hóa cửa hàng?
+          <div className="bg-gradient-to-br from-fnb-red via-fnb-orange to-fnb-amber text-white rounded-[2rem] p-12 sm:p-20 text-center relative overflow-hidden shadow-2xl shadow-fnb-red/30">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-fnb-pink/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+            <Coffee className="absolute top-10 left-[12%] w-10 h-10 text-white/20 -rotate-12" />
+            <UtensilsCrossed className="absolute bottom-12 right-[14%] w-12 h-12 text-white/20 rotate-12" />
+            <Sparkles className="absolute top-14 right-[22%] w-8 h-8 text-white/25" />
+
+            <h2 className="font-lexend font-bold text-[36px] sm:text-[48px] leading-[1.2] tracking-tight mb-3 relative z-10">
+              Sẵn sàng để chuyên nghiệp hóa quán của bạn?
             </h2>
-            <p className="font-inter text-[18px] leading-[1.6] text-primary-fixed-dim mb-10 max-w-xl mx-auto relative z-10">
+            <p className="font-inter text-[18px] leading-[1.6] text-white/85 mb-10 max-w-xl mx-auto relative z-10">
               Bắt đầu xây dựng hình ảnh chuyên nghiệp trên internet ngay hôm nay. Miễn phí trải nghiệm các tính năng cơ bản.
             </p>
             <button
               onClick={goToDashboard}
-              className="bg-secondary-container text-on-secondary-container font-inter font-medium text-sm px-20 py-3.5 rounded-full shadow-lg shadow-secondary-container/30 hover:bg-white hover:text-primary hover:scale-105 transition-all relative z-10 cursor-pointer"
+              className="bg-white text-fnb-red font-inter font-bold text-sm px-14 sm:px-20 py-4 rounded-full shadow-xl shadow-black/15 hover:scale-105 hover:shadow-2xl transition-all relative z-10 cursor-pointer inline-flex items-center gap-2"
             >
               Bắt đầu miễn phí ngay
+              <ArrowRight className="w-4.5 h-4.5" />
             </button>
           </div>
         </section>
