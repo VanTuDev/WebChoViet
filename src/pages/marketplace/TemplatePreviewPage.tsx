@@ -70,7 +70,7 @@ export default function TemplatePreviewPage() {
           <span className="text-sm font-bold text-gray-900 hidden sm:block">{template.name}</span>
           {template.badge && (
             <span className={`text-[10px] font-extrabold tracking-wider text-white px-2.5 py-0.5 rounded-full uppercase ${
-              template.badge === 'BÁN CHẠY' ? 'bg-rose-500' : template.badge === 'PREMIUM' ? 'bg-amber-500' : 'bg-indigo-600'
+              template.badge === 'BÁN CHẠY' ? 'bg-rose-500' : template.badge === 'PREMIUM' ? 'bg-amber-500' : 'bg-orange-600'
             }`}>
               {template.badge}
             </span>

@@ -28,7 +28,7 @@ export default function TemplateFilters({ priceFilter, sortBy, onPriceChange, on
             onClick={() => onPriceChange(opt.id)}
             className={`rounded-full px-5 py-2 transition-all cursor-pointer ${
               priceFilter === opt.id
-                ? 'bg-gradient-to-r from-[#003f87] to-[#0056b3] text-white font-semibold shadow-sm'
+                ? 'bg-gradient-to-r from-primary to-primary-container text-white font-semibold shadow-sm'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -44,7 +44,7 @@ export default function TemplateFilters({ priceFilter, sortBy, onPriceChange, on
           <select
             value={sortBy}
             onChange={e => onSortChange(e.target.value as SortBy)}
-            className="appearance-none bg-gray-50 border border-gray-200 text-xs font-medium text-gray-700 rounded-full pl-4 pr-10 py-1.5 focus:border-[#0056b3] focus:outline-none cursor-pointer"
+            className="appearance-none bg-gray-50 border border-gray-200 text-xs font-medium text-gray-700 rounded-full pl-4 pr-10 py-1.5 focus:border-primary-container focus:outline-none cursor-pointer"
           >
             <option value="newest">Mới nhất</option>
             <option value="bestseller">Xem nhiều & Bán chạy</option>

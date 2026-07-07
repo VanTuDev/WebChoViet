@@ -67,7 +67,7 @@ function StringField({ label, value, path, onChange }: {
       </label>
       {isLong ? (
         <textarea
-          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:border-blue-400 transition-all"
+          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:border-orange-400 transition-all"
           rows={3}
           value={value}
           onChange={e => onChange(path, e.target.value)}
@@ -75,7 +75,7 @@ function StringField({ label, value, path, onChange }: {
       ) : (
         <input
           type="text"
-          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-400 transition-all"
+          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-400 transition-all"
           value={value}
           onChange={e => onChange(path, e.target.value)}
         />
@@ -101,7 +101,7 @@ function LinkField({ label, value, path, onChange }: {
       <input
         type="url"
         placeholder="https://..."
-        className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-400 transition-all"
+        className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-400 transition-all"
         value={value}
         onChange={e => onChange(path, e.target.value)}
       />
@@ -130,13 +130,13 @@ function MapEmbedField({ value, path, onChange }: {
   };
 
   return (
-    <div className="rounded-xl border border-blue-100 bg-blue-50/50 p-3 space-y-2">
-      <label className="flex items-center gap-1.5 text-xs font-bold text-blue-700">
+    <div className="rounded-xl border border-orange-100 bg-orange-50/50 p-3 space-y-2">
+      <label className="flex items-center gap-1.5 text-xs font-bold text-orange-700">
         <Map className="w-3.5 h-3.5" />
         Nhúng Google Maps
       </label>
 
-      <ol className="text-[10px] text-blue-600 space-y-0.5 list-none">
+      <ol className="text-[10px] text-orange-600 space-y-0.5 list-none">
         <li>1. Mở Google Maps → tìm địa điểm</li>
         <li>2. Nhấn <strong>Chia sẻ</strong> → tab <strong>Nhúng bản đồ</strong></li>
         <li>3. Nhấn <strong>Sao chép HTML</strong> rồi dán thẳng vào đây</li>
@@ -149,7 +149,7 @@ function MapEmbedField({ value, path, onChange }: {
           className={`w-full text-xs text-gray-800 bg-white border rounded-lg px-3 py-2 pr-8 focus:outline-none transition-all resize-none ${
             isValid === false
               ? 'border-amber-400 focus:border-amber-500'
-              : 'border-blue-200 focus:border-blue-400'
+              : 'border-orange-200 focus:border-orange-400'
           }`}
           value={value}
           onChange={e => handleChange(e.target.value)}
@@ -240,7 +240,7 @@ function MenuArrayEditor({
               <div className="flex items-center gap-3 p-3 border-b border-gray-100">
                 <button
                   onClick={() => setCropTarget({ key, label: `${label} ${i + 1}`, currentUrl: imgSrc || undefined })}
-                  className="relative w-14 h-14 rounded-lg overflow-hidden bg-gray-200 shrink-0 hover:ring-2 hover:ring-blue-400 transition-all group"
+                  className="relative w-14 h-14 rounded-lg overflow-hidden bg-gray-200 shrink-0 hover:ring-2 hover:ring-orange-400 transition-all group"
                 >
                   {imgSrc ? (
                     <img src={imgSrc} className="w-full h-full object-cover" alt="" />
@@ -275,7 +275,7 @@ function MenuArrayEditor({
                     <label className="block text-[10px] text-gray-400 capitalize mb-0.5">{field}</label>
                     <input
                       type="text"
-                      className="w-full text-xs text-gray-800 bg-white border border-gray-200 rounded-md px-2 py-1.5 focus:outline-none focus:border-blue-400 transition-all"
+                      className="w-full text-xs text-gray-800 bg-white border border-gray-200 rounded-md px-2 py-1.5 focus:outline-none focus:border-orange-400 transition-all"
                       value={(item[field] as string) ?? ''}
                       onChange={e => updateItem(i, field, e.target.value)}
                     />
@@ -288,7 +288,7 @@ function MenuArrayEditor({
 
         <button
           onClick={addItem}
-          className="w-full flex items-center justify-center gap-1.5 py-2.5 border-2 border-dashed border-gray-200 rounded-xl text-xs font-semibold text-gray-400 hover:border-blue-400 hover:text-blue-500 hover:bg-blue-50/50 transition-all"
+          className="w-full flex items-center justify-center gap-1.5 py-2.5 border-2 border-dashed border-gray-200 rounded-xl text-xs font-semibold text-gray-400 hover:border-orange-400 hover:text-orange-500 hover:bg-orange-50/50 transition-all"
         >
           <Plus className="w-3.5 h-3.5" /> Thêm món
         </button>
@@ -332,7 +332,7 @@ function ImageSlotItem({ slot, currentUrl, onEdit }: {
       </div>
       <button
         onClick={() => onEdit(slot)}
-        className="shrink-0 px-3 py-1.5 text-xs font-semibold text-blue-600 border border-blue-200 rounded-full hover:bg-blue-50 transition-colors"
+        className="shrink-0 px-3 py-1.5 text-xs font-semibold text-orange-600 border border-orange-200 rounded-full hover:bg-orange-50 transition-colors"
       >
         Đổi
       </button>

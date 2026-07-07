@@ -38,12 +38,12 @@ export default function InlineEditOverlay({ initialValue, fieldLabel, rect, onCh
       <div className="fixed inset-0 z-[10000]" onMouseDown={onClose} />
 
       <div
-        className="fixed z-[9999] bg- white rounded-xl shadow-2xl border border-blue-300 p-3 w-72"
+        className="fixed z-[9999] bg- white rounded-xl shadow-2xl border border-orange-300 p-3 w-72"
         style={{ top, left }}
         onMouseDown={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-2">
-          <span className="flex items-center gap-1 text-[10px] font-bold text-blue-600 uppercase tracking-wider">
+          <span className="flex items-center gap-1 text-[10px] font-bold text-orange-600 uppercase tracking-wider">
             <Pencil className="w-2.5 h-2.5" /> {fieldLabel.replace(/[._]/g, ' ')}
           </span>
           <div className="flex items-center gap-1">
@@ -66,7 +66,7 @@ export default function InlineEditOverlay({ initialValue, fieldLabel, rect, onCh
 
         <textarea
           ref={inputRef}
-          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:border-blue-400 transition-all"
+          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:border-orange-400 transition-all"
           rows={isLong ? 3 : 1}
           value={text}
           onChange={handleChange}

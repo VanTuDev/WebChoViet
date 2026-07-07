@@ -12,7 +12,7 @@ export default function RequireAdmin() {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <Loader2 className="h-6 w-6 animate-spin text-[#60a5fa]" />
+        <Loader2 className="h-6 w-6 animate-spin text-[#fdba74]" />
       </div>
     );
   }

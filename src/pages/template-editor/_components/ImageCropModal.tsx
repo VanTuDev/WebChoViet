@@ -203,18 +203,18 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
         {step === 'upload' ? (
           <div className="flex-1 flex flex-col items-center justify-center p-10 gap-6">
             <div
-              className="w-full max-w-md border-2 border-dashed border-gray-200 rounded-2xl p-10 flex flex-col items-center gap-4 cursor-pointer hover:border-[#003f87] hover:bg-blue-50/30 transition-all"
+              className="w-full max-w-md border-2 border-dashed border-gray-200 rounded-2xl p-10 flex flex-col items-center gap-4 cursor-pointer hover:border-primary hover:bg-orange-50/30 transition-all"
               onDragOver={e => e.preventDefault()}
               onDrop={e => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) handleFile(f); }}
               onClick={() => document.getElementById('img-upload')?.click()}
             >
               <Upload className="w-10 h-10 text-gray-300" />
-              <p className="text-sm text-gray-500 text-center">Kéo thả ảnh vào đây hoặc <span className="text-[#003f87] font-semibold">chọn từ máy tính</span></p>
+              <p className="text-sm text-gray-500 text-center">Kéo thả ảnh vào đây hoặc <span className="text-primary font-semibold">chọn từ máy tính</span></p>
               <p className="text-xs text-gray-400">PNG, JPG, WebP — tối đa 10MB</p>
             </div>
             <input id="img-upload" type="file" accept="image/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
             {currentUrl && (
-              <button onClick={() => setStep('crop')} className="text-xs text-[#003f87] underline cursor-pointer">
+              <button onClick={() => setStep('crop')} className="text-xs text-primary underline cursor-pointer">
                 Dùng ảnh hiện tại và điều chỉnh cắt
               </button>
             )}
@@ -258,7 +258,7 @@ export default function ImageCropModal({ imageKey, label, currentUrl, onConfirm,
                 <button
                   onClick={handleConfirm}
                   disabled={uploading}
-                  className="px-5 py-2 text-xs font-bold text-white bg-[#003f87] rounded-full hover:bg-[#002d63] flex items-center gap-1.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="px-5 py-2 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#b33912] flex items-center gap-1.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {uploading
                     ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> Đang tải lên...</>

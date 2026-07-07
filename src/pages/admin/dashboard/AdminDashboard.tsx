@@ -26,7 +26,7 @@ const fmtDateTime = (iso: string) =>
 function avatarUrl(u: Pick<AdminUserListItem, 'avatar' | 'name'> | { ownerAvatar?: string; ownerName: string }): string {
   const av = 'avatar' in u ? u.avatar : (u as any).ownerAvatar;
   const nm = 'name' in u ? u.name : (u as any).ownerName;
-  return av || `https://ui-avatars.com/api/?name=${encodeURIComponent(nm)}&background=0056b3&color=fff`;
+  return av || `https://ui-avatars.com/api/?name=${encodeURIComponent(nm)}&background=e8491f&color=fff`;
 }
 
 export default function AdminDashboard() {
@@ -168,7 +168,7 @@ export default function AdminDashboard() {
       label: 'Tổng người dùng',
       value: nf(stats.totalUsers),
       sub: `+${nf(stats.newUsersLast7Days)} trong 7 ngày qua`,
-      Icon: Users, color: '#60a5fa', bg: '#1e3a5f',
+      Icon: Users, color: '#fdba74', bg: '#4a2412',
     },
     {
       label: 'Tổng website',
@@ -237,7 +237,7 @@ export default function AdminDashboard() {
                 placeholder="Tìm slug, tên, email..."
                 value={sitesSearch}
                 onChange={e => handleSitesSearch(e.target.value)}
-                className="w-full rounded-lg border border-slate-700 bg-slate-800 py-1.5 pl-8 pr-3 text-xs text-white placeholder-slate-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 transition-colors"
+                className="w-full rounded-lg border border-slate-700 bg-slate-800 py-1.5 pl-8 pr-3 text-xs text-white placeholder-slate-500 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500/30 transition-colors"
               />
             </div>
 
@@ -245,7 +245,7 @@ export default function AdminDashboard() {
             <select
               value={sitesStatus}
               onChange={e => handleSitesStatus(e.target.value as '' | 'draft' | 'published')}
-              className="rounded-lg border border-slate-700 bg-slate-800 px-2.5 py-1.5 text-xs text-white focus:border-blue-500 focus:outline-none cursor-pointer"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-2.5 py-1.5 text-xs text-white focus:border-orange-500 focus:outline-none cursor-pointer"
             >
               <option value="">Tất cả</option>
               <option value="published">Đang xuất bản</option>
@@ -308,7 +308,7 @@ export default function AdminDashboard() {
                         href={getPublicUrl(site.slug)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-[11px] font-medium text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 px-2 py-1 rounded-lg transition-colors cursor-pointer"
+                        className="flex items-center gap-1 text-[11px] font-medium text-orange-400 hover:text-orange-300 bg-orange-500/10 hover:bg-orange-500/20 px-2 py-1 rounded-lg transition-colors cursor-pointer"
                         title="Mở trang web"
                       >
                         <ExternalLink className="h-3 w-3" />
@@ -440,7 +440,7 @@ export default function AdminDashboard() {
                         onClick={() => handleSitesPage(page)}
                         className={`w-7 h-7 text-[11px] font-medium rounded-lg transition-colors cursor-pointer ${
                           page === sitesPage
-                            ? 'bg-blue-600 text-white'
+                            ? 'bg-orange-600 text-white'
                             : 'text-slate-400 hover:text-white hover:bg-slate-800'
                         }`}
                       >
@@ -468,12 +468,12 @@ export default function AdminDashboard() {
         <div className="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
           <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800">
             <h2 className="text-sm font-bold text-white flex items-center gap-2">
-              <UserPlus className="h-4 w-4 text-[#60a5fa]" />
+              <UserPlus className="h-4 w-4 text-[#fdba74]" />
               Người dùng mới nhất
             </h2>
             <button
               onClick={() => navigate(ROUTES.ADMIN_USERS)}
-              className="flex items-center gap-1 text-xs text-[#60a5fa] hover:text-blue-300 transition-colors cursor-pointer"
+              className="flex items-center gap-1 text-xs text-[#fdba74] hover:text-orange-300 transition-colors cursor-pointer"
             >
               Xem tất cả <ArrowRight className="h-3.5 w-3.5" />
             </button>

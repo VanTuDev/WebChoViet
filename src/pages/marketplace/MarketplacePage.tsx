@@ -24,7 +24,7 @@ export default function MarketplacePage() {
   // Local UI state (không cần share lên trên)
   const [priceFilter, setPriceFilter] = useState<PriceFilter>('all');
   const [sortBy, setSortBy] = useState<SortBy>('newest');
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(15);
 
   const heading = category === 'all' ? ALL_HEADING : (CATEGORY_HEADING_MAP[category] ?? ALL_HEADING);
 
@@ -87,20 +87,20 @@ export default function MarketplacePage() {
       <TemplateFilters
         priceFilter={priceFilter}
         sortBy={sortBy}
-        onPriceChange={v => { setPriceFilter(v); setVisibleCount(6); }}
-        onSortChange={v => { setSortBy(v); setVisibleCount(6); }}
+        onPriceChange={v => { setPriceFilter(v); setVisibleCount(15); }}
+        onSortChange={v => { setSortBy(v); setVisibleCount(15); }}
       />
 
       {/* ── Grid ─────────────────────────────────────────────────────────── */}
       {visible.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div className="stagger-children grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 xl:gap-8">
           {visible.map(t => (
             <TemplateCard key={t.id} template={t} onUse={handleUseTemplate} />
           ))}
         </div>
       ) : (
-        <div className="text-center py-20 bg-gray-50 rounded-3xl border border-dashed border-gray-200">
-          <Info className="h-10 w-10 text-gray-400 mx-auto mb-4" />
+        <div className="text-center py-20 bg-surface-container-low rounded-3xl border border-dashed border-outline-variant">
+          <Info className="h-10 w-10 text-outline mx-auto mb-4" />
           <h3 className="text-base font-semibold text-gray-800">Không tìm thấy giao diện phù hợp</h3>
           <p className="text-xs text-gray-500 mt-1">Vui lòng thay đổi bộ lọc hoặc từ khóa tìm kiếm.</p>
         </div>
@@ -110,11 +110,11 @@ export default function MarketplacePage() {
       {filtered.length > visibleCount && (
         <div className="text-center mt-12 mb-8">
           <button
-            onClick={() => setVisibleCount(prev => prev + 6)}
-            className="inline-flex items-center gap-2 px-10 py-3 rounded-full border border-gray-200 bg-white hover:bg-gray-50 transition-colors text-xs font-bold text-gray-700 cursor-pointer shadow-sm active:scale-95"
+            onClick={() => setVisibleCount(prev => prev + 15)}
+            className="hover-lift inline-flex items-center gap-2 px-10 py-3 rounded-full border border-fnb-orange/40 bg-white hover:bg-fnb-cream transition-colors text-xs font-bold text-primary cursor-pointer shadow-sm active:scale-95"
           >
             <span>Tải thêm giao diện</span>
-            <ChevronDown className="h-4 w-4 text-gray-500" />
+            <ChevronDown className="h-4 w-4 text-fnb-orange" />
           </button>
         </div>
       )}

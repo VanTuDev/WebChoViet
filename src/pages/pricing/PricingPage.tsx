@@ -34,7 +34,7 @@ const PLAN_DEFS: PricingPlanDef[] = [
   {
     id: 'pro',
     name: 'Kinh Doanh WebPro',
-    color: '#0056b3',
+    color: '#ff6b2c',
     desc: 'Dành cho các chủ quán, chủ thương hiệu bứt tốc doanh số bán hàng.',
     features: [
       'Khởi tạo không giới hạn website',
@@ -187,7 +187,7 @@ export default function PricingPage() {
             onClick={handleCancelToggle}
             className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
               subscription.cancelAtPeriodEnd
-                ? 'bg-[#00aaff] hover:bg-[#003f87] text-white'
+                ? 'bg-fnb-orange hover:bg-primary text-white'
                 : 'bg-rose-50 hover:bg-rose-100 text-rose-600'
             }`}
           >

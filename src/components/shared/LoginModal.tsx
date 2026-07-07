@@ -42,7 +42,7 @@ export default function LoginModal({ onClose }: Props) {
         </button>
 
         {/* Header strip */}
-        <div className="bg-linear-to-r from-[#003f87] to-[#0056b3] px-8 pt-7 pb-7 text-center relative overflow-hidden">
+        <div className="bg-linear-to-r from-primary to-primary-container px-8 pt-7 pb-7 text-center relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-[0.06]"
             style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '18px 18px' }}
@@ -52,9 +52,9 @@ export default function LoginModal({ onClose }: Props) {
               <ShieldCheck className="h-5.5 w-5.5 text-white" />
             </div>
             <h1 className="font-lexend font-bold text-lg text-white mb-0.5">
-              web<span className="text-blue-200">choviet</span>
+              web<span className="text-orange-200">choviet</span>
             </h1>
-            <p className="text-xs text-blue-200/70">Đăng nhập để quản lý cửa hàng</p>
+            <p className="text-xs text-orange-200/70">Đăng nhập để quản lý cửa hàng</p>
           </div>
         </div>
 

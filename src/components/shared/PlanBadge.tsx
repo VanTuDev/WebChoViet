@@ -4,14 +4,14 @@ export type UserPlan = 'free' | 'pro' | 'ultra';
 
 export const PLAN_META: Record<UserPlan, { label: string; icon: typeof BadgeCheck | null; className: string }> = {
   free:  { label: 'Miễn phí', icon: null,       className: 'bg-slate-100 text-slate-500' },
-  pro:   { label: 'Pro',      icon: BadgeCheck, className: 'bg-blue-50 text-blue-600' },
+  pro:   { label: 'Pro',      icon: BadgeCheck, className: 'bg-orange-50 text-orange-600' },
   ultra: { label: 'Ultra',    icon: Crown,      className: 'bg-violet-50 text-violet-600' },
 };
 
 /** Biến thể cho nền tối (admin panel dark theme) — nhãn ngắn gọn tiếng Anh cho đồng nhất với phần còn lại của UI admin, màu tương phản đúng trên nền slate-900. */
 const PLAN_META_DARK: Record<UserPlan, { label: string; className: string }> = {
   free:  { label: 'Free',  className: 'bg-slate-700 text-slate-300' },
-  pro:   { label: 'Pro',   className: 'bg-blue-500/20 text-blue-300' },
+  pro:   { label: 'Pro',   className: 'bg-orange-500/20 text-orange-300' },
   ultra: { label: 'Ultra', className: 'bg-violet-500/20 text-violet-300' },
 };
 

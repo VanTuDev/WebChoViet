@@ -89,7 +89,7 @@ export default function PublishModal({
         {/* ── Step 1: Name ───────────────────────────────────────────────── */}
         {step === 'name' && (
           <>
-            <div className="bg-gradient-to-r from-[#003f87] to-[#0056b3] p-5 text-white">
+            <div className="bg-gradient-to-r from-primary to-primary-container p-5 text-white">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
@@ -103,7 +103,7 @@ export default function PublishModal({
               </div>
               {/* Steps */}
               <div className="flex items-center gap-1.5 text-[11px]">
-                <span className="bg-white text-[#003f87] font-extrabold px-2 py-0.5 rounded-full">1 Đặt tên</span>
+                <span className="bg-white text-primary font-extrabold px-2 py-0.5 rounded-full">1 Đặt tên</span>
                 <span className="text-white/40">›</span>
                 {isFree
                   ? <span className="text-white/60">2 Hoàn thành</span>
@@ -124,7 +124,7 @@ export default function PublishModal({
                   value={name}
                   onChange={e => setName(e.target.value)}
                   onKeyDown={e => { if (e.key === 'Enter' && name.trim() && !slugError) doPublish(); }}
-                  className="w-full text-sm font-medium text-gray-800 border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:border-[#003f87] transition-all"
+                  className="w-full text-sm font-medium text-gray-800 border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:border-primary transition-all"
                   placeholder="Ví dụ: Quán Cafe Vườn Xanh"
                   autoFocus
                 />
@@ -137,13 +137,13 @@ export default function PublishModal({
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-400">URL live</span>
-                  <span className="font-mono text-[#0056b3] truncate max-w-45">/{slugPreview}</span>
+                  <span className="font-mono text-primary-container truncate max-w-45">/{slugPreview}</span>
                 </div>
                 <div className="flex items-center justify-between pt-1.5 border-t border-gray-100">
                   <span className="text-gray-500 font-medium">Chi phí</span>
                   {isFree
                     ? <span className="font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Miễn phí</span>
-                    : <span className="font-extrabold text-[#003f87]">{templatePrice.toLocaleString('vi-VN')}đ</span>
+                    : <span className="font-extrabold text-primary">{templatePrice.toLocaleString('vi-VN')}đ</span>
                   }
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function PublishModal({
                 <button
                   onClick={isFree ? doPublish : () => setStep('payment')}
                   disabled={!name.trim() || !!slugError || publishing}
-                  className="flex-1 py-2.5 text-sm font-bold text-white bg-[#003f87] rounded-xl hover:bg-[#002d63] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
+                  className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
                 >
                   {publishing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
                   {publishing ? 'Đang xuất bản...' : isFree ? 'Xuất bản ngay' : 'Tiếp theo →'}
@@ -215,7 +215,7 @@ export default function PublishModal({
                 </div>
                 <div className="flex justify-between pt-1 border-t border-gray-100">
                   <span className="text-gray-400">Nội dung CK</span>
-                  <span className="font-mono font-bold text-[#003f87]">{mockOrderId}</span>
+                  <span className="font-mono font-bold text-primary">{mockOrderId}</span>
                 </div>
               </div>
 
@@ -254,7 +254,7 @@ export default function PublishModal({
               <div className="bg-gray-50 rounded-xl p-3.5">
                 <p className="text-[11px] text-gray-400 mb-1.5">Đường link website của bạn</p>
                 <div className="flex items-center gap-2">
-                  <span className="flex-1 text-xs font-mono font-bold text-[#003f87] truncate">{liveUrl}</span>
+                  <span className="flex-1 text-xs font-mono font-bold text-primary truncate">{liveUrl}</span>
                   <button
                     onClick={handleCopy}
                     className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors text-gray-400 cursor-pointer"
@@ -275,7 +275,7 @@ export default function PublishModal({
                   href={liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2.5 text-xs font-bold text-white bg-[#003f87] rounded-xl hover:bg-[#002d63] transition-colors flex items-center justify-center gap-1.5"
+                  className="flex-1 py-2.5 text-xs font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] transition-colors flex items-center justify-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   Xem website

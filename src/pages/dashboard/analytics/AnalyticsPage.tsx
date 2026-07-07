@@ -260,8 +260,8 @@ export default function AnalyticsPage() {
           {/* ── Stat cards ──────────────────────────────────────────────────── */}
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             <StatCard
-              icon={<Eye className="h-4 w-4 text-blue-600" />}
-              iconBg="bg-blue-50"
+              icon={<Eye className="h-4 w-4 text-orange-600" />}
+              iconBg="bg-orange-50"
               label="Tổng lượt xem"
               value={analytics.total.views.toLocaleString('vi-VN')}
               sub={`${days} ngày gần nhất`}
@@ -366,8 +366,8 @@ export default function AnalyticsPage() {
                     label: 'Mobile',
                     value: analytics.deviceBreakdown.mobile,
                     icon: <Smartphone className="h-4 w-4" />,
-                    color: 'bg-blue-500',
-                    textColor: 'text-blue-600',
+                    color: 'bg-orange-500',
+                    textColor: 'text-orange-600',
                   },
                   {
                     key: 'desktop',
@@ -407,7 +407,7 @@ export default function AnalyticsPage() {
               {/* Summary row */}
               <div className="mt-5 pt-4 border-t border-gray-50 grid grid-cols-3 gap-2 text-center">
                 <div>
-                  <p className="text-xl font-bold text-blue-600">{analytics.deviceBreakdown.mobile}%</p>
+                  <p className="text-xl font-bold text-orange-600">{analytics.deviceBreakdown.mobile}%</p>
                   <p className="text-[10px] text-gray-400 mt-0.5">Mobile</p>
                 </div>
                 <div>

@@ -43,13 +43,13 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4 antialiased">
 
       {/* Ambient glow */}
-      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0056b3]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary-container/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="w-full max-w-sm relative z-10">
 
         {/* Brand */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#0056b3] shadow-lg shadow-[#0056b3]/30 mb-4">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-container shadow-lg shadow-primary-container/30 mb-4">
             <ShieldCheck className="h-7 w-7 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">Admin Portal</h1>

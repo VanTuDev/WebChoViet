@@ -87,7 +87,7 @@ function MarketplaceSidebar() {
                 onClick={() => select(cat.id)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all outline-none cursor-pointer ${
                   active
-                    ? 'bg-[#00aaff] text-white shadow-sm font-semibold'
+                    ? 'bg-fnb-orange text-white shadow-sm font-semibold'
                     : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                 }`}
               >
@@ -123,7 +123,7 @@ function DashboardSidebar() {
                 onClick={() => navigate(menu.path)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all outline-none cursor-pointer ${
                   active
-                    ? 'bg-[#00aaff] text-white shadow-sm font-semibold'
+                    ? 'bg-fnb-orange text-white shadow-sm font-semibold'
                     : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                 }`}
               >
@@ -156,7 +156,7 @@ function MobileChipBar({ items }: {
           onClick={item.onSelect}
           className={`flex items-center gap-1.5 shrink-0 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
             item.active
-              ? 'bg-[#00aaff] text-white shadow-sm'
+              ? 'bg-fnb-orange text-white shadow-sm'
               : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300 hover:text-gray-900'
           }`}
         >

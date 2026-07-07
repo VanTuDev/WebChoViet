@@ -28,21 +28,10 @@ import SiteHeader from '../../components/shared/SiteHeader';
 import SiteFooter from '../../components/shared/SiteFooter';
 
 /* ═══════════════════════════════════════════════════════════════════════
-   Showcase data — quét toàn bộ screenshot thật của template trong
-   src/data/Template/<category>/<Name>/screen.png rồi ghép với metadata
-   trong registry (tên folder lowercase === template id).
+   Showcase data — screenshot thật của template (utils/templateScreens)
+   ghép với metadata trong registry.
 ═══════════════════════════════════════════════════════════════════════ */
-const SCREENSHOTS = import.meta.glob('../../data/Template/*/*/screen.png', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-}) as Record<string, string>;
-
-const SHOT_BY_ID: Record<string, string> = {};
-for (const [path, url] of Object.entries(SCREENSHOTS)) {
-  const folder = path.split('/').at(-2);
-  if (folder) SHOT_BY_ID[folder.toLowerCase()] = url;
-}
+import { TEMPLATE_SCREEN_BY_ID as SHOT_BY_ID } from '../../utils/templateScreens';
 
 const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
   CATEGORY_REGISTRY.map(c => [c.id, c.label]),
@@ -266,7 +255,7 @@ export default function LandingPage() {
   );
 
   return (
-    <div className="fnb-theme bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-fnb-amber/40 selection:text-on-secondary-container relative min-h-screen">
+    <div className="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-fnb-amber/40 selection:text-on-secondary-container relative min-h-screen">
       <Helmet>
         <title>WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt</title>
         <meta name="description" content="Tạo website chuyên nghiệp cho quán cafe, nhà hàng, shop hoa và doanh nghiệp Việt Nam chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />

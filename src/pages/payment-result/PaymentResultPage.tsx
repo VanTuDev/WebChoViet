@@ -63,7 +63,7 @@ export default function PaymentResultPage() {
       <div className="w-full max-w-md rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm space-y-5">
         {loading ? (
           <>
-            <Loader2 className="h-10 w-10 animate-spin text-[#00aaff] mx-auto" />
+            <Loader2 className="h-10 w-10 animate-spin text-fnb-orange mx-auto" />
             <p className="text-sm text-gray-500">Đang xác nhận thanh toán...</p>
           </>
         ) : error ? (
@@ -113,7 +113,7 @@ export default function PaymentResultPage() {
           </button>
           <button
             onClick={() => navigate(ROUTES.DASHBOARD_PROJECTS)}
-            className="flex-1 py-3 rounded-full text-xs font-bold bg-[#00aaff] hover:bg-[#003f87] text-white transition-colors cursor-pointer"
+            className="flex-1 py-3 rounded-full text-xs font-bold bg-fnb-orange hover:bg-primary text-white transition-colors cursor-pointer"
           >
             Vào Dashboard
           </button>

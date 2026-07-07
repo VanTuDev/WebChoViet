@@ -17,7 +17,7 @@ export default function NotFoundPage() {
       </Helmet>
 
       {/* Ambient glow */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-sky-200/20 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-orange-200/20 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-rose-100/25 blur-[150px] pointer-events-none" />
 
       {/* Content card */}
@@ -40,7 +40,7 @@ export default function NotFoundPage() {
             className="absolute inset-0 flex items-center justify-center"
           >
             <div className="bg-white rounded-3xl p-5 shadow-xl border border-slate-100">
-              <MapPin className="h-14 w-14 text-[#0056b3]" strokeWidth={1.5} />
+              <MapPin className="h-14 w-14 text-primary-container" strokeWidth={1.5} />
               <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 flex items-center justify-center">
                 <span className="text-white text-[10px] font-black">!</span>
               </div>
@@ -75,7 +75,7 @@ export default function NotFoundPage() {
 
           <button
             onClick={() => navigate(ROUTES.HOME)}
-            className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-[#0056b3] hover:bg-[#003f87] rounded-full transition-all shadow-md cursor-pointer active:scale-95"
+            className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-primary-container hover:bg-primary rounded-full transition-all shadow-md cursor-pointer active:scale-95"
           >
             <Home className="h-4 w-4" />
             Về trang chủ
@@ -83,7 +83,7 @@ export default function NotFoundPage() {
 
           <button
             onClick={() => navigate(ROUTES.DASHBOARD_PROJECTS)}
-            className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[#0056b3] border border-[#0056b3]/30 bg-blue-50 hover:bg-blue-100 rounded-full transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-container border border-primary-container/30 bg-orange-50 hover:bg-orange-100 rounded-full transition-all cursor-pointer active:scale-95"
           >
             <LayoutDashboard className="h-4 w-4" />
             Dashboard
@@ -105,7 +105,7 @@ export default function NotFoundPage() {
               <button
                 key={path}
                 onClick={() => navigate(path)}
-                className="text-xs font-medium text-slate-600 hover:text-[#0056b3] px-3 py-1.5 bg-white border border-slate-200 rounded-full hover:border-[#0056b3]/30 transition-all cursor-pointer"
+                className="text-xs font-medium text-slate-600 hover:text-primary-container px-3 py-1.5 bg-white border border-slate-200 rounded-full hover:border-primary-container/30 transition-all cursor-pointer"
               >
                 {label}
               </button>
@@ -118,9 +118,9 @@ export default function NotFoundPage() {
       <div className="absolute bottom-6 text-xs text-slate-400">
         <button
           onClick={() => navigate(ROUTES.HOME)}
-          className="font-lexend font-extrabold text-slate-700 cursor-pointer hover:text-[#0056b3] transition-colors"
+          className="font-lexend font-extrabold text-slate-700 cursor-pointer hover:text-primary-container transition-colors"
         >
-          web<span className="text-[#0056b3]">choviet</span>
+          web<span className="text-primary-container">choviet</span>
         </button>
         {' '}&mdash; Giải pháp số hóa cho doanh nghiệp Việt
       </div>

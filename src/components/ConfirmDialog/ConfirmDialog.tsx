@@ -54,10 +54,10 @@ export default function ConfirmDialog({ dialog, onCancel }: ConfirmDialogProps) 
 
               {/* Header */}
               <div className="flex items-start justify-between p-6 pb-4">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mr-3 ${isDanger ? 'bg-rose-50' : 'bg-blue-50'}`}>
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mr-3 ${isDanger ? 'bg-rose-50' : 'bg-orange-50'}`}>
                   {isDanger
                     ? <Trash2 className="h-5 w-5 text-rose-500" />
-                    : <AlertTriangle className="h-5 w-5 text-[#0056b3]" />
+                    : <AlertTriangle className="h-5 w-5 text-primary-container" />
                   }
                 </div>
                 <div className="flex-1 min-w-0">
@@ -90,7 +90,7 @@ export default function ConfirmDialog({ dialog, onCancel }: ConfirmDialogProps) 
                   className={`px-5 py-2 text-sm font-semibold text-white rounded-xl transition-all cursor-pointer active:scale-95 ${
                     isDanger
                       ? 'bg-rose-500 hover:bg-rose-600 shadow-md shadow-rose-500/25'
-                      : 'bg-[#0056b3] hover:bg-[#004699] shadow-md shadow-[#0056b3]/25'
+                      : 'bg-primary-container hover:bg-[#c93d18] shadow-md shadow-primary-container/25'
                   }`}
                 >
                   {dialog.confirmLabel ?? 'Xác nhận'}

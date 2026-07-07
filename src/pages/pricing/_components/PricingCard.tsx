@@ -31,11 +31,11 @@ export default function PricingCard({ plan, cycle, cta, disabled, loading, onSel
   return (
     <div className={`rounded-3xl border p-6 flex flex-col justify-between relative bg-white transition-all hover:shadow-xl ${
       plan.popular
-        ? 'border-[#00aaff] ring-2 ring-[#00aaff]/10 shadow-md scale-[1.02] z-10'
+        ? 'border-fnb-orange ring-2 ring-fnb-orange/10 shadow-md scale-[1.02] z-10'
         : 'border-gray-200 shadow-sm'
     }`}>
       {plan.popular && (
-        <span className="absolute top-[-14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#003f87] to-[#00aaff] text-white text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full tracking-wider shadow">
+        <span className="absolute top-[-14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-fnb-orange text-white text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full tracking-wider shadow">
           Khuyên Dùng Nhiều Nhất
         </span>
       )}
@@ -75,7 +75,7 @@ export default function PricingCard({ plan, cycle, cta, disabled, loading, onSel
           disabled
             ? 'bg-gray-50 text-gray-300 cursor-not-allowed'
             : plan.popular
-              ? 'bg-[#00aaff] hover:bg-[#003f87] text-white shadow-md cursor-pointer'
+              ? 'bg-fnb-orange hover:bg-primary text-white shadow-md cursor-pointer'
               : 'bg-gray-100 hover:bg-gray-200/80 text-gray-700 cursor-pointer'
         }`}
       >

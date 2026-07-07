@@ -100,14 +100,14 @@ export default function UsersPage() {
             value={q}
             onChange={e => handleSearch(e.target.value)}
             placeholder="Tìm theo tên hoặc email..."
-            className="w-full bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 text-sm rounded-xl pl-9 pr-4 py-2.5 focus:outline-none focus:border-[#0056b3] transition-all"
+            className="w-full bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 text-sm rounded-xl pl-9 pr-4 py-2.5 focus:outline-none focus:border-primary-container transition-all"
           />
         </div>
         <div className="relative">
           <select
             value={filterPlan}
             onChange={e => handleFilterPlan(e.target.value as PlanFilter)}
-            className="appearance-none bg-slate-900 border border-slate-800 text-slate-300 text-sm rounded-xl pl-4 pr-8 py-2.5 focus:outline-none focus:border-[#0056b3] cursor-pointer transition-all"
+            className="appearance-none bg-slate-900 border border-slate-800 text-slate-300 text-sm rounded-xl pl-4 pr-8 py-2.5 focus:outline-none focus:border-primary-container cursor-pointer transition-all"
           >
             <option value="all">Tất cả gói</option>
             <option value="free">Free</option>
@@ -155,7 +155,7 @@ export default function UsersPage() {
                   </td>
                   <td className="px-5 py-3.5">
                     {u.role === 'admin' ? (
-                      <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-[#0056b3]/20 text-[#60a5fa]">
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-primary-container/20 text-[#fdba74]">
                         <ShieldCheck className="h-3 w-3" /> Admin
                       </span>
                     ) : (

@@ -1,78 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Colors — Design System "Refreshing Professionalism" ─────────── */
-  --color-primary: #003f87;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #0056b3;
-  --color-on-primary-container: #bbd0ff;
-  --color-inverse-primary: #acc7ff;
-  --color-primary-fixed: #d7e2ff;
-  --color-primary-fixed-dim: #acc7ff;
-  --color-on-primary-fixed: #001a40;
-  --color-on-primary-fixed-variant: #004491;
-
-  --color-secondary: #006398;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #00a9fd;
-  --color-on-secondary-container: #003a5c;
-  --color-secondary-fixed: #cce5ff;
-  --color-secondary-fixed-dim: #93ccff;
-  --color-on-secondary-fixed: #001d31;
-  --color-on-secondary-fixed-variant: #004b73;
-
-  --color-tertiary: #36444c;
-  --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #4d5b64;
-  --color-on-tertiary-container: #c3d2dd;
-  --color-tertiary-fixed: #d6e5ef;
-  --color-tertiary-fixed-dim: #bac9d3;
-  --color-on-tertiary-fixed: #0f1d25;
-  --color-on-tertiary-fixed-variant: #3b4951;
-
-  --color-error: #ba1a1a;
-  --color-on-error: #ffffff;
-  --color-error-container: #ffdad6;
-  --color-on-error-container: #93000a;
-
-  --color-surface: #f7f9fb;
-  --color-surface-dim: #d8dadc;
-  --color-surface-bright: #f7f9fb;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f2f4f6;
-  --color-surface-container: #eceef0;
-  --color-surface-container-high: #e6e8ea;
-  --color-surface-container-highest: #e0e3e5;
-  --color-surface-variant: #e0e3e5;
-  --color-surface-tint: #115cb9;
-  --color-on-surface: #191c1e;
-  --color-on-surface-variant: #424752;
-  --color-inverse-surface: #2d3133;
-  --color-inverse-on-surface: #eff1f3;
-
-  --color-background: #f7f9fb;
-  --color-on-background: #191c1e;
-  --color-outline: #727784;
-  --color-outline-variant: #c2c6d4;
-
-  /* ── FnB accent palette — dùng cho landing page & các trang hướng ẩm thực ── */
-  --color-fnb-red: #e8402a;
-  --color-fnb-orange: #ff6b2c;
-  --color-fnb-amber: #ffb400;
-  --color-fnb-green: #12a150;
-  --color-fnb-pink: #e94f8a;
-  --color-fnb-cream: #fff8f0;
-
-  /* ── Font families ──────────────────────────────────────────────────── */
-  --font-lexend: 'Lexend', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-}
-
-/* ── FnB theme scope ──────────────────────────────────────────────────────
-   Ghi đè design token trong phạm vi landing page (và mọi element con, gồm
-   SiteHeader/SiteFooter variant landing) sang bảng màu ấm nóng hướng ẩm thực.
-   Dashboard & các trang khác giữ nguyên tông xanh mặc định ở @theme trên. */
-.fnb-theme {
+  /* ── Colors — Design System "FnB Warmth" ───────────────────────────
+     Bảng màu ấm nóng hướng ẩm thực dùng toàn hệ thống: đỏ cà chua,
+     cam, vàng amber, xanh lá tươi trên nền kem sang trọng. */
   --color-primary: #e8491f;
   --color-on-primary: #ffffff;
   --color-primary-container: #ff6b2c;
@@ -101,6 +32,11 @@
   --color-on-tertiary-fixed: #3e0022;
   --color-on-tertiary-fixed-variant: #a01560;
 
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
   --color-surface: #fff9f3;
   --color-surface-dim: #f2e4d8;
   --color-surface-bright: #fff9f3;
@@ -120,7 +56,22 @@
   --color-on-background: #2b160c;
   --color-outline: #8d7466;
   --color-outline-variant: #ecd6c5;
+
+  /* ── FnB accent palette — dùng cho landing page & các trang hướng ẩm thực ── */
+  --color-fnb-red: #e8402a;
+  --color-fnb-orange: #ff6b2c;
+  --color-fnb-amber: #ffb400;
+  --color-fnb-green: #12a150;
+  --color-fnb-pink: #e94f8a;
+  --color-fnb-cream: #fff8f0;
+
+  /* ── Font families ──────────────────────────────────────────────────── */
+  --font-lexend: 'Lexend', sans-serif;
+  --font-inter: 'Inter', sans-serif;
 }
+
+/* Class giữ lại cho tương thích — bảng màu FnB giờ là mặc định ở @theme */
+.fnb-theme {}
 
 /* Material Symbols filled variant */
 .material-symbols-outlined {
@@ -215,4 +166,115 @@
 }
 .spin-slow {
   animation: spinSlow 14s linear infinite;
+}
+
+/* ── Shared motion & 3D utilities (toàn hệ thống) ─────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+.animate-scale-in {
+  animation: scaleIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Thẻ nghiêng 3D khi hover — dùng cho card sản phẩm/template */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+}
+.card-3d:hover {
+  transform: perspective(900px) rotateX(2.5deg) rotateY(-3deg) translateY(-6px);
+  box-shadow: 0 24px 45px -18px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+/* Thẻ 3D xoay lắc nhẹ liên tục — hover thì dừng lắc, nghiêng về phía nhìn */
+@keyframes sway3d {
+  0%   { transform: perspective(900px) rotateY(-4deg) rotateX(1.5deg); }
+  50%  { transform: perspective(900px) rotateY(4deg) rotateX(-1.5deg); }
+  100% { transform: perspective(900px) rotateY(-4deg) rotateX(1.5deg); }
+}
+.card-sway {
+  transform-style: preserve-3d;
+  animation: sway3d 7s ease-in-out infinite;
+  transition: box-shadow 0.4s ease;
+}
+.card-sway:hover {
+  animation: none;
+  transform: perspective(900px) rotateX(3deg) rotateY(-5deg) translateY(-6px);
+  box-shadow: 0 22px 40px -16px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+/* Nâng nhẹ khi hover — cho card/nút phụ */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+/* Hiệu ứng xuất hiện lần lượt cho các phần tử con (grid, list) */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.stagger-children > *:nth-child(1)  { animation-delay: 0.04s; }
+.stagger-children > *:nth-child(2)  { animation-delay: 0.09s; }
+.stagger-children > *:nth-child(3)  { animation-delay: 0.14s; }
+.stagger-children > *:nth-child(4)  { animation-delay: 0.19s; }
+.stagger-children > *:nth-child(5)  { animation-delay: 0.24s; }
+.stagger-children > *:nth-child(6)  { animation-delay: 0.29s; }
+.stagger-children > *:nth-child(7)  { animation-delay: 0.34s; }
+.stagger-children > *:nth-child(8)  { animation-delay: 0.39s; }
+.stagger-children > *:nth-child(9)  { animation-delay: 0.44s; }
+.stagger-children > *:nth-child(10) { animation-delay: 0.49s; }
+.stagger-children > *:nth-child(11) { animation-delay: 0.54s; }
+.stagger-children > *:nth-child(12) { animation-delay: 0.59s; }
+.stagger-children > *:nth-child(n+13) { animation-delay: 0.64s; }
+
+/* Skeleton shimmer sang trọng */
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    var(--color-surface-container-low) 40%,
+    #ffffff 50%,
+    var(--color-surface-container-low) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* Tôn trọng người dùng tắt animation */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll { opacity: 1; }
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-scale-in,
+  .stagger-children > *,
+  .floating,
+  .spin-slow,
+  .shimmer {
+    animation: none !important;
+    opacity: 1;
+  }
+  .card-sway {
+    animation: none !important;
+  }
+  .card-3d,
+  .card-sway,
+  .hover-lift,
+  .carousel-3d__slide {
+    transition: none;
+  }
 }

@@ -128,7 +128,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
     scope: `/${config.slug}`,
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#0056b3',
+    theme_color: '#ff6b2c',
     icons: [{ src: iconUrl, sizes: ogImage ? '512x512' : 'any', type: ogImage ? 'image/png' : 'image/svg+xml' }],
   }))}`;
 
@@ -171,7 +171,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
 
         {/* PWA — cho phép "Thêm vào Màn hình chính". manifest động theo từng site (data: URI). */}
         <link rel="manifest" href={manifestHref} />
-        <meta name="theme-color" content="#0056b3" />
+        <meta name="theme-color" content="#ff6b2c" />
         {/* iOS Safari không đọc manifest.json cho Add to Home Screen — cần riêng bộ meta tag này */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content={config.name} />
@@ -273,7 +273,7 @@ export default function PublicSitePage() {
             <div className="pt-2 flex flex-col gap-2">
               <a
                 href="mailto:vantu.software@gmail.com?subject=Yeu cau mo khoa website WebChoViet"
-                className="w-full flex items-center justify-center gap-2 py-3 bg-linear-to-r from-blue-600 to-indigo-600 hover:opacity-90 active:scale-95 text-white rounded-xl text-sm font-semibold shadow-md transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 py-3 bg-linear-to-r from-orange-600 to-orange-600 hover:opacity-90 active:scale-95 text-white rounded-xl text-sm font-semibold shadow-md transition-all cursor-pointer"
               >
                 <Mail className="h-4 w-4" />
                 Liên hệ Quản trị viên

@@ -1,7 +1,15 @@
-// Card hiển thị một template trong grid — UI-only, nhận data qua props
+// Card hiển thị một template trong grid — UI-only, nhận data qua props.
+// Mini card: khung ảnh dọc 3/4 thấy phần lớn mẫu (hover cuộn toàn trang),
+// nút hành động hiện trong overlay khi hover; nhấn ảnh = mở xem trước.
 import { Star, Eye } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Template } from '../../../data/templates/registry';
+import { CATEGORY_REGISTRY } from '../../../data/templates/registry';
+import { TEMPLATE_SCREEN_BY_ID } from '../../../utils/templateScreens';
+
+const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
+  CATEGORY_REGISTRY.map(c => [c.id, c.label]),
+);
 
 interface Props {
   template: Template;
@@ -11,86 +19,86 @@ interface Props {
 export default function TemplateCard({ template: t, onUse }: Props) {
   const navigate = useNavigate();
   const isFree = t.price === 0;
+  // Ưu tiên screenshot full-page thật (hover cuộn xem toàn trang), fallback ảnh cover
+  const screen = TEMPLATE_SCREEN_BY_ID[t.id];
+  const goPreview = () => navigate(`/marketplace/preview/${t.id}`);
+  const goUse = () => (isFree ? navigate(`/template-editor/new?template=${t.id}`) : onUse(t));
 
   return (
-    <article className="group relative flex flex-col justify-between rounded-3xl border border-gray-200/80 bg-white shadow-sm hover:shadow-xl hover:border-gray-300/90 transition-all duration-300 overflow-hidden">
-      {/* ── Thumbnail ───────────────────────────────────────────────────── */}
-      <div className="relative h-56 bg-gray-100 overflow-hidden">
+    <article className="card-sway group relative flex flex-col rounded-xl border border-outline-variant/60 bg-white shadow-sm overflow-hidden">
+
+      {/* ── Thanh trình duyệt tối giản (3 chấm) ─────────────────────────── */}
+      <div className="flex items-center gap-0.5 px-2 py-1 bg-gradient-to-r from-fnb-cream to-white border-b border-outline-variant/40 shrink-0">
+        <span className="w-1.5 h-1.5 rounded-full bg-fnb-red" />
+        <span className="w-1.5 h-1.5 rounded-full bg-fnb-amber" />
+        <span className="w-1.5 h-1.5 rounded-full bg-fnb-green" />
+      </div>
+
+      {/* ── Screenshot dọc — nhấn mở xem trước, hover cuộn toàn trang ──── */}
+      <div
+        onClick={goPreview}
+        role="button"
+        tabIndex={0}
+        onKeyDown={e => e.key === 'Enter' && goPreview()}
+        aria-label={`Xem trước mẫu ${t.name}`}
+        className={`relative aspect-[3/4] w-full overflow-hidden bg-surface-container-low cursor-pointer ${screen ? 'tmpl-screen' : ''}`}
+      >
         <img
-          src={t.imageUrl}
+          src={screen ?? t.imageUrl}
           alt={t.name}
           referrerPolicy="no-referrer"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          className={`h-full w-full object-cover ${screen ? 'object-top' : 'transition-transform duration-700 group-hover:scale-105'}`}
         />
 
-        {/* Badge: BÁN CHẠY / PREMIUM / MỚI */}
         {t.badge && (
-          <span className={`absolute left-4 top-4 text-[10px] font-extrabold tracking-wider text-white px-3 py-1 rounded-full shadow-sm uppercase ${
-            t.badge === 'BÁN CHẠY' ? 'bg-rose-500' : t.badge === 'PREMIUM' ? 'bg-amber-500' : 'bg-indigo-600'
+          <span className={`absolute left-1.5 top-1.5 text-[8px] font-extrabold tracking-wide text-white px-1.5 py-0.5 rounded-full shadow uppercase ${
+            t.badge === 'BÁN CHẠY'
+              ? 'bg-gradient-to-r from-fnb-red to-fnb-orange'
+              : t.badge === 'PREMIUM'
+                ? 'bg-gradient-to-r from-fnb-amber to-fnb-orange'
+                : 'bg-fnb-green'
           }`}>
             {t.badge}
           </span>
         )}
 
-        {/* Rating */}
-        {t.rating && (
-          <span className="absolute left-4 bottom-4 flex items-center gap-1 bg-black/70 backdrop-blur-sm text-yellow-400 font-bold text-xs px-2 py-1 rounded-lg">
-            <Star className="h-3 w-3 fill-yellow-400" />
-            {t.rating}
-          </span>
-        )}
-
-        {/* Price tag */}
-        <span className={`absolute right-4 top-4 text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm ${
-          isFree ? 'bg-[#00aaff] text-white' : 'bg-white text-gray-800 border border-gray-100'
-        }`}>
-          {t.priceText}
-        </span>
+        {/* Overlay hành động khi hover */}
+        <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 pb-2 pt-8 px-2 bg-gradient-to-t from-black/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            onClick={e => { e.stopPropagation(); goPreview(); }}
+            className="w-full max-w-[140px] inline-flex items-center justify-center gap-1 bg-white/95 text-on-surface hover:text-primary text-[10px] font-bold px-2.5 py-1.5 rounded-full shadow cursor-pointer active:scale-95 transition-all"
+          >
+            <Eye className="h-2.5 w-2.5" />
+            Xem trước
+          </button>
+          <button
+            onClick={e => { e.stopPropagation(); goUse(); }}
+            className="w-full max-w-[140px] inline-flex items-center justify-center bg-gradient-to-r from-fnb-red to-fnb-orange text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full shadow-lg shadow-fnb-red/40 cursor-pointer active:scale-95 transition-all"
+          >
+            {isFree ? 'Dùng miễn phí' : 'Mua ngay'}
+          </button>
+        </div>
       </div>
 
-      {/* ── Details ─────────────────────────────────────────────────────── */}
-      <div className="p-6 flex-1 flex flex-col justify-between">
-        <div>
-          <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0056b3] transition-colors font-display">
+      {/* ── Info 2 hàng: tên + giá / danh mục + rating ──────────────────── */}
+      <div className="px-2 py-1.5 flex flex-col gap-0.5">
+        <div className="flex items-center justify-between gap-1">
+          <h3 className="text-[12px] font-bold text-gray-900 group-hover:text-primary transition-colors font-display truncate">
             {t.name}
           </h3>
-          <p className="text-xs text-gray-500 mt-2 line-clamp-3 leading-relaxed">{t.description}</p>
+          <span className={`shrink-0 text-[10px] font-extrabold ${isFree ? 'text-fnb-green' : 'text-primary'}`}>
+            {t.priceText}
+          </span>
         </div>
-
-        <div className="mt-5 space-y-4 pt-4 border-t border-gray-100">
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1.5">
-            {t.tags.map((tag, i) => (
-              <span key={i} className="text-[10px] bg-[#e3f2fd] text-[#0056b3] font-medium px-2.5 py-0.5 rounded-full">
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => navigate(`/marketplace/preview/${t.id}`)}
-              className="flex items-center gap-1 px-3 py-2 rounded-full text-xs font-bold border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-all active:scale-95 cursor-pointer"
-              title="Xem trước template"
-            >
-              <Eye className="h-3.5 w-3.5" />
-              Xem trước
-            </button>
-            <button
-              onClick={() => isFree
-                ? navigate(`/template-editor/new?template=${t.id}`)
-                : onUse(t)
-              }
-              className={`flex-1 py-2 px-4 rounded-full text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1.5 active:scale-95 cursor-pointer hover:shadow-sm ${
-                isFree
-                  ? 'bg-blue-50 text-[#0056b3] hover:bg-blue-100'
-                  : 'bg-[#0056b3] text-white hover:bg-[#003f87]'
-              }`}
-            >
-              {isFree ? 'Dùng miễn phí' : 'Mua ngay'}
-            </button>
-          </div>
+        <div className="flex items-center gap-1 text-[10px] text-on-surface-variant font-medium">
+          <span className="truncate">{CATEGORY_LABEL[t.category] ?? t.category}</span>
+          {t.rating && (
+            <span className="flex items-center gap-0.5 shrink-0 font-bold text-on-surface ml-auto">
+              <Star className="h-2.5 w-2.5 text-fnb-amber fill-fnb-amber" />
+              {t.rating}
+            </span>
+          )}
         </div>
       </div>
     </article>

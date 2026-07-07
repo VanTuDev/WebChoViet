@@ -44,7 +44,7 @@ export default function TutorialsPage() {
         {STEPS.map(step => <TutorialStep key={step.num} {...step} />)}
       </div>
 
-      <div className="bg-[#e3f2fd]/50 border border-blue-100 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="bg-[#ffe9dc]/50 border border-orange-100 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-2 max-w-xl">
           <h3 className="text-base font-bold text-gray-900 font-display flex items-center gap-1.5">
             <Sparkles className="h-5 w-5 text-amber-500 fill-amber-500" />
@@ -56,7 +56,7 @@ export default function TutorialsPage() {
         </div>
         <button
           onClick={() => showSnackbar('Đang kết nối nhân viên tư vấn Zalo: 0987.654.321 — Vui lòng chờ trong giây lát.', 'success')}
-          className="px-6 py-3 bg-[#0056b3] hover:bg-[#003f87] text-white text-xs font-bold rounded-full cursor-pointer whitespace-nowrap active:scale-95 transition-all shadow"
+          className="px-6 py-3 bg-primary-container hover:bg-primary text-white text-xs font-bold rounded-full cursor-pointer whitespace-nowrap active:scale-95 transition-all shadow"
         >
           Liên hệ ngay qua Zalo
         </button>

@@ -139,7 +139,7 @@ export default function AdminAnalyticsPage() {
               <button
                 onClick={() => setAppliedCustomRange({ fromDate, toDate })}
                 disabled={!fromDate || !toDate || fromDate > toDate}
-                className="px-3 py-1 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed text-white cursor-pointer"
+                className="px-3 py-1 text-xs font-semibold rounded-lg bg-orange-600 hover:bg-orange-500 disabled:opacity-40 disabled:cursor-not-allowed text-white cursor-pointer"
               >
                 Áp dụng
               </button>
@@ -157,7 +157,7 @@ export default function AdminAnalyticsPage() {
           {/* ── KPI tiles ── */}
           <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
             <StatTile
-              icon={<Eye className="h-5 w-5" style={{ color: '#60a5fa' }} />} iconBg="#1e3a5f"
+              icon={<Eye className="h-5 w-5" style={{ color: '#fdba74' }} />} iconBg="#4a2412"
               label="Tổng lượt xem" value={nf(data.totals.views)} sub={`${rangeLabel} · toàn bộ website`}
             />
             <StatTile

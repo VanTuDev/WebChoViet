@@ -155,7 +155,7 @@ export default function TemplateEditorPage() {
     style.textContent = `
       html, body { margin: 0; padding: 0; background: #fff; }
       .preview-edit-mode [data-field] { cursor: text; }
-      .preview-edit-mode [data-field]:hover { outline: 2px dashed #3b82f6; outline-offset: 3px; border-radius: 3px; }
+      .preview-edit-mode [data-field]:hover { outline: 2px dashed #ff6b2c; outline-offset: 3px; border-radius: 3px; }
     `;
     doc.head.appendChild(style);
     doc.body.className = 'preview-edit-mode';
@@ -451,7 +451,7 @@ export default function TemplateEditorPage() {
         <p className="text-sm font-semibold text-gray-600">Không tìm thấy template "{templateId}".</p>
         <button
           onClick={() => navigate(ROUTES.MARKETPLACE)}
-          className="mt-2 px-4 py-2 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#002d63] transition-colors"
+          className="mt-2 px-4 py-2 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#b33912] transition-colors"
         >
           Về Marketplace
         </button>
@@ -552,7 +552,7 @@ export default function TemplateEditorPage() {
             <button
               onClick={() => setShowPublishModal(true)}
               disabled={!!slugError}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#002d63] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#b33912] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Globe className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Xuất bản</span>
@@ -656,7 +656,7 @@ export default function TemplateEditorPage() {
             <button
               onClick={() => setShowPublishModal(true)}
               disabled={!!slugError}
-              className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#002d63] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Globe className="w-4 h-4" />
               Xuất bản
@@ -677,7 +677,7 @@ export default function TemplateEditorPage() {
           {/* CSS: highlight data-field elements on hover in editor preview */}
           <style>{`
             .preview-edit-mode [data-field] { cursor: text; }
-            .preview-edit-mode [data-field]:hover { outline: 2px dashed #3b82f6; outline-offset: 3px; border-radius: 3px; }
+            .preview-edit-mode [data-field]:hover { outline: 2px dashed #ff6b2c; outline-offset: 3px; border-radius: 3px; }
           `}</style>
 
           {viewport === 'mobile' ? (

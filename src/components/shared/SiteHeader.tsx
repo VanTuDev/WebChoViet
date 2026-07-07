@@ -231,7 +231,7 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
           {isAuthenticated && user ? (
             <div ref={avatarRef} className="relative ml-1 pl-2 border-l border-gray-100">
               <img
-                src={user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=0056b3&color=fff`}
+                src={user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=e8491f&color=fff`}
                 alt={user.name}
                 referrerPolicy="no-referrer"
                 onClick={() => setAvatarOpen(v => !v)}
@@ -251,7 +251,7 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
                     {user.role === 'admin' && (
                       <button
                         onClick={() => { navigate(ROUTES.ADMIN_DASHBOARD); setAvatarOpen(false); }}
-                        className="flex items-center gap-1.5 text-left text-xs text-indigo-600 hover:text-indigo-800 py-1 transition-colors cursor-pointer font-medium"
+                        className="flex items-center gap-1.5 text-left text-xs text-orange-600 hover:text-orange-800 py-1 transition-colors cursor-pointer font-medium"
                       >
                         <Shield className="h-3 w-3" />
                         Quản lý hệ thống

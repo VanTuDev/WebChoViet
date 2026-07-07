@@ -36,7 +36,7 @@ export default function SidebarPlanCard({ plan }: Props) {
 
   if (effectivePlan === 'pro') {
     return (
-      <div className="bg-[#003f87] text-white rounded-2xl p-5 shadow-sm text-center space-y-3 mt-8 relative overflow-hidden">
+      <div className="bg-primary text-white rounded-2xl p-5 shadow-sm text-center space-y-3 mt-8 relative overflow-hidden">
         <div className="absolute -right-2.5 -top-2.5 opacity-10">
           <BadgeCheck className="h-20 w-20" />
         </div>
@@ -44,12 +44,12 @@ export default function SidebarPlanCard({ plan }: Props) {
           <BadgeCheck className="h-4 w-4 text-emerald-300" />
           <span>Gói Pro đang hoạt động</span>
         </div>
-        <p className="text-xs text-[#bbd0ff] leading-relaxed">
+        <p className="text-xs text-[#ffe3d6] leading-relaxed">
           Muốn thêm đặc quyền cao cấp hơn nữa? Khám phá gói Ultra.
         </p>
         <button
           onClick={() => navigate(ROUTES.PRICING)}
-          className="w-full py-2 bg-white text-[#003f87] hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95 flex items-center justify-center gap-1.5"
+          className="w-full py-2 bg-white text-primary hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95 flex items-center justify-center gap-1.5"
         >
           <span>Xem gói Ultra</span>
           <ArrowUpRight className="h-3.5 w-3.5" />
@@ -60,17 +60,17 @@ export default function SidebarPlanCard({ plan }: Props) {
 
   // free hoặc chưa đăng nhập
   return (
-    <div className="bg-[#003f87] text-white rounded-2xl p-5 shadow-sm text-center space-y-3 mt-8 relative overflow-hidden">
+    <div className="bg-primary text-white rounded-2xl p-5 shadow-sm text-center space-y-3 mt-8 relative overflow-hidden">
       <div className="absolute -right-2.5 -top-2.5 opacity-10">
         <BadgeCheck className="h-20 w-20" />
       </div>
       <div className="text-sm font-bold">Nâng cấp gói WebPro</div>
-      <p className="text-xs text-[#bbd0ff] leading-relaxed">
+      <p className="text-xs text-[#ffe3d6] leading-relaxed">
         Mở khóa miền riêng biệt (.vn, .com) & loại bỏ hoàn toàn logo WebChoViet.
       </p>
       <button
         onClick={() => navigate(ROUTES.PRICING)}
-        className="w-full py-2 bg-white text-[#003f87] hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95"
+        className="w-full py-2 bg-white text-primary hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95"
       >
         Đăng ký gói Pro
       </button>
