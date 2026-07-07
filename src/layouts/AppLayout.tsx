@@ -8,7 +8,7 @@ import Sidebar, { MobileSidebarNav } from '../components/Sidebar/Sidebar';
 
 export default function AppLayout() {
   return (
-    <div className="h-screen bg-[#f7f9fb] text-[#191c1e] flex flex-col font-sans overflow-hidden">
+    <div className="h-screen bg-surface text-on-surface flex flex-col font-sans overflow-hidden">
       <SiteHeader variant="app" />
 
       <div className="flex-1 flex min-h-0">
