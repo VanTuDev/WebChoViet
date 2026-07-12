@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "The Hill Villas",
+    "linkRooms": "客房",
+    "linkAmenities": "设施",
+    "linkGallery": "空间",
+    "linkReviews": "评价",
+    "linkContact": "位置",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "title": "风芽的森林呼吸,就在您身边",
+    "subtitle": "探索这座隐世度假村,温暖的木质建筑静静地坐落在风芽-己榜国家公园茂密幽深的森林之中。",
+    "btnPrimary": "立即预订",
+    "btnSecondary": "探索空间"
+  },
+  "intro": {
+    "label": "关于我们",
+    "title": "质朴的木质建筑,精致的度假体验",
+    "desc": "在 The Hill Villas,我们用木与石的语言让人与自然重新连接。每一间独栋小屋都拥有绝对的私密性,让您抛开尘世喧嚣,静静聆听古老森林的呼吸。",
+    "highlights": ["私人无边泳池", "高速无线网络", "本地风味早餐", "林间冥想体验"]
+  },
+  "rooms": {
+    "label": "选择您的空间",
+    "title": "客房与独栋小屋",
+    "subtitle": "为情侣、家庭或好友团体提供多样化选择",
+    "featured": {
+      "badge": "最受欢迎",
+      "tag": "豪华",
+      "name": "豪华山景房",
+      "desc": "开阔的私人阳台,将风芽壮丽的石灰岩山脉尽收眼底。高级内饰,拥有绝对私密的空间。",
+      "price": "850,000越南盾",
+      "unit": "/晚",
+      "capacity": "2-3位客人"
+    },
+    "items": [
+      {
+        "tag": "标准",
+        "name": "标准独栋小屋",
+        "desc": "温馨舒适的空间,配备基本设施,是在森林深处极简度假的理想之选。",
+        "price": "500,000越南盾",
+        "unit": "/晚",
+        "capacity": "2位客人"
+      },
+      {
+        "tag": "家庭",
+        "name": "家庭独栋小屋",
+        "desc": "两间相邻卧室,配有私人朝林小院,非常适合带小孩的家庭入住。",
+        "price": "1,100,000越南盾",
+        "unit": "/晚",
+        "capacity": "3-4位客人"
+      },
+      {
+        "tag": "整栋",
+        "name": "整栋别墅",
+        "desc": "家庭或好友团体的完美之选,拥有共享客厅和独立厨房。",
+        "price": "1,500,000越南盾",
+        "unit": "/晚",
+        "capacity": "4-6位客人"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "设施",
+    "title": "细致入微的贴心呵护",
+    "desc": "我们在每一个细节中都优先选用有机环保产品,带给您如同专业水疗中心般彻底的放松体验。",
+    "items": [
+      { "label": "高速无线网络" },
+      { "label": "私人停车位" },
+      { "label": "共享厨房与烧烤区" },
+      { "label": "双向空调" },
+      { "label": "森林徒步向导" },
+      { "label": "机场/车站接送" },
+      { "label": "24小时安保" },
+      { "label": "私人无边泳池" }
+    ]
+  },
+  "gallery": {
+    "label": "风芽的茂密森林",
+    "title": "俯瞰山丘的视野",
+    "viewMore": "查看更多"
+  },
+  "testimonials": {
+    "title": "客人怎么说",
+    "subtitle": "来自曾入住 The Hill Villas 旅客的真实分享。",
+    "items": [
+      {
+        "quote": "一个绝佳的疗愈空间。我非常喜欢这里木材与光线交融的方式。清晨在泳池边眺望群山,视野仿佛没有尽头。",
+        "name": "明英",
+        "role": "河内",
+        "rating": 5
+      },
+      {
+        "quote": "早餐非常美味,充满当地特色。工作人员热情又周到。感谢 The Hill Villas 给了我们一家一段难忘的假期。",
+        "name": "托马斯",
+        "role": "澳大利亚",
+        "rating": 5
+      },
+      {
+        "quote": "我最喜欢的是有机浴室用品,感觉非常干净、放松。明年一定会再来!",
+        "name": "青姮",
+        "role": "胡志明市",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "通往风芽之心的旅程",
+    "subtitle": "我们地理位置优越,前往著名溶洞十分便利,同时依然保有所需的静谧与私密。",
+    "addressLabel": "地址",
+    "address": "越南广平省波州县风芽镇春山村",
+    "hoursLabel": "入住/退房时间",
+    "hours": "入住 14:00 - 退房 12:00",
+    "phoneLabel": "电话",
+    "phone": "090 123 4567",
+    "btnCall": "致电预订",
+    "btnBook": "立即预订",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "The Hill Villas",
+    "tagline": "让心灵回归自然的地方。",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "zalo": "Zalo 联系我们",
+    "facebook": "Facebook",
+    "copy": "© 2026 The Hill Villas Phong Nha. 版权所有。"
+  }
+}

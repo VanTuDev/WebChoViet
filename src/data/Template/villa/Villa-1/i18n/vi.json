@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "brand": "Serenity Villa",
+    "linkAmenities": "Tiện Nghi",
+    "linkRooms": "Phòng Nghỉ",
+    "linkGallery": "Không Gian",
+    "linkReviews": "Đánh Giá",
+    "linkContact": "Liên Hệ",
+    "cta": "Đặt Phòng Ngay"
+  },
+  "hero": {
+    "badge": "Bãi Ông Lang, Phú Quốc",
+    "title": "Tìm Lại Sự Bình Yên Tại Serenity Villa",
+    "subtitle": "Một nơi trú ẩn thanh tịnh dành cho những tâm hồn tìm kiếm sự tĩnh lặng giữa thiên nhiên Phú Quốc hùng vĩ.",
+    "btnPrimary": "Khám phá ngay",
+    "btnSecondary": "Đặt phòng ngay"
+  },
+  "booking": {
+    "priceLabel": "Giá khởi điểm",
+    "priceValue": "2.500.000đ",
+    "priceSuffix": "/ đêm",
+    "location": "Bãi Ông Lang, Phú Quốc, Kiên Giang",
+    "btnBook": "Đặt phòng ngay",
+    "fabLabel": "Đặt phòng từ 2.500.000đ"
+  },
+  "amenities": {
+    "label": "Trải Nghiệm Đẳng Cấp",
+    "title": "Tiện Nghi Villa",
+    "subtitle": "Tận hưởng những tiện ích được thiết kế riêng biệt để mang lại sự thư giãn tối đa.",
+    "items": [
+      { "title": "Wifi tốc độ cao", "desc": "Kết nối mượt mà xuyên suốt khuôn viên villa." },
+      { "title": "Hồ bơi vô cực", "desc": "Tầm nhìn hướng biển, làn nước mát lạnh hòa quyện cùng bầu trời." },
+      { "title": "Bãi đỗ xe riêng", "desc": "Không gian đậu xe an toàn, rộng rãi trong khuôn viên." },
+      { "title": "Bếp đầy đủ tiện nghi", "desc": "Trang thiết bị cao cấp cho những bữa ăn ấm cúng." },
+      { "title": "Điều hòa toàn phòng", "desc": "Không khí mát lành, dễ chịu suốt ngày đêm." },
+      { "title": "An ninh 24/7", "desc": "Đội ngũ tận tâm, đảm bảo sự riêng tư và an toàn tuyệt đối." }
+    ]
+  },
+  "rooms": {
+    "label": "Giấc Ngủ An Yên",
+    "title": "Không Gian Nghỉ Ngơi Tinh Tế",
+    "subtitle": "Mỗi phòng tại Serenity được thiết kế để tối ưu hóa sự nghỉ ngơi, với bảng màu trung tính và chất liệu tự nhiên.",
+    "items": [
+      {
+        "name": "Phòng Vườn Thiền",
+        "desc": "Giường King size cao cấp, tầm nhìn hướng vườn nhiệt đới tĩnh lặng.",
+        "price": "2.500.000đ",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Suite Hướng Hồ Bơi",
+        "desc": "Ban công riêng nhìn thẳng ra hồ bơi vô cực và hoàng hôn Ông Lang.",
+        "price": "3.200.000đ",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Villa Gia Đình Tre Xanh",
+        "desc": "Hai phòng ngủ, bếp riêng và phòng khách rộng rãi cho cả gia đình.",
+        "price": "5.800.000đ",
+        "capacity": "4-6 khách"
+      },
+      {
+        "name": "Gác Tĩnh Tâm Trên Cao",
+        "desc": "Không gian gác lửng yên tĩnh cùng sân tập yoga riêng đón nắng sớm.",
+        "price": "3.800.000đ",
+        "capacity": "2 khách"
+      }
+    ]
+  },
+  "welcome": {
+    "label": "Sự Đón Tiếp Chân Thành",
+    "title": "Hạnh Phúc Đến Từ Những Điều Giản Đơn",
+    "text": "Tại Serenity, chúng tôi tin rằng hạnh phúc đến từ những điều giản đơn nhất. Một ấm trà nóng thơm mùi thảo mộc, những đĩa trái cây nhiệt đới tươi ngon và tấm thiệp viết tay chào mừng sẽ luôn chờ đón bạn ngay khi đặt chân tới.",
+    "quote": "Chúng tôi không chỉ cung cấp chỗ ở, chúng tôi mang đến cảm giác được trở về nhà."
+  },
+  "gallery": {
+    "label": "Tầm Nhìn & Không Gian",
+    "title": "Góc Nhìn Đa Chiều",
+    "viewMore": "Xem thêm"
+  },
+  "testimonials": {
+    "title": "Trải Nghiệm Từ Khách Lưu Trú",
+    "subtitle": "Những chia sẻ chân thực từ những vị khách đã tìm thấy sự bình yên tại Serenity.",
+    "items": [
+      {
+        "quote": "Không gian yên tĩnh đến lạ, tiếng sóng vỗ và mùi cỏ cây khiến mọi căng thẳng tan biến. Bể bơi vô cực lúc hoàng hôn đẹp không lời nào tả xiết.",
+        "name": "Thu Hằng",
+        "role": "Khách du lịch từ Hà Nội",
+        "rating": 5
+      },
+      {
+        "quote": "Cả gia đình 5 người ở villa tre xanh rất thoải mái, bếp đầy đủ để tự nấu ăn. Nhân viên hỗ trợ nhiệt tình, quà chào đón rất ấm áp.",
+        "name": "Anh Quốc Bảo",
+        "role": "Kỳ nghỉ gia đình",
+        "rating": 5
+      },
+      {
+        "quote": "Đặt phòng cho tuần trăng mật và không hề thất vọng. Phòng sạch sẽ, tinh tế, chỉ tiếc là muốn ở lâu hơn một chút.",
+        "name": "Minh Thư",
+        "role": "Cặp đôi honeymoon",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vị Trí Đắc Địa",
+    "subtitle": "Tọa lạc tại vùng biển Ông Lang yên bình nhất Đảo Ngọc.",
+    "addressLabel": "Địa chỉ",
+    "address": "Hẻm 4, Bãi Ông Lang, Cửa Dương, Phú Quốc, Kiên Giang",
+    "phoneLabel": "Điện thoại",
+    "phone": "+84 901 234 567",
+    "emailLabel": "Email",
+    "email": "hello@serenityvilla.vn",
+    "btnCall": "Gọi ngay",
+    "btnBook": "Đặt phòng ngay",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Villa",
+    "tagline": "Tìm lại sự bình yên trong tâm hồn.",
+    "privacy": "Quy định bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "contact": "Liên hệ",
+    "copy": "© 2026 Serenity Villa Phú Quốc. Bản quyền thuộc về chúng tôi."
+  }
+}

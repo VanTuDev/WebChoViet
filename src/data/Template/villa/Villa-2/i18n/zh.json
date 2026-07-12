@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "brand": "静语别墅",
+    "linkExperience": "体验",
+    "linkRooms": "别墅房型",
+    "linkAmenities": "设施",
+    "linkReviews": "评价",
+    "linkContact": "联系我们",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "title": "在静语别墅找回本真的自己",
+    "subtitle": "在这座隐世度假天堂唤醒所有感官,有机建筑与山海的和鸣在此交融。",
+    "btnPrimary": "立即探索",
+    "btnSecondary": "立即预订"
+  },
+  "intro": {
+    "label": "设计理念",
+    "title": "人与自然的完美交融",
+    "desc": "在静语别墅,居住空间与热带雨林之间的界限悄然消融。我们秉持“融入自然”的理念——每一道建筑曲线都顺应地形而生,让自然光与微风得以渗透每一个角落。",
+    "quote": "小小的阅读角,让思绪得以与自然一同自由飞翔。",
+    "link": "了解更多设计细节"
+  },
+  "highlights": {
+    "title": "静谧时刻",
+    "subtitle": "这里的每一段体验都旨在唤醒感官,抚慰心灵。",
+    "items": [
+      {
+        "title": "纯净盥洗用品",
+        "desc": "选用本地有机草本护理产品,盛放于精美手工陶器中,带来极致的放松体验。"
+      },
+      {
+        "title": "静谧日落",
+        "desc": "夜幕降临时,温暖的金色灯光与深蓝天空交相辉映,在开阔的露台上营造出浪漫而精致的氛围。"
+      }
+    ]
+  },
+  "rooms": {
+    "label": "服务",
+    "title": "房型价目表",
+    "subtitle": "为您找回自我的旅程,选择最适合的空间。",
+    "capacityLabel": "位客人",
+    "priceSuffix": "/ 晚",
+    "btnSelect": "选择房型",
+    "items": [
+      {
+        "name": "花园豪华别墅",
+        "view": "热带花园景观",
+        "desc": "天然石浴缸、私人茶室露台,以及门前的小型禅意花园。",
+        "capacity": "2",
+        "price": "¥750"
+      },
+      {
+        "name": "海景至尊套房",
+        "view": "270度海景",
+        "desc": "私人迷你无边泳池、专属管家服务,以及送至房间的早餐。",
+        "capacity": "2",
+        "price": "¥1,450"
+      },
+      {
+        "name": "总统别墅",
+        "view": "超私密独栋区域",
+        "desc": "三间独立卧室、可预约的私人主厨,以及独立水疗房。",
+        "capacity": "6",
+        "price": "¥2,780"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "配套设施",
+    "title": "高端配套设施",
+    "subtitle": "每一处细节都经过精心安排,让您的住宿完美无憾。",
+    "items": [
+      { "label": "高速无线网络" },
+      { "label": "无边泳池" },
+      { "label": "私人停车位" },
+      { "label": "设备齐全的厨房" },
+      { "label": "全屋空调" },
+      { "label": "24小时安保" },
+      { "label": "水疗与理疗" },
+      { "label": "私人花园" }
+    ]
+  },
+  "policy": {
+    "title": "入住政策",
+    "items": [
+      { "label": "入住时间", "value": "14:00 起" },
+      { "label": "退房时间", "value": "12:00 前" },
+      { "label": "取消政策", "value": "入住前3天免费取消,之后取消退还50%" }
+    ]
+  },
+  "gallery": {
+    "label": "空间展示",
+    "title": "多角度实景",
+    "viewMore": "查看更多"
+  },
+  "testimonials": {
+    "title": "客户真实评价",
+    "subtitle": "来自入住静语别墅客人的真实分享。",
+    "items": [
+      {
+        "quote": "一个真正触动心灵的空间。流畅的设计与天然材质让我感到无比舒适自在。",
+        "name": "Minh Anh",
+        "location": "越南河内",
+        "rating": 5
+      },
+      {
+        "quote": "管家服务周到细致,同时又充分尊重我们的隐私。在无边泳池旁享用早餐是此行最珍贵的时刻。",
+        "name": "Julian S.",
+        "location": "新加坡",
+        "rating": 5
+      },
+      {
+        "quote": "我重新找回了久违的宁静。静语别墅不只是一个住所,更是一处疗愈心灵的地方。",
+        "name": "Thanh Hang",
+        "location": "越南胡志明市",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "欢迎莅临参观,或联系我们获取最快速的预订咨询。",
+    "addressLabel": "地址",
+    "address": "越南林同省大叻市和山社南村",
+    "phoneLabel": "电话",
+    "phone": "+84 901 234 567",
+    "emailLabel": "邮箱",
+    "email": "stay@serenityvilla.vn",
+    "btnCall": "立即致电",
+    "btnDirection": "获取路线",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "静语别墅",
+    "linkSustainability": "可持续发展报告",
+    "linkPrivacy": "隐私政策",
+    "linkExperience": "臻选体验",
+    "linkContact": "联系我们",
+    "copy": "© 2026 静语别墅。为有意义的生活提供栖息之所。"
+  }
+}

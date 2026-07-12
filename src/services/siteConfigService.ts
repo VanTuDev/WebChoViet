@@ -11,6 +11,7 @@ interface BackendSite {
   lang: SiteConfig['lang'];
   customData: Record<string, unknown>;
   images: Record<string, string>;
+  contact?: SiteConfig['contact'];
   status: SiteConfig['status'];
   isPending?: boolean;
   planLocked?: boolean;
@@ -27,6 +28,7 @@ function fromBackend(raw: BackendSite): SiteConfig {
     lang: raw.lang,
     customData: raw.customData,
     images: raw.images || {},
+    contact: raw.contact,
     status: raw.status,
     isPending: raw.isPending,
     planLocked: raw.planLocked,
@@ -44,6 +46,7 @@ function toBackend(config: SiteConfig) {
     lang: config.lang,
     customData: config.customData,
     images: config.images,
+    contact: config.contact,
     status: config.status,
   };
 }

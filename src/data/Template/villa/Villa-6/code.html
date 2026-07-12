@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zenith | H'Mong Cliff Villa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#171e01",
+                        "secondary-fixed": "#e0e5d4",
+                        "outline-variant": "#c6c8b8",
+                        "on-primary-fixed": "#161f00",
+                        "on-tertiary-container": "#272f0e",
+                        "secondary-fixed-dim": "#c3c9b8",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#43493c",
+                        "tertiary-fixed": "#dde8b7",
+                        "on-surface": "#1a1c1a",
+                        "outline": "#76786b",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c1cc9c",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container-low": "#f4f3f1",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#181d13",
+                        "background": "#faf9f6",
+                        "surface-dim": "#dbdad7",
+                        "on-tertiary-fixed-variant": "#414a26",
+                        "primary-container": "#8a9a5b",
+                        "primary-fixed-dim": "#bdce89",
+                        "surface-container": "#efeeeb",
+                        "primary-fixed": "#d9eaa3",
+                        "primary": "#56642b",
+                        "on-secondary-container": "#616659",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3e4c16",
+                        "error-container": "#ffdad6",
+                        "surface": "#faf9f6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bdce89",
+                        "inverse-on-surface": "#f2f1ee",
+                        "surface-tint": "#56642b",
+                        "surface-container-high": "#e9e8e5",
+                        "secondary-container": "#e0e5d4",
+                        "on-primary-container": "#253000",
+                        "on-surface-variant": "#46483c",
+                        "tertiary": "#59623c",
+                        "surface-bright": "#faf9f6",
+                        "secondary": "#5b6053",
+                        "on-background": "#1a1c1a",
+                        "inverse-surface": "#2f312f",
+                        "tertiary-container": "#8e986d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "unit": "8px",
+                        "stack-sm": "12px",
+                        "container-padding": "32px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "headline-sm": ["Lexend"],
+                        "display-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "label-sm": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "display-lg-mobile": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "300"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #faf9f6;
+            color: #1a1c1a;
+            scroll-behavior: smooth;
+        }
+        .zen-shadow {
+            box-shadow: 0 20px 80px -20px rgba(86, 100, 43, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .breathing-indicator {
+            animation: breathe 4s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-padding py-stack-md max-w-[1440px] mx-auto bg-background/80 dark:bg-background/80 backdrop-blur-md">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary dark:text-primary-fixed tracking-tighter">Zenith</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#dich-vu">Dịch vụ</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#khong-gian">Không gian</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#phan-hoi">Phản hồi</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#vi-tri">Vị trí</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all duration-300">
+            Tư vấn miễn phí
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[100vh] flex items-center justify-center pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="H'Mong Cliff Villa hero image" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY1SH7HDflI8PQn_ka6cBMsbuMfyscvKPPXyvlfRvvDK0iaqln1hjxLW3Ab0yYsziAzSJWQ300-2FPdX2RKSmf_OesSKPBxA4nldiZMAGH8vKhCFRl13-pb4ImsZYwe2BRqarNmsCUr67mnPo8XPYs2ecY56aWSq39f1KI3AzqKTfCyQf_7BsEDD4ZbDnva_j74i50F9SAF38V34Xk5eXy6i6S-rdG0Zn_dG-yobW6T_LVBvkoiKhz"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-background"></div>
+</div>
+<div class="relative z-10 w-full max-w-[1440px] px-container-padding flex flex-col md:flex-row justify-between items-end md:items-center h-full pb-stack-lg">
+<div class="max-w-2xl mb-stack-lg md:mb-0">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-stack-sm leading-tight drop-shadow-lg">H'Mong Cliff Villa<br/><span class="opacity-80">Nơi Chạm Vào Mây Ngàn</span></h1>
+<p class="font-body-lg text-body-lg text-white/90 max-w-lg mb-stack-md drop-shadow-md">Trải nghiệm kỳ nghỉ xa hoa giữa lòng cao nguyên đá Đồng Văn, nơi kiến trúc truyền thống hòa quyện cùng thiên nhiên hùng vĩ.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all zen-shadow">
+                        Khám phá ngay
+                    </button>
+</div>
+</div>
+<!-- Sticky Booking Card -->
+<div class="w-full md:w-80 bg-surface/90 backdrop-blur-xl p-stack-md rounded-lg zen-shadow border border-white/20">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">Đặt Phòng</h3>
+<div class="space-y-4 mb-stack-md">
+<div class="bg-surface-container rounded-md p-3">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Ngày đến - Ngày đi</label>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="font-body-md text-body-md">24 Th10 - 27 Th10</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-md p-3">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Khách hàng</label>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary">person</span>
+<span class="font-body-md text-body-md">2 Người lớn</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md transition-transform active:scale-95">
+                    Kiểm tra phòng trống
+                </button>
+</div>
+</div>
+</header>
+<!-- Architecture & Vision -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto overflow-hidden" id="khong-gian">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-stack-md">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Kiến Trúc &amp; Tầm Nhìn</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">Di Sản H'Mông Giao Thoa Cùng Sự Tối Giản</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Mỗi căn phòng tại H'Mong Cliff Villa được chế tác tỉ mỉ từ đá phiến địa phương và gỗ tự nhiên tối màu. Chúng tôi tôn trọng văn hóa bản địa nhưng không ngừng đổi mới để mang lại sự tiện nghi đẳng cấp nhất.
+                </p>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">nature_people</span>
+<span class="font-label-md text-label-md">Eco-Friendly</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">architecture</span>
+<span class="font-label-md text-label-md">Local Craft</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 relative group">
+<div class="aspect-video rounded-lg overflow-hidden zen-shadow">
+<img alt="H'Mong Cliff Villa bedroom interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV_Ei8ZsoJKa8PJjvL3LLVl7YLneEiZZ6JAHs5tI-M2snzYHSwcco2FRrostHR6v3NydqVmalMQMCiO3b12N9VnQHCBwpCyIwz-CiBEJkalqO6ObLiVJj2wXftzSHp_hDVqajQgdO-QqxLxIv4DD5Mhdj7XQlL3fgWW9XPpX3tCxey5rxsg8Z7Rev2-m79Q1FaldNJ6P5uj9Dl9bmhGYusbn3WQMo3t19p5j-CHysULzuYJdlYiGDB"/>
+</div>
+<!-- Floating Decorative element -->
+<div class="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-[-1] breathing-indicator"></div>
+</div>
+</div>
+</section>
+<!-- Immersive Experiences -->
+<section class="bg-surface-container-low py-section-gap px-container-padding" id="dich-vu">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-section-gap max-w-2xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Trải Nghiệm Vô Tận</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Từ những khoảnh khắc tĩnh lặng bên hồ bơi đến hương vị ẩm thực núi rừng tinh tế.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Pool Card -->
+<div class="group">
+<div class="relative aspect-[16/10] overflow-hidden rounded-lg mb-stack-md zen-shadow">
+<img alt="Infinity pool over mountains" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArSOTc8ZzCh04nIQabnC9KiKkecMipO9_xIkV5DFAVZow1lgFjQN65j-7S_B6CFoQgynshcfKl4lAsaRksRb2BWIU-DcWVa2lBc6a9ISmHB8eNqj2AWi3nnaKclpc6hP6JgyRVbh3VxeS2Ytlk8AJadRVg7fSuqgw6FQjs14P_KFy_f-oRW9Rhn0qLLCZzT_3JVG0-r2kfpfvF8O_61DtO_qtDv8uiwrPNKWvZnq6d3NL98F7ANkGS"/>
+<div class="absolute inset-0 bg-black/10 transition-opacity group-hover:opacity-0"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Hồ Bơi Vô Cực Nước Ấm</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Thả mình trong làn nước ấm áp trong khi ngắm nhìn dải mây trắng bồng bềnh ôm trọn các đỉnh núi.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md group" href="#">
+                        Khám phá chi tiết 
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Breakfast Card -->
+<div class="group">
+<div class="relative aspect-[16/10] overflow-hidden rounded-lg mb-stack-md zen-shadow">
+<img alt="Local mountain breakfast" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkK0LUlU5D5psUCgN6JameTzB95KfjhOWoO5UTgQxP_rM5BrSwq9cNvUdfcKJnrm8OyXtGMO0XRhqcaCsROAT5DKGSb-N_ObcImlcPlhp4zUpragwoLvrGslgj9MJZ51y-y7d2WMpnfOrapJlHKwK1GDRCWS6MYvJCRJCpcY0lw9D5Q0HWfgan4h1gXNqJoV8T4YwyHyG1mzwApsiN-HaZhiU78JVyrukmC0sm-0XT67bzP-RS7yXW"/>
+<div class="absolute inset-0 bg-black/10 transition-opacity group-hover:opacity-0"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Ẩm Thực Núi Rừng</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Khởi đầu ngày mới bằng bát phở đặc sản vùng cao cùng cà phê hữu cơ, giữa không gian mờ ảo sương sớm.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md group" href="#">
+                        Xem menu đặc sắc 
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto">
+<div class="text-center mb-stack-lg">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Phòng Nghỉ</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Bảng Giá Minh Bạch</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- H'Mong Suite -->
+<div class="bg-surface p-stack-lg rounded-lg border border-outline-variant/30 flex flex-col items-center text-center hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-weight="fill">bungalow</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">H'Mong Suite</h3>
+<div class="text-primary font-display-lg text-3xl mb-6">3.500.000đ<span class="text-label-sm font-label-sm text-on-surface-variant">/đêm</span></div>
+<ul class="space-y-3 mb-8 text-on-surface-variant font-body-md text-body-md">
+<li>Ban công riêng hướng vực sâu</li>
+<li>Bồn tắm đá tự nhiên</li>
+<li>Phục vụ bữa sáng tận phòng</li>
+<li>Minibar miễn phí hàng ngày</li>
+</ul>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-md text-label-md group-hover:bg-primary group-hover:text-on-primary transition-all">Đặt phòng này</button>
+</div>
+<!-- Valley View -->
+<div class="bg-surface p-stack-lg rounded-lg border border-outline-variant/30 flex flex-col items-center text-center hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-weight="fill">landscape</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Valley View Room</h3>
+<div class="text-primary font-display-lg text-3xl mb-6">2.800.000đ<span class="text-label-sm font-label-sm text-on-surface-variant">/đêm</span></div>
+<ul class="space-y-3 mb-8 text-on-surface-variant font-body-md text-body-md">
+<li>Cửa sổ kính lớn nhìn ra thung lũng</li>
+<li>Nội thất gỗ sồi cao cấp</li>
+<li>Truy cập hồ bơi vô cực</li>
+<li>Quà tặng trà thảo mộc địa phương</li>
+</ul>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-md text-label-md group-hover:bg-primary group-hover:text-on-primary transition-all">Đặt phòng này</button>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-secondary-fixed py-section-gap px-container-padding" id="phan-hoi">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/3">
+<h2 class="font-headline-md text-headline-md text-on-secondary-fixed-variant">Cảm Nhận Từ Du Khách</h2>
+<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant mt-4 opacity-80">Những kỷ niệm đáng nhớ được lưu giữ bởi khách hàng của Zenith.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-8 rounded-lg zen-shadow">
+<div class="flex text-[#FFC107] mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">"Một trải nghiệm thực sự tuyệt vời. Sáng thức dậy thấy mình trôi giữa mây ngàn. Kiến trúc villa rất tinh tế, nhân viên nhiệt tình hỗ trợ hết mình."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">MH</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Minh Hoàng</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Đến từ Hà Nội</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg zen-shadow">
+<div class="flex text-[#FFC107] mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">"Bữa sáng tại đây là điểm nhấn lớn nhất của chuyến đi. Không gì so sánh được cảm giác húp bát phở nóng hổi trong sương lạnh vùng cao."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-tertiary">LV</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Linh Vũ</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Nhiếp ảnh gia</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Contact -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto" id="vi-tri">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="h-[450px] rounded-lg overflow-hidden zen-shadow relative">
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
+<!-- Symbolic Map Representation -->
+<div class="absolute inset-0 opacity-20 grayscale" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZI1uFPLailH3hSei-N6SXw13BNx3MOizFf-OQH9HXbDkm1exXfPY0BXLqN-P8X3kk42usQJmbQdFwnL2kSTIS6XLEyiqeqOuKsHU_33NJi9HrruRcHfvPRviYWikqN94Dq_c1kKm1451P9Eaa7UcoV1WyuA8hvdPFHzH8jmb3XNCIL2S74qMhpnFyZu8SeuNyxUCLHMgBzEuVn9zNHq9tueSSmR16_q36sltMj6vtKTUDyNq0suW1')"></div>
+<div class="relative text-center p-8 z-10">
+<span class="material-symbols-outlined text-primary text-6xl mb-4">location_on</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Dong Van Karst Plateau</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Hà Giang, Việt Nam</p>
+<button class="mt-6 bg-white border border-outline px-6 py-2 rounded-full font-label-md text-label-md hover:bg-surface-container transition-colors">Mở trong Google Maps</button>
+</div>
+</div>
+<div class="hidden" data-location="Dong Van Karst Plateau, Ha Giang, Vietnam" style=""></div>
+</div>
+<div class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Liên Hệ Với Chúng Tôi</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">Bắt đầu hành trình tìm về thiên nhiên tại H'Mong Cliff Villa. Đội ngũ chúng tôi sẵn sàng hỗ trợ bạn 24/7.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary">phone_in_talk</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Số điện thoại</p>
+<p class="font-headline-sm text-headline-sm text-primary">+84 912 345 678</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Mạng xã hội</p>
+<div class="flex gap-4 mt-1">
+<a class="text-on-surface hover:text-primary transition-colors font-label-md" href="#">Facebook</a>
+<a class="text-on-surface hover:text-primary transition-colors font-label-md" href="#">Zalo</a>
+<a class="text-on-surface hover:text-primary transition-colors font-label-md" href="#">Instagram</a>
+</div>
+</div>
+</div>
+</div>
+<form class="mt-stack-lg space-y-4">
+<input class="w-full bg-surface-container border-0 border-b border-outline-variant focus:border-primary focus:ring-0 rounded-t-lg px-4 py-3 transition-colors" placeholder="Địa chỉ email của bạn" type="email"/>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all zen-shadow">Đăng ký nhận tin khuyến mãi</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-container-padding flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container-low dark:bg-surface-container-highest mt-section-gap">
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-headline-sm text-primary">Zenith</span>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-outline-variant max-w-sm text-center md:text-left">© 2024 Zenith Minimalist Wellness. Tìm lại sự bình yên trong tâm hồn.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-secondary-fixed-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">Quy định bảo mật</a>
+<a class="font-label-sm text-label-sm text-on-secondary-fixed-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">Điều khoản sử dụng</a>
+<a class="font-label-sm text-label-sm text-on-secondary-fixed-variant dark:text-outline-variant hover:text-primary transition-colors" href="#">Liên hệ</a>
+</div>
+</footer>
+<script>
+        // Smooth reveal animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+
+        // Hover effect for nav items
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => l.classList.remove('text-primary', 'font-medium', 'border-b-2', 'border-primary', 'pb-1'));
+                e.target.classList.add('text-primary', 'font-medium', 'border-b-2', 'border-primary', 'pb-1');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "brand": "Zenith",
+    "linkAbout": "Space",
+    "linkRooms": "Rooms",
+    "linkAmenities": "Amenities",
+    "linkGallery": "Gallery",
+    "linkReviews": "Reviews",
+    "linkContact": "Contact",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "badge": "Dong Van Karst Plateau",
+    "title": "H'Mong Cliff Villa",
+    "subtitle": "Where You Touch the Clouds",
+    "desc": "Experience a luxurious getaway in the heart of the Dong Van karst plateau, where traditional architecture blends with the majesty of nature.",
+    "btnPrimary": "Explore Now",
+    "btnSecondary": "Book Now"
+  },
+  "about": {
+    "label": "Architecture & Vision",
+    "title": "H'Mong Heritage Meets Minimalist Design",
+    "desc": "Every room at H'Mong Cliff Villa is carefully crafted from local slate stone and dark natural wood. We honor indigenous culture while constantly innovating to deliver the finest comfort.",
+    "badges": ["Native Craftsmanship", "Natural Materials"]
+  },
+  "rooms": {
+    "label": "Rooms",
+    "title": "Transparent Pricing",
+    "subtitle": "Every space offers a different view of the Dong Van mountains.",
+    "items": [
+      {
+        "name": "H'Mong Suite",
+        "desc": "Private balcony overlooking the cliff edge, natural stone bathtub, in-room breakfast service.",
+        "price": "3,500,000₫",
+        "unit": "/night",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Valley View Room",
+        "desc": "Large glass windows overlooking the valley, premium oak furnishings, free access to the infinity pool.",
+        "price": "2,800,000₫",
+        "unit": "/night",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Cliff Bungalow",
+        "desc": "Secluded on the cliffside, private warm-water pool, absolute privacy amid the clouds.",
+        "price": "4,200,000₫",
+        "unit": "/night",
+        "capacity": "2-3 guests"
+      },
+      {
+        "name": "Cloud Terrace Family",
+        "desc": "Private terrace for cloud-watching, two connecting bedrooms, perfect for families.",
+        "price": "5,500,000₫",
+        "unit": "/night",
+        "capacity": "4 guests"
+      }
+    ],
+    "btnBook": "Book This Room"
+  },
+  "amenities": {
+    "label": "Amenities",
+    "title": "Endless Experiences",
+    "subtitle": "From quiet moments by the pool to journeys through untouched mountain wilderness.",
+    "items": [
+      { "label": "High-speed free Wi-Fi" },
+      { "label": "Private parking" },
+      { "label": "Kitchen & local breakfast" },
+      { "label": "In-room fireplace" },
+      { "label": "Pickup service" },
+      { "label": "Local trekking guide" },
+      { "label": "Warm-water infinity pool" },
+      { "label": "24/7 security" }
+    ]
+  },
+  "gallery": {
+    "label": "Space",
+    "title": "Views From Every Angle",
+    "viewMore": "View More"
+  },
+  "testimonials": {
+    "title": "Guest Impressions",
+    "subtitle": "Memorable moments shared by Zenith's guests.",
+    "items": [
+      {
+        "quote": "A truly wonderful experience. Waking up to find myself drifting among the clouds. The villa's architecture is exquisite and the staff were incredibly attentive.",
+        "name": "Minh Hoang",
+        "role": "From Hanoi",
+        "rating": 5
+      },
+      {
+        "quote": "Breakfast here was the highlight of the trip. Nothing compares to a hot bowl of pho in the cool highland mist.",
+        "name": "Linh Vu",
+        "role": "Photographer",
+        "rating": 5
+      },
+      {
+        "quote": "The Cloud Terrace room was spacious enough for the whole family. The kids got to go trekking with a local guide — an unforgettable trip.",
+        "name": "Thu Trang",
+        "role": "Traveled with family",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Begin your journey back to nature at H'Mong Cliff Villa. Our team is ready to assist you 24/7.",
+    "addressLabel": "Address",
+    "address": "Dong Van Karst Plateau, Ha Giang, Vietnam",
+    "phoneLabel": "Phone Number",
+    "phone": "+84 912 345 678",
+    "btnCall": "Call Now",
+    "btnBook": "Book Now",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Zenith",
+    "tagline": "H'Mong Cliff Villa — Find peace again among the mountains of Dong Van.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "contact": "Contact",
+    "copy": "© 2026 Zenith Minimalist Wellness. All rights reserved."
+  }
+}

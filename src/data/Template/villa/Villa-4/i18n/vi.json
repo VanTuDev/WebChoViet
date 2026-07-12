@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "brand": "Rông Homestay",
+    "linkHome": "Trang chủ",
+    "linkRooms": "Villa & Bungalow",
+    "linkAmenities": "Tiện nghi",
+    "linkReviews": "Đánh giá",
+    "linkContact": "Liên hệ",
+    "cta": "Đặt phòng ngay"
+  },
+  "hero": {
+    "badge": "Rong House Retreat",
+    "title": "Hơi Thở Của Đại Ngàn",
+    "subtitle": "Tìm lại sự tĩnh lặng tuyệt đối giữa cao nguyên lộng gió, nơi kiến trúc nhà Rông truyền thống hòa quyện cùng sự sang trọng hiện đại.",
+    "btnPrimary": "Đặt phòng ngay",
+    "btnSecondary": "Khám phá không gian"
+  },
+  "heritage": {
+    "label": "Không gian văn hóa",
+    "mainTitle": "Không Gian Văn Hóa",
+    "mainDesc": "Sự kết hợp tinh tế giữa thổ cẩm đặc trưng của đồng bào Tây Nguyên và tiện nghi đẳng cấp 5 sao.",
+    "card1Title": "Kiến Trúc Độc Bản",
+    "card1Desc": "Lấy cảm hứng từ mái nhà Rông cao vút, mỗi căn villa là một tác phẩm nghệ thuật tôn vinh di sản núi rừng.",
+    "card2Title": "Tầm Nhìn Tuyệt Tác",
+    "card2Desc": "Mở cửa sổ là tiếng thác đổ và màu xanh bất tận của rừng già đại ngàn."
+  },
+  "experience": {
+    "label": "Trải nghiệm ban đêm",
+    "title": "Ấm Áp Bên Bếp Lửa",
+    "desc": "Khi màn đêm buông xuống trên cao nguyên, không gì tuyệt vời hơn cảm giác tựa lưng vào ghế mây, nhâm nhi tách trà nóng và lắng nghe tiếng củi cháy tí tách bên lò sưởi đá ngoài trời.",
+    "feature1Title": "Lò sưởi đá",
+    "feature1Desc": "Tự nhiên & thô mộc",
+    "feature2Title": "Bầu trời sao",
+    "feature2Desc": "Không ô nhiễm ánh sáng",
+    "badgeLabel": "Nhiệt độ lý tưởng",
+    "badgeValue": "18°C - 22°C"
+  },
+  "rooms": {
+    "label": "Nơi lưu trú",
+    "title": "Villa & Bungalow",
+    "subtitle": "Mỗi không gian là một câu chuyện riêng về kiến trúc nhà Rông và đời sống cao nguyên.",
+    "items": [
+      {
+        "name": "Rông Bungalow Đơn",
+        "desc": "Bungalow gỗ mái cong lấy cảm hứng nhà Rông, hướng nhìn ra đồi cà phê bạt ngàn.",
+        "price": "1.800.000đ",
+        "unit": "/đêm",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Villa Đôi Gia Đình",
+        "desc": "Hai phòng ngủ riêng biệt, sân vườn và lò sưởi đá ngoài trời cho cả gia đình.",
+        "price": "2.800.000đ",
+        "unit": "/đêm",
+        "capacity": "4 khách"
+      },
+      {
+        "name": "Suite Thác Nước",
+        "desc": "Tầm nhìn thẳng ra thác đổ, bồn tắm gỗ ngoài trời và ban công riêng tư tuyệt đối.",
+        "price": "3.500.000đ",
+        "unit": "/đêm",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Nhà Dài Cộng Đồng",
+        "desc": "Nhà dài truyền thống phục dựng nguyên bản, lý tưởng cho nhóm bạn và gia đình lớn.",
+        "price": "5.200.000đ",
+        "unit": "/đêm",
+        "capacity": "8 khách"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Tiện nghi",
+    "title": "Đặc Quyền Tại Rông Homestay",
+    "subtitle": "Tận hưởng những trải nghiệm mang đậm bản sắc văn hóa vùng cao Tây Nguyên.",
+    "items": [
+      { "label": "Wifi miễn phí tốc độ cao" },
+      { "label": "Bãi đỗ xe riêng" },
+      { "label": "Lò sưởi đá ngoài trời" },
+      { "label": "Đưa đón sân bay Pleiku" },
+      { "label": "An ninh 24/7" },
+      { "label": "Tour bản địa & cồng chiêng" },
+      { "label": "Điều hòa hai chiều" },
+      { "label": "Tham quan đồi cà phê" }
+    ]
+  },
+  "gallery": {
+    "label": "Tầm nhìn & không gian",
+    "title": "Sắc Màu Đại Ngàn",
+    "viewMore": "Xem thêm"
+  },
+  "testimonials": {
+    "title": "Trải Nghiệm Từ Du Khách",
+    "subtitle": "Những chia sẻ chân thực từ du khách đã ghé thăm Rông Homestay.",
+    "items": [
+      {
+        "quote": "Kiến trúc nhà Rông độc đáo, không gian yên tĩnh giữa rừng núi. Buổi tối ngồi bên bếp lửa nghe cồng chiêng là trải nghiệm không thể quên.",
+        "name": "Thu Hà",
+        "role": "Du khách từ Hà Nội",
+        "rating": 5
+      },
+      {
+        "quote": "Phòng sạch sẽ, view thác nước tuyệt đẹp, nhân viên nhiệt tình chỉ dẫn tour tham quan đồi cà phê. Chắc chắn sẽ quay lại.",
+        "name": "Anh Quân",
+        "role": "Nhiếp ảnh gia tự do",
+        "rating": 5
+      },
+      {
+        "quote": "Một nơi lý tưởng để trốn khỏi phố thị. Bầu trời đêm nhiều sao, không khí trong lành và bữa sáng bản địa rất ngon.",
+        "name": "Bảo Trân",
+        "role": "Du khách từ TP.HCM",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "label": "Vị trí địa lý",
+    "title": "Trái Tim Của Kon Tum",
+    "subtitle": "Ghé thăm Rông Homestay để trực tiếp trải nghiệm không gian văn hóa Tây Nguyên nguyên bản.",
+    "addressLabel": "Địa chỉ",
+    "address": "Thôn 1, Xã Đắk Rơ Wa, TP. Kon Tum, Việt Nam",
+    "airportLabel": "Cách sân bay Pleiku",
+    "airportValue": "45 phút di chuyển bằng ô tô",
+    "phoneLabel": "Điện thoại",
+    "phone": "+84 905 123 456",
+    "btnCall": "Gọi ngay",
+    "btnBook": "Đặt phòng ngay",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Rông Homestay",
+    "tagline": "Tìm lại hơi thở của đại ngàn Tây Nguyên.",
+    "linkPrivacy": "Chính sách bảo mật",
+    "linkTerms": "Điều khoản sử dụng",
+    "linkContact": "Liên hệ",
+    "copy": "© 2026 Rông Homestay. Bản quyền thuộc về chúng tôi."
+  }
+}

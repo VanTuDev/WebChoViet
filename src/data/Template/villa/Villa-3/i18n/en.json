@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "Zenith Wilderness",
+    "linkRooms": "Rooms",
+    "linkAmenities": "Amenities",
+    "linkGallery": "Spaces",
+    "linkReviews": "Reviews",
+    "linkContact": "Location",
+    "cta": "Free Consultation"
+  },
+  "hero": {
+    "badge": "Phong Nha Wilderness Villa",
+    "title": "Immerse yourself in the symphony of Quang Binh's wild mountains",
+    "subtitle": "Discover absolute serenity at the heart of a world natural heritage site, where minimalist architecture meets the majesty of limestone karst.",
+    "btnPrimary": "Book Now",
+    "btnSecondary": "Watch Video Tour",
+    "scrollHint": "Scroll to explore"
+  },
+  "story": {
+    "label": "Living Spaces",
+    "title": "An Experience Amid the Green Wilderness",
+    "description": "Every villa at Zenith Wilderness is designed as part of the ecosystem. We use sustainable local materials paired with solar panels to minimize our environmental footprint while still delivering modern luxury.",
+    "imageCaptionTitle": "Infinite Views",
+    "imageCaptionDesc": "Wake up wrapped in mountain mist, with birdsong echoing from the primeval forest.",
+    "features": [
+      { "title": "Eco-Conscious Architecture", "desc": "Built with natural stone and sustainably farmed timber." },
+      { "title": "Natural Ventilation", "desc": "Open-air design invites forest breeze and daylight to the fullest." }
+    ]
+  },
+  "rooms": {
+    "label": "Stay",
+    "title": "Rooms & Bungalows",
+    "subtitle": "Choose the retreat that fits your journey of exploration.",
+    "items": [
+      {
+        "name": "Forest View Bungalow",
+        "desc": "A standalone timber bungalow facing the primeval forest, with a private balcony for morning sun.",
+        "price": "1,800,000₫",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Karst Valley Suite",
+        "desc": "A spacious suite with floor-to-ceiling glass overlooking the misty limestone valley.",
+        "price": "2,500,000₫",
+        "capacity": "2-3 guests"
+      },
+      {
+        "name": "Riverside Villa",
+        "desc": "A private riverside villa with its own garden and outdoor soaking tub.",
+        "price": "3,200,000₫",
+        "capacity": "4 guests"
+      },
+      {
+        "name": "Cave Explorer Family Room",
+        "desc": "A generous family room close to the trailheads leading into the cave trekking routes.",
+        "price": "3,800,000₫",
+        "capacity": "5-6 guests"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Privileges",
+    "title": "Signature Amenities",
+    "items": [
+      { "title": "High-Speed Wifi", "desc": "Reliable coverage across the property, even deep in the mountains." },
+      { "title": "Private Parking", "desc": "Secure parking right on the villa grounds." },
+      { "title": "Kitchen & Local Breakfast", "desc": "Organic ingredients with a daily farm-to-table menu." },
+      { "title": "Private Trekking Guide", "desc": "Hidden trails through the deep forest, reserved for our guests." },
+      { "title": "24/7 Security", "desc": "On-site staff and security around the clock for total privacy." },
+      { "title": "Limestone Karst Views", "desc": "Every room opens onto the majestic karst scenery of Phong Nha." }
+    ]
+  },
+  "gallery": {
+    "label": "Spaces",
+    "title": "Views Amid Nature",
+    "viewMore": "See More Photos"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Genuine stories from journeys exploring Phong Nha with Zenith Wilderness.",
+    "items": [
+      {
+        "quote": "Absolutely stunning setting — waking up to mist over the limestone peaks. The trekking team was professional and attentive.",
+        "name": "Hoang Anh",
+        "role": "Family Traveler",
+        "rating": 5
+      },
+      {
+        "quote": "Secluded and completely quiet, yet still close to central Phong Nha. The local breakfast was delicious with fresh, clean ingredients.",
+        "name": "Minh Thu",
+        "role": "Travel Blogger",
+        "rating": 5
+      },
+      {
+        "quote": "My first trek through primeval forest with the villa's guide — the most memorable experience of my whole Quang Binh trip.",
+        "name": "Duc Anh",
+        "role": "Adventure Photographer",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "A Storied Location",
+    "subtitle": "Just 15 minutes' drive from central Phong Nha, the villa sits in a secluded spot that guarantees total privacy while staying convenient for visiting the famous caves.",
+    "addressLabel": "Address",
+    "address": "Son Trach, Bo Trach, Quang Binh",
+    "hoursLabel": "Check-in / Check-out",
+    "hours": "Check-in 2:00 PM — Check-out 12:00 PM",
+    "phoneLabel": "Phone",
+    "phone": "+84 912 345 678",
+    "btnCall": "Call Now",
+    "btnBook": "Book Now",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "booking": {
+    "priceLabel": "From",
+    "price": "1,800,000₫",
+    "perNight": "/night",
+    "cta": "Check Availability"
+  },
+  "footer": {
+    "brand": "Zenith Wilderness",
+    "tagline": "Rediscover peace amid the nature of Phong Nha.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "copy": "© 2026 Zenith Wilderness Villa. All rights reserved."
+  }
+}

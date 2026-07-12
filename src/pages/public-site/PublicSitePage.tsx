@@ -11,6 +11,7 @@ import { LANGUAGES, hasContent, langMeta } from '../../constants/languages';
 import type { SiteConfig, SiteLang } from '../../types';
 import { extractSeoFacts, buildLocalBusinessJsonLd, ogLocaleForLang } from '../../utils/seo';
 import { cloudinarySquareIcon } from '../../utils/cloudinaryIcon';
+import FloatingContactBar from '../../components/shared/FloatingContactBar';
 
 import { COMPONENT_MAP, TEMPLATES } from '../../data/templates/registry';
 
@@ -188,6 +189,12 @@ function TemplateSite({ config }: { config: SiteConfig }) {
       </TemplateCustomProvider>
 
       <LanguageSwitcher current={activeLang} available={availableLangs} onChange={handleLangChange} />
+
+      <FloatingContactBar
+        phone={config.contact?.phone}
+        zalo={config.contact?.zalo}
+        facebook={config.contact?.facebook}
+      />
 
       {/* Cài đặt lên màn hình chính — chỉ hiện khi trình duyệt xác nhận có thể cài (Chrome/Edge/Android) */}
       {canInstall && (

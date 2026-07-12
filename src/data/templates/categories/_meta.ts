@@ -54,4 +54,12 @@ export const CATEGORY_REGISTRY: CategoryMeta[] = [
       desc: 'Thiệp cưới kỹ thuật số đẹp và tinh tế. Chia sẻ thông tin lễ cưới và nhận RSVP từ khách mời.',
     },
   },
+  {
+    id: 'villa',
+    label: 'Homestay & Villa',
+    heading: {
+      title: 'Kho Giao Diện: Homestay & Villa',
+      desc: 'Giao diện ấm cúng cho homestay, villa cho thuê. Trưng bày phòng, tiện nghi và hỗ trợ đặt phòng trực tuyến.',
+    },
+  },
 ];

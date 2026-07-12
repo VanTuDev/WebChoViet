@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "The Hill Villas",
+    "linkRooms": "Rooms",
+    "linkAmenities": "Amenities",
+    "linkGallery": "Gallery",
+    "linkReviews": "Reviews",
+    "linkContact": "Location",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "title": "The Breath of the Great Forest, in the Heart of Phong Nha",
+    "subtitle": "Discover a secluded retreat with warm timber architecture, tucked away in the deep green forest of Phong Nha - Ke Bang National Park.",
+    "btnPrimary": "Book Now",
+    "btnSecondary": "Explore the Space"
+  },
+  "intro": {
+    "label": "About Us",
+    "title": "Rustic Wooden Architecture, Refined Experience",
+    "desc": "At The Hill Villas, we connect people with nature through the language of wood and stone. Each bungalow is designed for complete privacy, letting you shed the noise of daily life and listen to the breath of the old-growth forest.",
+    "highlights": ["Private infinity pool", "High-speed wifi", "Local breakfast", "Meditation in the forest"]
+  },
+  "rooms": {
+    "label": "Choose Your Space",
+    "title": "Rooms & Bungalows",
+    "subtitle": "A range of options for couples, families, or groups of friends",
+    "featured": {
+      "badge": "Most Popular",
+      "tag": "Deluxe",
+      "name": "Deluxe Mountain View",
+      "desc": "An open private balcony framing the majestic limestone karst mountains of Phong Nha. Premium interiors, complete privacy.",
+      "price": "850,000₫",
+      "unit": "/night",
+      "capacity": "2-3 guests"
+    },
+    "items": [
+      {
+        "tag": "Standard",
+        "name": "Standard Bungalow",
+        "desc": "A cozy space with essential amenities, ideal for a minimalist stay deep in the forest.",
+        "price": "500,000₫",
+        "unit": "/night",
+        "capacity": "2 guests"
+      },
+      {
+        "tag": "Family",
+        "name": "Family Bungalow",
+        "desc": "Two adjoining bedrooms with a private forest-facing yard, perfect for families with young children.",
+        "price": "1,100,000₫",
+        "unit": "/night",
+        "capacity": "3-4 guests"
+      },
+      {
+        "tag": "Whole Villa",
+        "name": "Full Villa Rental",
+        "desc": "The perfect choice for families or groups of friends, with a shared living area and a private kitchen.",
+        "price": "1,500,000₫",
+        "unit": "/night",
+        "capacity": "4-6 guests"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Amenities",
+    "title": "Care Down to the Smallest Detail",
+    "desc": "We prioritize organic, eco-friendly products in every small detail, delivering a sense of complete relaxation just like a professional spa.",
+    "items": [
+      { "label": "High-speed wifi" },
+      { "label": "Private parking" },
+      { "label": "Shared kitchen & BBQ area" },
+      { "label": "Two-way air conditioning" },
+      { "label": "Guided forest trekking" },
+      { "label": "Airport/station transfer" },
+      { "label": "24/7 security" },
+      { "label": "Private infinity pool" }
+    ]
+  },
+  "gallery": {
+    "label": "The Great Forest of Phong Nha",
+    "title": "Views From the Hilltop",
+    "viewMore": "See More"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Genuine reflections from travelers who have stayed at The Hill Villas.",
+    "items": [
+      {
+        "quote": "A wonderful place to heal. I truly loved the way wood and light blend together here. The morning pool view over the mountains felt truly infinite.",
+        "name": "Minh Anh",
+        "role": "Hanoi",
+        "rating": 5
+      },
+      {
+        "quote": "Breakfast was delicious and full of local flavor. The staff were incredibly warm and welcoming. Thank you, The Hill Villas, for a memorable family holiday.",
+        "name": "Thomas",
+        "role": "Australia",
+        "rating": 5
+      },
+      {
+        "quote": "The organic bathroom amenities were my favorite touch — everything felt clean and truly relaxing. I'll definitely be back next year!",
+        "name": "Thanh Hang",
+        "role": "Ho Chi Minh City",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "The Journey to the Heart of Phong Nha",
+    "subtitle": "We sit in a prime location, easy to reach from the famous caves while still keeping the seclusion you need.",
+    "addressLabel": "Address",
+    "address": "Xuan Son Hamlet, Phong Nha, Bo Trach, Quang Binh",
+    "hoursLabel": "Check-in / Check-out",
+    "hours": "Check-in 2:00 PM - Check-out 12:00 PM",
+    "phoneLabel": "Phone",
+    "phone": "090 123 4567",
+    "btnCall": "Call to Book",
+    "btnBook": "Book Now",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "The Hill Villas",
+    "tagline": "Where the soul comes home to nature.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "zalo": "Contact via Zalo",
+    "facebook": "Facebook",
+    "copy": "© 2026 The Hill Villas Phong Nha. All rights reserved."
+  }
+}

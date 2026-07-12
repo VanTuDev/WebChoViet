@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "brand": "Serenity Sea-View",
+    "linkHome": "Trang chủ",
+    "linkRooms": "Phòng nghỉ",
+    "linkAmenities": "Tiện nghi",
+    "linkGallery": "Thư viện",
+    "linkContact": "Liên hệ",
+    "cta": "Đặt phòng ngay"
+  },
+  "hero": {
+    "titleLine1": "Thiên Đường Nghỉ Dưỡng",
+    "titleLine2": "Bên Bờ Đại Dương",
+    "subtitle": "Khám phá không gian sống tinh tế kết hợp giữa tinh thần Zen Nhật Bản và hơi thở biophilic của biển cả.",
+    "btnPrimary": "Đặt phòng ngay",
+    "btnSecondary": "Khám phá không gian"
+  },
+  "booking": {
+    "priceLabel": "Giá chỉ từ",
+    "price": "3.500.000đ",
+    "priceUnit": "/đêm",
+    "checkInLabel": "Nhận phòng",
+    "checkOutLabel": "Trả phòng",
+    "cta": "Đặt phòng ngay"
+  },
+  "rooms": {
+    "label": "Lựa chọn lưu trú",
+    "title": "Không Gian Dành Riêng Cho Bạn",
+    "subtitle": "Tất cả các phòng đều được trang bị nội thất gỗ tự nhiên và tầm nhìn hướng biển trực diện.",
+    "items": [
+      {
+        "name": "Deluxe Garden Villa",
+        "desc": "Hướng vườn nhiệt đới, nội thất tối giản, không gian riêng tư yên tĩnh.",
+        "area": "45m²",
+        "capacity": "2 khách",
+        "price": "3.500.000đ",
+        "unit": "/đêm",
+        "cta": "Chọn phòng"
+      },
+      {
+        "name": "Ocean Master Suite",
+        "desc": "Hướng biển trực diện, bồn tắm lộ thiên, đón bình minh ngay từ giường ngủ.",
+        "area": "65m²",
+        "capacity": "2 khách",
+        "price": "4.800.000đ",
+        "unit": "/đêm",
+        "cta": "Chọn phòng"
+      },
+      {
+        "name": "Grand Presidential Suite",
+        "desc": "Hồ bơi riêng, dịch vụ quản gia 24/7, không gian sống sang trọng bậc nhất.",
+        "area": "120m²",
+        "capacity": "4 khách",
+        "price": "9.200.000đ",
+        "unit": "/đêm",
+        "cta": "Chọn phòng"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Tiện Ích Đẳng Cấp",
+    "title": "Tiện Nghi Trong Villa",
+    "subtitle": "Mọi tiện nghi bạn cần cho một kỳ nghỉ dưỡng trọn vẹn bên bờ biển.",
+    "items": [
+      { "label": "Wifi tốc độ cao" },
+      { "label": "Hồ bơi vô cực" },
+      { "label": "Bãi đỗ xe riêng" },
+      { "label": "Bếp đầy đủ tiện nghi" },
+      { "label": "Điều hoà mọi phòng" },
+      { "label": "Bãi biển riêng" },
+      { "label": "Thể thao nước" },
+      { "label": "An ninh 24/7" }
+    ]
+  },
+  "gallery": {
+    "label": "Kiến Trúc & Không Gian",
+    "title": "Nơi Tĩnh Lặng Gặp Gỡ Đại Dương",
+    "items": [
+      { "caption": "Hồ bơi vô cực hướng biển" },
+      { "caption": "Hoàng hôn trên bãi biển riêng" },
+      { "caption": "Kiến trúc biệt thự nhiệt đới" },
+      { "caption": "Toàn cảnh khu nghỉ dưỡng" }
+    ]
+  },
+  "testimonials": {
+    "label": "Đánh Giá Khách Hàng",
+    "title": "Cảm Nhận Từ Những Chuyến Đi",
+    "items": [
+      {
+        "quote": "Một không gian thực sự chữa lành. Tôi đã có những giờ phút làm việc cực kỳ hiệu quả và buổi chiều thư giãn bên bể bơi vô cực. Chắc chắn sẽ quay lại!",
+        "name": "Hoàng Anh",
+        "role": "Business Traveler",
+        "rating": 5
+      },
+      {
+        "quote": "Kiến trúc ở đây quá đẹp, mọi ngóc ngách đều có thể chụp ảnh. Dịch vụ tận tâm và view biển từ phòng ngủ không gì sánh được.",
+        "name": "Linh Mai",
+        "role": "Freelancer Designer",
+        "rating": 5
+      },
+      {
+        "quote": "Vợ chồng tôi đã có một kỳ nghỉ tuyệt vời tại Grand Suite. Sự riêng tư và phong cách phục vụ chuyên nghiệp làm chúng tôi rất hài lòng.",
+        "name": "Trần Quân",
+        "role": "Entrepreneur",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hãy Bắt Đầu Chuyến Hành Trình Của Bạn",
+    "subtitle": "Đội ngũ của Serenity Sea-View luôn sẵn sàng hỗ trợ bạn 24/7 để có một kỳ nghỉ hoàn hảo nhất.",
+    "addressLabel": "Địa chỉ",
+    "address": "Đường Ven Biển, Bãi Trường, Phú Quốc",
+    "phoneLabel": "Hotline đặt phòng",
+    "phone": "1900 888 999",
+    "hoursLabel": "Thời gian hỗ trợ",
+    "hours": "24/7 tất cả các ngày trong tuần",
+    "btnCall": "Gọi ngay",
+    "btnBook": "Đặt phòng ngay",
+    "zalo": "Zalo Chat",
+    "facebook": "Facebook",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Sea-View",
+    "tagline": "Nơi kiến tạo những khoảnh khắc nghỉ dưỡng bình yên và sang trọng bậc nhất.",
+    "exploreTitle": "Khám Phá",
+    "exploreLinks": ["Biệt Thự", "Trải Nghiệm", "Ưu Đãi"],
+    "infoTitle": "Thông Tin",
+    "infoLinks": ["Chính sách bảo mật", "Điều khoản sử dụng", "Câu hỏi thường gặp"],
+    "copy": "© 2026 Serenity Sea-View Villa. Bản quyền đã được bảo hộ."
+  }
+}

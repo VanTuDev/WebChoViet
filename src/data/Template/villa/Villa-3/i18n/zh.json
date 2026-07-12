@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "Zenith Wilderness",
+    "linkRooms": "客房",
+    "linkAmenities": "设施",
+    "linkGallery": "空间",
+    "linkReviews": "评价",
+    "linkContact": "位置",
+    "cta": "免费咨询"
+  },
+  "hero": {
+    "badge": "峰牙荒野别墅",
+    "title": "融入广平山林的自然交响",
+    "subtitle": "在世界自然遗产的怀抱中探寻绝对的宁静，感受极简建筑与雄伟喀斯特山石之美的完美相遇。",
+    "btnPrimary": "立即预订",
+    "btnSecondary": "观看视频导览",
+    "scrollHint": "向下滚动探索"
+  },
+  "story": {
+    "label": "生活空间",
+    "title": "置身苍翠山林的体验",
+    "description": "Zenith Wilderness 的每一栋别墅都被设计为生态系统的一部分。我们采用可持续的本地建材，并结合太阳能板，在保证现代奢华体验的同时将环境影响降到最低。",
+    "imageCaptionTitle": "无边景致",
+    "imageCaptionDesc": "在云雾缭绕与原始森林的鸟鸣声中悠然醒来。",
+    "features": [
+      { "title": "生态建筑", "desc": "采用天然石材与可持续人工林木材建造。" },
+      { "title": "自然通风", "desc": "开放式设计最大限度引入山林清风与自然光。" }
+    ]
+  },
+  "rooms": {
+    "label": "住宿",
+    "title": "客房与独栋小屋",
+    "subtitle": "选择最适合您探索之旅的休憩空间。",
+    "items": [
+      {
+        "name": "森林景观小屋",
+        "desc": "独栋原木小屋，正对原始森林，私人阳台迎接晨光。",
+        "price": "1,800,000₫",
+        "capacity": "2 位客人"
+      },
+      {
+        "name": "喀斯特山谷套房",
+        "desc": "宽敞套房配落地玻璃窗，俯瞰云雾缭绕的石灰岩山谷。",
+        "price": "2,500,000₫",
+        "capacity": "2-3 位客人"
+      },
+      {
+        "name": "河畔别墅",
+        "desc": "独立河畔别墅，配有专属花园与露天泡池。",
+        "price": "3,200,000₫",
+        "capacity": "4 位客人"
+      },
+      {
+        "name": "探洞家庭房",
+        "desc": "宽敞的家庭房型，紧邻洞穴徒步路线入口。",
+        "price": "3,800,000₫",
+        "capacity": "5-6 位客人"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "专属礼遇",
+    "title": "特色设施",
+    "items": [
+      { "title": "高速无线网络", "desc": "全园区信号覆盖，即使身处山林深处依然稳定连接。" },
+      { "title": "私人停车位", "desc": "别墅内设安全专属停车区。" },
+      { "title": "厨房与本地早餐", "desc": "有机食材，每日供应从农场到餐桌的新鲜菜单。" },
+      { "title": "专属徒步向导", "desc": "带您走入密林深处的隐秘小径，仅限住客专享。" },
+      { "title": "24 小时安保", "desc": "管家与保安全天候值守，尽享绝对私密。" },
+      { "title": "喀斯特山景", "desc": "每间客房均可眺望峰牙壮丽的喀斯特山景。" }
+    ]
+  },
+  "gallery": {
+    "label": "空间",
+    "title": "自然之间的多重视角",
+    "viewMore": "查看更多照片"
+  },
+  "testimonials": {
+    "title": "住客真实评价",
+    "subtitle": "来自与 Zenith Wilderness 一同探索峰牙之旅的真诚分享。",
+    "items": [
+      {
+        "quote": "景色美得令人惊叹，清晨推门便是云雾缭绕的石灰岩山峰。徒步向导团队非常专业、贴心。",
+        "name": "Hoang Anh",
+        "role": "亲子游客",
+        "rating": 5
+      },
+      {
+        "quote": "别墅十分僻静、绝对安静，却又靠近峰牙市中心。本地早餐非常美味，食材新鲜干净。",
+        "name": "Minh Thu",
+        "role": "旅游博主",
+        "rating": 5
+      },
+      {
+        "quote": "第一次跟着别墅的向导徒步穿越原始森林，是整趟广平之旅中最难忘的体验。",
+        "name": "Duc Anh",
+        "role": "户外摄影师",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "钟灵毓秀之地",
+    "subtitle": "距峰牙市中心仅 15 分钟车程，别墅坐落于僻静之处，既能确保绝对私密，又便于前往著名的各大溶洞游览。",
+    "addressLabel": "地址",
+    "address": "广平省布庄县山庄镇",
+    "hoursLabel": "入住 / 退房",
+    "hours": "入住 14:00 — 退房 12:00",
+    "phoneLabel": "电话",
+    "phone": "+84 912 345 678",
+    "btnCall": "立即致电",
+    "btnBook": "立即预订",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "booking": {
+    "priceLabel": "起价",
+    "price": "1,800,000₫",
+    "perNight": "/晚",
+    "cta": "查询空房"
+  },
+  "footer": {
+    "brand": "Zenith Wilderness",
+    "tagline": "在峰牙的自然怀抱中，重拾内心的宁静。",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "contact": "联系我们",
+    "copy": "© 2026 Zenith Wilderness Villa. 版权所有。"
+  }
+}

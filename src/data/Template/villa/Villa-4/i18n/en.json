@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "brand": "Rong Homestay",
+    "linkHome": "Home",
+    "linkRooms": "Villas & Bungalows",
+    "linkAmenities": "Amenities",
+    "linkReviews": "Reviews",
+    "linkContact": "Contact",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "badge": "Rong House Retreat",
+    "title": "The Breath of the Highlands",
+    "subtitle": "Rediscover absolute stillness on a windswept plateau, where traditional Rong-house architecture meets modern luxury.",
+    "btnPrimary": "Book Now",
+    "btnSecondary": "Explore the Space"
+  },
+  "heritage": {
+    "label": "Cultural Space",
+    "mainTitle": "A Cultural Space",
+    "mainDesc": "A refined blend of the Central Highlands' signature woven textiles and five-star comfort.",
+    "card1Title": "Singular Architecture",
+    "card1Desc": "Inspired by the soaring roof of the traditional Rong communal house, every villa is a work of art honouring the heritage of the highlands.",
+    "card2Title": "Breathtaking Views",
+    "card2Desc": "Open the window to the sound of a waterfall and the endless green of the ancient forest."
+  },
+  "experience": {
+    "label": "Evening Experience",
+    "title": "Warmth by the Fireplace",
+    "desc": "As night falls over the plateau, nothing beats sinking into a rattan chair, sipping hot tea and listening to firewood crackle by the outdoor stone hearth.",
+    "feature1Title": "Stone Hearth",
+    "feature1Desc": "Natural & rustic",
+    "feature2Title": "Starlit Sky",
+    "feature2Desc": "Zero light pollution",
+    "badgeLabel": "Ideal temperature",
+    "badgeValue": "18°C - 22°C"
+  },
+  "rooms": {
+    "label": "Where to Stay",
+    "title": "Villas & Bungalows",
+    "subtitle": "Every space tells its own story of Rong-house architecture and highland living.",
+    "items": [
+      {
+        "name": "Rong Single Bungalow",
+        "desc": "A curved-roof timber bungalow inspired by the Rong house, overlooking endless coffee hills.",
+        "price": "1,800,000₫",
+        "unit": "/night",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Family Twin Villa",
+        "desc": "Two separate bedrooms, a private garden and an outdoor stone hearth for the whole family.",
+        "price": "2,800,000₫",
+        "unit": "/night",
+        "capacity": "4 guests"
+      },
+      {
+        "name": "Waterfall Suite",
+        "desc": "Uninterrupted waterfall views, an outdoor timber tub and a fully private balcony.",
+        "price": "3,500,000₫",
+        "unit": "/night",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Communal Longhouse",
+        "desc": "An authentically restored traditional longhouse, ideal for groups of friends and large families.",
+        "price": "5,200,000₫",
+        "unit": "/night",
+        "capacity": "8 guests"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Amenities",
+    "title": "Privileges at Rong Homestay",
+    "subtitle": "Enjoy experiences steeped in the cultural identity of the Central Highlands.",
+    "items": [
+      { "label": "Free high-speed Wi-Fi" },
+      { "label": "Private parking" },
+      { "label": "Outdoor stone fireplace" },
+      { "label": "Pleiku airport transfer" },
+      { "label": "24/7 security" },
+      { "label": "Local tours & gong performances" },
+      { "label": "Two-way air conditioning" },
+      { "label": "Coffee hill tours" }
+    ]
+  },
+  "gallery": {
+    "label": "Views & Spaces",
+    "title": "Colours of the Highlands",
+    "viewMore": "See more"
+  },
+  "testimonials": {
+    "title": "Guest Experiences",
+    "subtitle": "Honest stories from guests who have stayed at Rong Homestay.",
+    "items": [
+      {
+        "quote": "Unique Rong-house architecture and a peaceful setting deep in the mountains. Sitting by the fire listening to gong music at night was unforgettable.",
+        "name": "Thu Ha",
+        "role": "Traveller from Hanoi",
+        "rating": 5
+      },
+      {
+        "quote": "Spotless rooms, a stunning waterfall view, and the staff happily arranged a coffee-hill tour for us. We'll definitely be back.",
+        "name": "Quan Anh",
+        "role": "Freelance photographer",
+        "rating": 5
+      },
+      {
+        "quote": "The perfect place to escape the city. The night sky was full of stars, the air was fresh, and the local breakfast was delicious.",
+        "name": "Bao Tran",
+        "role": "Traveller from Ho Chi Minh City",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "label": "Location",
+    "title": "The Heart of Kon Tum",
+    "subtitle": "Visit Rong Homestay to experience the authentic cultural space of the Central Highlands in person.",
+    "addressLabel": "Address",
+    "address": "Village 1, Dak Ro Wa Commune, Kon Tum City, Vietnam",
+    "airportLabel": "From Pleiku Airport",
+    "airportValue": "45 minutes by car",
+    "phoneLabel": "Phone",
+    "phone": "+84 905 123 456",
+    "btnCall": "Call Now",
+    "btnBook": "Book Now",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Rong Homestay",
+    "tagline": "Rediscover the breath of the Central Highlands.",
+    "linkPrivacy": "Privacy Policy",
+    "linkTerms": "Terms of Use",
+    "linkContact": "Contact",
+    "copy": "© 2026 Rong Homestay. All rights reserved."
+  }
+}

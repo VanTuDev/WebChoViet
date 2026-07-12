@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "brand": "Zenith",
+    "linkAbout": "空间",
+    "linkRooms": "客房",
+    "linkAmenities": "设施",
+    "linkGallery": "图库",
+    "linkReviews": "评价",
+    "linkContact": "联系我们",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "badge": "同文喀斯特高原",
+    "title": "苗岭悬崖别墅",
+    "subtitle": "触摸云海之境",
+    "desc": "在同文喀斯特高原的怀抱中，尽享奢华假期，传统建筑与壮丽自然在此交融。",
+    "btnPrimary": "立即探索",
+    "btnSecondary": "立即预订"
+  },
+  "about": {
+    "label": "建筑与愿景",
+    "title": "苗族传统与极简美学的交融",
+    "desc": "H'Mong Cliff Villa 的每间客房均采用当地板岩与深色天然木材精心打造。我们尊重本土文化，同时不断创新，为您带来极致舒适的体验。",
+    "badges": ["本土工艺", "天然材质"]
+  },
+  "rooms": {
+    "label": "客房",
+    "title": "透明定价",
+    "subtitle": "每个空间都呈现同文山脉不同的风景。",
+    "items": [
+      {
+        "name": "苗岭套房",
+        "desc": "私人阳台俯瞰悬崖峭壁，天然石浴缸，客房内享用早餐服务。",
+        "price": "3,500,000₫",
+        "unit": "/晚",
+        "capacity": "2位客人"
+      },
+      {
+        "name": "山谷景观房",
+        "desc": "落地大窗俯瞰山谷，高级橡木家具，可自由使用无边泳池。",
+        "price": "2,800,000₫",
+        "unit": "/晚",
+        "capacity": "2位客人"
+      },
+      {
+        "name": "悬崖独栋别墅",
+        "desc": "坐落于悬崖之上，私人温水泳池，尽享云雾缭绕间的绝对私密。",
+        "price": "4,200,000₫",
+        "unit": "/晚",
+        "capacity": "2-3位客人"
+      },
+      {
+        "name": "云端露台家庭房",
+        "desc": "私人露台可赏云海，两间相连卧室，非常适合家庭出游。",
+        "price": "5,500,000₫",
+        "unit": "/晚",
+        "capacity": "4位客人"
+      }
+    ],
+    "btnBook": "预订此房型"
+  },
+  "amenities": {
+    "label": "设施",
+    "title": "无穷体验",
+    "subtitle": "从泳池畔的静谧时光，到探索原始山林的精彩旅程。",
+    "items": [
+      { "label": "高速免费Wi-Fi" },
+      { "label": "私人停车位" },
+      { "label": "厨房与当地早餐" },
+      { "label": "客房壁炉" },
+      { "label": "接送服务" },
+      { "label": "本地徒步向导" },
+      { "label": "温水无边泳池" },
+      { "label": "24小时安保" }
+    ]
+  },
+  "gallery": {
+    "label": "空间",
+    "title": "多角度视野",
+    "viewMore": "查看更多"
+  },
+  "testimonials": {
+    "title": "宾客感言",
+    "subtitle": "Zenith 客人们留下的难忘回忆。",
+    "items": [
+      {
+        "quote": "真正美妙的体验。清晨醒来仿佛置身云海之中。别墅建筑十分精致，员工也非常热情周到。",
+        "name": "明煌",
+        "role": "来自河内",
+        "rating": 5
+      },
+      {
+        "quote": "这里的早餐是整个旅程的亮点。在高原清冷的晨雾中喝上一碗热腾腾的河粉，无可比拟。",
+        "name": "玲武",
+        "role": "摄影师",
+        "rating": 5
+      },
+      {
+        "quote": "云端露台房非常宽敞，全家人都住得下。孩子们还跟着当地向导体验了徒步，难忘的一次旅行。",
+        "name": "秋庄",
+        "role": "家庭出游",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "在H'Mong Cliff Villa开启回归自然的旅程。我们的团队全天候24小时为您服务。",
+    "addressLabel": "地址",
+    "address": "越南河江省同文喀斯特高原",
+    "phoneLabel": "电话号码",
+    "phone": "+84 912 345 678",
+    "btnCall": "立即致电",
+    "btnBook": "立即预订",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Zenith",
+    "tagline": "H'Mong Cliff Villa — 在同文的群山中重拾内心的宁静。",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "contact": "联系我们",
+    "copy": "© 2026 Zenith Minimalist Wellness. 保留所有权利。"
+  }
+}

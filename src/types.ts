@@ -13,6 +13,12 @@ export interface SiteConfig {
   customData: Record<string, unknown>;
   /** imageKey → dataURL hoặc uploaded URL */
   images: Record<string, string>;
+  /** Liên hệ nhanh cho thanh nổi (Gọi điện / Zalo / Facebook) — độc lập với nội dung template, hiện trên mọi trang */
+  contact?: {
+    phone?: string;
+    zalo?: string;
+    facebook?: string;
+  };
   status: 'draft' | 'published';
   isPending?: boolean;
   /** Vượt giới hạn gói Free sau khi hạ gói — không hiển thị public tới khi nâng cấp lại hoặc xóa bớt site */

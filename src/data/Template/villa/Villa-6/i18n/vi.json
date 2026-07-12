@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "brand": "Zenith",
+    "linkAbout": "Không Gian",
+    "linkRooms": "Phòng Nghỉ",
+    "linkAmenities": "Tiện Nghi",
+    "linkGallery": "Hình Ảnh",
+    "linkReviews": "Đánh Giá",
+    "linkContact": "Liên Hệ",
+    "cta": "Đặt Phòng Ngay"
+  },
+  "hero": {
+    "badge": "Cao Nguyên Đá Đồng Văn",
+    "title": "H'Mong Cliff Villa",
+    "subtitle": "Nơi Chạm Vào Mây Ngàn",
+    "desc": "Trải nghiệm kỳ nghỉ xa hoa giữa lòng cao nguyên đá Đồng Văn, nơi kiến trúc truyền thống người H'Mông hòa quyện cùng thiên nhiên hùng vĩ.",
+    "btnPrimary": "Khám phá ngay",
+    "btnSecondary": "Đặt phòng ngay"
+  },
+  "about": {
+    "label": "Kiến Trúc & Tầm Nhìn",
+    "title": "Di Sản H'Mông Giao Thoa Cùng Sự Tối Giản",
+    "desc": "Mỗi căn phòng tại H'Mong Cliff Villa được chế tác tỉ mỉ từ đá phiến địa phương và gỗ tự nhiên tối màu. Chúng tôi tôn trọng văn hóa bản địa nhưng không ngừng đổi mới để mang lại sự tiện nghi đẳng cấp nhất.",
+    "badges": ["Kiến trúc bản địa", "Vật liệu tự nhiên"]
+  },
+  "rooms": {
+    "label": "Phòng Nghỉ",
+    "title": "Bảng Giá Minh Bạch",
+    "subtitle": "Mỗi không gian là một góc nhìn khác của núi rừng Đồng Văn.",
+    "items": [
+      {
+        "name": "H'Mong Suite",
+        "desc": "Ban công riêng hướng vực sâu, bồn tắm đá tự nhiên, phục vụ bữa sáng tận phòng.",
+        "price": "3.500.000đ",
+        "unit": "/đêm",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Valley View Room",
+        "desc": "Cửa sổ kính lớn nhìn ra thung lũng, nội thất gỗ sồi cao cấp, tự do ra vào hồ bơi vô cực.",
+        "price": "2.800.000đ",
+        "unit": "/đêm",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Cliff Bungalow",
+        "desc": "Biệt lập trên vách đá, hồ bơi riêng nước ấm, không gian tuyệt đối riêng tư giữa mây núi.",
+        "price": "4.200.000đ",
+        "unit": "/đêm",
+        "capacity": "2-3 khách"
+      },
+      {
+        "name": "Cloud Terrace Family",
+        "desc": "Sân thượng riêng ngắm biển mây, hai phòng ngủ liền kề, phù hợp cho cả gia đình.",
+        "price": "5.500.000đ",
+        "unit": "/đêm",
+        "capacity": "4 khách"
+      }
+    ],
+    "btnBook": "Đặt phòng này"
+  },
+  "amenities": {
+    "label": "Tiện Nghi",
+    "title": "Trải Nghiệm Vô Tận",
+    "subtitle": "Từ những khoảnh khắc tĩnh lặng bên hồ bơi đến hành trình khám phá núi rừng nguyên sơ.",
+    "items": [
+      { "label": "Wifi miễn phí tốc độ cao" },
+      { "label": "Bãi đỗ xe riêng" },
+      { "label": "Bếp & bữa sáng địa phương" },
+      { "label": "Lò sưởi giữ ấm trong phòng" },
+      { "label": "Đưa đón tận nơi" },
+      { "label": "Hướng dẫn viên trekking bản địa" },
+      { "label": "Hồ bơi vô cực nước ấm" },
+      { "label": "An ninh 24/7" }
+    ]
+  },
+  "gallery": {
+    "label": "Không Gian",
+    "title": "Góc Nhìn Đa Chiều",
+    "viewMore": "Xem thêm"
+  },
+  "testimonials": {
+    "title": "Cảm Nhận Từ Du Khách",
+    "subtitle": "Những kỷ niệm đáng nhớ được lưu giữ bởi khách hàng của Zenith.",
+    "items": [
+      {
+        "quote": "Một trải nghiệm thực sự tuyệt vời. Sáng thức dậy thấy mình trôi giữa mây ngàn. Kiến trúc villa rất tinh tế, nhân viên nhiệt tình hỗ trợ hết mình.",
+        "name": "Minh Hoàng",
+        "role": "Đến từ Hà Nội",
+        "rating": 5
+      },
+      {
+        "quote": "Bữa sáng tại đây là điểm nhấn lớn nhất của chuyến đi. Không gì so sánh được cảm giác húp bát phở nóng hổi trong sương lạnh vùng cao.",
+        "name": "Linh Vũ",
+        "role": "Nhiếp ảnh gia",
+        "rating": 5
+      },
+      {
+        "quote": "Phòng Cloud Terrace rất rộng rãi cho cả gia đình. Các bé được trải nghiệm trekking cùng người bản địa, một chuyến đi khó quên.",
+        "name": "Thu Trang",
+        "role": "Du lịch cùng gia đình",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "Bắt đầu hành trình tìm về thiên nhiên tại H'Mong Cliff Villa. Đội ngũ chúng tôi sẵn sàng hỗ trợ bạn 24/7.",
+    "addressLabel": "Địa chỉ",
+    "address": "Cao nguyên đá Đồng Văn, Hà Giang, Việt Nam",
+    "phoneLabel": "Số điện thoại",
+    "phone": "+84 912 345 678",
+    "btnCall": "Gọi ngay",
+    "btnBook": "Đặt phòng ngay",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Zenith",
+    "tagline": "H'Mong Cliff Villa — Tìm lại sự bình yên giữa núi rừng Đồng Văn.",
+    "privacy": "Quy định bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "contact": "Liên hệ",
+    "copy": "© 2026 Zenith Minimalist Wellness. Bản quyền thuộc về chúng tôi."
+  }
+}

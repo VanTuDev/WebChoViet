@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serenity Villa | Rich Content Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "outline": "#76786b",
+                  "secondary-fixed": "#e0e5d4",
+                  "on-tertiary-container": "#272f0e",
+                  "secondary-fixed-dim": "#c3c9b8",
+                  "on-primary-container": "#253000",
+                  "inverse-primary": "#bdce89",
+                  "on-secondary-fixed": "#181d13",
+                  "on-primary-fixed-variant": "#3e4c16",
+                  "on-error-container": "#93000a",
+                  "surface-tint": "#56642b",
+                  "surface-variant": "#e3e2e0",
+                  "surface-container-highest": "#e3e2e0",
+                  "surface-container-low": "#f4f3f1",
+                  "on-tertiary-fixed-variant": "#414a26",
+                  "error": "#ba1a1a",
+                  "primary": "#56642b",
+                  "tertiary-fixed-dim": "#c1cc9c",
+                  "tertiary-fixed": "#dde8b7",
+                  "inverse-on-surface": "#f2f1ee",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary-fixed-variant": "#43493c",
+                  "surface-container-lowest": "#ffffff",
+                  "surface-bright": "#faf9f6",
+                  "outline-variant": "#c6c8b8",
+                  "tertiary": "#59623c",
+                  "surface-container": "#efeeeb",
+                  "primary-fixed-dim": "#bdce89",
+                  "tertiary-container": "#8e986d",
+                  "surface": "#faf9f6",
+                  "on-tertiary-fixed": "#171e01",
+                  "on-surface-variant": "#46483c",
+                  "on-surface": "#1a1c1a",
+                  "on-secondary-container": "#616659",
+                  "error-container": "#ffdad6",
+                  "background": "#faf9f6",
+                  "inverse-surface": "#2f312f",
+                  "primary-container": "#8a9a5b",
+                  "on-secondary": "#ffffff",
+                  "primary-fixed": "#d9eaa3",
+                  "on-primary": "#ffffff",
+                  "on-primary-fixed": "#161f00",
+                  "surface-dim": "#dbdad7",
+                  "on-error": "#ffffff",
+                  "surface-container-high": "#e9e8e5",
+                  "secondary-container": "#e0e5d4",
+                  "secondary": "#5b6053",
+                  "on-background": "#1a1c1a"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "unit": "8px",
+                  "section-gap": "80px",
+                  "stack-md": "24px",
+                  "gutter": "24px",
+                  "stack-lg": "48px",
+                  "container-padding": "32px",
+                  "stack-sm": "12px"
+          },
+          "fontFamily": {
+                  "headline-sm": ["Lexend"],
+                  "display-lg": ["Lexend"],
+                  "body-md": ["Lexend"],
+                  "body-lg": ["Lexend"],
+                  "label-md": ["Lexend"],
+                  "label-sm": ["Lexend"],
+                  "headline-md": ["Lexend"],
+                  "display-lg-mobile": ["Lexend"]
+          },
+          "fontSize": {
+                  "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "300"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "300"}],
+                  "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                  "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                  "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                  "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #faf9f6;
+      color: #1a1c1a;
+      overflow-x: hidden;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .zen-shadow {
+      box-shadow: 0 10px 40px -15px rgba(86, 100, 43, 0.08);
+    }
+
+    .breathing {
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.1; }
+      50% { transform: scale(1.15); opacity: 0.2; }
+    }
+
+    .parallax-section {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sticky-booking-card {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Sticky Booking Card -->
+<div class="sticky-booking-card hidden md:block">
+<div class="bg-white/90 backdrop-blur-xl p-6 rounded-2xl zen-shadow border border-primary/10 flex flex-col gap-4 min-w-[280px]">
+<div class="flex items-center gap-3 border-b border-outline-variant pb-3">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Ngày nhận phòng</p>
+<p class="text-body-md font-medium">Chọn ngày</p>
+</div>
+</div>
+<div class="flex items-center gap-3 border-b border-outline-variant pb-3">
+<span class="material-symbols-outlined text-primary">person</span>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Khách</p>
+<p class="text-body-md font-medium">2 Người lớn, 1 Trẻ em</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all">
+      Đặt Ngay
+    </button>
+</div>
+</div>
+<!-- Social Floating Icons -->
+<div class="fixed left-6 bottom-6 z-50 flex flex-col gap-4">
+<a class="w-12 h-12 bg-white rounded-full zen-shadow flex items-center justify-center text-primary hover:scale-110 transition-transform" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="w-12 h-12 bg-[#0068ff] rounded-full zen-shadow flex items-center justify-center text-white font-bold text-sm hover:scale-110 transition-transform" href="#">
+    Zalo
+  </a>
+</div>
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 w-full">
+<nav class="flex justify-between items-center px-container-padding py-stack-sm w-full max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">
+        Serenity Villa
+      </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Trải nghiệm</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Khu Villa</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Chăm sóc Sức khỏe</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bền vững</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Đặt phòng</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
+        Đặt Ngay
+      </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Serene infinity pool merging with ocean horizon" class="w-full h-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJifTbIXeAcqzpvCiEzJMSpK1LSq6uLbOeHPX7nEq4R-lDqyFi9VmO0ttfp-5uRAhypma-jlXSo6sYWJAJnR5SU6rzgdl9PW0jlsdWT0gSvx-l0y86eJU8ORAaFWouwoRUbP4gyvtD8sdNbVbd1c6yke2xO7mq1-UYyBKvep6AXjv1HlrwNOVLMwovOZFIS8DZe3-GO-IuL7Z2B19UpK8ftzXPuujazM6qQuHH0WKg5sIT_lr_qlHt"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface/60"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-container-padding">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-stack-md leading-tight">
+          Tìm Lại Bản Nguyên Tại <br/><span class="font-bold">Serenity Villa</span>
+</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-stack-lg max-w-xl">
+          Đánh thức mọi giác quan tại thiên đường nghỉ dưỡng biệt lập, nơi kiến trúc hữu cơ hòa quyện cùng bản hòa ca của đại dương và núi rừng.
+        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all flex items-center gap-2">
+            Khám phá Ngay <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="border border-white/50 text-white backdrop-blur-sm px-10 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> Xem Video
+          </button>
+</div>
+</div>
+</div>
+<!-- Breathing Indicator -->
+<div class="absolute bottom-12 right-12 hidden md:block">
+<div class="relative flex items-center justify-center w-24 h-24">
+<div class="absolute inset-0 bg-white/20 rounded-full breathing"></div>
+<span class="text-[10px] uppercase tracking-widest text-white/60 font-label-sm">Breathe</span>
+</div>
+</div>
+</section>
+<!-- Introduction Section -->
+<section class="py-section-gap px-container-padding">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-stack-lg items-center">
+<div class="fade-in">
+<div class="rounded-xl overflow-hidden zen-shadow">
+<img alt="Living Area with Garden View" class="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vowkS4U4t0OxTFQRXN6q_M9Pw6ofTVgQ9V-mxxKSKX43WChH8LhXbhXNz5K_872aCp5B8stiZvtcxhzSzqLxKRmathmPGubyssPvUdTVCAhVAmm0ajAGtTRsKwUBsxWIrCo9HFwBXpNoQmKKXpnpx5oS4B-UIbDOp_AVfxIo1EbZncCj1aSTPpPouugcJm5UmzKbmX7zVq0cFQj_YHTR49yU-S29FTP9eW8zzV4XJDU1heOLuPJJ"/>
+</div>
+</div>
+<div class="md:pl-16 fade-in">
+<span class="text-primary font-label-md tracking-widest mb-stack-sm block uppercase">Triết Lý Thiết Kế</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md leading-tight">
+          Sự Giao Thoa Tuyệt Mỹ <br/>Giữa Con Người Và Thiên Nhiên
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md leading-relaxed">
+          Tại Serenity Villa, ranh giới giữa không gian sống và khu rừng nhiệt đới dường như bị xóa nhòa. Chúng tôi áp dụng triết lý "Nature-Integrated" — nơi mỗi đường cong kiến trúc đều nương theo địa hình, cho phép ánh sáng tự nhiên và gió trời len lỏi vào từng ngóc ngách.
+        </p>
+<div class="mb-stack-lg">
+<img alt="Working/Library Corner" class="w-full h-48 object-cover rounded-lg zen-shadow mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlED9UFVt0wYD0Z_lY5hS1YoHegeNk0oiqNSdgjft46ivWDAZNDQvxyk6F7uYeA607NfK99YmhJNNeJ-aw5sehS2ASqVVmqiOgaVrV2Ns7ZYHD9gZq3aaTKgyHzjVJU_2HEALKOLOCzLVdLF7cg8J2p6pH4AHyNOb0qXFJhGsn5OtTiAtHdhLTAjpLd_b6T1wqtyt_LDT1B5hfzeURULA0Fob1zMpxqmBzfbsfL5IMvv2CzF9bnxU0"/>
+<p class="font-body-md text-on-surface-variant italic border-l-4 border-primary/20 pl-6">
+    "Góc thư viện nhỏ được thiết kế để tâm trí được tự do bay bổng cùng thiên nhiên."
+  </p>
+</div>
+<a class="text-primary font-label-md flex items-center gap-2 group" href="#">
+          Khám phá chi tiết thiết kế 
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Immersive Details Grid -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-container-padding">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Khoảnh Khắc Tĩnh Tại</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-md">Mỗi trải nghiệm tại đây đều được thiết kế để đánh thức các giác quan và vỗ về tâm hồn bạn.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-stack-md">
+<!-- Detail 1 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest zen-shadow fade-in">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Organic Bathroom Amenities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyAXRJpc96IeVMY4C-OdNwmMu2BeVQblsRBFrVOCNgA4XJGqU2uLvRAhanbmXXOiHrvnQfE5i5GTpoEyItftaeNKABV-i4j7QgQ2yAiQ28z_vOpGBPAtt4gmJXy0DjEyXej15BF-NXDbiyf9ZDs0AM_UBICT8Sr3sO-V4-tIIYYOXK9Zre2DYzZc3jqIjReCWFK0X_fz168ntWMIbHYy83PlS0nGpXS3Fbze3M4MBEXuVDjZ-hRy77"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Tiện nghi Thuần Khiết</h3>
+<p class="font-body-md text-on-surface-variant">Sử dụng các sản phẩm chăm sóc từ thảo mộc hữu cơ địa phương, đựng trong gốm thủ công tinh xảo, mang lại cảm giác thư thái tuyệt đối.</p>
+</div>
+</div>
+<!-- Detail 2 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest zen-shadow mt-12 md:mt-24 fade-in">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Villa Terrace at Dusk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkErB3wsC44ousPehKkAGg1GvLm6vjer3JOYPEI7lWLG8N2_yqvRtlAQzyy7Rc7TQZ0zEO4bic6En9aLogEtlKSTckS6Ij93XJ4JCnQjsbgxrsnwPIW_orXX-VtK5r98-IZ6kzQxUE_aOh7u5GKtHNodCIk58DgyvFCD1FE4h_CT_ea7tRVSUWCay-MqaB2t57WxnlxNB6zitCQYl-2OCiLE_5ndttcnuZAx1Q0MG0wJMZX_WDTjvg"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Hoàng Hôn Tĩnh Lặng</h3>
+<p class="font-body-md text-on-surface-variant">Khi màn đêm buông xuống, ánh đèn vàng ấm áp hòa cùng bầu trời xanh sâu thẳm, tạo nên một không gian lãng mạn và tinh tế trên sân hiên khoáng đạt.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Room Pricing Table -->
+<section class="py-section-gap px-container-padding bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-stack-lg">
+<span class="text-primary font-label-md tracking-widest uppercase mb-2 block">Dịch Vụ</span>
+<h2 class="font-headline-md text-headline-md mb-4">Bảng Giá Hạng Phòng</h2>
+<p class="text-on-surface-variant font-body-md max-w-2xl mx-auto">Lựa chọn không gian phù hợp nhất cho hành trình tìm lại chính mình của bạn.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-6 px-4 font-label-md text-on-surface uppercase tracking-wider">Hạng Phòng</th>
+<th class="py-6 px-4 font-label-md text-on-surface uppercase tracking-wider">Tiện Nghi Đặc Biệt</th>
+<th class="py-6 px-4 font-label-md text-on-surface uppercase tracking-wider">Số Người</th>
+<th class="py-6 px-4 font-label-md text-on-surface uppercase tracking-wider">Giá / Đêm</th>
+<th class="py-6 px-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-8 px-4">
+<div class="font-headline-sm text-headline-sm">Deluxe Garden Villa</div>
+<p class="text-label-sm text-on-surface-variant">View vườn nhiệt đới</p>
+</td>
+<td class="py-8 px-4 text-on-surface-variant font-body-md">Bồn tắm đá, Hiên trà riêng</td>
+<td class="py-8 px-4 text-on-surface-variant">2 Người lớn</td>
+<td class="py-8 px-4">
+<span class="text-primary font-bold text-headline-sm">2.500.000đ</span>
+</td>
+<td class="py-8 px-4 text-right">
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-on-primary px-6 py-2 rounded-full font-label-md transition-all">Chọn</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-8 px-4">
+<div class="font-headline-sm text-headline-sm">Premier Ocean Suite</div>
+<p class="text-label-sm text-on-surface-variant">View trực diện biển</p>
+</td>
+<td class="py-8 px-4 text-on-surface-variant font-body-md">Hồ bơi vô cực mini, Butler riêng</td>
+<td class="py-8 px-4 text-on-surface-variant">2 Người lớn</td>
+<td class="py-8 px-4">
+<span class="text-primary font-bold text-headline-sm">4.800.000đ</span>
+</td>
+<td class="py-8 px-4 text-right">
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-on-primary px-6 py-2 rounded-full font-label-md transition-all">Chọn</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-8 px-4">
+<div class="font-headline-sm text-headline-sm">Grand Presidential Villa</div>
+<p class="text-label-sm text-on-surface-variant">Khu biệt lập cao cấp</p>
+</td>
+<td class="py-8 px-4 text-on-surface-variant font-body-md">3 Phòng ngủ, Đầu bếp riêng, Spa tại chỗ</td>
+<td class="py-8 px-4 text-on-surface-variant">6 Người lớn</td>
+<td class="py-8 px-4">
+<span class="text-primary font-bold text-headline-sm">9.200.000đ</span>
+</td>
+<td class="py-8 px-4 text-right">
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-on-primary px-6 py-2 rounded-full font-label-md transition-all">Chọn</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Customer Reviews Section -->
+<section class="py-section-gap px-container-padding bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-stack-lg">
+<span class="text-primary font-label-md tracking-widest uppercase mb-2 block">Đánh Giá</span>
+<h2 class="font-headline-md text-headline-md mb-4">Cảm Nhận Từ Khách Hàng</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-white p-8 rounded-2xl zen-shadow fade-in">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic leading-relaxed">"Một không gian thực sự chạm đến tâm hồn. Thiết kế uốn lượn và vật liệu tự nhiên khiến tôi cảm thấy vô cùng thoải mái."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MA</div>
+<div>
+<p class="font-label-md">Minh Anh</p>
+<p class="text-label-sm text-on-surface-variant">Hà Nội, VN</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-white p-8 rounded-2xl zen-shadow md:mt-8 fade-in">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic leading-relaxed">"Dịch vụ butler chu đáo nhưng vẫn tôn trọng sự riêng tư tuyệt đối. Bữa sáng bên hồ bơi vô cực là khoảnh khắc đắt giá nhất."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center font-bold text-secondary">JS</div>
+<div>
+<p class="font-label-md">Julian S.</p>
+<p class="text-label-sm text-on-surface-variant">Singapore</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-white p-8 rounded-2xl zen-shadow fade-in">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic leading-relaxed">"Tôi đã tìm lại được sự tĩnh tại mà bấy lâu nay đã đánh mất. Serenity Villa không chỉ là nơi để ở, mà là nơi để chữa lành."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center font-bold text-tertiary">TH</div>
+<div>
+<p class="font-label-md">Thanh Hằng</p>
+<p class="text-label-sm text-on-surface-variant">TP. Hồ Chí Minh, VN</p>
+</div>
+</div>
+</div>
+<!-- Review 4 -->
+<div class="bg-white p-8 rounded-2xl zen-shadow md:mt-8 fade-in">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic leading-relaxed">"Góc làm việc nhìn ra vườn cây xanh mướt đã giúp tôi nạp lại năng lượng sáng tạo. Chắc chắn sẽ quay lại nhiều lần nữa."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed">KD</div>
+<div>
+<p class="font-label-md">Khánh Duy</p>
+<p class="text-label-sm text-on-surface-variant">Đà Nẵng, VN</p>
+</div>
+</div>
+</div>
+<!-- Review 5 -->
+<div class="bg-white p-8 rounded-2xl zen-shadow fade-in">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic leading-relaxed">"Excellent biophilic design. Every curve of the building tells a story. The organic skincare products are a lovely touch."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-outline-variant flex items-center justify-center font-bold text-on-surface">EM</div>
+<div>
+<p class="font-label-md">Elena M.</p>
+<p class="text-label-sm text-on-surface-variant">Paris, France</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Contact -->
+<section class="py-section-gap px-container-padding bg-surface-container-high">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-5 gap-stack-lg items-center">
+<div class="md:col-span-2 fade-in">
+<h2 class="font-headline-md text-headline-md mb-6">Liên Hệ Với Chúng Tôi</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-label-md text-on-surface">Địa Chỉ</p>
+<p class="text-on-surface-variant font-body-md">Thôn Nam, Xã Hòa Sơn, Đà Lạt, Lâm Đồng</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-label-md text-on-surface">Điện Thoại</p>
+<p class="text-on-surface-variant font-body-md">+84 901 234 567</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="font-label-md text-on-surface">Email</p>
+<p class="text-on-surface-variant font-body-md">stay@serenityvilla.vn</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-8">
+<a class="bg-white w-10 h-10 rounded-full flex items-center justify-center text-primary zen-shadow hover:bg-primary hover:text-white transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="bg-white w-10 h-10 rounded-full flex items-center justify-center text-primary zen-shadow hover:bg-primary hover:text-white transition-all font-bold text-xs" href="#">
+    ZALO
+  </a>
+</div>
+<button class="mt-8 bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all">
+            Nhận Chỉ Đường
+          </button>
+</div>
+<div class="md:col-span-3 h-[450px] rounded-2xl overflow-hidden zen-shadow fade-in">
+<div class="w-full h-full bg-surface-container-highest relative flex items-center justify-center">
+<div class="text-center opacity-40">
+<span class="material-symbols-outlined text-6xl mb-4">map</span>
+<p class="font-label-md uppercase tracking-widest">Bản Đồ Chỉ Dẫn</p>
+<p class="text-sm">Vị trí: Đà Lạt, Việt Nam</p>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center breathing">
+<div class="w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full rounded-t-xl mt-section-gap">
+<div class="max-w-7xl mx-auto px-container-padding py-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+<div class="font-headline-sm text-headline-sm text-primary">
+          Serenity Villa
+        </div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="font-label-sm text-label-sm text-on-secondary-container/70 hover:text-primary transition-opacity" href="#">Báo cáo Bền vững</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container/70 hover:text-primary transition-opacity" href="#">Chính sách Bảo mật</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container/70 hover:text-primary transition-opacity" href="#">Trải nghiệm Đặc tuyển</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container/70 hover:text-primary transition-opacity" href="#">Liên hệ</a>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-secondary-container/50">
+          © 2024 Serenity Villa. Nơi trú ẩn cho cuộc sống ý nghĩa.
+        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.412.558.217.957.477 1.377.896.419.42.679.819.896 1.377.164.422.359 1.057.412 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.412 2.227-.217.558-.477.957-.896 1.377-.42.419-.819.679-1.377.896-.422.164-1.057.359-2.227.412-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.412-.558-.217-.957-.477-1.377-.896-.419-.42-.679-.819-.896-1.377-.164-.422-.359-1.057-.412-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.412-2.227.217-.558.477-.957.896-1.377.42-.419.819-.679 1.377-.896.422-.164 1.057-.359 2.227-.412 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.337-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.337-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Intersection Observer for fade-in animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      // Parallax effect for hero
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroImg = document.querySelector('section img');
+        if (heroImg) {
+          heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
+        }
+
+        // Hide sticky card when footer is reached
+        const footer = document.querySelector('footer');
+        const stickyCard = document.querySelector('.sticky-booking-card');
+        if (footer && stickyCard) {
+          const footerTop = footer.getBoundingClientRect().top;
+          if (footerTop < window.innerHeight) {
+            stickyCard.style.transform = 'translateY(150%)';
+          } else {
+            stickyCard.style.transform = 'translateY(0)';
+          }
+        }
+      });
+    });
+  </script>
+</body></html>

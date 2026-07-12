@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "brand": "Serenity Sea-View",
+    "linkHome": "首页",
+    "linkRooms": "客房",
+    "linkAmenities": "设施",
+    "linkGallery": "相册",
+    "linkContact": "联系我们",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "titleLine1": "宁静的度假天堂",
+    "titleLine2": "就在无边大海之畔",
+    "subtitle": "探索融合日式禅意与海洋自然气息的精致生活空间。",
+    "btnPrimary": "立即预订",
+    "btnSecondary": "探索别墅"
+  },
+  "booking": {
+    "priceLabel": "起价",
+    "price": "¥980",
+    "priceUnit": "/晚",
+    "checkInLabel": "入住",
+    "checkOutLabel": "退房",
+    "cta": "立即预订"
+  },
+  "rooms": {
+    "label": "住宿之选",
+    "title": "专属于您的空间",
+    "subtitle": "所有客房均配备天然木质家具,并直面壮阔海景。",
+    "items": [
+      {
+        "name": "豪华花园别墅",
+        "desc": "面朝热带花园,极简风格家具,私密而宁静。",
+        "area": "45平方米",
+        "capacity": "2位客人",
+        "price": "¥980",
+        "unit": "/晚",
+        "cta": "选择客房"
+      },
+      {
+        "name": "海景主套房",
+        "desc": "正面海景,露天浴缸,躺在床上即可迎接日出。",
+        "area": "65平方米",
+        "capacity": "2位客人",
+        "price": "¥1,340",
+        "unit": "/晚",
+        "cta": "选择客房"
+      },
+      {
+        "name": "至尊总统套房",
+        "desc": "私人泳池,24小时管家服务,尽享极致奢华的海畔生活。",
+        "area": "120平方米",
+        "capacity": "4位客人",
+        "price": "¥2,560",
+        "unit": "/晚",
+        "cta": "选择客房"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "尊享设施",
+    "title": "别墅内部设施",
+    "subtitle": "为您的海滨度假之旅提供一切所需。",
+    "items": [
+      { "label": "高速无线网络" },
+      { "label": "无边泳池" },
+      { "label": "私人停车位" },
+      { "label": "设备齐全的厨房" },
+      { "label": "全屋空调" },
+      { "label": "私人海滩" },
+      { "label": "水上运动" },
+      { "label": "24小时安保" }
+    ]
+  },
+  "gallery": {
+    "label": "建筑与空间",
+    "title": "静谧与海洋交汇之处",
+    "items": [
+      { "caption": "面朝大海的无边泳池" },
+      { "caption": "私人海滩上的日落" },
+      { "caption": "热带风情别墅建筑" },
+      { "caption": "度假村全景" }
+    ]
+  },
+  "testimonials": {
+    "label": "客户评价",
+    "title": "来自每一次旅程的感受",
+    "items": [
+      {
+        "quote": "这里真的是一处疗愈心灵的空间。我在这里高效地完成了工作,又在无边泳池边度过了惬意的午后,一定会再来!",
+        "name": "黄英",
+        "role": "商务旅客",
+        "rating": 5
+      },
+      {
+        "quote": "这里的建筑设计非常漂亮,每个角落都值得拍照留念。服务用心周到,卧室里的海景无与伦比。",
+        "name": "林梅",
+        "role": "自由设计师",
+        "rating": 5
+      },
+      {
+        "quote": "我和爱人在至尊套房度过了一段美好的时光。私密性和专业的服务让我们非常满意。",
+        "name": "陈军",
+        "role": "企业主",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "开启您的旅程",
+    "subtitle": "Serenity Sea-View团队全天候为您提供帮助,助您拥有一次完美的假期。",
+    "addressLabel": "地址",
+    "address": "越南富国岛,白龙海滩,滨海路",
+    "phoneLabel": "预订热线",
+    "phone": "1900 888 999",
+    "hoursLabel": "服务时间",
+    "hours": "全年365天,每天24小时",
+    "btnCall": "立即致电",
+    "btnBook": "立即预订",
+    "zalo": "Zalo聊天",
+    "facebook": "Facebook",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Sea-View",
+    "tagline": "缔造宁静而顶级的度假时光。",
+    "exploreTitle": "探索",
+    "exploreLinks": ["别墅", "特色体验", "优惠活动"],
+    "infoTitle": "信息",
+    "infoLinks": ["隐私政策", "使用条款", "常见问题"],
+    "copy": "© 2026 Serenity Sea-View Villa. 版权所有。"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "brand": "Serenity Sea-View",
+    "linkHome": "Home",
+    "linkRooms": "Rooms",
+    "linkAmenities": "Amenities",
+    "linkGallery": "Gallery",
+    "linkContact": "Contact",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "titleLine1": "A Retreat of Serenity",
+    "titleLine2": "By the Endless Ocean",
+    "subtitle": "Discover refined living that blends Japanese Zen spirit with the biophilic breath of the sea.",
+    "btnPrimary": "Book Now",
+    "btnSecondary": "Explore The Villa"
+  },
+  "booking": {
+    "priceLabel": "Rates from",
+    "price": "$145",
+    "priceUnit": "/night",
+    "checkInLabel": "Check-in",
+    "checkOutLabel": "Check-out",
+    "cta": "Book Now"
+  },
+  "rooms": {
+    "label": "Stay Options",
+    "title": "A Space Made For You",
+    "subtitle": "Every room is furnished with natural wood and opens onto an unobstructed ocean view.",
+    "items": [
+      {
+        "name": "Deluxe Garden Villa",
+        "desc": "Facing the tropical garden, minimalist interiors, quiet and private.",
+        "area": "45m²",
+        "capacity": "2 guests",
+        "price": "$145",
+        "unit": "/night",
+        "cta": "Select Room"
+      },
+      {
+        "name": "Ocean Master Suite",
+        "desc": "Direct ocean view, open-air soaking tub, wake up to sunrise from bed.",
+        "area": "65m²",
+        "capacity": "2 guests",
+        "price": "$198",
+        "unit": "/night",
+        "cta": "Select Room"
+      },
+      {
+        "name": "Grand Presidential Suite",
+        "desc": "Private pool, round-the-clock butler service, the finest way to live by the sea.",
+        "area": "120m²",
+        "capacity": "4 guests",
+        "price": "$378",
+        "unit": "/night",
+        "cta": "Select Room"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Premium Facilities",
+    "title": "Amenities In The Villa",
+    "subtitle": "Everything you need for a complete retreat by the sea.",
+    "items": [
+      { "label": "High-speed Wi-Fi" },
+      { "label": "Infinity pool" },
+      { "label": "Private parking" },
+      { "label": "Fully equipped kitchen" },
+      { "label": "Air conditioning throughout" },
+      { "label": "Private beach access" },
+      { "label": "Water sports" },
+      { "label": "24/7 security" }
+    ]
+  },
+  "gallery": {
+    "label": "Architecture & Space",
+    "title": "Where Stillness Meets The Ocean",
+    "items": [
+      { "caption": "Infinity pool facing the sea" },
+      { "caption": "Sunset over the private beach" },
+      { "caption": "Tropical villa architecture" },
+      { "caption": "Panoramic view of the resort" }
+    ]
+  },
+  "testimonials": {
+    "label": "Guest Reviews",
+    "title": "Stories From Every Journey",
+    "items": [
+      {
+        "quote": "A truly healing space. I got a remarkable amount of work done and spent quiet afternoons by the infinity pool. I will definitely be back!",
+        "name": "Hoang Anh",
+        "role": "Business Traveler",
+        "rating": 5
+      },
+      {
+        "quote": "The architecture here is stunning, every corner is photo-worthy. The service was attentive and the ocean view from the bedroom is unmatched.",
+        "name": "Linh Mai",
+        "role": "Freelance Designer",
+        "rating": 5
+      },
+      {
+        "quote": "My spouse and I had a wonderful stay in the Grand Suite. The privacy and professional service made us very happy.",
+        "name": "Tran Quan",
+        "role": "Entrepreneur",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Begin Your Journey With Us",
+    "subtitle": "The Serenity Sea-View team is on hand 24/7 to help you plan the perfect getaway.",
+    "addressLabel": "Address",
+    "address": "Coastal Road, Bai Truong, Phu Quoc",
+    "phoneLabel": "Booking Hotline",
+    "phone": "1900 888 999",
+    "hoursLabel": "Support Hours",
+    "hours": "Available 24/7, every day of the week",
+    "btnCall": "Call Now",
+    "btnBook": "Book Now",
+    "zalo": "Zalo Chat",
+    "facebook": "Facebook",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Sea-View",
+    "tagline": "Crafting moments of peaceful, first-class retreat living.",
+    "exploreTitle": "Explore",
+    "exploreLinks": ["Villas", "Experiences", "Offers"],
+    "infoTitle": "Information",
+    "infoLinks": ["Privacy Policy", "Terms of Use", "FAQ"],
+    "copy": "© 2026 Serenity Sea-View Villa. All rights reserved."
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "brand": "Serenity Villa",
+    "linkExperience": "Experience",
+    "linkRooms": "Villas",
+    "linkAmenities": "Amenities",
+    "linkReviews": "Reviews",
+    "linkContact": "Contact",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "title": "Rediscover Your True Self At Serenity Villa",
+    "subtitle": "Awaken every sense at a secluded resort sanctuary where organic architecture blends with the harmony of ocean and mountain.",
+    "btnPrimary": "Explore now",
+    "btnSecondary": "Book a stay"
+  },
+  "intro": {
+    "label": "Design philosophy",
+    "title": "A Beautiful Dialogue Between People And Nature",
+    "desc": "At Serenity Villa, the line between living space and tropical forest quietly dissolves. We follow a \"Nature-Integrated\" philosophy — every architectural curve follows the terrain, letting natural light and breeze drift into every corner.",
+    "quote": "The small reading nook was designed to let the mind wander freely with nature.",
+    "link": "Discover the design details"
+  },
+  "highlights": {
+    "title": "Moments Of Stillness",
+    "subtitle": "Every experience here is designed to awaken the senses and soothe the soul.",
+    "items": [
+      {
+        "title": "Pure Amenities",
+        "desc": "Locally sourced organic herbal care products, presented in handcrafted ceramics, deliver a truly restful feeling."
+      },
+      {
+        "title": "Quiet Sunsets",
+        "desc": "As night falls, warm golden light meets a deep blue sky, creating a romantic and refined mood on the open terrace."
+      }
+    ]
+  },
+  "rooms": {
+    "label": "Services",
+    "title": "Room Rates",
+    "subtitle": "Choose the space that best fits your journey back to yourself.",
+    "capacityLabel": "guests",
+    "priceSuffix": "/ night",
+    "btnSelect": "Select",
+    "items": [
+      {
+        "name": "Deluxe Garden Villa",
+        "view": "Tropical garden view",
+        "desc": "Natural stone bathtub, private tea terrace and a small meditation garden right at your door.",
+        "capacity": "2",
+        "price": "$105"
+      },
+      {
+        "name": "Premier Ocean Suite",
+        "view": "Direct ocean view",
+        "desc": "Private mini infinity pool, personal butler service and breakfast delivered to your suite.",
+        "capacity": "2",
+        "price": "$199"
+      },
+      {
+        "name": "Grand Presidential Villa",
+        "view": "Ultra-private compound",
+        "desc": "Three separate bedrooms, a private chef on request and an on-site spa room.",
+        "capacity": "6",
+        "price": "$379"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Facilities",
+    "title": "Premium Amenities",
+    "subtitle": "Every detail is thoughtfully arranged to make your stay complete.",
+    "items": [
+      { "label": "High-speed Wi-Fi" },
+      { "label": "Infinity pool" },
+      { "label": "Private parking" },
+      { "label": "Fully equipped kitchen" },
+      { "label": "Villa-wide air conditioning" },
+      { "label": "24/7 security" },
+      { "label": "Spa & therapy" },
+      { "label": "Private garden" }
+    ]
+  },
+  "policy": {
+    "title": "Stay Policy",
+    "items": [
+      { "label": "Check-in", "value": "From 2:00 PM" },
+      { "label": "Check-out", "value": "Before 12:00 PM" },
+      { "label": "Cancellation", "value": "Free cancellation up to 3 days before arrival, 50% refund after" }
+    ]
+  },
+  "gallery": {
+    "label": "Spaces",
+    "title": "A View From Every Angle",
+    "viewMore": "See more"
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "Genuine impressions from guests who stayed at Serenity Villa.",
+    "items": [
+      {
+        "quote": "A space that truly touches the soul. The flowing design and natural materials made me feel completely at ease.",
+        "name": "Minh Anh",
+        "location": "Hanoi, Vietnam",
+        "rating": 5
+      },
+      {
+        "quote": "Attentive butler service that still respected our privacy completely. Breakfast by the infinity pool was worth every cent.",
+        "name": "Julian S.",
+        "location": "Singapore",
+        "rating": 5
+      },
+      {
+        "quote": "I found a stillness I had lost long ago. Serenity Villa isn't just a place to stay — it's a place to heal.",
+        "name": "Thanh Hang",
+        "location": "Ho Chi Minh City, Vietnam",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Visit us or reach out for the fastest booking assistance.",
+    "addressLabel": "Address",
+    "address": "Thon Nam, Hoa Son Commune, Da Lat, Lam Dong",
+    "phoneLabel": "Phone",
+    "phone": "+84 901 234 567",
+    "emailLabel": "Email",
+    "email": "stay@serenityvilla.vn",
+    "btnCall": "Call now",
+    "btnDirection": "Get directions",
+    "mapLoading": "Loading map...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Villa",
+    "linkSustainability": "Sustainability report",
+    "linkPrivacy": "Privacy policy",
+    "linkExperience": "Curated experiences",
+    "linkContact": "Contact",
+    "copy": "© 2026 Serenity Villa. A refuge for a meaningful life."
+  }
+}

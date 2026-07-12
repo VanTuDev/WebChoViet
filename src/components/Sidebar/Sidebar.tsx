@@ -7,7 +7,7 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppContext } from '../../store/AppContext';
 import {
   LayoutGrid, Coffee, Sparkles, Utensils, Milk,
-  Dumbbell, Heart,
+  Dumbbell, Heart, Home,
   TrendingUp, QrCode, Settings, HelpCircle,
   FolderSymlink, PanelLeftClose, PanelLeftOpen, Crown,
 } from 'lucide-react';
@@ -24,6 +24,7 @@ const MARKETPLACE_CATEGORIES: { id: string; label: string; icon: React.ReactNode
   { id: 'spa',        label: 'Spa & Làm Đẹp',       icon: <Sparkles  className="h-4 w-4 shrink-0" /> },
   { id: 'gym',        label: 'Gym & Thể Thao',      icon: <Dumbbell  className="h-4 w-4 shrink-0" /> },
   { id: 'wedding',    label: 'Thiệp Cưới',          icon: <Heart     className="h-4 w-4 shrink-0" /> },
+  { id: 'villa',      label: 'Homestay & Villa',    icon: <Home      className="h-4 w-4 shrink-0" /> },
 ];
 
 const DASHBOARD_MENUS = [

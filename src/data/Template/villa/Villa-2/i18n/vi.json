@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "brand": "Serenity Villa",
+    "linkExperience": "Trải nghiệm",
+    "linkRooms": "Khu Villa",
+    "linkAmenities": "Tiện nghi",
+    "linkReviews": "Đánh giá",
+    "linkContact": "Liên hệ",
+    "cta": "Đặt Ngay"
+  },
+  "hero": {
+    "title": "Tìm Lại Bản Nguyên Tại Serenity Villa",
+    "subtitle": "Đánh thức mọi giác quan tại thiên đường nghỉ dưỡng biệt lập, nơi kiến trúc hữu cơ hòa quyện cùng bản hòa ca của đại dương và núi rừng.",
+    "btnPrimary": "Khám phá ngay",
+    "btnSecondary": "Đặt phòng ngay"
+  },
+  "intro": {
+    "label": "Triết lý thiết kế",
+    "title": "Sự Giao Thoa Tuyệt Mỹ Giữa Con Người Và Thiên Nhiên",
+    "desc": "Tại Serenity Villa, ranh giới giữa không gian sống và khu rừng nhiệt đới dường như bị xóa nhòa. Chúng tôi áp dụng triết lý \"Nature-Integrated\" — nơi mỗi đường cong kiến trúc đều nương theo địa hình, cho phép ánh sáng tự nhiên và gió trời len lỏi vào từng ngóc ngách.",
+    "quote": "Góc thư viện nhỏ được thiết kế để tâm trí được tự do bay bổng cùng thiên nhiên.",
+    "link": "Khám phá chi tiết thiết kế"
+  },
+  "highlights": {
+    "title": "Khoảnh Khắc Tĩnh Tại",
+    "subtitle": "Mỗi trải nghiệm tại đây đều được thiết kế để đánh thức các giác quan và vỗ về tâm hồn bạn.",
+    "items": [
+      {
+        "title": "Tiện Nghi Thuần Khiết",
+        "desc": "Sử dụng các sản phẩm chăm sóc từ thảo mộc hữu cơ địa phương, đựng trong gốm thủ công tinh xảo, mang lại cảm giác thư thái tuyệt đối."
+      },
+      {
+        "title": "Hoàng Hôn Tĩnh Lặng",
+        "desc": "Khi màn đêm buông xuống, ánh đèn vàng ấm áp hòa cùng bầu trời xanh sâu thẳm, tạo nên một không gian lãng mạn và tinh tế trên sân hiên khoáng đạt."
+      }
+    ]
+  },
+  "rooms": {
+    "label": "Dịch vụ",
+    "title": "Bảng Giá Hạng Phòng",
+    "subtitle": "Lựa chọn không gian phù hợp nhất cho hành trình tìm lại chính mình của bạn.",
+    "capacityLabel": "khách",
+    "priceSuffix": "/ đêm",
+    "btnSelect": "Chọn phòng",
+    "items": [
+      {
+        "name": "Deluxe Garden Villa",
+        "view": "View vườn nhiệt đới",
+        "desc": "Bồn tắm đá tự nhiên, hiên trà riêng biệt và khu vườn thiền nhỏ ngay trước phòng.",
+        "capacity": "2",
+        "price": "2.500.000đ"
+      },
+      {
+        "name": "Premier Ocean Suite",
+        "view": "View trực diện biển",
+        "desc": "Hồ bơi vô cực mini riêng, dịch vụ butler cá nhân và bữa sáng phục vụ tận nơi.",
+        "capacity": "2",
+        "price": "4.800.000đ"
+      },
+      {
+        "name": "Grand Presidential Villa",
+        "view": "Khu biệt lập cao cấp",
+        "desc": "3 phòng ngủ riêng biệt, đầu bếp riêng theo yêu cầu và phòng spa tại chỗ.",
+        "capacity": "6",
+        "price": "9.200.000đ"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Tiện ích",
+    "title": "Tiện Nghi Đẳng Cấp",
+    "subtitle": "Mọi chi tiết đều được chăm chút để kỳ nghỉ của bạn trọn vẹn nhất.",
+    "items": [
+      { "label": "Wifi tốc độ cao" },
+      { "label": "Hồ bơi vô cực" },
+      { "label": "Bãi đỗ xe riêng" },
+      { "label": "Bếp đầy đủ tiện nghi" },
+      { "label": "Điều hòa toàn villa" },
+      { "label": "An ninh 24/7" },
+      { "label": "Spa & trị liệu" },
+      { "label": "Sân vườn riêng" }
+    ]
+  },
+  "policy": {
+    "title": "Chính Sách Lưu Trú",
+    "items": [
+      { "label": "Nhận phòng", "value": "Từ 14:00" },
+      { "label": "Trả phòng", "value": "Trước 12:00" },
+      { "label": "Huỷ đặt phòng", "value": "Miễn phí huỷ trước 3 ngày, hoàn 50% sau đó" }
+    ]
+  },
+  "gallery": {
+    "label": "Không gian",
+    "title": "Góc Nhìn Đa Chiều",
+    "viewMore": "Xem thêm"
+  },
+  "testimonials": {
+    "title": "Cảm Nhận Từ Khách Hàng",
+    "subtitle": "Những chia sẻ chân thực từ khách đã lưu trú tại Serenity Villa.",
+    "items": [
+      {
+        "quote": "Một không gian thực sự chạm đến tâm hồn. Thiết kế uốn lượn và vật liệu tự nhiên khiến tôi cảm thấy vô cùng thoải mái.",
+        "name": "Minh Anh",
+        "location": "Hà Nội, VN",
+        "rating": 5
+      },
+      {
+        "quote": "Dịch vụ butler chu đáo nhưng vẫn tôn trọng sự riêng tư tuyệt đối. Bữa sáng bên hồ bơi vô cực là khoảnh khắc đắt giá nhất.",
+        "name": "Julian S.",
+        "location": "Singapore",
+        "rating": 5
+      },
+      {
+        "quote": "Tôi đã tìm lại được sự tĩnh tại mà bấy lâu nay đã đánh mất. Serenity Villa không chỉ là nơi để ở, mà là nơi để chữa lành.",
+        "name": "Thanh Hằng",
+        "location": "TP. Hồ Chí Minh, VN",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "Ghé thăm hoặc liên hệ để được tư vấn đặt phòng nhanh nhất.",
+    "addressLabel": "Địa chỉ",
+    "address": "Thôn Nam, Xã Hòa Sơn, Đà Lạt, Lâm Đồng",
+    "phoneLabel": "Điện thoại",
+    "phone": "+84 901 234 567",
+    "emailLabel": "Email",
+    "email": "stay@serenityvilla.vn",
+    "btnCall": "Gọi ngay",
+    "btnDirection": "Nhận chỉ đường",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Villa",
+    "linkSustainability": "Báo cáo bền vững",
+    "linkPrivacy": "Chính sách bảo mật",
+    "linkExperience": "Trải nghiệm đặc tuyển",
+    "linkContact": "Liên hệ",
+    "copy": "© 2026 Serenity Villa. Nơi trú ẩn cho cuộc sống ý nghĩa."
+  }
+}

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Image as ImageIcon, Plus, Trash2, Link, Map, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, ChevronRight, Image as ImageIcon, Plus, Trash2, Link, Map, AlertCircle, CheckCircle2, Phone, MessageCircle, Facebook } from 'lucide-react';
 import { isGoogleMapsEmbedUrl } from '../../../utils/googleMaps';
 import type { ImageSlot } from '../../../data/templates/registry';
+import type { SiteConfig } from '../../../types';
 import ImageCropModal from './ImageCropModal';
 
 interface Props {
@@ -9,12 +10,16 @@ interface Props {
   customData: Record<string, unknown>;
   imageSlots: ImageSlot[];
   images: Record<string, string>;
+  /** Liên hệ nhanh cấp-site (nút nổi Gọi điện/Zalo/Facebook) — độc lập với nội dung template */
+  contact?: SiteConfig['contact'];
   /** Called when a scalar field changes (path → string value) */
   onChange: (path: string[], value: string) => void;
   /** Called when an array-of-objects field changes (path → whole new array) */
   onArrayChange: (path: string[], newArray: Record<string, unknown>[]) => void;
   /** Called when an image slot changes */
   onImageChange: (key: string, dataUrl: string) => void;
+  /** Called when a contact field changes */
+  onContactChange?: (field: 'phone' | 'zalo' | 'facebook', value: string) => void;
   /** Called when a section header is clicked — scroll preview to that section */
   onSectionFocus?: (sectionKey: string) => void;
 }
@@ -182,6 +187,60 @@ function MapEmbedField({ value, path, onChange }: {
           />
         </div>
       )}
+    </div>
+  );
+}
+
+// ── Liên hệ nhanh (nút nổi Gọi điện/Zalo/Facebook) — cấp-site, độc lập với schema template ──
+
+function ContactSection({
+  contact,
+  onContactChange,
+}: {
+  contact?: SiteConfig['contact'];
+  onContactChange?: (field: 'phone' | 'zalo' | 'facebook', value: string) => void;
+}) {
+  return (
+    <div className="space-y-3">
+      <p className="text-[10px] text-gray-400 leading-relaxed">
+        Hiện thành nút tròn nổi ở mọi trang trên website — khách bấm gọi hoặc nhắn Zalo/Facebook ngay. Bỏ trống thì không hiện nút.
+      </p>
+      <div>
+        <label className="flex items-center gap-1 text-xs font-medium text-gray-400 mb-1">
+          <Phone className="w-3 h-3" /> Số điện thoại
+        </label>
+        <input
+          type="tel"
+          placeholder="0901 234 567"
+          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-400 transition-all"
+          value={contact?.phone ?? ''}
+          onChange={e => onContactChange?.('phone', e.target.value)}
+        />
+      </div>
+      <div>
+        <label className="flex items-center gap-1 text-xs font-medium text-gray-400 mb-1">
+          <MessageCircle className="w-3 h-3" /> Link Zalo (zalo.me/...)
+        </label>
+        <input
+          type="url"
+          placeholder="https://zalo.me/0901234567"
+          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-400 transition-all"
+          value={contact?.zalo ?? ''}
+          onChange={e => onContactChange?.('zalo', e.target.value)}
+        />
+      </div>
+      <div>
+        <label className="flex items-center gap-1 text-xs font-medium text-gray-400 mb-1">
+          <Facebook className="w-3 h-3" /> Link trang Facebook
+        </label>
+        <input
+          type="url"
+          placeholder="https://facebook.com/tenquan"
+          className="w-full text-xs text-gray-800 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-orange-400 transition-all"
+          value={contact?.facebook ?? ''}
+          onChange={e => onContactChange?.('facebook', e.target.value)}
+        />
+      </div>
     </div>
   );
 }
@@ -466,9 +525,11 @@ export default function EditorPanel({
   customData,
   imageSlots,
   images,
+  contact,
   onChange,
   onArrayChange,
   onImageChange,
+  onContactChange,
   onSectionFocus,
 }: Props) {
   const [cropTarget, setCropTarget] = useState<ImageSlot | null>(null);
@@ -477,6 +538,11 @@ export default function EditorPanel({
   return (
     <div className="flex flex-col h-full overflow-hidden">
       <div className="flex-1 overflow-y-auto">
+        {/* Liên hệ nhanh — cấp-site, hiện trên mọi template */}
+        <Section title="Liên hệ nhanh (nút nổi)">
+          <ContactSection contact={contact} onContactChange={onContactChange} />
+        </Section>
+
         {/* Static image slots (hero, gallery, etc.) */}
         {imageSlots.length > 0 && (
           <Section title="Ảnh" sectionKey="hero" onFocus={onSectionFocus}>

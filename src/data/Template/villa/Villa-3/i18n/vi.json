@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "Zenith Wilderness",
+    "linkRooms": "Phòng nghỉ",
+    "linkAmenities": "Tiện ích",
+    "linkGallery": "Không gian",
+    "linkReviews": "Đánh giá",
+    "linkContact": "Vị trí",
+    "cta": "Tư vấn miễn phí"
+  },
+  "hero": {
+    "badge": "Phong Nha Wilderness Villa",
+    "title": "Hòa mình vào bản giao hưởng của núi rừng Quảng Bình",
+    "subtitle": "Khám phá sự bình yên tuyệt đối giữa lòng di sản thiên nhiên thế giới, nơi kiến trúc tối giản gặp gỡ vẻ đẹp hùng vĩ của núi đá vôi.",
+    "btnPrimary": "Đặt phòng ngay",
+    "btnSecondary": "Xem video tour",
+    "scrollHint": "Cuộn để khám phá"
+  },
+  "story": {
+    "label": "Không gian sống",
+    "title": "Trải nghiệm giữa ngàn xanh",
+    "description": "Mỗi căn biệt thự tại Zenith Wilderness được thiết kế như một phần của hệ sinh thái. Chúng tôi sử dụng vật liệu địa phương bền vững, kết hợp với các tấm pin năng lượng mặt trời để giảm thiểu tác động đến môi trường mà vẫn đảm bảo sự sang trọng hiện đại.",
+    "imageCaptionTitle": "Tầm nhìn vô cực",
+    "imageCaptionDesc": "Thức dậy trong vòng tay của mây ngàn và tiếng chim hót vang vọng từ rừng nguyên sinh.",
+    "features": [
+      { "title": "Kiến trúc sinh thái", "desc": "Sử dụng đá tự nhiên và gỗ rừng trồng bền vững." },
+      { "title": "Thông gió tự nhiên", "desc": "Thiết kế mở giúp đón gió rừng và ánh sáng tự nhiên tối đa." }
+    ]
+  },
+  "rooms": {
+    "label": "Lưu trú",
+    "title": "Phòng & Bungalow",
+    "subtitle": "Chọn không gian nghỉ dưỡng phù hợp với hành trình khám phá của bạn.",
+    "items": [
+      {
+        "name": "Forest View Bungalow",
+        "desc": "Bungalow gỗ đơn lập nhìn thẳng ra rừng nguyên sinh, ban công riêng đón nắng sớm.",
+        "price": "1.800.000đ",
+        "capacity": "2 khách"
+      },
+      {
+        "name": "Karst Valley Suite",
+        "desc": "Suite rộng rãi với vách kính lớn hướng thung lũng núi đá vôi mù sương.",
+        "price": "2.500.000đ",
+        "capacity": "2-3 khách"
+      },
+      {
+        "name": "Riverside Villa",
+        "desc": "Biệt thự ven sông riêng biệt, sân vườn và bồn tắm ngoài trời.",
+        "price": "3.200.000đ",
+        "capacity": "4 khách"
+      },
+      {
+        "name": "Cave Explorer Family Room",
+        "desc": "Phòng gia đình rộng rãi, gần lối vào các cung trekking hang động.",
+        "price": "3.800.000đ",
+        "capacity": "5-6 khách"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Đặc quyền",
+    "title": "Tiện ích đặc quyền",
+    "items": [
+      { "title": "Wifi tốc độ cao", "desc": "Phủ sóng toàn khu, kết nối ổn định ngay giữa núi rừng." },
+      { "title": "Bãi đỗ xe riêng", "desc": "Chỗ đậu xe an toàn ngay trong khuôn viên villa." },
+      { "title": "Bếp & bữa sáng địa phương", "desc": "Nguyên liệu hữu cơ, thực đơn Farm to Table mỗi ngày." },
+      { "title": "Hướng dẫn trekking riêng", "desc": "Những cung đường ẩn mình trong rừng sâu dành riêng cho khách lưu trú." },
+      { "title": "An ninh 24/7", "desc": "Quản gia và bảo vệ trực toàn thời gian, riêng tư tuyệt đối." },
+      { "title": "Tầm nhìn núi đá vôi", "desc": "Mỗi phòng đều hướng ra khung cảnh karst hùng vĩ của Phong Nha." }
+    ]
+  },
+  "gallery": {
+    "label": "Không gian",
+    "title": "Góc nhìn giữa thiên nhiên",
+    "viewMore": "Xem thêm ảnh"
+  },
+  "testimonials": {
+    "title": "Đánh giá từ khách lưu trú",
+    "subtitle": "Những chia sẻ chân thực từ hành trình khám phá Phong Nha cùng Zenith Wilderness.",
+    "items": [
+      {
+        "quote": "Không gian tuyệt đẹp, sáng dậy mở cửa là thấy sương phủ trên núi đá vôi. Đội ngũ hỗ trợ trekking rất chuyên nghiệp và tận tâm.",
+        "name": "Hoàng Anh",
+        "role": "Khách du lịch gia đình",
+        "rating": 5
+      },
+      {
+        "quote": "Villa biệt lập, yên tĩnh tuyệt đối nhưng vẫn gần trung tâm Phong Nha. Bữa sáng local rất ngon, nguyên liệu tươi sạch.",
+        "name": "Minh Thư",
+        "role": "Blogger du lịch",
+        "rating": 5
+      },
+      {
+        "quote": "Lần đầu trekking rừng nguyên sinh cùng hướng dẫn viên của villa, trải nghiệm đáng nhớ nhất trong chuyến đi Quảng Bình.",
+        "name": "Đức Anh",
+        "role": "Nhiếp ảnh gia phượt",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vị trí địa linh",
+    "subtitle": "Cách trung tâm Phong Nha chỉ 15 phút lái xe, villa tọa lạc tại vị trí biệt lập, đảm bảo sự riêng tư tuyệt đối nhưng vẫn thuận tiện để tham quan các hang động nổi tiếng.",
+    "addressLabel": "Địa chỉ",
+    "address": "Sơn Trạch, Bố Trạch, Quảng Bình",
+    "hoursLabel": "Nhận / trả phòng",
+    "hours": "Nhận phòng 14:00 — Trả phòng 12:00",
+    "phoneLabel": "Điện thoại",
+    "phone": "+84 912 345 678",
+    "btnCall": "Gọi ngay",
+    "btnBook": "Đặt phòng ngay",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "booking": {
+    "priceLabel": "Giá từ",
+    "price": "1.800.000đ",
+    "perNight": "/đêm",
+    "cta": "Kiểm tra phòng"
+  },
+  "footer": {
+    "brand": "Zenith Wilderness",
+    "tagline": "Tìm lại sự bình yên giữa lòng thiên nhiên Phong Nha.",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "contact": "Liên hệ",
+    "copy": "© 2026 Zenith Wilderness Villa. Bản quyền thuộc về chúng tôi."
+  }
+}

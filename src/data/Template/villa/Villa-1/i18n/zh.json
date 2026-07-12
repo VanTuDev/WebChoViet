@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "brand": "Serenity Villa",
+    "linkAmenities": "设施",
+    "linkRooms": "房型",
+    "linkGallery": "空间",
+    "linkReviews": "评价",
+    "linkContact": "联系",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "badge": "富国岛 翁郎海滩",
+    "title": "在Serenity Villa寻回内心的宁静",
+    "subtitle": "为渴望在富国岛壮丽自然中寻找片刻安宁的灵魂,打造的一处清幽庇护所。",
+    "btnPrimary": "立即探索",
+    "btnSecondary": "立即预订"
+  },
+  "booking": {
+    "priceLabel": "起始价格",
+    "priceValue": "¥720",
+    "priceSuffix": "/ 晚",
+    "location": "翁郎海滩, 富国岛, 坚江省",
+    "btnBook": "立即预订",
+    "fabLabel": "¥720 起 / 晚 立即预订"
+  },
+  "amenities": {
+    "label": "尊享体验",
+    "title": "别墅设施",
+    "subtitle": "精心设计的贴心配套,为您带来极致的放松体验。",
+    "items": [
+      { "title": "高速无线网络", "desc": "别墅全区域畅享流畅网络连接。" },
+      { "title": "无边泳池", "desc": "面朝大海的视野,清凉池水与天空相映成趣。" },
+      { "title": "专属停车位", "desc": "园区内安全宽敞的私人停车空间。" },
+      { "title": "设备齐全的厨房", "desc": "高端厨具,为您烹制温馨美味的家常菜。" },
+      { "title": "全屋空调", "desc": "全天候清凉舒适的室内空气。" },
+      { "title": "24小时安保", "desc": "专属团队全天候守护您的隐私与安全。" }
+    ]
+  },
+  "rooms": {
+    "label": "安眠时光",
+    "title": "精致静谧的休憩空间",
+    "subtitle": "Serenity的每一间客房都以中性色调与天然材质精心打造,专为深度放松而设计。",
+    "items": [
+      {
+        "name": "禅意花园房",
+        "desc": "配备豪华King size大床,窗外是宁静的热带花园景致。",
+        "price": "¥720",
+        "capacity": "2位客人"
+      },
+      {
+        "name": "泳池景观套房",
+        "desc": "私人阳台正对无边泳池,尽览翁郎海滩的绚丽日落。",
+        "price": "¥920",
+        "capacity": "2位客人"
+      },
+      {
+        "name": "青竹家庭别墅",
+        "desc": "两间卧室,独立厨房与宽敞客厅,专为全家出游而设。",
+        "price": "¥1,670",
+        "capacity": "4-6位客人"
+      },
+      {
+        "name": "静心天空阁楼",
+        "desc": "静谧的阁楼空间,配有专属瑜伽平台,迎接清晨第一缕阳光。",
+        "price": "¥1,090",
+        "capacity": "2位客人"
+      }
+    ]
+  },
+  "welcome": {
+    "label": "真挚的迎接",
+    "title": "幸福源自简单的事物",
+    "text": "在Serenity,我们相信幸福来自最简单的事物。一壶散发着草本香气的热茶,几盘新鲜的热带水果,以及一张手写的欢迎卡片,都会在您抵达的那一刻静候着您。",
+    "quote": "我们提供的不只是住宿,更是回家般的温暖感受。"
+  },
+  "gallery": {
+    "label": "视野与空间",
+    "title": "多维视角",
+    "viewMore": "查看更多"
+  },
+  "testimonials": {
+    "title": "住客的真实体验",
+    "subtitle": "来自在Serenity寻得内心宁静的住客们的真实分享。",
+    "items": [
+      {
+        "quote": "宁静得令人难以置信,海浪声与草木清香让所有压力烟消云散。日落时分的无边泳池美得难以言喻。",
+        "name": "秋姮",
+        "role": "来自河内的旅客",
+        "rating": 5
+      },
+      {
+        "quote": "一家五口入住青竹家庭别墅非常舒适,厨房设施齐全可以自己下厨。工作人员热情周到,欢迎礼物也十分温馨。",
+        "name": "国宝先生",
+        "role": "家庭度假",
+        "rating": 5
+      },
+      {
+        "quote": "为蜜月之旅预订的房间完全没有让我们失望,干净精致,唯一的遗憾是没能多住几天。",
+        "name": "明书",
+        "role": "蜜月情侣",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "绝佳地理位置",
+    "subtitle": "坐落于珍珠岛最宁静的翁郎海滩区域。",
+    "addressLabel": "地址",
+    "address": "坚江省富国市求阳翁郎海滩4巷",
+    "phoneLabel": "电话",
+    "phone": "+84 901 234 567",
+    "emailLabel": "邮箱",
+    "email": "hello@serenityvilla.vn",
+    "btnCall": "立即致电",
+    "btnBook": "立即预订",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Villa",
+    "tagline": "寻回内心的那份宁静。",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "contact": "联系我们",
+    "copy": "© 2026 富国岛Serenity Villa。版权所有。"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "brand": "隆共同屋民宿",
+    "linkHome": "首页",
+    "linkRooms": "别墅与小屋",
+    "linkAmenities": "设施",
+    "linkReviews": "评价",
+    "linkContact": "联系我们",
+    "cta": "立即预订"
+  },
+  "hero": {
+    "badge": "隆屋度假胜地",
+    "title": "大森林的呼吸",
+    "subtitle": "在风起云涌的高原上重拾绝对的宁静，传统隆屋建筑与现代奢华完美交融。",
+    "btnPrimary": "立即预订",
+    "btnSecondary": "探索空间"
+  },
+  "heritage": {
+    "label": "文化空间",
+    "mainTitle": "文化空间",
+    "mainDesc": "西原地区特色织锦与五星级舒适设施的精致融合。",
+    "card1Title": "独特建筑",
+    "card1Desc": "灵感源自高耸的隆屋屋顶，每一栋别墅都是致敬山林遗产的艺术之作。",
+    "card2Title": "绝美景致",
+    "card2Desc": "推开窗便是飞瀑之声与无边无际的原始森林绿意。"
+  },
+  "experience": {
+    "label": "夜间体验",
+    "title": "篝火旁的温暖",
+    "desc": "当夜幕降临高原，没有什么比靠在藤椅上，品一杯热茶，聆听户外石制壁炉里柴火噼啪作响更惬意的了。",
+    "feature1Title": "石制壁炉",
+    "feature1Desc": "自然质朴",
+    "feature2Title": "满天繁星",
+    "feature2Desc": "零光污染",
+    "badgeLabel": "理想温度",
+    "badgeValue": "18°C - 22°C"
+  },
+  "rooms": {
+    "label": "住宿之选",
+    "title": "别墅与小屋",
+    "subtitle": "每一处空间都在诉说隆屋建筑与高原生活的独特故事。",
+    "items": [
+      {
+        "name": "隆式单人小屋",
+        "desc": "灵感源自隆屋的弧形屋顶木屋，坐拥无边咖啡山景。",
+        "price": "180,000元",
+        "unit": "/晚",
+        "capacity": "2位客人"
+      },
+      {
+        "name": "家庭双人别墅",
+        "desc": "两间独立卧室、私人花园及户外石制壁炉，适合全家出游。",
+        "price": "280,000元",
+        "unit": "/晚",
+        "capacity": "4位客人"
+      },
+      {
+        "name": "瀑布景观套房",
+        "desc": "正对瀑布的绝佳视野、户外木质浴缸及私密阳台。",
+        "price": "350,000元",
+        "unit": "/晚",
+        "capacity": "2位客人"
+      },
+      {
+        "name": "公共长屋",
+        "desc": "原汁原味修复的传统长屋，非常适合好友结伴或大家庭出游。",
+        "price": "520,000元",
+        "unit": "/晚",
+        "capacity": "8位客人"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "设施",
+    "title": "隆共同屋民宿专享",
+    "subtitle": "尽情享受充满西原高地文化特色的体验。",
+    "items": [
+      { "label": "免费高速无线网络" },
+      { "label": "私人停车位" },
+      { "label": "户外石制壁炉" },
+      { "label": "波来古机场接送" },
+      { "label": "24小时安保" },
+      { "label": "本地锣钲文化之旅" },
+      { "label": "双向空调" },
+      { "label": "咖啡山参观之旅" }
+    ]
+  },
+  "gallery": {
+    "label": "景观与空间",
+    "title": "大森林的色彩",
+    "viewMore": "查看更多"
+  },
+  "testimonials": {
+    "title": "旅客真实体验",
+    "subtitle": "来自入住隆共同屋民宿旅客的真实分享。",
+    "items": [
+      {
+        "quote": "独特的隆屋建筑，深藏山林间的宁静空间。夜晚围炉聆听锣钲乐是难忘的体验。",
+        "name": "秋河",
+        "role": "来自河内的旅客",
+        "rating": 5
+      },
+      {
+        "quote": "房间干净整洁，瀑布景观令人惊艳，工作人员还热心安排了咖啡山之旅，一定会再来。",
+        "name": "光安",
+        "role": "自由摄影师",
+        "rating": 5
+      },
+      {
+        "quote": "逃离都市喧嚣的理想之地，繁星满天，空气清新，本地早餐也十分美味。",
+        "name": "宝珍",
+        "role": "来自胡志明市的旅客",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "label": "地理位置",
+    "title": "昆嵩的心脏地带",
+    "subtitle": "欢迎莅临隆共同屋民宿，亲身感受原汁原味的西原文化空间。",
+    "addressLabel": "地址",
+    "address": "越南昆嵩市多罗瓦社1村",
+    "airportLabel": "距波来古机场",
+    "airportValue": "车程45分钟",
+    "phoneLabel": "电话",
+    "phone": "+84 905 123 456",
+    "btnCall": "立即致电",
+    "btnBook": "立即预订",
+    "mapLoading": "地图加载中...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "隆共同屋民宿",
+    "tagline": "重拾西原大森林的呼吸。",
+    "linkPrivacy": "隐私政策",
+    "linkTerms": "使用条款",
+    "linkContact": "联系我们",
+    "copy": "© 2026 隆共同屋民宿。版权所有。"
+  }
+}

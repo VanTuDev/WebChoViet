@@ -1,0 +1,127 @@
+{
+  "nav": {
+    "brand": "Serenity Villa",
+    "linkAmenities": "Amenities",
+    "linkRooms": "Rooms",
+    "linkGallery": "Gallery",
+    "linkReviews": "Reviews",
+    "linkContact": "Contact",
+    "cta": "Book Now"
+  },
+  "hero": {
+    "badge": "Ong Lang Beach, Phu Quoc",
+    "title": "Find Your Peace At Serenity Villa",
+    "subtitle": "A tranquil sanctuary for souls seeking stillness amid the majestic nature of Phu Quoc island.",
+    "btnPrimary": "Explore now",
+    "btnSecondary": "Book now"
+  },
+  "booking": {
+    "priceLabel": "Starting from",
+    "priceValue": "$100",
+    "priceSuffix": "/ night",
+    "location": "Ong Lang Beach, Phu Quoc, Kien Giang",
+    "btnBook": "Book now",
+    "fabLabel": "Book from $100 / night"
+  },
+  "amenities": {
+    "label": "A Refined Experience",
+    "title": "Villa Amenities",
+    "subtitle": "Enjoy thoughtfully designed facilities that bring you maximum relaxation.",
+    "items": [
+      { "title": "High-speed Wifi", "desc": "Seamless connection across the entire villa grounds." },
+      { "title": "Infinity pool", "desc": "Ocean-facing views with cool water merging into the sky." },
+      { "title": "Private parking", "desc": "Safe, spacious parking right on the property." },
+      { "title": "Fully equipped kitchen", "desc": "Premium appliances for cozy home-cooked meals." },
+      { "title": "Air conditioning throughout", "desc": "Cool, comfortable air day and night." },
+      { "title": "24/7 security", "desc": "A dedicated team ensuring your privacy and safety." }
+    ]
+  },
+  "rooms": {
+    "label": "Restful Sleep",
+    "title": "Thoughtfully Designed Retreats",
+    "subtitle": "Every room at Serenity is designed to optimize rest, with neutral tones and natural materials.",
+    "items": [
+      {
+        "name": "Zen Garden Room",
+        "desc": "Premium king-size bed with views over a calm tropical garden.",
+        "price": "$100",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Pool View Suite",
+        "desc": "Private balcony looking straight onto the infinity pool and Ong Lang sunset.",
+        "price": "$128",
+        "capacity": "2 guests"
+      },
+      {
+        "name": "Bamboo Family Villa",
+        "desc": "Two bedrooms, a private kitchen and a spacious living room for the whole family.",
+        "price": "$232",
+        "capacity": "4-6 guests"
+      },
+      {
+        "name": "Sky Wellness Loft",
+        "desc": "A quiet loft space with a private yoga deck to greet the morning sun.",
+        "price": "$152",
+        "capacity": "2 guests"
+      }
+    ]
+  },
+  "welcome": {
+    "label": "A Heartfelt Welcome",
+    "title": "Happiness Found In Simple Things",
+    "text": "At Serenity, we believe happiness comes from the simplest things. A warm herbal tea, plates of fresh tropical fruit, and a handwritten welcome card will always be waiting the moment you arrive.",
+    "quote": "We don't just offer a place to stay — we offer the feeling of coming home."
+  },
+  "gallery": {
+    "label": "Views & Spaces",
+    "title": "Every Angle, Every Mood",
+    "viewMore": "View more"
+  },
+  "testimonials": {
+    "title": "Stories From Our Guests",
+    "subtitle": "Genuine reflections from guests who found their peace at Serenity.",
+    "items": [
+      {
+        "quote": "A stillness like nowhere else — the sound of waves and the scent of greenery melted all my stress away. The infinity pool at sunset is beyond words.",
+        "name": "Thu Hang",
+        "role": "Traveler from Hanoi",
+        "rating": 5
+      },
+      {
+        "quote": "Our family of five stayed comfortably in the bamboo family villa, with a full kitchen to cook our own meals. Staff were wonderfully attentive and the welcome gift was so warm.",
+        "name": "Mr. Quoc Bao",
+        "role": "Family getaway",
+        "rating": 5
+      },
+      {
+        "quote": "We booked for our honeymoon and were not disappointed at all. The room was spotless and refined — we just wished we'd stayed a little longer.",
+        "name": "Minh Thu",
+        "role": "Honeymoon couple",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "A Prime Location",
+    "subtitle": "Set on the most tranquil stretch of Ong Lang beach on Phu Quoc island.",
+    "addressLabel": "Address",
+    "address": "Alley 4, Ong Lang Beach, Cua Duong, Phu Quoc, Kien Giang",
+    "phoneLabel": "Phone",
+    "phone": "+84 901 234 567",
+    "emailLabel": "Email",
+    "email": "hello@serenityvilla.vn",
+    "btnCall": "Call now",
+    "btnBook": "Book now",
+    "mapLoading": "Map is loading...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "Serenity Villa",
+    "tagline": "Find your inner peace.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "contact": "Contact",
+    "copy": "© 2026 Serenity Villa Phu Quoc. All rights reserved."
+  }
+}

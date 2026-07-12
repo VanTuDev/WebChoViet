@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "The Hill Villas",
+    "linkRooms": "Phòng Nghỉ",
+    "linkAmenities": "Tiện Nghi",
+    "linkGallery": "Không Gian",
+    "linkReviews": "Đánh Giá",
+    "linkContact": "Vị Trí",
+    "cta": "Đặt Phòng Ngay"
+  },
+  "hero": {
+    "title": "Hơi Thở Đại Ngàn giữa lòng Phong Nha",
+    "subtitle": "Khám phá không gian nghỉ dưỡng biệt lập với kiến trúc gỗ ấm cúng, nép mình giữa đại ngàn xanh thẳm của Vườn quốc gia Phong Nha - Kẻ Bàng.",
+    "btnPrimary": "Đặt Phòng Ngay",
+    "btnSecondary": "Khám Phá Không Gian"
+  },
+  "intro": {
+    "label": "Về Chúng Tôi",
+    "title": "Kiến trúc gỗ mộc mạc, trải nghiệm sang trọng",
+    "desc": "Tại The Hill Villas, chúng tôi kết nối con người với thiên nhiên thông qua ngôn ngữ của gỗ và đá. Mỗi bungalow được thiết kế riêng tư tuyệt đối, giúp bạn rũ bỏ mọi ồn ào để lắng nghe nhịp thở của rừng già.",
+    "highlights": ["Bể bơi vô cực riêng", "Wifi tốc độ cao", "Ăn sáng bản địa", "Trải nghiệm thiền giữa rừng"]
+  },
+  "rooms": {
+    "label": "Chọn Không Gian Của Bạn",
+    "title": "Phòng Nghỉ & Bungalow",
+    "subtitle": "Đa dạng lựa chọn cho cặp đôi, gia đình hoặc nhóm bạn",
+    "featured": {
+      "badge": "Phổ Biến Nhất",
+      "tag": "Deluxe",
+      "name": "Deluxe Mountain View",
+      "desc": "Ban công rộng mở, tầm nhìn ôm trọn dãy núi đá vôi kỳ vĩ của Phong Nha. Nội thất cao cấp, không gian riêng tư tuyệt đối.",
+      "price": "850.000đ",
+      "unit": "/đêm",
+      "capacity": "2-3 khách"
+    },
+    "items": [
+      {
+        "tag": "Standard",
+        "name": "Standard Bungalow",
+        "desc": "Không gian ấm cúng, trang thiết bị cơ bản, lý tưởng cho trải nghiệm tối giản giữa rừng già.",
+        "price": "500.000đ",
+        "unit": "/đêm",
+        "capacity": "2 khách"
+      },
+      {
+        "tag": "Gia Đình",
+        "name": "Bungalow Gia Đình",
+        "desc": "Hai phòng ngủ liền kề, khoảng sân riêng hướng rừng, phù hợp cho gia đình có trẻ nhỏ.",
+        "price": "1.100.000đ",
+        "unit": "/đêm",
+        "capacity": "3-4 khách"
+      },
+      {
+        "tag": "Nguyên Căn",
+        "name": "Villa Nguyên Căn",
+        "desc": "Lựa chọn hoàn hảo cho gia đình hoặc nhóm bạn. Có khu vực sinh hoạt chung và bếp riêng.",
+        "price": "1.500.000đ",
+        "unit": "/đêm",
+        "capacity": "4-6 khách"
+      }
+    ]
+  },
+  "amenities": {
+    "label": "Tiện Nghi",
+    "title": "Sự chăm sóc từ những điều nhỏ nhất",
+    "desc": "Chúng tôi ưu tiên sử dụng các sản phẩm hữu cơ, thân thiện với môi trường trong từng chi tiết nhỏ nhất, mang lại cảm giác thư giãn tuyệt đối như tại spa chuyên nghiệp.",
+    "items": [
+      { "label": "Wifi tốc độ cao" },
+      { "label": "Bãi đỗ xe riêng" },
+      { "label": "Bếp chung & khu BBQ" },
+      { "label": "Điều hoà hai chiều" },
+      { "label": "Dẫn đoàn trekking rừng" },
+      { "label": "Đưa đón sân bay/ga" },
+      { "label": "An ninh 24/7" },
+      { "label": "Bể bơi vô cực riêng" }
+    ]
+  },
+  "gallery": {
+    "label": "Đại Ngàn Phong Nha",
+    "title": "Góc nhìn từ đồi cao",
+    "viewMore": "Xem thêm"
+  },
+  "testimonials": {
+    "title": "Khách hàng nói gì về chúng tôi",
+    "subtitle": "Những chia sẻ chân thực từ du khách đã nghỉ dưỡng tại The Hill Villas.",
+    "items": [
+      {
+        "quote": "Một không gian tuyệt vời để chữa lành. Mình thực sự yêu cái cách mà gỗ và ánh sáng hòa quyện vào nhau ở đây. View bể bơi buổi sáng nhìn ra núi thật sự vô cực.",
+        "name": "Minh Anh",
+        "role": "Hà Nội",
+        "rating": 5
+      },
+      {
+        "quote": "Bữa sáng rất ngon, đậm chất địa phương. Nhân viên cực kỳ nhiệt tình và mến khách. Cảm ơn The Hill Villas đã cho gia đình mình một kỳ nghỉ đáng nhớ.",
+        "name": "Thomas",
+        "role": "Australia",
+        "rating": 5
+      },
+      {
+        "quote": "Dịch vụ phòng tắm organic là điểm mình thích nhất. Cảm giác rất sạch sẽ và thư giãn. Nhất định sẽ quay lại đây vào năm sau!",
+        "name": "Thanh Hằng",
+        "role": "TP. Hồ Chí Minh",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hành trình đến trái tim Phong Nha",
+    "subtitle": "Chúng tôi nằm ở vị trí đắc địa, thuận tiện di chuyển đến các hang động nổi tiếng nhưng vẫn giữ được sự biệt lập cần thiết.",
+    "addressLabel": "Địa chỉ",
+    "address": "Thôn Xuân Sơn, Phong Nha, Bố Trạch, Quảng Bình",
+    "hoursLabel": "Nhận / Trả phòng",
+    "hours": "Check-in 14:00 - Check-out 12:00",
+    "phoneLabel": "Điện thoại",
+    "phone": "090 123 4567",
+    "btnCall": "Gọi Đặt Phòng",
+    "btnBook": "Đặt Phòng Ngay",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": ""
+  },
+  "footer": {
+    "brand": "The Hill Villas",
+    "tagline": "Nơi tâm hồn tìm về với thiên nhiên.",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "zalo": "Liên hệ Zalo",
+    "facebook": "Facebook",
+    "copy": "© 2026 The Hill Villas Phong Nha. Tất cả quyền được bảo lưu."
+  }
+}

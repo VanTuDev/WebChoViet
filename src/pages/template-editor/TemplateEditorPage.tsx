@@ -203,6 +203,14 @@ export default function TemplateEditorPage() {
     });
   }, []);
 
+  // ── Contact change (nút nổi Gọi điện/Zalo/Facebook) ─────────────────────────
+  const handleContactChange = useCallback((field: 'phone' | 'zalo' | 'facebook', value: string) => {
+    setSite(prev => {
+      if (!prev) return null;
+      return { ...prev, contact: { ...prev.contact, [field]: value } };
+    });
+  }, []);
+
   // ── Auto-save: debounce 1.5s on every site change ─────────────────────────
   useEffect(() => {
     if (!isMounted.current) { isMounted.current = true; return; }
@@ -311,11 +319,21 @@ export default function TemplateEditorPage() {
     setSite(prev => {
       if (!prev) return null;
       const mergedVi = deepMerge((prev.customData.vi as Record<string, unknown>) ?? {}, result.customData);
+      // SĐT lấy thẳng từ Google Maps (đáng tin hơn để AI suy luận) — chỉ điền nếu chủ site
+      // chưa tự nhập. Facebook: đoán từ field "website" của Maps nếu đúng là link facebook.com.
+      const website = result.place.website ?? '';
+      const guessedFacebook = /facebook\.com/i.test(website) ? website : undefined;
+      const contact = {
+        ...prev.contact,
+        phone: prev.contact?.phone || result.place.phone || undefined,
+        facebook: prev.contact?.facebook || guessedFacebook,
+      };
       return {
         ...prev,
         lang: 'vi',
         customData: { ...prev.customData, vi: mergedVi },
         images: { ...prev.images, ...result.images },
+        contact,
       };
     });
     showSnackbar('Đã tạo nội dung tự động từ Google Maps. Kiểm tra và chỉnh sửa lại nếu cần.', 'success');
@@ -647,9 +665,11 @@ export default function TemplateEditorPage() {
             customData={(site.customData[site.lang] as Record<string, unknown>) ?? {}}
             images={site.images}
             imageSlots={imageSlots}
+            contact={site.contact}
             onChange={handleFieldChange}
             onArrayChange={handleArrayChange}
             onImageChange={handleImageChange}
+            onContactChange={handleContactChange}
             onSectionFocus={handleSectionFocus}
           />
           <div className="shrink-0 px-4 py-3 border-t border-gray-100">
