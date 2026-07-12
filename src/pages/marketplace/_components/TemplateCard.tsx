@@ -25,7 +25,7 @@ export default function TemplateCard({ template: t, onUse }: Props) {
   const goUse = () => (isFree ? navigate(`/template-editor/new?template=${t.id}`) : onUse(t));
 
   return (
-    <article className="card-sway group relative flex flex-col rounded-xl border border-outline-variant/60 bg-white shadow-sm overflow-hidden">
+    <article className="group relative flex flex-col rounded-xl border border-outline-variant/60 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
 
       {/* ── Thanh trình duyệt tối giản (3 chấm) ─────────────────────────── */}
       <div className="flex items-center gap-0.5 px-2 py-1 bg-gradient-to-r from-fnb-cream to-white border-b border-outline-variant/40 shrink-0">
