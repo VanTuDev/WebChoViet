@@ -12,8 +12,9 @@ function Logo({ badge }: { badge?: string }) {
   return (
     <button
       onClick={() => navigate(ROUTES.MARKETPLACE)}
-      className="flex items-center gap-2 font-lexend font-extrabold text-xl tracking-tight text-slate-900 cursor-pointer select-none shrink-0 outline-none"
+      className="flex items-center gap-1.5 font-lexend font-extrabold text-xl tracking-tight text-slate-900 cursor-pointer select-none shrink-0 outline-none"
     >
+      <img src="/logo/logo-mark.png" alt="" className="h-7 w-7 object-contain" />
       web<span className="text-primary">choviet</span>
       {badge && (
         <span className="hidden sm:inline-flex text-[9px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase tracking-wide">

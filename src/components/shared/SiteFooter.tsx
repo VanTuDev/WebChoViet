@@ -29,8 +29,9 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
     return (
       <footer className="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-outline-variant/30 bg-surface-container-high">
         {/* Logo */}
-        <div className="flex items-center">
-          <span className="font-lexend font-extrabold text-xl text-on-surface opacity-70">
+        <div className="flex items-center gap-1.5 opacity-70">
+          <img src="/logo/logo-mark.png" alt="" className="h-6 w-6 object-contain" />
+          <span className="font-lexend font-extrabold text-xl text-on-surface">
             web<span className="text-primary">choviet</span>
           </span>
         </div>
@@ -72,8 +73,9 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
             <div>
               <button
                 onClick={() => navigate(ROUTES.HOME)}
-                className="font-lexend font-extrabold text-2xl text-slate-900 cursor-pointer block leading-none"
+                className="flex items-center gap-2 font-lexend font-extrabold text-2xl text-slate-900 cursor-pointer leading-none"
               >
+                <img src="/logo/logo-mark.png" alt="" className="h-8 w-8 object-contain" />
                 web<span className="text-primary-container">choviet</span>
               </button>
               <div className="flex items-center gap-1.5 mt-1.5">

@@ -121,7 +121,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
   // khách quay lại quán nhiều lần thì không cần quét QR lại mỗi lần. Manifest DỘNG
   // theo từng site (tên/icon riêng), build ngay trên FE qua data: URI — không cần
   // thêm endpoint backend nào.
-  const iconUrl = ogImage ? cloudinarySquareIcon(ogImage, 512) : `${window.location.origin}/favicon.svg`;
+  const iconUrl = ogImage ? cloudinarySquareIcon(ogImage, 512) : `${window.location.origin}/logo/apple-touch-icon-512.png`;
   const manifestHref = `data:application/json,${encodeURIComponent(JSON.stringify({
     name: config.name,
     short_name: config.name.slice(0, 30),
@@ -130,7 +130,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#ff6b2c',
-    icons: [{ src: iconUrl, sizes: ogImage ? '512x512' : 'any', type: ogImage ? 'image/png' : 'image/svg+xml' }],
+    icons: [{ src: iconUrl, sizes: '512x512', type: 'image/png' }],
   }))}`;
 
   useEffect(() => {
