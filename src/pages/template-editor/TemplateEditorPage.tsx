@@ -460,7 +460,7 @@ export default function TemplateEditorPage() {
   }
 
   // templateId có thể trỏ tới 1 template đã bị gỡ khỏi registry (site cũ, đổi tên...) —
-  // trước đây không check, `<TemplateComponent lang={...} />` với giá trị undefined ném
+  // không check thì `<TemplateComponent lang={...} />` với giá trị undefined sẽ ném
   // "invalid element type", crash render không có thông báo rõ ràng.
   if (!TemplateComponent) {
     return (

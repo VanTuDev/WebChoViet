@@ -1,7 +1,6 @@
 // Root pathless layout — đứng ngay dưới RouterProvider, bọc toàn bộ route tree.
-// Global overlay UI (Snackbar, ConfirmDialog, LoginModal) được render ở ĐÂY thay vì ở
-// AppProvider (state provider ở main.tsx, nằm ngoài RouterProvider) vì LoginModal dùng
-// <Link> — cần Router context, chỉ tồn tại bên trong cây route của RouterProvider.
+// Global overlay UI (Snackbar, ConfirmDialog, LoginModal) render ở đây, không ở AppProvider,
+// vì LoginModal dùng <Link> — cần Router context, chỉ tồn tại trong cây route.
 import { Outlet } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import Snackbar from '../components/Snackbar/Snackbar';

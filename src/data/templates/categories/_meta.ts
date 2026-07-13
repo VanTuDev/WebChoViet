@@ -15,14 +15,6 @@ export const CATEGORY_REGISTRY: CategoryMeta[] = [
     },
   },
   {
-    id: 'milk-tea',
-    label: 'Trà Sữa',
-    heading: {
-      title: 'Kho Giao Diện: Trà Sữa & Bubble Tea',
-      desc: 'Giao diện hiện đại cho tiệm trà sữa handmade. Trưng bày menu, topping và khuyến mãi thu hút khách.',
-    },
-  },
-  {
     id: 'restaurant',
     label: 'Nhà Hàng & Quán Ăn',
     heading: {

@@ -22,7 +22,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties, ElementType, HTMLAttributes, ReactNode, Ref } from 'react';
 
-export type RevealVariant =
+type RevealVariant =
   | 'fade'
   | 'fade-up'
   | 'fade-down'

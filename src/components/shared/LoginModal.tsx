@@ -1,6 +1,5 @@
-// Modal đăng nhập cho Landing Page — CHỈ hỗ trợ Google OAuth, giống hệt luồng thật ở
-// LoginPage.tsx (/login). Hệ thống chưa có đăng ký/đăng nhập bằng email, nên modal này
-// không có tab hay form email/password.
+// Modal đăng nhập — CHỈ hỗ trợ Google OAuth. Hệ thống chưa có đăng ký/đăng nhập
+// bằng email, nên modal này không có tab hay form email/password.
 import { X, ShieldCheck, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -72,7 +71,7 @@ export default function LoginModal({ onClose }: Props) {
             {t('login.googleButton')}
           </button>
 
-          {/* Terms — <Link> thật (crawler đọc được), thay cho <button> không dẫn đi đâu trước đây */}
+          {/* Terms/Privacy — <Link> thật để crawler index được, không dùng <button> */}
           <p className="text-center text-[11px] text-slate-400 leading-relaxed">
             {t('login.termsPrefix')}{' '}
             <Link to={ROUTES.POLICY_TERMS} onClick={onClose} className="text-primary hover:underline cursor-pointer">{t('login.termsLink')}</Link>

@@ -4,7 +4,7 @@ import { apiFetch } from './apiClient';
 
 export type PaidPlanId = 'pro' | 'ultra';
 export type BillingCycle = 'monthly' | 'yearly';
-export type PaymentStatus = 'pending' | 'success' | 'failed' | 'refunded';
+type PaymentStatus = 'pending' | 'success' | 'failed' | 'refunded';
 
 export interface MySubscription {
   plan: 'free' | PaidPlanId;
@@ -12,21 +12,6 @@ export interface MySubscription {
   status: string | null;
   currentPeriodEnd: string | null;
   cancelAtPeriodEnd: boolean;
-}
-
-export interface PaymentRecord {
-  _id: string;
-  plan: PaidPlanId;
-  billingCycle: BillingCycle;
-  amount: number;
-  currency: string;
-  status: PaymentStatus;
-  method: string;
-  orderCode: number;
-  providerTransactionId?: string;
-  paidAt?: string;
-  note?: string;
-  createdAt: string;
 }
 
 export interface CheckoutResult {
@@ -45,10 +30,6 @@ export interface CheckoutStatus {
 
 export function fetchMySubscription(): Promise<MySubscription> {
   return apiFetch<MySubscription>('/billing/me');
-}
-
-export function fetchMyPayments(): Promise<PaymentRecord[]> {
-  return apiFetch<PaymentRecord[]>('/billing/me/payments');
 }
 
 export function createCheckout(plan: PaidPlanId, billingCycle: BillingCycle): Promise<CheckoutResult> {

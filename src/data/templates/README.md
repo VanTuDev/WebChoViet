@@ -13,7 +13,6 @@ templates/
 ├── categories/
 │   ├── _meta.ts            CATEGORY_REGISTRY — danh sách category (label, heading Marketplace)
 │   ├── coffee.ts            TemplateDefinition[] của category "coffee"
-│   ├── milk-tea.ts
 │   ├── restaurant.ts
 │   ├── spa.ts
 │   ├── gym.ts

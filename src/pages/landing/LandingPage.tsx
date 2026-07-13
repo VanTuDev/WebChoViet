@@ -9,7 +9,6 @@ import {
   ChevronRight,
   ClipboardPaste,
   Coffee,
-  CupSoda,
   Flame,
   Languages,
   LogIn,
@@ -325,9 +324,6 @@ export default function LandingPage() {
               </li>
               <li className="flex items-center gap-1.5">
                 <UtensilsCrossed className="w-4 h-4 text-fnb-red" /> {t('hero.proofRestaurant')}
-              </li>
-              <li className="flex items-center gap-1.5">
-                <CupSoda className="w-4 h-4 text-fnb-pink" /> {t('hero.proofMilkTea')}
               </li>
             </ul>
           </div>

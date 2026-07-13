@@ -26,7 +26,6 @@ const REQUIRED_LANGS = ['vi', 'en', 'zh', 'ko'];
  */
 const REQUIRED_SECTIONS = {
   coffee: [['menu', 'menuSection', 'drinks']],
-  'milk-tea': [['menu', 'menuSection']],
   restaurant: [['menu', 'menuSection']],
   gym: [['programs', 'membership']],
   spa: [['services']],

@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
         element: <Navigate to={ROUTES.HOME} replace />,
       },
       {
-        // Trang /login riêng đã bỏ — dùng LoginModal (mở qua AppContext.openLoginModal) thay thế.
+        // Không có trang /login riêng — đăng nhập dùng LoginModal (mở qua AppContext.openLoginModal).
         path: '/login',
         element: <Navigate to={ROUTES.HOME} replace />,
       },

@@ -45,7 +45,7 @@ export interface ListUsersParams {
   limit?: number;
 }
 
-export interface PlatformDaily {
+interface PlatformDaily {
   date: string;
   views: number;
   clicks: number;
@@ -143,7 +143,7 @@ export function deleteSite(siteId: string): Promise<{ message: string }> {
   return apiFetch(`/admin/sites/${siteId}`, { method: 'DELETE' });
 }
 
-// ── Payments (real data — thay cho mock TRANSACTIONS trước đây) ────────────────
+// ── Payments ─────────────────────────────────────────────────────────────────
 
 export interface AdminPaymentListItem {
   id: string;

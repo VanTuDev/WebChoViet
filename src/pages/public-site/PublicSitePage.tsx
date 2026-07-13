@@ -121,7 +121,7 @@ function TemplateSite({ config }: { config: SiteConfig }) {
   // khách quay lại quán nhiều lần thì không cần quét QR lại mỗi lần. Manifest DỘNG
   // theo từng site (tên/icon riêng), build ngay trên FE qua data: URI — không cần
   // thêm endpoint backend nào.
-  // Fallback icon dùng favicon 512px ở public root (bộ logo cũ trong /logo/ đã xóa khi rebrand)
+  // Fallback icon dùng favicon 512px ở public root khi site chưa có ogImage riêng
   const iconUrl = ogImage ? cloudinarySquareIcon(ogImage, 512) : `${window.location.origin}/favicon.png`;
   const manifestHref = `data:application/json,${encodeURIComponent(JSON.stringify({
     name: config.name,

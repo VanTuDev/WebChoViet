@@ -34,7 +34,7 @@ Template ID: villa-1, villa-2, ...
 | **Footer** | ✅ | Logo + link nhanh + copyright |
 
 Lưu ý: category `villa` KHÔNG có trong `REQUIRED_SECTIONS` của
-`scripts/validate-templates.mjs` (chỉ coffee/milk-tea/restaurant/gym/spa/wedding
+`scripts/validate-templates.mjs` (chỉ coffee/restaurant/gym/spa/wedding
 mới bị validator ép buộc section riêng) — nhưng vẫn PHẢI có Rooms + Testimonials
 theo bảng trên để đúng kỳ vọng người mua, và `mapUrl` vẫn là bắt buộc chung cho
 mọi category (xem `.claude/skills/template-rules/SKILL.md`).

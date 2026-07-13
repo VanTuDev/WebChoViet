@@ -49,7 +49,7 @@ function TooltipBox({ xPct, children }: { xPct: number; children: React.ReactNod
 
 // ─── TimeSeriesChart — line + area, tối đa 2 series, crosshair + tooltip ────────
 
-export interface Series {
+interface Series {
   name: string;
   color: string;
   values: number[];

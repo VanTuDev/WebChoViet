@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import PolicyLayout, { PolicySection, PolicyList } from './PolicyLayout';
 import HreflangLinks from '../../../i18n/HreflangLinks';
 
-export interface PolicySectionData {
+interface PolicySectionData {
   heading: string;
   /** Đoạn văn TRƯỚC danh sách (nếu có) */
   paragraphs?: string[];

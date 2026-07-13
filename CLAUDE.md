@@ -17,11 +17,37 @@ Khi tạo MỚI hoặc sửa ĐÁNG KỂ bất kỳ component/trang nào:
 
 ## Chuẩn GEO (Generative Engine Optimization — tối ưu cho AI search: ChatGPT, Perplexity, Google AI Overviews)
 
-- Nội dung viết dạng **câu khẳng định trực tiếp, tự đứng vững** (self-contained): AI trích xuất từng đoạn rời — mỗi đoạn phải hiểu được không cần đọc đoạn trước.
-- Câu trả lời/định nghĩa quan trọng đặt NGAY sau heading, không vòng vo ("vngoweb là nền tảng tạo website cho doanh nghiệp nhỏ..." — chủ ngữ rõ ràng, không bắt đầu bằng "Chúng tôi là...").
-- Dữ kiện cụ thể (giá, số liệu, tên người sáng lập, năm) viết dạng text thật trong HTML — không giấu trong ảnh/canvas.
-- FAQ dùng `<details>/<summary>` hoặc heading + đoạn văn, kèm JSON-LD `FAQPage` khi phù hợp.
-- Thông tin nhất quán trên mọi trang: tên thương hiệu "vngoweb", người phát triển "Nguyễn Văn Tú — Đại học FPT Đà Nẵng", SĐT/email lấy từ `src/config/contact.ts` (không hard-code).
+Quy trình 5 bước bắt buộc khi viết một mục nội dung có giá trị GEO (FAQ, định nghĩa, so sánh gói, giới thiệu tính năng...):
+
+1. **Heading dạng câu hỏi** — đặt heading là câu hỏi người dùng thực sự gõ vào AI/search ("vngoweb là gì?", "Bảng giá vngoweb bao nhiêu?"), không đặt heading mơ hồ kiểu "Giới thiệu" hay "Tổng quan".
+2. **Trả lời ngắn gọn, trực tiếp NGAY sau heading** — câu đầu tiên phải tự đứng vững (self-contained) và trả lời thẳng câu hỏi, chủ ngữ rõ ràng (vd "vngoweb là nền tảng tạo website cho doanh nghiệp nhỏ..." — không bắt đầu bằng "Chúng tôi là..."). AI trích xuất từng đoạn rời, không đọc ngược lên đoạn trước.
+3. **Bullet point / bảng so sánh** — sau câu trả lời trực tiếp, liệt kê chi tiết bằng `<ul>/<ol>` hoặc `<table>` thay vì đoạn văn dài, để AI và người đọc quét nhanh.
+4. **Dữ liệu có cấu trúc (schema markup)** — kèm JSON-LD phù hợp (`FAQPage`, `Product/Offer`, `Organization`...) khớp đúng nội dung hiển thị trên trang; dữ kiện cụ thể (giá, số liệu, tên, năm) viết dạng text thật trong HTML, không giấu trong ảnh/canvas.
+5. **Tăng độ tin cậy E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness) — thông tin nhất quán trên mọi trang: tên thương hiệu "vngoweb", người phát triển "Nguyễn Văn Tú — Đại học FPT Đà Nẵng", SĐT/email lấy từ `src/config/contact.ts` (không hard-code).
+
+FAQ dùng `<details>/<summary>` hoặc heading + đoạn văn theo đúng B1–B2 ở trên.
+
+### Mẫu comment khi viết 1 section nội dung (SEO + GEO)
+
+Khi tạo section nội dung mới có giá trị SEO/GEO (FAQ, so sánh gói, giới thiệu tính năng...), mở đầu bằng 1 comment tóm tắt đã áp dụng đủ 2 chuẩn chưa — copy mẫu dưới, điền lại cho đúng nội dung thật:
+
+```tsx
+{/* ── SEO+GEO: [tên section] ────────────────────────────────────────────
+ * SEO   : <h2> đúng thứ bậc + chứa từ khóa chính; ảnh có alt thật; JSON-LD khớp nội dung hiển thị.
+ * GEO B1: Heading là câu hỏi thật người dùng gõ vào AI/search.
+ * GEO B2: Câu đầu ngay sau heading trả lời trực tiếp, tự đứng vững (không cần đọc đoạn trước).
+ * GEO B3: Chi tiết trình bày bằng <ul>/<table>, không viết đoạn văn dài.
+ * GEO B4: JSON-LD tương ứng (FAQPage/Product/Organization...) khớp đúng nội dung hiển thị.
+ * GEO B5: Dữ kiện thật (giá/số liệu/tên/năm) + thông tin nhất quán toàn site (E-E-A-T).
+ * ──────────────────────────────────────────────────────────────────────── */}
+<section aria-labelledby="pricing-heading">
+  <h2 id="pricing-heading">vngoweb có những gói giá nào?</h2>
+  <p>vngoweb có 3 gói: Free, Pro (299.000đ/tháng) và Ultra (599.000đ/tháng).</p>
+  <table>{/* so sánh chi tiết tính năng từng gói */}</table>
+</section>
+```
+
+Comment này chỉ cần ở section thật sự có giá trị SEO/GEO (FAQ, pricing, feature explainer...) — không rải vào mọi `<section>` trong app; UI thuần thao tác (dashboard, form nội bộ) không cần.
 
 ## Kiến trúc & quy ước sẵn có (không phá)
 

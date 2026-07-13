@@ -2,7 +2,7 @@ import { BadgeCheck, Crown } from 'lucide-react';
 
 export type UserPlan = 'free' | 'pro' | 'ultra';
 
-export const PLAN_META: Record<UserPlan, { label: string; icon: typeof BadgeCheck | null; className: string }> = {
+const PLAN_META: Record<UserPlan, { label: string; icon: typeof BadgeCheck | null; className: string }> = {
   free:  { label: 'Miễn phí', icon: null,       className: 'bg-slate-100 text-slate-500' },
   pro:   { label: 'Pro',      icon: BadgeCheck, className: 'bg-orange-50 text-orange-600' },
   ultra: { label: 'Ultra',    icon: Crown,      className: 'bg-violet-50 text-violet-600' },

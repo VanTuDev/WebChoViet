@@ -14,8 +14,7 @@ interface AppContextType {
   loadSiteConfigs: () => Promise<void>;
   upsertSiteConfig: (config: SiteConfig) => void;
   removeSiteConfig: (id: string) => Promise<void>;
-  // Snackbar — replaces window.alert. State + dismiss được render ở RootLayout
-  // (bên trong RouterProvider, không phải ở đây — xem ghi chú tại AppProvider bên dưới).
+  // Snackbar — replaces window.alert. State + dismiss render ở RootLayout (trong route tree).
   snackbar: SnackbarState | null;
   showSnackbar: (message: string, type?: 'success' | 'error') => void;
   dismissSnackbar: () => void;
@@ -23,7 +22,7 @@ interface AppContextType {
   confirmDialog: ConfirmDialogState | null;
   showConfirm: (dialog: ConfirmDialogState) => void;
   dismissConfirm: () => void;
-  // LoginModal — thay cho trang /login riêng, mở được từ bất kỳ đâu trong app
+  // LoginModal — mở được từ bất kỳ đâu trong app, không cần route riêng
   loginModalOpen: boolean;
   openLoginModal: () => void;
   closeLoginModal: () => void;
@@ -40,14 +39,10 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | null>(null);
 
-// AppProvider CHỈ cung cấp state/actions, KHÔNG tự render Snackbar/ConfirmDialog/LoginModal.
-// Lý do: ở main.tsx, AppProvider bọc NGOÀI <RouterProvider>, nên bất kỳ JSX nào render
-// trực tiếp ở đây đều nằm NGOÀI cây Router (createBrowserRouter/RouterProvider = data
-// router, tự dựng context riêng chỉ trong route tree của nó). LoginModal dùng <Link> —
-// component cần Router context — nên trước đây bị crash toàn bộ app với lỗi
-// "Cannot destructure property 'basename' of useContext(...) as it is null" mỗi khi mở
-// modal đăng nhập. Overlay UI được render ở RootLayout (src/layouts/RootLayout.tsx),
-// đứng trong route tree, nơi Link hoạt động bình thường.
+// AppProvider CHỈ cung cấp state/actions, KHÔNG tự render Snackbar/ConfirmDialog/LoginModal:
+// ở main.tsx, AppProvider bọc NGOÀI <RouterProvider>, nên JSX render trực tiếp ở đây sẽ nằm
+// ngoài cây Router — LoginModal dùng <Link>, cần Router context mới hoạt động được. Overlay
+// UI được render ở RootLayout (src/layouts/RootLayout.tsx), đứng trong route tree.
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [snackbar, setSnackbar] = useState<SnackbarState | null>(null);
   const [confirmDialog, setConfirmDialog] = useState<ConfirmDialogState | null>(null);

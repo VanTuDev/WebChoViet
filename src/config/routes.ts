@@ -46,8 +46,3 @@ export const ROUTES = {
   ADMIN_PAYMENTS:     '/admin/payments',
   ADMIN_TRANSACTIONS: '/admin/transactions',
 } as const;
-
-// ── Type helpers ────────────────────────────────────────────────────────────────
-
-/** Union type của tất cả route values — dùng để type-check navigate() calls */
-export type AppRoute = typeof ROUTES[keyof typeof ROUTES];

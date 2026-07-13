@@ -19,7 +19,7 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 import { APP_LANGS, DEFAULT_APP_LANG, isAppLang, type AppLang } from './types';
 import { appLangMeta } from './languages';
 
-export const APP_LANG_STORAGE_KEY = 'vngoweb_lang';
+const APP_LANG_STORAGE_KEY = 'vngoweb_lang';
 
 i18n
   .use(LanguageDetector)
@@ -45,7 +45,7 @@ i18n
   });
 
 /** Ngôn ngữ hệ thống hiện tại, đã chuẩn hoá về AppLang */
-export function currentAppLang(): AppLang {
+function currentAppLang(): AppLang {
   const lng = (i18n.resolvedLanguage ?? i18n.language ?? '').split('-')[0];
   return isAppLang(lng) ? lng : DEFAULT_APP_LANG;
 }
@@ -57,5 +57,3 @@ function syncHtmlLang(): void {
 i18n.on('languageChanged', syncHtmlLang);
 if (i18n.isInitialized) syncHtmlLang();
 else i18n.on('initialized', syncHtmlLang);
-
-export default i18n;

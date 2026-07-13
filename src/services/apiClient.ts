@@ -30,11 +30,10 @@ function extractMessage(body: unknown): string | undefined {
 }
 
 /**
- * Gọi backend + tự bóc `data` khỏi envelope chuẩn — trước đây gần như mỗi service
- * tự lặp lại y hệt đoạn gắn header JWT/ngrok, parse JSON, check `success`, throw
- * Error. axios lo phần lớn việc này miễn phí: tự throw cho status không phải 2xx,
- * tự JSON.stringify/parse, tự set đúng Content-Type cho cả JSON lẫn FormData
- * (multipart, xem uploadService) — chỉ cần chuẩn hoá lỗi về 1 Error dễ hiểu.
+ * Gọi backend + tự bóc `data` khỏi envelope chuẩn. axios lo phần lớn việc này
+ * miễn phí: tự throw cho status không phải 2xx, tự JSON.stringify/parse, tự
+ * set đúng Content-Type cho cả JSON lẫn FormData (multipart, xem uploadService)
+ * — chỉ cần chuẩn hoá lỗi về 1 Error dễ hiểu.
  */
 export async function apiFetch<T>(path: string, config?: AxiosRequestConfig, fallbackMessage?: string): Promise<T> {
   try {

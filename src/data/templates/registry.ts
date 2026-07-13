@@ -18,15 +18,14 @@
 
 import { CATEGORY_REGISTRY } from './categories/_meta';
 import { COFFEE_TEMPLATES } from './categories/coffee';
-import { MILK_TEA_TEMPLATES } from './categories/milk-tea';
 import { RESTAURANT_TEMPLATES } from './categories/restaurant';
 import { SPA_TEMPLATES } from './categories/spa';
 import { GYM_TEMPLATES } from './categories/gym';
 import { WEDDING_TEMPLATES } from './categories/wedding';
 import { VILLA_TEMPLATES } from './categories/villa';
-import type { ImageSlot, CategoryMeta, Template, TemplateDefinition } from './types';
+import type { ImageSlot, Template, TemplateDefinition } from './types';
 
-export type { ImageSlot, CategoryMeta, Template };
+export type { ImageSlot, Template };
 export { CATEGORY_REGISTRY };
 
 // ── Gộp tất cả category thành 1 danh sách phẳng ────────────────────────────────
@@ -34,7 +33,6 @@ export { CATEGORY_REGISTRY };
 
 const TEMPLATE_REGISTRY: TemplateDefinition[] = [
   ...COFFEE_TEMPLATES,
-  ...MILK_TEA_TEMPLATES,
   ...RESTAURANT_TEMPLATES,
   ...SPA_TEMPLATES,
   ...GYM_TEMPLATES,

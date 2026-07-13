@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppContext } from '../../store/AppContext';
 import {
-  LayoutGrid, Coffee, Sparkles, Utensils, Milk,
+  LayoutGrid, Coffee, Sparkles, Utensils,
   Dumbbell, Heart, Home,
   TrendingUp, QrCode, Settings, HelpCircle,
   FolderSymlink, PanelLeftClose, PanelLeftOpen, Crown,
@@ -19,7 +19,6 @@ import SidebarPlanCard from './SidebarPlanCard';
 const MARKETPLACE_CATEGORIES: { id: string; label: string; icon: React.ReactNode }[] = [
   { id: 'all',        label: 'Tất cả giao diện',    icon: <LayoutGrid className="h-4 w-4 shrink-0" /> },
   { id: 'coffee',     label: 'Cafe & Đồ Uống',      icon: <Coffee    className="h-4 w-4 shrink-0" /> },
-  { id: 'milk-tea',   label: 'Trà Sữa',             icon: <Milk      className="h-4 w-4 shrink-0" /> },
   { id: 'restaurant', label: 'Nhà Hàng & Quán Ăn', icon: <Utensils  className="h-4 w-4 shrink-0" /> },
   { id: 'spa',        label: 'Spa & Làm Đẹp',       icon: <Sparkles  className="h-4 w-4 shrink-0" /> },
   { id: 'gym',        label: 'Gym & Thể Thao',      icon: <Dumbbell  className="h-4 w-4 shrink-0" /> },

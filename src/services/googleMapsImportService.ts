@@ -1,7 +1,7 @@
 import { apiFetch } from './apiClient';
 import type { ImageSlot } from '../data/templates/registry';
 
-export interface NormalizedPlace {
+interface NormalizedPlace {
   name: string;
   address: string | null;
   phone: string | null;

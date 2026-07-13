@@ -58,14 +58,13 @@ export function extractSeoFacts(customData: Record<string, unknown>): SeoFacts {
 /** Map categoryId (từ Template.category) → schema.org @type phù hợp nhất. */
 const CATEGORY_SCHEMA_TYPE: Record<string, string> = {
   coffee: 'CafeOrCoffeeShop',
-  'milk-tea': 'CafeOrCoffeeShop',
   restaurant: 'Restaurant',
   spa: 'DaySpa',
   gym: 'ExerciseGym',
   wedding: 'LocalBusiness',
 };
 
-export function schemaTypeForCategory(category?: string): string {
+function schemaTypeForCategory(category?: string): string {
   return (category && CATEGORY_SCHEMA_TYPE[category]) || 'LocalBusiness';
 }
 
