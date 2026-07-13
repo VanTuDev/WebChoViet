@@ -14,6 +14,7 @@ import { ROUTES } from '../../../config/routes';
 import { useAppContext } from '../../../store/AppContext';
 import PlanBadge from '../../../components/shared/PlanBadge';
 import StatTile from '../../../components/common/StatTile';
+import { getPublicSiteUrl } from '../../../utils/tenant';
 
 const nf = (n: number) => n.toLocaleString('vi-VN');
 const fmtVnd = (n: number) => `${nf(n)}đ`;
@@ -138,7 +139,7 @@ export default function AdminDashboard() {
   const totalSitesPages = Math.ceil(sitesTotal / SITES_LIMIT);
 
   // Get base URL for public sites (same origin, /:slug)
-  const getPublicUrl = (slug: string) => `${window.location.origin}/${slug}`;
+  const getPublicUrl = getPublicSiteUrl;
 
   if (loading) {
     return (

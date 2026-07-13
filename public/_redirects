@@ -3,5 +3,22 @@
 /sitemap_index.xml  https://webchoviet-server.onrender.com/sitemap_index.xml  200
 /sitemaps/*         https://webchoviet-server.onrender.com/sitemaps/:splat    200
 
+# Bảo vệ route thật 1-đoạn của app chính — PHẢI đứng TRƯỚC rule /:slug bên dưới,
+# vì _redirects khớp theo thứ tự và không có negative-lookahead. Nếu thiếu 1 dòng
+# ở đây, route đó sẽ bị hiểu nhầm là slug site khách và bị redirect sang subdomain.
+/landing            /index.html                                              200
+/login              /index.html                                              200
+/marketplace        /index.html                                              200
+/pricing            /index.html                                              200
+/tutorials          /index.html                                              200
+/about              /index.html                                              200
+/dashboard          /index.html                                              200
+/payment-result     /index.html                                              200
+
+# Site khách xuất bản — chuyển hẳn từ path sang wildcard subdomain (*.vngoweb.com
+# đã Active trên Cloudflare Pages). 301 vì đây là thay đổi URL vĩnh viễn — giữ SEO
+# equity cho các link/site cũ đã chia sẻ dạng vngoweb.com/{slug}.
+/:slug              https://:slug.vngoweb.com/                               301
+
 # SPA fallback — mọi route con (React Router) đều render qua index.html.
 /*                  /index.html                                              200

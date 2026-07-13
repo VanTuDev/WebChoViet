@@ -9,6 +9,7 @@ import { TEMPLATE_NAME_MAP } from '../../../../data/templates/registry';
 import { TEMPLATE_SCREEN_BY_ID } from '../../../../utils/templateScreens';
 import { ROUTES } from '../../../../config/routes';
 import { useAppContext } from '../../../../store/AppContext';
+import { getPublicSiteUrl } from '../../../../utils/tenant';
 
 interface Props {
   site: SiteConfig;
@@ -33,7 +34,7 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
 
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(`${window.location.origin}/${site.slug}`);
+      await navigator.clipboard.writeText(getPublicSiteUrl(site.slug));
       showSnackbar('Đã sao chép link website.', 'success');
     } catch {
       showSnackbar('Không thể sao chép link.', 'error');
@@ -49,7 +50,7 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
         <span className="w-1.5 h-1.5 rounded-full bg-fnb-amber" />
         <span className="w-1.5 h-1.5 rounded-full bg-fnb-green" />
         <span className="ml-1.5 flex-1 truncate text-[9px] font-mono text-on-surface-variant bg-surface-container-low rounded-full px-2 py-px">
-          vngoweb.com/{site.slug}
+          {site.slug}.vngoweb.com
         </span>
       </div>
 
@@ -109,7 +110,7 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
             </button>
           ) : isPublished ? (
             <a
-              href={`/${site.slug}`}
+              href={getPublicSiteUrl(site.slug)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={e => e.stopPropagation()}

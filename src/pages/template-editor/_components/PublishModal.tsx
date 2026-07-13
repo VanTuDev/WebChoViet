@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Globe, CheckCircle2, Copy, ExternalLink, ArrowLeft, X, Loader2, Clock } from 'lucide-react';
 import { slugify } from '../../../services/siteConfigService';
+import { getPublicSiteUrl } from '../../../utils/tenant';
 
 type Step = 'name' | 'payment' | 'success';
 
@@ -50,7 +51,7 @@ export default function PublishModal({
   const [countdown, setCountdown] = useState(15 * 60);
   const isFree = templatePrice === 0;
   const slugPreview = slugify(name || siteName);
-  const liveUrl = `${window.location.origin}/${finalSlug || slugPreview}`;
+  const liveUrl = getPublicSiteUrl(finalSlug || slugPreview);
 
   useEffect(() => {
     if (step !== 'payment') return;

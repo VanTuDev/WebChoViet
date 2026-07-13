@@ -1,4 +1,5 @@
 import { useAppContext } from '../../../store/AppContext';
+import { getPublicSiteUrl } from '../../../utils/tenant';
 
 export default function QRCodesPage() {
   const { siteConfigs } = useAppContext();
@@ -14,7 +15,7 @@ export default function QRCodesPage() {
 
       <div className="space-y-4">
         {publishedSites.map(site => {
-          const siteUrl = `${window.location.origin}/${site.slug}`;
+          const siteUrl = getPublicSiteUrl(site.slug);
           const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(siteUrl)}`;
           return (
             <div key={site.id} className="bg-white p-5 rounded-2xl border border-gray-100 flex items-center justify-between shadow-sm">

@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useAppContext } from '../../../store/AppContext';
 import { fetchAnalytics } from '../../../services/analyticsService';
+import { getPublicSiteUrl } from '../../../utils/tenant';
 import type { SlugAnalytics, DailyStats } from '../../../services/analyticsService';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -219,11 +220,12 @@ export default function AnalyticsPage() {
           <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
           <span>Đang theo dõi:</span>
           <a
-            href={`/${selectedSite.slug}`}
+            href={getPublicSiteUrl(selectedSite.slug)}
             target="_blank"
+            rel="noopener noreferrer"
             className="font-mono text-primary hover:underline"
           >
-            {window.location.origin}/{selectedSite.slug}
+            {selectedSite.slug}.vngoweb.com
           </a>
         </div>
       )}

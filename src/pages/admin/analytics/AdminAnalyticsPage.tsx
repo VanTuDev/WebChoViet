@@ -6,6 +6,7 @@ import {
   Globe, TrendingUp, UserPlus,
 } from 'lucide-react';
 import { fetchPlatformAnalytics, PlatformAnalytics } from '../../../services/adminService';
+import { getPublicSiteUrl } from '../../../utils/tenant';
 import { TimeSeriesChart, BarChart, DonutChart, CHART_COLORS } from './_components/charts';
 import StatTile from '../../../components/common/StatTile';
 import LoadingState from '../../../components/common/LoadingState';
@@ -224,10 +225,10 @@ export default function AdminAnalyticsPage() {
                         <div className="flex-1 min-w-0">
                           <div className="flex justify-between items-center mb-1">
                             <a
-                              href={`/${site.slug}`} target="_blank" rel="noopener noreferrer"
+                              href={getPublicSiteUrl(site.slug)} target="_blank" rel="noopener noreferrer"
                               className="text-xs font-medium text-slate-300 hover:text-white truncate font-mono"
                             >
-                              /{site.slug}
+                              {site.slug}.vngoweb.com
                             </a>
                             <span className="text-xs font-bold text-slate-200 tabular-nums shrink-0 pl-2">
                               {nf(site.views)}
