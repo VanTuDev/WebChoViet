@@ -11,6 +11,8 @@ import { LANGUAGES, hasContent, langMeta } from '../../constants/languages';
 import type { SiteConfig, SiteLang } from '../../types';
 import { extractSeoFacts, buildLocalBusinessJsonLd, ogLocaleForLang } from '../../utils/seo';
 import { cloudinarySquareIcon } from '../../utils/cloudinaryIcon';
+import { getPublicSiteUrl } from '../../utils/tenant';
+import { DOMAIN } from '../../config/contact';
 import FloatingContactBar from '../../components/shared/FloatingContactBar';
 
 import { COMPONENT_MAP, TEMPLATES } from '../../data/templates/registry';
@@ -71,7 +73,7 @@ function LanguageSwitcher({
   );
 }
 
-function TemplateSite({ config }: { config: SiteConfig }) {
+function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHost: boolean }) {
   useAnalyticsTracker(config.slug);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -104,7 +106,10 @@ function TemplateSite({ config }: { config: SiteConfig }) {
   };
 
   const ogImage = Object.values(config.images || {})[0];
-  const canonicalUrl = `https://vngoweb.com/${config.slug}`;
+  // Canonical phải khớp đúng cách khách đang truy cập: subdomain nếu đã vào qua
+  // {slug}.vngoweb.com, hoặc path cũ nếu còn vào qua vngoweb.com/{slug} (giai đoạn
+  // chuyển tiếp — xem readmeToDo.md).
+  const canonicalUrl = isTenantHost ? getPublicSiteUrl(config.slug) : `https://${DOMAIN}/${config.slug}`;
   const category = TEMPLATES.find(t => t.id === config.templateId)?.category;
   const activeCustomData = (config.customData[activeLang] as Record<string, unknown>) ?? config.customData;
   const seoFacts = extractSeoFacts(activeCustomData);
@@ -123,11 +128,14 @@ function TemplateSite({ config }: { config: SiteConfig }) {
   // thêm endpoint backend nào.
   // Fallback icon dùng favicon 512px ở public root khi site chưa có ogImage riêng
   const iconUrl = ogImage ? cloudinarySquareIcon(ogImage, 512) : `${window.location.origin}/favicon.png`;
+  // Trên tenant subdomain, site CHÍNH LÀ gốc domain ("/") — không còn tiền tố /{slug}
+  // như khi còn vào qua path cũ vngoweb.com/{slug}.
+  const scopePath = isTenantHost ? '/' : `/${config.slug}`;
   const manifestHref = `data:application/json,${encodeURIComponent(JSON.stringify({
     name: config.name,
     short_name: config.name.slice(0, 30),
-    start_url: `/${config.slug}`,
-    scope: `/${config.slug}`,
+    start_url: scopePath,
+    scope: scopePath,
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#ff6b2c',
@@ -136,12 +144,13 @@ function TemplateSite({ config }: { config: SiteConfig }) {
 
   useEffect(() => {
     if (!('serviceWorker' in navigator)) return;
-    // Scope hẹp đúng bằng slug — SW này KHÔNG được phép ảnh hưởng tới các route khác
-    // của app (dashboard/editor/admin), chỉ kiểm soát đúng trang site công khai này.
-    navigator.serviceWorker.register('/sw.js', { scope: `/${config.slug}` }).catch(() => {
+    // Scope hẹp đúng bằng slug (hoặc "/" trên tenant subdomain) — SW này KHÔNG được
+    // phép ảnh hưởng tới các route khác của app (dashboard/editor/admin), chỉ kiểm
+    // soát đúng trang site công khai này.
+    navigator.serviceWorker.register('/sw.js', { scope: scopePath }).catch(() => {
       // Cài đặt PWA là tính năng phụ trợ — lỗi ở đây không được phép ảnh hưởng tới việc xem site
     });
-  }, [config.slug]);
+  }, [scopePath]);
 
   const { canInstall, promptInstall } = useInstallPrompt();
 
@@ -208,9 +217,10 @@ function TemplateSite({ config }: { config: SiteConfig }) {
         </button>
       )}
 
-      {/* "Made with vngoweb" badge */}
+      {/* "Made with vngoweb" badge — trên tenant subdomain, "/" là gốc site khách nên
+          phải trỏ tuyệt đối về domain chính, không dùng path tương đối */}
       <a
-        href="/"
+        href={isTenantHost ? `https://${DOMAIN}/` : '/'}
         className="fixed bottom-5 right-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm shadow-lg border border-black/5 rounded-full pl-3 pr-4 py-2 text-xs font-semibold text-gray-600 hover:shadow-xl hover:text-gray-900 transition-all z-50"
       >
         <Coffee className="w-4 h-4 text-primary" />
@@ -220,8 +230,12 @@ function TemplateSite({ config }: { config: SiteConfig }) {
   );
 }
 
-export default function PublicSitePage() {
-  const { slug } = useParams<{ slug: string }>();
+export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } = {}) {
+  const { slug: pathSlug } = useParams<{ slug: string }>();
+  // `slug` prop chỉ được router truyền khi đang ở tenant subdomain ({slug}.vngoweb.com);
+  // ngược lại lấy từ path cũ /:slug (giai đoạn chuyển tiếp — xem readmeToDo.md).
+  const slug = tenantSlug ?? pathSlug;
+  const isTenantHost = tenantSlug !== undefined;
 
   type State =
     | { kind: 'loading' }
@@ -286,19 +300,29 @@ export default function PublicSitePage() {
                 <Mail className="h-4 w-4" />
                 Liên hệ Quản trị viên
               </a>
-              <Link
-                to="/"
-                className="w-full flex items-center justify-center gap-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-xl text-sm font-semibold transition-colors cursor-pointer"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Về Trang Chủ vngoweb
-              </Link>
+              {isTenantHost ? (
+                <a
+                  href={`https://${DOMAIN}/`}
+                  className="w-full flex items-center justify-center gap-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-xl text-sm font-semibold transition-colors cursor-pointer"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Về Trang Chủ vngoweb
+                </a>
+              ) : (
+                <Link
+                  to="/"
+                  className="w-full flex items-center justify-center gap-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-xl text-sm font-semibold transition-colors cursor-pointer"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Về Trang Chủ vngoweb
+                </Link>
+              )}
             </div>
           </div>
         </div>
       );
     }
-    return <TemplateSite config={state.config} />;
+    return <TemplateSite config={state.config} isTenantHost={isTenantHost} />;
   }
 
   // 404
@@ -319,12 +343,21 @@ export default function PublicSitePage() {
       <p className="text-gray-400 text-xs mb-8">
         Nếu bạn vừa xuất bản, hãy kiểm tra lại slug hoặc thử tải lại trang.
       </p>
-      <Link
-        to="/"
-        className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-700 transition-colors"
-      >
-        Về trang chủ vngoweb
-      </Link>
+      {isTenantHost ? (
+        <a
+          href={`https://${DOMAIN}/`}
+          className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-700 transition-colors"
+        >
+          Về trang chủ vngoweb
+        </a>
+      ) : (
+        <Link
+          to="/"
+          className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-700 transition-colors"
+        >
+          Về trang chủ vngoweb
+        </Link>
+      )}
     </div>
   );
 }

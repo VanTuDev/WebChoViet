@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build output (Vercel tự build)
+# Build output (Cloudflare Pages tự build)
 dist/
 build/
 server.js

@@ -71,4 +71,4 @@ Khi thêm/sửa template trong `src/data/Template/`: dùng skill `template-rules
 
 ## Deploy
 
-Deploy trên **Vercel** (SPA rewrite trong `vercel.json`; 2 route sitemap động rewrite sang backend Render). Hướng dẫn đầy đủ deploy + domain + Google Search Console: `../DEPLOY_SETUP.md`.
+Deploy trên **Cloudflare Pages** (SPA rewrite trong `public/_redirects`; 2 route sitemap động rewrite sang backend Render). Hướng dẫn đầy đủ deploy + domain + Google Search Console: `../DEPLOY_SETUP.md`.

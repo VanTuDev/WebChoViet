@@ -1,0 +1,7 @@
+# Cloudflare Pages — cấu hình routing (SPA fallback + proxy sitemap).
+# Proxy sitemap cho Googlebot sang backend Render — giữ nguyên URL public (không có prefix /api/v1).
+/sitemap_index.xml  https://webchoviet-server.onrender.com/sitemap_index.xml  200
+/sitemaps/*         https://webchoviet-server.onrender.com/sitemaps/:splat    200
+
+# SPA fallback — mọi route con (React Router) đều render qua index.html.
+/*                  /index.html                                              200
