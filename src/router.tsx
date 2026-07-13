@@ -1,9 +1,10 @@
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { ROUTES } from './config/routes';
 import RouteErrorBoundary from './components/error/RouteErrorBoundary';
 import LandingPage from './pages/landing/LandingPage';
 import AuthCallbackPage from './pages/auth-callback/AuthCallbackPage';
 import NotFoundPage from './pages/not-found/NotFoundPage';
+import RootLayout from './layouts/RootLayout';
 import AppLayout from './layouts/AppLayout';
 import MarketplacePage from './pages/marketplace/MarketplacePage';
 import AboutUsPage from './pages/about/AboutUsPage';
@@ -40,7 +41,7 @@ export const router = createBrowserRouter([
   // bộ cây → cả SPA sập trắng, phải tải lại tay. Route con nào cần thông báo lỗi
   // rõ ràng hơn (vd trang site khách xem) có errorElement RIÊNG, ưu tiên hơn cái này.
   {
-    element: <Outlet />,
+    element: <RootLayout />,
     errorElement: <RouteErrorBoundary />,
     children: [
       // ── Public — không dùng AppLayout ──────────────────────────────────────
