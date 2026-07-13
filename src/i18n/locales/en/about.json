@@ -12,6 +12,10 @@
     "heading": "The vngoweb mission",
     "body": "Millions of cafes, restaurants, spas and small shops thrive offline yet have no presence online because of cost and technical barriers. vngoweb's mission is to remove those barriers: anyone can own a beautiful, SEO-ready, multilingual website — starting at zero cost."
   },
+  "disambiguation": {
+    "heading": "Is vngoweb related to VNG Corporation (Zalo)?",
+    "body": "No. vngoweb is an independent website-builder platform created by individual developer Nguyễn Văn Tú. It is not owned by, affiliated with, or a representative of VNG Corporation — the company behind Zalo and ZaloPay. The shared first letters in the name are purely coincidental; there is no ownership or partnership between the two."
+  },
   "values": {
     "heading": "Core values",
     "items": [

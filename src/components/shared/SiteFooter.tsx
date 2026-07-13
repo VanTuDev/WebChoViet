@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, Globe, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../../config/routes';
-import { CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, DOMAIN, BRAND_NAME, BUSINESS_REG_NUMBER, BUSINESS_REG_AUTHORITY } from '../../config/contact';
+import { CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, DOMAIN, BRAND_NAME, FOUNDER_NAME } from '../../config/contact';
 import Wordmark from './Wordmark';
 
 interface SiteFooterProps {
@@ -160,8 +160,7 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
 
             <div className="mt-5 pt-4 border-t border-slate-100">
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                {t('footer.businessReg', { number: BUSINESS_REG_NUMBER })}
-                <br />{t('footer.businessRegBy', { authority: BUSINESS_REG_AUTHORITY })}
+                {t('footer.operatedBy', { name: FOUNDER_NAME })}
               </p>
             </div>
           </nav>

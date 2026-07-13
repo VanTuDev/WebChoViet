@@ -9,7 +9,7 @@ import { ArrowRight, Code2, Rocket, Languages, BadgeDollarSign, Phone, Mail, Glo
 import { ROUTES } from '../../config/routes';
 import {
   BRAND_NAME, DOMAIN, CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL,
-  FOUNDER_NAME, FOUNDER_SCHOOL,
+  FOUNDER_NAME, FOUNDER_SCHOOL, FOUNDER_FACEBOOK, FOUNDER_ZALO,
 } from '../../config/contact';
 import HreflangLinks from '../../i18n/HreflangLinks';
 
@@ -38,6 +38,9 @@ export default function AboutUsPage() {
       url: `https://${DOMAIN}/`,
       telephone: `+84${CONTACT_PHONE_RAW.slice(1)}`,
       email: CONTACT_EMAIL,
+      // disambiguatingDescription: thuộc tính schema.org dùng đúng cho mục đích tách
+      // thực thể "vngoweb" khỏi "VNG Corporation" (trùng vài ký tự đầu tên gọi).
+      disambiguatingDescription: t('disambiguation.body'),
       founder: {
         '@type': 'Person',
         '@id': `https://${DOMAIN}/#founder`,
@@ -46,6 +49,7 @@ export default function AboutUsPage() {
         alumniOf: { '@type': 'CollegeOrUniversity', name: FOUNDER_SCHOOL },
         telephone: `+84${CONTACT_PHONE_RAW.slice(1)}`,
         url: `https://${DOMAIN}/about`,
+        sameAs: [FOUNDER_FACEBOOK, FOUNDER_ZALO],
       },
     },
   };
@@ -81,6 +85,22 @@ export default function AboutUsPage() {
           </h2>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
             {t('mission.body')}
+          </p>
+        </section>
+
+        {/* ── SEO+GEO: Phân biệt thương hiệu ─────────────────────────────────────
+         * SEO   : <h2> câu hỏi thật người dùng tìm; JSON-LD disambiguatingDescription
+         *         (mainEntity.Organization) khớp đúng nội dung hiển thị bên dưới.
+         * GEO B1: Heading là câu hỏi thật ("vngoweb có phải là VNG Corporation không?").
+         * GEO B2: Câu đầu trả lời trực tiếp "Không." + tự đứng vững, không cần đọc đoạn trước.
+         * GEO B5: Nhất quán tên brand "vngoweb" + founder "Nguyễn Văn Tú" toàn site (E-E-A-T).
+         * ──────────────────────────────────────────────────────────────────────── */}
+        <section aria-labelledby="about-disambiguation" className="bg-amber-50 border border-amber-200 rounded-3xl p-8 sm:p-10">
+          <h2 id="about-disambiguation" className="text-xl font-display font-bold text-gray-900 mb-3">
+            {t('disambiguation.heading')}
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            {t('disambiguation.body')}
           </p>
         </section>
 

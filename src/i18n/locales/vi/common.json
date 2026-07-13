@@ -44,8 +44,7 @@
     "phoneSupportHours": "Hỗ trợ 8:00 – 22:00 hàng ngày",
     "zalo": "Nhắn qua Zalo",
     "zaloResponse": "Phản hồi trong vòng 15 phút",
-    "businessReg": "Đăng ký kinh doanh số {{number}}",
-    "businessRegBy": "cấp bởi {{authority}}.",
+    "operatedBy": "Vận hành bởi cá nhân {{name}}.",
     "allRightsReserved": "Tất cả quyền được bảo lưu."
   },
   "login": {
@@ -65,6 +64,6 @@
     "contactHeading": "Thông tin liên hệ & đơn vị vận hành",
     "email": "Email",
     "hotline": "Hotline",
-    "businessRegLine": "Đăng ký kinh doanh số {{number}}, cấp bởi {{authority}}."
+    "operatedByLine": "Vận hành bởi cá nhân {{name}}."
   }
 }

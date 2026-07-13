@@ -44,8 +44,7 @@
     "phoneSupportHours": "每天 8:00 – 22:00 提供支持",
     "zalo": "通过 Zalo 联系",
     "zaloResponse": "15 分钟内回复",
-    "businessReg": "营业执照编号 {{number}}",
-    "businessRegBy": "由 {{authority}} 颁发。",
+    "operatedBy": "由个人运营：{{name}}。",
     "allRightsReserved": "保留所有权利。"
   },
   "login": {
@@ -65,6 +64,6 @@
     "contactHeading": "联系方式与运营主体",
     "email": "邮箱",
     "hotline": "服务热线",
-    "businessRegLine": "营业执照编号 {{number}}，由 {{authority}} 颁发。"
+    "operatedByLine": "由个人运营：{{name}}。"
   }
 }

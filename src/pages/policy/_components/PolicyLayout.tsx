@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, BUSINESS_REG_NUMBER, BUSINESS_REG_AUTHORITY } from '../../../config/contact';
+import { CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, FOUNDER_NAME } from '../../../config/contact';
 
 interface PolicyLayoutProps {
   title: string;
@@ -27,7 +27,7 @@ export default function PolicyLayout({ title, updatedAt, intro, children }: Poli
           <address className="not-italic space-y-1">
             <p>{t('policy.email')}: <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary-container hover:underline">{CONTACT_EMAIL}</a></p>
             <p>{t('policy.hotline')}: <a href={`tel:${CONTACT_PHONE_RAW}`} className="text-primary-container hover:underline">{CONTACT_PHONE}</a></p>
-            <p>{t('policy.businessRegLine', { number: BUSINESS_REG_NUMBER, authority: BUSINESS_REG_AUTHORITY })}</p>
+            <p>{t('policy.operatedByLine', { name: FOUNDER_NAME })}</p>
           </address>
         </footer>
       </div>

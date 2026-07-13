@@ -7,6 +7,5 @@ export const DOMAIN = 'vngoweb.com';
 export const BRAND_NAME = 'vngoweb';
 export const FOUNDER_NAME = 'Nguyễn Văn Tú';
 export const FOUNDER_SCHOOL = 'Đại học FPT Đà Nẵng';
-
-export const BUSINESS_REG_NUMBER = '0123456789';
-export const BUSINESS_REG_AUTHORITY = 'Sở KH&ĐT TP. Hồ Chí Minh';
+export const FOUNDER_FACEBOOK = 'https://www.facebook.com/vantu1602/';
+export const FOUNDER_ZALO = 'https://zalo.me/0399604816';

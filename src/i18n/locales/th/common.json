@@ -44,8 +44,7 @@
     "phoneSupportHours": "ให้บริการทุกวัน 8:00 – 22:00 น.",
     "zalo": "ส่งข้อความผ่าน Zalo",
     "zaloResponse": "ตอบกลับภายใน 15 นาที",
-    "businessReg": "ทะเบียนธุรกิจเลขที่ {{number}}",
-    "businessRegBy": "ออกโดย {{authority}}",
+    "operatedBy": "ดำเนินการโดยบุคคลธรรมดา {{name}}",
     "allRightsReserved": "สงวนลิขสิทธิ์ทั้งหมด"
   },
   "login": {
@@ -65,6 +64,6 @@
     "contactHeading": "ข้อมูลติดต่อและผู้ให้บริการ",
     "email": "อีเมล",
     "hotline": "สายด่วน",
-    "businessRegLine": "ทะเบียนธุรกิจเลขที่ {{number}} ออกโดย {{authority}}"
+    "operatedByLine": "ดำเนินการโดยบุคคลธรรมดา {{name}}"
   }
 }

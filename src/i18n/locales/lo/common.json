@@ -44,8 +44,7 @@
     "phoneSupportHours": "ຊ່ວຍເຫຼືອ 8:00 – 22:00 ທຸກມື້",
     "zalo": "ສົ່ງຂໍ້ຄວາມຜ່ານ Zalo",
     "zaloResponse": "ຕອບກັບພາຍໃນ 15 ນາທີ",
-    "businessReg": "ໃບທະບຽນທຸລະກິດເລກທີ {{number}}",
-    "businessRegBy": "ອອກໃຫ້ໂດຍ {{authority}}.",
+    "operatedBy": "ດຳເນີນງານໂດຍບຸກຄົນ {{name}}.",
     "allRightsReserved": "ສະຫງວນລິຂະສິດທັງໝົດ."
   },
   "login": {
@@ -65,6 +64,6 @@
     "contactHeading": "ຂໍ້ມູນຕິດຕໍ່ ແລະ ຜູ້ດຳເນີນງານ",
     "email": "ອີເມວ",
     "hotline": "ສາຍດ່ວນ",
-    "businessRegLine": "ໃບທະບຽນທຸລະກິດເລກທີ {{number}}, ອອກໃຫ້ໂດຍ {{authority}}."
+    "operatedByLine": "ດຳເນີນງານໂດຍບຸກຄົນ {{name}}."
   }
 }

@@ -12,6 +12,10 @@
     "heading": "vngoweb의 사명",
     "body": "수백만 곳의 카페, 레스토랑, 스파, 소규모 상점이 오프라인에서는 잘 운영되고 있지만 비용과 기술의 장벽 때문에 아직 인터넷에 존재하지 않습니다. vngoweb의 사명은 그 장벽을 없애는 것입니다. 누구나 아름답고 SEO에 최적화된 다국어 웹사이트를 0동부터 시작하는 비용으로 가질 수 있게 합니다."
   },
+  "disambiguation": {
+    "heading": "vngoweb는 VNG Corporation(Zalo)과 관련이 있나요?",
+    "body": "아닙니다. vngoweb는 개발자 Nguyễn Văn Tú 개인이 만든 독립적인 웹사이트 빌더 플랫폼입니다. Zalo와 ZaloPay를 운영하는 VNG Corporation과는 소유, 제휴, 대표 관계가 전혀 없습니다. 이름 앞 글자가 겹치는 것은 순전히 우연이며 두 회사 사이에 어떠한 소유나 협력 관계도 없습니다."
+  },
   "values": {
     "heading": "핵심 가치",
     "items": [

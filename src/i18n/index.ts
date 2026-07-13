@@ -6,8 +6,15 @@
 //      thấy tiếng Anh NGAY từ lần render đầu (khớp hreflang đã khai báo), không phụ
 //      thuộc localStorage (crawler không có).
 //   2. localStorage 'vngoweb_lang' — lựa chọn user đã lưu.
-//   3. navigator.language — ngôn ngữ trình duyệt lần đầu ghé thăm.
-//   4. fallback 'vi'.
+//   3. fallback 'vi'.
+//
+// CỐ Ý KHÔNG dùng 'navigator' trong detection order: Googlebot's headless Chrome
+// mặc định navigator.language = en-US, nên nếu bật navigator detection, URL mặc định
+// "https://vngoweb.com/" (không có ?lang=) sẽ bị Googlebot render + index title/meta
+// bằng TIẾNG ANH trong khi canonical/x-default khai báo là tiếng Việt — gây lệch
+// title/description trên kết quả tìm kiếm (đã xảy ra thật, xem SERP screenshot).
+// URL mặc định phải LUÔN là 'vi' cho mọi visitor lần đầu (kể cả bot); người dùng
+// thật tự đổi ngôn ngữ qua LanguageSwitcher, được lưu localStorage cho lần sau.
 //
 // File dịch lazy-load theo cặp (ngôn ngữ × namespace) qua dynamic import — Vite tách
 // mỗi file JSON thành chunk riêng, không phình bundle ban đầu.
@@ -35,7 +42,7 @@ i18n
     defaultNS: 'common',
     ns: ['common'],                 // namespace trang nạp thêm qua useTranslation('<ns>')
     detection: {
-      order: ['querystring', 'localStorage', 'navigator'],
+      order: ['querystring', 'localStorage'],
       lookupQuerystring: 'lang',
       lookupLocalStorage: APP_LANG_STORAGE_KEY,
       caches: ['localStorage'],

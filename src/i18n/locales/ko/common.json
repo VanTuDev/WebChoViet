@@ -44,8 +44,7 @@
     "phoneSupportHours": "매일 8:00 – 22:00 고객 지원",
     "zalo": "Zalo로 문의하기",
     "zaloResponse": "15분 이내 답변",
-    "businessReg": "사업자등록번호 {{number}}",
-    "businessRegBy": "발급 기관: {{authority}}.",
+    "operatedBy": "개인 운영자: {{name}}.",
     "allRightsReserved": "All rights reserved."
   },
   "login": {
@@ -65,6 +64,6 @@
     "contactHeading": "연락처 및 운영 주체 정보",
     "email": "이메일",
     "hotline": "고객센터",
-    "businessRegLine": "사업자등록번호 {{number}}, 발급 기관: {{authority}}."
+    "operatedByLine": "개인 운영자: {{name}}."
   }
 }

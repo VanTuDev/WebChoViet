@@ -44,8 +44,7 @@
     "phoneSupportHours": "Support 8:00 AM – 10:00 PM daily",
     "zalo": "Message us on Zalo",
     "zaloResponse": "Replies within 15 minutes",
-    "businessReg": "Business registration no. {{number}}",
-    "businessRegBy": "issued by {{authority}}.",
+    "operatedBy": "Operated by individual {{name}}.",
     "allRightsReserved": "All rights reserved."
   },
   "login": {
@@ -65,6 +64,6 @@
     "contactHeading": "Contact information & operator",
     "email": "Email",
     "hotline": "Hotline",
-    "businessRegLine": "Business registration no. {{number}}, issued by {{authority}}."
+    "operatedByLine": "Operated by individual {{name}}."
   }
 }
