@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "맛 응옷 티",
     "home": "홈",
     "menu": "메뉴",
@@ -61,7 +61,7 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "맛 응옷 티",
     "desc": "모든 진심과 달콤함으로 수제 밀크티를 여러분의 손에 전해드립니다.",
     "exploreTitle": "탐색",
@@ -70,7 +70,7 @@
     "newsletterDesc": "첫 주문 20% 할인 혜택을 받으세요!",
     "newsletterPlaceholder": "이메일 주소...",
     "newsletterBtn": "구독",
-    "copyright": "© 2024 맛 응옷 티 by webchoviet. 모든 권리 보유.",
+    "copyright": "© 2024 맛 응옷 티 by vngoweb. 모든 권리 보유.",
     "privacy": "개인정보 보호",
     "terms": "이용 약관"
   }

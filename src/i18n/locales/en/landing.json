@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "vngoweb — Website Builder for Small Businesses",
+    "description": "vngoweb helps cafes, restaurants, spas and small businesses build a professional website in minutes — pick a template, customize, publish. No coding required."
+  },
+  "hero": {
+    "badge": "The fast, simple solution for cafes and restaurants",
+    "title1": "Turn Google Maps into a",
+    "titleHighlight": "Website & QR Menu",
+    "title2": "in 30 seconds",
+    "description": "No coding needed. Just paste your Google Maps link and vngoweb automatically builds a beautiful, mobile-optimized website that's ready to win customers.",
+    "ctaStart": "Start free now",
+    "ctaDemo": "View demo",
+    "proofCafe": "Cafes",
+    "proofRestaurant": "Restaurants",
+    "proofMilkTea": "Bubble tea shops",
+    "imageAlt": "Cafe owner with a professional QR code",
+    "floatReady": "Your website is live!",
+    "floatReadySub": "Created 2 minutes ago",
+    "floatQr": "Table QR menu",
+    "floatQrSub": "+128 scans today"
+  },
+  "showcase": {
+    "badge": "Real products, ready to go",
+    "title1": "A library of",
+    "titleHighlight": "beautiful templates",
+    "title2": ", ready to use",
+    "description": "These are real screenshots of website templates available on vngoweb — hover over the center template to scroll through the full page.",
+    "filterAll": "All",
+    "previewThis": "Preview this template",
+    "previewAria": "Preview the {{name}} template",
+    "goToAria": "Go to the {{name}} template",
+    "selectAria": "Select the {{name}} template",
+    "prevSlide": "Previous template",
+    "nextSlide": "Next template",
+    "screenshotAlt": "{{name}} template design",
+    "trustedBy": "Trusted by business owners",
+    "exploreAll": "Explore the full template store"
+  },
+  "features": {
+    "title1": "Everything you need to",
+    "titleHighlight": "shine",
+    "title2": "online",
+    "description": "Powerful yet remarkably easy-to-use tools, designed for busy business owners.",
+    "maps": {
+      "title": "Automated from Google Maps",
+      "description": "Paste a link and instantly get a website with your reviews, photos and contact details synced automatically. Not a single word to retype."
+    },
+    "multilang": {
+      "title": "Smart multilingual menus",
+      "description": "The system detects each visitor's language and switches seamlessly — a sure way to impress international guests."
+    },
+    "qr": {
+      "title": "Dynamic, branded QR codes",
+      "description": "Create table QR codes with your logo. Print once, then update your menu and prices forever in the system — no reprinting needed."
+    }
+  },
+  "howItWorks": {
+    "title1": "Go live in just",
+    "titleHighlight": "3 steps",
+    "description": "We handle every complex technical step, leaving all the room for your creativity.",
+    "step1Title": "Log in",
+    "step1Desc": "Create an account in seconds with your Google account.",
+    "step2Title": "Paste a link / Edit",
+    "step2Desc": "Paste a Google Maps link and let AI build your page, or pick a template and fine-tune it your way.",
+    "step3Title": "Publish",
+    "step3Desc": "Hit publish, get your QR code and start welcoming new customers right away."
+  },
+  "cta": {
+    "title": "Ready to make your business look professional?",
+    "description": "Start building your professional online presence today. Try all the core features for free.",
+    "button": "Start free now"
+  }
+}

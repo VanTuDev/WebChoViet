@@ -8,8 +8,8 @@ Disallow: /auth/callback
 Disallow: /payment-result
 Disallow: /marketplace/preview/
 
-# Sitemap tĩnh — các trang core của webchoviet.com (Home, Pricing, Tutorials, Policy...)
-Sitemap: https://webchoviet.com/sitemap.xml
+# Sitemap tĩnh — các trang core của vngoweb.com (Home, Marketplace, Pricing, About, Tutorials, Policy...)
+Sitemap: https://vngoweb.com/sitemap.xml
 
 # Sitemap Index (động) — quản lý tất cả sub-sitemap bao gồm gian hàng (stores)
-Sitemap: https://webchoviet.com/sitemap_index.xml
+Sitemap: https://vngoweb.com/sitemap_index.xml

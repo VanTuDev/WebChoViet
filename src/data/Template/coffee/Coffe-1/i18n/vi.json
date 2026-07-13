@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "features": "Tính năng",
     "templates": "Mẫu giao diện",
     "pricing": "Bảng giá",
@@ -53,8 +53,8 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
-    "copyright": "© 2024 webchoviet. All rights reserved.",
+    "brand": "vngoweb",
+    "copyright": "© 2024 vngoweb. All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms",
     "support": "Support"

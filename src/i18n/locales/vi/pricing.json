@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "Bảng giá dịch vụ — vngoweb",
+    "description": "So sánh các gói dịch vụ vngoweb: Miễn phí, WebPro và Ultra — chọn gói phù hợp để xây dựng website chuyên nghiệp cho doanh nghiệp của bạn."
+  },
+  "heading": "Bảng Giá Dịch Vụ vngoweb",
+  "subheading": "Không phát sinh chi phí ẩn. Thanh toán an toàn qua PayOS (chuyển khoản ngân hàng/VietQR).",
+  "cycle": {
+    "monthly": "Hàng tháng",
+    "yearly": "Hàng năm (tiết kiệm ~17%)",
+    "monthlyShort": "Hàng tháng",
+    "yearlyShort": "Hàng năm"
+  },
+  "plans": {
+    "free": {
+      "name": "Khởi Nghiệp (Miễn phí)",
+      "desc": "Giải pháp hoàn hảo để bắt đầu số hóa thực đơn & quầy bán lẻ nhỏ.",
+      "features": [
+        "Tối đa 2 website đã xuất bản + 2 bản nháp thử nghiệm",
+        "Đường dẫn website trên tên miền vngoweb.com",
+        "Hỗ trợ Mã QR động không giới hạn",
+        "Trình quản lý thực đơn kéo thả căn bản",
+        "Huy hiệu vngoweb hiển thị ở góc website"
+      ]
+    },
+    "pro": {
+      "name": "Kinh Doanh WebPro",
+      "desc": "Dành cho các chủ quán, chủ thương hiệu bứt tốc doanh số bán hàng.",
+      "features": [
+        "Khởi tạo không giới hạn website",
+        "Hỗ trợ gắn Tên Miền Riêng (.vn, .com, .net)",
+        "Xóa bỏ hoàn toàn logo & watermark vngoweb",
+        "Phân tích dữ liệu quét sâu theo tuần",
+        "Băng thông không giới hạn cực nhanh",
+        "SSL trọn đời miễn phí",
+        "Hỗ trợ riêng qua Zalo 24/7"
+      ]
+    },
+    "ultra": {
+      "name": "Thương Hiệu Ultra",
+      "desc": "Gói cao cấp nhất — dành cho chuỗi cửa hàng và thương hiệu đang mở rộng.",
+      "features": [
+        "Tất cả tính năng của gói WebPro",
+        "Phân quyền nhân viên đa Chi Nhánh",
+        "Báo cáo thống kê chuyên sâu theo ngày",
+        "Ưu tiên xử lý hỗ trợ trong 2 giờ",
+        "Đội ngũ chăm sóc vận hành Premium"
+      ]
+    }
+  },
+  "cta": {
+    "current": "Đang sử dụng",
+    "currentPlan": "Gói hiện tại",
+    "lower": "Gói thấp hơn",
+    "changeCycle": "Đổi chu kỳ thanh toán",
+    "upgrade": "Nâng cấp ngay"
+  },
+  "subscription": {
+    "cancelScheduled": "Đã xác nhận không gia hạn — gói sẽ chuyển về Free vào {{date}}.",
+    "activeUntil": "Gói đang hoạt động tới {{date}}. Sau ngày này cần thanh toán lại để tiếp tục dùng.",
+    "keepPlan": "Vẫn muốn tiếp tục",
+    "cancelPlan": "Hủy gói",
+    "cancelSuccess": "Đã xác nhận không gia hạn.",
+    "reactivateSuccess": "Đã khôi phục — gói tiếp tục như bình thường.",
+    "requestFailed": "Không thực hiện được yêu cầu.",
+    "checkoutFailed": "Không tạo được đơn thanh toán. Vui lòng thử lại."
+  }
+}

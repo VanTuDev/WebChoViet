@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "features": "Tính năng",
+    "marketplace": "Kho giao diện",
+    "pricing": "Bảng giá",
+    "tutorials": "Hướng dẫn",
+    "about": "Về chúng tôi",
+    "myProjects": "Dự Án Của Tôi",
+    "menuOpen": "Mở menu",
+    "menuClose": "Đóng menu"
+  },
+  "header": {
+    "login": "Đăng nhập",
+    "createSite": "Tạo Web Mới",
+    "searchPlaceholder": "Tìm kiếm mẫu...",
+    "account": "Tài khoản",
+    "manageProjects": "Quản lý dự án",
+    "adminPanel": "Quản lý hệ thống",
+    "logout": "Đăng xuất",
+    "logoutConfirmTitle": "Đăng xuất?",
+    "logoutConfirmMessage": "Bạn có chắc muốn đăng xuất khỏi vngoweb?",
+    "logoutConfirmAction": "Đăng xuất"
+  },
+  "footer": {
+    "tagline": "Nền tảng tạo website & menu QR số hóa dành cho hộ kinh doanh và doanh nghiệp nhỏ tại Việt Nam và quốc tế.",
+    "landingCopyright": "Nâng tầm thương hiệu của bạn.",
+    "productHeading": "Sản Phẩm",
+    "policyHeading": "Chính Sách & Pháp Lý",
+    "links": {
+      "marketplace": "Kho Giao Diện",
+      "pricing": "Bảng Giá",
+      "tutorials": "Hướng Dẫn",
+      "about": "Về Chúng Tôi",
+      "myProjects": "Quản Lý Dự Án",
+      "privacy": "Chính Sách Bảo Mật",
+      "terms": "Điều Khoản Sử Dụng",
+      "refund": "Chính Sách Hoàn Tiền",
+      "cookies": "Quy Định Cookie",
+      "termsShort": "Điều khoản",
+      "privacyShort": "Bảo mật",
+      "contact": "Liên hệ",
+      "tutorialsShort": "Hướng dẫn"
+    },
+    "phoneSupportHours": "Hỗ trợ 8:00 – 22:00 hàng ngày",
+    "zalo": "Nhắn qua Zalo",
+    "zaloResponse": "Phản hồi trong vòng 15 phút",
+    "businessReg": "Đăng ký kinh doanh số {{number}}",
+    "businessRegBy": "cấp bởi {{authority}}.",
+    "allRightsReserved": "Tất cả quyền được bảo lưu."
+  },
+  "login": {
+    "subtitle": "Đăng nhập để quản lý cửa hàng",
+    "googleButton": "Tiếp tục với Google",
+    "termsPrefix": "Bằng cách tiếp tục, bạn đồng ý với",
+    "termsLink": "Điều khoản",
+    "and": "và",
+    "privacyLink": "Chính sách bảo mật",
+    "termsSuffix": "của vngoweb.",
+    "ssl": "Bảo mật SSL",
+    "noPassword": "Không lưu mật khẩu",
+    "gdpr": "GDPR"
+  },
+  "policy": {
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "contactHeading": "Thông tin liên hệ & đơn vị vận hành",
+    "email": "Email",
+    "hotline": "Hotline",
+    "businessRegLine": "Đăng ký kinh doanh số {{number}}, cấp bởi {{authority}}."
+  }
+}

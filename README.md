@@ -1,205 +1,74 @@
-# WebChoViet — Nền tảng tạo website cho doanh nghiệp vừa và nhỏ Việt Nam
+# vngoweb — Frontend
 
-WebChoViet là nền tảng SaaS giúp chủ hộ kinh doanh nhỏ (quán cafe, nhà hàng, spa, tiệm nail…) tạo website chuyên nghiệp chỉ trong vài phút — không cần biết lập trình, không cần thuê thiết kế.
+Frontend của **vngoweb** (vngoweb.com) — nền tảng SaaS giúp doanh nghiệp nhỏ tại Việt Nam và quốc tế tạo website chuyên nghiệp trong vài phút, không cần biết lập trình.
 
----
-
-## Bối cảnh
-
-Phần lớn doanh nghiệp vừa và nhỏ tại Việt Nam chưa có website riêng vì chi phí cao, quy trình phức tạp, hoặc không có người kỹ thuật hỗ trợ. WebChoViet giải quyết vấn đề này bằng cách cung cấp:
-
-- **Kho template đẹp** — thiết kế sẵn cho từng ngành (cafe, spa, nhà hàng, bán lẻ)
-- **Editor trực quan** — xem trước real-time khi chỉnh sửa nội dung, ảnh, menu
-- **Xuất bản 1 click** — website live ngay tại `/p/ten-slug` sau khi bấm "Xuất bản"
-- **Đa ngôn ngữ AI** — tự động dịch sang EN / ZH / KO bằng Gemini
-- **Mã QR động** — in 1 lần, đổi menu bao nhiêu lần tùy thích
+Người phát triển: **Nguyễn Văn Tú** — Đại học FPT Đà Nẵng · SĐT 0347 868 656 · hotro@vngoweb.com
 
 ---
 
-## Tính năng chính
+## Tech stack
 
-| Module | Mô tả |
-|---|---|
-| **Marketplace** | Kho template, lọc theo ngành, giá, sắp xếp, xem trước toàn trang |
-| **Template Editor** | Chỉnh sửa nội dung text / ảnh / menu items với live preview; chế độ Desktop & Mobile |
-| **Xuất bản** | Lưu JSON + `createdBy` + `templateId`, tạo URL công khai `/p/:slug` |
-| **Dashboard — Dự án** | Danh sách website đã tạo, phân chia Live / Nháp, xem & chỉnh sửa |
-| **Dashboard — Analytics** | Thống kê lượt xem, đơn hàng (mock) |
-| **Dashboard — QR Codes** | Sinh & tải mã QR động cho từng trang |
-| **AI Dịch thuật** | Dịch toàn bộ nội dung tiếng Việt sang EN / ZH / KO qua Gemini API |
-| **Image Cropping** | Upload & crop ảnh trực tiếp trên trình duyệt, lưu dạng base64 |
-| **Trang công khai** | Render template tại `/p/:slug` với đúng ngôn ngữ + nội dung người dùng |
-| **Admin Portal** | Quản lý users, thanh toán, giao dịch (giao diện riêng) |
+- **Vite 6 + React 19 + TypeScript** — SPA thuần (client-side render)
+- **react-router-dom v7** — routing, `createBrowserRouter`
+- **TailwindCSS 4** — token FnB ấm nóng trong `src/index.css` (`bg-primary`, `fnb-*`)
+- **react-i18next** — i18n giao diện hệ thống 6 ngôn ngữ (vi/en/ko/th/zh/lo), lazy-load JSON theo namespace
+- **react-helmet-async** — SEO meta/canonical/hreflang/JSON-LD từng trang
+- **lucide-react** — icon (quy ước: không dùng emoji trang trí)
+- Backend thật: NestJS + MongoDB (repo `../BackEnd-WebChoViet`), gọi qua `VITE_API_URL`
 
----
+## Hai hệ thống i18n ĐỘC LẬP (đừng nhầm lẫn)
 
-## Template hiện có
-
-| ID | Tên | Giá | Phong cách |
-|---|---|---|---|
-| `coffe-1` | Garden Oasis | Miễn phí | Sân vườn, tông xanh lá |
-| `coffe-2` | Tropical Chill | 299.000đ | Nhiệt đới, hero slider |
-| `coffe-3` | The Ocean Cafe | 499.000đ | Biển cả, bestseller |
-| `coffe-4` | Koi Garden | 399.000đ | Nhật Bản, premium |
-| `coffe-5` | Mật Ngọt Tea | 349.000đ | Trà sữa, carousel menu |
-
-Mỗi template hỗ trợ: **4 ngôn ngữ** (VI / EN / ZH / KO), tùy chỉnh ảnh từng phần, thêm/xóa món trong menu.
-
----
-
-## Cấu trúc dự án
-
-```
-webchoviet/
-├── src/                          # React frontend
-│   ├── pages/
-│   │   ├── landing/              # Trang chủ giới thiệu
-│   │   ├── marketplace/          # Kho template + xem trước
-│   │   ├── template-editor/      # Editor + publish
-│   │   │   └── _components/
-│   │   │       ├── EditorPanel.tsx    # Panel chỉnh sửa text/ảnh/menu
-│   │   │       └── ImageCropModal.tsx # Crop ảnh trên trình duyệt
-│   │   ├── dashboard/
-│   │   │   ├── projects/         # Danh sách website đã tạo
-│   │   │   ├── analytics/        # Thống kê
-│   │   │   ├── qrcodes/          # Quản lý QR
-│   │   │   └── settings/
-│   │   ├── public-site/          # Render trang /p/:slug
-│   │   ├── editor/               # Editor đơn giản (loại cũ)
-│   │   └── admin/                # Admin portal
-│   ├── data/
-│   │   └── Template/
-│   │       ├── Coffe-1/ … Coffe-5/   # Template TSX + i18n JSON (vi/en/zh/ko)
-│   │       └── templateImageKeys.ts  # Khai báo slot ảnh mỗi template
-│   ├── context/
-│   │   └── TemplateCustomContext.tsx # Context truyền customData + images vào template
-│   ├── store/
-│   │   └── AppContext.tsx         # Global state: projects, siteConfigs, snackbar, confirm
-│   ├── services/
-│   │   ├── siteConfigService.ts   # CRUD /api/site-config
-│   │   └── geminiService.ts       # Gọi Gemini API dịch nội dung
-│   ├── utils/
-│   │   ├── deepMerge.ts           # Merge i18n base với customData overrides
-│   │   └── userId.ts              # Persistent user ID qua localStorage
-│   ├── components/                # UI dùng chung (Navbar, Sidebar, Snackbar…)
-│   ├── layouts/                   # AppLayout, AdminLayout
-│   ├── types.ts                   # TypeScript types (SiteConfig, Project, Template…)
-│   ├── router.tsx                 # Định nghĩa toàn bộ routes
-│   └── vite-env.d.ts              # Khai báo import.meta.env (VITE_GEMINI_API_KEY)
-│
-├── app/
-│   └── api/
-│       └── site-config/
-│           └── route.ts           # API handler: GET / POST / DELETE site config
-│
-├── lib/
-│   ├── db.ts                      # Mock DB: đọc/ghi lib/dbMock.json (thread-safe)
-│   ├── data.ts                    # Map SiteConfig → SiteData (dùng cho subdomain)
-│   └── prisma.ts                  # Prisma client singleton (sẵn sàng khi có DB thật)
-│
-├── types/
-│   └── site.ts                    # Type SiteData, MenuItem, MenuCategory
-│
-├── index.html
-├── vite.config.ts
-├── tsconfig.json
-└── package.json
-```
-
----
-
-## Công nghệ sử dụng
-
-### Frontend
-
-| Công nghệ | Phiên bản | Vai trò |
+| | UI hệ thống | Nội dung site khách |
 |---|---|---|
-| **React** | 19 | UI framework |
-| **TypeScript** | 5.8 | Type safety toàn bộ codebase |
-| **Vite** | 6 | Build tool, dev server (HMR) |
-| **Tailwind CSS** | 4 | Utility-first styling |
-| **React Router** | 7 | Client-side routing, `createBrowserRouter` |
-| **Motion (Framer Motion)** | 12 | Animation (snackbar, modal, transitions) |
-| **Lucide React** | latest | Icon library |
-| **Axios** | 1.x | HTTP client gọi API |
+| Vị trí | `src/i18n/` | `src/constants/languages.ts` + `src/data/Template/*/i18n/` |
+| Ngôn ngữ | vi, en, ko, th, zh, lo (`AppLang`) | vi, en, zh, ko (`SiteLang`) |
+| Áp dụng | Header/Footer, Landing, Marketplace, Pricing, Tutorials, About, Policy, 404 | Trang public của khách (`/:slug`) + Template Editor |
+| Switcher | `src/i18n/LanguageSwitcher.tsx` (cờ SVG trong `FlagIcon.tsx`) | `data/Template/_shared/LanguageSwitcher.tsx` |
 
-### Backend / API
+Dashboard / Template Editor / Admin (sau đăng nhập) giữ tiếng Việt — không thuộc phạm vi i18n hệ thống.
 
-| Công nghệ | Vai trò |
-|---|---|
-| **Node.js** | Runtime |
-| **Next.js App Router** | API Route Handlers (`app/api/`) |
-| **JSON File DB** | Mock database (`lib/dbMock.json`) — lưu SiteConfig |
-| **Prisma** | ORM sẵn sàng kết nối PostgreSQL / MySQL khi lên production |
-| **Google Gemini AI** | Dịch nội dung đa ngôn ngữ (VI → EN / ZH / KO) |
-| **dotenv** | Quản lý biến môi trường |
-
-### Kiến trúc dữ liệu cốt lõi
+## Cấu trúc chính
 
 ```
-SiteConfig (lưu vào DB)
-├── id              UUID
-├── templateId      'coffe-1' | 'coffe-2' | …
-├── slug            Đường dẫn URL: /p/:slug
-├── name            Tên hiển thị
-├── lang            Ngôn ngữ mặc định: 'vi' | 'en' | 'zh' | 'ko'
-├── customData      { vi: {...}, en: {...}, zh: {...}, ko: {...} }
-│                   Deep-partial overrides của i18n JSON gốc
-├── images          { hero: 'data:…', gallery_0: 'data:…', … }
-│                   Key-value ảnh người dùng upload
-├── status          'draft' | 'published'
-├── createdBy       User ID từ localStorage
-└── createdAt / updatedAt
+src/
+├── i18n/                 # i18n hệ thống: init, FlagIcon, LanguageSwitcher, HreflangLinks, locales/{vi,en,ko,th,zh,lo}/
+├── config/
+│   ├── routes.ts         # Nguồn duy nhất mọi route
+│   └── contact.ts        # BRAND_NAME, DOMAIN, CONTACT_*, FOUNDER_* — sửa 1 chỗ áp dụng toàn app
+├── components/shared/    # SiteHeader, SiteFooter, Wordmark (logo chữ), LoginModal, PlanBadge
+├── pages/
+│   ├── landing/  marketplace/  pricing/  tutorials/  about/  policy/  not-found/
+│   ├── dashboard/        # projects, analytics, qrcodes, settings, support (cần đăng nhập)
+│   ├── template-editor/  # Editor + autosave + PublishModal
+│   ├── public-site/      # Render site khách tại /:slug (catch-all)
+│   └── admin/            # Portal quản trị riêng
+├── data/Template/        # Template bán cho khách (giữ màu riêng, KHÔNG đổi theo theme hệ thống)
+├── services/             # Gọi API backend (auth, sites, billing, analytics, uploads, translate...)
+└── store/AppContext.tsx  # Global state: user, snackbar, confirm, login modal
 ```
 
----
-
-## Cài đặt & Chạy local
+## Chạy dev
 
 ```bash
-# 1. Clone & cài dependencies
-git clone https://github.com/your-org/webchoviet.git
-cd webchoviet
-npm install
-
-# 2. Tạo file môi trường
-cp .env.example .env
-# Điền VITE_GEMINI_API_KEY nếu muốn dùng tính năng dịch AI
-
-# 3. Chạy dev server
-npm run dev
-# → http://localhost:8080
+pnpm install
+cp .env.example .env      # điền VITE_API_URL (mặc định backend local :3001)
+pnpm dev                  # http://localhost:8080
 ```
 
----
+## Lệnh quan trọng
 
-## Biến môi trường
+```bash
+pnpm build                      # build production
+npx tsc --noEmit -p .           # type-check
+pnpm run validate:templates     # kiểm tra chuẩn template (i18n đủ 4 lang, mapUrl, data-track...)
+```
 
-| Biến | Bắt buộc | Mô tả |
-|---|---|---|
-| `VITE_GEMINI_API_KEY` | Không | API key từ Google AI Studio — dùng cho tính năng dịch AI |
-| `APP_URL` | Không | URL deploy của ứng dụng |
+## Quy tắc bắt buộc khi viết UI
 
----
+Xem `CLAUDE.md` (rule đầy đủ): 100% Semantic HTML5, không lạm dụng `<div>`, điều hướng nội bộ dùng `<Link>` (không `button+navigate`), mỗi trang public có Helmet + `<HreflangLinks>`, chuẩn SEO/GEO, không emoji trang trí, brand/liên hệ import từ `config/contact.ts`.
 
-## Deploy lên Vercel
+Khi thêm/sửa template trong `src/data/Template/`: dùng skill `template-rules` (`.claude/skills/template-rules/SKILL.md`).
 
-Dự án được cấu hình để deploy trực tiếp lên Vercel:
+## Deploy
 
-1. Import repo vào Vercel
-2. Framework preset: **Vite**
-3. Build command: `npm run build`
-4. Output directory: `dist`
-5. Thêm biến môi trường trong Vercel Dashboard nếu cần
-
----
-
-## Roadmap
-
-- [ ] Kết nối PostgreSQL thật qua Prisma (thay JSON mock DB)
-- [ ] Google OAuth thật
-- [ ] Thanh toán qua VNPay / MoMo
-- [ ] Thêm template ngành: Spa, Nhà hàng, Bán lẻ
-- [ ] Custom domain (subdomain riêng cho từng website)
-- [ ] Analytics thật (lượt xem, lượt quét QR)
-- [ ] Mobile app (React Native)
+Deploy trên **Vercel** (SPA rewrite trong `vercel.json`; 2 route sitemap động rewrite sang backend Render). Hướng dẫn đầy đủ deploy + domain + Google Search Console: `../DEPLOY_SETUP.md`.

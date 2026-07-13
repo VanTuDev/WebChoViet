@@ -45,7 +45,7 @@ export default function AdminLayout() {
             </div>
             <div>
               <p className="text-sm font-bold text-white leading-none">Admin Portal</p>
-              <p className="text-[10px] text-slate-400 mt-0.5">webchoviet.com</p>
+              <p className="text-[10px] text-slate-400 mt-0.5">vngoweb.com</p>
             </div>
           </div>
           {/* Nút đóng — chỉ hiện trong drawer mobile */}

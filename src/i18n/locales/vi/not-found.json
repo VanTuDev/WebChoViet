@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "Không tìm thấy trang — vngoweb"
+  },
+  "heading": "Trang này không tồn tại",
+  "pathPrefix": "Đường dẫn",
+  "pathSuffix": "không tìm thấy trên hệ thống.",
+  "hint": "Có thể đường dẫn đã bị thay đổi, hoặc bạn gõ nhầm URL.",
+  "goBack": "Quay lại trang trước",
+  "goHome": "Về trang chủ",
+  "dashboard": "Dashboard",
+  "popularPages": "Trang phổ biến",
+  "links": {
+    "marketplace": "Kho Giao Diện",
+    "pricing": "Bảng Giá",
+    "tutorials": "Hướng Dẫn",
+    "myProjects": "Dự Án Của Tôi",
+    "qrcodes": "Quản Lý QR",
+    "support": "Hỗ Trợ"
+  },
+  "brandTagline": "Giải pháp số hóa cho doanh nghiệp Việt Nam & quốc tế"
+}

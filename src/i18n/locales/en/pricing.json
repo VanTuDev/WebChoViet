@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "Pricing — vngoweb",
+    "description": "Compare vngoweb plans: Free, WebPro and Ultra — pick the right plan to build a professional website for your business."
+  },
+  "heading": "vngoweb Pricing",
+  "subheading": "No hidden fees. Secure payments via PayOS (bank transfer/VietQR).",
+  "cycle": {
+    "monthly": "Monthly",
+    "yearly": "Yearly (save ~17%)",
+    "monthlyShort": "Monthly",
+    "yearlyShort": "Yearly"
+  },
+  "plans": {
+    "free": {
+      "name": "Starter (Free)",
+      "desc": "The perfect way to start digitizing your menu and small retail counter.",
+      "features": [
+        "Up to 2 published websites + 2 draft sites",
+        "Website URL on the vngoweb.com domain",
+        "Unlimited dynamic QR codes",
+        "Basic drag-and-drop menu manager",
+        "vngoweb badge shown in the website corner"
+      ]
+    },
+    "pro": {
+      "name": "WebPro Business",
+      "desc": "For shop and brand owners ready to accelerate their sales.",
+      "features": [
+        "Unlimited websites",
+        "Custom domain support (.vn, .com, .net)",
+        "Completely remove the vngoweb logo & watermark",
+        "In-depth weekly scan analytics",
+        "Unlimited high-speed bandwidth",
+        "Free lifetime SSL",
+        "Dedicated 24/7 support via Zalo"
+      ]
+    },
+    "ultra": {
+      "name": "Ultra Brand",
+      "desc": "Our top-tier plan — built for store chains and growing brands.",
+      "features": [
+        "Everything in WebPro",
+        "Multi-branch staff permissions",
+        "In-depth daily analytics reports",
+        "Priority support within 2 hours",
+        "Premium operations care team"
+      ]
+    }
+  },
+  "cta": {
+    "current": "Current plan",
+    "currentPlan": "Current plan",
+    "lower": "Lower plan",
+    "changeCycle": "Change billing cycle",
+    "upgrade": "Upgrade now"
+  },
+  "subscription": {
+    "cancelScheduled": "Non-renewal confirmed — your plan will revert to Free on {{date}}.",
+    "activeUntil": "Your plan is active until {{date}}. After this date, a new payment is required to continue.",
+    "keepPlan": "Keep my plan",
+    "cancelPlan": "Cancel plan",
+    "cancelSuccess": "Non-renewal confirmed.",
+    "reactivateSuccess": "Restored — your plan continues as normal.",
+    "requestFailed": "The request could not be completed.",
+    "checkoutFailed": "Could not create the payment order. Please try again."
+  }
+}

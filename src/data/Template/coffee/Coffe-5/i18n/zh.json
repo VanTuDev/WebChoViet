@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "蜜甜茶",
     "home": "首页",
     "menu": "菜单",
@@ -61,7 +61,7 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "蜜甜茶",
     "desc": "用所有的真诚与甜蜜，将手工奶茶送到您手中。",
     "exploreTitle": "探索",
@@ -70,7 +70,7 @@
     "newsletterDesc": "立即享受首单八折优惠！",
     "newsletterPlaceholder": "您的邮箱...",
     "newsletterBtn": "订阅",
-    "copyright": "© 2024 蜜甜茶 by webchoviet. 保留所有权利。",
+    "copyright": "© 2024 蜜甜茶 by vngoweb. 保留所有权利。",
     "privacy": "隐私政策",
     "terms": "服务条款"
   }

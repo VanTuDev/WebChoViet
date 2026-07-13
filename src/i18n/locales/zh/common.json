@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "features": "功能特色",
+    "marketplace": "模板库",
+    "pricing": "价格方案",
+    "tutorials": "使用教程",
+    "about": "关于我们",
+    "myProjects": "我的项目",
+    "menuOpen": "打开菜单",
+    "menuClose": "关闭菜单"
+  },
+  "header": {
+    "login": "登录",
+    "createSite": "创建新网站",
+    "searchPlaceholder": "搜索模板...",
+    "account": "账户",
+    "manageProjects": "项目管理",
+    "adminPanel": "系统管理",
+    "logout": "退出登录",
+    "logoutConfirmTitle": "退出登录？",
+    "logoutConfirmMessage": "确定要退出 vngoweb 吗？",
+    "logoutConfirmAction": "退出登录"
+  },
+  "footer": {
+    "tagline": "面向越南及全球个体商户和小微企业的网站与二维码电子菜单搭建平台。",
+    "landingCopyright": "让您的品牌更上一层楼。",
+    "productHeading": "产品",
+    "policyHeading": "政策与法律",
+    "links": {
+      "marketplace": "模板库",
+      "pricing": "价格方案",
+      "tutorials": "使用教程",
+      "about": "关于我们",
+      "myProjects": "项目管理",
+      "privacy": "隐私政策",
+      "terms": "使用条款",
+      "refund": "退款政策",
+      "cookies": "Cookie 政策",
+      "termsShort": "条款",
+      "privacyShort": "隐私",
+      "contact": "联系我们",
+      "tutorialsShort": "教程"
+    },
+    "phoneSupportHours": "每天 8:00 – 22:00 提供支持",
+    "zalo": "通过 Zalo 联系",
+    "zaloResponse": "15 分钟内回复",
+    "businessReg": "营业执照编号 {{number}}",
+    "businessRegBy": "由 {{authority}} 颁发。",
+    "allRightsReserved": "保留所有权利。"
+  },
+  "login": {
+    "subtitle": "登录以管理您的店铺",
+    "googleButton": "使用 Google 账号继续",
+    "termsPrefix": "继续操作即表示您同意 vngoweb 的",
+    "termsLink": "使用条款",
+    "and": "和",
+    "privacyLink": "隐私政策",
+    "termsSuffix": "。",
+    "ssl": "SSL 加密",
+    "noPassword": "不保存密码",
+    "gdpr": "GDPR"
+  },
+  "policy": {
+    "lastUpdated": "最后更新：{{date}}",
+    "contactHeading": "联系方式与运营主体",
+    "email": "邮箱",
+    "hotline": "服务热线",
+    "businessRegLine": "营业执照编号 {{number}}，由 {{authority}} 颁发。"
+  }
+}

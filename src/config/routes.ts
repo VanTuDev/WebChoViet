@@ -11,6 +11,7 @@ export const ROUTES = {
   MARKETPLACE: '/marketplace',
   PRICING:     '/pricing',
   TUTORIALS:   '/tutorials',
+  ABOUT:       '/about',
 
   // ── Thanh toán (PayOS) ───────────────────────────────────────────────────────
   PAYMENT_RESULT: '/payment-result', // returnUrl/cancelUrl PayOS đều trỏ về đây

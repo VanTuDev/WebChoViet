@@ -1,7 +1,7 @@
 # `_shared/` — Component dùng chung giữa các template
 
 Folder này chứa những mảnh UI **mọi template đều có thể dùng lại**.
-Khác với `src/components/` (UI của app WebChoViet), code ở đây render
+Khác với `src/components/` (UI của app vngoweb), code ở đây render
 **bên trong trang web của khách hàng** (template), nên phải:
 
 - Tự chứa (self-contained), không phụ thuộc store/router của app.

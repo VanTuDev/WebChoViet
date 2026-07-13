@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Cookie 政策 — vngoweb",
+    "description": "vngoweb 关于 Cookie 及浏览器存储数据的政策：使用的数据类型、目的及管理方式。"
+  },
+  "title": "Cookie 政策",
+  "updatedAt": "13/07/2026",
+  "intro": "vngoweb 使用 Cookie 及类似的存储技术（localStorage、sessionStorage）来运营服务。本页面说明它们的具体用途。",
+  "sections": [
+    {
+      "heading": "1. 什么是 Cookie",
+      "paragraphs": [
+        "Cookie 是您访问网站时保存在浏览器中的小型数据文件。vngoweb 也使用类似的浏览器存储技术（localStorage）来在多次访问之间记住您的登录会话。"
+      ]
+    },
+    {
+      "heading": "2. vngoweb 使用的存储数据类型",
+      "list": [
+        "必要类——保存登录令牌，使您在多次访问间保持登录状态；使用控制台和模板编辑器时必不可少。",
+        "分析类——为公开网站的每次访问附加匿名会话标识，用于统计浏览量/互动数据。该标识不会用于跨网站或跨服务追踪个人。",
+        "偏好类——记住您在平台及各公开网站上选择的显示语言。"
+      ]
+    },
+    {
+      "heading": "3. vngoweb 不使用的内容",
+      "paragraphs": [
+        "vngoweb 不使用广告 Cookie 或第三方跨站追踪工具（不含 Google Ads、Facebook Pixel 或类似广告平台）。"
+      ]
+    },
+    {
+      "heading": "4. 管理 Cookie",
+      "paragraphs": [
+        "您可以随时在浏览器设置中删除或屏蔽 Cookie 及存储数据。请注意：屏蔽或删除必要类数据会导致您的账户被退出登录，平台的部分功能可能停止工作，直至您重新登录。"
+      ]
+    },
+    {
+      "heading": "5. 政策变更",
+      "paragraphs": [
+        "当新增功能涉及浏览器存储数据时，vngoweb 可能更新本政策。最新版本将始终发布于本页面。"
+      ]
+    }
+  ]
+}

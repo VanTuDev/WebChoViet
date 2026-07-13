@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "How to Digitize Your Store — vngoweb",
+    "description": "A 4-step guide to building a website, getting your QR code and digitizing your store with vngoweb — no coding needed, just 5 minutes."
+  },
+  "heading": "Digitize Your Store With vngoweb",
+  "subheading": "Even with zero coding experience, it takes just 5 minutes to bring your entire store online.",
+  "steps": [
+    {
+      "num": "01",
+      "title": "Explore & Pick a Template",
+      "desc": "Visit the Template Store and try a design tailored to your industry — Spa, Cafe, Restaurant or Retail."
+    },
+    {
+      "num": "02",
+      "title": "Edit Your Store Details",
+      "desc": "Update your store name, Zalo phone number, text logo and color palette, and edit your menu and price list with ease."
+    },
+    {
+      "num": "03",
+      "title": "Get a Dynamic QR Code",
+      "desc": "The system automatically generates a QR code for your website. Print stickers for your tables so customers can scan and view the menu instantly."
+    },
+    {
+      "num": "04",
+      "title": "Automated Order Handling",
+      "desc": "Customers browse your products and send requests or payments. You get notified so you can prepare their order right away."
+    }
+  ],
+  "support": {
+    "title": "Want a complete setup done for you — completely free?",
+    "desc": "The vngoweb technical team is ready to set up your store, photograph your products and enter your full menu — free of charge!",
+    "cta": "Contact us now on Zalo",
+    "connecting": "Connecting you to a Zalo support agent: {{phone}} — Please wait a moment."
+  }
+}

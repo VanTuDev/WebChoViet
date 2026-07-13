@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import {
   ArrowRight,
   CheckCircle2,
@@ -24,8 +25,10 @@ import {
 import { TEMPLATES, CATEGORY_REGISTRY } from '../../data/templates/registry';
 import type { Template } from '../../data/templates/registry';
 import { ROUTES } from '../../config/routes';
+import { DOMAIN } from '../../config/contact';
 import SiteHeader from '../../components/shared/SiteHeader';
 import SiteFooter from '../../components/shared/SiteFooter';
+import HreflangLinks from '../../i18n/HreflangLinks';
 
 /* ═══════════════════════════════════════════════════════════════════════
    Showcase data — screenshot thật của template (utils/templateScreens)
@@ -44,8 +47,10 @@ const SHOWCASE: ShowcaseItem[] = TEMPLATES.filter(t => SHOT_BY_ID[t.id]).map(t =
   screen: SHOT_BY_ID[t.id],
 }));
 
-const FILTER_CHIPS = [
-  { id: 'all', label: 'Tất cả' },
+// Chip "Tất cả" dịch theo ngôn ngữ hệ thống (label: null → render bằng t());
+// label category lấy từ registry — dữ liệu catalog template, giữ nguyên tiếng gốc.
+const FILTER_CHIPS: { id: string; label: string | null }[] = [
+  { id: 'all', label: null },
   ...CATEGORY_REGISTRY.filter(c => SHOWCASE.some(t => t.category === c.id)).map(c => ({
     id: c.id,
     label: c.label,
@@ -62,6 +67,7 @@ function TemplateCarousel3D({
   items: ShowcaseItem[];
   onOpen: () => void;
 }) {
+  const { t } = useTranslation('landing');
   const [active, setActive] = useState(0);
   const pausedRef = useRef(false);
   const n = items.length;
@@ -119,7 +125,7 @@ function TemplateCarousel3D({
               <button
                 onClick={() => (isCenter ? onOpen() : setActive(i))}
                 className="block w-[240px] sm:w-[300px] text-left cursor-pointer group outline-none"
-                aria-label={isCenter ? `Xem trước mẫu ${tmpl.name}` : `Chuyển tới mẫu ${tmpl.name}`}
+                aria-label={isCenter ? t('showcase.previewAria', { name: tmpl.name }) : t('showcase.goToAria', { name: tmpl.name })}
               >
                 <div className="rounded-2xl overflow-hidden bg-white shadow-2xl shadow-fnb-red/25 ring-1 ring-black/5">
                   {/* Thanh trình duyệt giả lập */}
@@ -128,7 +134,7 @@ function TemplateCarousel3D({
                     <span className="w-2.5 h-2.5 rounded-full bg-fnb-amber" />
                     <span className="w-2.5 h-2.5 rounded-full bg-fnb-green" />
                     <span className="ml-2 flex-1 truncate text-[10px] font-inter text-on-surface-variant bg-surface-container-low rounded-full px-2.5 py-0.5">
-                      webchoviet.com/{tmpl.id}
+                      {DOMAIN}/{tmpl.id}
                     </span>
                   </div>
 
@@ -136,7 +142,7 @@ function TemplateCarousel3D({
                   <div className="tmpl-screen relative h-[300px] sm:h-[360px] overflow-hidden">
                     <img
                       src={tmpl.screen}
-                      alt={`Giao diện mẫu ${tmpl.name}`}
+                      alt={t('showcase.screenshotAlt', { name: tmpl.name })}
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -148,7 +154,7 @@ function TemplateCarousel3D({
                     {isCenter && (
                       <div className="absolute inset-0 bg-gradient-to-t from-fnb-red/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-5">
                         <span className="bg-white text-fnb-red font-inter font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg flex items-center gap-1.5">
-                          Xem trước mẫu này
+                          {t('showcase.previewThis')}
                           <ArrowRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
@@ -182,14 +188,14 @@ function TemplateCarousel3D({
         {/* Nút điều hướng */}
         <button
           onClick={() => go(-1)}
-          aria-label="Mẫu trước"
+          aria-label={t('showcase.prevSlide')}
           className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-fnb-red shadow-lg shadow-fnb-red/20 flex items-center justify-center hover:bg-fnb-red hover:text-white hover:scale-110 transition-all cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={() => go(1)}
-          aria-label="Mẫu sau"
+          aria-label={t('showcase.nextSlide')}
           className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-fnb-red shadow-lg shadow-fnb-red/20 flex items-center justify-center hover:bg-fnb-red hover:text-white hover:scale-110 transition-all cursor-pointer"
         >
           <ChevronRight className="w-5 h-5" />
@@ -203,7 +209,7 @@ function TemplateCarousel3D({
             <button
               key={tmpl.id}
               onClick={() => setActive(i)}
-              aria-label={`Chọn mẫu ${tmpl.name}`}
+              aria-label={t('showcase.selectAria', { name: tmpl.name })}
               className={`rounded-full transition-all cursor-pointer ${
                 i === active
                   ? 'w-7 h-2.5 bg-gradient-to-r from-fnb-orange to-fnb-red'
@@ -216,7 +222,7 @@ function TemplateCarousel3D({
           <div className="flex items-center gap-1 font-inter text-xs text-on-surface-variant">
             <Star className="w-3.5 h-3.5 text-fnb-amber fill-fnb-amber" />
             <span className="font-semibold text-on-surface">{current.rating}</span>
-            · Được các chủ quán tin dùng
+            · {t('showcase.trustedBy')}
           </div>
         )}
       </div>
@@ -226,10 +232,10 @@ function TemplateCarousel3D({
 
 /* ═══════════════════════════════════════════════════════════════════════ */
 export default function LandingPage() {
+  const { t } = useTranslation('landing');
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const goToDashboard = () => navigate(ROUTES.DASHBOARD_PROJECTS);
   const goToMarketplace = () => navigate(ROUTES.MARKETPLACE);
 
   /* Scroll-reveal */
@@ -257,10 +263,10 @@ export default function LandingPage() {
   return (
     <div className="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-fnb-amber/40 selection:text-on-secondary-container relative min-h-screen">
       <Helmet>
-        <title>WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt</title>
-        <meta name="description" content="Tạo website chuyên nghiệp cho quán cafe, nhà hàng, shop hoa và doanh nghiệp Việt Nam chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
-        <link rel="canonical" href="https://webchoviet.com/" />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
+      <HreflangLinks path="/" />
 
       {/* ── Decorative background blobs — tông ấm nóng nhiều màu ─────────── */}
       <div className="fixed top-[-10%] left-[-10%] w-[45%] h-[45%] rounded-full bg-fnb-orange/20 blur-[110px] -z-10 pointer-events-none" />
@@ -280,50 +286,50 @@ export default function LandingPage() {
           <div className="lg:w-1/2 flex flex-col items-start space-y-6">
             <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-fnb-orange/15 to-fnb-red/15 text-fnb-red border border-fnb-orange/30 px-4 py-1.5 rounded-full text-xs font-semibold font-inter">
               <Zap className="w-3.5 h-3.5 fill-fnb-amber text-fnb-amber" />
-              Giải pháp nhanh gọn cho quán cafe, nhà hàng
+              {t('hero.badge')}
             </div>
 
             <h1 className="font-lexend font-bold text-[42px] sm:text-[48px] leading-[1.15] tracking-tight text-on-surface">
-              Biến Google Maps thành{' '}
+              {t('hero.title1')}{' '}
               <span className="bg-gradient-to-r from-fnb-red via-fnb-orange to-fnb-amber bg-clip-text text-transparent">
-                Website &amp; Menu QR
+                {t('hero.titleHighlight')}
               </span>{' '}
-              chuyên nghiệp trong 30 giây
+              {t('hero.title2')}
             </h1>
 
             <p className="font-inter text-[18px] leading-[1.6] text-on-surface-variant max-w-lg">
-              Không cần biết code. Chỉ cần dán link Google Maps của bạn, webchoviet sẽ tự động tạo một trang web tuyệt đẹp, tối ưu hóa cho di động và sẵn sàng thu hút khách hàng.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-3 w-full sm:w-auto">
-              <button
-                onClick={goToDashboard}
+              <Link
+                to={ROUTES.DASHBOARD_PROJECTS}
                 className="bg-gradient-to-r from-fnb-red to-fnb-orange text-white font-inter font-semibold text-sm px-10 py-3.5 rounded-full shadow-lg shadow-fnb-red/30 hover:shadow-xl hover:shadow-fnb-red/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                Bắt đầu miễn phí ngay
+                {t('hero.ctaStart')}
                 <ArrowRight className="w-4.5 h-4.5" />
-              </button>
-              <button
-                onClick={goToMarketplace}
+              </Link>
+              <Link
+                to={ROUTES.MARKETPLACE}
                 className="bg-white text-fnb-red border-2 border-fnb-orange/40 font-inter font-semibold text-sm px-10 py-3.5 rounded-full hover:bg-fnb-cream hover:border-fnb-orange transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <PlayCircle className="w-4.5 h-4.5" />
-                Xem demo
-              </button>
+                {t('hero.ctaDemo')}
+              </Link>
             </div>
 
             {/* Mini social proof */}
-            <div className="flex items-center gap-4 pt-2 font-inter text-xs text-on-surface-variant">
-              <span className="flex items-center gap-1.5">
-                <Coffee className="w-4 h-4 text-fnb-orange" /> Quán cafe
-              </span>
-              <span className="flex items-center gap-1.5">
-                <UtensilsCrossed className="w-4 h-4 text-fnb-red" /> Nhà hàng
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CupSoda className="w-4 h-4 text-fnb-pink" /> Trà sữa
-              </span>
-            </div>
+            <ul className="flex items-center gap-4 pt-2 font-inter text-xs text-on-surface-variant list-none">
+              <li className="flex items-center gap-1.5">
+                <Coffee className="w-4 h-4 text-fnb-orange" /> {t('hero.proofCafe')}
+              </li>
+              <li className="flex items-center gap-1.5">
+                <UtensilsCrossed className="w-4 h-4 text-fnb-red" /> {t('hero.proofRestaurant')}
+              </li>
+              <li className="flex items-center gap-1.5">
+                <CupSoda className="w-4 h-4 text-fnb-pink" /> {t('hero.proofMilkTea')}
+              </li>
+            </ul>
           </div>
 
           {/* Right — floating image */}
@@ -333,7 +339,7 @@ export default function LandingPage() {
               <img
                 className="w-full h-auto rounded-[1rem] object-cover aspect-[4/3]"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQoMz0YvfyhaGdi32H71jL9Ok6eY0_9tC6zk5x7X6FGqokHK2kSKieZBf4XG6AMZyB2MuYkQbK7ircYWiC36iy8c-GWR3jhkrEg193FUumWy0qDg-qzzQDh4dt9ZVDUk0aPEVvU-E9JQhXhbNn9_43RUbXZtBwjzjwW3nFhyQ1rRIDDJbAbVMZQyyakFnZeNfzqfnZmzSqkY5TdV4XxdecblzkzWEYxt5q5x3jmMIuwC8Vw1_TQQFHor0Bm4DA5WkxyUatgZV0vWo"
-                alt="Chủ quán cafe với mã QR chuyên nghiệp"
+                alt={t('hero.imageAlt')}
               />
             </div>
             <div
@@ -344,15 +350,15 @@ export default function LandingPage() {
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <div>
-                <p className="font-inter font-semibold text-[12px] text-on-surface">Website đã sẵn sàng!</p>
-                <p className="text-[10px] text-on-surface-variant">Vừa tạo xong 2 phút trước</p>
+                <p className="font-inter font-semibold text-[12px] text-on-surface">{t('hero.floatReady')}</p>
+                <p className="text-[10px] text-on-surface-variant">{t('hero.floatReadySub')}</p>
               </div>
             </div>
             <div className="absolute -top-5 -right-4 glass-panel rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg shadow-fnb-amber/20">
               <QrCode className="w-6 h-6 text-fnb-red" />
               <div>
-                <p className="font-inter font-semibold text-[11px] text-on-surface">Menu QR tại bàn</p>
-                <p className="text-[10px] text-fnb-green font-semibold">+128 lượt quét hôm nay</p>
+                <p className="font-inter font-semibold text-[11px] text-on-surface">{t('hero.floatQr')}</p>
+                <p className="text-[10px] text-fnb-green font-semibold">{t('hero.floatQrSub')}</p>
               </div>
             </div>
           </div>
@@ -372,17 +378,17 @@ export default function LandingPage() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-1.5 bg-fnb-amber/15 text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-semibold font-inter mb-4">
                 <Flame className="w-3.5 h-3.5 text-fnb-red" />
-                Sản phẩm thật, chạm là chạy
+                {t('showcase.badge')}
               </div>
               <h2 className="font-lexend font-bold text-[32px] sm:text-[38px] leading-[1.25] text-on-surface mb-3">
-                Kho giao diện{' '}
+                {t('showcase.title1')}{' '}
                 <span className="bg-gradient-to-r from-fnb-orange to-fnb-pink bg-clip-text text-transparent">
-                  tuyệt đẹp
+                  {t('showcase.titleHighlight')}
                 </span>
-                , sẵn sàng sử dụng
+                {t('showcase.title2')}
               </h2>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mx-auto">
-                Đây là ảnh chụp thật từ các mẫu website đang bán trên WebChoViet — di chuột lên mẫu chính giữa để cuộn xem toàn trang.
+                {t('showcase.description')}
               </p>
             </div>
 
@@ -398,7 +404,7 @@ export default function LandingPage() {
                       : 'bg-white text-on-surface-variant border-outline-variant hover:border-fnb-orange hover:text-fnb-red'
                   }`}
                 >
-                  {f.label}
+                  {f.label ?? t('showcase.filterAll')}
                 </button>
               ))}
             </div>
@@ -410,13 +416,13 @@ export default function LandingPage() {
             />
 
             <div className="text-center mt-8">
-              <button
-                onClick={goToMarketplace}
+              <Link
+                to={ROUTES.MARKETPLACE}
                 className="inline-flex items-center gap-1.5 font-inter font-semibold text-sm text-fnb-red hover:text-fnb-orange transition-colors cursor-pointer"
               >
-                Khám phá toàn bộ kho giao diện
+                {t('showcase.exploreAll')}
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -431,12 +437,12 @@ export default function LandingPage() {
         >
           <div className="text-center mb-10">
             <h2 className="font-lexend font-bold text-[32px] leading-[1.3] text-on-surface mb-3">
-              Mọi thứ bạn cần để{' '}
-              <span className="bg-gradient-to-r from-fnb-red to-fnb-orange bg-clip-text text-transparent">tỏa sáng</span>{' '}
-              online
+              {t('features.title1')}{' '}
+              <span className="bg-gradient-to-r from-fnb-red to-fnb-orange bg-clip-text text-transparent">{t('features.titleHighlight')}</span>{' '}
+              {t('features.title2')}
             </h2>
             <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mx-auto">
-              Công cụ mạnh mẽ nhưng cực kỳ dễ sử dụng, thiết kế dành riêng cho các chủ quán bận rộn.
+              {t('features.description')}
             </p>
           </div>
 
@@ -446,10 +452,10 @@ export default function LandingPage() {
                 <MapPin className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-3">
-                Tự động hóa từ Google Maps
+                {t('features.maps.title')}
               </h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant flex-grow">
-                Dán link, nhận ngay website với đầy đủ đánh giá, hình ảnh và thông tin liên hệ được đồng bộ tự động. Không cần gõ lại một chữ.
+                {t('features.maps.description')}
               </p>
             </div>
 
@@ -458,10 +464,10 @@ export default function LandingPage() {
                 <Languages className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-3">
-                Menu đa ngôn ngữ thông minh
+                {t('features.multilang.title')}
               </h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant flex-grow">
-                Hệ thống tự động nhận diện ngôn ngữ của khách hàng và chuyển đổi giao diện Việt/Anh mượt mà, ghi điểm với khách du lịch nước ngoài.
+                {t('features.multilang.description')}
               </p>
             </div>
 
@@ -470,10 +476,10 @@ export default function LandingPage() {
                 <QrCode className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-3">
-                Mã QR động &amp; Độc quyền
+                {t('features.qr.title')}
               </h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant flex-grow">
-                Tạo mã QR đặt bàn có logo quán. In một lần, cập nhật menu hay giá bán mãi mãi trên hệ thống mà không cần in lại.
+                {t('features.qr.description')}
               </p>
             </div>
           </div>
@@ -488,11 +494,11 @@ export default function LandingPage() {
         >
           <div className="text-center mb-20">
             <h2 className="font-lexend font-bold text-[32px] leading-[1.3] text-on-surface mb-3">
-              Lên sóng chỉ trong{' '}
-              <span className="bg-gradient-to-r from-fnb-orange to-fnb-amber bg-clip-text text-transparent">3 bước</span>
+              {t('howItWorks.title1')}{' '}
+              <span className="bg-gradient-to-r from-fnb-orange to-fnb-amber bg-clip-text text-transparent">{t('howItWorks.titleHighlight')}</span>
             </h2>
             <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant max-w-2xl mx-auto">
-              Đơn giản hóa mọi quy trình kỹ thuật phức tạp, nhường chỗ cho sự sáng tạo của bạn.
+              {t('howItWorks.description')}
             </p>
           </div>
 
@@ -505,9 +511,9 @@ export default function LandingPage() {
                 <LogIn className="w-9 h-9" />
               </div>
               <div className="bg-gradient-to-br from-fnb-orange to-fnb-red text-white font-inter font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-fnb-red/30">1</div>
-              <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">Đăng nhập</h3>
+              <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">{t('howItWorks.step1Title')}</h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
-                Tạo tài khoản nhanh chóng bằng Google hoặc Email của bạn.
+                {t('howItWorks.step1Desc')}
               </p>
             </div>
 
@@ -517,9 +523,9 @@ export default function LandingPage() {
                 <ClipboardPaste className="w-9 h-9" />
               </div>
               <div className="bg-gradient-to-br from-fnb-amber to-fnb-orange text-white font-inter font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-fnb-amber/30">2</div>
-              <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">Dán Link / Chỉnh sửa</h3>
+              <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">{t('howItWorks.step2Title')}</h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
-                Dán link Google Maps để AI tự động tạo trang, hoặc chọn mẫu và tự tinh chỉnh theo ý thích.
+                {t('howItWorks.step2Desc')}
               </p>
             </div>
 
@@ -529,9 +535,9 @@ export default function LandingPage() {
                 <Rocket className="w-9 h-9" />
               </div>
               <div className="bg-gradient-to-br from-fnb-green to-emerald-600 text-white font-inter font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-fnb-green/30">3</div>
-              <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">Xuất bản</h3>
+              <h3 className="font-lexend font-semibold text-[24px] leading-[1.4] text-on-surface mb-1">{t('howItWorks.step3Title')}</h3>
               <p className="font-inter text-[16px] leading-[1.6] text-on-surface-variant">
-                Nhấn nút xuất bản, nhận mã QR và bắt đầu đón khách hàng mới ngay lập tức.
+                {t('howItWorks.step3Desc')}
               </p>
             </div>
           </div>
@@ -552,18 +558,18 @@ export default function LandingPage() {
             <Sparkles className="absolute top-14 right-[22%] w-8 h-8 text-white/25" />
 
             <h2 className="font-lexend font-bold text-[36px] sm:text-[48px] leading-[1.2] tracking-tight mb-3 relative z-10">
-              Sẵn sàng để chuyên nghiệp hóa quán của bạn?
+              {t('cta.title')}
             </h2>
             <p className="font-inter text-[18px] leading-[1.6] text-white/85 mb-10 max-w-xl mx-auto relative z-10">
-              Bắt đầu xây dựng hình ảnh chuyên nghiệp trên internet ngay hôm nay. Miễn phí trải nghiệm các tính năng cơ bản.
+              {t('cta.description')}
             </p>
-            <button
-              onClick={goToDashboard}
+            <Link
+              to={ROUTES.DASHBOARD_PROJECTS}
               className="bg-white text-fnb-red font-inter font-bold text-sm px-14 sm:px-20 py-4 rounded-full shadow-xl shadow-black/15 hover:scale-105 hover:shadow-2xl transition-all relative z-10 cursor-pointer inline-flex items-center gap-2"
             >
-              Bắt đầu miễn phí ngay
+              {t('cta.button')}
               <ArrowRight className="w-4.5 h-4.5" />
-            </button>
+            </Link>
           </div>
         </section>
       </main>

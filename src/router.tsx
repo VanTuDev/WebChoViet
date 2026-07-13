@@ -6,6 +6,7 @@ import AuthCallbackPage from './pages/auth-callback/AuthCallbackPage';
 import NotFoundPage from './pages/not-found/NotFoundPage';
 import AppLayout from './layouts/AppLayout';
 import MarketplacePage from './pages/marketplace/MarketplacePage';
+import AboutUsPage from './pages/about/AboutUsPage';
 import ProjectsPage from './pages/dashboard/projects/ProjectsPage';
 import AnalyticsPage from './pages/dashboard/analytics/AnalyticsPage';
 import QRCodesPage from './pages/dashboard/qrcodes/QRCodesPage';
@@ -68,6 +69,7 @@ export const router = createBrowserRouter([
           { path: ROUTES.MARKETPLACE, element: <MarketplacePage /> },
           { path: ROUTES.PRICING,     element: <PricingPage /> },
           { path: ROUTES.TUTORIALS,   element: <TutorialsPage /> },
+          { path: ROUTES.ABOUT,       element: <AboutUsPage /> },
 
           // Chính sách & pháp lý — công khai, không cần đăng nhập
           { path: ROUTES.POLICY_PRIVACY, element: <PrivacyPolicyPage /> },

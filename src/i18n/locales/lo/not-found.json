@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "ບໍ່ພົບໜ້ານີ້ — vngoweb"
+  },
+  "heading": "ໜ້ານີ້ບໍ່ມີຢູ່",
+  "pathPrefix": "ເສັ້ນທາງ",
+  "pathSuffix": "ບໍ່ພົບໃນລະບົບ.",
+  "hint": "ເສັ້ນທາງອາດຖືກປ່ຽນແປງ, ຫຼື ທ່ານພິມ URL ຜິດ.",
+  "goBack": "ກັບໄປໜ້າກ່ອນ",
+  "goHome": "ກັບໜ້າຫຼັກ",
+  "dashboard": "Dashboard",
+  "popularPages": "ໜ້າຍອດນິຍົມ",
+  "links": {
+    "marketplace": "ຄັງແມ່ແບບ",
+    "pricing": "ລາຄາ",
+    "tutorials": "ຄູ່ມືການໃຊ້ງານ",
+    "myProjects": "ໂປຣເຈັກຂອງຂ້ອຍ",
+    "qrcodes": "ຈັດການ QR",
+    "support": "ຝ່າຍຊ່ວຍເຫຼືອ"
+  },
+  "brandTagline": "ວິທີແກ້ໄຂດິຈິຕອນສຳລັບທຸລະກິດຫວຽດນາມ ແລະ ສາກົນ"
+}

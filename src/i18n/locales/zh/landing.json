@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "vngoweb — 面向越南及全球企业的网站搭建平台",
+    "description": "vngoweb 帮助咖啡馆、餐厅、美容院和小微企业在几分钟内建成专业网站——选择模板、编辑内容、一键发布，无需任何编程知识。"
+  },
+  "hero": {
+    "badge": "为咖啡馆、餐厅打造的快捷解决方案",
+    "title1": "把 Google Maps 变成",
+    "titleHighlight": "网站与二维码菜单",
+    "title2": "30 秒即可拥有专业形象",
+    "description": "无需懂代码。只需粘贴您的 Google Maps 链接，vngoweb 就会自动生成一个精美、移动端优化、随时吸引顾客的网站。",
+    "ctaStart": "立即免费开始",
+    "ctaDemo": "查看演示",
+    "proofCafe": "咖啡馆",
+    "proofRestaurant": "餐厅",
+    "proofMilkTea": "奶茶店",
+    "imageAlt": "手持专业二维码的咖啡馆店主",
+    "floatReady": "网站已就绪！",
+    "floatReadySub": "2 分钟前刚刚创建完成",
+    "floatQr": "桌面二维码菜单",
+    "floatQrSub": "今日扫码 +128 次"
+  },
+  "showcase": {
+    "badge": "真实产品，即点即用",
+    "title1": "精美的",
+    "titleHighlight": "模板库",
+    "title2": "，开箱即用",
+    "description": "以下是 vngoweb 在售网站模板的真实截图——将鼠标悬停在中间的模板上，即可滚动浏览整个页面。",
+    "filterAll": "全部",
+    "previewThis": "预览此模板",
+    "previewAria": "预览模板 {{name}}",
+    "goToAria": "前往模板 {{name}}",
+    "selectAria": "选择模板 {{name}}",
+    "prevSlide": "上一个模板",
+    "nextSlide": "下一个模板",
+    "screenshotAlt": "模板 {{name}} 的页面效果",
+    "trustedBy": "深受众多店主信赖",
+    "exploreAll": "浏览全部模板"
+  },
+  "features": {
+    "title1": "让您在线上",
+    "titleHighlight": "大放异彩",
+    "title2": "所需的一切",
+    "description": "功能强大却极易上手，专为忙碌的店主量身设计。",
+    "maps": {
+      "title": "Google Maps 一键生成",
+      "description": "粘贴链接，立即获得包含评价、图片和联系方式的完整网站，全部自动同步，无需手动录入任何内容。"
+    },
+    "multilang": {
+      "title": "智能多语言菜单",
+      "description": "系统自动识别顾客的语言并流畅切换界面，轻松赢得外国游客的好感。"
+    },
+    "qr": {
+      "title": "动态专属二维码",
+      "description": "生成带店铺 logo 的点单二维码。打印一次，即可在系统中随时更新菜单和价格，永远无需重印。"
+    }
+  },
+  "howItWorks": {
+    "title1": "只需",
+    "titleHighlight": "3 步",
+    "description": "把复杂的技术流程化繁为简，让您专注于创意本身。",
+    "step1Title": "登录",
+    "step1Desc": "使用您的 Google 账号快速创建账户。",
+    "step2Title": "粘贴链接 / 编辑",
+    "step2Desc": "粘贴 Google Maps 链接由 AI 自动建站，或挑选模板按喜好自由调整。",
+    "step3Title": "发布上线",
+    "step3Desc": "点击发布按钮，获取二维码，立刻开始迎接新顾客。"
+  },
+  "cta": {
+    "title": "准备好让您的店铺更专业了吗？",
+    "description": "今天就开始打造专业的线上形象。基础功能免费体验。",
+    "button": "立即免费开始"
+  }
+}

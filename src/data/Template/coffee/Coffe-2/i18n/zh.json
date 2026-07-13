@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "home": "首页",
     "menu": "菜单",
     "space": "空间",
@@ -100,13 +100,13 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "desc": "越南企业专业网站建设平台。",
     "linksTitle": "链接",
     "about": "关于我们",
     "terms": "条款",
     "privacy": "隐私",
     "followTitle": "关注我们",
-    "copyright": "© 2024 webchoviet. 越南企业专业网站建设平台。"
+    "copyright": "© 2024 vngoweb. 越南企业专业网站建设平台。"
   }
 }

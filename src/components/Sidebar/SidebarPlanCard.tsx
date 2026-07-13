@@ -28,7 +28,7 @@ export default function SidebarPlanCard({ plan }: Props) {
           <span>Gói Ultra đang hoạt động</span>
         </div>
         <p className="text-xs text-violet-200 leading-relaxed">
-          Bạn đang dùng gói cao cấp nhất của WebChoViet. Cảm ơn bạn đã đồng hành!
+          Bạn đang dùng gói cao cấp nhất của vngoweb. Cảm ơn bạn đã đồng hành!
         </p>
       </div>
     );
@@ -66,7 +66,7 @@ export default function SidebarPlanCard({ plan }: Props) {
       </div>
       <div className="text-sm font-bold">Nâng cấp gói WebPro</div>
       <p className="text-xs text-[#ffe3d6] leading-relaxed">
-        Mở khóa miền riêng biệt (.vn, .com) & loại bỏ hoàn toàn logo WebChoViet.
+        Mở khóa miền riêng biệt (.vn, .com) & loại bỏ hoàn toàn logo vngoweb.
       </p>
       <button
         onClick={() => navigate(ROUTES.PRICING)}

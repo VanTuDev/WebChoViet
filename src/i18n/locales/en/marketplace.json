@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "Website Template Store — vngoweb",
+    "description": "Hundreds of professional website templates for cafes, restaurants, spas, gyms and weddings — drag-and-drop editing, no coding, publish instantly on vngoweb."
+  },
+  "allHeading": {
+    "title": "Professional Website Template Store",
+    "desc": "Hundreds of expertly designed templates for small and medium business owners. No coding — just drag, drop and go."
+  },
+  "breadcrumbRoot": "Template store",
+  "empty": {
+    "title": "No matching templates found",
+    "desc": "Try changing your filters or search keywords."
+  },
+  "loadMore": "Load more templates"
+}

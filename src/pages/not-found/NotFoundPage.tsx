@@ -1,18 +1,30 @@
 // Trang 404 — standalone, không dùng AppLayout
 import { motion } from 'motion/react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Home, LayoutDashboard, ArrowLeft, MapPin } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
+import Wordmark from '../../components/shared/Wordmark';
 
 export default function NotFoundPage() {
+  const { t } = useTranslation('not-found');
   const navigate = useNavigate();
   const location = useLocation();
 
+  const popularLinks = [
+    { label: t('links.marketplace'), path: ROUTES.MARKETPLACE },
+    { label: t('links.pricing'),     path: ROUTES.PRICING },
+    { label: t('links.tutorials'),   path: ROUTES.TUTORIALS },
+    { label: t('links.myProjects'),  path: ROUTES.DASHBOARD_PROJECTS },
+    { label: t('links.qrcodes'),     path: ROUTES.DASHBOARD_QRCODES },
+    { label: t('links.support'),     path: ROUTES.DASHBOARD_SUPPORT },
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6 font-sans antialiased relative overflow-hidden">
+    <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6 font-sans antialiased relative overflow-hidden">
       <Helmet>
-        <title>Không tìm thấy trang — WebChoViet</title>
+        <title>{t('meta.title')}</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
@@ -21,16 +33,17 @@ export default function NotFoundPage() {
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-rose-100/25 blur-[150px] pointer-events-none" />
 
       {/* Content card */}
-      <motion.div
+      <motion.section
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="relative z-10 text-center max-w-lg w-full"
+        aria-labelledby="nf-heading"
       >
 
         {/* Big 404 */}
         <div className="relative inline-block mb-6">
-          <span className="font-lexend font-black text-[140px] leading-none text-slate-100 select-none">
+          <span className="font-lexend font-black text-[140px] leading-none text-slate-100 select-none" aria-hidden="true">
             404
           </span>
           {/* Icon overlay */}
@@ -49,81 +62,72 @@ export default function NotFoundPage() {
         </div>
 
         {/* Text */}
-        <h1 className="font-lexend font-black text-2xl text-slate-900 mb-3">
-          Trang này không tồn tại
+        <h1 id="nf-heading" className="font-lexend font-black text-2xl text-slate-900 mb-3">
+          {t('heading')}
         </h1>
         <p className="text-slate-500 text-sm leading-relaxed mb-2">
-          Đường dẫn{' '}
+          {t('pathPrefix')}{' '}
           <code className="bg-slate-100 text-rose-600 px-1.5 py-0.5 rounded text-xs font-mono font-bold">
             {location.pathname}
           </code>{' '}
-          không tìm thấy trên hệ thống.
+          {t('pathSuffix')}
         </p>
         <p className="text-slate-400 text-xs mb-8">
-          Có thể đường dẫn đã bị thay đổi, hoặc bạn gõ nhầm URL.
+          {t('hint')}
         </p>
 
-        {/* CTAs */}
+        {/* CTAs — "quay lại" là hành động (button), 2 cái còn lại là link thật */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-700 border border-slate-200 bg-white rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm cursor-pointer active:scale-95"
           >
             <ArrowLeft className="h-4 w-4" />
-            Quay lại trang trước
+            {t('goBack')}
           </button>
 
-          <button
-            onClick={() => navigate(ROUTES.HOME)}
+          <Link
+            to={ROUTES.HOME}
             className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-primary-container hover:bg-primary rounded-full transition-all shadow-md cursor-pointer active:scale-95"
           >
             <Home className="h-4 w-4" />
-            Về trang chủ
-          </button>
+            {t('goHome')}
+          </Link>
 
-          <button
-            onClick={() => navigate(ROUTES.DASHBOARD_PROJECTS)}
+          <Link
+            to={ROUTES.DASHBOARD_PROJECTS}
             className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-primary-container border border-primary-container/30 bg-orange-50 hover:bg-orange-100 rounded-full transition-all cursor-pointer active:scale-95"
           >
             <LayoutDashboard className="h-4 w-4" />
-            Dashboard
-          </button>
+            {t('dashboard')}
+          </Link>
         </div>
 
         {/* Quick links */}
-        <div className="mt-10 pt-8 border-t border-slate-100">
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4">Trang phổ biến</p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {[
-              { label: 'Kho Giao Diện', path: ROUTES.MARKETPLACE },
-              { label: 'Bảng Giá',       path: ROUTES.PRICING },
-              { label: 'Hướng Dẫn',      path: ROUTES.TUTORIALS },
-              { label: 'Dự Án Của Tôi',  path: ROUTES.DASHBOARD_PROJECTS },
-              { label: 'Quản Lý QR',     path: ROUTES.DASHBOARD_QRCODES },
-              { label: 'Hỗ Trợ',         path: ROUTES.DASHBOARD_SUPPORT },
-            ].map(({ label, path }) => (
-              <button
-                key={path}
-                onClick={() => navigate(path)}
-                className="text-xs font-medium text-slate-600 hover:text-primary-container px-3 py-1.5 bg-white border border-slate-200 rounded-full hover:border-primary-container/30 transition-all cursor-pointer"
-              >
-                {label}
-              </button>
+        <nav className="mt-10 pt-8 border-t border-slate-100" aria-label={t('popularPages')}>
+          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4">{t('popularPages')}</p>
+          <ul className="flex flex-wrap justify-center gap-2 list-none">
+            {popularLinks.map(({ label, path }) => (
+              <li key={path}>
+                <Link
+                  to={path}
+                  className="text-xs font-medium text-slate-600 hover:text-primary-container px-3 py-1.5 bg-white border border-slate-200 rounded-full hover:border-primary-container/30 transition-all cursor-pointer"
+                >
+                  {label}
+                </Link>
+              </li>
             ))}
-          </div>
-        </div>
-      </motion.div>
+          </ul>
+        </nav>
+      </motion.section>
 
       {/* Footer brand */}
-      <div className="absolute bottom-6 text-xs text-slate-400">
-        <button
-          onClick={() => navigate(ROUTES.HOME)}
-          className="font-lexend font-extrabold text-slate-700 cursor-pointer hover:text-primary-container transition-colors"
-        >
-          web<span className="text-primary-container">choviet</span>
-        </button>
-        {' '}&mdash; Giải pháp số hóa cho doanh nghiệp Việt
-      </div>
-    </div>
+      <footer className="absolute bottom-6 text-xs text-slate-400">
+        <Link to={ROUTES.HOME} className="cursor-pointer hover:opacity-80 transition-opacity">
+          <Wordmark className="text-sm text-slate-700" />
+        </Link>
+        {' '}&mdash; {t('brandTagline')}
+      </footer>
+    </main>
   );
 }

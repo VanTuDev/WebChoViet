@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "features": "기능",
     "templates": "템플릿",
     "pricing": "요금제",
@@ -53,8 +53,8 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
-    "copyright": "© 2024 webchoviet. 모든 권리 보유.",
+    "brand": "vngoweb",
+    "copyright": "© 2024 vngoweb. 모든 권리 보유.",
     "privacy": "개인정보 보호",
     "terms": "이용 약관",
     "support": "고객 지원"

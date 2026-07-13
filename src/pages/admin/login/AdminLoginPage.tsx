@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
             <ShieldCheck className="h-7 w-7 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">Admin Portal</h1>
-          <p className="text-sm text-slate-400 mt-1">webchoviet.com — Hệ thống quản trị nội bộ</p>
+          <p className="text-sm text-slate-400 mt-1">vngoweb.com — Hệ thống quản trị nội bộ</p>
         </div>
 
         {/* Card */}
@@ -105,7 +105,7 @@ export default function AdminLoginPage() {
 
         {/* Footer note */}
         <p className="text-center text-[11px] text-slate-600 mt-6">
-          Truy cập dành riêng cho nhân viên WebChoViet. Mọi hoạt động được ghi lại.
+          Truy cập dành riêng cho nhân viên vngoweb. Mọi hoạt động được ghi lại.
         </p>
       </div>
     </div>

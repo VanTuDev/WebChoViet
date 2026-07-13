@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "Mật Ngọt Tea",
     "home": "Trang chủ",
     "menu": "Menu",
@@ -61,7 +61,7 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "Mật Ngọt Tea",
     "desc": "Mang hương vị trà sữa thủ công đến tận tay bạn với tất cả sự chân thành và ngọt ngào.",
     "exploreTitle": "Khám phá",
@@ -70,7 +70,7 @@
     "newsletterDesc": "Nhận ngay ưu đãi 20% cho đơn hàng đầu tiên!",
     "newsletterPlaceholder": "Email của bạn...",
     "newsletterBtn": "Gửi",
-    "copyright": "© 2024 Mật Ngọt Tea by webchoviet. All rights reserved.",
+    "copyright": "© 2024 Mật Ngọt Tea by vngoweb. All rights reserved.",
     "privacy": "Chính sách bảo mật",
     "terms": "Điều khoản sử dụng"
   }

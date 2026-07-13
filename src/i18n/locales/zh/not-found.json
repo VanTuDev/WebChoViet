@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "页面未找到 — vngoweb"
+  },
+  "heading": "此页面不存在",
+  "pathPrefix": "路径",
+  "pathSuffix": "在系统中未找到。",
+  "hint": "链接可能已被更改，或者您输入的网址有误。",
+  "goBack": "返回上一页",
+  "goHome": "回到首页",
+  "dashboard": "控制台",
+  "popularPages": "热门页面",
+  "links": {
+    "marketplace": "模板库",
+    "pricing": "价格方案",
+    "tutorials": "使用教程",
+    "myProjects": "我的项目",
+    "qrcodes": "二维码管理",
+    "support": "支持"
+  },
+  "brandTagline": "面向越南及全球企业的数字化解决方案"
+}

@@ -2,8 +2,11 @@
 
 export const CONTACT_PHONE = '0347 868 656';
 export const CONTACT_PHONE_RAW = '0347868656';
-export const CONTACT_EMAIL = 'hotro@webchoviet.com';
-export const DOMAIN = 'webchoviet.com';
+export const CONTACT_EMAIL = 'hotro@vngoweb.com';
+export const DOMAIN = 'vngoweb.com';
+export const BRAND_NAME = 'vngoweb';
+export const FOUNDER_NAME = 'Nguyễn Văn Tú';
+export const FOUNDER_SCHOOL = 'Đại học FPT Đà Nẵng';
 
 export const BUSINESS_REG_NUMBER = '0123456789';
 export const BUSINESS_REG_AUTHORITY = 'Sở KH&ĐT TP. Hồ Chí Minh';

@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "features": "Features",
+    "marketplace": "Templates",
+    "pricing": "Pricing",
+    "tutorials": "Tutorials",
+    "about": "About Us",
+    "myProjects": "My Projects",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "header": {
+    "login": "Log In",
+    "createSite": "Create a Website",
+    "searchPlaceholder": "Search templates...",
+    "account": "Account",
+    "manageProjects": "Manage projects",
+    "adminPanel": "Admin panel",
+    "logout": "Log out",
+    "logoutConfirmTitle": "Log out?",
+    "logoutConfirmMessage": "Are you sure you want to log out of vngoweb?",
+    "logoutConfirmAction": "Log out"
+  },
+  "footer": {
+    "tagline": "The website & digital QR menu builder for small businesses in Vietnam and worldwide.",
+    "landingCopyright": "Elevate your brand.",
+    "productHeading": "Product",
+    "policyHeading": "Policies & Legal",
+    "links": {
+      "marketplace": "Template Store",
+      "pricing": "Pricing",
+      "tutorials": "Tutorials",
+      "about": "About Us",
+      "myProjects": "Manage Projects",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "refund": "Refund Policy",
+      "cookies": "Cookie Policy",
+      "termsShort": "Terms",
+      "privacyShort": "Privacy",
+      "contact": "Contact",
+      "tutorialsShort": "Tutorials"
+    },
+    "phoneSupportHours": "Support 8:00 AM – 10:00 PM daily",
+    "zalo": "Message us on Zalo",
+    "zaloResponse": "Replies within 15 minutes",
+    "businessReg": "Business registration no. {{number}}",
+    "businessRegBy": "issued by {{authority}}.",
+    "allRightsReserved": "All rights reserved."
+  },
+  "login": {
+    "subtitle": "Log in to manage your store",
+    "googleButton": "Continue with Google",
+    "termsPrefix": "By continuing, you agree to vngoweb's",
+    "termsLink": "Terms of Service",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "termsSuffix": ".",
+    "ssl": "SSL secured",
+    "noPassword": "No passwords stored",
+    "gdpr": "GDPR"
+  },
+  "policy": {
+    "lastUpdated": "Last updated: {{date}}",
+    "contactHeading": "Contact information & operator",
+    "email": "Email",
+    "hotline": "Hotline",
+    "businessRegLine": "Business registration no. {{number}}, issued by {{authority}}."
+  }
+}

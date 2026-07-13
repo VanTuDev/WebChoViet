@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Privacy Policy — vngoweb",
+    "description": "vngoweb Privacy Policy: what data we collect, how it is used, third-party sharing, retention periods and your rights as a user."
+  },
+  "title": "Privacy Policy",
+  "updatedAt": "13/07/2026",
+  "intro": "vngoweb is committed to protecting your personal information. This policy explains how we collect, use and safeguard your data when you use the platform.",
+  "sections": [
+    {
+      "heading": "1. Information we collect",
+      "list": [
+        "Account information: when you sign in with Google, we receive your full name, email address and profile photo from Google — vngoweb never asks for or stores a separate password.",
+        "Website content you create: text, images and contact details you enter in the Template Editor to display on your public website.",
+        "Payment data: when you upgrade a plan, the transaction is processed by our payment gateway partner PayOS. vngoweb does not store your card number or bank account details — only the order ID, amount, service plan and transaction status.",
+        "Traffic & analytics data: when visitors browse a website you created, the system records page views, clicks, session duration and device type (mobile/desktop) along with an anonymous session ID for statistical reporting. We do not collect names, emails or any identifying information about visitors to public websites.",
+        "Data from the \"Create from Google Maps\" feature: if you use the automatic store import feature, the system retrieves publicly available data (name, address, photos, reviews) for the location at the link you provide."
+      ]
+    },
+    {
+      "heading": "2. How we use your information",
+      "list": [
+        "Operating and maintaining your account and websites.",
+        "Processing payments and activating the corresponding service plan.",
+        "Sending service-related notifications (payment confirmations, plan expiry alerts, etc.).",
+        "Analyzing and improving product quality.",
+        "Providing customer support on request."
+      ],
+      "after": [
+        "vngoweb does not sell or rent your personal information to third parties for advertising purposes."
+      ]
+    },
+    {
+      "heading": "3. Sharing information with third parties",
+      "paragraphs": [
+        "To operate the service, we work with a number of technology partners — each receives only the minimum data needed to perform its function, subject to its own privacy policy:"
+      ],
+      "list": [
+        "Google — sign-in authentication (OAuth).",
+        "PayOS — processing plan upgrade payments.",
+        "Cloudinary — storing images you upload for your website.",
+        "Google Gemini — translating multilingual content when you actively click \"Auto-translate\".",
+        "Apify — collecting public data when you use the Google Maps import feature."
+      ],
+      "after": [
+        "We may disclose information where required by Vietnamese law or under a decision by a competent state authority."
+      ]
+    },
+    {
+      "heading": "4. Data retention",
+      "list": [
+        "Account and website information: retained for as long as you use the service, until you request deletion.",
+        "Raw traffic analytics data: automatically deleted after a maximum of 180 days.",
+        "Payment transaction history: retained long-term for reconciliation, dispute handling and accounting/tax obligations."
+      ]
+    },
+    {
+      "heading": "5. Your rights",
+      "list": [
+        "Access and edit your account information at any time.",
+        "Request deletion of your account and all associated websites.",
+        "Request a copy of the personal data we hold about you.",
+        "Contact us via the email/hotline at the bottom of this page to exercise these rights."
+      ]
+    },
+    {
+      "heading": "6. Data security",
+      "paragraphs": [
+        "All connections are encrypted over HTTPS, login sessions are authenticated with JWT, and system admin access is granted manually and only to authorized personnel. Secret keys and sensitive information are never stored in the browser."
+      ]
+    },
+    {
+      "heading": "7. Who may use the service",
+      "paragraphs": [
+        "The service is intended for organizations and business individuals with full legal capacity under applicable law. vngoweb does not target and does not knowingly collect information from children under 16."
+      ]
+    },
+    {
+      "heading": "8. Changes to this policy",
+      "paragraphs": [
+        "vngoweb may update this policy from time to time. Significant changes will be announced by email or displayed on the website before taking effect."
+      ]
+    }
+  ]
+}

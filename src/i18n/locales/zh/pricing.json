@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "服务价格 — vngoweb",
+    "description": "对比 vngoweb 各服务套餐：免费版、WebPro 和 Ultra——选择合适的方案，为您的企业打造专业网站。"
+  },
+  "heading": "vngoweb 服务价格",
+  "subheading": "无任何隐藏费用。通过 PayOS 安全支付（银行转账/VietQR）。",
+  "cycle": {
+    "monthly": "按月",
+    "yearly": "按年（省约 17%）",
+    "monthlyShort": "按月",
+    "yearlyShort": "按年"
+  },
+  "plans": {
+    "free": {
+      "name": "创业版（免费）",
+      "desc": "小型菜单与零售摊位数字化的理想起点。",
+      "features": [
+        "最多 2 个已发布网站 + 2 个测试草稿",
+        "网站地址使用 vngoweb.com 域名",
+        "不限量动态二维码",
+        "基础拖拽式菜单管理器",
+        "网站角落显示 vngoweb 徽标"
+      ]
+    },
+    "pro": {
+      "name": "商务 WebPro",
+      "desc": "为追求业绩增长的店主和品牌主而设。",
+      "features": [
+        "不限量创建网站",
+        "支持绑定自有域名（.vn、.com、.net）",
+        "完全移除 vngoweb 徽标与水印",
+        "按周深度扫码数据分析",
+        "极速不限量带宽",
+        "终身免费 SSL",
+        "Zalo 专属客服 7×24 小时"
+      ]
+    },
+    "ultra": {
+      "name": "品牌 Ultra",
+      "desc": "最高级套餐——为连锁门店和扩张中的品牌打造。",
+      "features": [
+        "包含 WebPro 套餐全部功能",
+        "多门店员工权限管理",
+        "按日深度统计报表",
+        "2 小时内优先处理支持请求",
+        "Premium 专属运营服务团队"
+      ]
+    }
+  },
+  "cta": {
+    "current": "使用中",
+    "currentPlan": "当前套餐",
+    "lower": "较低套餐",
+    "changeCycle": "更改付费周期",
+    "upgrade": "立即升级"
+  },
+  "subscription": {
+    "cancelScheduled": "已确认不再续费——套餐将于 {{date}} 转为免费版。",
+    "activeUntil": "套餐有效期至 {{date}}。到期后需重新付费方可继续使用。",
+    "keepPlan": "继续保留",
+    "cancelPlan": "取消套餐",
+    "cancelSuccess": "已确认不再续费。",
+    "reactivateSuccess": "已恢复——套餐照常继续。",
+    "requestFailed": "请求未能完成。",
+    "checkoutFailed": "创建支付订单失败，请重试。"
+  }
+}

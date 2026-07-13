@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "서비스 요금제 — vngoweb",
+    "description": "vngoweb 요금제 비교: 무료, WebPro, Ultra 중에서 비즈니스에 맞는 플랜을 선택해 전문 웹사이트를 만들어 보세요."
+  },
+  "heading": "vngoweb 서비스 요금제",
+  "subheading": "숨겨진 비용이 없습니다. PayOS(은행 이체/VietQR)를 통한 안전한 결제를 지원합니다.",
+  "cycle": {
+    "monthly": "월간 결제",
+    "yearly": "연간 결제 (약 17% 절약)",
+    "monthlyShort": "월간",
+    "yearlyShort": "연간"
+  },
+  "plans": {
+    "free": {
+      "name": "스타터 (무료)",
+      "desc": "메뉴 디지털화와 소규모 매장 운영을 시작하기에 완벽한 플랜입니다.",
+      "features": [
+        "게시 웹사이트 최대 2개 + 테스트용 초안 2개",
+        "vngoweb.com 도메인 기반 웹사이트 주소",
+        "다이내믹 QR 코드 무제한 지원",
+        "기본 드래그 앤 드롭 메뉴 관리 도구",
+        "웹사이트 모서리에 vngoweb 배지 표시"
+      ]
+    },
+    "pro": {
+      "name": "비즈니스 WebPro",
+      "desc": "매출 성장을 가속하려는 매장 사장님과 브랜드 운영자를 위한 플랜입니다.",
+      "features": [
+        "웹사이트 무제한 생성",
+        "개인 도메인 연결 지원 (.vn, .com, .net)",
+        "vngoweb 로고 및 워터마크 완전 제거",
+        "주간 단위 심층 스캔 데이터 분석",
+        "초고속 무제한 대역폭",
+        "평생 무료 SSL",
+        "Zalo를 통한 24/7 전담 지원"
+      ]
+    },
+    "ultra": {
+      "name": "브랜드 Ultra",
+      "desc": "최상위 플랜 — 매장 체인과 확장 중인 브랜드를 위해 설계되었습니다.",
+      "features": [
+        "WebPro 플랜의 모든 기능 포함",
+        "다지점 직원 권한 관리",
+        "일 단위 심층 통계 리포트",
+        "2시간 이내 우선 지원 처리",
+        "프리미엄 운영 관리 전담팀"
+      ]
+    }
+  },
+  "cta": {
+    "current": "사용 중",
+    "currentPlan": "현재 플랜",
+    "lower": "하위 플랜",
+    "changeCycle": "결제 주기 변경",
+    "upgrade": "지금 업그레이드"
+  },
+  "subscription": {
+    "cancelScheduled": "갱신 중단이 확인되었습니다 — {{date}}에 무료 플랜으로 전환됩니다.",
+    "activeUntil": "플랜이 {{date}}까지 유효합니다. 이후에도 계속 사용하려면 다시 결제해 주세요.",
+    "keepPlan": "계속 사용하기",
+    "cancelPlan": "플랜 해지",
+    "cancelSuccess": "갱신 중단이 확인되었습니다.",
+    "reactivateSuccess": "복원되었습니다 — 플랜이 정상적으로 계속됩니다.",
+    "requestFailed": "요청을 처리하지 못했습니다.",
+    "checkoutFailed": "결제 주문을 생성하지 못했습니다. 다시 시도해 주세요."
+  }
+}

@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt</title>
-    <meta name="description" content="WebChoViet giúp doanh nghiệp Việt Nam tạo website chuyên nghiệp chỉ trong vài phút — chọn mẫu có sẵn, tuỳ chỉnh nội dung, xuất bản ngay, không cần biết lập trình." />
+    <title>vngoweb — Nền tảng tạo website cho doanh nghiệp Việt Nam & quốc tế</title>
+    <meta name="description" content="vngoweb giúp doanh nghiệp nhỏ tạo website chuyên nghiệp chỉ trong vài phút — chọn mẫu có sẵn, tuỳ chỉnh nội dung, xuất bản ngay, không cần biết lập trình. Phát triển bởi Nguyễn Văn Tú." />
+    <meta name="author" content="Nguyễn Văn Tú" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://webchoviet.com/" />
+    <link rel="canonical" href="https://vngoweb.com/" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -14,30 +15,57 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="WebChoViet" />
+    <meta property="og:site_name" content="vngoweb" />
     <meta property="og:locale" content="vi_VN" />
-    <meta property="og:url" content="https://webchoviet.com/" />
-    <meta property="og:title" content="WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt" />
-    <meta property="og:description" content="Tạo website chuyên nghiệp cho doanh nghiệp Việt Nam chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
+    <meta property="og:url" content="https://vngoweb.com/" />
+    <meta property="og:title" content="vngoweb — Nền tảng tạo website cho doanh nghiệp Việt Nam & quốc tế" />
+    <meta property="og:description" content="Tạo website chuyên nghiệp cho doanh nghiệp của bạn chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="WebChoViet - Nền tảng tạo Website cho Doanh nghiệp Việt" />
-    <meta name="twitter:description" content="Tạo website chuyên nghiệp cho doanh nghiệp Việt Nam chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
+    <meta name="twitter:title" content="vngoweb — Nền tảng tạo website cho doanh nghiệp Việt Nam & quốc tế" />
+    <meta name="twitter:description" content="Tạo website chuyên nghiệp cho doanh nghiệp của bạn chỉ trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay không cần biết lập trình." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- JSON-LD @graph: Organization ↔ Person (founder) liên kết 2 chiều qua @id
+         để Google Knowledge Graph hiểu rõ AI LÀ NGƯỜI PHÁT TRIỂN vngoweb.
+         Tên/trường trong Person phải khớp CHÍNH XÁC text hiển thị ở trang /about. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "WebChoViet",
-      "url": "https://webchoviet.com/",
-      "logo": "https://webchoviet.com/logo/logo-full.png",
-      "description": "Nền tảng tạo website chuyên nghiệp cho doanh nghiệp Việt Nam."
+      "@graph": [
+        {
+          "@type": ["Organization", "WebSite"],
+          "@id": "https://vngoweb.com/#organization",
+          "name": "vngoweb",
+          "url": "https://vngoweb.com/",
+          "logo": "https://vngoweb.com/favicon.png",
+          "description": "Nền tảng tạo website chuyên nghiệp cho doanh nghiệp nhỏ tại Việt Nam và quốc tế — chọn mẫu, chỉnh sửa kéo thả, xuất bản ngay không cần biết lập trình.",
+          "telephone": "+84347868656",
+          "email": "hotro@vngoweb.com",
+          "inLanguage": ["vi", "en", "ko", "th", "zh", "lo"],
+          "founder": { "@id": "https://vngoweb.com/#founder" },
+          "sameAs": []
+        },
+        {
+          "@type": "Person",
+          "@id": "https://vngoweb.com/#founder",
+          "name": "Nguyễn Văn Tú",
+          "jobTitle": "Founder & Developer",
+          "url": "https://vngoweb.com/about",
+          "telephone": "+84347868656",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Đại học FPT Đà Nẵng"
+          },
+          "worksFor": { "@id": "https://vngoweb.com/#organization" },
+          "knowsAbout": ["Web Development", "SaaS", "Website Builder", "SEO"]
+        }
+      ]
     }
     </script>
   </head>

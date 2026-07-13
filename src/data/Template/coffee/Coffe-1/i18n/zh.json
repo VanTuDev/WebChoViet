@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "features": "功能",
     "templates": "模板",
     "pricing": "价格",
@@ -53,8 +53,8 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
-    "copyright": "© 2024 webchoviet. 保留所有权利。",
+    "brand": "vngoweb",
+    "copyright": "© 2024 vngoweb. 保留所有权利。",
     "privacy": "隐私政策",
     "terms": "服务条款",
     "support": "客户支持"

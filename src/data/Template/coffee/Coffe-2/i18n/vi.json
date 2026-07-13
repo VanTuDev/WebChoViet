@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "home": "Trang chủ",
     "menu": "Thực đơn",
     "space": "Không gian",
@@ -100,13 +100,13 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "desc": "Nền tảng xây dựng website chuyên nghiệp cho doanh nghiệp Việt.",
     "linksTitle": "Liên kết",
     "about": "Về chúng tôi",
     "terms": "Điều khoản",
     "privacy": "Bảo mật",
     "followTitle": "Theo dõi",
-    "copyright": "© 2024 webchoviet. Nền tảng xây dựng website chuyên nghiệp cho doanh nghiệp Việt."
+    "copyright": "© 2024 vngoweb. Nền tảng xây dựng website chuyên nghiệp cho doanh nghiệp Việt."
   }
 }

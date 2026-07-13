@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Quy định cookie — vngoweb",
+    "description": "Quy định về cookie và dữ liệu lưu trữ trình duyệt của vngoweb: loại dữ liệu sử dụng, mục đích và cách kiểm soát."
+  },
+  "title": "Quy Định Cookie",
+  "updatedAt": "13/07/2026",
+  "intro": "vngoweb sử dụng cookie và các công nghệ lưu trữ tương tự (localStorage, sessionStorage) để vận hành dịch vụ. Trang này giải thích chúng được dùng như thế nào.",
+  "sections": [
+    {
+      "heading": "1. Cookie là gì",
+      "paragraphs": [
+        "Cookie là tệp dữ liệu nhỏ được lưu trên trình duyệt của bạn khi truy cập một website. vngoweb cũng sử dụng các công nghệ lưu trữ tương tự trên trình duyệt (localStorage) để ghi nhớ phiên đăng nhập giữa các lần truy cập."
+      ]
+    },
+    {
+      "heading": "2. Các loại dữ liệu lưu trữ vngoweb sử dụng",
+      "list": [
+        "Cần thiết — lưu token đăng nhập để giữ bạn đăng nhập giữa các lần truy cập, bắt buộc để sử dụng Dashboard và Trình Chỉnh Sửa Mẫu.",
+        "Phân tích — mã phiên ẩn danh gắn với mỗi lượt truy cập website công khai, dùng để đo lường lượt xem/tương tác. Mã này không dùng để theo dõi cá nhân giữa các website hay dịch vụ khác.",
+        "Tùy chọn — ghi nhớ ngôn ngữ hiển thị bạn chọn trên nền tảng và trên các website công khai."
+      ]
+    },
+    {
+      "heading": "3. Những gì vngoweb không sử dụng",
+      "paragraphs": [
+        "vngoweb không sử dụng cookie quảng cáo hay công cụ theo dõi xuyên trang của bên thứ ba (không có Google Ads, Facebook Pixel hay các nền tảng quảng cáo tương tự)."
+      ]
+    },
+    {
+      "heading": "4. Kiểm soát cookie",
+      "paragraphs": [
+        "Bạn có thể xóa hoặc chặn cookie/dữ liệu lưu trữ trong phần cài đặt trình duyệt bất kỳ lúc nào. Lưu ý: chặn hoặc xóa dữ liệu cần thiết sẽ khiến bạn bị đăng xuất khỏi tài khoản và một số tính năng của nền tảng có thể ngừng hoạt động cho tới khi đăng nhập lại."
+      ]
+    },
+    {
+      "heading": "5. Thay đổi quy định",
+      "paragraphs": [
+        "vngoweb có thể cập nhật quy định này khi bổ sung tính năng mới có sử dụng dữ liệu lưu trữ trên trình duyệt. Phiên bản mới nhất luôn được đăng tại trang này."
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "home": "홈",
     "menu": "메뉴",
     "space": "공간",
@@ -100,13 +100,13 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "desc": "베트남 기업을 위한 전문 웹사이트 빌더.",
     "linksTitle": "링크",
     "about": "회사 소개",
     "terms": "이용 약관",
     "privacy": "개인정보 보호",
     "followTitle": "팔로우",
-    "copyright": "© 2024 webchoviet. 베트남 기업을 위한 전문 웹사이트 빌더."
+    "copyright": "© 2024 vngoweb. 베트남 기업을 위한 전문 웹사이트 빌더."
   }
 }

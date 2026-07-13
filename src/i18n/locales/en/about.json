@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "About Us — vngoweb | Nguyễn Văn Tú, FPT University Da Nang",
+    "description": "vngoweb is a website builder for small businesses in Vietnam and worldwide, developed by Nguyễn Văn Tú — FPT University Da Nang. Contact: 0347 868 656."
+  },
+  "hero": {
+    "badge": "About us",
+    "title": "vngoweb — professional websites for every business, no coding required",
+    "description": "vngoweb is a SaaS platform that lets small businesses in Vietnam and worldwide build a professional website in minutes: choose a template, edit with drag and drop, and publish instantly with a QR code and traffic analytics."
+  },
+  "mission": {
+    "heading": "The vngoweb mission",
+    "body": "Millions of cafes, restaurants, spas and small shops thrive offline yet have no presence online because of cost and technical barriers. vngoweb's mission is to remove those barriers: anyone can own a beautiful, SEO-ready, multilingual website — starting at zero cost."
+  },
+  "values": {
+    "heading": "Core values",
+    "items": [
+      {
+        "title": "No coding required",
+        "description": "Everything is done by picking a template and editing directly on the page — not a single line of code."
+      },
+      {
+        "title": "Publish in minutes",
+        "description": "From a Google Maps link or a ready-made template to a complete website with a QR code in just a few minutes."
+      },
+      {
+        "title": "Multilingual, globally ready",
+        "description": "Your website serves customers in Vietnamese, English, Korean, Thai, Chinese and Lao — ready for tourists and international markets."
+      },
+      {
+        "title": "Transparent pricing",
+        "description": "A free plan that's genuinely usable; paid plans with clearly listed prices, no hidden fees and no automatic charges."
+      }
+    ]
+  },
+  "founder": {
+    "heading": "Founder & developer",
+    "name": "Nguyễn Văn Tú",
+    "role": "Founder & Developer",
+    "school": "FPT University Da Nang",
+    "bio": "Nguyễn Văn Tú is a software developer and the founder of vngoweb, trained at FPT University Da Nang. He personally designed and built the entire vngoweb platform — from the template store and drag-and-drop editor to the payment system and analytics — with the goal of bringing modern web technology closer to small businesses."
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "description": "Need help building a website, exploring a partnership or getting technical support? The vngoweb team is always ready.",
+    "phoneLabel": "Phone / Zalo",
+    "emailLabel": "Email",
+    "domainLabel": "Website"
+  },
+  "cta": {
+    "title": "Start building your website today",
+    "description": "Explore the template store and try it free — no credit card required.",
+    "button": "Explore the template store"
+  }
+}

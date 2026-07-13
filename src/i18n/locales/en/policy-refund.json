@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Refund Policy — vngoweb",
+    "description": "vngoweb refund policy for WebPro and Ultra plan upgrades paid via PayOS: eligibility, process and processing times."
+  },
+  "title": "Refund Policy",
+  "updatedAt": "13/07/2026",
+  "intro": "This policy applies to WebPro Business and Ultra Brand plan upgrade transactions paid through the PayOS gateway on vngoweb.com.",
+  "sections": [
+    {
+      "heading": "1. How cycle-based payments work",
+      "paragraphs": [
+        "Each payment activates one full billing cycle (monthly or yearly) of your choosing. The system never charges you automatically on a recurring basis — you return and pay whenever you want to renew for another cycle."
+      ]
+    },
+    {
+      "heading": "2. Cases eligible for a refund",
+      "list": [
+        "You were charged but your plan was not activated due to a system error on vngoweb's side, and the issue could not be resolved after contacting support.",
+        "You were charged more than once for the same order.",
+        "The service suffered prolonged, continuous interruption caused entirely by vngoweb for the majority of the paid cycle."
+      ]
+    },
+    {
+      "heading": "3. Cases not eligible for a refund",
+      "list": [
+        "You have used the service in part or in full during the paid cycle and changed your mind about continuing.",
+        "Your account was suspended or terminated for violating the Terms of Service.",
+        "You selected the wrong plan or billing cycle and the transaction completed successfully — please double-check your details before confirming payment."
+      ]
+    },
+    {
+      "heading": "4. How to request a refund",
+      "list": [
+        "Send a request to hotro@vngoweb.com or call the hotline within 7 days of the transaction date, including the order ID shown in your payment history in the Dashboard.",
+        "vngoweb will verify and respond to your request within 3 business days.",
+        "If approved, the refund will be returned to the same payment method/account used for the PayOS transaction within 5–7 business days."
+      ]
+    },
+    {
+      "heading": "5. Cancellation is not a refund",
+      "paragraphs": [
+        "Cancelling auto-renewal does not entitle you to a refund of fees already paid for the current cycle — you retain full access to your plan's benefits until the end of the paid cycle."
+      ]
+    }
+  ]
+}

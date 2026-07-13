@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Hướng dẫn số hóa cửa hàng — vngoweb",
+    "description": "Hướng dẫn 4 bước tạo website, nhận mã QR và số hóa cửa hàng với vngoweb — không cần biết lập trình, chỉ mất 5 phút."
+  },
+  "heading": "Hướng Dẫn Số Hóa Cửa Hàng Với vngoweb",
+  "subheading": "Dù bạn không biết lập trình, chỉ cần 5 phút để đưa toàn bộ cửa hàng lên môi trường số.",
+  "steps": [
+    {
+      "num": "01",
+      "title": "Khám Phá & Chọn Mẫu",
+      "desc": "Truy cập \"Kho Giao Diện\", bấm dùng thử mẫu thiết kế bám sát lĩnh vực của bạn như Spa, Cafe, Nhà hàng hay Shop bán lẻ."
+    },
+    {
+      "num": "02",
+      "title": "Chỉnh Sửa Thông Tin Tiệm",
+      "desc": "Thay đổi tên cửa hàng, số điện thoại Zalo, logo text, bảng màu phù hợp và sửa thực đơn bảng giá dễ dàng."
+    },
+    {
+      "num": "03",
+      "title": "Nhận Mã QR Code Động",
+      "desc": "Hệ thống tự động tạo mã QR cho website. In đề can dán lên bàn để khách hàng quét và xem menu ngay."
+    },
+    {
+      "num": "04",
+      "title": "Giao Dịch Đơn Hàng Tự Động",
+      "desc": "Khách duyệt sản phẩm và gửi yêu cầu hoặc thanh toán. Bạn nhận thông báo để kịp thời chuẩn bị món."
+    }
+  ],
+  "support": {
+    "title": "Bạn muốn được thiết kế trọn gói hoàn toàn miễn phí?",
+    "desc": "Đội ngũ kỹ thuật vngoweb sẵn sàng hỗ trợ khởi tạo gian hàng, chụp hình sản phẩm và nhập thực đơn trọn gói miễn phí!",
+    "cta": "Liên hệ ngay qua Zalo",
+    "connecting": "Đang kết nối nhân viên tư vấn Zalo: {{phone}} — Vui lòng chờ trong giây lát."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Về chúng tôi — vngoweb | Nguyễn Văn Tú, Đại học FPT Đà Nẵng",
+    "description": "vngoweb là nền tảng tạo website cho doanh nghiệp nhỏ tại Việt Nam và quốc tế, được phát triển bởi Nguyễn Văn Tú — Đại học FPT Đà Nẵng. Liên hệ: 0347 868 656."
+  },
+  "hero": {
+    "badge": "Về chúng tôi",
+    "title": "vngoweb — website chuyên nghiệp cho mọi doanh nghiệp, không cần biết lập trình",
+    "description": "vngoweb là nền tảng SaaS giúp hộ kinh doanh và doanh nghiệp nhỏ tại Việt Nam cũng như quốc tế tự tạo website chuyên nghiệp trong vài phút: chọn mẫu giao diện, chỉnh sửa kéo thả, xuất bản ngay kèm mã QR và công cụ phân tích truy cập."
+  },
+  "mission": {
+    "heading": "Sứ mệnh của vngoweb",
+    "body": "Hàng triệu quán cafe, nhà hàng, spa và cửa hàng nhỏ đang kinh doanh tốt ngoài đời thật nhưng chưa hiện diện trên internet vì rào cản chi phí và kỹ thuật. Sứ mệnh của vngoweb là xóa rào cản đó: bất kỳ ai cũng có thể sở hữu một website đẹp, chuẩn SEO và đa ngôn ngữ — với chi phí bắt đầu từ 0 đồng."
+  },
+  "values": {
+    "heading": "Giá trị cốt lõi",
+    "items": [
+      {
+        "title": "Không cần biết code",
+        "description": "Toàn bộ thao tác là chọn mẫu và chỉnh sửa trực tiếp trên trang — không một dòng lệnh nào."
+      },
+      {
+        "title": "Xuất bản trong vài phút",
+        "description": "Từ link Google Maps hoặc mẫu có sẵn tới website hoàn chỉnh kèm mã QR chỉ mất vài phút."
+      },
+      {
+        "title": "Đa ngôn ngữ, vươn ra quốc tế",
+        "description": "Website của bạn phục vụ khách hàng bằng tiếng Việt, Anh, Hàn, Thái, Trung và Lào — sẵn sàng đón khách du lịch và thị trường nước ngoài."
+      },
+      {
+        "title": "Minh bạch chi phí",
+        "description": "Gói miễn phí dùng được thật; gói trả phí niêm yết rõ ràng, không phí ẩn, không tự động trừ tiền."
+      }
+    ]
+  },
+  "founder": {
+    "heading": "Người sáng lập & phát triển",
+    "name": "Nguyễn Văn Tú",
+    "role": "Nhà sáng lập & Lập trình viên",
+    "school": "Đại học FPT Đà Nẵng",
+    "bio": "Nguyễn Văn Tú là lập trình viên và nhà sáng lập vngoweb, được đào tạo tại Đại học FPT Đà Nẵng. Anh trực tiếp thiết kế và xây dựng toàn bộ nền tảng vngoweb — từ kho giao diện, trình chỉnh sửa kéo thả cho tới hệ thống thanh toán và phân tích dữ liệu — với mục tiêu đưa công nghệ web hiện đại đến gần hơn với các hộ kinh doanh nhỏ."
+  },
+  "contact": {
+    "heading": "Liên hệ với chúng tôi",
+    "description": "Bạn cần tư vấn tạo website, hợp tác hoặc hỗ trợ kỹ thuật? Đội ngũ vngoweb luôn sẵn sàng.",
+    "phoneLabel": "Điện thoại / Zalo",
+    "emailLabel": "Email",
+    "domainLabel": "Website"
+  },
+  "cta": {
+    "title": "Bắt đầu xây dựng website của bạn ngay hôm nay",
+    "description": "Khám phá kho giao diện và trải nghiệm miễn phí — không cần thẻ tín dụng.",
+    "button": "Khám phá kho giao diện"
+  }
+}

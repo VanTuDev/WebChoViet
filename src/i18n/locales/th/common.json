@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "features": "ฟีเจอร์",
+    "marketplace": "คลังเทมเพลต",
+    "pricing": "แพ็กเกจราคา",
+    "tutorials": "คู่มือการใช้งาน",
+    "about": "เกี่ยวกับเรา",
+    "myProjects": "โปรเจกต์ของฉัน",
+    "menuOpen": "เปิดเมนู",
+    "menuClose": "ปิดเมนู"
+  },
+  "header": {
+    "login": "เข้าสู่ระบบ",
+    "createSite": "สร้างเว็บไซต์ใหม่",
+    "searchPlaceholder": "ค้นหาเทมเพลต...",
+    "account": "บัญชีผู้ใช้",
+    "manageProjects": "จัดการโปรเจกต์",
+    "adminPanel": "จัดการระบบ",
+    "logout": "ออกจากระบบ",
+    "logoutConfirmTitle": "ออกจากระบบ?",
+    "logoutConfirmMessage": "คุณต้องการออกจากระบบ vngoweb ใช่หรือไม่?",
+    "logoutConfirmAction": "ออกจากระบบ"
+  },
+  "footer": {
+    "tagline": "แพลตฟอร์มสร้างเว็บไซต์และเมนู QR ดิจิทัลสำหรับธุรกิจครัวเรือนและธุรกิจขนาดเล็กในเวียดนามและทั่วโลก",
+    "landingCopyright": "ยกระดับแบรนด์ของคุณ",
+    "productHeading": "ผลิตภัณฑ์",
+    "policyHeading": "นโยบายและข้อกฎหมาย",
+    "links": {
+      "marketplace": "คลังเทมเพลต",
+      "pricing": "แพ็กเกจราคา",
+      "tutorials": "คู่มือการใช้งาน",
+      "about": "เกี่ยวกับเรา",
+      "myProjects": "จัดการโปรเจกต์",
+      "privacy": "นโยบายความเป็นส่วนตัว",
+      "terms": "ข้อกำหนดการใช้งาน",
+      "refund": "นโยบายการคืนเงิน",
+      "cookies": "นโยบายคุกกี้",
+      "termsShort": "ข้อกำหนด",
+      "privacyShort": "ความเป็นส่วนตัว",
+      "contact": "ติดต่อเรา",
+      "tutorialsShort": "คู่มือ"
+    },
+    "phoneSupportHours": "ให้บริการทุกวัน 8:00 – 22:00 น.",
+    "zalo": "ส่งข้อความผ่าน Zalo",
+    "zaloResponse": "ตอบกลับภายใน 15 นาที",
+    "businessReg": "ทะเบียนธุรกิจเลขที่ {{number}}",
+    "businessRegBy": "ออกโดย {{authority}}",
+    "allRightsReserved": "สงวนลิขสิทธิ์ทั้งหมด"
+  },
+  "login": {
+    "subtitle": "เข้าสู่ระบบเพื่อจัดการร้านค้าของคุณ",
+    "googleButton": "ดำเนินการต่อด้วย Google",
+    "termsPrefix": "การดำเนินการต่อถือว่าคุณยอมรับ",
+    "termsLink": "ข้อกำหนดการใช้งาน",
+    "and": "และ",
+    "privacyLink": "นโยบายความเป็นส่วนตัว",
+    "termsSuffix": "ของ vngoweb",
+    "ssl": "เข้ารหัส SSL",
+    "noPassword": "ไม่จัดเก็บรหัสผ่าน",
+    "gdpr": "GDPR"
+  },
+  "policy": {
+    "lastUpdated": "อัปเดตล่าสุด: {{date}}",
+    "contactHeading": "ข้อมูลติดต่อและผู้ให้บริการ",
+    "email": "อีเมล",
+    "hotline": "สายด่วน",
+    "businessRegLine": "ทะเบียนธุรกิจเลขที่ {{number}} ออกโดย {{authority}}"
+  }
+}

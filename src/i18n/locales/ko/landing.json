@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "vngoweb — 베트남 및 글로벌 비즈니스를 위한 웹사이트 제작 플랫폼",
+    "description": "vngoweb과 함께 카페, 레스토랑, 스파 등 소규모 비즈니스의 전문 웹사이트를 몇 분 만에 완성하세요. 템플릿 선택, 콘텐츠 편집, 즉시 게시 — 코딩 지식은 필요 없습니다."
+  },
+  "hero": {
+    "badge": "카페와 레스토랑을 위한 빠르고 간편한 솔루션",
+    "title1": "Google Maps를",
+    "titleHighlight": "웹사이트 & QR 메뉴",
+    "title2": "로 30초 만에 전문가답게",
+    "description": "코딩 지식이 없어도 괜찮습니다. Google Maps 링크만 붙여넣으면 vngoweb이 모바일에 최적화된 아름다운 웹사이트를 자동으로 만들어 고객을 맞이할 준비를 끝냅니다.",
+    "ctaStart": "지금 무료로 시작하기",
+    "ctaDemo": "데모 보기",
+    "proofCafe": "카페",
+    "proofRestaurant": "레스토랑",
+    "proofMilkTea": "밀크티 전문점",
+    "imageAlt": "전문 QR 코드를 든 카페 사장님",
+    "floatReady": "웹사이트가 준비되었습니다!",
+    "floatReadySub": "2분 전에 방금 완성",
+    "floatQr": "테이블 QR 메뉴",
+    "floatQrSub": "오늘 스캔 +128회"
+  },
+  "showcase": {
+    "badge": "실제 제품, 터치하면 바로 실행",
+    "title1": "바로 사용할 수 있는",
+    "titleHighlight": "아름다운",
+    "title2": " 템플릿 스토어",
+    "description": "vngoweb에서 실제 판매 중인 웹사이트 템플릿의 스크린샷입니다. 가운데 템플릿에 마우스를 올리면 전체 페이지를 스크롤하며 살펴볼 수 있습니다.",
+    "filterAll": "전체",
+    "previewThis": "이 템플릿 미리보기",
+    "previewAria": "{{name}} 템플릿 미리보기",
+    "goToAria": "{{name}} 템플릿으로 이동",
+    "selectAria": "{{name}} 템플릿 선택",
+    "prevSlide": "이전 템플릿",
+    "nextSlide": "다음 템플릿",
+    "screenshotAlt": "{{name}} 템플릿 화면",
+    "trustedBy": "많은 사장님들이 신뢰하는 플랫폼",
+    "exploreAll": "전체 템플릿 스토어 둘러보기"
+  },
+  "features": {
+    "title1": "온라인에서",
+    "titleHighlight": "빛나기 위해",
+    "title2": "필요한 모든 것",
+    "description": "바쁜 사장님을 위해 설계된, 강력하면서도 놀랍도록 쉬운 도구입니다.",
+    "maps": {
+      "title": "Google Maps 자동 연동",
+      "description": "링크만 붙여넣으면 리뷰, 사진, 연락처 정보가 자동으로 동기화된 웹사이트가 즉시 완성됩니다. 한 글자도 다시 입력할 필요가 없습니다."
+    },
+    "multilang": {
+      "title": "스마트 다국어 메뉴",
+      "description": "고객의 언어를 자동으로 감지해 화면을 자연스럽게 전환합니다. 외국인 관광객에게 확실한 인상을 남겨 보세요."
+    },
+    "qr": {
+      "title": "나만의 다이내믹 QR 코드",
+      "description": "매장 로고가 들어간 테이블 QR 코드를 만드세요. 한 번만 인쇄하면 메뉴나 가격을 시스템에서 언제든 업데이트할 수 있어 다시 인쇄할 필요가 없습니다."
+    }
+  },
+  "howItWorks": {
+    "title1": "웹사이트 오픈까지 단",
+    "titleHighlight": "3단계",
+    "description": "복잡한 기술 과정은 모두 자동화하고, 당신의 창의력에 집중할 수 있게 합니다.",
+    "step1Title": "로그인",
+    "step1Desc": "Google 계정으로 빠르게 계정을 만드세요.",
+    "step2Title": "링크 붙여넣기 / 편집",
+    "step2Desc": "Google Maps 링크를 붙여넣어 AI가 자동으로 페이지를 만들게 하거나, 템플릿을 골라 원하는 대로 직접 다듬으세요.",
+    "step3Title": "게시",
+    "step3Desc": "게시 버튼을 누르고 QR 코드를 받아 지금 바로 새로운 고객을 맞이하세요."
+  },
+  "cta": {
+    "title": "매장을 한층 더 전문적으로 만들 준비가 되셨나요?",
+    "description": "오늘부터 인터넷에서 전문적인 브랜드 이미지를 구축해 보세요. 기본 기능은 무료로 체험할 수 있습니다.",
+    "button": "지금 무료로 시작하기"
+  }
+}

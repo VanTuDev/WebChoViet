@@ -211,7 +211,7 @@ export default function PublishModal({
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Chủ tài khoản</span>
-                  <span className="font-bold text-gray-700">CONG TY WEBCHOVIET</span>
+                  <span className="font-bold text-gray-700">CONG TY VNGOWEB</span>
                 </div>
                 <div className="flex justify-between pt-1 border-t border-gray-100">
                   <span className="text-gray-400">Nội dung CK</span>

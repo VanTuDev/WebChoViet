@@ -20,7 +20,7 @@ export default function SettingsPage() {
           </div>
           <div>
             <span className="text-[10px] bg-orange-50 text-primary-container px-2 py-1 rounded font-bold">
-              Phiên bản WebChoViet v4.1 (Stable)
+              Phiên bản vngoweb v4.1 (Stable)
             </span>
           </div>
         </div>

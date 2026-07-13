@@ -1,101 +1,79 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import PricingCard, { type PricingPlanDef } from './_components/PricingCard';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
 import { setPostLoginRedirect } from '../../services/authService';
+import HreflangLinks from '../../i18n/HreflangLinks';
 import {
   fetchMySubscription, createCheckout, cancelSubscription, reactivateSubscription,
   type MySubscription, type PaidPlanId, type BillingCycle,
 } from '../../services/billingService';
 
-const CYCLE_OPTIONS: { value: BillingCycle; label: string }[] = [
-  { value: 'monthly', label: 'Hàng tháng' },
-  { value: 'yearly', label: 'Hàng năm (tiết kiệm ~17%)' },
-];
+// Giá niêm yết — phần KHÔNG dịch; nguồn sự thật amount ở BE src/billing/plan-pricing.ts,
+// sửa giá phải sửa cả 2 nơi. Nội dung text (name/desc/features) lấy từ i18n namespace pricing.
+const PLAN_STATIC = [
+  { id: 'free',  color: '#475569', price: null,                                       popular: false },
+  { id: 'pro',   color: '#ff6b2c', price: { monthly: 199_000, yearly: 1_990_000 },    popular: true },
+  { id: 'ultra', color: '#1e293b', price: { monthly: 499_000, yearly: 4_990_000 },    popular: false },
+] as const;
 
-const PLAN_DEFS: PricingPlanDef[] = [
-  {
-    id: 'free',
-    name: 'Khởi Nghiệp (Miễn phí)',
-    color: '#475569',
-    desc: 'Giải pháp hoàn hảo để bắt đầu số hóa thực đơn & quầy bán lẻ nhỏ.',
-    features: [
-      'Tối đa 2 website đã xuất bản + 2 bản nháp thử nghiệm',
-      'Tên miền phụ dạng: .webchoviet.com',
-      'Hỗ trợ Mã QR động không giới hạn',
-      'Trình quản lý thực đơn kéo thả căn bản',
-      'Quảng cáo WebChoViet hiển thị ở góc',
-    ],
-    price: null,
-    popular: false,
-  },
-  {
-    id: 'pro',
-    name: 'Kinh Doanh WebPro',
-    color: '#ff6b2c',
-    desc: 'Dành cho các chủ quán, chủ thương hiệu bứt tốc doanh số bán hàng.',
-    features: [
-      'Khởi tạo không giới hạn website',
-      'Hỗ trợ gắn Tên Miền Riêng (.vn, .com, .net)',
-      'Xóa bỏ hoàn toàn logo & watermark WebChoViet',
-      'Phân tích dữ liệu quét sâu theo tuần',
-      'Băng thông không giới hạn cực nhanh',
-      'SSL trọn đời miễn phí',
-      'Hỗ trợ riêng qua Zalo 24/7',
-    ],
-    price: { monthly: 199_000, yearly: 1_990_000 },
-    popular: true,
-  },
-  {
-    id: 'ultra',
-    name: 'Thương Hiệu Ultra',
-    color: '#1e293b',
-    desc: 'Gói cao cấp nhất — dành cho chuỗi cửa hàng và thương hiệu đang mở rộng.',
-    features: [
-      'Tất cả tính năng của gói WebPro',
-      'Phân quyền nhân viên đa Chi Nhánh',
-      'Báo cáo thống kê chuyên sâu theo ngày',
-      'Ưu tiên xử lý hỗ trợ trong 2 giờ',
-      'Đội ngũ chăm sóc vận hành Premium',
-    ],
-    price: { monthly: 499_000, yearly: 4_990_000 },
-    popular: false,
-  },
-];
+function buildPlanDefs(t: TFunction<'pricing'>): PricingPlanDef[] {
+  return PLAN_STATIC.map(p => ({
+    ...p,
+    price: p.price ? { ...p.price } : null,
+    name: t(`plans.${p.id}.name`),
+    desc: t(`plans.${p.id}.desc`),
+    features: t(`plans.${p.id}.features`, { returnObjects: true }) as string[],
+  }));
+}
 
 const PLAN_RANK: Record<string, number> = { free: 0, pro: 1, ultra: 2 };
 
-function resolveCardState(planId: PricingPlanDef['id'], cycle: BillingCycle, subscription: MySubscription | null) {
+function resolveCardState(
+  planId: PricingPlanDef['id'],
+  cycle: BillingCycle,
+  subscription: MySubscription | null,
+  t: TFunction<'pricing'>,
+) {
   const currentPlan = subscription?.plan ?? 'free';
   const rank = PLAN_RANK[planId];
   const currentRank = PLAN_RANK[currentPlan];
 
   if (planId === 'free') {
     return currentPlan === 'free'
-      ? { cta: 'Đang sử dụng', disabled: true, actionable: false }
-      : { cta: 'Gói thấp hơn', disabled: true, actionable: false };
+      ? { cta: t('cta.current'), disabled: true, actionable: false }
+      : { cta: t('cta.lower'), disabled: true, actionable: false };
   }
 
   if (planId === currentPlan) {
     if (subscription?.billingCycle === cycle) {
-      return { cta: 'Gói hiện tại', disabled: true, actionable: false };
+      return { cta: t('cta.currentPlan'), disabled: true, actionable: false };
     }
-    return { cta: 'Đổi chu kỳ thanh toán', disabled: false, actionable: true };
+    return { cta: t('cta.changeCycle'), disabled: false, actionable: true };
   }
 
-  if (rank > currentRank) return { cta: 'Nâng cấp ngay', disabled: false, actionable: true };
-  return { cta: 'Gói thấp hơn', disabled: true, actionable: false };
+  if (rank > currentRank) return { cta: t('cta.upgrade'), disabled: false, actionable: true };
+  return { cta: t('cta.lower'), disabled: true, actionable: false };
 }
 
 export default function PricingPage() {
-  const navigate = useNavigate();
+  const { t, i18n } = useTranslation('pricing');
   const { isAuthenticated, showSnackbar, openLoginModal } = useAppContext();
   const [cycle, setCycle] = useState<BillingCycle>('monthly');
   const [subscription, setSubscription] = useState<MySubscription | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<PaidPlanId | null>(null);
   const [cancelLoading, setCancelLoading] = useState(false);
+
+  const planDefs = useMemo(() => buildPlanDefs(t), [t]);
+  const cycleOptions: { value: BillingCycle; label: string }[] = [
+    { value: 'monthly', label: t('cycle.monthly') },
+    { value: 'yearly', label: t('cycle.yearly') },
+  ];
+  // Định dạng ngày theo locale đang xem (vi-VN, en-US...)
+  const dateLocale = i18n.resolvedLanguage === 'vi' ? 'vi-VN' : i18n.resolvedLanguage;
 
   useEffect(() => {
     if (!isAuthenticated) { setSubscription(null); return; }
@@ -110,11 +88,11 @@ export default function PricingPage() {
         : await cancelSubscription();
       setSubscription(updated);
       showSnackbar(
-        updated.cancelAtPeriodEnd ? 'Đã xác nhận không gia hạn.' : 'Đã khôi phục — gói tiếp tục như bình thường.',
+        updated.cancelAtPeriodEnd ? t('subscription.cancelSuccess') : t('subscription.reactivateSuccess'),
         'success',
       );
     } catch (err) {
-      showSnackbar(err instanceof Error ? err.message : 'Không thực hiện được yêu cầu.', 'error');
+      showSnackbar(err instanceof Error ? err.message : t('subscription.requestFailed'), 'error');
     } finally {
       setCancelLoading(false);
     }
@@ -131,7 +109,7 @@ export default function PricingPage() {
       const { checkoutUrl } = await createCheckout(plan, cycle);
       window.location.href = checkoutUrl;
     } catch (err) {
-      showSnackbar(err instanceof Error ? err.message : 'Không tạo được đơn thanh toán. Vui lòng thử lại.', 'error');
+      showSnackbar(err instanceof Error ? err.message : t('subscription.checkoutFailed'), 'error');
       setCheckoutLoading(null);
     }
   };
@@ -139,22 +117,22 @@ export default function PricingPage() {
   return (
     <div className="py-10 px-6 xl:px-10 w-full space-y-8">
       <Helmet>
-        <title>Bảng Giá — WebChoViet</title>
-        <meta name="description" content="So sánh các gói dịch vụ WebChoViet: miễn phí, WebPro và các gói doanh nghiệp — chọn gói phù hợp để xây dựng website chuyên nghiệp." />
-        <link rel="canonical" href="https://webchoviet.com/pricing" />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
       </Helmet>
-      <div className="text-center space-y-3">
+      <HreflangLinks path={ROUTES.PRICING} />
+      <header className="text-center space-y-3">
         <h1 className="text-3xl font-display font-extrabold text-gray-900 leading-tight">
-          Bảng Giá Dịch Vụ WebChoViet
+          {t('heading')}
         </h1>
         <p className="text-sm text-gray-500 max-w-2xl mx-auto">
-          Không phát sinh chi phí ẩn. Thanh toán an toàn qua PayOS (chuyển khoản ngân hàng/VietQR).
+          {t('subheading')}
         </p>
-      </div>
+      </header>
 
       <div className="flex justify-center">
         <div className="inline-flex bg-gray-100 rounded-full p-1">
-          {CYCLE_OPTIONS.map(opt => (
+          {cycleOptions.map(opt => (
             <button
               key={opt.value}
               onClick={() => setCycle(opt.value)}
@@ -172,14 +150,14 @@ export default function PricingPage() {
         <div className="max-w-2xl mx-auto w-full rounded-2xl border border-gray-200 bg-white p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <p className="text-sm font-bold text-gray-900">
-              {PLAN_DEFS.find(p => p.id === subscription.plan)?.name ?? subscription.plan}
+              {planDefs.find(p => p.id === subscription.plan)?.name ?? subscription.plan}
               {' · '}
-              {subscription.billingCycle === 'yearly' ? 'Hàng năm' : 'Hàng tháng'}
+              {subscription.billingCycle === 'yearly' ? t('cycle.yearlyShort') : t('cycle.monthlyShort')}
             </p>
             <p className="text-xs text-gray-500 mt-1">
               {subscription.cancelAtPeriodEnd
-                ? `Đã xác nhận không gia hạn — gói sẽ chuyển về Free vào ${new Date(subscription.currentPeriodEnd).toLocaleDateString('vi-VN')}.`
-                : `Gói đang hoạt động tới ${new Date(subscription.currentPeriodEnd).toLocaleDateString('vi-VN')}. Sau ngày này cần thanh toán lại để tiếp tục dùng.`}
+                ? t('subscription.cancelScheduled', { date: new Date(subscription.currentPeriodEnd).toLocaleDateString(dateLocale) })
+                : t('subscription.activeUntil', { date: new Date(subscription.currentPeriodEnd).toLocaleDateString(dateLocale) })}
             </p>
           </div>
           <button
@@ -191,14 +169,14 @@ export default function PricingPage() {
                 : 'bg-rose-50 hover:bg-rose-100 text-rose-600'
             }`}
           >
-            {subscription.cancelAtPeriodEnd ? 'Vẫn muốn tiếp tục' : 'Hủy gói'}
+            {subscription.cancelAtPeriodEnd ? t('subscription.keepPlan') : t('subscription.cancelPlan')}
           </button>
         </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
-        {PLAN_DEFS.map(plan => {
-          const { cta, disabled, actionable } = resolveCardState(plan.id, cycle, subscription);
+        {planDefs.map(plan => {
+          const { cta, disabled, actionable } = resolveCardState(plan.id, cycle, subscription, t);
           return (
             <PricingCard
               key={plan.id}

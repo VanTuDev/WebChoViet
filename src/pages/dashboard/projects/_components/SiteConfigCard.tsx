@@ -49,7 +49,7 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
         <span className="w-1.5 h-1.5 rounded-full bg-fnb-amber" />
         <span className="w-1.5 h-1.5 rounded-full bg-fnb-green" />
         <span className="ml-1.5 flex-1 truncate text-[9px] font-mono text-on-surface-variant bg-surface-container-low rounded-full px-2 py-px">
-          webchoviet.com/{site.slug}
+          vngoweb.com/{site.slug}
         </span>
       </div>
 

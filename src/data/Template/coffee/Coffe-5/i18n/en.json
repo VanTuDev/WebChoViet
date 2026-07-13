@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "Mật Ngọt Tea",
     "home": "Home",
     "menu": "Menu",
@@ -61,7 +61,7 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "webchoviet",
+    "brand": "vngoweb",
     "shopName": "Mật Ngọt Tea",
     "desc": "Bringing handcrafted milk tea to your hands with all sincerity and sweetness.",
     "exploreTitle": "Explore",
@@ -70,7 +70,7 @@
     "newsletterDesc": "Get 20% off your first order!",
     "newsletterPlaceholder": "Your email...",
     "newsletterBtn": "Subscribe",
-    "copyright": "© 2024 Mật Ngọt Tea by webchoviet. All rights reserved.",
+    "copyright": "© 2024 Mật Ngọt Tea by vngoweb. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   }

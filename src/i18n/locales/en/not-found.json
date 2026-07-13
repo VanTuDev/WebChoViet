@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "Page Not Found — vngoweb"
+  },
+  "heading": "This page doesn't exist",
+  "pathPrefix": "The path",
+  "pathSuffix": "could not be found on the system.",
+  "hint": "The link may have changed, or the URL may have been mistyped.",
+  "goBack": "Go back",
+  "goHome": "Back to home",
+  "dashboard": "Dashboard",
+  "popularPages": "Popular pages",
+  "links": {
+    "marketplace": "Template Store",
+    "pricing": "Pricing",
+    "tutorials": "Tutorials",
+    "myProjects": "My Projects",
+    "qrcodes": "QR Manager",
+    "support": "Support"
+  },
+  "brandTagline": "Digital solutions for businesses in Vietnam & worldwide"
+}

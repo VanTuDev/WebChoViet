@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "vngoweb — Nền tảng tạo website cho doanh nghiệp Việt Nam & quốc tế",
+    "description": "vngoweb giúp quán cafe, nhà hàng, spa và doanh nghiệp nhỏ tạo website chuyên nghiệp trong vài phút — chọn mẫu, tuỳ chỉnh nội dung, xuất bản ngay, không cần biết lập trình."
+  },
+  "hero": {
+    "badge": "Giải pháp nhanh gọn cho quán cafe, nhà hàng",
+    "title1": "Biến Google Maps thành",
+    "titleHighlight": "Website & Menu QR",
+    "title2": "chuyên nghiệp trong 30 giây",
+    "description": "Không cần biết code. Chỉ cần dán link Google Maps của bạn, vngoweb sẽ tự động tạo một trang web tuyệt đẹp, tối ưu hóa cho di động và sẵn sàng thu hút khách hàng.",
+    "ctaStart": "Bắt đầu miễn phí ngay",
+    "ctaDemo": "Xem demo",
+    "proofCafe": "Quán cafe",
+    "proofRestaurant": "Nhà hàng",
+    "proofMilkTea": "Trà sữa",
+    "imageAlt": "Chủ quán cafe với mã QR chuyên nghiệp",
+    "floatReady": "Website đã sẵn sàng!",
+    "floatReadySub": "Vừa tạo xong 2 phút trước",
+    "floatQr": "Menu QR tại bàn",
+    "floatQrSub": "+128 lượt quét hôm nay"
+  },
+  "showcase": {
+    "badge": "Sản phẩm thật, chạm là chạy",
+    "title1": "Kho giao diện",
+    "titleHighlight": "tuyệt đẹp",
+    "title2": ", sẵn sàng sử dụng",
+    "description": "Đây là ảnh chụp thật từ các mẫu website đang bán trên vngoweb — di chuột lên mẫu chính giữa để cuộn xem toàn trang.",
+    "filterAll": "Tất cả",
+    "previewThis": "Xem trước mẫu này",
+    "previewAria": "Xem trước mẫu {{name}}",
+    "goToAria": "Chuyển tới mẫu {{name}}",
+    "selectAria": "Chọn mẫu {{name}}",
+    "prevSlide": "Mẫu trước",
+    "nextSlide": "Mẫu sau",
+    "screenshotAlt": "Giao diện mẫu {{name}}",
+    "trustedBy": "Được các chủ quán tin dùng",
+    "exploreAll": "Khám phá toàn bộ kho giao diện"
+  },
+  "features": {
+    "title1": "Mọi thứ bạn cần để",
+    "titleHighlight": "tỏa sáng",
+    "title2": "online",
+    "description": "Công cụ mạnh mẽ nhưng cực kỳ dễ sử dụng, thiết kế dành riêng cho các chủ quán bận rộn.",
+    "maps": {
+      "title": "Tự động hóa từ Google Maps",
+      "description": "Dán link, nhận ngay website với đầy đủ đánh giá, hình ảnh và thông tin liên hệ được đồng bộ tự động. Không cần gõ lại một chữ."
+    },
+    "multilang": {
+      "title": "Menu đa ngôn ngữ thông minh",
+      "description": "Hệ thống tự động nhận diện ngôn ngữ của khách hàng và chuyển đổi giao diện mượt mà, ghi điểm với khách du lịch nước ngoài."
+    },
+    "qr": {
+      "title": "Mã QR động & Độc quyền",
+      "description": "Tạo mã QR đặt bàn có logo quán. In một lần, cập nhật menu hay giá bán mãi mãi trên hệ thống mà không cần in lại."
+    }
+  },
+  "howItWorks": {
+    "title1": "Lên sóng chỉ trong",
+    "titleHighlight": "3 bước",
+    "description": "Đơn giản hóa mọi quy trình kỹ thuật phức tạp, nhường chỗ cho sự sáng tạo của bạn.",
+    "step1Title": "Đăng nhập",
+    "step1Desc": "Tạo tài khoản nhanh chóng bằng tài khoản Google của bạn.",
+    "step2Title": "Dán Link / Chỉnh sửa",
+    "step2Desc": "Dán link Google Maps để AI tự động tạo trang, hoặc chọn mẫu và tự tinh chỉnh theo ý thích.",
+    "step3Title": "Xuất bản",
+    "step3Desc": "Nhấn nút xuất bản, nhận mã QR và bắt đầu đón khách hàng mới ngay lập tức."
+  },
+  "cta": {
+    "title": "Sẵn sàng để chuyên nghiệp hóa quán của bạn?",
+    "description": "Bắt đầu xây dựng hình ảnh chuyên nghiệp trên internet ngay hôm nay. Miễn phí trải nghiệm các tính năng cơ bản.",
+    "button": "Bắt đầu miễn phí ngay"
+  }
+}

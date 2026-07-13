@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Cookie Policy — vngoweb",
+    "description": "vngoweb's policy on cookies and browser storage: the types of data used, their purposes and how you can control them."
+  },
+  "title": "Cookie Policy",
+  "updatedAt": "13/07/2026",
+  "intro": "vngoweb uses cookies and similar storage technologies (localStorage, sessionStorage) to operate the service. This page explains how they are used.",
+  "sections": [
+    {
+      "heading": "1. What cookies are",
+      "paragraphs": [
+        "Cookies are small data files stored in your browser when you visit a website. vngoweb also uses similar browser storage technologies (localStorage) to remember your login session between visits."
+      ]
+    },
+    {
+      "heading": "2. Types of storage vngoweb uses",
+      "list": [
+        "Essential — stores your login token to keep you signed in between visits; required to use the Dashboard and Template Editor.",
+        "Analytics — an anonymous session ID attached to each visit to a public website, used to measure views/interactions. This ID is never used to track individuals across other websites or services.",
+        "Preferences — remembers the display language you choose on the platform and on public websites."
+      ]
+    },
+    {
+      "heading": "3. What vngoweb does not use",
+      "paragraphs": [
+        "vngoweb does not use advertising cookies or third-party cross-site trackers (no Google Ads, Facebook Pixel or similar advertising platforms)."
+      ]
+    },
+    {
+      "heading": "4. Controlling cookies",
+      "paragraphs": [
+        "You can delete or block cookies/stored data in your browser settings at any time. Please note: blocking or deleting essential data will sign you out of your account, and some platform features may stop working until you sign in again."
+      ]
+    },
+    {
+      "heading": "5. Changes to this policy",
+      "paragraphs": [
+        "vngoweb may update this policy when new features involving browser storage are added. The latest version will always be published on this page."
+      ]
+    }
+  ]
+}

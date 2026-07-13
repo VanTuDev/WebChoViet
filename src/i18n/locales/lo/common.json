@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "features": "ຄຸນສົມບັດ",
+    "marketplace": "ຄັງແມ່ແບບ",
+    "pricing": "ຕາຕະລາງລາຄາ",
+    "tutorials": "ຄູ່ມືແນະນຳ",
+    "about": "ກ່ຽວກັບພວກເຮົາ",
+    "myProjects": "ໂຄງການຂອງຂ້ອຍ",
+    "menuOpen": "ເປີດເມນູ",
+    "menuClose": "ປິດເມນູ"
+  },
+  "header": {
+    "login": "ເຂົ້າສູ່ລະບົບ",
+    "createSite": "ສ້າງເວັບໃໝ່",
+    "searchPlaceholder": "ຄົ້ນຫາແມ່ແບບ...",
+    "account": "ບັນຊີ",
+    "manageProjects": "ຈັດການໂຄງການ",
+    "adminPanel": "ຈັດການລະບົບ",
+    "logout": "ອອກຈາກລະບົບ",
+    "logoutConfirmTitle": "ອອກຈາກລະບົບ?",
+    "logoutConfirmMessage": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກຈາກລະບົບ vngoweb?",
+    "logoutConfirmAction": "ອອກຈາກລະບົບ"
+  },
+  "footer": {
+    "tagline": "ແພລດຟອມສ້າງເວັບໄຊ ແລະ ເມນູ QR ດິຈິຕອນ ສຳລັບຄອບຄົວທຸລະກິດ ແລະ ທຸລະກິດຂະໜາດນ້ອຍ ໃນຫວຽດນາມ ແລະ ສາກົນ.",
+    "landingCopyright": "ຍົກລະດັບແບຣນຂອງທ່ານ.",
+    "productHeading": "ຜະລິດຕະພັນ",
+    "policyHeading": "ນະໂຍບາຍ ແລະ ກົດໝາຍ",
+    "links": {
+      "marketplace": "ຄັງແມ່ແບບເວັບໄຊ",
+      "pricing": "ຕາຕະລາງລາຄາ",
+      "tutorials": "ຄູ່ມືແນະນຳ",
+      "about": "ກ່ຽວກັບພວກເຮົາ",
+      "myProjects": "ຈັດການໂຄງການ",
+      "privacy": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+      "terms": "ເງື່ອນໄຂການໃຊ້ງານ",
+      "refund": "ນະໂຍບາຍການຄືນເງິນ",
+      "cookies": "ຂໍ້ກຳນົດ Cookie",
+      "termsShort": "ເງື່ອນໄຂ",
+      "privacyShort": "ຄວາມເປັນສ່ວນຕົວ",
+      "contact": "ຕິດຕໍ່",
+      "tutorialsShort": "ຄູ່ມື"
+    },
+    "phoneSupportHours": "ຊ່ວຍເຫຼືອ 8:00 – 22:00 ທຸກມື້",
+    "zalo": "ສົ່ງຂໍ້ຄວາມຜ່ານ Zalo",
+    "zaloResponse": "ຕອບກັບພາຍໃນ 15 ນາທີ",
+    "businessReg": "ໃບທະບຽນທຸລະກິດເລກທີ {{number}}",
+    "businessRegBy": "ອອກໃຫ້ໂດຍ {{authority}}.",
+    "allRightsReserved": "ສະຫງວນລິຂະສິດທັງໝົດ."
+  },
+  "login": {
+    "subtitle": "ເຂົ້າສູ່ລະບົບເພື່ອຈັດການຮ້ານຂອງທ່ານ",
+    "googleButton": "ສືບຕໍ່ດ້ວຍ Google",
+    "termsPrefix": "ໂດຍການສືບຕໍ່ ທ່ານຍອມຮັບ",
+    "termsLink": "ເງື່ອນໄຂການໃຊ້ງານ",
+    "and": "ແລະ",
+    "privacyLink": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+    "termsSuffix": "ຂອງ vngoweb.",
+    "ssl": "ຄວາມປອດໄພ SSL",
+    "noPassword": "ບໍ່ເກັບລະຫັດຜ່ານ",
+    "gdpr": "GDPR"
+  },
+  "policy": {
+    "lastUpdated": "ອັບເດດຄັ້ງລ່າສຸດ: {{date}}",
+    "contactHeading": "ຂໍ້ມູນຕິດຕໍ່ ແລະ ຜູ້ດຳເນີນງານ",
+    "email": "ອີເມວ",
+    "hotline": "ສາຍດ່ວນ",
+    "businessRegLine": "ໃບທະບຽນທຸລະກິດເລກທີ {{number}}, ອອກໃຫ້ໂດຍ {{authority}}."
+  }
+}

@@ -2,7 +2,10 @@
 // LoginPage.tsx (/login). Hệ thống chưa có đăng ký/đăng nhập bằng email, nên modal này
 // không có tab hay form email/password.
 import { X, ShieldCheck, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { getGoogleLoginUrl } from '../../services/authService';
+import { ROUTES } from '../../config/routes';
 
 function GoogleLogo() {
   return (
@@ -20,6 +23,7 @@ interface Props {
 }
 
 export default function LoginModal({ onClose }: Props) {
+  const { t } = useTranslation('common');
   const handleGoogle = () => {
     // Không set postLoginRedirect — mặc định đổ về Marketplace sau khi đăng nhập
     // (xem authService.ts), kể cả khi mở modal này từ Landing Page ("/").
@@ -52,9 +56,9 @@ export default function LoginModal({ onClose }: Props) {
               <ShieldCheck className="h-5.5 w-5.5 text-white" />
             </div>
             <h1 className="font-lexend font-bold text-lg text-white mb-0.5">
-              web<span className="text-orange-200">choviet</span>
+              vngo<span className="text-orange-200">web</span>
             </h1>
-            <p className="text-xs text-orange-200/70">Đăng nhập để quản lý cửa hàng</p>
+            <p className="text-xs text-orange-200/70">{t('login.subtitle')}</p>
           </div>
         </div>
 
@@ -65,26 +69,26 @@ export default function LoginModal({ onClose }: Props) {
             className="w-full flex items-center justify-center gap-2.5 h-11 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-slate-300 hover:shadow-md transition-all cursor-pointer active:scale-[0.98] shadow-sm"
           >
             <GoogleLogo />
-            Tiếp tục với Google
+            {t('login.googleButton')}
           </button>
 
-          {/* Terms */}
+          {/* Terms — <Link> thật (crawler đọc được), thay cho <button> không dẫn đi đâu trước đây */}
           <p className="text-center text-[11px] text-slate-400 leading-relaxed">
-            Bằng cách tiếp tục, bạn đồng ý với{' '}
-            <button className="text-primary hover:underline cursor-pointer">Điều khoản</button>
-            {' '}và{' '}
-            <button className="text-primary hover:underline cursor-pointer">Chính sách bảo mật</button>
-            {' '}của WebChoViet.
+            {t('login.termsPrefix')}{' '}
+            <Link to={ROUTES.POLICY_TERMS} onClick={onClose} className="text-primary hover:underline cursor-pointer">{t('login.termsLink')}</Link>
+            {' '}{t('login.and')}{' '}
+            <Link to={ROUTES.POLICY_PRIVACY} onClick={onClose} className="text-primary hover:underline cursor-pointer">{t('login.privacyLink')}</Link>
+            {' '}{t('login.termsSuffix')}
           </p>
         </div>
 
         {/* Trust bar */}
         <div className="flex items-center justify-center gap-4 px-7 pb-5 text-[10px] text-slate-400 font-medium">
-          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> Bảo mật SSL</span>
+          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> {t('login.ssl')}</span>
           <span className="w-px h-3 bg-slate-200" />
-          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> Không lưu mật khẩu</span>
+          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> {t('login.noPassword')}</span>
           <span className="w-px h-3 bg-slate-200" />
-          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> GDPR</span>
+          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> {t('login.gdpr')}</span>
         </div>
       </div>
     </div>

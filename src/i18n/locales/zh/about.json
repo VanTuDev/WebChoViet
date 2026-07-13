@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "关于我们 — vngoweb | Nguyễn Văn Tú，越南岘港FPT大学",
+    "description": "vngoweb 是面向越南及全球小微企业的网站搭建平台，由越南岘港FPT大学的 Nguyễn Văn Tú 开发。联系电话：0347 868 656。"
+  },
+  "hero": {
+    "badge": "关于我们",
+    "title": "vngoweb — 无需编程，为每一家企业打造专业网站",
+    "description": "vngoweb 是一个 SaaS 平台，帮助越南及全球的个体商户和小微企业在几分钟内自主建成专业网站：挑选模板、拖拽编辑、即刻发布，并附带二维码和访问分析工具。"
+  },
+  "mission": {
+    "heading": "vngoweb 的使命",
+    "body": "数以百万计的咖啡馆、餐厅、美容院和小店铺线下经营红火，却因成本和技术门槛而缺席互联网。vngoweb 的使命就是消除这道门槛：让任何人都能拥有一个美观、符合 SEO 标准、支持多语言的网站——起步成本为零。"
+  },
+  "values": {
+    "heading": "核心价值",
+    "items": [
+      {
+        "title": "无需懂代码",
+        "description": "全部操作只是挑选模板并在页面上直接编辑——没有一行代码。"
+      },
+      {
+        "title": "几分钟内发布上线",
+        "description": "从 Google Maps 链接或现成模板到带二维码的完整网站，只需几分钟。"
+      },
+      {
+        "title": "多语言，走向国际",
+        "description": "您的网站可用越南语、英语、韩语、泰语、中文和老挝语服务顾客——随时迎接外国游客和海外市场。"
+      },
+      {
+        "title": "费用透明",
+        "description": "免费套餐真正可用；付费套餐明码标价，无隐藏费用，不自动扣款。"
+      }
+    ]
+  },
+  "founder": {
+    "heading": "创始人与开发者",
+    "name": "Nguyễn Văn Tú",
+    "role": "创始人 & 开发工程师",
+    "school": "越南岘港FPT大学",
+    "bio": "Nguyễn Văn Tú 是 vngoweb 的开发者与创始人，毕业于越南岘港FPT大学。他亲自设计并构建了 vngoweb 的整个平台——从模板库、拖拽编辑器到支付系统与数据分析——目标是让现代网络技术更贴近小微商户。"
+  },
+  "contact": {
+    "heading": "联系我们",
+    "description": "需要建站咨询、商务合作或技术支持？vngoweb 团队随时为您服务。",
+    "phoneLabel": "电话 / Zalo",
+    "emailLabel": "邮箱",
+    "domainLabel": "网站"
+  },
+  "cta": {
+    "title": "今天就开始搭建您的网站",
+    "description": "浏览模板库并免费体验——无需信用卡。",
+    "button": "浏览模板库"
+  }
+}
