@@ -24,6 +24,7 @@
 # subdomain (robots.txt.vngoweb.com) giống bug sitemap_index.xml.
 /robots.txt         /robots.txt                                              200
 /sitemap.xml        /sitemap.xml                                             200
+/ads.txt            /ads.txt                                                 200
 
 # Site khách xuất bản — chuyển hẳn từ path sang wildcard subdomain (*.vngoweb.com
 # đã Active trên Cloudflare Pages). 301 vì đây là thay đổi URL vĩnh viễn — giữ SEO
