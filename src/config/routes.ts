@@ -45,4 +45,5 @@ export const ROUTES = {
   ADMIN_USERS:        '/admin/users',
   ADMIN_PAYMENTS:     '/admin/payments',
   ADMIN_TRANSACTIONS: '/admin/transactions',
+  ADMIN_TEMPLATES:    '/admin/templates',
 } as const;

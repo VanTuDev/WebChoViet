@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { ChevronDown, Search, ArrowRight, Receipt } from 'lucide-react';
 import { fetchAdminPayments, type AdminPaymentListItem } from '../../../services/adminService';
-import { PAYMENT_STATUS_META, PLAN_PURCHASE_LABEL, type PaymentStatus } from '../../../utils/paymentDisplay';
+import { PAYMENT_STATUS_META, formatTransactionItemLabel, type PaymentStatus } from '../../../utils/paymentDisplay';
 import { avatarUrl } from '../../../utils/avatar';
 import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
 import { useFetchState } from '../../../hooks/useFetchState';
@@ -149,8 +149,8 @@ export default function TransactionsPage() {
 
                           <div className="flex flex-wrap items-center gap-3 shrink-0">
                             <div className="text-right">
-                              <p className="text-[11px] text-slate-500">Gói dịch vụ</p>
-                              <p className="text-xs font-semibold text-white">{PLAN_PURCHASE_LABEL[tx.plan] ?? tx.plan}</p>
+                              <p className="text-[11px] text-slate-500">{tx.kind === 'template' ? 'Template' : 'Gói dịch vụ'}</p>
+                              <p className="text-xs font-semibold text-white">{formatTransactionItemLabel(tx.kind, tx.itemLabel)}</p>
                             </div>
                             <div className="w-px h-8 bg-slate-800" />
 

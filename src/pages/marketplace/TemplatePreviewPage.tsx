@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../config/routes';
 import { TEMPLATES } from '../../data';
 import { COMPONENT_MAP } from '../../data/templates/registry';
+import { useTemplateAccess } from '../../hooks/useTemplateAccess';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 
@@ -20,6 +21,7 @@ export default function TemplatePreviewPage() {
 
   const template = TEMPLATES.find(t => t.id === templateId);
   const Component = templateId ? COMPONENT_MAP[templateId] : null;
+  const { getEffectiveAccess } = useTemplateAccess();
 
   if (!Component || !template) {
     return (
@@ -35,7 +37,8 @@ export default function TemplatePreviewPage() {
     );
   }
 
-  const isFree = template.price === 0;
+  const access = getEffectiveAccess(template.id, template.price);
+  const isFree = access.price === 0;
 
   return (
     <div className="relative">
@@ -100,7 +103,7 @@ export default function TemplatePreviewPage() {
           <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
             isFree ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-gray-100 text-gray-800 border border-gray-200'
           }`}>
-            {template.priceText}
+            {isFree ? 'Miễn phí' : `${access.price.toLocaleString('vi-VN')}đ`}
           </span>
           <button
             onClick={() => navigate(`/template-editor/new?template=${templateId}`)}

@@ -70,8 +70,12 @@ export default function AdminAnalyticsPage() {
     : `${days} ngày`;
 
   const dates = useMemo(() => data?.daily.map(d => d.date) ?? [], [data]);
-  const revenueValues = useMemo(() => data?.dailyRevenue.map(d => d.amount) ?? [], [data]);
-  const revenueTotal = useMemo(() => revenueValues.reduce((s, v) => s + v, 0), [revenueValues]);
+  const subscriptionRevenueValues = useMemo(() => data?.dailyRevenue.map(d => d.subscriptionAmount) ?? [], [data]);
+  const templateRevenueValues = useMemo(() => data?.dailyRevenue.map(d => d.templateAmount) ?? [], [data]);
+  const revenueTotal = useMemo(
+    () => subscriptionRevenueValues.reduce((s, v) => s + v, 0) + templateRevenueValues.reduce((s, v) => s + v, 0),
+    [subscriptionRevenueValues, templateRevenueValues],
+  );
 
   // Phễu chuyển đổi thật — toàn thời gian (không giới hạn theo khoảng ngày đang chọn)
   const conversionSteps = useMemo(() => {
@@ -281,11 +285,12 @@ export default function AdminAnalyticsPage() {
                 <span className="text-xl font-bold text-white tabular-nums">{fmtVnd(revenueTotal)}</span>
                 <span className="text-[11px] text-slate-500">tổng {rangeLabel} · giao dịch PayOS thành công</span>
               </div>
-              <BarChart
+              <TimeSeriesChart
                 dates={dates}
-                values={revenueValues}
-                color={CHART_COLORS.aqua}
-                unitLabel="đồng"
+                series={[
+                  { name: 'Gói (Pro/Ultra)', color: CHART_COLORS.aqua, values: subscriptionRevenueValues },
+                  { name: 'Template', color: CHART_COLORS.yellow, values: templateRevenueValues },
+                ]}
                 height={140}
               />
             </Card>

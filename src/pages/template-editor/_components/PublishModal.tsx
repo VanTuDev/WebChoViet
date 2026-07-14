@@ -1,66 +1,51 @@
-import { useState, useEffect } from 'react';
-import { Globe, CheckCircle2, Copy, ExternalLink, ArrowLeft, X, Loader2, Clock } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Globe, CheckCircle2, Copy, ExternalLink, ArrowLeft, X, Loader2, Lock } from 'lucide-react';
 import { slugify } from '../../../services/siteConfigService';
 import { getPublicSiteUrl } from '../../../utils/tenant';
+import { ROUTES } from '../../../config/routes';
+import type { EffectiveTemplateAccess } from '../../../hooks/useTemplateAccess';
 
 type Step = 'name' | 'payment' | 'success';
+
+const PLAN_LABEL_VI: Record<string, string> = {
+  free: 'Khởi Nghiệp',
+  pro: 'Kinh Doanh WebPro',
+  ultra: 'Thương Hiệu Ultra',
+};
 
 interface Props {
   siteName: string;
   siteSlug: string;
   templateName: string;
-  templatePrice: number;
+  /** Điều kiện truy cập hiệu lực của template (override admin hoặc giá tĩnh registry) */
+  access: EffectiveTemplateAccess;
+  /** User hiện tại có đủ gói (minPlan) để dùng template này không */
+  hasPlan: boolean;
+  /** Site đã published từ trước — nghĩa là đã qua cửa thanh toán rồi, sửa/xuất bản lại không cần trả tiền lần nữa */
+  alreadyPublished: boolean;
   slugError: string;
+  /** Publish trực tiếp — dùng khi template free hoặc đã mua rồi */
   onPublish: (name: string) => Promise<string>;
+  /** Lưu draft + tạo checkout PayOS thật + redirect — dùng khi template còn phải trả phí */
+  onCheckout: (name: string) => Promise<void>;
   onClose: () => void;
 }
 
-// ── Fake QR grid ─────────────────────────────────────────────────────────────
-
-function FakeQR() {
-  const S = 17;
-  const isFinderEdge = (r: number, c: number, or: number, oc: number) => {
-    const lr = r - or, lc = c - oc;
-    return lr >= 0 && lr <= 6 && lc >= 0 && lc <= 6
-      && (lr === 0 || lr === 6 || lc === 0 || lc === 6 || (lr >= 2 && lr <= 4 && lc >= 2 && lc <= 4));
-  };
-  const cells = Array.from({ length: S * S }, (_, i) => {
-    const r = Math.floor(i / S), c = i % S;
-    if (isFinderEdge(r, c, 0, 0) || isFinderEdge(r, c, 0, S - 7) || isFinderEdge(r, c, S - 7, 0)) return true;
-    return (r * 13 + c * 7 + r + c) % 3 === 0;
-  });
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${S},1fr)`, gap: 1.5, width: 160, height: 160, padding: 8, backgroundColor: '#fff', borderRadius: 12 }}>
-      {cells.map((on, i) => (
-        <div key={i} style={{ backgroundColor: on ? '#111' : '#fff', borderRadius: on ? 1 : 0 }} />
-      ))}
-    </div>
-  );
-}
-
-// ── Main component ────────────────────────────────────────────────────────────
-
 export default function PublishModal({
-  siteName, siteSlug, templateName, templatePrice, slugError, onPublish, onClose,
+  siteName, siteSlug, templateName, access, hasPlan, alreadyPublished, slugError, onPublish, onCheckout, onClose,
 }: Props) {
   const [step, setStep] = useState<Step>('name');
   const [name, setName] = useState(siteName);
   const [finalSlug, setFinalSlug] = useState('');
   const [publishing, setPublishing] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [countdown, setCountdown] = useState(15 * 60);
-  const isFree = templatePrice === 0;
+  const isFree = access.price === 0;
+  // Site đã publish từ trước (đã qua cửa thanh toán) — sửa tên/nội dung rồi "xuất bản" lại
+  // không cần đi qua bước thanh toán nữa, kể cả khi template vẫn đang tính phí cho user mới.
+  const skipPayment = isFree || alreadyPublished;
   const slugPreview = slugify(name || siteName);
   const liveUrl = getPublicSiteUrl(finalSlug || slugPreview);
-
-  useEffect(() => {
-    if (step !== 'payment') return;
-    const t = setInterval(() => setCountdown(c => Math.max(0, c - 1)), 1000);
-    return () => clearInterval(t);
-  }, [step]);
-
-  const fmt = (s: number) =>
-    `${Math.floor(s / 60).toString().padStart(2, '0')}:${(s % 60).toString().padStart(2, '0')}`;
 
   const doPublish = async () => {
     setPublishing(true);
@@ -75,13 +60,28 @@ export default function PublishModal({
     }
   };
 
+  const doCheckout = async () => {
+    setPublishing(true);
+    try {
+      await onCheckout(name.trim() || siteName);
+      // Redirect PayOS xảy ra trong onCheckout — không cần setPublishing(false) vì trang sẽ điều hướng đi.
+    } catch {
+      setPublishing(false);
+      // Lỗi đã được hiển thị qua snackbar ở TemplateEditorPage
+    }
+  };
+
   const handleCopy = () => {
     navigator.clipboard.writeText(liveUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const mockOrderId = `WCV-${siteSlug.slice(0, 6).toUpperCase()}-${Date.now().toString().slice(-5)}`;
+  const primaryCta = !hasPlan
+    ? null // Nâng cấp gói — render riêng bên dưới
+    : skipPayment
+      ? { label: 'Xuất bản ngay', action: doPublish }
+      : { label: 'Tiếp theo →', action: () => setStep('payment') };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
@@ -106,7 +106,7 @@ export default function PublishModal({
               <div className="flex items-center gap-1.5 text-[11px]">
                 <span className="bg-white text-primary font-extrabold px-2 py-0.5 rounded-full">1 Đặt tên</span>
                 <span className="text-white/40">›</span>
-                {isFree
+                {skipPayment
                   ? <span className="text-white/60">2 Hoàn thành</span>
                   : <>
                     <span className="text-white/60">2 Thanh toán</span>
@@ -124,7 +124,7 @@ export default function PublishModal({
                   type="text"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  onKeyDown={e => { if (e.key === 'Enter' && name.trim() && !slugError) doPublish(); }}
+                  onKeyDown={e => { if (e.key === 'Enter' && name.trim() && !slugError && primaryCta) primaryCta.action(); }}
                   className="w-full text-sm font-medium text-gray-800 border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:border-primary transition-all"
                   placeholder="Ví dụ: Quán Cafe Vườn Xanh"
                   autoFocus
@@ -140,33 +140,59 @@ export default function PublishModal({
                   <span className="text-gray-400">URL live</span>
                   <span className="font-mono text-primary-container truncate max-w-45">/{slugPreview}</span>
                 </div>
+                {!hasPlan && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-400">Yêu cầu gói</span>
+                    <span className="font-semibold text-amber-600">{PLAN_LABEL_VI[access.minPlan]} trở lên</span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between pt-1.5 border-t border-gray-100">
                   <span className="text-gray-500 font-medium">Chi phí</span>
                   {isFree
                     ? <span className="font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Miễn phí</span>
-                    : <span className="font-extrabold text-primary">{templatePrice.toLocaleString('vi-VN')}đ</span>
+                    : <span className="font-extrabold text-primary">{access.price.toLocaleString('vi-VN')}đ</span>
                   }
                 </div>
               </div>
 
-              <div className="flex gap-2.5 pt-1">
-                <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
-                  Hủy
-                </button>
-                <button
-                  onClick={isFree ? doPublish : () => setStep('payment')}
-                  disabled={!name.trim() || !!slugError || publishing}
-                  className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
-                >
-                  {publishing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
-                  {publishing ? 'Đang xuất bản...' : isFree ? 'Xuất bản ngay' : 'Tiếp theo →'}
-                </button>
-              </div>
+              {!hasPlan ? (
+                <div className="space-y-2.5 pt-1">
+                  <div className="flex items-start gap-2 bg-amber-50 border border-amber-100 rounded-xl p-3 text-xs text-amber-700">
+                    <Lock className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>Mẫu này yêu cầu gói <strong>{PLAN_LABEL_VI[access.minPlan]}</strong> trở lên. Nâng cấp gói để tiếp tục.</span>
+                  </div>
+                  <div className="flex gap-2.5">
+                    <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                      Hủy
+                    </button>
+                    <Link
+                      to={ROUTES.PRICING}
+                      className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] transition-colors flex items-center justify-center gap-1.5"
+                    >
+                      Nâng cấp gói
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex gap-2.5 pt-1">
+                  <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                    Hủy
+                  </button>
+                  <button
+                    onClick={primaryCta?.action}
+                    disabled={!name.trim() || !!slugError || publishing}
+                    className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
+                  >
+                    {publishing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
+                    {publishing ? 'Đang xuất bản...' : primaryCta?.label}
+                  </button>
+                </div>
+              )}
             </div>
           </>
         )}
 
-        {/* ── Step 2: Payment ────────────────────────────────────────────── */}
+        {/* ── Step 2: Payment (redirect PayOS thật) ─────────────────────── */}
         {step === 'payment' && (
           <>
             <div className="bg-gradient-to-r from-[#00b4a6] to-[#0096a0] p-5 text-white">
@@ -184,58 +210,26 @@ export default function PublishModal({
             </div>
 
             <div className="p-5 space-y-4">
-              {/* Amount */}
               <div className="text-center">
                 <p className="text-2xl font-extrabold text-gray-900">
-                  {templatePrice.toLocaleString('vi-VN')}<span className="text-sm font-semibold text-gray-500">đ</span>
+                  {access.price.toLocaleString('vi-VN')}<span className="text-sm font-semibold text-gray-500">đ</span>
                 </p>
                 <p className="text-xs text-gray-500 mt-0.5">{templateName}</p>
-                <p className="text-[10px] font-mono text-gray-400 mt-0.5">{mockOrderId}</p>
               </div>
 
-              {/* QR */}
-              <div className="flex justify-center">
-                <div className="border border-gray-100 rounded-2xl p-3 shadow-inner">
-                  <FakeQR />
-                </div>
-              </div>
-
-              {/* Bank info */}
-              <div className="bg-gray-50 rounded-xl p-3 space-y-1.5 text-xs">
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Ngân hàng</span>
-                  <span className="font-bold text-gray-700">MB Bank</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Số tài khoản</span>
-                  <span className="font-mono font-bold text-gray-700">9876 5432 10</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Chủ tài khoản</span>
-                  <span className="font-bold text-gray-700">CONG TY VNGOWEB</span>
-                </div>
-                <div className="flex justify-between pt-1 border-t border-gray-100">
-                  <span className="text-gray-400">Nội dung CK</span>
-                  <span className="font-mono font-bold text-primary">{mockOrderId}</span>
-                </div>
-              </div>
-
-              {/* Countdown */}
-              <div className="flex items-center justify-center gap-1.5 text-xs text-amber-600">
-                <Clock className="w-3.5 h-3.5" />
-                <span>Hết hạn sau: <strong className="font-mono">{fmt(countdown)}</strong></span>
-              </div>
+              <p className="text-xs text-gray-500 text-center leading-relaxed">
+                Bấm nút bên dưới để chuyển sang cổng thanh toán PayOS. Sau khi thanh toán xong,
+                bạn sẽ được đưa trở lại và website sẽ tự động xuất bản.
+              </p>
 
               <button
-                onClick={doPublish}
+                onClick={doCheckout}
                 disabled={publishing}
                 className="w-full py-3 text-sm font-bold text-white bg-emerald-500 hover:bg-emerald-600 rounded-xl transition-colors flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
               >
-                {publishing ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
-                {publishing ? 'Đang xử lý...' : 'Đã thanh toán (Demo)'}
+                {publishing ? <Loader2 className="w-4 h-4 animate-spin" /> : <ExternalLink className="w-4 h-4" />}
+                {publishing ? 'Đang chuyển đến PayOS...' : 'Thanh toán qua PayOS'}
               </button>
-
-              <p className="text-[10px] text-center text-gray-400">Môi trường demo · Không có giao dịch thật</p>
             </div>
           </>
         )}

@@ -1,15 +1,18 @@
 // Card hiển thị một template trong grid — UI-only, nhận data qua props.
 // Mini card: khung ảnh dọc 3/4 thấy phần lớn mẫu (hover cuộn toàn trang),
 // nút hành động hiện trong overlay khi hover; nhấn ảnh = mở xem trước.
-import { Star, Eye } from 'lucide-react';
+import { Star, Eye, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Template } from '../../../data/templates/registry';
 import { CATEGORY_REGISTRY } from '../../../data/templates/registry';
 import { TEMPLATE_SCREEN_BY_ID } from '../../../utils/templateScreens';
+import { useTemplateAccess } from '../../../hooks/useTemplateAccess';
 
 const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
   CATEGORY_REGISTRY.map(c => [c.id, c.label]),
 );
+
+const PLAN_LABEL_VI: Record<string, string> = { pro: 'Pro', ultra: 'Ultra' };
 
 interface Props {
   template: Template;
@@ -18,7 +21,10 @@ interface Props {
 
 export default function TemplateCard({ template: t, onUse }: Props) {
   const navigate = useNavigate();
-  const isFree = t.price === 0;
+  const { getEffectiveAccess } = useTemplateAccess();
+  const access = getEffectiveAccess(t.id, t.price);
+  const isFree = access.price === 0;
+  const requiresPlan = access.minPlan !== 'free';
   // Ưu tiên screenshot full-page thật (hover cuộn xem toàn trang), fallback ảnh cover
   const screen = TEMPLATE_SCREEN_BY_ID[t.id];
   const goPreview = () => navigate(`/marketplace/preview/${t.id}`);
@@ -63,6 +69,13 @@ export default function TemplateCard({ template: t, onUse }: Props) {
           </span>
         )}
 
+        {requiresPlan && (
+          <span className="absolute right-1.5 top-1.5 flex items-center gap-0.5 text-[8px] font-extrabold tracking-wide text-white px-1.5 py-0.5 rounded-full shadow uppercase bg-slate-700">
+            <Lock className="h-2 w-2" />
+            {PLAN_LABEL_VI[access.minPlan]}
+          </span>
+        )}
+
         {/* Overlay hành động khi hover */}
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 pb-2 pt-8 px-2 bg-gradient-to-t from-black/55 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button
@@ -88,7 +101,7 @@ export default function TemplateCard({ template: t, onUse }: Props) {
             {t.name}
           </h3>
           <span className={`shrink-0 text-[10px] font-extrabold ${isFree ? 'text-fnb-green' : 'text-primary'}`}>
-            {t.priceText}
+            {isFree ? 'Miễn phí' : `${access.price.toLocaleString('vi-VN')}đ`}
           </span>
         </div>
         <div className="flex items-center gap-1 text-[10px] text-on-surface-variant font-medium">

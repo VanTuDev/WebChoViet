@@ -33,6 +33,7 @@ import AdminAnalyticsPage from './pages/admin/analytics/AdminAnalyticsPage';
 import UsersPage from './pages/admin/users/UsersPage';
 import PaymentsPage from './pages/admin/payments/PaymentsPage';
 import TransactionsPage from './pages/admin/transactions/TransactionsPage';
+import AdminTemplatesPage from './pages/admin/templates/AdminTemplatesPage';
 import PublicSitePage from './pages/public-site/PublicSitePage';
 
 const tenantSlug = getTenantSlug();
@@ -177,6 +178,7 @@ export const router = tenantSlug
                   { path: ROUTES.ADMIN_USERS,        element: <UsersPage /> },
                   { path: ROUTES.ADMIN_PAYMENTS,     element: <PaymentsPage /> },
                   { path: ROUTES.ADMIN_TRANSACTIONS, element: <TransactionsPage /> },
+                  { path: ROUTES.ADMIN_TEMPLATES,    element: <AdminTemplatesPage /> },
                 ],
               },
             ],

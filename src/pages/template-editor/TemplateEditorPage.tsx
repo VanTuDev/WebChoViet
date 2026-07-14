@@ -18,12 +18,16 @@ import { deepMerge } from '../../utils/deepMerge';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
 import { TEMPLATES } from '../../data';
+import { useTemplateAccess } from '../../hooks/useTemplateAccess';
+import { createTemplateCheckout } from '../../services/templateBillingService';
 import {
   COMPONENT_MAP,
   SCHEMA_MAP,
   TEMPLATE_NAME_MAP,
   TEMPLATE_IMAGE_KEYS,
 } from '../../data/templates/registry';
+
+const PLAN_RANK: Record<'free' | 'pro' | 'ultra', number> = { free: 0, pro: 1, ultra: 2 };
 
 // ── Utility: set any value at a dot-path in a nested object ──────────────
 
@@ -43,7 +47,8 @@ export default function TemplateEditorPage() {
   const navigate = useNavigate();
   const { siteId } = useParams<{ siteId?: string }>();
   const [searchParams] = useSearchParams();
-  const { upsertSiteConfig, showSnackbar, showConfirm } = useAppContext();
+  const { user, upsertSiteConfig, showSnackbar, showConfirm } = useAppContext();
+  const { getEffectiveAccess } = useTemplateAccess();
 
   const isEdit = !!siteId && siteId !== 'new';
 
@@ -81,6 +86,10 @@ export default function TemplateEditorPage() {
   const TemplateComponent = COMPONENT_MAP[templateId];
   const schema = SCHEMA_MAP[templateId] ?? {};
   const imageSlots = TEMPLATE_IMAGE_KEYS[templateId] ?? [];
+
+  const templateStaticPrice = TEMPLATES.find(t => t.id === templateId)?.price ?? 0;
+  const templateAccess = getEffectiveAccess(templateId, templateStaticPrice);
+  const hasRequiredPlan = PLAN_RANK[user?.plan ?? 'free'] >= PLAN_RANK[templateAccess.minPlan];
 
   // ── Load configuration asynchronously ──────────────────────────────────────
   useEffect(() => {
@@ -272,6 +281,34 @@ export default function TemplateEditorPage() {
       return slug;
     } catch (error) {
       showSnackbar(error instanceof Error ? error.message : 'Không thể xuất bản. Vui lòng thử lại.', 'error');
+      throw error;
+    }
+  };
+
+  /**
+   * Template còn phải trả phí — lưu draft trước (đảm bảo site tồn tại server-side với nội
+   * dung mới nhất, vì bước sau điều hướng hẳn sang PayOS, mất toàn bộ state React), rồi tạo
+   * đơn PayOS và redirect. Sau khi thanh toán xong, PaymentResultPage sẽ tự publish site.
+   */
+  const handleCheckout = async (name: string): Promise<void> => {
+    if (!site) return;
+    try {
+      const slug = await generateSlug(name, site.id);
+      const toSave: SiteConfig = {
+        ...site,
+        name,
+        slug,
+        status: 'draft',
+        updatedAt: new Date().toISOString(),
+      };
+      const saved = await saveSiteConfig(toSave);
+      setSite(saved);
+      upsertSiteConfig(saved);
+
+      const { checkoutUrl } = await createTemplateCheckout(templateId, saved.id, templateStaticPrice);
+      window.location.href = checkoutUrl;
+    } catch (error) {
+      showSnackbar(error instanceof Error ? error.message : 'Không thể tạo đơn thanh toán. Vui lòng thử lại.', 'error');
       throw error;
     }
   };
@@ -789,9 +826,12 @@ export default function TemplateEditorPage() {
           siteName={site.name}
           siteSlug={site.slug}
           templateName={TEMPLATE_NAME_MAP[templateId] ?? templateId}
-          templatePrice={TEMPLATES.find(t => t.id === templateId)?.price ?? 0}
+          access={templateAccess}
+          hasPlan={hasRequiredPlan}
+          alreadyPublished={site.status === 'published'}
           slugError={slugError}
           onPublish={handlePublish}
+          onCheckout={handleCheckout}
           onClose={() => setShowPublishModal(false)}
         />
       )}

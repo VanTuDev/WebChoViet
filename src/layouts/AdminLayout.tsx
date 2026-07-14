@@ -3,7 +3,7 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Users, CreditCard, ArrowLeftRight,
   LogOut, ShieldCheck, Bell, ChevronRight, BarChart3, ArrowLeft,
-  Menu, X,
+  Menu, X, LayoutTemplate,
 } from 'lucide-react';
 import { ROUTES } from '../config/routes';
 import { useAppContext } from '../store/AppContext';
@@ -14,6 +14,7 @@ const NAV = [
   { path: ROUTES.ADMIN_USERS,        label: 'Người dùng',       Icon: Users },
   { path: ROUTES.ADMIN_PAYMENTS,     label: 'Thanh toán',       Icon: CreditCard },
   { path: ROUTES.ADMIN_TRANSACTIONS, label: 'Dòng tiền',        Icon: ArrowLeftRight },
+  { path: ROUTES.ADMIN_TEMPLATES,    label: 'Template',         Icon: LayoutTemplate },
 ];
 
 export default function AdminLayout() {

@@ -61,7 +61,7 @@ export interface PlatformAnalytics {
   deviceBreakdown: { mobile: number; tablet: number; desktop: number };
   userGrowth: { date: string; count: number }[];
   planDistribution: { free: number; pro: number; ultra: number };
-  dailyRevenue: { date: string; amount: number }[];
+  dailyRevenue: { date: string; amount: number; subscriptionAmount: number; templateAmount: number }[];
   conversionFunnel: { registered: number; withSite: number; publishedSite: number; paying: number };
 }
 
@@ -147,9 +147,11 @@ export function deleteSite(siteId: string): Promise<{ message: string }> {
 
 export interface AdminPaymentListItem {
   id: string;
+  /** 'subscription' = mua gói Pro/Ultra, 'template' = mua 1 template cụ thể để xuất bản site */
+  kind: 'subscription' | 'template';
+  /** Subscription: planId (pro/ultra). Template: templateId. */
+  itemLabel: string;
   orderCode: number;
-  plan: 'pro' | 'ultra';
-  billingCycle: 'monthly' | 'yearly';
   amount: number;
   status: 'pending' | 'success' | 'failed' | 'refunded';
   paidAt: string | null;
@@ -190,4 +192,14 @@ export function fetchAdminPayments(params: ListPaymentsParams = {}): Promise<Adm
   if (params.limit) q.set('limit', String(params.limit));
   const qs = q.toString();
   return apiFetch<AdminPaymentList>(`/admin/payments${qs ? `?${qs}` : ''}`);
+}
+
+// ── Templates (giá + gói tối thiểu) ───────────────────────────────────────────
+
+export function updateTemplateAccess(
+  templateId: string,
+  minPlan: 'free' | 'pro' | 'ultra',
+  price: number,
+): Promise<{ minPlan: string; price: number }> {
+  return apiFetch(`/admin/templates/${templateId}`, { method: 'PATCH', data: { minPlan, price } });
 }

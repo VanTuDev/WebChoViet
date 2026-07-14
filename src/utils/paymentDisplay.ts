@@ -1,4 +1,5 @@
 import { CheckCircle2, Clock, XCircle, RefreshCw, type LucideIcon } from 'lucide-react';
+import { TEMPLATE_NAME_MAP } from '../data/templates/registry';
 
 export type PaymentStatus = 'pending' | 'success' | 'failed' | 'refunded';
 
@@ -24,3 +25,9 @@ export const PLAN_PURCHASE_LABEL: Record<string, string> = {
   pro: 'Kinh Doanh WebPro',
   ultra: 'Thương Hiệu Ultra',
 };
+
+/** Tên hiển thị cho 1 giao dịch trong Payments/Transactions — subscription dùng tên gói, template dùng tên mẫu. */
+export function formatTransactionItemLabel(kind: 'subscription' | 'template', itemLabel: string): string {
+  if (kind === 'template') return TEMPLATE_NAME_MAP[itemLabel] ?? itemLabel;
+  return PLAN_PURCHASE_LABEL[itemLabel] ?? itemLabel;
+}

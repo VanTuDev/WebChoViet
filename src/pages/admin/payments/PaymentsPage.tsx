@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Search, ChevronDown, Receipt } from 'lucide-react';
 import { fetchAdminPayments, type AdminPaymentTotals } from '../../../services/adminService';
-import { PAYMENT_STATUS_META, PLAN_PURCHASE_LABEL, type PaymentStatus } from '../../../utils/paymentDisplay';
+import { PAYMENT_STATUS_META, formatTransactionItemLabel, type PaymentStatus } from '../../../utils/paymentDisplay';
 import { avatarUrl } from '../../../utils/avatar';
 import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
 import { useFetchState } from '../../../hooks/useFetchState';
@@ -11,7 +11,6 @@ import ErrorBanner from '../../../components/common/ErrorBanner';
 import Pagination from '../../../components/common/Pagination';
 
 const fmt = (n: number) => n.toLocaleString('vi-VN') + 'đ';
-const CYCLE_LABEL: Record<string, string> = { monthly: 'Hàng tháng', yearly: 'Hàng năm' };
 
 const EMPTY_TOTALS: AdminPaymentTotals = { successAmount: 0, pendingAmount: 0, failedCount: 0, refundedAmount: 0 };
 const PAGE_LIMIT = 20;
@@ -100,7 +99,7 @@ export default function PaymentsPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-slate-800">
-                {['Khách hàng', 'Gói dịch vụ', 'Số tiền', 'Mã đơn hàng', 'Trạng thái', 'Thời gian', 'Ghi chú'].map(h => (
+                {['Khách hàng', 'Sản phẩm', 'Số tiền', 'Mã đơn hàng', 'Trạng thái', 'Thời gian', 'Ghi chú'].map(h => (
                   <th key={h} className="text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-5 py-3.5 whitespace-nowrap">
                     {h}
                   </th>
@@ -130,7 +129,8 @@ export default function PaymentsPage() {
                       </div>
                     </td>
                     <td className="px-5 py-3.5 text-slate-300 whitespace-nowrap text-xs">
-                      {PLAN_PURCHASE_LABEL[tx.plan] ?? tx.plan} · {CYCLE_LABEL[tx.billingCycle] ?? tx.billingCycle}
+                      {formatTransactionItemLabel(tx.kind, tx.itemLabel)}
+                      {tx.kind === 'template' && <span className="text-slate-500 ml-1">· Template</span>}
                     </td>
                     <td className="px-5 py-3.5 font-bold text-white whitespace-nowrap">{fmt(tx.amount)}</td>
                     <td className="px-5 py-3.5 text-slate-400 whitespace-nowrap text-xs font-mono">#{tx.orderCode}</td>
