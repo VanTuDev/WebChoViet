@@ -1,7 +1,10 @@
-# Cloudflare Pages — cấu hình routing (SPA fallback + proxy sitemap).
-# Proxy sitemap cho Googlebot sang backend Render — giữ nguyên URL public (không có prefix /api/v1).
-/sitemap_index.xml  https://webchoviet-server.onrender.com/sitemap_index.xml  200
-/sitemaps/*         https://webchoviet-server.onrender.com/sitemaps/:splat    200
+# Cloudflare Pages — cấu hình routing (SPA fallback).
+# Proxy sitemap cho Googlebot: KHÔNG dùng _redirects (Cloudflare Pages không hỗ
+# trợ 200-proxy sang domain ngoài — rule dạng này bị âm thầm bỏ qua và rơi
+# xuống catch-all /:slug bên dưới, gây bug redirect nhầm thành
+# sitemap_index.xml.vngoweb.com). Đã chuyển sang Cloudflare Pages Functions:
+# xem functions/sitemap_index.xml.js và functions/sitemaps/[[path]].js —
+# Functions luôn chạy TRƯỚC _redirects nên không bị nuốt bởi rule /:slug.
 
 # Bảo vệ route thật 1-đoạn của app chính — PHẢI đứng TRƯỚC rule /:slug bên dưới,
 # vì _redirects khớp theo thứ tự và không có negative-lookahead. Nếu thiếu 1 dòng
@@ -14,6 +17,13 @@
 /about              /index.html                                              200
 /dashboard          /index.html                                              200
 /payment-result     /index.html                                              200
+
+# File tĩnh 1-đoạn (crawler cần truy cập trực tiếp) — Cloudflare Pages áp dụng
+# _redirects BẤT KỂ có static asset trùng tên hay không, nên robots.txt/sitemap.xml
+# cũng phải được chặn ở đây, nếu không sẽ bị hiểu nhầm thành slug và 301 sang
+# subdomain (robots.txt.vngoweb.com) giống bug sitemap_index.xml.
+/robots.txt         /robots.txt                                              200
+/sitemap.xml        /sitemap.xml                                             200
 
 # Site khách xuất bản — chuyển hẳn từ path sang wildcard subdomain (*.vngoweb.com
 # đã Active trên Cloudflare Pages). 301 vì đây là thay đổi URL vĩnh viễn — giữ SEO
