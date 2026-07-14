@@ -18,13 +18,24 @@
 /dashboard          /index.html                                              200
 /payment-result     /index.html                                              200
 
-# File tĩnh 1-đoạn (crawler cần truy cập trực tiếp) — Cloudflare Pages áp dụng
-# _redirects BẤT KỂ có static asset trùng tên hay không, nên robots.txt/sitemap.xml
-# cũng phải được chặn ở đây, nếu không sẽ bị hiểu nhầm thành slug và 301 sang
-# subdomain (robots.txt.vngoweb.com) giống bug sitemap_index.xml.
-/robots.txt         /robots.txt                                              200
-/sitemap.xml        /sitemap.xml                                             200
-/ads.txt            /ads.txt                                                 200
+# File tĩnh 1-đoạn (crawler/service cần truy cập trực tiếp) — Cloudflare Pages áp
+# dụng _redirects BẤT KỂ có static asset trùng tên hay không, nên MỌI file tĩnh
+# ở root đều phải được chặn ở đây, nếu không sẽ bị hiểu nhầm thành slug và 301
+# sang subdomain (vd robots.txt.vngoweb.com) giống bug sitemap_index.xml/ads.txt.
+# sw.js đặc biệt quan trọng: rule này áp dụng cho MỌI hostname trỏ vào Pages
+# project (kể cả *.vngoweb.com của site khách), nên nếu thiếu, Service Worker
+# đăng ký ở PublicSitePage.tsx (navigator.serviceWorker.register('/sw.js')) sẽ
+# luôn thất bại (browser chặn cross-origin redirect cho SW script) → PWA
+# "Thêm vào Màn hình chính" gãy trên MỌI site khách, không chỉ apex domain.
+/robots.txt          /robots.txt                                             200
+/sitemap.xml         /sitemap.xml                                            200
+/ads.txt             /ads.txt                                                200
+/sw.js               /sw.js                                                  200
+/favicon.ico         /favicon.ico                                            200
+/favicon.png         /favicon.png                                            200
+/favicon-256.png     /favicon-256.png                                        200
+/favicon.svg         /favicon.svg                                            200
+/apple-touch-icon.png /apple-touch-icon.png                                  200
 
 # Site khách xuất bản — chuyển hẳn từ path sang wildcard subdomain (*.vngoweb.com
 # đã Active trên Cloudflare Pages). 301 vì đây là thay đổi URL vĩnh viễn — giữ SEO
