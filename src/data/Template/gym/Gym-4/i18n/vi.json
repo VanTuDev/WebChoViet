@@ -1,0 +1,89 @@
+{
+  "shopName": "Aether Fitness",
+  "nav": { "programs": "Nebula Space", "membership": "Gói Đặc Quyền", "contact": "Kết Nối", "join": "Tham Gia Ngay" },
+  "hero": {
+    "badge": "Kỷ Nguyên Fitness Mới",
+    "title": "Chinh Phục",
+    "titleAccent": "Vũ Trụ Sức Mạnh",
+    "desc": "Trải nghiệm kỷ nguyên fitness mới tại Aether. Nơi công nghệ tối tân hòa quyện cùng không gian vũ trụ huyền ảo, đánh thức tiềm năng vô hạn trong cơ thể bạn.",
+    "ctaPrimary": "Tham Gia Ngay",
+    "ctaSecondary": "Khám Phá Công Nghệ"
+  },
+  "tech": {
+    "badge": "Kỹ Thuật Tương Lai",
+    "title": "Công Nghệ Aura-Sense",
+    "desc": "Hệ thống thiết bị thông minh Aura-Sense tự động nhận diện chỉ số sinh trắc học, tối ưu hóa cường độ tập luyện trong thời gian thực. Mỗi chuyển động đều được phân tích bằng AI để đảm bảo hiệu suất tối đa.",
+    "points": [
+      { "title": "Phân Tích Quantum", "desc": "Theo dõi 42 chỉ số cơ thể với độ chính xác tuyệt đối." },
+      { "title": "Thiết Bị Titanium", "desc": "Khung máy từ hợp kim siêu nhẹ dùng trong ngành hàng không vũ trụ." }
+    ]
+  },
+  "programs": {
+    "title": "Nebula Space — Chương Trình Trải Nghiệm",
+    "subtitle": "Tĩnh lặng giữa dải ngân hà — nơi thiền định và chuyển động giao thoa cùng công nghệ.",
+    "items": [
+      { "name": "Zen Orbit", "desc": "Các buổi thiền dẫn dắt dưới ánh sáng cực quang huyền ảo." },
+      { "name": "Flow Nebula", "desc": "Yoga dòng chảy giúp kết nối năng lượng cơ thể với nhịp điệu vũ trụ." },
+      { "name": "Aura Soundbath", "desc": "Trị liệu bằng âm thanh từ chuông xoay và tần số không gian." }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "Truy cập toàn hệ thống", "value": "24/7" },
+      { "label": "Chỉ số cơ thể theo dõi", "value": "42" },
+      { "label": "Phi hành gia đã tham gia", "value": "10.000+" }
+    ]
+  },
+  "membership": {
+    "title": "Gói Đặc Quyền Phi Hành Gia",
+    "subtitle": "Chọn hành trình phù hợp để bắt đầu cuộc chinh phục vũ trụ sức mạnh của riêng bạn.",
+    "popularBadge": "Phổ Biến Nhất",
+    "plans": [
+      {
+        "name": "Cơ Bản",
+        "price": "2.500.000đ",
+        "period": "/tháng",
+        "features": ["Truy cập 05:00 - 17:00", "Khu vực Gym & Cardio", "Tủ đồ Aether cơ bản"],
+        "popular": false,
+        "cta": "Chọn Gói"
+      },
+      {
+        "name": "Tiêu Chuẩn",
+        "price": "5.000.000đ",
+        "period": "/tháng",
+        "features": ["Truy cập 24/7 toàn hệ thống", "Nebula Meditation 3 buổi", "Phân tích Aura-Sense hàng tuần", "Locker vân tay bảo mật"],
+        "popular": true,
+        "cta": "Tham Gia Ngay"
+      },
+      {
+        "name": "Vô Cực",
+        "price": "12.000.000đ",
+        "period": "/tháng",
+        "features": ["Đặc quyền Full Access VIP", "HLV 1-kèm-1 không giới hạn", "Chế độ dinh dưỡng Cosmic Meal", "Phòng nghỉ kén phi thuyền"],
+        "popular": false,
+        "cta": "Chọn Gói"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Nhật Ký Phi Hành Gia",
+    "subtitle": "Những trải nghiệm thật từ cộng đồng Aether.",
+    "items": [
+      { "name": "Nguyễn Minh", "role": "CEO Tech Startup", "quote": "Không gian ở đây thực sự khác biệt. Tập luyện giữa những vì sao giúp tôi quên đi mệt mỏi và cảm thấy tràn đầy năng lượng sau mỗi buổi tập." },
+      { "name": "Trần Ly", "role": "Fitness Enthusiast", "quote": "Công nghệ Aura-Sense là một bước đột phá. Tôi không còn phải tự điều chỉnh máy, mọi thứ được cá nhân hóa hoàn hảo cho tôi." },
+      { "name": "Hoàng Nam", "role": "Kiến trúc sư", "quote": "Nebula Space là nơi duy nhất tôi tìm thấy sự yên bình thực sự giữa lòng thành phố náo nhiệt. Một trải nghiệm chữa lành đẳng cấp." }
+    ]
+  },
+  "contact": {
+    "title": "Trạm Kết Nối Aether",
+    "phone": "1900 6789",
+    "phoneLabel": "Hotline",
+    "address": "Tầng 52, Bitexco Financial Tower, 02 Hải Triều, Quận 1, TP. Hồ Chí Minh",
+    "addressLabel": "Địa chỉ",
+    "email": "orbit@aetherfitness.vn",
+    "emailLabel": "Email",
+    "mapUrl": "",
+    "ctaText": "Đặt Lịch Tham Quan"
+  },
+  "footer": { "copy": "© 2026 Aether Fitness. Được tạo bởi vngoweb." }
+}

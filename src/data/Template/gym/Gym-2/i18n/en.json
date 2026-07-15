@@ -1,0 +1,80 @@
+{
+  "shopName": "Crimson Peak",
+  "nav": { "programs": "Technology", "membership": "Membership", "contact": "Contact", "join": "Join Now" },
+  "hero": {
+    "badge": "Gym 3.0 Technology",
+    "title": "Push Past Your Limits,",
+    "titleAccent": "Unleash Raw Power",
+    "desc": "Experience Vietnam's most advanced fitness ecosystem, powered by AI tracking and 3D motion simulation. Every drop of sweat is a step closer to the top.",
+    "ctaPrimary": "Join Now",
+    "ctaSecondary": "Take the Tour"
+  },
+  "programs": {
+    "title": "Signature Technology",
+    "subtitle": "Where athletic performance meets engineering science.",
+    "items": [
+      { "name": "Smart Equipment", "desc": "Matrix training machines with built-in AI to track intensity and heart rate in real time." },
+      { "name": "Bio-Adaptive Lighting", "desc": "A Bio-Lighting system that optimizes hormones and focus throughout your session." },
+      { "name": "Infrared Sauna", "desc": "Far-infrared sauna rooms that speed up muscle recovery and deep detoxification." }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "Average performance", "value": "98%" },
+      { "label": "Opening hours", "value": "24/7" },
+      { "label": "Trusted members", "value": "3,000+" }
+    ]
+  },
+  "membership": {
+    "title": "Choose Your Plan",
+    "subtitle": "Investing in yourself is the highest-yield investment — pick the path that fits your breakthrough goals.",
+    "popularBadge": "Most Popular",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "800,000đ",
+        "period": "/month",
+        "features": ["Unlimited training access", "Full standard amenities"],
+        "popular": false,
+        "cta": "Choose Plan"
+      },
+      {
+        "name": "Standard",
+        "price": "2,100,000đ",
+        "period": "/3 months",
+        "features": ["Unlimited training access", "AI biometric analysis system", "3 guided PT sessions", "Infrared sauna"],
+        "popular": true,
+        "cta": "Buy Now"
+      },
+      {
+        "name": "Unlimited",
+        "price": "7,200,000đ",
+        "period": "/year",
+        "features": ["Everything in Standard", "VIP personal locker", "1,000,000đ nutrition bar voucher", "Periodic health checkup"],
+        "popular": false,
+        "cta": "Choose Plan"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Members Say",
+    "subtitle": "Real success stories from the Crimson Peak community.",
+    "items": [
+      { "name": "Minh Tran", "role": "Platinum Member", "quote": "The AI system truly changed the way I train. I no longer worry about bad form on heavy squats." },
+      { "name": "Linh Nguyen", "role": "Unlimited Member", "quote": "The training space feels incredibly modern and private. The infrared sauna is my favorite part after every session." },
+      { "name": "Hoang Phan", "role": "Standard Member", "quote": "Professional service, and the PTs genuinely care and know their sports science. Well worth the investment in my health." }
+    ]
+  },
+  "contact": {
+    "title": "Location & Contact",
+    "phone": "1900 8888",
+    "phoneLabel": "Hotline",
+    "address": "45th Floor, Bitexco Financial Tower, District 1, Ho Chi Minh City",
+    "addressLabel": "Address",
+    "email": "contact@crimsonpeak.vn",
+    "emailLabel": "Email",
+    "mapUrl": "",
+    "ctaText": "Book a Tour"
+  },
+  "footer": { "copy": "© 2026 Crimson Peak Fitness. Built with vngoweb." }
+}

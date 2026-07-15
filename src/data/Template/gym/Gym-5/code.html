@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Fitness - Oxidized Iron Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#2c3135",
+                        "surface-container-highest": "#333537",
+                        "surface-bright": "#37393b",
+                        "tertiary-container": "#63686c",
+                        "surface-container": "#1e2022",
+                        "secondary-fixed-dim": "#ffb95a",
+                        "surface": "#121416",
+                        "on-secondary-container": "#3d2400",
+                        "primary-fixed-dim": "#ffb59d",
+                        "secondary-container": "#c68315",
+                        "surface-container-low": "#1a1c1e",
+                        "on-primary-fixed": "#390c00",
+                        "tertiary-fixed-dim": "#c2c7cc",
+                        "on-secondary-fixed-variant": "#643f00",
+                        "on-secondary-fixed": "#2a1800",
+                        "on-secondary": "#462a00",
+                        "inverse-on-surface": "#2f3133",
+                        "outline": "#a38c84",
+                        "on-surface": "#e2e2e5",
+                        "surface-variant": "#333537",
+                        "on-primary-container": "#ffe0d7",
+                        "on-tertiary-fixed-variant": "#42474b",
+                        "surface-tint": "#ffb59d",
+                        "on-primary": "#5d1800",
+                        "surface-container-high": "#282a2c",
+                        "inverse-surface": "#e2e2e5",
+                        "inverse-primary": "#9b4426",
+                        "secondary-fixed": "#ffddb6",
+                        "primary-fixed": "#ffdbd0",
+                        "primary-container": "#a64d2e",
+                        "primary": "#ffb59d",
+                        "surface-dim": "#121416",
+                        "surface-container-lowest": "#0c0e10",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#7c2e11",
+                        "tertiary-fixed": "#dfe3e8",
+                        "outline-variant": "#55423d",
+                        "tertiary": "#c2c7cc",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#171c20",
+                        "on-background": "#e2e2e5",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#ffb95a",
+                        "on-tertiary-container": "#e3e7ec",
+                        "background": "#121416",
+                        "on-surface-variant": "#dcc1b9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["JetBrains Mono"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .industrial-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+        .oxidized-gradient {
+            background: linear-gradient(135deg, #121416 0%, #1a1c1e 100%);
+        }
+        .amber-glow {
+            box-shadow: inset 0 0 1px 0.5px rgba(166, 77, 46, 0.3);
+        }
+        .segmented-progress {
+            background: repeating-linear-gradient(90deg, #a64d2e, #a64d2e 10px, transparent 10px, transparent 12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-white overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/90 backdrop-blur-md border-b border-outline-variant docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto transition-all duration-300 ease-in-out">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">AURA FITNESS</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md uppercase text-primary border-b-2 border-primary pb-1" href="#">Công nghệ</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Dịch vụ</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Hội viên</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Vị trí</a>
+</div>
+<div class="font-label-md text-label-md uppercase text-primary border-2 border-primary-container px-6 py-2 tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all">
+                HỘI VIÊN
+            </div>
+</nav>
+</header>
+<main class="relative">
+<div class="industrial-texture absolute inset-0 z-10"></div>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-start overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+<img alt="Hero Background" class="w-full h-full object-cover grayscale-[0.2] contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD65DzLLkQ9xJH8t1CJtpt9J70WhjSIhMNvw1OXfEkX06cthSuzbz-KOXS9M7alOEwYFoqzuuBY1hPsIVAJe0XBsSQOuV9_w9mIq8nqTektAqZ2MvaQMeluvIJO9CY6sn5lPE9H2fubHp6eXSRCIa9c8yzfBBnCz8QjWs7iNiLy5fDMFXXrGQRbkkPkJmxpu5BRLYDRwPFlA6gf7oKnK9JcpGDeRXMgnw7ke5Ev5MrRKteR5lFwRz6o"/>
+</div>
+<div class="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl border-l-4 border-primary-container pl-8 py-4">
+<span class="font-label-md text-label-md text-primary tracking-[0.2em] block mb-4">OXIDIZED IRON EDITION</span>
+<h1 class="font-display-lg text-display-lg text-white mb-6 leading-none">XÂY DỰNG<br/>BẢN LĨNH THÉP</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Trải nghiệm không gian tập luyện industrial đẳng cấp 5 sao, nơi sức mạnh được tôi luyện từ những khối sắt rỉ và tinh thần bất diệt.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Technology Section -->
+<section class="py-24 bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-gutter">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Công nghệ Aura-Sense</h2>
+<div class="h-1 w-24 bg-primary-container mb-6"></div>
+</div>
+<div class="text-on-surface-variant font-label-md text-label-md uppercase tracking-widest">
+                        Advanced AI Biometrics
+                    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Tech Card 1 -->
+<div class="bg-surface-container-low border border-outline-variant p-8 relative overflow-hidden group amber-glow">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">sensors</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Phân tích Sinh trắc</h3>
+<p class="text-on-surface-variant font-body-md">Hệ thống cảm biến laser theo dõi từng chuyển động cơ bắp để tối ưu hóa form tập luyện.</p>
+</div>
+<div class="absolute top-0 right-0 p-4 font-label-sm text-label-sm text-outline opacity-30">01 / TECH</div>
+</div>
+<!-- Tech Card 2 -->
+<div class="bg-surface-container-high border border-outline-variant p-8 relative overflow-hidden group amber-glow">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">AI Điều chỉnh Tải</h3>
+<p class="text-on-surface-variant font-body-md">Máy tập tự động điều chỉnh mức tạ dựa trên nhịp tim và ngưỡng mệt mỏi thực tế của bạn.</p>
+</div>
+<div class="absolute top-0 right-0 p-4 font-label-sm text-label-sm text-outline opacity-30">02 / TECH</div>
+</div>
+<!-- Tech Card 3 -->
+<div class="bg-surface-container-low border border-outline-variant p-8 relative overflow-hidden group amber-glow">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">monitoring</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Bản đồ Nhiệt Aura</h3>
+<p class="text-on-surface-variant font-body-md">Theo dõi thời gian thực mật độ tập luyện tại các khu vực để gợi ý lộ trình tối ưu nhất.</p>
+</div>
+<div class="absolute top-0 right-0 p-4 font-label-sm text-label-sm text-outline opacity-30">03 / TECH</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Gallery -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16">
+<h2 class="font-display-lg text-headline-lg uppercase">Dịch vụ đặc quyền</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-[800px] md:h-[600px]">
+<!-- Main Service Card -->
+<div class="md:col-span-7 relative group overflow-hidden border border-outline-variant">
+<img alt="Personal Training" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqryXSqp2Cv1tTvJCNjETzakXcMH1E9vqhbjeukD6bYcHDWdZf9Vv6X_6WkVhQXWvwrnLojPJnps-yg5_eRUW15yiL66JEcuz-s7CL9zN3Dy2PnzNBpC6sSDxboGAkGFb38opG0zPGWEEYkbb-YbRvcmTQObdXLuyfjHgFlcmQEfYfeRIQtoabvrWTirE6WQV88H6kUAo4aZfIvmjxIbyecGPSauiLE2T3P6MPU3KwzjzlaZ-X0Tgz"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-12">
+<h3 class="font-display-lg text-headline-lg uppercase text-white mb-4">Huấn Luyện Cá Nhân</h3>
+<div class="flex items-center gap-4">
+<div class="w-12 h-0.5 bg-primary"></div>
+<span class="font-label-md text-label-md text-primary uppercase">Expert Coaching</span>
+</div>
+</div>
+</div>
+<!-- Secondary Service Card Stack -->
+<div class="md:col-span-5 flex flex-col gap-gutter">
+<div class="flex-1 relative group overflow-hidden border border-outline-variant">
+<img alt="Yoga" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAow7C4tG8M1NoMmW9SAlUa_rnak2P7ALhSx3mC16cPiIOlW5CNKL96JlCvu5c_Negn_gWFYEiwaDq01evSBy_9WSajSPRp7yRNzUxJ3mjdjr5WeFgTXTB-EhUufa_nCXhFNSyeJjkgUWC4NWI1DbgUnVo5mKQqUXuEkapX4aFWk3qQIEEMqIz2Ieqz2qmdM2hVwNfOeUIHZKp8HYA1jsFEftPH7GqPc-a4fvAATodnEjVGYLaVRFiV"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Yoga &amp; Tĩnh Tâm</h3>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Zen Discipline</span>
+</div>
+</div>
+<div class="flex-1 relative group overflow-hidden border border-outline-variant">
+<img alt="Equipment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgl9Mu6CCqEahXTJyx3FT0GIv7siV12RtBDPbVDjXEbQPwXhZkW4RgfdFiF4nrMIMPPsN7cyQj4YvNEzKBxB-LbMKLEJiY48NaP2lM4NyEXjcHhlfIQZA8gPA6EksTfn2pd_m2c_8uAQ7q2OsX_Xxr_5vdmd95SKb6TioqInuHZVNm_H6kiHCBA3ry8XEwQyCNSr8JKfV8B2LTGIKW31SM1C0kfFdl0yGj3ICMqA7H_P5qwIOSi3T9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-70"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Thiết Bị Đẳng Cấp</h3>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Technogym Elite</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership Plans -->
+<section class="py-24 bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Gói Hội Viên</h2>
+<p class="text-on-surface-variant font-label-md text-label-md uppercase tracking-[0.3em]">Iron tiers for true strength</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 border border-outline-variant">
+<!-- Plan 1 -->
+<div class="p-12 border-r border-outline-variant hover:bg-surface-container-low transition-colors text-center md:text-left">
+<div class="font-label-sm text-label-sm text-outline mb-8 tracking-widest uppercase">Basic / Cơ bản</div>
+<h3 class="font-display-lg text-display-lg text-white mb-8 leading-none">1.2M <span class="text-headline-md font-bold text-outline-variant">/THÁNG</span></h3>
+<ul class="space-y-4 mb-12">
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Truy cập giờ thấp điểm
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Tủ đồ cá nhân tiêu chuẩn
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Kiểm tra InBody hàng tháng
+                            </li>
+</ul>
+</div>
+<!-- Plan 2 -->
+<div class="p-12 border-r border-outline-variant bg-surface-container hover:bg-surface-container-high transition-colors text-center md:text-left relative">
+<div class="absolute top-0 right-0 bg-primary-container text-white px-4 py-1 font-label-sm text-label-sm">PHỔ BIẾN</div>
+<div class="font-label-sm text-label-sm text-primary mb-8 tracking-widest uppercase">Standard / Tiêu chuẩn</div>
+<h3 class="font-display-lg text-display-lg text-white mb-8 leading-none">2.5M <span class="text-headline-md font-bold text-outline-variant">/THÁNG</span></h3>
+<ul class="space-y-4 mb-12">
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Truy cập toàn thời gian
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Xông hơi &amp; Bể sục
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> 2 buổi tập PT/tháng
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Khăn tắm cao cấp miễn phí
+                            </li>
+</ul>
+</div>
+<!-- Plan 3 -->
+<div class="p-12 hover:bg-surface-container-low transition-colors text-center md:text-left">
+<div class="font-label-sm text-label-sm text-outline mb-8 tracking-widest uppercase">Infinity / Vô cực</div>
+<h3 class="font-display-lg text-display-lg text-white mb-8 leading-none">5.0M <span class="text-headline-md font-bold text-outline-variant">/THÁNG</span></h3>
+<ul class="space-y-4 mb-12">
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Đặc quyền V.I.P Lounge
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> PT cá nhân không giới hạn
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Phân tích DNA &amp; Dinh dưỡng
+                            </li>
+<li class="flex items-center gap-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Đỗ xe ưu tiên
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-container-lowest px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto relative">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase">Tiếng nói từ Hội viên</h2>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Testimonial 1 -->
+<div class="flex-1 bg-surface-container-low/40 backdrop-blur-xl border border-primary-container/20 p-8 amber-glow">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-8 italic">"Không gian ở đây thực sự truyền cảm hứng. Mỗi lần bước vào Aura, tôi như được tiếp thêm 200% năng lượng từ những khối sắt rỉ và phong cách công nghiệp này."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-white">TRẦN QUỐC BẢO</div>
+<div class="font-label-sm text-label-sm text-outline">HỘI VIÊN VÔ CỰC</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="flex-1 bg-surface-container-low/40 backdrop-blur-xl border border-primary-container/20 p-8 amber-glow">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="font-body-md text-on-surface mb-8 italic">"Công nghệ AI theo dõi form tập rất chính xác. Tôi cảm nhận rõ rệt sự thay đổi của cơ bắp chỉ sau 3 tháng tập luyện theo giáo án của Aura-Sense."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-white">LÊ MINH ANH</div>
+<div class="font-label-sm text-label-sm text-outline">HỘI VIÊN TIÊU CHUẨN</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Map -->
+<section class="h-[500px] w-full relative">
+<div class="absolute inset-0 z-0 bg-surface-container-highest">
+<div class="w-full h-full grayscale-[0.8] contrast-150 brightness-[0.6]">
+<!-- Placeholder for integrated dark map -->
+<div class="w-full h-full bg-surface-container" data-location="Bitexco Financial Tower, Ho Chi Minh City" style="">
+<div class="flex items-center justify-center h-full flex-col">
+<span class="material-symbols-outlined text-primary text-6xl mb-4">location_on</span>
+<p class="font-label-md text-label-md uppercase tracking-[0.5em] text-on-surface-variant">Bitexco Financial Tower</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute inset-y-0 left-margin-desktop z-10 flex items-center">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant p-10 max-w-sm">
+<h2 class="font-headline-md text-headline-md uppercase mb-6">Liên Hệ Với Chúng Tôi</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">pin_drop</span>
+<p class="font-body-md text-on-surface-variant">Tầng 4-5-6, Bitexco Financial Tower, Quận 1, TP. HCM</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<p class="font-body-md text-on-surface-variant">+84 1900 8888</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<p class="font-body-md text-on-surface-variant">05:00 - 23:00 (Hàng ngày)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-12 border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-start gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md text-on-surface-variant uppercase">AURA FITNESS</div>
+<div class="font-label-sm text-label-sm text-outline opacity-80 uppercase tracking-widest">Oxidized Iron Edition</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant max-w-xs mt-4">
+                    © 2024 AURA FITNESS - OXIDIZED IRON EDITION. ĐÃ ĐĂNG KÝ BẢN QUYỀN.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-x-16 gap-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Điều khoản</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Chính sách bảo mật</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Liên hệ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Hệ thống phòng tập</a>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer">chat</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all cursor-pointer">share</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll parallax effect for industrial look
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroText = document.querySelector('h1');
+            if(heroText) {
+                heroText.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+    </script>
+</body></html>

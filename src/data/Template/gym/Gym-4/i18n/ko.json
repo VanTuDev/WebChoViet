@@ -1,0 +1,89 @@
+{
+  "shopName": "Aether Fitness",
+  "nav": { "programs": "네뷸러 스페이스", "membership": "멤버십", "contact": "문의하기", "join": "지금 가입하기" },
+  "hero": {
+    "badge": "새로운 피트니스 시대",
+    "title": "정복하라,",
+    "titleAccent": "힘의 우주",
+    "desc": "Aether에서 새로운 피트니스 시대를 경험하세요. 최첨단 기술과 몽환적인 우주 공간이 어우러져 당신 몸속 무한한 잠재력을 깨웁니다.",
+    "ctaPrimary": "지금 가입하기",
+    "ctaSecondary": "테크놀로지 살펴보기"
+  },
+  "tech": {
+    "badge": "미래 공학 기술",
+    "title": "Aura-Sense 테크놀로지",
+    "desc": "Aura-Sense 스마트 장비 시스템이 생체 데이터를 자동으로 인식하여 실시간으로 운동 강도를 최적화합니다. 모든 움직임은 AI로 분석되어 최고의 퍼포먼스를 보장합니다.",
+    "points": [
+      { "title": "퀀텀 분석", "desc": "42가지 신체 지표를 완벽한 정확도로 추적합니다." },
+      { "title": "티타늄 장비", "desc": "항공우주 공학에서 사용되는 초경량 합금 프레임." }
+    ]
+  },
+  "programs": {
+    "title": "네뷸러 스페이스 프로그램",
+    "subtitle": "은하수 사이의 고요함 — 명상과 움직임이 기술과 만나는 곳.",
+    "items": [
+      { "name": "젠 오빗", "desc": "신비로운 오로라 조명 아래 진행되는 가이드 명상 세션." },
+      { "name": "플로우 네뷸러", "desc": "신체 에너지를 우주의 리듬과 연결하는 플로우 요가." },
+      { "name": "아우라 사운드바스", "desc": "싱잉볼과 우주 주파수를 활용한 사운드 힐링 테라피." }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "전 시설 이용 시간", "value": "24/7" },
+      { "label": "추적 신체 지표 수", "value": "42" },
+      { "label": "함께한 우주비행사", "value": "10,000+" }
+    ]
+  },
+  "membership": {
+    "title": "우주비행사 전용 멤버십",
+    "subtitle": "당신만의 힘의 우주 정복을 위한 여정을 선택하세요.",
+    "popularBadge": "인기 1위",
+    "plans": [
+      {
+        "name": "베이직",
+        "price": "2,500,000동",
+        "period": "/월",
+        "features": ["05:00 - 17:00 이용", "짐 & 유산소 구역", "Aether 기본 락커"],
+        "popular": false,
+        "cta": "플랜 선택"
+      },
+      {
+        "name": "스탠다드",
+        "price": "5,000,000동",
+        "period": "/월",
+        "features": ["24/7 전 시설 이용", "네뷸러 명상 3회", "주간 Aura-Sense 분석", "지문 인식 보안 락커"],
+        "popular": true,
+        "cta": "지금 가입하기"
+      },
+      {
+        "name": "인피니티",
+        "price": "12,000,000동",
+        "period": "/월",
+        "features": ["VIP 풀 액세스 혜택", "무제한 1:1 코칭", "Cosmic Meal 영양 플랜", "캡슐형 휴식 라운지"],
+        "popular": false,
+        "cta": "플랜 선택"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "우주비행사의 기록",
+    "subtitle": "Aether 커뮤니티의 진짜 경험담.",
+    "items": [
+      { "name": "응우옌 민", "role": "테크 스타트업 CEO", "quote": "이 공간은 정말 특별해요. 별들 사이에서 운동하다 보면 피로를 잊고 매 세션 후 에너지가 가득 차오릅니다." },
+      { "name": "쩐 리", "role": "피트니스 애호가", "quote": "Aura-Sense 기술은 정말 획기적이에요. 더 이상 기계를 직접 조정할 필요 없이 모든 것이 저에게 완벽하게 맞춰집니다." },
+      { "name": "황 남", "role": "건축가", "quote": "네뷸러 스페이스는 분주한 도시 한복판에서 진정한 평온을 찾을 수 있는 유일한 곳입니다. 최고 수준의 힐링 경험이에요." }
+    ]
+  },
+  "contact": {
+    "title": "Aether 커넥션 스테이션",
+    "phone": "1900 6789",
+    "phoneLabel": "고객센터",
+    "address": "비텍스코 파이낸셜 타워 52층, 하이찌에우(Hải Triều) 2번지, 1군, 호치민시",
+    "addressLabel": "주소",
+    "email": "orbit@aetherfitness.vn",
+    "emailLabel": "이메일",
+    "mapUrl": "",
+    "ctaText": "투어 예약하기"
+  },
+  "footer": { "copy": "© 2026 Aether Fitness. vngoweb로 제작되었습니다." }
+}

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Fitness | Chinh Phục Vũ Trụ Sức Mạnh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-high": "#2b2a2a",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface": "#050505",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-tint": "#c9c6c5",
+                        "surface-variant": "#353434",
+                        "surface-container-highest": "#353434",
+                        "secondary-container": "#3c4962",
+                        "tertiary-fixed": "#f9d8ff",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "inverse-primary": "#5f5e5e",
+                        "on-tertiary-fixed-variant": "#6e208c",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "on-tertiary-fixed": "#320046",
+                        "on-tertiary-container": "#a457c2",
+                        "on-secondary-fixed": "#0d1c32",
+                        "on-secondary-container": "#abb9d6",
+                        "surface-dim": "#141313",
+                        "outline-variant": "#444748",
+                        "on-surface-variant": "#c4c7c7",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#b9c7e4",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#233148",
+                        "inverse-on-surface": "#313030",
+                        "primary": "#c9c6c5",
+                        "on-primary": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "primary-container": "#050505",
+                        "tertiary-container": "#0e0016",
+                        "on-tertiary": "#520070",
+                        "on-error": "#690005",
+                        "on-primary-container": "#797777",
+                        "outline": "#8e9192",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary": "#edb1ff",
+                        "primary-fixed": "#e5e2e1",
+                        "background": "#050505",
+                        "tertiary-fixed-dim": "#edb1ff",
+                        "electric-cyan": "#00f2ff",
+                        "nebula-violet": "#8a2be2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "label-sm": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "display-lg": ["Lexend"],
+                        "body-lg": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; background-color: #050505; color: #e5e2e1; overflow-x: hidden; }
+        .glass-card { background: rgba(10, 25, 47, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(0, 242, 255, 0.1); transition: all 0.3s ease; }
+        .glass-card:hover { border-color: #00f2ff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.15); }
+        .glow-text { text-shadow: 0 0 10px rgba(0, 242, 255, 0.5); }
+        .nebula-blur { position: absolute; filter: blur(120px); opacity: 0.3; pointer-events: none; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .floating { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-electric-cyan/30">
+<!-- Background Atmospheric Blurs -->
+<div class="nebula-blur bg-nebula-violet w-[500px] h-[500px] top-[-10%] right-[-10%] rounded-full"></div>
+<div class="nebula-blur bg-electric-cyan w-[400px] h-[400px] bottom-[20%] left-[-10%] rounded-full"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-secondary-container/30 px-margin-desktop py-4 flex justify-between items-center">
+<div class="text-headline-md font-display-lg tracking-tighter text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+            Aura Fitness
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-label-sm text-secondary border-b-2 border-secondary pb-1" href="#">Technology</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Nebula Space</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Memberships</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Reviews</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Locations</a>
+</div>
+<div class="px-6 py-2 bg-electric-cyan text-black font-bold rounded-full text-label-sm tracking-widest uppercase cursor-default">Join Voyage</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Cosmic gym interior" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkm-zmh9rsmyoNYJNCTBC1571KjwQUzE0FixOyjo0wxwCGUY61Q1A9487MEqXP9ZBtorRmzmUEwKTAn_S8qUBC682eJTmyIsIDYM8CpfQSOx5O7aXaZ7QcVlf4Lg2vl37ibnYE6fWFe4-EOI9D39BWB9-cy3C9PpnQdQ96BoPFRmk7nftIVr7op-pTqX0Mwx_9zZ566TdQs8sF075H1uJDWLyYJ4AF1mUGmN8RcvGeul2kjK8Bq44S"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile">
+<h1 class="font-display-lg text-display-lg md:text-[80px] leading-tight mb-6 glow-text tracking-tighter">
+                CHINH PHỤC <br/>
+<span class="text-electric-cyan">VŨ TRỤ SỨC MẠNH</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed opacity-90">
+                Trải nghiệm kỷ nguyên fitness mới tại Aura. Nơi công nghệ tối tân hòa quyện cùng không gian vũ trụ huyền ảo, đánh thức tiềm năng vô hạn trong cơ thể bạn.
+            </p>
+<div class="mt-12 flex justify-center gap-4">
+<div class="w-1 h-24 bg-gradient-to-b from-electric-cyan to-transparent rounded-full floating"></div>
+</div>
+</div>
+</section>
+<!-- Exclusive Technology: Aura-Sense -->
+<section class="py-32 relative px-margin-desktop max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="inline-block px-4 py-1 rounded-full border border-electric-cyan/30 text-electric-cyan font-label-sm text-label-sm mb-6 tracking-widest uppercase">Kỹ thuật tương lai</div>
+<h2 class="font-display-lg text-display-lg mb-8">Công nghệ Aura-Sense</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                    Hệ thống thiết bị thông minh Aura-Sense tự động nhận diện chỉ số sinh trắc học, tối ưu hóa cường độ tập luyện trong thời gian thực. Mỗi chuyển động đều được phân tích bằng AI để đảm bảo hiệu suất tối đa.
+                </p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-cyan">query_stats</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-secondary">Phân tích Quantum</h4>
+<p class="text-on-surface-variant">Theo dõi 42 chỉ số cơ thể với độ chính xác tuyệt đối.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-cyan">precision_manufacturing</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-secondary">Thiết bị Titanium</h4>
+<p class="text-on-surface-variant">Khung máy từ hợp kim siêu nhẹ dùng trong ngành hàng không vũ trụ.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="order-1 md:order-2">
+<div class="relative group">
+<div class="absolute -inset-4 bg-electric-cyan/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="High-tech metallic gym equipment" class="relative rounded-2xl shadow-2xl glass-card p-2 w-full object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHe61aTLmSwoJSH7oiAxRsNF4NthEOSXkXNK0NZOr14fpzC9A0_o7IVupOjuuMh5LfX07t9sw-VlDY4ZOzixGJSsF04za8eJ3JjLmxpZkne46CRVuLeuwuW4c6vAXhzmfvi7Gifxa4JTuZg4dff8IojicEVnMT05u3LjjjrDWoUIUCoGaNAqCgajUtGxt2sstsoIRtd9Yl9cTeaeDQAK1KbCSkHe6Wropl-BiIMmU9FH-F72wMDtD"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Nebula Space -->
+<section class="py-32 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Nebula meditation studio" class="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs5UIoyEGzq6IXKkfleiaTPGJWfHl4Vn9fczDKDh8PIhRAodXTKDGgvLaQbJsEEhGI5mYckKiUF8xfy-58e20A9I7NXmA1ejC7XKUqdvlwUY90BfKHbvcMqxaAwnx_qYawtnZ5N5HUsvvMaHFS6-43JWcnUdGLiEgagrxVWaTUkjbtg327TSOsqDtwQmjv7EuZAbNu8GybMzog85h-oQ1m2N7XqUrRGemzME6sVSM5hXLt3fi-O-V7"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-display-lg text-display-lg mb-6">Nebula Space</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-16">
+                Tĩnh lặng giữa dải ngân hà. Không gian thiền định và Yoga được bao phủ bởi các hình chiếu tinh vân 4K và hệ thống âm thanh tần số chữa lành, giúp tâm trí bạn đạt đến trạng thái vô định.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-8 text-left rounded-xl">
+<span class="material-symbols-outlined text-nebula-violet text-4xl mb-6">self_improvement</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-secondary">Zen Orbit</h3>
+<p class="text-on-surface-variant text-body-md">Các buổi thiền dẫn dắt dưới ánh sáng cực quang huyền ảo.</p>
+</div>
+<div class="glass-card p-8 text-left rounded-xl">
+<span class="material-symbols-outlined text-nebula-violet text-4xl mb-6">energy_savings_leaf</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-secondary">Flow Nebula</h3>
+<p class="text-on-surface-variant text-body-md">Yoga dòng chảy giúp kết nối năng lượng cơ thể với nhịp điệu vũ trụ.</p>
+</div>
+<div class="glass-card p-8 text-left rounded-xl">
+<span class="material-symbols-outlined text-nebula-violet text-4xl mb-6">waves</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-secondary">Aura Soundbath</h3>
+<p class="text-on-surface-variant text-body-md">Trị liệu bằng âm thanh từ chuông xoay và tần số không gian.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership Plans -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-display-lg text-display-lg mb-4">Gói Đặc Quyền Phi Hành Gia</h2>
+<div class="w-24 h-1 bg-electric-cyan mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic -->
+<div class="glass-card p-10 rounded-2xl flex flex-col border-white/5">
+<h3 class="font-headline-md text-headline-md text-secondary mb-2">Cơ bản</h3>
+<div class="text-4xl font-bold text-white mb-6">2.5M <span class="text-body-md font-normal text-on-surface-variant">/tháng</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Truy cập 05:00 - 17:00</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Khu vực Gym &amp; Cardio</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Tủ đồ Aura cơ bản</li>
+</ul>
+<div class="py-4 border-t border-white/10 text-center text-label-sm font-bold tracking-widest text-secondary opacity-50 uppercase">Phổ thông</div>
+</div>
+<!-- Standard -->
+<div class="glass-card p-10 rounded-2xl flex flex-col relative scale-105 border-electric-cyan/40 shadow-[0_0_40px_rgba(0,242,255,0.1)]">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-electric-cyan text-black px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Phổ biến nhất</div>
+<h3 class="font-headline-md text-headline-md text-secondary mb-2">Tiêu chuẩn</h3>
+<div class="text-4xl font-bold text-white mb-6">5.0M <span class="text-body-md font-normal text-on-surface-variant">/tháng</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Truy cập 24/7 toàn hệ thống</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Nebula Meditation (3 buổi)</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Phân tích Aura-Sense hàng tuần</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Locker vân tay bảo mật</li>
+</ul>
+<div class="py-4 border-t border-white/10 text-center text-label-sm font-bold tracking-widest text-electric-cyan uppercase">Ưu tú</div>
+</div>
+<!-- Infinity -->
+<div class="glass-card p-10 rounded-2xl flex flex-col border-nebula-violet/30">
+<h3 class="font-headline-md text-headline-md text-secondary mb-2">Vô cực</h3>
+<div class="text-4xl font-bold text-white mb-6">12.0M <span class="text-body-md font-normal text-on-surface-variant">/tháng</span></div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Đặc quyền Full Access VIP</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> HLV 1-kèm-1 không giới hạn</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Chế độ dinh dưỡng Cosmic Meal</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-electric-cyan text-sm">check_circle</span> Phòng nghỉ ngơi kén phi thuyền</li>
+</ul>
+<div class="py-4 border-t border-white/10 text-center text-label-sm font-bold tracking-widest text-nebula-violet uppercase">Vô cực</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface-container/20">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg text-center mb-16">Nhật Ký Phi Hành Gia</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-card p-8 rounded-xl relative">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">"Không gian ở đây thực sự khác biệt. Tập luyện giữa những vì sao giúp tôi quên đi mệt mỏi và cảm thấy tràn đầy năng lượng sau mỗi buổi tập."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container"></div>
+<div>
+<div class="font-bold text-secondary">Nguyễn Minh</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-tighter">CEO Tech Startup</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card p-8 rounded-xl relative">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">"Công nghệ Aura-Sense là một bước đột phá. Tôi không còn phải tự điều chỉnh máy, mọi thứ được cá nhân hóa hoàn hảo cho tôi."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container"></div>
+<div>
+<div class="font-bold text-secondary">Trần Ly</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-tighter">Fitness Enthusiast</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-card p-8 rounded-xl relative">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic mb-6">"Nebula Space là nơi duy nhất tôi tìm thấy sự yên bình thực sự giữa lòng thành phố náo nhiệt. Một trải nghiệm chữa lành đẳng cấp."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container"></div>
+<div>
+<div class="font-bold text-secondary">Hoàng Nam</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-tighter">Kiến trúc sư</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Connection & Location -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-display-lg text-display-lg mb-8">Trạm Kết Nối Aura</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Tọa lạc tại đỉnh cao của Sài Gòn, Aura Fitness mang đến tầm nhìn vô tận, nơi bạn có thể vừa rèn luyện vừa ngắm nhìn thành phố rực rỡ từ trên mây.
+                </p>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-cyan">location_on</span>
+<div>
+<div class="font-headline-md text-headline-md text-secondary">Tầng 52, Bitexco Financial Tower</div>
+<p class="text-on-surface-variant">02 Hải Triều, Bến Nghé, Quận 1, TP. Hồ Chí Minh</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-electric-cyan">mail</span>
+<div>
+<div class="font-headline-md text-headline-md text-secondary">Email liên hệ</div>
+<p class="text-on-surface-variant">orbit@aurafitness.vn</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[400px] rounded-2xl overflow-hidden glass-card p-1">
+<div class="w-full h-full bg-surface-container relative">
+<!-- Stylized Map Placeholder -->
+<div class="w-full h-full bg-cover bg-center" data-alt="A stylized futuristic digital map showing the location of Bitexco Financial Tower in Ho Chi Minh City. The map uses a neon electric blue color palette with deep black backgrounds. Landmarks are represented as glowing 3D geometric shapes. Small light particles flow along the streets like data packets, creating a high-tech cosmic atmosphere." data-location="Bitexco Financial Tower, Ho Chi Minh City" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvrd6NXkCTB4vPziRUm0rAnUIGdhZIODgVoGTXr2oH7cT-wInO4cZvu2yw5xLP5jkbAK4OFbLl0yEs-Wc1E7Qg4w-z5gaeSCVkTcO5FEA-JSMYt1bZMtOhwo7aWGUCIKplJSBhZEfvX9eYhIx0oKsmnHbJIkU9JF9DnOKSRQhTB9QY6eO_vhIiMhM5Ln90GNdGFPXO1Gp6daGr5Ww7DXun29DAX5YVpTgnhq23dos8PWTsN0-cPnbC')"></div>
+<div class="absolute inset-0 bg-electric-cyan/5 mix-blend-overlay"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/5 py-20 px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="max-w-xs">
+<div class="font-display-lg text-headline-md text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                    Aura Fitness
+                </div>
+<p class="text-on-surface-variant text-body-md">
+                    © 2024 Aura Fitness Galaxy. Engineered for the Elite. Một kỷ nguyên sức khỏe mới bắt đầu từ đây.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="flex flex-col gap-4">
+<span class="text-secondary font-bold text-label-sm uppercase tracking-widest">Protocol</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-body-md" href="#">Privacy Protocol</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-body-md" href="#">Terms of Orbit</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-body-md" href="#">Support Nebula</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-secondary font-bold text-label-sm uppercase tracking-widest">Social Orbit</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-electric-cyan cursor-default transition-all duration-300">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-electric-cyan cursor-default transition-all duration-300">camera</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-electric-cyan cursor-default transition-all duration-300">share</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-white/5 text-center text-on-surface-variant text-[10px] uppercase tracking-[0.4em] opacity-40">
+            Powered by Aura Space Technologies • Vietnam • 2024
+        </div>
+</footer>
+<!-- Micro-interaction script for floating particles -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.body;
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fixed rounded-full pointer-events-none z-[-1]';
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = i % 2 === 0 ? '#00f2ff' : '#8a2be2';
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.opacity = Math.random() * 0.5;
+                particle.style.filter = 'blur(1px)';
+                
+                // Animate
+                const duration = Math.random() * 20 + 10;
+                particle.animate([
+                    { transform: 'translate(0, 0)' },
+                    { transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)` }
+                ], {
+                    duration: duration * 1000,
+                    iterations: Infinity,
+                    direction: 'alternate',
+                    easing: 'linear'
+                });
+                
+                container.appendChild(particle);
+            }
+        });
+    </script>
+</body></html>

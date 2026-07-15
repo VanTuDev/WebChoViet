@@ -70,7 +70,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
               </Reveal>
               <Reveal as="p" data-field="hero.subtitle" variant="fade-up" delay={200} className="text-lg leading-[1.6] text-[#424752] max-w-xl mx-auto md:mx-0">{t.hero.subtitle}</Reveal>
               <Reveal variant="fade-up" delay={300} className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-3">
-                <button data-field="hero.btnBook" className="text-sm font-medium bg-[#2E4E3F] text-white rounded-full px-8 py-4 hover:bg-[#2E4E3F]/90 transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer">
+                <button data-field="hero.btnBook" data-track="book" className="text-sm font-medium bg-[#2E4E3F] text-white rounded-full px-8 py-4 hover:bg-[#2E4E3F]/90 transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer">
                   {t.hero.btnBook}
                 </button>
                 <button className="text-sm font-medium bg-white border border-[#c2c6d4] text-[#191c1e] rounded-full px-8 py-4 hover:bg-[#f2f4f6] transition-all flex items-center justify-center gap-2 cursor-pointer">

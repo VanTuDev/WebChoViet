@@ -1,0 +1,89 @@
+{
+  "shopName": "Aether Fitness",
+  "nav": { "programs": "星云空间", "membership": "会员方案", "contact": "联系我们", "join": "立即加入" },
+  "hero": {
+    "badge": "全新健身纪元",
+    "title": "征服",
+    "titleAccent": "力量宇宙",
+    "desc": "在 Aether 开启全新健身纪元，尖端科技与梦幻宇宙氛围完美融合，唤醒您体内无限的潜能。",
+    "ctaPrimary": "立即加入",
+    "ctaSecondary": "探索科技"
+  },
+  "tech": {
+    "badge": "未来工程科技",
+    "title": "Aura-Sense 智能科技",
+    "desc": "Aura-Sense 智能设备系统自动识别您的生物特征数据，实时优化训练强度。每一个动作都经过 AI 分析，确保发挥最大表现。",
+    "points": [
+      { "title": "量子分析", "desc": "以绝对精准度追踪 42 项身体指标。" },
+      { "title": "钛合金设备", "desc": "采用航天工程超轻合金车架打造。" }
+    ]
+  },
+  "programs": {
+    "title": "星云空间体验项目",
+    "subtitle": "在银河系中寻得宁静——冥想与律动在此与科技交融。",
+    "items": [
+      { "name": "Zen Orbit 禅意轨道", "desc": "在梦幻般的极光光影下进行的引导冥想课程。" },
+      { "name": "Flow Nebula 星云流瑜伽", "desc": "流动瑜伽将身体能量与宇宙的律动相连接。" },
+      { "name": "Aura Soundbath 音疗沐浴", "desc": "以颂钵与宇宙频率进行的声音疗愈体验。" }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "全系统开放时间", "value": "24/7" },
+      { "label": "追踪身体指标数", "value": "42" },
+      { "label": "已加入宇航员数", "value": "10,000+" }
+    ]
+  },
+  "membership": {
+    "title": "宇航员专属会员方案",
+    "subtitle": "选择属于您自己的力量宇宙征服之旅。",
+    "popularBadge": "最受欢迎",
+    "plans": [
+      {
+        "name": "基础版",
+        "price": "2,500,000越盾",
+        "period": "/月",
+        "features": ["05:00 - 17:00 时段进出", "健身与有氧区域", "Aether 基础储物柜"],
+        "popular": false,
+        "cta": "选择方案"
+      },
+      {
+        "name": "标准版",
+        "price": "5,000,000越盾",
+        "period": "/月",
+        "features": ["24/7 全系统自由出入", "星云冥想课程 3 次", "每周 Aura-Sense 数据分析", "指纹安全储物柜"],
+        "popular": true,
+        "cta": "立即加入"
+      },
+      {
+        "name": "无限版",
+        "price": "12,000,000越盾",
+        "period": "/月",
+        "features": ["VIP 全区域专属权益", "无限次一对一私教", "Cosmic Meal 专属营养方案", "太空舱式休息室"],
+        "popular": false,
+        "cta": "选择方案"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "宇航员日志",
+    "subtitle": "来自 Aether 社区的真实体验分享。",
+    "items": [
+      { "name": "阮明", "role": "科技创业公司 CEO", "quote": "这里的空间真的与众不同。在星辰之间训练让我忘却疲惫，每次训练后都能量满满。" },
+      { "name": "陈丽", "role": "健身爱好者", "quote": "Aura-Sense 科技真的是一次突破。我再也不用自己调整器械，一切都为我完美个性化。" },
+      { "name": "黄南", "role": "建筑师", "quote": "星云空间是我在这座喧嚣城市中，唯一能找到真正宁静的地方，是一种顶级的疗愈体验。" }
+    ]
+  },
+  "contact": {
+    "title": "Aether 连接站",
+    "phone": "1900 6789",
+    "phoneLabel": "热线电话",
+    "address": "胡志明市第一郡 Hải Triều 街 02 号 Bitexco 金融塔 52 楼",
+    "addressLabel": "地址",
+    "email": "orbit@aetherfitness.vn",
+    "emailLabel": "电子邮箱",
+    "mapUrl": "",
+    "ctaText": "预约参观"
+  },
+  "footer": { "copy": "© 2026 Aether Fitness。由 vngoweb 打造。" }
+}

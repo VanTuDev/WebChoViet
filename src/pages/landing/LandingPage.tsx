@@ -81,7 +81,7 @@ function TemplateCarousel3D({
     if (n < 2) return;
     const timer = setInterval(() => {
       if (!pausedRef.current) setActive(a => (a + 1) % n);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [n]);
 

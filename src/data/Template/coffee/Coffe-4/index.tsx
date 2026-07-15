@@ -61,7 +61,7 @@ export default function Coffe4({ lang: propLang = 'vi' }: Props) {
             <a className="text-[#424752] hover:text-primary transition-colors duration-200 text-sm font-medium" href="#lien-he">{t.nav.contact}</a>
           </div>
           <div className="flex items-center gap-6">
-            <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-primary-container transition-all cursor-pointer">{t.nav.contactBtn}</button>
+            <a href="#lien-he" data-track="contact" className="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-primary-container transition-all cursor-pointer">{t.nav.contactBtn}</a>
           </div>
         </div>
       </nav>

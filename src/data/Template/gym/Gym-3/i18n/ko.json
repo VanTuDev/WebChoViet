@@ -1,0 +1,78 @@
+{
+  "shopName": "Terra Strength",
+  "nav": { "programs": "서비스", "membership": "멤버십", "contact": "문의하기", "join": "지금 등록하기" },
+  "hero": {
+    "badge": "단단한 의지를 세우다",
+    "title": "한계를 뛰어넘어,",
+    "titleAccent": "폭발적인 힘을 깨우다",
+    "desc": "현대적인 기술과 무도 정신이 만나는 5성급 트레이닝 공간에서, 당신의 궁극적인 잠재력을 끌어내세요.",
+    "ctaPrimary": "지금 등록하기",
+    "ctaSecondary": "스튜디오 둘러보기"
+  },
+  "programs": {
+    "title": "시그니처 서비스",
+    "subtitle": "Terra Strength의 프리미엄 트레이닝 경험을 만드는 세 가지 기둥.",
+    "items": [
+      { "name": "모던 짐 시설", "desc": "Technogym 장비를 도입하고 AI를 결합해 훈련 진행 상황을 실시간으로 추적합니다." },
+      { "name": "퍼스널 트레이닝", "desc": "개인별 신체 데이터를 기반으로 설계된 맞춤형 프로그램." },
+      { "name": "요가 & 명상", "desc": "고요하고 세련된 명상 공간에서 몸과 마음, 정신의 균형을 맞춥니다." }
+    ]
+  },
+  "tech": {
+    "title": "Aura Fit 테크놀로지",
+    "desc": "3D Body Scan 시스템으로 신체 구조를 정밀하게 분석하여, 당신의 모든 호흡과 동작을 최적화합니다.",
+    "stat": "98%"
+  },
+  "membership": {
+    "title": "멤버십 플랜",
+    "subtitle": "건강에 대한 투자는 가장 지속 가능한 투자입니다.",
+    "popularBadge": "인기 1위",
+    "plans": [
+      {
+        "name": "베이직",
+        "price": "800,000동",
+        "period": "/월",
+        "features": ["24시간 운동 이용", "락커 & 사우나 구역"],
+        "popular": false,
+        "cta": "플랜 선택"
+      },
+      {
+        "name": "프로페셔널",
+        "price": "2,100,000동",
+        "period": "/3개월",
+        "features": ["베이직 혜택 전체", "PT 지도 4회", "매월 InBody 체성분 검사", "모든 Group X 클래스 이용"],
+        "popular": true,
+        "cta": "지금 등록하기"
+      },
+      {
+        "name": "인피니티",
+        "price": "7,200,000동",
+        "period": "/년",
+        "features": ["프로페셔널 혜택 전체", "한정판 기어 세트 증정", "스파 서비스 20% 할인"],
+        "popular": false,
+        "cta": "플랜 선택"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "회원들의 진솔한 후기",
+    "subtitle": "5,000명이 넘는 회원이 Terra Strength와 함께 변화했습니다.",
+    "items": [
+      { "name": "민 후이", "role": "프로페셔널 회원", "quote": "이곳의 공간은 정말 특별해요. 들어설 때마다 스스로를 더 몰아붙이고 싶어지고, 장비 수준도 정말 높습니다." },
+      { "name": "뚜 아인", "role": "베이직 회원", "quote": "요가 수업 덕분에 퇴근 후 스트레스를 정말 잘 풀 수 있어요. 선생님들도 매우 헌신적이고 전문적입니다." },
+      { "name": "남 꿘", "role": "인피니티 회원", "quote": "PT 패키지는 그만한 가치가 충분해요. 코치님과 함께 진지하게 훈련한 지 두 달 만에 체지방 5kg을 줄이고 근육 2kg을 늘렸습니다." }
+    ]
+  },
+  "contact": {
+    "title": "문의 및 위치",
+    "phone": "1900 8888",
+    "phoneLabel": "전화",
+    "address": "비텍스코 파이낸셜 타워 4층, 1군, 호치민시",
+    "addressLabel": "주소",
+    "email": "contact@terrastrength.vn",
+    "emailLabel": "이메일",
+    "mapUrl": "",
+    "ctaText": "투어 예약하기"
+  },
+  "footer": { "copy": "© 2026 Terra Strength. vngoweb로 제작되었습니다." }
+}

@@ -17,6 +17,9 @@ sân bóng, sân tennis, hồ bơi, trung tâm thể thao đa năng.
 | ID | Tên | Giá | Đặc điểm nổi bật |
 |----|-----|-----|-------------------|
 | `gym-1` | Iron Zone | Miễn phí | Tông tối accent cam, hero fullscreen tối, grid 6 chương trình tập, bảng giá 3 gói |
+| `gym-2` | Crimson Peak | Miễn phí | Tông đen - đỏ crimson, glassmorphism 3D, bento công nghệ độc bản, stat bar hiệu suất |
+| `gym-3` | Terra Strength | Miễn phí | Tông bronze ấm áp cao cấp, bento 3 dịch vụ đặc quyền (gym/PT/yoga), tactile neomorphism |
+| `gym-4` | Aether Fitness | Miễn phí | Tông đen - cyan - tím vũ trụ tương lai, section công nghệ Aura-Sense, 3 chương trình Nebula Space |
 
 ---
 

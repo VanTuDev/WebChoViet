@@ -1,0 +1,89 @@
+{
+  "shopName": "Aether Fitness",
+  "nav": { "programs": "Nebula Space", "membership": "Memberships", "contact": "Connect", "join": "Join Now" },
+  "hero": {
+    "badge": "A New Fitness Era",
+    "title": "Conquer the",
+    "titleAccent": "Universe of Strength",
+    "desc": "Step into a new fitness era at Aether, where cutting-edge technology blends with a dreamlike cosmic atmosphere to awaken the limitless potential within your body.",
+    "ctaPrimary": "Join Now",
+    "ctaSecondary": "Discover the Tech"
+  },
+  "tech": {
+    "badge": "Future Engineering",
+    "title": "Aura-Sense Technology",
+    "desc": "The Aura-Sense smart equipment system automatically reads your biometric data, optimizing training intensity in real time. Every movement is AI-analyzed to guarantee maximum performance.",
+    "points": [
+      { "title": "Quantum Analysis", "desc": "Tracks 42 body metrics with absolute precision." },
+      { "title": "Titanium Equipment", "desc": "Ultra-light alloy frames sourced from aerospace engineering." }
+    ]
+  },
+  "programs": {
+    "title": "Nebula Space Experiences",
+    "subtitle": "Stillness amid the galaxy — where meditation and movement merge with technology.",
+    "items": [
+      { "name": "Zen Orbit", "desc": "Guided meditation sessions under a mesmerizing aurora light show." },
+      { "name": "Flow Nebula", "desc": "Flow yoga that connects your body's energy to the rhythm of the cosmos." },
+      { "name": "Aura Soundbath", "desc": "Sound healing therapy using singing bowls and cosmic frequencies." }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "Full-system access", "value": "24/7" },
+      { "label": "Body metrics tracked", "value": "42" },
+      { "label": "Astronauts onboard", "value": "10,000+" }
+    ]
+  },
+  "membership": {
+    "title": "Astronaut Membership Plans",
+    "subtitle": "Choose the journey that fits your own conquest of the universe of strength.",
+    "popularBadge": "Most Popular",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "2,500,000đ",
+        "period": "/month",
+        "features": ["Access 05:00 - 17:00", "Gym & cardio zone", "Basic Aether locker"],
+        "popular": false,
+        "cta": "Choose Plan"
+      },
+      {
+        "name": "Standard",
+        "price": "5,000,000đ",
+        "period": "/month",
+        "features": ["24/7 full-system access", "3 Nebula Meditation sessions", "Weekly Aura-Sense analysis", "Fingerprint-secured locker"],
+        "popular": true,
+        "cta": "Join Now"
+      },
+      {
+        "name": "Infinity",
+        "price": "12,000,000đ",
+        "period": "/month",
+        "features": ["Full VIP access privileges", "Unlimited 1-on-1 coaching", "Cosmic Meal nutrition plan", "Capsule-style rest lounge"],
+        "popular": false,
+        "cta": "Choose Plan"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Astronaut Logs",
+    "subtitle": "Real experiences from the Aether community.",
+    "items": [
+      { "name": "Nguyen Minh", "role": "Tech Startup CEO", "quote": "This space feels genuinely different. Training among the stars makes me forget fatigue and leaves me full of energy after every session." },
+      { "name": "Tran Ly", "role": "Fitness Enthusiast", "quote": "Aura-Sense technology is a real breakthrough. I no longer have to adjust the machines myself — everything is perfectly personalized for me." },
+      { "name": "Hoang Nam", "role": "Architect", "quote": "Nebula Space is the only place I've found true peace in the middle of a bustling city. A truly premium healing experience." }
+    ]
+  },
+  "contact": {
+    "title": "Aether Connection Station",
+    "phone": "1900 6789",
+    "phoneLabel": "Hotline",
+    "address": "52nd Floor, Bitexco Financial Tower, 02 Hai Trieu, District 1, Ho Chi Minh City",
+    "addressLabel": "Address",
+    "email": "orbit@aetherfitness.vn",
+    "emailLabel": "Email",
+    "mapUrl": "",
+    "ctaText": "Book a Tour"
+  },
+  "footer": { "copy": "© 2026 Aether Fitness. Built with vngoweb." }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Check, Loader2, LayoutTemplate, X } from 'lucide-react';
+import { Check, Loader2, LayoutTemplate, X, Search, Layers, Coins } from 'lucide-react';
 import { TEMPLATES, CATEGORY_REGISTRY } from '../../../data/templates/registry';
 import { fetchTemplatePrices, type TemplateAccessInfo } from '../../../services/templateBillingService';
 import { updateTemplateAccess } from '../../../services/adminService';
@@ -11,6 +11,9 @@ const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
   CATEGORY_REGISTRY.map(c => [c.id, c.label]),
 );
 
+/** Class dùng chung để bỏ mũi tên tăng/giảm mặc định của input[type=number] (Chrome/Edge/Firefox) — chỉ còn là ô nhập số thuần. */
+const NO_SPINNER = '[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none';
+
 interface RowDraft {
   price: number;
   /** null = chưa override, dùng giá gốc (`price`) */
@@ -18,6 +21,31 @@ interface RowDraft {
   ultraPrice: number | null;
   saving: boolean;
   saved: boolean;
+}
+
+/** Ô nhập giá kèm đơn vị "đ" cố định bên phải — dùng chung cho mọi ô giá trong trang. */
+function PriceInput({
+  value, placeholder, onChange, className = '',
+}: {
+  value: number | '';
+  placeholder?: string;
+  onChange: (raw: string) => void;
+  className?: string;
+}) {
+  return (
+    <div className={`relative ${className}`}>
+      <input
+        type="number"
+        min={0}
+        step={1000}
+        value={value}
+        placeholder={placeholder}
+        onChange={e => onChange(e.target.value)}
+        className={`w-full bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg pl-2.5 pr-6 py-1.5 focus:outline-none focus:border-primary-container placeholder:text-slate-600 ${NO_SPINNER}`}
+      />
+      <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 pointer-events-none">đ</span>
+    </div>
+  );
 }
 
 /** Ô nhập giá theo gói Pro/Ultra — trống = kế thừa giá gốc, có nút "Miễn phí" tắt nhanh + nút xóa override. */
@@ -28,15 +56,12 @@ function OverridePriceInput({
   onChange: (next: number | null) => void;
 }) {
   return (
-    <div className="flex items-center gap-1">
-      <input
-        type="number"
-        min={0}
-        step={1000}
+    <div className="flex items-center gap-1.5">
+      <PriceInput
         value={value ?? ''}
         placeholder="= giá gốc"
-        onChange={e => onChange(e.target.value === '' ? null : Math.max(0, Number(e.target.value) || 0))}
-        className="w-24 bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary-container placeholder:text-slate-600"
+        onChange={raw => onChange(raw === '' ? null : Math.max(0, Number(raw) || 0))}
+        className="w-24"
       />
       {value !== 0 && (
         <button
@@ -70,6 +95,7 @@ export default function AdminTemplatesPage() {
   );
 
   const [drafts, setDrafts] = useState<Record<string, RowDraft>>({});
+  const [q, setQ] = useState('');
 
   useEffect(() => {
     if (!overrides) return;
@@ -87,14 +113,25 @@ export default function AdminTemplatesPage() {
     setDrafts(next);
   }, [overrides]);
 
+  const customizedCount = useMemo(
+    () => Object.values(drafts).filter(d => d.proPrice !== null || d.ultraPrice !== null).length,
+    [drafts],
+  );
+
+  const filteredTemplates = useMemo(() => {
+    const query = q.trim().toLowerCase();
+    if (!query) return TEMPLATES;
+    return TEMPLATES.filter(t => t.name.toLowerCase().includes(query) || t.id.toLowerCase().includes(query));
+  }, [q]);
+
   const grouped = useMemo(() => {
     const map = new Map<string, typeof TEMPLATES>();
-    for (const t of TEMPLATES) {
+    for (const t of filteredTemplates) {
       if (!map.has(t.category)) map.set(t.category, []);
       map.get(t.category)!.push(t);
     }
     return Array.from(map.entries());
-  }, []);
+  }, [filteredTemplates]);
 
   const updateDraft = (id: string, patch: Partial<RowDraft>) => {
     setDrafts(prev => ({ ...prev, [id]: { ...prev[id], ...patch, saved: false } }));
@@ -113,10 +150,16 @@ export default function AdminTemplatesPage() {
     }
   };
 
+  const SUMMARY = [
+    { label: 'Tổng số mẫu', value: TEMPLATES.length, Icon: LayoutTemplate },
+    { label: 'Danh mục', value: CATEGORY_REGISTRY.length, Icon: Layers },
+    { label: 'Đã tùy chỉnh giá Pro/Ultra', value: customizedCount, Icon: Coins },
+  ];
+
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-4 sm:p-6 space-y-5 sm:space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-white">Quản lý template</h1>
+        <h1 className="text-lg sm:text-xl font-bold text-white">Quản lý template</h1>
         <p className="text-sm text-slate-400 mt-0.5">
           Đặt giá gốc (gói Free) và giá riêng cho Pro/Ultra của từng mẫu — để trống ô Pro/Ultra
           nghĩa là dùng giá gốc, đặt <span className="text-emerald-400 font-semibold">0đ</span> để
@@ -126,22 +169,53 @@ export default function AdminTemplatesPage() {
 
       {error && <ErrorBanner message={error} />}
 
+      {/* Summary + search */}
+      <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+        <div className="grid grid-cols-3 gap-3 flex-1">
+          {SUMMARY.map(({ label, value, Icon }) => (
+            <div key={label} className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-primary-container/15 flex items-center justify-center shrink-0">
+                <Icon className="h-4 w-4 text-primary-container" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-lg font-bold text-white leading-tight">{value}</p>
+                <p className="text-[11px] text-slate-500 truncate">{label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative lg:w-72 shrink-0">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
+          <input
+            value={q}
+            onChange={e => setQ(e.target.value)}
+            placeholder="Tìm mẫu theo tên..."
+            className="w-full bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 text-sm rounded-xl pl-9 pr-4 py-2.5 focus:outline-none focus:border-primary-container transition-all"
+          />
+        </div>
+      </div>
+
       {loading ? (
         <LoadingState />
+      ) : grouped.length === 0 ? (
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center text-slate-500 text-sm">
+          Không tìm thấy mẫu nào khớp "{q}".
+        </div>
       ) : (
         <div className="space-y-6">
           {grouped.map(([category, items]) => (
-            <div key={category} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <section key={category} aria-labelledby={`cat-${category}`} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
               <div className="px-5 py-3.5 border-b border-slate-800 flex items-center gap-2">
                 <LayoutTemplate className="h-4 w-4 text-slate-500" />
-                <h2 className="text-sm font-bold text-white">{CATEGORY_LABEL[category] ?? category}</h2>
+                <h2 id={`cat-${category}`} className="text-sm font-bold text-white">{CATEGORY_LABEL[category] ?? category}</h2>
                 <span className="text-[11px] text-slate-500">({items.length} mẫu)</span>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-slate-800">
-                      {['Mẫu', 'Giá gốc · Free (VNĐ)', 'Giá gói Pro', 'Giá gói Ultra', ''].map(h => (
+                      {['Mẫu', 'Giá gốc · Free', 'Giá gói Pro', 'Giá gói Ultra', ''].map(h => (
                         <th key={h} className="text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-5 py-3 whitespace-nowrap">
                           {h}
                         </th>
@@ -156,13 +230,10 @@ export default function AdminTemplatesPage() {
                         <tr key={t.id} className="hover:bg-slate-800/40 transition-colors">
                           <td className="px-5 py-3 text-white font-medium whitespace-nowrap">{t.name}</td>
                           <td className="px-5 py-3">
-                            <input
-                              type="number"
-                              min={0}
-                              step={1000}
+                            <PriceInput
                               value={draft.price}
-                              onChange={e => updateDraft(t.id, { price: Math.max(0, Number(e.target.value) || 0) })}
-                              className="w-28 bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary-container"
+                              onChange={raw => updateDraft(t.id, { price: Math.max(0, Number(raw) || 0) })}
+                              className="w-28"
                             />
                           </td>
                           <td className="px-5 py-3">
@@ -195,7 +266,7 @@ export default function AdminTemplatesPage() {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </section>
           ))}
         </div>
       )}

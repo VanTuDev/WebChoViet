@@ -1,0 +1,80 @@
+{
+  "shopName": "Crimson Peak",
+  "nav": { "programs": "Công Nghệ", "membership": "Gói Tập", "contact": "Liên Hệ", "join": "Gia Nhập Ngay" },
+  "hero": {
+    "badge": "Phòng Tập Công Nghệ 3.0",
+    "title": "Nâng Tầm Giới Hạn,",
+    "titleAccent": "Bứt Phá Sức Mạnh",
+    "desc": "Trải nghiệm hệ sinh thái fitness tích hợp công nghệ AI và mô phỏng 3D hiện đại nhất Việt Nam. Nơi mỗi giọt mồ hôi là một bước tiến tới đỉnh cao.",
+    "ctaPrimary": "Gia Nhập Ngay",
+    "ctaSecondary": "Khám Phá Tour"
+  },
+  "programs": {
+    "title": "Công Nghệ Độc Bản",
+    "subtitle": "Sự giao thoa giữa hiệu suất thể thao và khoa học kỹ thuật.",
+    "items": [
+      { "name": "Thiết Bị Thông Minh", "desc": "Hệ thống máy tập Matrix tích hợp AI theo dõi cường độ và nhịp tim thời gian thực." },
+      { "name": "Ánh Sáng Sinh Học", "desc": "Hệ thống Bio-Lighting tối ưu hormone và sự tập trung trong suốt buổi tập." },
+      { "name": "Xông Hơi Hồng Ngoại", "desc": "Phòng sauna hồng ngoại bước sóng xa giúp phục hồi cơ bắp và thải độc sâu." }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "Hiệu suất trung bình", "value": "98%" },
+      { "label": "Giờ hoạt động", "value": "24/7" },
+      { "label": "Hội viên tin tưởng", "value": "3.000+" }
+    ]
+  },
+  "membership": {
+    "title": "Lựa Chọn Gói Tập",
+    "subtitle": "Đầu tư vào bản thân là khoản đầu tư sinh lời cao nhất — chọn lộ trình phù hợp với mục tiêu bứt phá của bạn.",
+    "popularBadge": "Phổ Biến Nhất",
+    "plans": [
+      {
+        "name": "Cơ Bản",
+        "price": "800.000đ",
+        "period": "/tháng",
+        "features": ["Tập luyện không giới hạn", "Đầy đủ tiện ích tiêu chuẩn"],
+        "popular": false,
+        "cta": "Chọn Gói"
+      },
+      {
+        "name": "Tiêu Chuẩn",
+        "price": "2.100.000đ",
+        "period": "/3 tháng",
+        "features": ["Tập luyện không giới hạn", "Hệ thống AI phân tích sinh trắc học", "3 buổi PT hướng dẫn", "Xông hơi hồng ngoại"],
+        "popular": true,
+        "cta": "Mua Ngay"
+      },
+      {
+        "name": "Vô Hạn",
+        "price": "7.200.000đ",
+        "period": "/năm",
+        "features": ["Tất cả đặc quyền Tiêu Chuẩn", "Tủ đồ cá nhân VIP", "Voucher Nutrition Bar 1 triệu", "Khám sức khỏe định kỳ"],
+        "popular": false,
+        "cta": "Chọn Gói"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Đánh Giá Từ Hội Viên",
+    "subtitle": "Những câu chuyện thành công thực tế từ cộng đồng Crimson Peak.",
+    "items": [
+      { "name": "Minh Trần", "role": "Hội viên Platinum", "quote": "Hệ thống AI thực sự thay đổi cách tôi tập luyện. Không còn lo lắng về sai tư thế khi tập Squat nặng nữa." },
+      { "name": "Linh Nguyễn", "role": "Hội viên Vô Hạn", "quote": "Không gian tập luyện cực kỳ hiện đại và riêng tư. Phòng xông hơi hồng ngoại là nơi tôi yêu thích nhất sau mỗi buổi tập." },
+      { "name": "Hoàng Phan", "role": "Hội viên Tiêu Chuẩn", "quote": "Dịch vụ chuyên nghiệp, PT rất có tâm và am hiểu về khoa học thể thao. Rất đáng để đầu tư cho sức khỏe." }
+    ]
+  },
+  "contact": {
+    "title": "Vị Trí & Liên Hệ",
+    "phone": "1900 8888",
+    "phoneLabel": "Hotline",
+    "address": "Tầng 45, Bitexco Financial Tower, Quận 1, TP. Hồ Chí Minh",
+    "addressLabel": "Địa chỉ",
+    "email": "contact@crimsonpeak.vn",
+    "emailLabel": "Email",
+    "mapUrl": "",
+    "ctaText": "Đặt Lịch Tham Quan"
+  },
+  "footer": { "copy": "© 2026 Crimson Peak Fitness. Được tạo bởi vngoweb." }
+}

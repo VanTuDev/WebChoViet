@@ -244,7 +244,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
                   <span className="material-symbols-outlined text-primary p-3 bg-primary-container/10 rounded-full">call</span>
                   <div>
                     <p className="text-sm font-medium text-[#191c1e]">{t.contact.phoneLabel}</p>
-                    <p data-field="contact.phone" className="text-base leading-[1.6] text-[#424752]">{t.contact.phone}</p>
+                    <a data-field="contact.phone" data-track="call" href={`tel:${t.contact.phone.replace(/\s+/g, '')}`} className="text-base leading-[1.6] text-[#424752] hover:text-primary transition-colors cursor-pointer">{t.contact.phone}</a>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">

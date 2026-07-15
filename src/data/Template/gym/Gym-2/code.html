@@ -1,0 +1,522 @@
+<!DOCTYPE html><html lang="vi" class="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "primary": "#ffb3b4",
+                        "on-primary-container": "#ffdada",
+                        "on-primary": "#680016",
+                        "surface-bright": "#393939",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#ffb3b4",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#c6c6c7",
+                        "outline": "#aa8989",
+                        "on-tertiary-container": "#e5e3e2",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#920023",
+                        "error-container": "#93000a",
+                        "secondary-container": "#454747",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#ffb3b4",
+                        "outline-variant": "#5b4040",
+                        "on-surface-variant": "#e3bebd",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-primary-fixed": "#40000a",
+                        "inverse-on-surface": "#313030",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#353534",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-primary": "#ba1434",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "primary-container": "#c41e3a",
+                        "primary-fixed": "#ffdad9",
+                        "on-tertiary": "#303030",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary": "#c8c6c5",
+                        "tertiary-container": "#666565",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Lexend"],
+                        "headline-lg-mobile": ["Lexend"],
+                        "headline-xl": ["Lexend"],
+                        "label-sm": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "label-bold": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    }catch(_e){}</script></head><body class="selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(196,30,58,0.2)]">
+        <div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="font-headline-md text-headline-md font-black text-primary tracking-tighter">AURA</div>
+            
+            <div class="hidden md:flex gap-stack-lg items-center">
+                <a href="#training" class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors">Training</a>
+                <a href="#features" class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors">Recovery</a>
+                <a href="#nutrition" class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors">Nutrition</a>
+                <a href="#pricing" class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors">Pricing</a>
+            </div>
+
+            <div class="flex items-center gap-stack-md">
+                <button class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors active:translate-y-0.5 duration-200">Login</button>
+                <button class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-2 rounded-full crimson-glow hover:scale-105 hover:shadow-[0_0_15px_rgba(196,30,58,0.5)] transition-all active:translate-y-0.5">Join Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqmrG8HaILbDihNTRwm2p9YESECbv8iPcxDISdW4Ap2OnPP63HUqCI8JdaKcfj86M2RE86JniMGEVr9DoBfNoypzETgTX7w9S_ThFPlZkUZAZMgacGT2hwChusgWEZVYofG5ZIu0GlM-TpipC1Hl3A9DWTvEOcqtlZx1VeWpyO4OOBA-EGH8UVQGMNYR_6ntFgYZBxI_EDCGIK1H-3RyNX2fmyM69dMaQTlI3ZgTf7ezEsf98PwaxI" class="w-full h-full object-cover opacity-60" alt="Hero background">
+        </div>
+
+        <div class="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="max-w-3xl space-y-stack-lg">
+                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary font-label-bold text-label-sm uppercase tracking-widest animate-pulse-red">
+                    <span class="material-symbols-outlined text-[14px]">bolt</span>
+                    Phòng Tập Công Nghệ 3.0
+                </div>
+                <h1 class="font-headline-xl text-[56px] md:text-[84px] leading-tight text-white font-black tracking-tighter uppercase neon-text-glow">
+                    Nâng Tầm Giới Hạn, <br>
+                    <span class="text-primary-container">Bứt Phá Sức Mạnh</span>
+                </h1>
+                <p class="font-body-lg text-on-surface-variant max-w-xl">Trải nghiệm hệ sinh thái fitness tích hợp công nghệ AI và mô phỏng 3D hiện đại nhất Việt Nam. Nơi mỗi giọt mồ hôi là một bước tiến tới đỉnh cao.</p>
+                <div class="flex flex-wrap gap-stack-md pt-4">
+                    <button class="bg-primary-container text-on-primary-container font-headline-md px-10 py-5 rounded-lg crimson-glow three-d-lift hover:brightness-110 transition-all flex items-center gap-3">
+                        Gia Nhập Ngay
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                    <button class="glass-card text-white font-headline-md px-10 py-5 rounded-lg border border-white/20 hover:bg-white/10 transition-all">
+                        Khám Phá Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+            <span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- Tech Features Bento Grid -->
+    <section id="features" class="py-24 px-margin-desktop max-w-container-max mx-auto">
+        <div class="mb-stack-lg text-center space-y-stack-sm">
+            <h2 class="font-headline-lg text-primary uppercase tracking-tighter">Công Nghệ Độc Bản</h2>
+            <p class="text-on-surface-variant font-body-md">Sự giao thoa giữa hiệu suất thể thao và khoa học kỹ thuật.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Feature 1 -->
+            <div class="glass-card p-8 rounded-2xl flex flex-col justify-between metallic-edge group">
+                <div class="w-16 h-16 rounded-xl bg-primary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c41e3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-headline-md text-white mb-2 uppercase">Thiết bị thông minh</h3>
+                    <p class="text-on-surface-variant font-body-md">Hệ thống máy tập Matrix tích hợp AI theo dõi cường độ và nhịp tim thời gian thực.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2: High Image reference -->
+            <div class="md:col-span-1 rounded-2xl overflow-hidden relative group crimson-glow">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2fNm6cOTj763LCSpsmIbvKVkCVScKptieDO18l5AZSpwglLltf9cnWgWTZ1D04LlOyeb0-h3npvFHGBRnr1zeqWMkKD_8ecdNvnSrdsoYHCiC1rR0FWPJeKwii7t0bW-MbX7_WMrh1LF9-J7yiJjXVR8CXACkvL0fmMz7n3KOoc4CBLT-me80nbdVmrq4E4zRZaKcpfR307f-v9CgU2bJZxX69P5PTwOXp84jBEfjdfqMxgG0sGl4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tech detail">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-8 flex flex-col justify-end">
+                    <h3 class="font-headline-md text-primary uppercase">Ánh sáng sinh học</h3>
+                    <p class="text-on-surface-variant font-body-md">Hệ thống Bio-Lighting tối ưu hormone và sự tập trung trong buổi tập.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="glass-card p-8 rounded-2xl flex flex-col justify-between metallic-edge group">
+                <div class="w-16 h-16 rounded-xl bg-primary-container/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c41e3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-headline-md text-white mb-2 uppercase">Xông hơi hồng ngoại</h3>
+                    <p class="text-on-surface-variant font-body-md">Phòng Sauna hồng ngoại bước sóng xa giúp phục hồi cơ bắp và thải độc sâu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section: 3D Character -->
+    <section id="training" class="py-24 relative overflow-hidden bg-surface-container-lowest">
+        <div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-stack-lg">
+            <div class="relative scroll-reveal">
+                <div class="absolute -top-10 -left-10 w-64 h-64 bg-primary-container/20 blur-[100px] rounded-full"></div>
+                <div class="relative z-10 rounded-3xl overflow-hidden border-2 border-white/10 crimson-glow shadow-2xl">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCELulkzXNJMtcemzAOoVPdIew94zc5Dazu_LqRP8TKja7b6Ajfy8YENIM-Pb4CWRYw_wPelvsegN4IEPM38sWKJxkfiMLO4O79NSPZV3oq1RT__oGeMnREbIZIRxcz4ryQ3C5Mr-mRHJxtIDg0MrcIsNDSKDq7uxr5TWpPB1clJcR81RK_QZ1eqFHVAukz09XK5YA9lfqLnxibpY-bIEil-WEAcQmr6gR7gtoKk2W70HajQvtXU3HL" class="w-full h-full object-cover" alt="3D Squat character">
+                </div>
+                <!-- 3D UI Overlays -->
+                <div class="absolute top-1/4 -right-12 glass-card p-4 rounded-xl metallic-edge animate-bounce duration-[3000ms]">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+                        <span class="font-label-bold text-label-sm text-white">HIỆU SUẤT: 98%</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-1/4 -left-12 glass-card p-4 rounded-xl metallic-edge animate-pulse">
+                    <span class="font-label-bold text-label-sm text-primary">FORM CHUẨN: 10/10</span>
+                </div>
+            </div>
+
+            <div class="space-y-stack-md scroll-reveal">
+                <h2 class="font-headline-xl text-white uppercase leading-none tracking-tighter">Chương Trình <br><span class="text-primary">Tập Luyện 3D</span></h2>
+                <div class="h-1 w-24 bg-primary-container"></div>
+                <p class="font-body-lg text-on-surface-variant">Hệ thống AURA-SENSE sử dụng cảm biến chiều sâu để phân tích kỹ thuật Squat, Deadlift và Press của bạn theo thời gian thực. Đảm bảo an toàn tuyệt đối và tối ưu hóa sự phát triển của sợi cơ.</p>
+                <ul class="space-y-4 pt-4">
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-bold text-white uppercase">Phân tích sinh học AI</h4>
+                            <p class="text-on-surface-variant text-label-sm">Đo lường góc độ khớp và áp lực cột sống.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-bold text-white uppercase">Huấn luyện viên ảo 24/7</h4>
+                            <p class="text-on-surface-variant text-label-sm">Chỉ dẫn âm thanh trực tiếp điều chỉnh tư thế.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-margin-desktop max-w-container-max mx-auto">
+        <div class="mb-16 text-center">
+            <h2 class="font-headline-xl text-white uppercase tracking-tighter mb-4">Lựa Chọn <span class="text-primary">Gói Tập</span></h2>
+            <p class="text-on-surface-variant font-body-md max-w-2xl mx-auto">Đầu tư vào bản thân là khoản đầu tư sinh lời cao nhất. Chọn lộ trình phù hợp với mục tiêu bứt phá của bạn.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Plan 1 -->
+            <div class="glass-card p-10 rounded-3xl flex flex-col items-center text-center metallic-edge relative">
+                <div class="text-on-surface-variant uppercase font-label-bold mb-4 tracking-widest">Cơ Bản</div>
+                <div class="font-headline-xl text-white mb-2">800.000đ</div>
+                <div class="text-label-sm text-on-surface-variant mb-8 uppercase">Gói 1 tháng</div>
+                <div class="w-full h-px bg-white/10 mb-8"></div>
+                <ul class="space-y-4 mb-10 text-left w-full">
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Tập luyện không giới hạn
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Đầy đủ tiện ích tiêu chuẩn
+                    </li>
+                    <li class="flex items-center gap-3 text-white/20 font-label-bold line-through">
+                        <span class="material-symbols-outlined text-[18px]">cancel</span> Huấn luyện viên 1-1
+                    </li>
+                </ul>
+                <button class="w-full py-4 rounded-xl border border-white/20 font-headline-md hover:bg-white/5 transition-all mt-auto">Chọn Gói</button>
+            </div>
+
+            <!-- Plan 2: Featured -->
+            <div class="glass-card p-10 rounded-3xl flex flex-col items-center text-center border-primary-container/50 bg-gradient-to-b from-primary-container/10 to-transparent crimson-glow relative scale-105 z-10">
+                <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-primary-container text-white px-6 py-1 rounded-full font-label-bold text-label-sm uppercase">Phổ Biến Nhất</div>
+                <div class="text-primary uppercase font-label-bold mb-4 tracking-widest">Tiêu Chuẩn</div>
+                <div class="font-headline-xl text-white mb-2">2.100.000đ</div>
+                <div class="text-label-sm text-on-surface-variant mb-8 uppercase">Gói 3 tháng</div>
+                <div class="w-full h-px bg-primary-container/20 mb-8"></div>
+                <ul class="space-y-4 mb-10 text-left w-full">
+                    <li class="flex items-center gap-3 text-white font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> Tập luyện không giới hạn
+                    </li>
+                    <li class="flex items-center gap-3 text-white font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> Hệ thống AURA-SENSE AI
+                    </li>
+                    <li class="flex items-center gap-3 text-white font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> 3 Buổi PT hướng dẫn
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Sauna hồng ngoại
+                    </li>
+                </ul>
+                <button class="w-full py-4 rounded-xl bg-primary-container text-white font-headline-md crimson-glow three-d-lift hover:brightness-110 transition-all mt-auto">Mua Ngay</button>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="glass-card p-10 rounded-3xl flex flex-col items-center text-center metallic-edge relative">
+                <div class="text-on-surface-variant uppercase font-label-bold mb-4 tracking-widest">Vô Hạn</div>
+                <div class="font-headline-xl text-white mb-2">7.200.000đ</div>
+                <div class="text-label-sm text-on-surface-variant mb-8 uppercase">Gói 1 năm</div>
+                <div class="w-full h-px bg-white/10 mb-8"></div>
+                <ul class="space-y-4 mb-10 text-left w-full">
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">star</span> Tất cả đặc quyền Tiêu Chuẩn
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">star</span> Tủ đồ cá nhân VIP
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">star</span> Voucher Nutrition Bar (1tr)
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant font-label-bold">
+                        <span class="material-symbols-outlined text-primary text-[18px]">star</span> Khám sức khỏe định kỳ
+                    </li>
+                </ul>
+                <button class="w-full py-4 rounded-xl border border-white/20 font-headline-md hover:bg-white/5 transition-all mt-auto">Chọn Gói</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Testimonials Section -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto" id="testimonials">
+    <div class="mb-16 text-center">
+        <h2 class="font-headline-xl text-white uppercase tracking-tighter mb-4">Đánh giá từ <span class="text-primary">hội viên</span></h2>
+        <p class="text-on-surface-variant font-body-md max-w-2xl mx-auto">Những câu chuyện thành công thực tế từ cộng đồng AURA.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="glass-card p-8 rounded-3xl metallic-edge relative flex flex-col gap-4">
+            <div class="flex gap-1 text-primary">
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-on-surface font-body-md italic">"Hệ thống AI thực sự thay đổi cách tôi tập luyện. Không còn lo lắng về sai tư thế khi tập Squat nặng nữa."</p>
+            <div class="flex items-center gap-4 mt-4">
+                <div class="w-12 h-12 rounded-full bg-primary-container/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+                    <span class="material-symbols-outlined text-primary">person</span>
+                </div>
+                <div>
+                    <div class="text-white font-label-bold">Minh Trần</div>
+                    <div class="text-label-sm text-on-surface-variant">Hội viên Platinum</div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="glass-card p-8 rounded-3xl metallic-edge relative flex flex-col gap-4 border-primary-container/30">
+            <div class="flex gap-1 text-primary">
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-on-surface font-body-md italic">"Không gian tập luyện cực kỳ hiện đại và riêng tư. Phòng Sauna hồng ngoại là nơi tôi yêu thích nhất sau mỗi buổi tập."</p>
+            <div class="flex items-center gap-4 mt-4">
+                <div class="w-12 h-12 rounded-full bg-primary-container/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+                    <span class="material-symbols-outlined text-primary">person</span>
+                </div>
+                <div>
+                    <div class="text-white font-label-bold">Linh Nguyễn</div>
+                    <div class="text-label-sm text-on-surface-variant">Hội viên Vô Hạn</div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="glass-card p-8 rounded-3xl metallic-edge relative flex flex-col gap-4">
+            <div class="flex gap-1 text-primary">
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-on-surface font-body-md italic">"Dịch vụ chuyên nghiệp, PT rất có tâm và am hiểu về khoa học thể thao. Rất đáng để đầu tư cho sức khỏe."</p>
+            <div class="flex items-center gap-4 mt-4">
+                <div class="w-12 h-12 rounded-full bg-primary-container/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+                    <span class="material-symbols-outlined text-primary">person</span>
+                </div>
+                <div>
+                    <div class="text-white font-label-bold">Hoàng Phan</div>
+                    <div class="text-label-sm text-on-surface-variant">Hội viên Tiêu Chuẩn</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Location Section -->
+<section class="py-24 bg-surface-container-low" id="contact">
+    <div class="px-margin-desktop max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+            <div class="space-y-stack-lg">
+                <h2 class="font-headline-xl text-white uppercase tracking-tighter">Vị trí &amp; <span class="text-primary">Liên hệ</span></h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <div>
+                            <h4 class="text-white font-label-bold uppercase">Địa chỉ</h4>
+                            <p class="text-on-surface-variant">Tầng 45, Bitexco Financial Tower, Quận 1, TP. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <div>
+                            <h4 class="text-white font-label-bold uppercase">Hotline</h4>
+                            <p class="text-on-surface-variant">1900 8888 - 028 7777 9999</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <div>
+                            <h4 class="text-white font-label-bold uppercase">Email</h4>
+                            <p class="text-on-surface-variant">contact@aurafitness.vn</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="bg-primary-container text-on-primary-container font-label-bold px-8 py-4 rounded-lg crimson-glow hover:scale-105 transition-all">Đặt Lịch Tham Quan</button>
+            </div>
+            <div class="relative h-96 md:h-[500px] rounded-3xl overflow-hidden border border-white/10 crimson-glow">
+                <div class="absolute inset-0 bg-surface-container-highest flex items-center justify-center">
+                    <!-- Placeholder for Google Maps -->
+                    <div class="text-center space-y-4">
+                        <span class="material-symbols-outlined text-6xl text-primary/40">map</span>
+                        <p class="text-on-surface-variant font-label-bold">BẢN ĐỒ GOOGLE MAPS</p>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent pointer-events-none"></div>
+            </div>
+        </div>
+    </div>
+</section><footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-12 px-margin-desktop">
+        <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-stack-lg">
+            <div class="space-y-stack-md max-w-sm">
+                <div class="font-headline-md text-headline-md font-black text-primary uppercase">AURA FITNESS</div>
+                <p class="text-on-surface-variant font-body-md">Kiến tạo tương lai của fitness thông qua công nghệ và sự kỷ luật. Sẵn sàng bứt phá mọi giới hạn.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container transition-all group">
+                        <span class="material-symbols-outlined text-on-surface group-hover:text-white">language</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container transition-all group">
+                        <span class="material-symbols-outlined text-on-surface group-hover:text-white">share</span>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container transition-all group">
+                        <span class="material-symbols-outlined text-on-surface group-hover:text-white">smart_display</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-stack-lg md:gap-gutter">
+                <div class="space-y-4">
+                    <h5 class="text-white font-label-bold uppercase tracking-widest">Điều hướng</h5>
+                    <ul class="space-y-2">
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Về chúng tôi</a></li>
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Dịch vụ</a></li>
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Huấn luyện viên</a></li>
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Lịch tập</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-white font-label-bold uppercase tracking-widest">Hỗ trợ</h5>
+                    <ul class="space-y-2">
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Chính sách bảo mật</a></li>
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Điều khoản dịch vụ</a></li>
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Liên hệ</a></li>
+                        <li class=""><a href="#" class="text-on-surface-variant hover:text-primary font-body-md transition-colors">Nhượng quyền</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-stack-md w-full md:w-auto">
+                <h5 class="text-white font-label-bold uppercase tracking-widest">Nhận bản tin</h5>
+                <div class="flex">
+                    <input type="email" placeholder="Email của bạn" class="bg-surface-container border-none text-white px-4 py-3 rounded-l-lg focus:ring-1 focus:ring-primary w-full md:w-64 outline-none">
+                    <button class="bg-primary-container px-4 py-3 rounded-r-lg hover:brightness-110 transition-all flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-label-sm text-white/30 uppercase tracking-[0.2em]">
+            <span class="">© 2024 AURA FITNESS. ENGINEERED FOR PERFORMANCE.</span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+                Hệ thống hoạt động bình thường
+            </span>
+        </div>
+    </footer>
+
+    <script class="">
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mouse move light effect for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove',</script></body></html>

@@ -251,7 +251,7 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
                   <span className="material-symbols-outlined">call</span>
                   <div>
                     <p className="font-bold text-xs font-semibold opacity-80 uppercase tracking-wide">{t.contact.phoneLabel}</p>
-                    <p data-field="contact.phone" className="text-base mt-1">{t.contact.phone}</p>
+                    <a data-field="contact.phone" data-track="call" href={`tel:${t.contact.phone.replace(/\s+/g, '')}`} className="text-base mt-1 hover:underline cursor-pointer inline-block">{t.contact.phone}</a>
                   </div>
                 </div>
                 <div className="flex gap-6">
@@ -315,7 +315,7 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
                 placeholder={t.footer.newsletterPlaceholder}
                 className="flex-1 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm placeholder:opacity-60 focus:outline-none focus:border-white/50"
               />
-              <button type="submit" className="px-6 py-2 bg-white text-primary rounded-full text-sm font-medium hover:bg-[#e0e3e5] transition-colors cursor-pointer">
+              <button type="submit" data-track="newsletter-submit" className="px-6 py-2 bg-white text-primary rounded-full text-sm font-medium hover:bg-[#e0e3e5] transition-colors cursor-pointer">
                 {t.footer.newsletterBtn}
               </button>
             </form>

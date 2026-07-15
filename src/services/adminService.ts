@@ -147,6 +147,7 @@ export function deleteSite(siteId: string): Promise<{ message: string }> {
 
 export interface AdminPaymentListItem {
   id: string;
+  userId: string;
   /** 'subscription' = mua gói Pro/Ultra, 'template' = mua 1 template cụ thể để xuất bản site */
   kind: 'subscription' | 'template';
   /** Subscription: planId (pro/ultra). Template: templateId. */
@@ -192,6 +193,45 @@ export function fetchAdminPayments(params: ListPaymentsParams = {}): Promise<Adm
   if (params.limit) q.set('limit', String(params.limit));
   const qs = q.toString();
   return apiFetch<AdminPaymentList>(`/admin/payments${qs ? `?${qs}` : ''}`);
+}
+
+// ── Cash flow — gộp theo người dùng ─────────────────────────────────────────────
+
+export interface AdminUserCashFlowItem {
+  userId: string;
+  userName: string;
+  userEmail: string;
+  userAvatar?: string;
+  plan: 'free' | 'pro' | 'ultra';
+  orderCount: number;
+  successCount: number;
+  successAmount: number;
+  pendingCount: number;
+  pendingAmount: number;
+  failedCount: number;
+  lastOrderAt: string;
+}
+
+export interface AdminUserCashFlowList {
+  items: AdminUserCashFlowItem[];
+  total: number;
+  page: number;
+  limit: number;
+}
+
+export interface ListPaymentsByUserParams {
+  search?: string;
+  page?: number;
+  limit?: number;
+}
+
+export function fetchAdminPaymentsByUser(params: ListPaymentsByUserParams = {}): Promise<AdminUserCashFlowList> {
+  const q = new URLSearchParams();
+  if (params.search) q.set('search', params.search);
+  if (params.page) q.set('page', String(params.page));
+  if (params.limit) q.set('limit', String(params.limit));
+  const qs = q.toString();
+  return apiFetch<AdminUserCashFlowList>(`/admin/payments/by-user${qs ? `?${qs}` : ''}`);
 }
 
 // ── Templates (giá theo từng gói — Free/Pro/Ultra) ─────────────────────────────

@@ -1,0 +1,78 @@
+{
+  "shopName": "Terra Strength",
+  "nav": { "programs": "Dịch Vụ", "membership": "Hội Viên", "contact": "Liên Hệ", "join": "Đăng Ký Ngay" },
+  "hero": {
+    "badge": "Kiến Tạo Bản Lĩnh",
+    "title": "Nâng Tầm Giới Hạn,",
+    "titleAccent": "Bứt Phá Sức Mạnh",
+    "desc": "Trải nghiệm không gian tập luyện đẳng cấp 5 sao, nơi công nghệ hiện đại giao thoa cùng tinh thần võ đạo, giúp bạn khai phá tiềm năng tối thượng.",
+    "ctaPrimary": "Đăng Ký Ngay",
+    "ctaSecondary": "Tham Quan Studio"
+  },
+  "programs": {
+    "title": "Dịch Vụ Đặc Quyền",
+    "subtitle": "Ba trụ cột tạo nên trải nghiệm tập luyện đẳng cấp tại Terra Strength.",
+    "items": [
+      { "name": "Phòng Gym Hiện Đại", "desc": "Thiết bị nhập khẩu từ Technogym với tích hợp AI theo dõi tiến độ tập luyện thời gian thực." },
+      { "name": "Huấn Luyện Cá Nhân", "desc": "Lộ trình được thiết kế riêng biệt dựa trên chỉ số sinh trắc học của từng cá nhân." },
+      { "name": "Yoga & Tĩnh Tâm", "desc": "Cân bằng thân - tâm - trí trong không gian thiền định yên tĩnh và tinh tế." }
+    ]
+  },
+  "tech": {
+    "title": "Công Nghệ Aura Fit",
+    "desc": "Chúng tôi sử dụng hệ thống quét 3D Body Scan để phân tích sâu cấu trúc cơ thể, từ đó tối ưu hóa từng nhịp thở và động tác của bạn.",
+    "stat": "98%"
+  },
+  "membership": {
+    "title": "Gói Hội Viên",
+    "subtitle": "Đầu tư cho sức khỏe là khoản đầu tư bền vững nhất.",
+    "popularBadge": "Phổ Biến Nhất",
+    "plans": [
+      {
+        "name": "Cơ Bản",
+        "price": "800.000đ",
+        "period": "/tháng",
+        "features": ["Tập luyện 24/7", "Khu vực Locker & Sauna"],
+        "popular": false,
+        "cta": "Chọn Gói"
+      },
+      {
+        "name": "Chuyên Nghiệp",
+        "price": "2.100.000đ",
+        "period": "/3 tháng",
+        "features": ["Full đặc quyền gói Cơ Bản", "4 buổi PT định hướng", "Kiểm tra Inbody mỗi tháng", "Tham gia tất cả lớp Group X"],
+        "popular": true,
+        "cta": "Đăng Ký Ngay"
+      },
+      {
+        "name": "Vô Cực",
+        "price": "7.200.000đ",
+        "period": "/năm",
+        "features": ["Tất cả đặc quyền Chuyên Nghiệp", "Tặng bộ Gear giới hạn", "Ưu đãi 20% dịch vụ Spa"],
+        "popular": false,
+        "cta": "Chọn Gói"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Học Viên Nói Gì Về Chúng Tôi",
+    "subtitle": "Hơn 5.000 học viên đã thay đổi cuộc sống cùng Terra Strength.",
+    "items": [
+      { "name": "Minh Huy", "role": "Hội viên Chuyên Nghiệp", "quote": "Không gian ở đây thực sự khác biệt, nó cho tôi cảm giác muốn chinh phục bản thân mỗi khi bước vào. Thiết bị cực kỳ cao cấp." },
+      { "name": "Tú Anh", "role": "Hội viên Cơ Bản", "quote": "Các lớp Yoga giúp tôi giải tỏa căng thẳng sau giờ làm việc rất tốt. Giáo viên cực kỳ tận tâm và chuyên nghiệp." },
+      { "name": "Nam Quân", "role": "Hội viên Vô Cực", "quote": "Gói PT ở đây rất đáng tiền. Tôi đã giảm được 5kg mỡ và tăng 2kg cơ chỉ sau 2 tháng tập luyện nghiêm túc cùng coach." }
+    ]
+  },
+  "contact": {
+    "title": "Kết Nối Với Chúng Tôi",
+    "phone": "1900 8888",
+    "phoneLabel": "Điện thoại",
+    "address": "Tầng 4, Bitexco Financial Tower, Q.1, TP. Hồ Chí Minh",
+    "addressLabel": "Địa chỉ",
+    "email": "contact@terrastrength.vn",
+    "emailLabel": "Email",
+    "mapUrl": "",
+    "ctaText": "Đặt Lịch Tham Quan"
+  },
+  "footer": { "copy": "© 2026 Terra Strength. Được tạo bởi vngoweb." }
+}

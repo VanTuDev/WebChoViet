@@ -1,0 +1,78 @@
+{
+  "shopName": "Terra Strength",
+  "nav": { "programs": "服务项目", "membership": "会员方案", "contact": "联系我们", "join": "立即加入" },
+  "hero": {
+    "badge": "锻造意志力",
+    "title": "突破极限，",
+    "titleAccent": "释放极致力量",
+    "desc": "体验五星级训练空间，现代科技与武道精神在此交融，助您释放最极致的潜能。",
+    "ctaPrimary": "立即加入",
+    "ctaSecondary": "预约参观工作室"
+  },
+  "programs": {
+    "title": "特色服务",
+    "subtitle": "成就 Terra Strength 高端训练体验的三大支柱。",
+    "items": [
+      { "name": "现代化健身区", "desc": "引进 Technogym 器械并整合 AI 系统，实时追踪您的训练进度。" },
+      { "name": "私人教练指导", "desc": "根据每位学员的生物数据量身定制专属训练方案。" },
+      { "name": "瑜伽与静心", "desc": "在宁静精致的冥想空间中平衡身、心、灵。" }
+    ]
+  },
+  "tech": {
+    "title": "Aura Fit 智能科技",
+    "desc": "我们采用 3D Body Scan 人体扫描系统深度分析您的身体结构，从而优化您的每一次呼吸与动作。",
+    "stat": "98%"
+  },
+  "membership": {
+    "title": "会员方案",
+    "subtitle": "为健康投资，是最持久稳固的投资。",
+    "popularBadge": "最受欢迎",
+    "plans": [
+      {
+        "name": "基础版",
+        "price": "800,000越盾",
+        "period": "/月",
+        "features": ["24/7 全天候训练", "储物柜与桑拿区"],
+        "popular": false,
+        "cta": "选择方案"
+      },
+      {
+        "name": "专业版",
+        "price": "2,100,000越盾",
+        "period": "/3个月",
+        "features": ["基础版全部权益", "4 次私教指导课程", "每月 InBody 体测", "畅享全部 Group X 团课"],
+        "popular": true,
+        "cta": "立即加入"
+      },
+      {
+        "name": "无限版",
+        "price": "7,200,000越盾",
+        "period": "/年",
+        "features": ["专业版全部权益", "限量版装备套组", "水疗服务 8 折优惠"],
+        "popular": false,
+        "cta": "选择方案"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "学员真实评价",
+    "subtitle": "已有超过 5,000 名学员在 Terra Strength 蜕变。",
+    "items": [
+      { "name": "明辉", "role": "专业版会员", "quote": "这里的空间真的与众不同，每次走进来都让我想要挑战自我，设备也非常高端。" },
+      { "name": "秀英", "role": "基础版会员", "quote": "瑜伽课程让我下班后能很好地释放压力，老师们非常用心且专业。" },
+      { "name": "南军", "role": "无限版会员", "quote": "私教课程物超所值，在教练的悉心指导下，我仅用两个月就减脂 5 公斤、增肌 2 公斤。" }
+    ]
+  },
+  "contact": {
+    "title": "与我们联系",
+    "phone": "1900 8888",
+    "phoneLabel": "电话",
+    "address": "胡志明市第一郡 Bitexco 金融塔 4 楼",
+    "addressLabel": "地址",
+    "email": "contact@terrastrength.vn",
+    "emailLabel": "电子邮箱",
+    "mapUrl": "",
+    "ctaText": "预约参观"
+  },
+  "footer": { "copy": "© 2026 Terra Strength。由 vngoweb 打造。" }
+}

@@ -1,0 +1,80 @@
+{
+  "shopName": "Crimson Peak",
+  "nav": { "programs": "테크놀로지", "membership": "멤버십", "contact": "문의하기", "join": "지금 가입하기" },
+  "hero": {
+    "badge": "3.0 테크 피트니스",
+    "title": "한계를 뛰어넘어,",
+    "titleAccent": "폭발적인 힘을 깨우다",
+    "desc": "AI 트래킹과 3D 모션 시뮬레이션이 결합된 베트남 최첨단 피트니스 생태계를 경험하세요. 흘리는 땀 한 방울이 정상으로 가는 한 걸음이 됩니다.",
+    "ctaPrimary": "지금 가입하기",
+    "ctaSecondary": "투어 신청하기"
+  },
+  "programs": {
+    "title": "시그니처 테크놀로지",
+    "subtitle": "운동 퍼포먼스와 공학 기술이 만나는 지점.",
+    "items": [
+      { "name": "스마트 트레이닝 장비", "desc": "AI가 내장된 Matrix 트레이닝 머신으로 강도와 심박수를 실시간으로 추적합니다." },
+      { "name": "바이오 리듬 조명", "desc": "운동 내내 호르몬과 집중력을 최적화하는 Bio-Lighting 시스템." },
+      { "name": "적외선 사우나", "desc": "원적외선 사우나룸이 근육 회복과 깊은 디톡스를 도와줍니다." }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "평균 운동 효율", "value": "98%" },
+      { "label": "운영 시간", "value": "24/7" },
+      { "label": "신뢰하는 회원 수", "value": "3,000+" }
+    ]
+  },
+  "membership": {
+    "title": "플랜 선택하기",
+    "subtitle": "자신에게 하는 투자가 가장 수익률 높은 투자입니다 — 목표에 맞는 플랜을 선택하세요.",
+    "popularBadge": "인기 1위",
+    "plans": [
+      {
+        "name": "베이직",
+        "price": "800,000동",
+        "period": "/월",
+        "features": ["무제한 운동 이용", "표준 편의시설 전체 이용"],
+        "popular": false,
+        "cta": "플랜 선택"
+      },
+      {
+        "name": "스탠다드",
+        "price": "2,100,000동",
+        "period": "/3개월",
+        "features": ["무제한 운동 이용", "AI 신체 데이터 분석 시스템", "PT 지도 3회", "적외선 사우나"],
+        "popular": true,
+        "cta": "지금 구매"
+      },
+      {
+        "name": "언리미티드",
+        "price": "7,200,000동",
+        "period": "/년",
+        "features": ["스탠다드 혜택 전체", "VIP 전용 개인 락커", "영양 바 100만동 상품권", "정기 건강검진"],
+        "popular": false,
+        "cta": "플랜 선택"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "회원 후기",
+    "subtitle": "Crimson Peak 커뮤니티의 진짜 변화 이야기.",
+    "items": [
+      { "name": "민 쩐", "role": "플래티넘 회원", "quote": "AI 시스템이 제 운동 방식을 완전히 바꿔놓았어요. 고중량 스쿼트에서도 더 이상 자세 걱정을 하지 않습니다." },
+      { "name": "린 응우옌", "role": "언리미티드 회원", "quote": "운동 공간이 정말 현대적이고 프라이빗해요. 매 운동 후 적외선 사우나가 제가 가장 좋아하는 시간입니다." },
+      { "name": "황 판", "role": "스탠다드 회원", "quote": "서비스가 전문적이고 PT 선생님들이 스포츠 과학을 잘 이해하며 진심으로 대해줍니다. 건강에 투자할 가치가 충분해요." }
+    ]
+  },
+  "contact": {
+    "title": "위치 및 문의",
+    "phone": "1900 8888",
+    "phoneLabel": "고객센터",
+    "address": "비텍스코 파이낸셜 타워 45층, 1군, 호치민시",
+    "addressLabel": "주소",
+    "email": "contact@crimsonpeak.vn",
+    "emailLabel": "이메일",
+    "mapUrl": "",
+    "ctaText": "투어 예약하기"
+  },
+  "footer": { "copy": "© 2026 Crimson Peak Fitness. vngoweb로 제작되었습니다." }
+}

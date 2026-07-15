@@ -272,10 +272,10 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                 </div>
                 <div className="flex gap-6">
                   <span className="material-symbols-outlined text-primary">call</span>
-                  <p data-field="location.phone" className="text-base">{t.location.phone}</p>
+                  <a data-field="location.phone" data-track="call" href={`tel:${t.location.phone.replace(/\s+/g, '')}`} className="text-base hover:text-primary transition-colors cursor-pointer">{t.location.phone}</a>
                 </div>
                 <div className="pt-6">
-                  <button className="bg-primary text-white px-10 py-3 rounded-full text-sm font-medium hover:shadow-lg transition-all w-full cursor-pointer">{t.location.directionsBtn}</button>
+                  <button data-track="directions" className="bg-primary text-white px-10 py-3 rounded-full text-sm font-medium hover:shadow-lg transition-all w-full cursor-pointer">{t.location.directionsBtn}</button>
                 </div>
               </div>
             </Reveal>

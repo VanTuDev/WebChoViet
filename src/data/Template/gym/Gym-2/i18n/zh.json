@@ -1,0 +1,80 @@
+{
+  "shopName": "Crimson Peak",
+  "nav": { "programs": "科技", "membership": "会员套餐", "contact": "联系我们", "join": "立即加入" },
+  "hero": {
+    "badge": "3.0 科技健身房",
+    "title": "突破极限，",
+    "titleAccent": "释放极致力量",
+    "desc": "体验越南最先进的健身生态系统，融合 AI 追踪与 3D 动作模拟技术。每一滴汗水都是迈向巅峰的一步。",
+    "ctaPrimary": "立即加入",
+    "ctaSecondary": "预约参观"
+  },
+  "programs": {
+    "title": "专属科技",
+    "subtitle": "运动表现与工程科学的完美交汇。",
+    "items": [
+      { "name": "智能训练设备", "desc": "Matrix 训练器械内置 AI 系统，实时追踪训练强度与心率。" },
+      { "name": "生物节律光照", "desc": "Bio-Lighting 光照系统在训练全程优化荷尔蒙分泌与专注力。" },
+      { "name": "远红外桑拿", "desc": "远红外线桑拿房加速肌肉恢复，深层排毒净化。" }
+    ]
+  },
+  "highlights": {
+    "items": [
+      { "label": "平均训练效能", "value": "98%" },
+      { "label": "营业时间", "value": "24/7" },
+      { "label": "信赖会员数", "value": "3,000+" }
+    ]
+  },
+  "membership": {
+    "title": "选择您的套餐",
+    "subtitle": "投资自己是回报率最高的投资——选择最适合您突破目标的方案。",
+    "popularBadge": "最受欢迎",
+    "plans": [
+      {
+        "name": "基础版",
+        "price": "800,000越盾",
+        "period": "/月",
+        "features": ["无限次训练", "标准设施全享"],
+        "popular": false,
+        "cta": "选择方案"
+      },
+      {
+        "name": "标准版",
+        "price": "2,100,000越盾",
+        "period": "/3个月",
+        "features": ["无限次训练", "AI 生物数据分析系统", "3 次私教指导课程", "远红外桑拿"],
+        "popular": true,
+        "cta": "立即购买"
+      },
+      {
+        "name": "无限版",
+        "price": "7,200,000越盾",
+        "period": "/年",
+        "features": ["标准版全部权益", "VIP 专属储物柜", "100万越盾营养吧代金券", "定期健康检查"],
+        "popular": false,
+        "cta": "选择方案"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "会员真实评价",
+    "subtitle": "来自 Crimson Peak 社区的真实蜕变故事。",
+    "items": [
+      { "name": "陈明", "role": "白金会员", "quote": "AI 系统真正改变了我的训练方式，重量深蹲时再也不用担心姿势不标准。" },
+      { "name": "阮玲", "role": "无限会员", "quote": "训练空间现代又私密，每次训练后我最喜欢的就是远红外桑拿房。" },
+      { "name": "潘煌", "role": "标准会员", "quote": "服务专业，私教非常用心且深谙运动科学，绝对值得为健康投资。" }
+    ]
+  },
+  "contact": {
+    "title": "位置与联系方式",
+    "phone": "1900 8888",
+    "phoneLabel": "热线电话",
+    "address": "胡志明市第一郡 Bitexco 金融塔 45 楼",
+    "addressLabel": "地址",
+    "email": "contact@crimsonpeak.vn",
+    "emailLabel": "电子邮箱",
+    "mapUrl": "",
+    "ctaText": "预约参观"
+  },
+  "footer": { "copy": "© 2026 Crimson Peak Fitness。由 vngoweb 打造。" }
+}

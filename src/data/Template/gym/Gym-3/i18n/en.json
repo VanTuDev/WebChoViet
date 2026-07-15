@@ -1,0 +1,78 @@
+{
+  "shopName": "Terra Strength",
+  "nav": { "programs": "Services", "membership": "Membership", "contact": "Contact", "join": "Join Now" },
+  "hero": {
+    "badge": "Forging Resilience",
+    "title": "Push Past Your Limits,",
+    "titleAccent": "Unleash Raw Power",
+    "desc": "Experience a five-star training space where modern technology meets the spirit of martial discipline, helping you unlock your ultimate potential.",
+    "ctaPrimary": "Join Now",
+    "ctaSecondary": "Tour the Studio"
+  },
+  "programs": {
+    "title": "Signature Services",
+    "subtitle": "Three pillars behind the premium training experience at Terra Strength.",
+    "items": [
+      { "name": "Modern Gym Floor", "desc": "Technogym equipment imported and integrated with AI to track your training progress in real time." },
+      { "name": "Personal Training", "desc": "A program tailored to each individual's biometric profile." },
+      { "name": "Yoga & Stillness", "desc": "Balance body, mind, and spirit in a quiet, refined meditative space." }
+    ]
+  },
+  "tech": {
+    "title": "Aura Fit Technology",
+    "desc": "We use a 3D Body Scan system to deeply analyze your body structure, optimizing every breath and movement you make.",
+    "stat": "98%"
+  },
+  "membership": {
+    "title": "Membership Plans",
+    "subtitle": "Investing in your health is the most sustainable investment of all.",
+    "popularBadge": "Most Popular",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "800,000đ",
+        "period": "/month",
+        "features": ["24/7 training access", "Locker & sauna area"],
+        "popular": false,
+        "cta": "Choose Plan"
+      },
+      {
+        "name": "Professional",
+        "price": "2,100,000đ",
+        "period": "/3 months",
+        "features": ["Everything in Basic", "4 guided PT sessions", "Monthly InBody assessment", "Access to all Group X classes"],
+        "popular": true,
+        "cta": "Join Now"
+      },
+      {
+        "name": "Infinity",
+        "price": "7,200,000đ",
+        "period": "/year",
+        "features": ["Everything in Professional", "Limited-edition gear set", "20% off spa services"],
+        "popular": false,
+        "cta": "Choose Plan"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Members Say",
+    "subtitle": "Over 5,000 members have transformed their lives with Terra Strength.",
+    "items": [
+      { "name": "Minh Huy", "role": "Professional Member", "quote": "This space feels genuinely different — it makes me want to push myself every time I walk in. The equipment is top-tier." },
+      { "name": "Tu Anh", "role": "Basic Member", "quote": "The yoga classes really help me unwind after work. The instructors are dedicated and truly professional." },
+      { "name": "Nam Quan", "role": "Infinity Member", "quote": "The PT package is well worth it. I lost 5kg of fat and gained 2kg of muscle after just two months of serious training with my coach." }
+    ]
+  },
+  "contact": {
+    "title": "Connect With Us",
+    "phone": "1900 8888",
+    "phoneLabel": "Phone",
+    "address": "4th Floor, Bitexco Financial Tower, District 1, Ho Chi Minh City",
+    "addressLabel": "Address",
+    "email": "contact@terrastrength.vn",
+    "emailLabel": "Email",
+    "mapUrl": "",
+    "ctaText": "Book a Tour"
+  },
+  "footer": { "copy": "© 2026 Terra Strength. Built with vngoweb." }
+}

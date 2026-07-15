@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Fitness - Sức mạnh trong sự tĩnh lặng</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#524436",
+                        "on-tertiary-fixed": "#201a17",
+                        "surface-container-lowest": "#0f0e0d",
+                        "secondary-fixed": "#f4dfcb",
+                        "error": "#ffb4ab",
+                        "tertiary": "#cfc4be",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e6e1df",
+                        "on-surface-variant": "#d4c4b7",
+                        "primary-fixed-dim": "#eebd8e",
+                        "tertiary-fixed-dim": "#cfc4be",
+                        "primary-fixed": "#ffdcbd",
+                        "surface-variant": "#363433",
+                        "tertiary-container": "#988f89",
+                        "surface-container": "#211f1e",
+                        "on-tertiary": "#362f2b",
+                        "inverse-surface": "#e6e1df",
+                        "on-primary-fixed": "#2c1600",
+                        "surface-container-highest": "#363433",
+                        "background": "#141312",
+                        "surface-container-low": "#1d1b1a",
+                        "tertiary-fixed": "#ece0da",
+                        "secondary-fixed-dim": "#d7c3b0",
+                        "on-primary-container": "#3f2302",
+                        "surface": "#141312",
+                        "surface-bright": "#3b3937",
+                        "secondary-container": "#544738",
+                        "secondary": "#d7c3b0",
+                        "on-error": "#690005",
+                        "inverse-primary": "#7c5730",
+                        "on-tertiary-fixed-variant": "#4d4541",
+                        "outline-variant": "#50453b",
+                        "error-container": "#93000a",
+                        "surface-dim": "#141312",
+                        "on-primary-fixed-variant": "#61401b",
+                        "outline": "#9c8e83",
+                        "surface-container-high": "#2b2a28",
+                        "on-background": "#e6e1df",
+                        "on-primary": "#472a06",
+                        "primary-container": "#b4885d",
+                        "on-tertiary-container": "#2f2824",
+                        "on-secondary-container": "#c8b5a3",
+                        "inverse-on-surface": "#32302f",
+                        "on-secondary-fixed": "#241a0e",
+                        "primary": "#eebd8e",
+                        "surface-tint": "#eebd8e",
+                        "on-secondary": "#3a2e21"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "20px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "metric-xl": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "metric-xl": ["40px", {"lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #141312;
+            color: #e6e1df;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        .tactile-raised {
+            box-shadow: -6px -6px 12px rgba(238, 189, 142, 0.05), 6px 6px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(166, 124, 82, 0.1);
+        }
+
+        .tactile-recessed {
+            box-shadow: inset -4px -4px 8px rgba(238, 189, 142, 0.02), inset 4px 4px 8px rgba(0, 0, 0, 0.5);
+            background: #0f0e0d;
+        }
+
+        .glass-card {
+            background: rgba(42, 36, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(238, 189, 142, 0.2);
+            border-left: 1px solid rgba(238, 189, 142, 0.1);
+        }
+
+        .bronze-gradient {
+            background: linear-gradient(135deg, #eebd8e 0%, #b4885d 100%);
+        }
+
+        .text-bronze-gradient {
+            background: linear-gradient(135deg, #ffdcbd 0%, #eebd8e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30">
+<!-- Top Navigation Bar -->
+<header class="bg-background/80 backdrop-blur-xl dark:bg-background/80 font-headline-lg text-headline-lg font-bold tracking-tight full-width top-0 z-50 sticky border-b border-primary/20 shadow-xl">
+<nav class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-black tracking-tighter text-primary uppercase">
+            AURA FITNESS
+        </div>
+<div class="hidden md:flex items-center gap-lg">
+<span class="text-on-surface-variant font-body-md text-body-md">Dịch vụ</span>
+<span class="text-on-surface-variant font-body-md text-body-md">Hội viên</span>
+<span class="text-on-surface-variant font-body-md text-body-md">Câu chuyện</span>
+<span class="text-on-surface-variant font-body-md text-body-md">Liên hệ</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary p-2" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of a luxury gym interior featuring Earth Bronze gym equipment, a warm amber lighting scheme, and high-end materials like dark wood and polished stone. The atmosphere is sophisticated and powerful, reflecting the conscious athlete aesthetic of Aura Fitness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7vUsVktKwVAXLAmm7hNTx2Nq9MY_zwYNkHHYhxWYPmplHDwCcdGoIaQHGlzKlBdPNPy-gApyrYO7qbGmy0oAGAenvSRicRNLRSv-az_CPQcsyzxhViqcAF5sJfgvSfTdbr2GmJ2heFsVBbSIyFeRIqhQ-dSmVkCIY-DaPbsCHJZ631UWPVxrfrS-yuNXw7BRKClEKuJB0Dax0Yy9U7nz-VkgrgS1d03mmpe6WE_gq1Z4eVpvx3A2"/>
+</div>
+<div class="relative z-20 px-gutter max-w-container-max mx-auto w-full">
+<div class="max-w-3xl">
+<span class="font-label-caps text-primary tracking-[0.3em] mb-4 block uppercase">Kiến tạo bản lĩnh</span>
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-tight mb-md text-on-background">
+                    Nâng Tầm Giới Hạn,<br/>
+<span class="text-bronze-gradient">Bứt Phá Sức Mạnh</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-xl leading-relaxed">
+                    Trải nghiệm không gian tập luyện đẳng cấp 5 sao, nơi công nghệ hiện đại giao thoa cùng tinh thần võ đạo, giúp bạn khai phá tiềm năng tối thượng.
+                </p>
+</div>
+</div>
+</section>
+<!-- Services Section (Bento/Glassmorphism) -->
+<section class="py-xl px-gutter max-w-container-max mx-auto" id="services">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Dịch vụ đặc quyền</h2>
+<div class="h-1 w-24 bronze-gradient mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[600px]">
+<!-- Card 1: Gym -->
+<div class="md:col-span-8 relative overflow-hidden rounded-xl tactile-raised glass-card">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="A focused close-up of premium bronze-plated dumbbells on a high-quality wooden rack in a dimly lit, professional gym. The lighting highlights the tactile texture of the metal and wood, evoking a sense of high-performance craftsmanship and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fNfsX_kaDSdb1Ydb3AbmZjZVMZyATeAsoF5S3NBxne33noJ5fDtKt5OcsjjpK4gwgnaeDYLRqERMeD3FlrV6slaxOg19edZvunBZFYzHTD0wCKsyV33rV0kr_jbVqhwYzcA3DRSB5B-dN-1PB82SBlhlnVW1xPWbtCD4OZUrqt2-8_7BvCum9sEamuZRXyO486IsvnskBFkb65ZGGOb6j1UKY8jDKsCmWHIJVmx7zlraxNp3CIig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Phòng Gym Hiện Đại</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Thiết bị nhập khẩu từ Technogym với tích hợp AI theo dõi tiến độ tập luyện thời gian thực.</p>
+</div>
+</div>
+<!-- Card 2: PT -->
+<div class="md:col-span-4 relative overflow-hidden rounded-xl tactile-raised glass-card">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50" data-alt="A professional fitness trainer in sleek black athletic wear providing expert guidance to a woman performing a deadlift. The setting is a clean, modern gym with warm wood flooring and high-end equipment, captured with professional depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYo8vWUtFAFy2vmt0-6UPO00anFvVUOU7ke6jaFxs9f9fMcTkZzvK84AbW1Nc-DD2EtOXGof459Pj7iJmuITwqoGCiTgtYhw70cepK0by24zuk3b1QgDEYRTlhrDDGNcIdoB83ce5LfpfJ60naHTp8xMNctvJcLyQnUCdSn54fehPoOD3rZ8RzEUPzfvjHEX1J8VAs_ENHxZT3_DUFPl6AUxCKXC-Dvr7lJnfNm8Up1TeWf1Ec_4bD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Huấn Luyện Cá Nhân</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Lộ trình được thiết kế riêng biệt dựa trên chỉ số sinh trắc học của từng cá nhân.</p>
+</div>
+</div>
+<!-- Card 3: Yoga -->
+<div class="md:col-span-4 relative overflow-hidden rounded-xl tactile-raised glass-card h-[300px] md:h-auto">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50" data-alt="A serene yoga studio with large windows overlooking a lush forest. People are in a warrior pose on high-quality mats. The room is filled with warm, natural light and features earth-toned decor, creating a peaceful, meditative atmosphere for 'Yoga and Stillness'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTvB2GbgG_X4XsLjT7IJ1sxpvWG4Bl8-WGvoeYFmA5Vucknx-Z5kJZM0t0KWgV5AqC0DFCCLcvezjrnR_qde9KQukaLvKAMaD_LurzhCFT2GRV9WOitzPshUrjWtE4ni8znuQ0PKxM55a5rpPGtGcjk0HS18b1FnfgRqO3hNkrCP1ZDpxrZGxp3qI7fkSEqBYIKw-MKAzZNPPJmFeJLF-Jab3TVL_PfM7iHcKuLpebOw7Qx9saqyBK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Yoga &amp; Tĩnh Tâm</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cân bằng thân-tâm-trí trong không gian thiền định yên tĩnh và tinh tế.</p>
+</div>
+</div>
+<!-- Bento Bonus Card -->
+<div class="md:col-span-8 bg-surface-container-high rounded-xl p-lg flex flex-col justify-center border border-outline-variant tactile-recessed">
+<div class="flex flex-col md:flex-row items-center gap-lg">
+<div class="flex-1">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-sm">Công nghệ Aura Fit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Chúng tôi sử dụng hệ thống quét 3D Body Scan để phân tích sâu cấu trúc cơ thể, từ đó tối ưu hóa từng nhịp thở và động tác của bạn.
+                        </p>
+</div>
+<div class="relative w-32 h-32 flex items-center justify-center">
+<div class="absolute inset-0 border-4 border-primary/20 rounded-full"></div>
+<div class="absolute inset-0 border-4 border-primary border-t-transparent rounded-full"></div>
+<span class="font-metric-xl text-metric-xl text-primary">98%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-xl bg-surface-container-lowest" id="pricing">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Gói Hội Viên</h2>
+<p class="text-on-surface-variant font-body-md">Đầu tư cho sức khỏe là khoản đầu tư bền vững nhất.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Tier 1 -->
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant flex flex-col h-full">
+<span class="font-label-caps text-on-surface-variant mb-md">CƠ BẢN</span>
+<div class="mb-lg">
+<span class="font-display-lg text-display-lg text-on-surface">800.000đ</span>
+<span class="text-on-surface-variant">/tháng</span>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Tập luyện 24/7
+                        </li>
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Khu vực Locker &amp; Sauna
+                        </li>
+</ul>
+</div>
+<!-- Tier 2 (Popular) -->
+<div class="bg-surface-container-highest rounded-xl p-lg border-2 border-primary relative shadow-2xl flex flex-col h-full">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bronze-gradient px-md py-1 rounded-full text-[10px] font-bold text-on-primary tracking-widest">PHỔ BIẾN NHẤT</div>
+<span class="font-label-caps text-primary mb-md">CHUYÊN NGHIỆP</span>
+<div class="mb-lg">
+<span class="font-display-lg text-display-lg text-on-surface">2.100.000đ</span>
+<span class="text-on-surface-variant">/3 tháng</span>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Full đặc quyền gói Cơ bản
+                        </li>
+<li class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 4 buổi PT định hướng
+                        </li>
+<li class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Kiểm tra Inbody mỗi tháng
+                        </li>
+<li class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Tham gia tất cả lớp Group X
+                        </li>
+</ul>
+</div>
+<!-- Tier 3 -->
+<div class="bg-surface-container rounded-xl p-lg border border-outline-variant flex flex-col h-full">
+<span class="font-label-caps text-on-surface-variant mb-md">VÔ CỰC</span>
+<div class="mb-lg">
+<span class="font-display-lg text-display-lg text-on-surface">7.200.000đ</span>
+<span class="text-on-surface-variant">/năm</span>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Tất cả đặc quyền Professional
+                        </li>
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Tặng bộ Gear Aura Limited
+                        </li>
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Ưu đãi 20% dịch vụ Spa
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-xl px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Học viên nói gì về Aura</h2>
+<p class="text-on-surface-variant font-body-md">Hơn 5,000 học viên đã thay đổi cuộc sống cùng chúng tôi.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-low p-md rounded-xl tactile-recessed border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MH</div>
+<div>
+<h4 class="font-headline-lg text-[18px] text-on-surface">Minh Huy</h4>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic">"Không gian ở đây thực sự khác biệt, nó cho tôi cảm giác muốn chinh phục bản thân mỗi khi bước vào. Thiết bị cực kỳ cao cấp."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-low p-md rounded-xl tactile-recessed border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">TA</div>
+<div>
+<h4 class="font-headline-lg text-[18px] text-on-surface">Tú Anh</h4>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic">"Các lớp Yoga tại Aura giúp tôi giải tỏa căng thẳng sau giờ làm việc rất tốt. Giáo viên cực kỳ tận tâm và chuyên nghiệp."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-low p-md rounded-xl tactile-recessed border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">NQ</div>
+<div>
+<h4 class="font-headline-lg text-[18px] text-on-surface">Nam Quân</h4>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic">"Gói PT ở đây rất đáng tiền. Tôi đã giảm được 5kg mỡ và tăng 2kg cơ chỉ sau 2 tháng tập luyện nghiêm túc cùng coach."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Contact -->
+<section class="py-xl bg-surface-container-low" id="location">
+<div class="px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-md">Kết nối với chúng tôi</h2>
+<div class="space-y-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg" data-icon="location_on">location_on</span>
+<div>
+<h4 class="font-headline-lg text-[20px] text-on-surface">Địa chỉ</h4>
+<p class="text-on-surface-variant">Tầng 4, Bitexco Financial Tower, Q.1, TP. Hồ Chí Minh</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg" data-icon="call">call</span>
+<div>
+<h4 class="font-headline-lg text-[20px] text-on-surface">Điện thoại</h4>
+<p class="text-on-surface-variant">1900 8888 - (028) 3821 2233</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg" data-icon="mail">mail</span>
+<div>
+<h4 class="font-headline-lg text-[20px] text-on-surface">Email</h4>
+<p class="text-on-surface-variant">contact@aurafitness.vn</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-[500px] rounded-xl overflow-hidden shadow-2xl border border-outline-variant relative">
+<!-- Placeholder for Map -->
+<div class="absolute inset-0 bg-surface-container-highest flex items-center justify-center">
+<div class="text-center">
+<span class="material-symbols-outlined text-6xl text-primary/30 mb-md" data-icon="map">map</span>
+<p class="text-on-surface-variant">Map Data: Bitexco Financial Tower, Ho Chi Minh City</p>
+</div>
+</div>
+<!-- Real image map element -->
+<img class="w-full h-full object-cover" data-location="Bitexco Financial Tower, Ho Chi Minh City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHe-ytuzVljIJHABmn34ZM55fwwBivZNqysDgKAIoLVcpkrcTX-WVeUMc-VCaO7leIAqo7GpnyoSz-2Wn1D79ceK21HgsmLPrfju3zwIZzCuZ9tFwqlnCVftm42ka41ofdQa5d-MuJgTXzj4obG013tB2o5fIzqXMToM8gL5M6d7m1J-lKtFZbHzQRO1Q8qyMcYkGPTrCZkJPMMWg1mycrAW8y0i3TlH0MZhUNNpHo7XH5eKL0_ILV"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary font-body-md text-body-md full-width py-xl mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter gap-md max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-lg text-headline-lg font-bold text-primary mb-xs">AURA FITNESS</div>
+<p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left">© 2024 Aura Fitness. Sức mạnh trong sự tĩnh lặng.</p>
+</div>
+<div class="flex gap-lg">
+<span class="text-on-surface-variant opacity-80">Điều khoản</span>
+<span class="text-on-surface-variant opacity-80">Bảo mật</span>
+<span class="text-on-surface-variant opacity-80">Tuyển dụng</span>
+<span class="text-on-surface-variant opacity-80">Hợp tác</span>
+</div>
+<div class="flex gap-md">
+<span class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</span>
+<span class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</span>
+</div>
+</div>
+</footer>
+<script>
+    // Purely visual scroll effect remains
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('bg-background/95');
+            header.classList.remove('bg-background/80');
+        } else {
+            header.classList.add('bg-background/80');
+            header.classList.remove('bg-background/95');
+        }
+    });
+</script>
+</body></html>
