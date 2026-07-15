@@ -4,6 +4,7 @@ import { ROUTES } from '../../config/routes';
 import { TEMPLATES } from '../../data';
 import { COMPONENT_MAP } from '../../data/templates/registry';
 import { useTemplateAccess } from '../../hooks/useTemplateAccess';
+import { useAppContext } from '../../store/AppContext';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 
@@ -22,6 +23,7 @@ export default function TemplatePreviewPage() {
   const template = TEMPLATES.find(t => t.id === templateId);
   const Component = templateId ? COMPONENT_MAP[templateId] : null;
   const { getEffectiveAccess } = useTemplateAccess();
+  const { user } = useAppContext();
 
   if (!Component || !template) {
     return (
@@ -37,7 +39,7 @@ export default function TemplatePreviewPage() {
     );
   }
 
-  const access = getEffectiveAccess(template.id, template.price);
+  const access = getEffectiveAccess(template.id, template.price, user?.plan ?? 'free');
   const isFree = access.price === 0;
 
   return (

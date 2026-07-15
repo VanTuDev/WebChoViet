@@ -2,9 +2,12 @@ import { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
+import { Link } from 'react-router-dom';
+import { ShieldCheck, BadgePercent, XCircle, Sparkles, ArrowUpRight } from 'lucide-react';
 import PricingCard, { type PricingPlanDef } from './_components/PricingCard';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
+import { DOMAIN, BRAND_NAME } from '../../config/contact';
 import { setPostLoginRedirect } from '../../services/authService';
 import HreflangLinks from '../../i18n/HreflangLinks';
 import {
@@ -12,12 +15,13 @@ import {
   type MySubscription, type PaidPlanId, type BillingCycle,
 } from '../../services/billingService';
 
-// Giá niêm yết — phần KHÔNG dịch; nguồn sự thật amount ở BE src/billing/plan-pricing.ts,
-// sửa giá phải sửa cả 2 nơi. Nội dung text (name/desc/features) lấy từ i18n namespace pricing.
+// Giá niêm yết + hạn mức site — phần KHÔNG dịch; nguồn sự thật amount ở BE src/billing/plan-pricing.ts,
+// hạn mức khớp BE src/users/schemas/user.schema.ts (PLAN_SITE_LIMIT) — sửa phải sửa cả 2 nơi.
+// Nội dung text (name/desc/features) lấy từ i18n namespace pricing.
 const PLAN_STATIC = [
-  { id: 'free',  color: '#475569', price: null,                                       popular: false },
-  { id: 'pro',   color: '#ff6b2c', price: { monthly: 199_000, yearly: 1_990_000 },    popular: true },
-  { id: 'ultra', color: '#1e293b', price: { monthly: 499_000, yearly: 4_990_000 },    popular: false },
+  { id: 'free',  color: '#475569', price: null,                                    limits: { draft: 2, published: 2 },  popular: false },
+  { id: 'pro',   color: '#ff6b2c', price: { monthly: 199_000, yearly: 1_990_000 }, limits: { draft: 4, published: 4 },  popular: true },
+  { id: 'ultra', color: '#5b21b6', price: { monthly: 499_000, yearly: 4_990_000 }, limits: { draft: 10, published: 6 }, popular: false },
 ] as const;
 
 function buildPlanDefs(t: TFunction<'pricing'>): PricingPlanDef[] {
@@ -114,20 +118,55 @@ export default function PricingPage() {
     }
   };
 
+  // ── SEO+GEO: JSON-LD Product/Offer khớp đúng 3 gói hiển thị trên trang ─────
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: BRAND_NAME,
+    description: t('meta.description'),
+    brand: { '@type': 'Brand', name: BRAND_NAME },
+    offers: planDefs
+      .filter((p): p is PricingPlanDef & { price: NonNullable<PricingPlanDef['price']> } => !!p.price)
+      .map(p => ({
+        '@type': 'Offer',
+        name: p.name,
+        description: p.desc,
+        price: p.price.monthly,
+        priceCurrency: 'VND',
+        url: `https://${DOMAIN}${ROUTES.PRICING}`,
+        availability: 'https://schema.org/InStock',
+      })),
+  };
+
+  const trustBadges = [
+    { icon: ShieldCheck, label: t('trust.secure') },
+    { icon: BadgePercent, label: t('trust.noFees') },
+    { icon: XCircle, label: t('trust.cancelAnytime') },
+  ];
+
   return (
     <div className="py-10 px-6 xl:px-10 w-full space-y-8">
       <Helmet>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <HreflangLinks path={ROUTES.PRICING} />
-      <header className="text-center space-y-3">
+      <header className="text-center space-y-4">
         <h1 className="text-3xl font-display font-extrabold text-gray-900 leading-tight">
           {t('heading')}
         </h1>
         <p className="text-sm text-gray-500 max-w-2xl mx-auto">
           {t('subheading')}
         </p>
+        <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-1">
+          {trustBadges.map(({ icon: Icon, label }) => (
+            <li key={label} className="flex items-center gap-1.5 text-xs font-semibold text-gray-500">
+              <Icon className="h-3.5 w-3.5 text-emerald-500" />
+              {label}
+            </li>
+          ))}
+        </ul>
       </header>
 
       <div className="flex justify-center">
@@ -190,6 +229,30 @@ export default function PricingPage() {
           );
         })}
       </div>
+
+      <section
+        aria-labelledby="template-perk-heading"
+        className="max-w-4xl mx-auto w-full rounded-3xl bg-gradient-to-r from-fnb-cream to-white border border-outline-variant/50 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-8"
+      >
+        <div className="h-14 w-14 shrink-0 rounded-2xl bg-fnb-orange/10 flex items-center justify-center">
+          <Sparkles className="h-6 w-6 text-fnb-orange" />
+        </div>
+        <div className="flex-1 text-center sm:text-left">
+          <h2 id="template-perk-heading" className="text-base font-display font-bold text-gray-900">
+            {t('templatePerk.title')}
+          </h2>
+          <p className="text-xs text-gray-500 mt-1 leading-relaxed">
+            {t('templatePerk.desc')}
+          </p>
+        </div>
+        <Link
+          to={ROUTES.MARKETPLACE}
+          className="shrink-0 inline-flex items-center gap-1.5 bg-primary hover:bg-fnb-orange text-white text-xs font-bold px-5 py-2.5 rounded-full shadow transition-colors"
+        >
+          {t('templatePerk.cta')}
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </Link>
+      </section>
     </div>
   );
 }

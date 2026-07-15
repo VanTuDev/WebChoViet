@@ -1,12 +1,13 @@
 // Card hiển thị một template trong grid — UI-only, nhận data qua props.
 // Mini card: khung ảnh dọc 3/4 thấy phần lớn mẫu (hover cuộn toàn trang),
 // nút hành động hiện trong overlay khi hover; nhấn ảnh = mở xem trước.
-import { Star, Eye, Lock } from 'lucide-react';
+import { Star, Eye, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { Template } from '../../../data/templates/registry';
 import { CATEGORY_REGISTRY } from '../../../data/templates/registry';
 import { TEMPLATE_SCREEN_BY_ID } from '../../../utils/templateScreens';
 import { useTemplateAccess } from '../../../hooks/useTemplateAccess';
+import { useAppContext } from '../../../store/AppContext';
 
 const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
   CATEGORY_REGISTRY.map(c => [c.id, c.label]),
@@ -21,10 +22,10 @@ interface Props {
 
 export default function TemplateCard({ template: t, onUse }: Props) {
   const navigate = useNavigate();
+  const { user } = useAppContext();
   const { getEffectiveAccess } = useTemplateAccess();
-  const access = getEffectiveAccess(t.id, t.price);
+  const access = getEffectiveAccess(t.id, t.price, user?.plan ?? 'free');
   const isFree = access.price === 0;
-  const requiresPlan = access.minPlan !== 'free';
   // Ưu tiên screenshot full-page thật (hover cuộn xem toàn trang), fallback ảnh cover
   const screen = TEMPLATE_SCREEN_BY_ID[t.id];
   const goPreview = () => navigate(`/marketplace/preview/${t.id}`);
@@ -69,10 +70,10 @@ export default function TemplateCard({ template: t, onUse }: Props) {
           </span>
         )}
 
-        {requiresPlan && (
-          <span className="absolute right-1.5 top-1.5 flex items-center gap-0.5 text-[8px] font-extrabold tracking-wide text-white px-1.5 py-0.5 rounded-full shadow uppercase bg-slate-700">
-            <Lock className="h-2 w-2" />
-            {PLAN_LABEL_VI[access.minPlan]}
+        {access.upsellPlan && (
+          <span className="absolute right-1.5 top-1.5 flex items-center gap-0.5 text-[8px] font-extrabold tracking-wide text-white px-1.5 py-0.5 rounded-full shadow uppercase bg-gradient-to-r from-fnb-amber to-fnb-orange">
+            <Sparkles className="h-2 w-2" />
+            {access.upsellPrice === 0 ? `Miễn phí với ${PLAN_LABEL_VI[access.upsellPlan]}` : `Ưu đãi ${PLAN_LABEL_VI[access.upsellPlan]}`}
           </span>
         )}
 
@@ -100,8 +101,13 @@ export default function TemplateCard({ template: t, onUse }: Props) {
           <h3 className="text-[12px] font-bold text-gray-900 group-hover:text-primary transition-colors font-display truncate">
             {t.name}
           </h3>
-          <span className={`shrink-0 text-[10px] font-extrabold ${isFree ? 'text-fnb-green' : 'text-primary'}`}>
-            {isFree ? 'Miễn phí' : `${access.price.toLocaleString('vi-VN')}đ`}
+          <span className="shrink-0 flex items-baseline gap-1">
+            {access.isDiscounted && access.basePrice > 0 && (
+              <span className="text-[9px] text-gray-400 line-through">{access.basePrice.toLocaleString('vi-VN')}đ</span>
+            )}
+            <span className={`text-[10px] font-extrabold ${isFree ? 'text-fnb-green' : 'text-primary'}`}>
+              {isFree ? 'Miễn phí' : `${access.price.toLocaleString('vi-VN')}đ`}
+            </span>
           </span>
         </div>
         <div className="flex items-center gap-1 text-[10px] text-on-surface-variant font-medium">

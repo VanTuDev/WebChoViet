@@ -11,6 +11,15 @@
     "monthlyShort": "Monthly",
     "yearlyShort": "Yearly"
   },
+  "trust": {
+    "secure": "Secure PayOS checkout",
+    "noFees": "No hidden fees",
+    "cancelAnytime": "Cancel anytime"
+  },
+  "quota": {
+    "published": "{{n}} published",
+    "draft": "{{n}} drafts"
+  },
   "plans": {
     "free": {
       "name": "Starter (Free)",
@@ -27,7 +36,8 @@
       "name": "WebPro Business",
       "desc": "For shop and brand owners ready to accelerate their sales.",
       "features": [
-        "Unlimited websites",
+        "Up to 4 published websites + 4 drafts at once",
+        "Unlock discounted pricing — many templates become cheaper or free",
         "Custom domain support (.vn, .com, .net)",
         "Completely remove the vngoweb logo & watermark",
         "In-depth weekly scan analytics",
@@ -40,7 +50,9 @@
       "name": "Ultra Brand",
       "desc": "Our top-tier plan — built for store chains and growing brands.",
       "features": [
+        "Up to 6 published websites + 10 drafts at once",
         "Everything in WebPro",
+        "Best pricing tier — many premium templates unlocked for free",
         "Multi-branch staff permissions",
         "In-depth daily analytics reports",
         "Priority support within 2 hours",
@@ -64,5 +76,10 @@
     "reactivateSuccess": "Restored — your plan continues as normal.",
     "requestFailed": "The request could not be completed.",
     "checkoutFailed": "Could not create the payment order. Please try again."
+  },
+  "templatePerk": {
+    "title": "Upgrading also unlocks template discounts",
+    "desc": "Each template can have its own Pro/Ultra pricing — upgrading may unlock discounted or completely free access to premium templates in the Marketplace.",
+    "cta": "Browse the Marketplace"
   }
 }

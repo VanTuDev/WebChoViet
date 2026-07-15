@@ -11,6 +11,15 @@
     "monthlyShort": "Hàng tháng",
     "yearlyShort": "Hàng năm"
   },
+  "trust": {
+    "secure": "Thanh toán an toàn PayOS",
+    "noFees": "Không phí ẩn",
+    "cancelAnytime": "Hủy bất kỳ lúc nào"
+  },
+  "quota": {
+    "published": "{{n}} xuất bản",
+    "draft": "{{n}} bản nháp"
+  },
   "plans": {
     "free": {
       "name": "Khởi Nghiệp (Miễn phí)",
@@ -27,7 +36,8 @@
       "name": "Kinh Doanh WebPro",
       "desc": "Dành cho các chủ quán, chủ thương hiệu bứt tốc doanh số bán hàng.",
       "features": [
-        "Khởi tạo không giới hạn website",
+        "Tối đa 4 website đã xuất bản + 4 bản nháp cùng lúc",
+        "Mở khóa giá ưu đãi — nhiều mẫu template được giảm giá hoặc miễn phí",
         "Hỗ trợ gắn Tên Miền Riêng (.vn, .com, .net)",
         "Xóa bỏ hoàn toàn logo & watermark vngoweb",
         "Phân tích dữ liệu quét sâu theo tuần",
@@ -40,7 +50,9 @@
       "name": "Thương Hiệu Ultra",
       "desc": "Gói cao cấp nhất — dành cho chuỗi cửa hàng và thương hiệu đang mở rộng.",
       "features": [
+        "Tối đa 6 website đã xuất bản + 10 bản nháp cùng lúc",
         "Tất cả tính năng của gói WebPro",
+        "Ưu đãi giá tốt nhất — nhiều mẫu template cao cấp được mở miễn phí",
         "Phân quyền nhân viên đa Chi Nhánh",
         "Báo cáo thống kê chuyên sâu theo ngày",
         "Ưu tiên xử lý hỗ trợ trong 2 giờ",
@@ -64,5 +76,10 @@
     "reactivateSuccess": "Đã khôi phục — gói tiếp tục như bình thường.",
     "requestFailed": "Không thực hiện được yêu cầu.",
     "checkoutFailed": "Không tạo được đơn thanh toán. Vui lòng thử lại."
+  },
+  "templatePerk": {
+    "title": "Nâng gói còn được ưu đãi giá template",
+    "desc": "Mỗi mẫu template có thể có giá riêng cho từng gói — lên Pro hoặc Ultra có thể mở khóa giá giảm hoặc hoàn toàn miễn phí cho nhiều mẫu cao cấp trong Marketplace.",
+    "cta": "Khám phá Marketplace"
   }
 }

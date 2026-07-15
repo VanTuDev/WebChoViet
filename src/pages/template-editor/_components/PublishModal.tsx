@@ -1,27 +1,16 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Globe, CheckCircle2, Copy, ExternalLink, ArrowLeft, X, Loader2, Lock } from 'lucide-react';
+import { Globe, CheckCircle2, Copy, ExternalLink, ArrowLeft, X, Loader2 } from 'lucide-react';
 import { slugify } from '../../../services/siteConfigService';
 import { getPublicSiteUrl } from '../../../utils/tenant';
-import { ROUTES } from '../../../config/routes';
 import type { EffectiveTemplateAccess } from '../../../hooks/useTemplateAccess';
 
 type Step = 'name' | 'payment' | 'success';
 
-const PLAN_LABEL_VI: Record<string, string> = {
-  free: 'Khởi Nghiệp',
-  pro: 'Kinh Doanh WebPro',
-  ultra: 'Thương Hiệu Ultra',
-};
-
 interface Props {
   siteName: string;
-  siteSlug: string;
   templateName: string;
-  /** Điều kiện truy cập hiệu lực của template (override admin hoặc giá tĩnh registry) */
+  /** Điều kiện truy cập hiệu lực của template (override admin hoặc giá tĩnh registry), đã tính theo gói hiện tại của user */
   access: EffectiveTemplateAccess;
-  /** User hiện tại có đủ gói (minPlan) để dùng template này không */
-  hasPlan: boolean;
   /** Site đã published từ trước — nghĩa là đã qua cửa thanh toán rồi, sửa/xuất bản lại không cần trả tiền lần nữa */
   alreadyPublished: boolean;
   slugError: string;
@@ -33,7 +22,7 @@ interface Props {
 }
 
 export default function PublishModal({
-  siteName, siteSlug, templateName, access, hasPlan, alreadyPublished, slugError, onPublish, onCheckout, onClose,
+  siteName, templateName, access, alreadyPublished, slugError, onPublish, onCheckout, onClose,
 }: Props) {
   const [step, setStep] = useState<Step>('name');
   const [name, setName] = useState(siteName);
@@ -77,11 +66,9 @@ export default function PublishModal({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const primaryCta = !hasPlan
-    ? null // Nâng cấp gói — render riêng bên dưới
-    : skipPayment
-      ? { label: 'Xuất bản ngay', action: doPublish }
-      : { label: 'Tiếp theo →', action: () => setStep('payment') };
+  const primaryCta = skipPayment
+    ? { label: 'Xuất bản ngay', action: doPublish }
+    : { label: 'Tiếp theo →', action: () => setStep('payment') };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
@@ -140,54 +127,36 @@ export default function PublishModal({
                   <span className="text-gray-400">URL live</span>
                   <span className="font-mono text-primary-container truncate max-w-45">/{slugPreview}</span>
                 </div>
-                {!hasPlan && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-400">Yêu cầu gói</span>
-                    <span className="font-semibold text-amber-600">{PLAN_LABEL_VI[access.minPlan]} trở lên</span>
-                  </div>
-                )}
                 <div className="flex items-center justify-between pt-1.5 border-t border-gray-100">
                   <span className="text-gray-500 font-medium">Chi phí</span>
-                  {isFree
-                    ? <span className="font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Miễn phí</span>
-                    : <span className="font-extrabold text-primary">{access.price.toLocaleString('vi-VN')}đ</span>
-                  }
+                  <span className="flex items-baseline gap-1.5">
+                    {access.isDiscounted && access.basePrice > 0 && (
+                      <span className="text-[11px] text-gray-400 line-through">{access.basePrice.toLocaleString('vi-VN')}đ</span>
+                    )}
+                    {isFree
+                      ? <span className="font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Miễn phí</span>
+                      : <span className="font-extrabold text-primary">{access.price.toLocaleString('vi-VN')}đ</span>
+                    }
+                  </span>
                 </div>
+                {access.isDiscounted && (
+                  <p className="text-[10px] text-emerald-600 font-medium text-right">Đã áp dụng ưu đãi gói của bạn</p>
+                )}
               </div>
 
-              {!hasPlan ? (
-                <div className="space-y-2.5 pt-1">
-                  <div className="flex items-start gap-2 bg-amber-50 border border-amber-100 rounded-xl p-3 text-xs text-amber-700">
-                    <Lock className="w-4 h-4 shrink-0 mt-0.5" />
-                    <span>Mẫu này yêu cầu gói <strong>{PLAN_LABEL_VI[access.minPlan]}</strong> trở lên. Nâng cấp gói để tiếp tục.</span>
-                  </div>
-                  <div className="flex gap-2.5">
-                    <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
-                      Hủy
-                    </button>
-                    <Link
-                      to={ROUTES.PRICING}
-                      className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] transition-colors flex items-center justify-center gap-1.5"
-                    >
-                      Nâng cấp gói
-                    </Link>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex gap-2.5 pt-1">
-                  <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
-                    Hủy
-                  </button>
-                  <button
-                    onClick={primaryCta?.action}
-                    disabled={!name.trim() || !!slugError || publishing}
-                    className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
-                  >
-                    {publishing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
-                    {publishing ? 'Đang xuất bản...' : primaryCta?.label}
-                  </button>
-                </div>
-              )}
+              <div className="flex gap-2.5 pt-1">
+                <button onClick={onClose} className="flex-1 py-2.5 text-sm font-semibold text-gray-500 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
+                  Hủy
+                </button>
+                <button
+                  onClick={primaryCta.action}
+                  disabled={!name.trim() || !!slugError || publishing}
+                  className="flex-1 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
+                >
+                  {publishing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
+                  {publishing ? 'Đang xuất bản...' : primaryCta.label}
+                </button>
+              </div>
             </div>
           </>
         )}

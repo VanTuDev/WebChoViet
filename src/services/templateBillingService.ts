@@ -5,8 +5,12 @@ import { apiFetch } from './apiClient';
 export type UserPlan = 'free' | 'pro' | 'ultra';
 
 export interface TemplateAccessInfo {
-  minPlan: UserPlan;
+  /** Giá gốc — áp dụng cho gói Free (và Pro/Ultra nếu không có override riêng bên dưới). */
   price: number;
+  /** Giá riêng cho gói Pro — null = dùng `price`. 0 = miễn phí khi có gói Pro. */
+  proPrice: number | null;
+  /** Giá riêng cho gói Ultra — null = dùng `proPrice` rồi tới `price`. 0 = miễn phí khi có gói Ultra. */
+  ultraPrice: number | null;
 }
 
 export interface TemplateCheckoutResult {

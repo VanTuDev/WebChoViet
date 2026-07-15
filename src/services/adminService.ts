@@ -194,12 +194,13 @@ export function fetchAdminPayments(params: ListPaymentsParams = {}): Promise<Adm
   return apiFetch<AdminPaymentList>(`/admin/payments${qs ? `?${qs}` : ''}`);
 }
 
-// ── Templates (giá + gói tối thiểu) ───────────────────────────────────────────
+// ── Templates (giá theo từng gói — Free/Pro/Ultra) ─────────────────────────────
 
 export function updateTemplateAccess(
   templateId: string,
-  minPlan: 'free' | 'pro' | 'ultra',
   price: number,
-): Promise<{ minPlan: string; price: number }> {
-  return apiFetch(`/admin/templates/${templateId}`, { method: 'PATCH', data: { minPlan, price } });
+  proPrice: number | null,
+  ultraPrice: number | null,
+): Promise<{ price: number; proPrice: number | null; ultraPrice: number | null }> {
+  return apiFetch(`/admin/templates/${templateId}`, { method: 'PATCH', data: { price, proPrice, ultraPrice } });
 }

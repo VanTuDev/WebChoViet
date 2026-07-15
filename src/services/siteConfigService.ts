@@ -50,7 +50,7 @@ function toBackend(config: SiteConfig) {
     contact: config.contact,
     status: config.status,
     // Giá tĩnh từ registry — backend chỉ dùng làm fallback khi admin CHƯA set override riêng
-    // cho templateId này (xem BackEnd-WebChoViet/src/templates/templates.service.ts resolveAccess).
+    // cho templateId này (xem BackEnd-WebChoViet/src/templates/templates.service.ts resolveEffectivePrice).
     templatePrice: TEMPLATES.find(t => t.id === config.templateId)?.price ?? 0,
   };
 }

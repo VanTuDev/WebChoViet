@@ -1,27 +1,65 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Check, Loader2, LayoutTemplate } from 'lucide-react';
+import { Check, Loader2, LayoutTemplate, X } from 'lucide-react';
 import { TEMPLATES, CATEGORY_REGISTRY } from '../../../data/templates/registry';
-import { fetchTemplatePrices, type TemplateAccessInfo, type UserPlan } from '../../../services/templateBillingService';
+import { fetchTemplatePrices, type TemplateAccessInfo } from '../../../services/templateBillingService';
 import { updateTemplateAccess } from '../../../services/adminService';
 import { useFetchState } from '../../../hooks/useFetchState';
 import LoadingState from '../../../components/common/LoadingState';
 import ErrorBanner from '../../../components/common/ErrorBanner';
-
-const PLAN_OPTIONS: { value: UserPlan; label: string }[] = [
-  { value: 'free', label: 'Free' },
-  { value: 'pro', label: 'Pro' },
-  { value: 'ultra', label: 'Ultra' },
-];
 
 const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
   CATEGORY_REGISTRY.map(c => [c.id, c.label]),
 );
 
 interface RowDraft {
-  minPlan: UserPlan;
   price: number;
+  /** null = chưa override, dùng giá gốc (`price`) */
+  proPrice: number | null;
+  ultraPrice: number | null;
   saving: boolean;
   saved: boolean;
+}
+
+/** Ô nhập giá theo gói Pro/Ultra — trống = kế thừa giá gốc, có nút "Miễn phí" tắt nhanh + nút xóa override. */
+function OverridePriceInput({
+  value, onChange,
+}: {
+  value: number | null;
+  onChange: (next: number | null) => void;
+}) {
+  return (
+    <div className="flex items-center gap-1">
+      <input
+        type="number"
+        min={0}
+        step={1000}
+        value={value ?? ''}
+        placeholder="= giá gốc"
+        onChange={e => onChange(e.target.value === '' ? null : Math.max(0, Number(e.target.value) || 0))}
+        className="w-24 bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary-container placeholder:text-slate-600"
+      />
+      {value !== 0 && (
+        <button
+          type="button"
+          onClick={() => onChange(0)}
+          title="Đặt miễn phí cho gói này"
+          className="text-[10px] font-bold text-emerald-400 hover:text-emerald-300 cursor-pointer whitespace-nowrap"
+        >
+          Free
+        </button>
+      )}
+      {value !== null && (
+        <button
+          type="button"
+          onClick={() => onChange(null)}
+          title="Xóa override — quay lại dùng giá gốc"
+          className="text-slate-500 hover:text-slate-300 cursor-pointer"
+        >
+          <X className="h-3 w-3" />
+        </button>
+      )}
+    </div>
+  );
 }
 
 export default function AdminTemplatesPage() {
@@ -38,7 +76,13 @@ export default function AdminTemplatesPage() {
     const next: Record<string, RowDraft> = {};
     for (const t of TEMPLATES) {
       const ov: TemplateAccessInfo | undefined = overrides[t.id];
-      next[t.id] = { minPlan: ov?.minPlan ?? 'free', price: ov?.price ?? t.price, saving: false, saved: false };
+      next[t.id] = {
+        price: ov?.price ?? t.price,
+        proPrice: ov?.proPrice ?? null,
+        ultraPrice: ov?.ultraPrice ?? null,
+        saving: false,
+        saved: false,
+      };
     }
     setDrafts(next);
   }, [overrides]);
@@ -61,7 +105,7 @@ export default function AdminTemplatesPage() {
     if (!draft) return;
     updateDraft(id, { saving: true });
     try {
-      await updateTemplateAccess(id, draft.minPlan, draft.price);
+      await updateTemplateAccess(id, draft.price, draft.proPrice, draft.ultraPrice);
       setDrafts(prev => ({ ...prev, [id]: { ...prev[id], saving: false, saved: true } }));
       setTimeout(() => setDrafts(prev => (prev[id] ? { ...prev, [id]: { ...prev[id], saved: false } } : prev)), 2000);
     } catch {
@@ -74,7 +118,9 @@ export default function AdminTemplatesPage() {
       <div>
         <h1 className="text-xl font-bold text-white">Quản lý template</h1>
         <p className="text-sm text-slate-400 mt-0.5">
-          Đặt giá và gói tối thiểu (Free/Pro/Ultra) cho từng mẫu — áp dụng ngay cho Marketplace và luồng xuất bản.
+          Đặt giá gốc (gói Free) và giá riêng cho Pro/Ultra của từng mẫu — để trống ô Pro/Ultra
+          nghĩa là dùng giá gốc, đặt <span className="text-emerald-400 font-semibold">0đ</span> để
+          mở miễn phí mẫu đó cho gói tương ứng. Áp dụng ngay cho Marketplace và luồng xuất bản.
         </p>
       </div>
 
@@ -95,7 +141,7 @@ export default function AdminTemplatesPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-slate-800">
-                      {['Mẫu', 'Gói tối thiểu', 'Giá (VNĐ)', ''].map(h => (
+                      {['Mẫu', 'Giá gốc · Free (VNĐ)', 'Giá gói Pro', 'Giá gói Ultra', ''].map(h => (
                         <th key={h} className="text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-5 py-3 whitespace-nowrap">
                           {h}
                         </th>
@@ -110,17 +156,6 @@ export default function AdminTemplatesPage() {
                         <tr key={t.id} className="hover:bg-slate-800/40 transition-colors">
                           <td className="px-5 py-3 text-white font-medium whitespace-nowrap">{t.name}</td>
                           <td className="px-5 py-3">
-                            <select
-                              value={draft.minPlan}
-                              onChange={e => updateDraft(t.id, { minPlan: e.target.value as UserPlan })}
-                              className="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary-container cursor-pointer"
-                            >
-                              {PLAN_OPTIONS.map(opt => (
-                                <option key={opt.value} value={opt.value}>{opt.label}</option>
-                              ))}
-                            </select>
-                          </td>
-                          <td className="px-5 py-3">
                             <input
                               type="number"
                               min={0}
@@ -128,6 +163,18 @@ export default function AdminTemplatesPage() {
                               value={draft.price}
                               onChange={e => updateDraft(t.id, { price: Math.max(0, Number(e.target.value) || 0) })}
                               className="w-28 bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-primary-container"
+                            />
+                          </td>
+                          <td className="px-5 py-3">
+                            <OverridePriceInput
+                              value={draft.proPrice}
+                              onChange={v => updateDraft(t.id, { proPrice: v })}
+                            />
+                          </td>
+                          <td className="px-5 py-3">
+                            <OverridePriceInput
+                              value={draft.ultraPrice}
+                              onChange={v => updateDraft(t.id, { ultraPrice: v })}
                             />
                           </td>
                           <td className="px-5 py-3">

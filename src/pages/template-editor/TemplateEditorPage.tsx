@@ -27,8 +27,6 @@ import {
   TEMPLATE_IMAGE_KEYS,
 } from '../../data/templates/registry';
 
-const PLAN_RANK: Record<'free' | 'pro' | 'ultra', number> = { free: 0, pro: 1, ultra: 2 };
-
 // ── Utility: set any value at a dot-path in a nested object ──────────────
 
 function setAtPath(obj: Record<string, unknown>, path: string[], value: unknown): Record<string, unknown> {
@@ -88,8 +86,7 @@ export default function TemplateEditorPage() {
   const imageSlots = TEMPLATE_IMAGE_KEYS[templateId] ?? [];
 
   const templateStaticPrice = TEMPLATES.find(t => t.id === templateId)?.price ?? 0;
-  const templateAccess = getEffectiveAccess(templateId, templateStaticPrice);
-  const hasRequiredPlan = PLAN_RANK[user?.plan ?? 'free'] >= PLAN_RANK[templateAccess.minPlan];
+  const templateAccess = getEffectiveAccess(templateId, templateStaticPrice, user?.plan ?? 'free');
 
   // ── Load configuration asynchronously ──────────────────────────────────────
   useEffect(() => {
@@ -824,10 +821,8 @@ export default function TemplateEditorPage() {
       {showPublishModal && (
         <PublishModal
           siteName={site.name}
-          siteSlug={site.slug}
           templateName={TEMPLATE_NAME_MAP[templateId] ?? templateId}
           access={templateAccess}
-          hasPlan={hasRequiredPlan}
           alreadyPublished={site.status === 'published'}
           slugError={slugError}
           onPublish={handlePublish}
