@@ -78,7 +78,11 @@
   "space": {
     "title": "Không Gian Tĩnh Lặng",
     "subtitle": "Kiến trúc được thiết kế dựa trên triết lý Wabi-sabi, tôn trọng vẻ đẹp của sự đơn giản và tự nhiên.",
-    "tourBtn": "Khám phá tour ảo 360°"
+    "tourBtn": "Khám phá tour ảo 360°",
+    "lobbyAlt": "Sảnh chờ tối giản của Zenith",
+    "roomAlt": "Phòng trị liệu yên tĩnh",
+    "facialAlt": "Phòng chăm sóc da mặt",
+    "zenGardenAlt": "Khu vườn thiền Zen"
   },
   "testimonials": {
     "title": "Những Lời Chia Sẻ",

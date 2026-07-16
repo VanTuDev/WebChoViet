@@ -10,6 +10,7 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -19,7 +20,7 @@ export default function Gym1({ lang = 'vi' }: Props) {
   const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
-  const IMG = { hero: images.hero ?? 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&auto=format&fit=crop&q=70' };
+  const IMG = { hero: images.hero ?? imgHero };
 
   return (
     <div className="min-h-screen bg-[#0F0F0F] font-sans text-white">
@@ -37,7 +38,7 @@ export default function Gym1({ lang = 'vi' }: Props) {
 
       {/* Hero */}
       <section data-section="hero" className="relative overflow-hidden h-[550px] lg:h-[650px]">
-        <img src={IMG.hero} alt={t.shopName} className="w-full h-full object-cover opacity-40" />
+        <img src={IMG.hero} alt={`Không gian tập luyện hiện đại tại ${t.shopName}`} className="w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
         <div className="absolute inset-0 flex items-center px-8 lg:px-20">
           <div className="max-w-2xl space-y-5">

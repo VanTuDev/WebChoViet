@@ -10,6 +10,9 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
+import imgGallery0 from './images/gallery0.jpg';
+import imgGallery2 from './images/gallery2.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -41,10 +44,10 @@ export default function Wedding2({ lang = 'vi' }: Props) {
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
 
   const IMG = {
-    hero:      images.hero      ?? 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400&auto=format&fit=crop&q=75',
-    gallery_0: images.gallery_0 ?? 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&auto=format&fit=crop&q=70',
+    hero:      images.hero      ?? imgHero,
+    gallery_0: images.gallery_0 ?? imgGallery0,
     gallery_1: images.gallery_1 ?? 'https://images.unsplash.com/photo-1501967786-f47cf5c70756?w=600&auto=format&fit=crop&q=70',
-    gallery_2: images.gallery_2 ?? 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&auto=format&fit=crop&q=70',
+    gallery_2: images.gallery_2 ?? imgGallery2,
     gallery_3: images.gallery_3 ?? 'https://images.unsplash.com/photo-1524824267900-2b6acd5e8726?w=600&auto=format&fit=crop&q=70',
   };
 
@@ -70,7 +73,7 @@ export default function Wedding2({ lang = 'vi' }: Props) {
 
       {/* ── Hero — fullscreen ─────────────────────────────────────────────── */}
       <section data-section="hero" className="relative h-screen min-h-[600px]">
-        <img src={IMG.hero} alt="couple" className="w-full h-full object-cover" />
+        <img src={IMG.hero} alt={`${t.couple.bride} và ${t.couple.groom}`} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#1B3A6B]/58" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
@@ -140,6 +143,7 @@ export default function Wedding2({ lang = 'vi' }: Props) {
                 <img
                   src={url}
                   alt={t.gallery.items[i]?.caption ?? ''}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/55 transition-all duration-300 flex items-end p-4">

@@ -61,7 +61,9 @@
       { "title": "Tầm Nhìn Vô Cực", "desc": "Tất cả các phòng trị liệu đều hướng biển, mang lại cảm giác giải phóng hoàn toàn cho tâm trí." },
       { "title": "Thiết Kế Tối Giản", "desc": "Sử dụng vật liệu tự nhiên, đá cẩm thạch trắng và gỗ nhạt để tạo nên sự tĩnh lặng tuyệt đối." },
       { "title": "Âm Thanh Trị Liệu", "desc": "Sự kết hợp giữa tiếng sóng thật và âm nhạc tần số thấp giúp cơ thể nhanh chóng rơi vào trạng thái thư giãn sâu." }
-    ]
+    ],
+    "image1Alt": "Không gian trị liệu hướng biển tại Ocean Oasis",
+    "image2Alt": "Nội thất tối giản với đá cẩm thạch trắng và gỗ nhạt"
   },
   "contact": {
     "title": "Vị Trí Tĩnh Lặng",

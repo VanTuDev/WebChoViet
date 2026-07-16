@@ -76,7 +76,13 @@
   "gallery": {
     "label": "Views & Spaces",
     "title": "Every Angle, Every Mood",
-    "viewMore": "View more"
+    "viewMore": "View more",
+    "items": [
+      { "alt": "Exterior view of Serenity Villa" },
+      { "alt": "Cozy interior space of the villa" },
+      { "alt": "Unique architecture of Serenity Villa" },
+      { "alt": "Infinity pool glowing at night" }
+    ]
   },
   "testimonials": {
     "title": "Stories From Our Guests",

@@ -78,7 +78,11 @@
   "space": {
     "title": "A Tranquil Space",
     "subtitle": "Architecture designed around the philosophy of Wabi-sabi, honoring the beauty of simplicity and nature.",
-    "tourBtn": "Explore the 360° Virtual Tour"
+    "tourBtn": "Explore the 360° Virtual Tour",
+    "lobbyAlt": "Zenith's minimalist lobby",
+    "roomAlt": "A tranquil treatment room",
+    "facialAlt": "Facial care room",
+    "zenGardenAlt": "Zen garden courtyard"
   },
   "testimonials": {
     "title": "What Our Guests Say",

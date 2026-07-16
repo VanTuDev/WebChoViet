@@ -6,6 +6,15 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgCat0 from './images/cat0.jpg';
+import imgCat1 from './images/cat1.jpg';
+import imgCat2 from './images/cat2.jpg';
+import imgSignature from './images/signature.jpg';
+import imgChef0 from './images/chef0.jpg';
+import imgChef1 from './images/chef1.jpg';
+import imgChef2 from './images/chef2.jpg';
+import imgMap from './images/map.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -13,15 +22,15 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg:    'https://lh3.googleusercontent.com/aida-public/AB6AXuBeTeyoTSBoeRNZi9Z51asYa0n1aRiwNbWC7hbPfBS85JXAncu0W_nYIf-l79kWR8JU7xBO7dagoZo4N6sril7279DzmV8z3iLg6fBhx_SUzv5RsT_eL-7LPDpUMGfjK-j0V9rax2j-TqCsjEK7W8hPnwdcu42VzuVAa_EDdZf-I8cPGXw6FdhDbjjCGwXnQWSYed8ALI-LwmKI5rgW2TWwNVpDZt29_XznbMUuGJaswxFcYGiI7dBL',
-  cat_0:     'https://lh3.googleusercontent.com/aida-public/AB6AXuCQr_JBaXlk2GO6lnVd2t5OVv6JQhSavAkHC0r61rUydOoL2LsLYbriCWU8V_FvaRH-UoiTXpcSxNH--K5IUnmlb0xtWAV8CAxqT-dBpgz8otO-JO5f67wJK_VZb_hc6ze5n8tr6_psdugRWe8VXvvruT6_SB58EGSwaFUTM48GM5vHHW5p2ZCa1mIDQIjKAu1XU3KkdyoSyYZ0q8Ixh1PujczHL6CRpXMLxdXZaoxdA_MQ5MQ01Es2',
-  cat_1:     'https://lh3.googleusercontent.com/aida-public/AB6AXuDG7DSAQOTU_99xYd3SaTvyVS_lHOCIn8SQdvfxhho2c7c2vKZnGxk-tbTSbBmtLjWrJ8U-D_MkK3ukiu34LxJGtC6E5AlsSAHuRSkjNDwBmURucR_ZGJxtcjApIy08CpYadPYnQBlr2GBGkq7Ro5rJvzWajno4OS63n1W0X0f4oub7j20v4zpmcgEflKPMxLJNDPCf7n0-jZCx6bqVVByCkWG152XGtVsR4X9ll5as54BkqNGONzSN',
-  cat_2:     'https://lh3.googleusercontent.com/aida-public/AB6AXuArPrn8yShVGeOOUVLRYM2GGUpQDSLwavgajDA_scBA2q88KuOUcD-fp6gZgcbOIoGALmPg-Y_Xq_9ZfrJeE7XK22FsYaBC1Udt5WV5f4-N7Gy4SBfwFkqTF31829cBMcPf7-1MEtHDVMhXShefOoDTnFi-BRHr_V33B9y8A0jZz77YHrHOK04180VwJHvZZZRG4EAQUwg4DpL0R2cd2d91pOMNsRJ0cjR9SgOzDY2ziLh8u46FAqPp',
-  signature: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2nay-m4ZWsa2NFXT4GIcJu21-Ttzn8J0EHO9xY_VKIYEabWk9qAHRBmCIPArQ7nL6lhvR0CjtguZugKMYybTQ73iFCuHubYRuVHCJISEjjVhi6NtYVg6ZlTGV1VCmVFrJTeyc7VS8BxODDUOVRvKpFC34DDhltkorHA-w4-RRRFmdAegv4oTvIYei-7Viknfjm6kwUkLBZHjAt2LjEeygALyQoNqGOmJQYr-j9UVFSTUHT5NQvs9C',
-  chef_0:    'https://lh3.googleusercontent.com/aida-public/AB6AXuCwryYFlsvJmpr0rpXZp6iaZYAkqhiXAky0DL7Qs99dwujgv8_gEUwdWH8hcABgXvgh1N3izXyilviLVxT4KdXhdaOyxs0doElkOV-XXo0yexBGnkaM18Mrz12mkOU6eBWeMGEFRefIyX8IaPgM4ewmAwl7cLrDFpAFXSGL4oC9dNJh8RUBzeYPcprof52ULUxgoqlqqnkQojpg9JT5htsKKS_EaLTGVWqkroXFpebfOVLJi1i6cEyY',
-  chef_1:    'https://lh3.googleusercontent.com/aida-public/AB6AXuBrVOyBxfx7i62BgvgF7GL1uFkVq1mYdM1QkwpEExHDG58yoV-bFe4PlZJ0PNDY2VwBtMhwx3ocJXNfg6SFwg9SxbVB-osYiIFFNrqfRA706adaqAvZlB7GhTs3NCPSX-G7xUKRfMwrOVIh5W6szGowAkkUVKGuX0vKnodMJ-e1pDVvDkNDOfhqucrnuDO1365hyowq1zZ8ZByqmpUbvfQOpYa52m46tmZs97YporDqPp4EQYw2Qjb6',
-  chef_2:    'https://lh3.googleusercontent.com/aida-public/AB6AXuC6DW1Evoocaf5Tbk_Iuz_YtZ_N8ZnCfEuVrpCqBx3n0TI7NERM9OJdYtdAdvNAcSEcgQHP6XUkmfGhI2iyLJa2R7axhmLaLeIHzjmPiR9NnDfaOb2Xs8icq8ZYsdhKX_2xbW3mUMM0ClDkOsOsm7xbYrPnO860n8AeKmesqEFbApvotiRUOtGAzqjBq_HBDV9uJDU_k6UoA7e4VsD5a2urufpnvy8bD02CZ88MK4eAZhXMk1rg5VM-',
-  map:       'https://lh3.googleusercontent.com/aida-public/AB6AXuAzhEQ7ib6nvs8r57oKwWa6vbLA0NStGz5Wd1cqEKd6FDaj0oX6W97OZrNLp2RyXtluqrX7Ie9yfDXSybqf2x5s1PrNAhiNviS0ZDhDmYoOnzcy96FvCdd9YYRRaGe7pEK9EwzCKFFxR8YOF7FeTeOEnCw3SV4K8J2_T8DcT6e93ji9_2b8P9Uq26zfLRpuQjmnGq-WqMR64K8QqzASESWZZ8MC0C6zn7Adxai-5J-_smdvHw_BJikO',
+  heroBg:    imgHeroBg,
+  cat_0:     imgCat0,
+  cat_1:     imgCat1,
+  cat_2:     imgCat2,
+  signature: imgSignature,
+  chef_0:    imgChef0,
+  chef_1:    imgChef1,
+  chef_2:    imgChef2,
+  map:       imgMap,
 };
 
 /** Ảnh 3 danh mục bento — khớp thứ tự categories.items trong i18n (trang trí, không phải nội dung dịch) */
@@ -92,7 +101,7 @@ export default function Restaurant6({ lang = 'vi' }: Props) {
             {t.categories.items.map((cat, i) => (
               <div key={i} className={`${i === 0 ? 'md:col-span-2' : ''} relative group overflow-hidden rounded-xl bg-[#f6f4ec] shadow-sm cursor-pointer border border-[#72796e]/10 h-64 md:h-auto`}>
                 <div aria-hidden className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all z-10" />
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={CATEGORY_IMGS[i] ?? CATEGORY_IMGS[0]} alt={cat.title} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={CATEGORY_IMGS[i] ?? CATEGORY_IMGS[0]} alt={cat.title} loading="lazy" />
                 <div className="absolute bottom-6 left-6 z-20">
                   <span data-field={`categories.items.${i}.title`} className="text-white font-['Lexend'] text-2xl font-semibold">{cat.title}</span>
                 </div>
@@ -127,7 +136,7 @@ export default function Restaurant6({ lang = 'vi' }: Props) {
             </div>
             <div className="w-full md:w-1/2 relative">
               <div aria-hidden className="absolute -inset-4 bg-[#2d5a27]/10 rounded-full blur-3xl z-0" />
-              <img className="relative z-10 w-full rounded-2xl shadow-2xl transition-transform hover:rotate-2 duration-700" src={IMG.signature} alt={t.signature.title} />
+              <img className="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl transition-transform hover:rotate-2 duration-700" src={IMG.signature} alt={t.signature.title} loading="lazy" />
             </div>
           </div>
         </section>
@@ -172,7 +181,7 @@ export default function Restaurant6({ lang = 'vi' }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.team.members.map((m, i) => (
               <div key={i} className="bg-[#f6f4ec] p-6 rounded-2xl border border-[#72796e]/10 hover:shadow-md transition-all">
-                <img className="w-full aspect-square object-cover rounded-xl mb-4" src={CHEFS[i] ?? CHEFS[0]} alt={m.name} />
+                <img className="w-full aspect-square object-cover rounded-xl mb-4" src={CHEFS[i] ?? CHEFS[0]} alt={m.name} loading="lazy" />
                 <h3 data-field={`team.members.${i}.name`} className="font-['Lexend'] text-xl font-semibold text-[#154212]">{m.name}</h3>
                 <p data-field={`team.members.${i}.role`} className="text-[#446900] text-sm font-semibold">{m.role}</p>
                 <p data-field={`team.members.${i}.quote`} className="text-[#42493e] mt-2 text-sm italic">&ldquo;{m.quote}&rdquo;</p>
@@ -217,7 +226,7 @@ export default function Restaurant6({ lang = 'vi' }: Props) {
               />
             ) : (
               <div className="relative w-full h-full">
-                <img className="w-full h-full object-cover grayscale-[20%] contrast-[1.1]" src={IMG.map} alt="" />
+                <img className="w-full h-full object-cover grayscale-[20%] contrast-[1.1]" src={IMG.map} alt={t.contact.address} loading="lazy" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/10">
                   <div className="bg-white p-3 rounded-full shadow-md">
                     <MapPin aria-hidden className="w-7 h-7 text-[#154212]" />

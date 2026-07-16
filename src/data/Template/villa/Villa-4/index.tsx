@@ -11,6 +11,20 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgHeritageImg from './images/heritageImg.jpg';
+import imgFireplaceImg from './images/fireplaceImg.jpg';
+import imgRoom1 from './images/room1.jpg';
+import imgRoom2 from './images/room2.jpg';
+import imgRoom3 from './images/room3.jpg';
+import imgRoom4 from './images/room4.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
+import imgAvatar1 from './images/avatar1.jpg';
+import imgAvatar2 from './images/avatar2.jpg';
+import imgAvatar3 from './images/avatar3.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -18,20 +32,20 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1800&auto=format&fit=crop',
-  heritageImg: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1400&auto=format&fit=crop',
-  fireplaceImg: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1200&auto=format&fit=crop',
-  room1: 'https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=1200&auto=format&fit=crop',
-  room2: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop',
-  room3: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop',
-  room4: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop',
-  gallery1: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1200&auto=format&fit=crop',
-  gallery2: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop',
-  gallery3: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop',
-  gallery4: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop',
-  avatar1: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
-  avatar2: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=400&auto=format&fit=crop',
-  avatar3: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop',
+  heroBg: imgHeroBg,
+  heritageImg: imgHeritageImg,
+  fireplaceImg: imgFireplaceImg,
+  room1: imgRoom1,
+  room2: imgRoom2,
+  room3: imgRoom3,
+  room4: imgRoom4,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
+  avatar1: imgAvatar1,
+  avatar2: imgAvatar2,
+  avatar3: imgAvatar3,
 };
 
 /** Icon gán theo thứ tự item — trang trí, không lưu trong i18n (quy tắc #6) */
@@ -113,7 +127,8 @@ export default function Villa4({ lang = 'vi' }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             <Reveal variant="fade-right" className="lg:col-span-7 rounded-[2rem] overflow-hidden relative group min-h-[420px]">
               <img
-                alt=""
+                alt={t.heritage.mainTitle}
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 src={IMG.heritageImg}
               />
@@ -165,7 +180,7 @@ export default function Villa4({ lang = 'vi' }: Props) {
             </Reveal>
             <Reveal variant="zoom-in" className="order-1 md:order-2 relative">
               <div className="rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-10px_rgba(86,100,43,0.15)] aspect-[4/5]">
-                <img alt="" className="w-full h-full object-cover" src={IMG.fireplaceImg} />
+                <img alt={t.experience.title} loading="lazy" className="w-full h-full object-cover" src={IMG.fireplaceImg} />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-[0_20px_40px_-10px_rgba(86,100,43,0.2)] hidden lg:block">
                 <div className="flex items-center gap-4">
@@ -197,7 +212,8 @@ export default function Villa4({ lang = 'vi' }: Props) {
                   <div className="h-56 overflow-hidden">
                     <img
                       src={IMG[imgKey as keyof typeof IMG]}
-                      alt=""
+                      alt={room.name}
+                      loading="lazy"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
@@ -270,7 +286,7 @@ export default function Villa4({ lang = 'vi' }: Props) {
                 delay={i * 90}
                 className={`flex-none w-72 md:w-full aspect-[3/4] rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-10px_rgba(86,100,43,0.15)] bg-[#e3e2e0] relative group ${i % 2 === 1 ? 'md:mt-16' : ''}`}
               >
-                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={IMG[key]} alt="" />
+                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={IMG[key]} alt={`${t.gallery.title} ${i + 1}`} loading="lazy" />
               </Reveal>
             ))}
           </div>
@@ -302,7 +318,7 @@ export default function Villa4({ lang = 'vi' }: Props) {
                     &ldquo;{item.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <img src={avatarSrc} alt="" className="w-12 h-12 rounded-full object-cover border-2 border-[#8a9a5b]" />
+                    <img src={avatarSrc} alt={item.name} loading="lazy" className="w-12 h-12 rounded-full object-cover border-2 border-[#8a9a5b]" />
                     <div>
                       <h4 data-field={`testimonials.items.${i}.name`} className="text-sm font-medium text-[#56642b]">{item.name}</h4>
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#46483c]">{item.role}</p>

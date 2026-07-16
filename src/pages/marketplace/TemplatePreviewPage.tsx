@@ -1,5 +1,6 @@
 import { Suspense, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ROUTES } from '../../config/routes';
 import { TEMPLATES } from '../../data';
 import { COMPONENT_MAP } from '../../data/templates/registry';
@@ -28,6 +29,10 @@ export default function TemplatePreviewPage() {
   if (!Component || !template) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gray-50">
+        <Helmet>
+          <title>Không tìm thấy template — vngoweb</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <p className="text-gray-500 text-sm">Không tìm thấy template.</p>
         <button
           onClick={() => navigate(ROUTES.MARKETPLACE)}
@@ -44,6 +49,10 @@ export default function TemplatePreviewPage() {
 
   return (
     <div className="relative">
+      <Helmet>
+        <title>Xem trước {template.name} — vngoweb</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
 
       {/* ── Template renders at full height, no offset ───────────────── */}
       <div className="pb-14">

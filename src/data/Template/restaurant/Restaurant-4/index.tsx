@@ -10,6 +10,13 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgMenuFeatured from './images/menuFeatured.jpg';
+import imgSpaceMain from './images/spaceMain.jpg';
+import imgSpaceWok from './images/spaceWok.jpg';
+import imgSpaceTea from './images/spaceTea.jpg';
+import imgSpaceDecor from './images/spaceDecor.jpg';
+import imgMapImg from './images/mapImg.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -17,13 +24,13 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg:      'https://lh3.googleusercontent.com/aida-public/AB6AXuDS0a_OYirtqcuXmLrUEcpqd8Lihs32uCp1zkpxqklnoQZbZ8KUwmXIXnL7nna9VYqGBGUUMOtsrYlVXWV8R7TtkylK7bqdlbIWPZhoAMs6ql7VgmwA0epeNEw-gPlVXEFaQUuVDORIbBSZo0JgLLB5_-WwUzXJJGFyrK8_nqM5HTMDifYqcef3Muup9ytOz1wHhyFxtp3skgpD8Y-5ciSH0xvwpSV5iDeK2PmOFj2CsWrUTWvYQ5Dw',
-  menuFeatured: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBN9FAOScXGwvfKR-LyYC2TpIdqlI07ETSMeyCCHxJafLxqgDWQkaB0NojUd0vFvKZlzbU3NOvhzcIhL_9nylLlSAYk4HJReSHMC3i2dMXUhTlpz3uKMAlfFBJW5rKbMNtDbYJnwALft2pAJKqnacN3zoZsZ6D9JCMDouIjWPs1w0iJwfNYzt70mcimuNcR9Bt-PuZc6p2guscoVUyi724NyXiteGr3ZXjEXRf5vj648ccRGBJa7DC0',
-  spaceMain:   'https://lh3.googleusercontent.com/aida-public/AB6AXuAhqoHk_vU3uSmy_zc9D37501TV38oxz2CI02GV215fN8zhYbPt_unOn55UmHk06aAwgnbTzZHJg7c6f4IhwAfPtkD6VEfnYEysCUNwQyZvXj6UkFM86HrtXN9xhjFUkmaeGhFGr87V4rQkgNJeeC4JvNR48SqT0Vvl8s5pwMR9Bcx5qPdWPhJUACaZ_Fl9IQQHZhRZYm0OWneOTafUCpRd0Fy0VAQ-HWc9_hPvtzeoTRl7UxUHh1IA',
-  spaceWok:    'https://lh3.googleusercontent.com/aida-public/AB6AXuBmQTXOOxLhn43Me4OFiOUrSyUxOBOQNwFbzMQtMc-eNOcLA3unQcNxy4U5lIxbnL3ZTv0oiZ_pdv5f5hDBkNLj73UfgDopdvR6SKW6BRS1S6GKk668JYrgMFsMRIsbs6f51_W3RvefPIsLcNACZD6bBsHBO6Xlrp1MKH07h_lEcTwrziJPOucxKPJ_UYghEQ9jOtVNG5MA0yeAJBnu4yI6ARpkKr6hifURREVotTyg6ZuFzULKNdy6',
-  spaceTea:    'https://lh3.googleusercontent.com/aida-public/AB6AXuADgGORAhZFqnVnUt8ozs8zTepwCUTfajAnz7YgS5FBjq3Tv71orolusGviz1nq4oiY8XmyPqI0P-zaGQwmLqVxoXNBO0wDh6UIFT_01F7gRu1pK61TR0vUS0pU-uq31xKe661jty6-OYILyaY8LOb5BCFLTXp7oxVG7hQiarGJxz0cZC6tb-OLLePC2_ePFGMs0USnfuRLQFvHU6d6CmSPBqvmw4xyMiVIU72BAKgQCpAtCQi6Z413',
-  spaceDecor:  'https://lh3.googleusercontent.com/aida-public/AB6AXuBDzd3FIaQufkCIjJYcz0Wkrhe2uCYzytxyIlu9UVDgX8_VleSzZecijyEeHUd4I6kCxw0q1cS5gyMrGERbx-ZPNYu1aJo4VUhnzRJM1bAOszxwDNguastDRfqOjXC7Wgyvk3PSLm_DOUUcFZ21fVswRlRpP9LlK4wvlmo6hsVkIOYSz3A2FD__pf3Y9V8EH0ZRH-dP5mpss6XbXk4deivVq3jORYtf2bIkP1PeY0xx9Jq4ZeSp1FIx',
-  mapImg:      'https://lh3.googleusercontent.com/aida-public/AB6AXuDAvi-rL4Svy8BpwU6OvUVav5B9CQP1GBzSAti161TMxC6gOAOpV0L-gnBYfABwbvjl4Bera7Gcid0Iwqoa168WMIIaL9-tfjP0gZR5WaFHIY0gcte7Hc6B27LNFDzfJLB8yivHY4sHj_-SiH7EYLLHX65z2BweB5tAEkFm6nwVG5T6mjg-3mwtuyGVpobotqHjNlSlj8Gop3ba90vz4mp4Y1deIlknCCwufZb1SlAsvv1_aSPkkHyD',
+  heroBg:      imgHeroBg,
+  menuFeatured: imgMenuFeatured,
+  spaceMain:   imgSpaceMain,
+  spaceWok:    imgSpaceWok,
+  spaceTea:    imgSpaceTea,
+  spaceDecor:  imgSpaceDecor,
+  mapImg:      imgMapImg,
 };
 
 /** Icon cho 2 thẻ bento danh mục (trang trí, không phải nội dung dịch) */
@@ -65,7 +72,7 @@ export default function Restaurant4({ lang = 'vi' }: Props) {
         {/* Hero */}
         <section data-section="hero" className="relative h-[85vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img className="w-full h-full object-cover brightness-[0.7]" src={IMG.heroBg} alt="" />
+            <img className="w-full h-full object-cover brightness-[0.7]" src={IMG.heroBg} alt={`${t.hero.titlePrefix} ${t.hero.titleHighlight} ${t.hero.titleSuffix}`} />
             <div className="absolute inset-0 bg-gradient-to-t from-[#fff8f4] via-transparent to-black/30" />
           </div>
           <div className="relative z-10 px-6 lg:px-16 max-w-4xl">
@@ -119,7 +126,7 @@ export default function Restaurant4({ lang = 'vi' }: Props) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
               <div className="lg:col-span-7 bg-[#fdebdc] rounded-3xl overflow-hidden flex flex-col md:flex-row group border border-[#887361]/5">
                 <div className="md:w-1/2 overflow-hidden h-full min-h-75">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={IMG.menuFeatured} alt={t.menuSection.featured.name} />
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={IMG.menuFeatured} alt={t.menuSection.featured.name} loading="lazy" />
                 </div>
                 <div className="md:w-1/2 p-10 flex flex-col justify-center">
                   <span data-field="menuSection.featured.label" className="text-[#a63b00] font-bold text-xs tracking-widest mb-2">{t.menuSection.featured.label}</span>
@@ -193,19 +200,19 @@ export default function Restaurant4({ lang = 'vi' }: Props) {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-150">
               <div className="col-span-2 row-span-2 rounded-3xl overflow-hidden relative group h-64 md:h-auto">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceMain} alt={t.space.caption} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceMain} alt={t.space.caption} loading="lazy" />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span data-field="space.caption" className="text-white font-bold border-2 border-white px-6 py-2 rounded-full">{t.space.caption}</span>
                 </div>
               </div>
               <div className="rounded-3xl overflow-hidden relative group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceWok} alt="" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceWok} alt="Đầu bếp đảo chảo món đường phố Thái" loading="lazy" />
               </div>
               <div className="rounded-3xl overflow-hidden relative group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceTea} alt="" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceTea} alt="Trà sữa Thái đặc trưng" loading="lazy" />
               </div>
               <div className="col-span-2 rounded-3xl overflow-hidden relative group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceDecor} alt="" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={IMG.spaceDecor} alt="Không gian trang trí đậm chất Bangkok" loading="lazy" />
               </div>
             </div>
           </div>
@@ -307,7 +314,7 @@ export default function Restaurant4({ lang = 'vi' }: Props) {
                   />
                 ) : (
                   <div className="w-full h-full relative grayscale hover:grayscale-0 transition-all duration-700">
-                    <img className="w-full h-full object-cover" src={IMG.mapImg} alt="Map" />
+                    <img className="w-full h-full object-cover" src={IMG.mapImg} alt={t.contact.address} loading="lazy" />
                     <div className="absolute inset-0 bg-black/10 flex items-center justify-center flex-col gap-2">
                       <div className="bg-white/90 p-3 rounded-full shadow-lg">
                         <MapPin aria-hidden className="w-8 h-8 text-[#8a5100]" />

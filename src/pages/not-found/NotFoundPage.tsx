@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Home, LayoutDashboard, ArrowLeft, MapPin } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
 import Wordmark from '../../components/shared/Wordmark';
+import HreflangLinks from '../../i18n/HreflangLinks';
 
 export default function NotFoundPage() {
   const { t } = useTranslation('not-found');
@@ -25,8 +26,10 @@ export default function NotFoundPage() {
     <main className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-6 font-sans antialiased relative overflow-hidden">
       <Helmet>
         <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
+      <HreflangLinks path={location.pathname} />
 
       {/* Ambient glow */}
       <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-orange-200/20 blur-[130px] pointer-events-none" />

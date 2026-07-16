@@ -6,6 +6,13 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgHighlight1 from './images/highlight1.jpg';
+import imgHighlight2 from './images/highlight2.jpg';
+import imgHighlight3 from './images/highlight3.jpg';
+import imgAtmosphere1 from './images/atmosphere1.jpg';
+import imgAtmosphere2 from './images/atmosphere2.jpg';
+import imgLocationMap from './images/locationMap.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -13,13 +20,13 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg:      'https://lh3.googleusercontent.com/aida-public/AB6AXuByBa8xNQHNZlfDqCjq5ELTgW_kYd1i7kzoba00na_rUzcNgBJKx8c9NYRMYnoqN0blNKA7RM-CsvnwAqyHjJ1Kht-Z5Y4frYDiG8VB7nL8bqM-6WKwksizaGOywEwQVdgOmqrPMOvBMD_EkLcWIne3vVLVfnLG5Voz4Z5Y93Gd8WznJYGvWuawAzFpCtIDPWKZrvd8COt7OecZ3bvu9aY3ZPQmqlDQjzUOjc7wz0Cpny5RBKP7-PZx',
-  highlight1:  'https://lh3.googleusercontent.com/aida-public/AB6AXuD8ymX7K1c5Q9QQHGNATOEqZYWHkgq5seCpr1bYs7mqDlA5x_zjtt1UGUjZ70IYMaCyb4Cf8KxcXvMKUq92hOSsoutTCQQAZy9PeVLNnHRSSXAHdv3-FjEcWE5vo2uY6qlOaoFCoZX_z1CvYbbvHh8FNrHCnD4A8J9EYRNvjucevgtv5aknQS-5rIoubQqJVZ2LqLzv-HyUnFbmxdZReSniSWW-UgHQIs14E6y8bB7vFA_3Ma3HVWHO',
-  highlight2:  'https://lh3.googleusercontent.com/aida-public/AB6AXuBc6eJrAg39d_tx67A2ULw8-0LYNy5kvAR6e23Q0hckehp5X2ZISgR6PMAQGoID5KcH2SS7DRV_KVBEuTZIaKH27_pvd5CCZwgAxOaBA0MWXSi4WBX2hG161Cubr8WR5G22gRseuOGIAp8pWdhKI9UrFfjYinW5pERL-pZAb3adab6c4yp9fLndexSNVbWuElPvDH0ftCWoP3yxSbSPcF_eIiIQxTIsoS8uLon9DyMXLia5oLYT3YYM',
-  highlight3:  'https://lh3.googleusercontent.com/aida-public/AB6AXuAjLZc5cFWMKdBXQF2fRqjcV-fKm0gLMk7hQHLI3GOYzb9fGs1DnpQWm582bSCY1UEt3Wuo6snHiBj6rtlZ0O5S_Uv1FF3K8OYGmVhN4Ch6TfGr0KAqmCimlAgnQBIN4mXQlw4LM7Ya3CtgUNZjDQB8R221ZOG_3fz-DwXprK85Yow5d8pEoQs-ray1zXL5LELBRqlt8ESBv_4Ox_CbaJ8vhnIRlSnXaH7cCEuRtWi21WPlMSgWlY8z',
-  atmosphere1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBbW_6oLSM3OcPkGICD2_lOYz6yK2-r64hkkeh-OaMd0pl89--GGkh_IQMa_QtMCLe5xIfxhqCsjCveZoDa-xkhF201MGdfKovfDRJiDilSe_f5bY93axT8MEwfAaCh3zqQU0ulXeWQ9ybjLvrxHN6sZnyR2vIct-MNPsSVMnblf2MiQ6GQzPiAXYvWK3rMH3oAkGFc_uKHEjIwQOtNVCb1GxuJVSmQUIj8yc6RwQeftq7RUQ3haFq9',
-  atmosphere2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA4jQz5p6xkK1fZEeXjkp-HlhanDXr0eSNnR-nx7LnGC_XbQFihBfKq-rcaJ_XDmHfj7eaaXGOCxhaZBBKX7Z_abcW9WmE88EsHBhWxnP0Drp98jDtcUTlU0Z9Swgcxfyb3ipVZYHlFWqvhLZDDLxmZ0wkXdK5HMoETIUEZUjd2PvFCNa3j96aHIAL-VXcdlV0j3eXNAS19qptHjkZ6xcfCSiyMY0K8unAB_CEl1uR9fPj7XIVRE337',
-  locationMap: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1ECI_CuSv5PK7nJjvURw-cxg2qucw9laUHAPv40A8OwnnzifXA8q1aptuPXQ2YgN7Sq-sMqHqOZANOtDxmpktnS0qla0aSYMjj-a3ndRfMNsq3EqdE8qzDAIx8bHr_M9btr7JWAWsO89ZqNGY_Z8qhx3kM3BhTjrtVpUC96rHgE080g5gJCJLJRm1tAwxySzcrkkfdUHLabzi8NAVc7HCsC5E39YApmUvK9pq_NrDmG1F1JFhk9xh',
+  heroBg:      imgHeroBg,
+  highlight1:  imgHighlight1,
+  highlight2:  imgHighlight2,
+  highlight3:  imgHighlight3,
+  atmosphere1: imgAtmosphere1,
+  atmosphere2: imgAtmosphere2,
+  locationMap: imgLocationMap,
 };
 
 /** Icon cho 3 nhóm dịch vụ trong bảng giá — nằm ngoài i18n vì không phải nội dung dịch */
@@ -87,7 +94,7 @@ export default function Spa6({ lang = 'vi' }: Props) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               <div className="md:col-span-8 group relative overflow-hidden rounded-[2rem] aspect-[16/9]">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.highlight1} alt={t.highlights.items[0].title} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.highlight1} alt={t.highlights.items[0].title} loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0077b6]/80 via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-0 left-0 p-8">
                   {t.highlights.items[0].badge && (
@@ -98,7 +105,7 @@ export default function Spa6({ lang = 'vi' }: Props) {
                 </div>
               </div>
               <div className="md:col-span-4 group relative overflow-hidden rounded-[2rem] hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.highlight2} alt={t.highlights.items[1].title} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.highlight2} alt={t.highlights.items[1].title} loading="lazy" />
                 <div className="absolute inset-0 bg-[#005d90]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/40 to-transparent">
                   <h3 data-field="highlights.items.1.title" className="font-lexend text-xl font-medium text-white mb-2">{t.highlights.items[1].title}</h3>
@@ -106,7 +113,7 @@ export default function Spa6({ lang = 'vi' }: Props) {
                 </div>
               </div>
               <div className="md:col-span-12 group relative overflow-hidden rounded-[2rem] h-96">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.highlight3} alt={t.highlights.items[2].title} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.highlight3} alt={t.highlights.items[2].title} loading="lazy" />
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
                   <h3 data-field="highlights.items.2.title" className="font-lexend text-2xl md:text-3xl font-semibold text-white mb-4">{t.highlights.items[2].title}</h3>
@@ -195,8 +202,8 @@ export default function Spa6({ lang = 'vi' }: Props) {
                 </div>
               </div>
               <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-                <img className="rounded-[2rem] w-full h-80 object-cover shadow-lg" src={IMG.atmosphere1} alt="" />
-                <img className="rounded-[2rem] w-full h-80 object-cover shadow-lg mt-12" src={IMG.atmosphere2} alt="" />
+                <img className="rounded-[2rem] w-full h-80 object-cover shadow-lg" src={IMG.atmosphere1} alt={t.atmosphere.image1Alt} loading="lazy" />
+                <img className="rounded-[2rem] w-full h-80 object-cover shadow-lg mt-12" src={IMG.atmosphere2} alt={t.atmosphere.image2Alt} loading="lazy" />
               </div>
             </div>
           </div>
@@ -236,7 +243,7 @@ export default function Spa6({ lang = 'vi' }: Props) {
               ) : (
                 <div className="w-full h-full bg-[#e7e8e9] flex items-center justify-center relative">
                   <div className="absolute inset-0 grayscale contrast-125 opacity-40">
-                    <img className="w-full h-full object-cover" src={IMG.locationMap} alt="" />
+                    <img className="w-full h-full object-cover" src={IMG.locationMap} alt="" loading="lazy" />
                   </div>
                   <div className="relative z-10 text-center px-4">
                     <div className="bg-[#005d90] text-white p-4 rounded-full shadow-2xl mb-4 inline-block">

@@ -53,11 +53,36 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
 
+  // fetchMe() trả null cho CẢ 401 (token hết hạn — đã tự xoá token phía
+  // authService) LẪN lỗi mạng thoáng qua (đã catch bên trong, xem authService.ts).
+  // Nếu không phân biệt 2 trường hợp này, 1 request /auth/me trục trặc mạng
+  // ngay lúc app vừa tải lại (hay gặp nhất sau khi PayOS redirect người dùng về
+  // /payment-result) sẽ khiến isAuthenticated=false dù token vẫn còn nguyên
+  // trong localStorage — RequireAuth coi như chưa đăng nhập, văng về Landing
+  // Page kèm nút "Đăng nhập" dù phiên thực ra vẫn hợp lệ. Vì vậy: hễ token vẫn
+  // còn sau khi fetchMe() thất bại (nghĩa là KHÔNG phải 401 — 401 đã tự xoá
+  // token) thì thử lại vài lần trước khi kết luận là chưa đăng nhập.
   useEffect(() => {
     if (!getToken()) { setAuthLoading(false); return; }
-    fetchMe()
-      .then(setUser)
-      .finally(() => setAuthLoading(false));
+
+    let cancelled = false;
+    const RETRY_DELAYS_MS = [800, 2000];
+
+    const attempt = async (retriesLeft: number) => {
+      const me = await fetchMe();
+      if (cancelled) return;
+      if (me) { setUser(me); setAuthLoading(false); return; }
+      if (getToken() && retriesLeft > 0) {
+        const delay = RETRY_DELAYS_MS[RETRY_DELAYS_MS.length - retriesLeft] ?? 2000;
+        await new Promise(resolve => setTimeout(resolve, delay));
+        if (!cancelled) await attempt(retriesLeft - 1);
+        return;
+      }
+      setAuthLoading(false);
+    };
+
+    attempt(RETRY_DELAYS_MS.length);
+    return () => { cancelled = true; };
   }, []);
 
   const login = async (token: string) => {

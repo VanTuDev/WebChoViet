@@ -9,6 +9,10 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgJourney0 from './images/journey0.jpg';
+import imgJourney1 from './images/journey1.jpg';
+import imgJourney2 from './images/journey2.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -16,10 +20,10 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg:   'https://lh3.googleusercontent.com/aida-public/AB6AXuCgHTQvNAXEGwb0j91yWvyNfnbdw6HZYs9U7IeaGjGhFUe03UIqcOkNSuMKNBkSIXBK1SOyBKTOIgumTtDRa5TiHtk2iYyQQ33N6rfbhO5sceRmuVo9YU-Nb3x-Xd5lvCdWzNpHBqppG3Jco7WDnQTpZta-WqkXuYdJzXbXzqNZeIKpwKLEdPZ4_Xod5VMwL8ZwAYQCBMiIOnQ14YkIke8_yMC52kTKFbq3KjNMFPZyqecFOxcxWad2',
-  journey_0: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiddEw4DL9X2KWT_8zF0V2gIHJURiAqiStdAtsRzBd9X8_iGj5avE8cdq4xPksj0Wb37FhSIlNQ8jxaMI0zKeJzhE_6AlM6Rl5MnIe2gsONsgdbCVFi_heZ_Emfd41k3xC3tX09HhQpG4Airr4J89LA64eT0vqepR0GAtlnOi8OmwTu1jvid4zo2jvNV0pMfL2LccnNsCQeWjXko6dHJB10hVQNMzizrRyAVaPEhncAUv3vHWL4eaM',
-  journey_1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUAxp2q5EbfE6XcKetKYAnvGhjJYCH0RNyuB92giLle7OvcOXHCbYSCRHpAfTNDx268M7S8RmdAxD_PMg9QLRqXiSMzMBjkA4TttLjXlR4LLeqPyO8tP4KRZBonMvSgHDtOHwavQ24xH1zXFmjE5-uHT5cNkMv42t4Vucvh-Wvae5yMHhXdyGc9_3uDHfNRYPexwsEll1YoGssjzii1d96galruLDowOJrDRiJjBa0AUSM84qavjRg',
-  journey_2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCPX_vQdUT6b1468s2bN8Z7qB8S68DwfkolkUJQBbPzk51sYwgW3mArm7QwQ0m1qksXD4Ze6rk4g_wsqvixOb-yltJcJi4KgZEORvbgBP9wZLtlSFqK8OJtskeCFUB1sfLlfWk1MK_9fkg1gziCQdY8yDQd1xGtl19I1fJBVO5n9xvQjbqE4-DC4_z9GGy8ZMYWCld5b6dEKpe_aZUsa3E8ZhlVR2nNzUbxDkEI9QeGnoic52TNVOve',
+  heroBg:   imgHeroBg,
+  journey_0: imgJourney0,
+  journey_1: imgJourney1,
+  journey_2: imgJourney2,
 };
 
 /** Icon trang trí — không phải nội dung dịch nên đặt ngoài i18n */
@@ -169,7 +173,7 @@ export default function Spa4({ lang = 'vi' }: Props) {
                 const img = [IMG.journey_0, IMG.journey_1, IMG.journey_2][i] ?? IMG.journey_0;
                 return (
                   <div key={i} className="group relative overflow-hidden rounded-2xl aspect-square">
-                    <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={img} alt={step.caption} />
+                    <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={img} alt={step.caption} loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#003f87]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                       <p data-field={`journey.steps.${i}.caption`} className="text-white text-sm font-medium">{step.caption}</p>
                     </div>

@@ -7,6 +7,7 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -18,7 +19,7 @@ export default function Wedding1({ lang = 'vi' }: Props) {
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
   const [attending, setAttending] = useState<'yes' | 'no' | null>(null);
   const [guestName, setGuestName] = useState('');
-  const IMG = { hero: images.hero ?? 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop&q=70' };
+  const IMG = { hero: images.hero ?? imgHero };
 
   return (
     <div className="min-h-screen bg-[#FDF8F3] font-serif">
@@ -37,7 +38,7 @@ export default function Wedding1({ lang = 'vi' }: Props) {
       {/* Hero */}
       <section data-section="hero" className="relative overflow-hidden">
         <div className="relative h-[580px] lg:h-[700px]">
-          <img src={IMG.hero} alt="couple" className="w-full h-full object-cover" />
+          <img src={IMG.hero} alt={`${t.couple.bride} và ${t.couple.groom}`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#FDF8F3]" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
             <span data-field="hero.badge" className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-sans font-bold px-4 py-1.5 rounded-full tracking-widest border border-white/30 mb-6">

@@ -58,14 +58,19 @@ export default function PricingCard({ plan, cycle, cta, disabled, loading, onSel
   const Icon = PLAN_ICON[plan.id];
 
   return (
-    <div className={`rounded-3xl border flex flex-col justify-between relative bg-white transition-all hover:shadow-xl overflow-hidden ${visual.ring} ${!plan.popular && plan.id !== 'ultra' ? 'shadow-sm' : ''}`}>
+    // Wrapper NGOÀI không có overflow-hidden — chỉ để định vị ribbon "Khuyên dùng"
+    // nổi phía trên card mà không bị mép bo tròn của card cắt mất (bug cũ: ribbon
+    // đặt trong chính div overflow-hidden nên nửa trên bị clip sát viền card).
+    <div className="relative h-full">
       {plan.popular && (
-        <span className="absolute top-[-14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-fnb-orange text-white text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full tracking-wider shadow z-10">
+        <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-fnb-orange text-white text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full tracking-wider shadow-md z-10 whitespace-nowrap">
           Khuyên Dùng Nhiều Nhất
         </span>
       )}
 
-      {visual.header && <div className={`h-1.5 ${visual.header}`} />}
+      <div className={`h-full rounded-3xl border flex flex-col justify-between bg-white transition-all hover:shadow-xl overflow-hidden ${visual.ring} ${!plan.popular && plan.id !== 'ultra' ? 'shadow-sm' : ''}`}>
+
+      {visual.header && <div className={`h-1.5 shrink-0 ${visual.header}`} />}
 
       <div className="p-6 space-y-4 flex-1">
         <div className="flex items-center gap-3">
@@ -125,6 +130,7 @@ export default function PricingCard({ plan, cycle, cta, disabled, loading, onSel
           {loading && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
           {cta}
         </button>
+      </div>
       </div>
     </div>
   );

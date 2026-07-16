@@ -12,6 +12,9 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
+import imgTech from './images/tech.jpg';
+import imgNebula from './images/nebula.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -22,9 +25,9 @@ export default function Gym4({ lang = 'vi' }: Props) {
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
   const IMG = {
-    hero: images.hero ?? 'https://images.unsplash.com/photo-1550345332-09e3ac987658?w=1400&auto=format&fit=crop&q=70',
-    tech: images.tech ?? 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&auto=format&fit=crop&q=70',
-    nebula: images.nebula ?? 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1400&auto=format&fit=crop&q=70',
+    hero: images.hero ?? imgHero,
+    tech: images.tech ?? imgTech,
+    nebula: images.nebula ?? imgNebula,
   };
 
   return (
@@ -50,7 +53,7 @@ export default function Gym4({ lang = 'vi' }: Props) {
 
       {/* Hero */}
       <section data-section="hero" className="relative overflow-hidden min-h-[90vh] flex items-center justify-center text-center">
-        <img src={IMG.hero} alt={t.shopName} className="absolute inset-0 w-full h-full object-cover opacity-50" />
+        <img src={IMG.hero} alt={`Không gian tập luyện phong cách tương lai tại ${t.shopName}`} className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/60" />
         <div className="relative z-10 max-w-3xl px-6 space-y-6">
           <span data-field="hero.badge" className="inline-block text-xs font-semibold uppercase tracking-[0.3em] text-[#00F2FF]">{t.hero.badge}</span>
@@ -95,14 +98,14 @@ export default function Gym4({ lang = 'vi' }: Props) {
             </ul>
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-[#00F2FF]/10 bg-[#0A192F]/40 backdrop-blur-xl p-2 aspect-square">
-            <img src={IMG.tech} alt={t.tech.title} className="w-full h-full object-cover rounded-xl" />
+            <img src={IMG.tech} alt={t.tech.title} loading="lazy" className="w-full h-full object-cover rounded-xl" />
           </div>
         </div>
       </section>
 
       {/* Programs / Nebula Space */}
       <section id="programs" data-section="programs" className="relative py-24 px-6 bg-[#0e0e0e]">
-        <img src={IMG.nebula} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <img src={IMG.nebula} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h2 data-field="programs.title" className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight">{t.programs.title}</h2>

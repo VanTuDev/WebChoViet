@@ -78,7 +78,11 @@
   "space": {
     "title": "고요한 공간",
     "subtitle": "단순함과 자연의 아름다움을 존중하는 와비사비 철학을 바탕으로 설계된 건축입니다.",
-    "tourBtn": "360° 가상 투어 둘러보기"
+    "tourBtn": "360° 가상 투어 둘러보기",
+    "lobbyAlt": "Zenith의 미니멀한 로비",
+    "roomAlt": "고요한 트리트먼트 룸",
+    "facialAlt": "페이셜 케어 룸",
+    "zenGardenAlt": "젠 가든 정원"
   },
   "testimonials": {
     "title": "고객님들의 이야기",

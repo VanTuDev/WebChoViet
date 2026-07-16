@@ -78,7 +78,11 @@
   "space": {
     "title": "静谧空间",
     "subtitle": "建筑设计源自侘寂哲学，尊重简约与自然之美。",
-    "tourBtn": "探索 360° 虚拟导览"
+    "tourBtn": "探索 360° 虚拟导览",
+    "lobbyAlt": "Zenith 极简风格大堂",
+    "roomAlt": "静谧的理疗室",
+    "facialAlt": "面部护理室",
+    "zenGardenAlt": "禅意庭院花园"
   },
   "testimonials": {
     "title": "客户真实分享",

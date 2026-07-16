@@ -25,6 +25,17 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgRoom1 from './images/room1.jpg';
+import imgRoom2 from './images/room2.jpg';
+import imgRoom3 from './images/room3.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
+import imgAvatar1 from './images/avatar1.jpg';
+import imgAvatar2 from './images/avatar2.jpg';
+import imgAvatar3 from './images/avatar3.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -32,17 +43,17 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1600&auto=format&fit=crop',
-  room1: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=1200&auto=format&fit=crop',
-  room2: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200&auto=format&fit=crop',
-  room3: 'https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?q=80&w=1200&auto=format&fit=crop',
-  gallery1: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1200&auto=format&fit=crop',
-  gallery2: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1200&auto=format&fit=crop',
-  gallery3: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1200&auto=format&fit=crop',
-  gallery4: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop',
-  avatar1: 'https://i.pravatar.cc/150?img=12',
-  avatar2: 'https://i.pravatar.cc/150?img=45',
-  avatar3: 'https://i.pravatar.cc/150?img=33',
+  heroBg: imgHeroBg,
+  room1: imgRoom1,
+  room2: imgRoom2,
+  room3: imgRoom3,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
+  avatar1: imgAvatar1,
+  avatar2: imgAvatar2,
+  avatar3: imgAvatar3,
 };
 
 /** Icon minh hoạ theo thứ tự item — trang trí, không phải nội dung dịch */
@@ -170,7 +181,7 @@ export default function Villa5({ lang = 'vi' }: Props) {
               return (
                 <Reveal key={i} variant="fade-up" delay={i * 110} className="bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(86,100,43,0.1)] border border-[#e9e8e5] flex flex-col">
                   <div className="h-56 overflow-hidden">
-                    <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src={IMG[imgKey]} alt={room.name} />
+                    <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src={IMG[imgKey]} alt={room.name} loading="lazy" />
                   </div>
                   <div className="p-6 md:p-8 flex flex-col flex-1">
                     <h3 data-field={`rooms.items.${i}.name`} className="text-xl font-medium text-[#1a1c1a] mb-2">{room.name}</h3>
@@ -240,7 +251,7 @@ export default function Villa5({ lang = 'vi' }: Props) {
                     : 'md:col-span-1 md:row-span-1 h-52 md:h-auto';
               return (
                 <Reveal key={i} variant="zoom-in" delay={i * 90} className={`relative group overflow-hidden rounded-2xl bg-[#e9e8e5] ${spanClass}`}>
-                  <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG[imgKey]} alt="" />
+                  <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG[imgKey]} alt={g.caption} loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-4 left-4 text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                     <span data-field={`gallery.items.${i}.caption`} className="text-sm font-medium">{g.caption}</span>
@@ -274,7 +285,7 @@ export default function Villa5({ lang = 'vi' }: Props) {
                       &ldquo;{item.quote}&rdquo;
                     </p>
                     <div className="flex items-center gap-4">
-                      <img src={avatarSrc} alt="" className="w-12 h-12 rounded-full object-cover" />
+                      <img src={avatarSrc} alt={item.name} loading="lazy" className="w-12 h-12 rounded-full object-cover" />
                       <div>
                         <h5 data-field={`testimonials.items.${i}.name`} className="font-medium text-[#1a1c1a] text-sm">{item.name}</h5>
                         <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#46483c]">{item.role}</p>

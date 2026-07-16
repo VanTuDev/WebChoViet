@@ -8,6 +8,24 @@ import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import { useTemplateLang } from '../../_shared/LanguageSwitcher';
 import Reveal from '../../_shared/Reveal';
+import imgMenuImgs2 from './images/menuImgs2.png';
+import imgMenuImgs3 from './images/menuImgs3.png';
+import imgMenuImgs4 from './images/menuImgs4.png';
+import imgMenuImgs5 from './images/menuImgs5.png';
+import imgMenuImgs6 from './images/menuImgs6.png';
+import imgMenuImgs7 from './images/menuImgs7.png';
+import imgMenuImgs8 from './images/menuImgs8.png';
+import imgMenuImgs9 from './images/menuImgs9.png';
+import imgMenuImgs10 from './images/menuImgs10.png';
+import imgGalleryImgs1 from './images/galleryImgs1.png';
+import imgGalleryImgs2 from './images/galleryImgs2.png';
+import imgGalleryImgs3 from './images/galleryImgs3.png';
+import imgGalleryImgs4 from './images/galleryImgs4.png';
+import imgGalleryImgs5 from './images/galleryImgs5.png';
+import imgAvatarImgs1 from './images/avatarImgs1.png';
+import imgAvatarImgs2 from './images/avatarImgs2.png';
+import imgAvatarImgs3 from './images/avatarImgs3.png';
+import imgMapImg from './images/mapImg.png';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -18,32 +36,32 @@ const HERO_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR5n9B0_RV
 
 const MENU_IMGS = [
   'https://lh3.googleusercontent.com/aida-public/AB6AXuDpQjR7FLLMBxRdGVvHn0HBs4wB2f5BEwD5LXl4t1QL-yRG-aLhNPHC1KqpGC9z3LBUa5xzaRIPpH-TtBVPJa-BJ4YwnRGicvVwrSz-pvFwVuBbaCJJ9M6LiivFqZs4lJLe03zKB0yKI0v5-9DPFZ-p0aE_3Y7V6JgPPHE8c7n8dpq1gnHo7i_FnNMY4JkVsrZ4x1j5VJjxakxjMKaEt3eBbFSmLKvD6W8JrZ2g-d3Kp55OlXs-v9ACDKiKiGxcX8p3aMFkLniTz5A',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBEL4exsTFkxdGfFnYI6OPBu7RQhY6XDy4-MleOU-jMeLix6_ZYGgAnnhTat7wiHreeb5kgwcl04_N7gvOh8cwjxOSrW5iWJMPeTUBbjzw7BMkhczJsyjX9bwahsnGtdoHDwFvwZHoLpD3qKTbuN4Q9KT1A6eMt4IZhDd4_t06xj6etcl1JfWe62tfmDZEVAbESqR86WIKZH334xn0FX8ILOFiUg8ZBJpcKsP2nX1SuSmxUgxwcbd7T9XJ1X5D_XM0JdtghoKi8yWg',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBDCwpfl7hv3Z9YkrtZlg2YDaY-XaEeI3-i-AOYbaIDLBedP-aOJTiOHa2pRDqx314dCuqWkO48bjuzkee6XGderAEeuvBe4HSIWqhk86KKWP5LmBBev_2Zoy0dE-R5qmm_qhJhSCowC02qvZ5SseMMsEA6EBNBJRYaMVckZflXXQ8R3_giIKXXx8HkE_wbAveiq2xXFSj5n8fDo8Y-KeXCgMXXVAdedzR9j6jOOUxpVwVrZwcWA1HckZrYCn3DK8R097BeMMQto5E',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDraIGhwfQBlHoKOfS4XVo-rU__7HO8jMzRnVqbaVkF1JnmKTibmCn6_xS2fflzaTcukdQx5NduYs7dCJq6KoKlXKM0fPNHJCR1ASIeELChdy8Uh5_LwW0MUwusYi4MDRBTdz6OEwmpMDTk6whk2XTs12KB803ugBtR2IfpOEPnXwuTRmLIqrNT8Jxu-SiMo0rje4PcD5tV7ggV4Zs9fdUqBkXcKMHfU_ZWE313rG4GY6ZheKs-nENmISFYxXpalUyzCfO2HhE34RE',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAdLMqjDGSjcg9BNtGMqRZs5DzFzQrtcKw8TgfospemgnfRbUn1awWdCRd2cHi80P4mvgR0vaq7iAAW6AXtYJiqnfAAbqcE6IC84PSdAQEsttEdQl44ckbleKo33pGgJHArDqwfrwk-9XRQRY9ivQHo4aTURIRMhSAic7AADLHIUrp9cMiOR7_-pioCDczuz8OgcUKN3a7EIEO4TBEzLMyz7PXK7xP84w_XqyR0UlWSQxuJHo-7DSh4CD332h8NTGZZKfEobgQy2oc',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBmsu5GWyRbjQkz-HlIqnbx08vGZm2QzlAS1WLCoQ9Kam8xzo9SAIjJWHQ1hJ5Xrk1b7gHd0lJANdlQ0Ck0JouUsW8KaKcqUcEAjEHR0Ifhl9WV3S81dRodO_11zXpK5ukRnLRWBcYUKxrLJoJ8NKUaADSMa09y08OFKGwU0_KdmMxZqXAwoP6w6yqPnemi3slEX1vO7nAPsCfD9GQWABnyuTqdm851IJQ8UhBARtnogpNQfcfCwAJV2gp0XgkN0Rc3h6iLdJPeyiE',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCuAuDQu1q9ySPWpcewoJ0KbwPt4ZuMjj10ehn-d0Q4jNiKYU7dLY9kgyCtlslk4xgms6ZGNN7GBcVIAnT02rQPTXJ9Vwfxcyfmy6klcWx5QmAC8IBSZgYtCxwil739UPNsziwmBAXetEAxICOGSTiThDRen8OrlFk6kOyVcZGbgysORStU3DJl86af9vkgFXvrmxSLun0CVY3CGiYy1zW9kYRdtyXyLW4J4P5HKDxUaCQhX2HUu-MuZuLLopBaE7RDw7Z6Qa1h_zc',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCtfPhYN6u9FvRpWnZStGS-Yj69iaO2j8bipquiIRwISf6gLNHoJjtZ6-BB7-w2-hljb5qG_oLfFcDqOmgGamgRbYENycyT9zFVfvXtAAk03c7tOeKjdXFv-xjJh8G9rgVJg5JYj48arU5Lz1Ia91NJeI7sfT3U0GDPYtRVcCue-qg1pcI9tvyZcg2XErJC2a2Ej4dvNguKLXGpy5KKZz0sxXU_9SeOjtm3oQXdfM_5Y-rOHJCfeFSkq09P4GrQFsISpr-8W-jMa6E',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAIGcn1jRxOktrRWFwuc5IHaMycaIkFLNXCAF08QMx6p0t0WrlOMgcDd1oUwF10RfCbc6szV5p-YZ4QQ5lvsbr5GZmjDxlW02O1F5E3AJJKdt1Jvl3R_TLSdqblb72AxqxK2nsnn1tjw102jnmJfWvvCQ4nqKMTVkQ-AUMxeIRJ509rThMBNoZJd6bf0-cChSmxaNkVZ55fMkBub6oe9o7UD86orh1ZPFk0K_YtazmrSMibueU9kHCQctjXVsEHRA45Lc9WAgXp9Pw',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAn1kG2Nh_C1u3R2wi5VgqCs4sskqAtH9s6OL8iwdeaIIE8LJznLlapNlONnxb47ptw81BwngD_WKP4OyG4jvNN6rUBaq7Vng9BT1DAEuq9ZvwQJpkhQY4tqV0dAJbefCY0QyKDCasynogVcOacNnNIOetWlVd4GwzDH0MFTS7SJWvXULPzXqCyMOry8lVb8DYzy_5nX1vlEfuU3RY91Nx9yaGIY7j2i0LfjAAnnqPL5M7PHNPGUEGws-D3FfvUqUm_VMjCtcVfs6Q',
+  imgMenuImgs2,
+  imgMenuImgs3,
+  imgMenuImgs4,
+  imgMenuImgs5,
+  imgMenuImgs6,
+  imgMenuImgs7,
+  imgMenuImgs8,
+  imgMenuImgs9,
+  imgMenuImgs10,
 ];
 
 const GALLERY_IMGS = [
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBktsMp5r2HBD_yrSARsoytd_YLBAW6osqvP_5nKZMKwTsWg2YfpbfKTEC_rXZXdJW1FME7MLZ1vfzav33Ri-8UoiK1quVVkUAtcr-t4Y_HdspYbAkvS-IKp1mhNsfWJy4fTLYAX-8zC9xTRC_16_2IK1SopXufZKXEK-kTruD15RMAZaeWg8YBQ7kSi0O-SQFY5aLTdEmgE-iR-W1QKjAcWUZ6t7uiyTHOZnsLCcSAVtK252-AkA6lmPvWWfxtywl7SKMjSsTi34g',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCyluc5rhJPBPrNhYCLLFC7FIvZhGhfChP_1kPBpzxayKir2zIxr1-PElv1FxgM6IWfjZanl-49znLWUrcIGJoGwqN6xVU7-x5-r7Vb3juDFmafLOgaWc4O4i3S-naIu9JV7C9b-Fw2MqwgLnmfCz5X6bQNeD7SX5ipQLALVM5SOBbbqmiemQ4TtqyznMYZdUpoi-97sG9HPRxszS9Ljb8yc0lqXRNHgZwT6TQRrdzceoSV2HPsRYRpwF3yCOAgGTEgfHBrbpJpO0Y',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBnAQry9HFK-ecJVcL9_kCL39ztrOI_NPUAIx1WlEsgt48fuFEzwyiX1BDvIPNccCOK_Kk2pfYSuz-7HaQ7meN5MEnKMvAbxSi_1Ndz6WP4N1vNHnI74O4v6BW-VSgcOtmFF4zY63YJLieNGuIwK3emcg8BjIvzDBhYz_7UOSFn9GXpeo4KBCtsIogZg6jhhg4jD_Nkn1LtnQr0nSRuJHKbbmd1pBeN4YmKXPY9giLecrpiKCDcJjEUJhKR_s2WBt3Ob4B5WRXQQ4Q',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCvOIF5qB7g9yZ4YveEApHT-KvLuMUaVfyLB5s69wLPgmUs6DPWxmSJNRFVfhwy0R7PyJdWqXv4istAS6Uat-s4glWXsRCHWD7yoNCtgNn6nsYHmvFKqb9GMnEELlB6-65nUFR_vaqO0EcagdW0VguzgxTGgPj7iO0pg__n-lomMnSbuGrJD_S4nOF1_ZzXgiFcBCupxPE-10YOhPSoWOVs-kh2q1mE-IzTsC1JMe_9gSe3sgukxi2tQwEe49IoktE5AI0ip6DfoWo',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCD0_aKD4u0q8exAjJm-pKJNiUGe_yZaArAWss8N_i70Ia_G5qxc8mfnBoXZQgApHMwgkJjfdwn4NuXVm2k5YaFL5b-Hz9N041wpDnT-psHv-Bo19XLT9ohMnbA-FjF_4BRrSPOfKfZOkEjGHfPNTrgHVqXHNcJIFw1oIoO1-lYEO5xFG03kn1Ihnt1qhg1m9G9BV1GwolVswlWFMfifOrEjVx3B2xQl08nsGt13CFInDu3FD3pDElDce-Bx0I3lN1VK6-khaQ13-4',
+  imgGalleryImgs1,
+  imgGalleryImgs2,
+  imgGalleryImgs3,
+  imgGalleryImgs4,
+  imgGalleryImgs5,
 ];
 
 const AVATAR_IMGS = [
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDGJo_oo0kjTqRdFUfzLBr_dXSrTcEDS9eCiwVvCDq5YDBio50y6Gi27nBclPtxzp0B3wZzpuqiz-rwF5YNy-46SShMcQDcaCm4LA8f1tO9m_DntCFTiF6DHywYnAnpySXA1VhXvukKM0ZMZ8ndrKfg40dY6UORrEjtxM2GUODf72MoqpLHvMPWk5E_xGEyM2sZdjh0OYS1K4GpPs0OwTf-CPRw6YjgF-TbmF4cYiOfVBJanBDLFfvoNwBB2FSbf30Ce9OHAdH2rQ8',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuC5admmej1kz73vL6kcRXf9JLDObhaH-iKXYUh3slmDq1SY5iQy7SHee19a2x8gagG-hFLdgx6xwRQx3DPX32fVAcI-IvjO7ocKntzm3fr4mxryJjRikp9wG9UBzXDJXQa4Vp_ZKv4IJDqeevmZYNjjaBmIo0Ntsr0nheplQgUPUz5o_LyaFBNJv3Jtm5JbO4CRfq06dVTABOuptBRN8lOmTLBl7tWOThyMvxzoI-PbBhtmxAQNN62iGje8YHFYE1xs-LGlx5ushKM',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAYm4xssX6LbpKL90qi3C53prGiwa6toROKyFmWs7_LJUa0DAuEbKjAkslENhyd0K6Fg2rEF0Ug5vD8zWiaFkWHxGr0IOlgOwl82Gkm5cKLbiedHLHC6jedB6rIO9otaW-QrIkwwThu3HbqxjqUdJxhkJHjHluMtF97AXvX1ZrAnsj0g0giQo8uorA3AyoJhKUWoMZ1y3yV3ZaGWk7fbDuTC67LMdopyGZrzdpcsf-137_09P0uV0hP973p-lxjVOS7lptX1pq7LTE',
+  imgAvatarImgs1,
+  imgAvatarImgs2,
+  imgAvatarImgs3,
 ];
 
-const MAP_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBM5nLP9FCaASSJXsC23E01Q9z8694iAzzNLxRluVRwoT80lrLqYrtfzRiu1xT0_BzeG_qgrMLs1PYy-msnaRewk-ec7tLelo3HygNaBb4JH92jmcAvbbR5W9yKQgu9blHNtgwsBrwLGa1Q0qzYmqmKpnbQg4QNk4vChQuEz7g8485WlSYRSxJjRlIiA3-tjE4HZBGrU4pP6hUV_TelC9IjdRSiEYMJMP0aEJy7_bRRtJ4viKGb7BCddWvW70R4tdW8-WTjpANilFE';
+const MAP_IMG = imgMapImg;
 
 export default function Coffe5({ lang: propLang = 'vi' }: Props) {
   // Ngôn ngữ đổi qua LanguageSwitcher chung của PublicSitePage (truyền xuống bằng prop lang),
@@ -104,7 +122,7 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
           </div>
           <Reveal variant="zoom-in" delay={200} duration={800} className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img className="w-full h-[500px] object-cover" src={images['hero'] ?? HERO_IMG} alt={t.nav.shopName} />
+              <img className="w-full h-[500px] object-cover" src={images['hero'] ?? HERO_IMG} alt={t.hero.badge} />
             </div>
             <div className="absolute -top-6 -right-6 bg-[#92400e] text-white px-4 py-2 rounded-2xl text-xs font-semibold shadow-xl animate-bounce">
               <div className="flex items-center gap-1">
@@ -147,7 +165,7 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
                 <Reveal key={i} variant="fade-up" delay={i < 4 ? i * 100 : 0} className="w-[280px] flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full">
                   <div className="h-48 overflow-hidden">
-                    <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`menuSection_items_${i}`] ?? MENU_IMGS[i % MENU_IMGS.length]} alt={item.name} />
+                    <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`menuSection_items_${i}`] ?? MENU_IMGS[i % MENU_IMGS.length]} alt={item.name} loading="lazy" />
                   </div>
                   <div className="p-6">
                     <h3 data-field={`menuSection.items.${i}.name`} className="font-bold text-[#191c1e] text-base mb-1">{item.name}</h3>
@@ -179,23 +197,23 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
             </Reveal>
             <div className="grid grid-cols-12 gap-6 h-[600px]">
               <Reveal as="article" variant="zoom-in" className="col-span-6 row-span-2 rounded-2xl overflow-hidden group relative h-full">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={images['gallery_0'] ?? GALLERY_IMGS[0]} alt={t.gallery.mainTitle} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={images['gallery_0'] ?? GALLERY_IMGS[0]} alt={t.gallery.mainTitle} loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
                   <h3 className="text-white font-lexend text-2xl font-semibold">{t.gallery.mainTitle}</h3>
                   <p className="text-white/80 text-xs font-semibold mt-1">{t.gallery.mainDesc}</p>
                 </div>
               </Reveal>
               <Reveal as="article" variant="zoom-in" delay={100} className="col-span-3 rounded-2xl overflow-hidden group relative">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_1'] ?? GALLERY_IMGS[1]} alt="Gallery 2" />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_1'] ?? GALLERY_IMGS[1]} alt="Cozy check-in corner with warm decor" loading="lazy" />
               </Reveal>
               <Reveal as="article" variant="zoom-in" delay={180} className="col-span-3 rounded-2xl overflow-hidden group relative">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_2'] ?? GALLERY_IMGS[2]} alt="Gallery 3" />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_2'] ?? GALLERY_IMGS[2]} alt="Aesthetic seating area with plants" loading="lazy" />
               </Reveal>
               <Reveal as="article" variant="zoom-in" delay={260} className="col-span-3 rounded-2xl overflow-hidden group relative">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_3'] ?? GALLERY_IMGS[3]} alt="Gallery 4" />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_3'] ?? GALLERY_IMGS[3]} alt="Fresh milk tea drinks on display" loading="lazy" />
               </Reveal>
               <Reveal as="article" variant="zoom-in" delay={340} className="col-span-3 rounded-2xl overflow-hidden group relative">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_4'] ?? GALLERY_IMGS[4]} alt="Gallery 5" />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images['gallery_4'] ?? GALLERY_IMGS[4]} alt="Guests enjoying drinks at the counter" loading="lazy" />
               </Reveal>
             </div>
           </div>
@@ -220,7 +238,7 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
                   <p className="text-base leading-[1.6] text-[#57534e] mb-6 italic">"{item.text}"</p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#fde68a]">
-                      <img className="w-full h-full object-cover" src={images[`avatar_${i}`] ?? AVATAR_IMGS[i]} alt={item.name} />
+                      <img className="w-full h-full object-cover" src={images[`avatar_${i}`] ?? AVATAR_IMGS[i]} alt={item.name} loading="lazy" />
                     </div>
                     <div>
                       <p className="text-sm font-medium font-bold text-[#191c1e]">{item.name}</p>
@@ -274,7 +292,7 @@ export default function Coffe5({ lang: propLang = 'vi' }: Props) {
                   title="Google Maps"
                 />
               ) : (
-                <img className="w-full h-full object-cover" src={images['map'] ?? MAP_IMG} alt={t.contact.mapLabel} />
+                <img className="w-full h-full object-cover" src={images['map'] ?? MAP_IMG} alt={t.contact.mapLabel} loading="lazy" />
               )}
               <div className="absolute top-6 right-6 bg-white px-3 py-1 rounded-full text-xs font-semibold text-[#92400e] shadow-md">
                 {t.contact.mapLabel}

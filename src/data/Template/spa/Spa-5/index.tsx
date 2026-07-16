@@ -6,6 +6,17 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgCategoryMeditation from './images/categoryMeditation.jpg';
+import imgCategoryYoga from './images/categoryYoga.jpg';
+import imgCategoryHotStone from './images/categoryHotStone.jpg';
+import imgCategoryOil from './images/categoryOil.jpg';
+import imgCategoryDetox from './images/categoryDetox.jpg';
+import imgCategoryFootBath from './images/categoryFootBath.jpg';
+import imgSpaceLobby from './images/spaceLobby.jpg';
+import imgSpaceRoom from './images/spaceRoom.jpg';
+import imgSpaceFacial from './images/spaceFacial.jpg';
+import imgSpaceZenGarden from './images/spaceZenGarden.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -13,17 +24,17 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHb8V5K-haV2e-IrpZXgy2z0XdzTA6WQQF9XkzSGQMKhJaNCvSqyjGuH7GM_fLUmBFhv72wT3HmU7AKLwVcKQo2xi7N_UPybcaCnmtV1xE8wbV5GFFdy3ILyZ_lhCkH68K3hUObu9ya80EvZdQ6cdyBYpo6Fdy017PA1ODVqA1Pyy8vit0AvwDLP74Vg6BxeFHMf4R3eYL3tuau8JYiU87C4br8_BDQLB9KJFlXY5l8jsP5MjgC4D0',
-  categoryMeditation: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZ2_To7iN9Dz7EC73l_NNvqzFEQDs4kUNo3JxR9Mx_9T--w1otFt7SF57ZD1o_Fby9_AFjNXv6Y69cXF7KB3gEUWthS4VVJTeexNn0YeWqSmItHoTXa5__rTw0Weclnitx3N9SvvKRw6q-InSYv2oOQJy4z7I-X1uINInf2W9UXWmoWbSjiTd4IZHMA6mohGO7xlCp8Jf24XOWENUsUBXKi19qjWkbtb--lxHBvgfimUMNZZhcfyUI',
-  categoryYoga: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmo4np6M62BIP-eWunwdQBSk4AYrf-h-YgCJmSbyM0HhweHaNEyhYfi6NKPKr6O5EeU401xwx-c0oa1LGKHzc45Gr5sRYr1CD4fkpbF5yqL258l7q-OsTnjEzZx4mYJNnGK8uoRxbLGbHzjibOLrUOrRGDW1daga5xH8gR79x8bh9ExaWvcTJvw0FP2i7qlKIoUO6idTNKXDE-NORDJXmZTA2uuao11qoZGMq9TMrB33eG66OXO9Py',
-  categoryHotStone: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBqsweb5mPTBm5Jq2NrHDLSannZaxvy3VIogVSZIZPf7cL16rhiryKF4atKvXnll4TrlFoaSg8bgsFZgmc4NlvhUQqQQu_r8l6TlZ72JYnI456wzHelcfYm5scT-EZTQPLRSltq4LuiKdVEWBYPfkdCn8LHj3IsS_x2Jb4bi121TiOEaGcd_3dlO7k-DBqpmNPjZC8c2YMUmb1DF2BD4bAO5t291DFRGcv027qYgLcFJc-Lqa7Tgs_6',
-  categoryOil: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCsPD3jWmD5_PQNuVKioOdfBdQhsnzOv9mYIBpvUo0vz7BQwVd9L0qCPlTmsjWCkVnSlio87E9IJ3OclntB9_njygpJMyIGfR-ClM4vlTw-RkTsQXRn8Oa2AnGJgAZfMr5FSvD_AaQy_SH-0bQtT20S-U4I0nt3XLKqIPs94c6DmcUA-5NeBAVIXoIv_IOSzoXJXYzEnb85w9gw9f4pk-KALw0HtN8QlCj8SrMsLRuVNtNbRIeUYo7',
-  categoryDetox: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAG4HpSfOsbGNip28J65NH68soH3QKAqospdCgh2m5pe1fkD3jnr6CYsBsUPnUXSSSmi-BXhl1_ttXQ6Tl2wPOm5FEkpSkaDsk0tgRi_Fa7TBLlMVcD63IIfywvH_qp-_BJxY_HWt1jX5I3JgndDJ__lWGat3oPYGzLmHqVn20gzLZbQbnhpij8BDriE-i7TcgMw06HyawqboMWtfuoXLC-9CZaPCMmo6Xjsqm853YPwg0xjVXmb-Gw',
-  categoryFootBath: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcweJYJN0GYvAiNHQLaygKXhmIzVC5UxLyK_hz4zuv4Cb_x4aRHgVqK_bRrbcKIIJKDM3GcO5kNyN16QafYg8sxYJFMCx_d9JBdft2MFByjQjndiK1TezE4XzUdxMVQLAh0BtrxAO2f1BEGYmFg7HpzWoQ6RS8GcrhKj4-z0j9mwJ6q33OhDlNtqHzEWJOZ3EwVGu7UsW6a4_w2663QYncg8otRcR5x6pbI2ObP5H0DhzDY6EbeXHQ',
-  spaceLobby: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGwE56CL3Wd5TPUYLbAdyvTQT3_cRdUn8-AxjX54IZcX6PIlaRoCvSvpD3c7IbXJcJT5L94sM_I1JrZ2YNfuWFimYeOw-B_HyeM4WFuK5vbUMVLG-262EUC9jE06JZ0FiuIwEqOuUp6bE8CDqZ8W63Hg2BQ29xrrZEhtm8l2xdn1e7s_ywuwAQVMmjyMQgao_mIE8-B6cpspP-E51Yw0NxCh8TDi4SRgkJy51yU9FWw79h9TJ8T9ig',
-  spaceRoom: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJBXMW7Pkd1KOMSwsYJ7CiEcRpl40b9I_rZYfJl_JtCdUn5jqzQGtPScvdvLH62OP4MyPDgRRns9FcLluM1_b11dkV_NjRTKukLgJQ8h62IAMFmeVxxOcFwK9-0YauEQknftGm9g-28v2MJ9EQxN0NIBhA1WDh_ftqNPXFcmZXBDex-zBmfyJypweBssQFsdzcq2lXM-0bwLwBdSAcRCOeZPb5BJ_UxlQB9ZUZ7Cm7q-hHbC0jS4WN',
-  spaceFacial: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBxpOVL-fF-f_aG8mPFhU4wCuxpGnsi4Yg-dtqUhf6dsYQ3ZakrK81IQwXJNVOESkwyy5I_O-F2qKU9jHMfoLhgwNxGRN7HBfst_yW5zTr3TsxGEwToSKXmQKgp64Ny6KptuDzbIb6GqGoqpz-j6wbRhObWnAVqXu12PqchjgYfDWCmYn6uMGqWjwHrUvRCGBI7JYPgU12Oi1MQ6tZmlbwHgBsa85m-aLexdc0dIKkqBmvywpsqLW0d',
-  spaceZenGarden: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzOQCA4MZ3Ehb8P66-ytIIoifd99b_yTU3I4uzbGIW5_PB-JyzmFbaxNhB7meWC0874mITzQfwQccAKkkFFCzFVfdOPSBpfvjR1GrCNMEcKCoBWw2JmMN9wr_bYvagUcjg_dqy7pw7J4eBdytEHoPU5nX6UE7EPBZfsk89es9eJsh-qMHbWNPchDac6bnL_Sdc3CFhBUhE0ErZhcLCJv2IP_JNVvRzLZPLLPbCh4jPRl10mKonAlDh',
+  heroBg: imgHeroBg,
+  categoryMeditation: imgCategoryMeditation,
+  categoryYoga: imgCategoryYoga,
+  categoryHotStone: imgCategoryHotStone,
+  categoryOil: imgCategoryOil,
+  categoryDetox: imgCategoryDetox,
+  categoryFootBath: imgCategoryFootBath,
+  spaceLobby: imgSpaceLobby,
+  spaceRoom: imgSpaceRoom,
+  spaceFacial: imgSpaceFacial,
+  spaceZenGarden: imgSpaceZenGarden,
 };
 
 /** Icon nhóm chăm sóc — nằm ngoài i18n vì không phải nội dung dịch */
@@ -116,7 +127,7 @@ export default function Spa5({ lang = 'vi' }: Props) {
                       <div key={ii} className="group cursor-pointer">
                         <div className="overflow-hidden rounded-2xl mb-3">
                           <img className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-                            src={IMG[imgKeys[ii] as string] ?? IMG.categoryMeditation} alt={item.name} />
+                            src={IMG[imgKeys[ii] as string] ?? IMG.categoryMeditation} alt={item.name} loading="lazy" />
                         </div>
                         <h4 data-field={`categories.groups.${gi}.items.${ii}.name`} className="text-xs font-medium text-[#56642b] tracking-widest uppercase mb-2">{item.name}</h4>
                         <p data-field={`categories.groups.${gi}.items.${ii}.desc`} className="text-[#46483c] text-sm font-light">{item.desc}</p>
@@ -193,16 +204,16 @@ export default function Spa5({ lang = 'vi' }: Props) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[700px]">
             <div className="md:col-span-2 md:row-span-2 overflow-hidden rounded-2xl h-64 md:h-auto">
-              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceLobby} alt={t.space.title} />
+              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceLobby} alt={t.space.lobbyAlt} loading="lazy" />
             </div>
             <div className="md:col-span-2 overflow-hidden rounded-2xl hidden md:block">
-              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceRoom} alt="" />
+              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceRoom} alt={t.space.roomAlt} loading="lazy" />
             </div>
             <div className="overflow-hidden rounded-2xl hidden md:block">
-              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceFacial} alt="" />
+              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceFacial} alt={t.space.facialAlt} loading="lazy" />
             </div>
             <div className="overflow-hidden rounded-2xl hidden md:block">
-              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceZenGarden} alt="" />
+              <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]" src={IMG.spaceZenGarden} alt={t.space.zenGardenAlt} loading="lazy" />
             </div>
           </div>
         </section>

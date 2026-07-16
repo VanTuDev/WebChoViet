@@ -6,6 +6,8 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgMenuHighlight from './images/menuHighlight.jpg';
+import imgMapFallback from './images/mapFallback.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -15,8 +17,8 @@ interface Props { lang?: string }
 const DEFAULT_IMGS = {
   hero: 'https://lh3.googleusercontent.com/aida/AP1WRLvWGLzS4GDNPNs6dtEzfgiEs2NLzqNcAm2-St4v1GXWLoNVEfZFNi6kmeMxOy83S_jlLOdaqOkfkJOkEmu919gm3YQXfqv1Sgm1xv0IhA5Ke_Hx6M4Bi9Qm25HAuZ_34SnpQ6fU4hVUvMI3T36GoBL82qjMxYGoytkEYcKfFQjnK1pJOPJIwtOuKykL7d5EmHe4SV5PBnJHQIk5LPXxK4WzdWQXue0tia-vTPsbxG0qTzfddtdk0-wI_A',
   story: 'https://lh3.googleusercontent.com/aida/AP1WRLsk1-akQjPqvE_eK92bQiR4DflPO8rjkzLPWw2LcmOVhYtPDClh2rXkvhhk29X0aPMBoPuvsAxBbYdOjXSsTWXsJxwtxziK6bMiInWyS_cdjKohapRreKfRn2pqviKIDJUR_fB8l3N4By503vZsO3fPlwWIB_BqBNUgrK72F5tUP-1SlKOY6C-qW6JAqgV5-YYTaBZry16MSTcNzP7uGFf-JHG6GCMmlc1kKE-Wm7fWgsc3cobg2UyNVQI',
-  menuHighlight: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVZD_g73ewOx_veijkevHIA-X-Ghl9_ydaJHgQHA8M_c5RAvpf9E1QGTmvsYQ0grr7M1cfTQip5-TWYF3fnRO4PrgKNv0IrN9k1wG_orwx07SmJDvGShcBULZKjwON3_QP03O_aW2ghnUjx3GMthxR65BWXKwqXlQQxy-Yz_hVc57TMaL2nllQgeLJUv1f-VYS8Qjvll-3EDz9viz2jcsPpeATQoAxMJ2qHA_oQtTQgj79Ttab3Fgu',
-  mapFallback: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfjB3kVuTfnV8-5iyqYjZPXqSXnyXaMYmWmtT1oKmzcad4wMQhPqTKuFvWNMNtfVx2o22Z_dQQBXEkzgy84ZqTIAkkiaiZd-Wb8Awl-jzMkqA-jps3y-Li-qrDUa74rQije-1kDuXhUQvab0QUPMxtzz99x3jqR3V0hOuJuNjN0_2YwHKbFUR-AgR8_5rIhfr8qawuBXIL-tshoBR3Y0NyHpsHD6jei1bTwGRsum2F4NU9Gx_C5mnk',
+  menuHighlight: imgMenuHighlight,
+  mapFallback: imgMapFallback,
 };
 
 /** Icon liên hệ & mạng xã hội — nằm ngoài i18n vì không phải nội dung dịch */
@@ -63,7 +65,7 @@ export default function Restaurant7({ lang = 'vi' }: Props) {
         {/* Hero */}
         <section data-section="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img alt={t.hero.titleLine1} className="w-full h-full object-cover opacity-60 scale-105" src={IMG.hero} />
+            <img alt={`${t.hero.titleLine1} ${t.hero.titleLine2}`} className="w-full h-full object-cover opacity-60 scale-105" src={IMG.hero} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(19,19,19,0) 0%, rgba(19,19,19,1) 100%)' }} />
           </div>
           <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-16 text-center">
@@ -86,7 +88,7 @@ export default function Restaurant7({ lang = 'vi' }: Props) {
           <div className="max-w-[1200px] mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div className="relative group">
               <div className="absolute -inset-4 border border-[#5b4040] opacity-30 group-hover:opacity-100 transition-opacity duration-700" />
-              <img alt={t.story.title} className="w-full h-[400px] md:h-[600px] object-cover relative z-10" src={IMG.story} />
+              <img alt={t.story.title} className="w-full h-[400px] md:h-[600px] object-cover relative z-10" src={IMG.story} loading="lazy" />
             </div>
             <div className="md:pl-16">
               <h2 data-field="story.title" className="text-3xl md:text-5xl font-bold text-[#ffb3b4] mb-6">{t.story.title}</h2>
@@ -123,7 +125,7 @@ export default function Restaurant7({ lang = 'vi' }: Props) {
               {/* Highlight image */}
               <div className="lg:col-span-7 h-full">
                 <div className="relative h-full min-h-[400px] overflow-hidden group">
-                  <img alt={t.menuSection.highlightName} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src={IMG.menuHighlight} />
+                  <img alt={t.menuSection.highlightName} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src={IMG.menuHighlight} loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#131313] to-transparent opacity-60" />
                   <div className="absolute bottom-8 left-8">
                     <span data-field="menuSection.highlightBadge" className="bg-[#c41e3a] text-[#ffdada] px-3 py-1 text-xs font-semibold mb-2 inline-block">
@@ -233,7 +235,7 @@ export default function Restaurant7({ lang = 'vi' }: Props) {
                 />
               ) : (
                 <div className="absolute inset-0">
-                  <img className="w-full h-full object-cover opacity-50 grayscale" src={IMG.mapFallback} alt="" />
+                  <img className="w-full h-full object-cover opacity-50 grayscale" src={IMG.mapFallback} alt={t.contact.address} loading="lazy" />
                   <div className="absolute inset-0 bg-[#131313]/60 flex flex-col items-center justify-center gap-3 text-center px-6">
                     <MapPin aria-hidden className="w-12 h-12 text-[#ffb3b4]" />
                     <p className="text-sm font-medium text-[#e5e2e1]">{t.contact.mapLoading}</p>

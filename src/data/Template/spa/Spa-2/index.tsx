@@ -9,6 +9,12 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroImg from './images/heroImg.jpg';
+import imgAcneImg from './images/acneImg.jpg';
+import imgSkinCareImg from './images/skinCareImg.jpg';
+import imgBodyTherapyImg from './images/bodyTherapyImg.jpg';
+import imgTeamPortrait1 from './images/teamPortrait1.jpg';
+import imgTeamPortrait2 from './images/teamPortrait2.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -16,12 +22,12 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroImg:       'https://lh3.googleusercontent.com/aida-public/AB6AXuDqhhfM9bFLQdzZ1FgZCH2B6Md4GUbCPodCbEy-I34NdyPONJaBAKvrWEfuokU8bk9YczaW0ttDV9kpBvjKlPr4ogzakNJ_9VTsElrmsRBiF6bKcD1xQnM02C7dz11-Cc2pZf8-HoMh0ezwkCuljEYhmy2bLCsyDEtiX9TdjjTMips9NlflP3ZZKiZBwLN1b_E2UopUJqvSDr-iLc97TKxzFBaCEuBaHol4fhZNiqjixwnfmGIwye4G',
-  acneImg:       'https://lh3.googleusercontent.com/aida-public/AB6AXuDmou1haC8jNjkiDUuGynK92mspCztxLFVfY1dYoGPMbAQATHwSvEC2cHgQiDz-BFVFrJtjEGErUhJR4llJmXQoCLVbpheItOoBW8q7IJgQM_DTy5y4lo8u9mNjxZgqD7UmW8ShyLOVH99lsTildOCUc0ciA_tQzOsM8gXGlffw6Vzzltu9w3ldYHJQgadAhlrIkiuSpIHFDkEsn4iAWADnhbTUlb_PP5knkwZDYEemW2IZWPiYYeB1',
-  skinCareImg:   'https://lh3.googleusercontent.com/aida-public/AB6AXuCWoCd3jRjtcXPePQRUtU29t_kcebw46QQW-2uTwEY78BuYuksoq3dvlU25nvZbHzWGLdHa3FM9mpl2Pgf0icsXrecJIRjmfr88GcvEAPxIJbGf0pjsKXDWEJ4zZckPZGRe34Va42zSaReool-9-xalJE0R4vLcRbviin6vZa0DhKhlM7V-GVKftlKylDzw2WOE_flxj94LGTxhMZNX4pW_mIPZ_pV3YA7MK_FnEHi3xVdQVG3NVppa',
-  bodyTherapyImg:'https://lh3.googleusercontent.com/aida-public/AB6AXuCBL7qUeWqJ88K_d4OMW8e-ZzVyIJEiRisoPzaRXaj3tvsTHNcZrww4tgQw1GSo2ZNU2huf5qz-fHRD9kd7JXGledkR7puqUXL2TVLy1crFV2CV0PBAgyrYQtpmSQzLxgZPlH7kiYU2mJk_d74neMu425tesvnjYbLLwEjimMtIDlGlhr5jV7UhrCBUFczGpNeyrJ8_AhCnhflr8DkiIeYX0uSjrohItSv_oxB0FeXAN28gk-cSGF2e',
-  teamPortrait1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfqSwKdFZ8HnDEDhwU4d1JMOSFrrmzvqXG9d0OLsYJqDPnc3-movtiXfKEkotaH5kygzvlnWgYLAuDyJj8w7kIearwcXYYRJse_kudQI2d_srkSHe1bJIkWKx12z8Lnbrv-3wITRdqVi2f8xLg6TrExV_moHmYGy5TRJrvPES9wcoLlji_N9v73nE-6CWKSFO8xXDukBnHCkCtN3FkShCWSdwuCuupxqXKtpUeom4JNZY5_kS3E8yg',
-  teamPortrait2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeEX9-YIeueFrH_Cca7mUSGcl6V7QTbraFv6BULlkAAVS5ISurHyXIMn-ChPzodcvkrdjHsacDDF_9UCm0-OKM4Y_plv3MnOdIOa3Xg6nWrqvFY3uRY6vw5U47e6Dv0XUmzFSXj-KaMdE2GoxVzC3wDy8LSLZNRfqbgA2qyMcfgQNFM6Z8gwk5W7CL7-1OLX462UlzrJPtMHwqSZogCJzcpBqGbCXnWBWieSAbNS3mO7cGZ2IVZQb_',
+  heroImg:       imgHeroImg,
+  acneImg:       imgAcneImg,
+  skinCareImg:   imgSkinCareImg,
+  bodyTherapyImg:imgBodyTherapyImg,
+  teamPortrait1: imgTeamPortrait1,
+  teamPortrait2: imgTeamPortrait2,
 };
 
 /** Icon cho danh sách contact (địa chỉ / điện thoại / giờ mở cửa) — trang trí, không phải nội dung dịch */
@@ -122,6 +128,7 @@ export default function Spa2({ lang = 'vi' }: Props) {
                 className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
                 src={IMG.acneImg}
                 alt={t.highlights.acne.imageAlt}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#efeded] via-transparent to-transparent" />
               <div className="relative z-10">
@@ -140,7 +147,7 @@ export default function Spa2({ lang = 'vi' }: Props) {
             {/* Skin care */}
             <div className="md:col-span-4 bg-[#a2d2ff]/20 rounded-[2rem] p-8 flex flex-col justify-between group">
               <div className="aspect-square rounded-2xl overflow-hidden mb-4">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={IMG.skinCareImg} alt={t.highlights.skinCare.imageAlt} />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={IMG.skinCareImg} alt={t.highlights.skinCare.imageAlt} loading="lazy" />
               </div>
               <div>
                 <h3 data-field="highlights.skinCare.title" className="text-2xl font-semibold text-[#30628a] mb-2">{t.highlights.skinCare.title}</h3>
@@ -151,7 +158,7 @@ export default function Spa2({ lang = 'vi' }: Props) {
             {/* Body therapy */}
             <div className="md:col-span-4 bg-[#aed1ef]/20 rounded-[2rem] p-8 group">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={IMG.bodyTherapyImg} alt={t.highlights.bodyTherapy.imageAlt} />
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={IMG.bodyTherapyImg} alt={t.highlights.bodyTherapy.imageAlt} loading="lazy" />
               </div>
               <h3 data-field="highlights.bodyTherapy.title" className="text-2xl font-semibold text-[#30628a] mb-2">{t.highlights.bodyTherapy.title}</h3>
               <p data-field="highlights.bodyTherapy.desc" className="text-base text-[#41474e]">{t.highlights.bodyTherapy.desc}</p>
@@ -236,6 +243,7 @@ export default function Spa2({ lang = 'vi' }: Props) {
                     src={src}
                     alt={t.gallery.items[i]?.alt ?? ''}
                     data-field={`gallery.items.${i}.alt`}
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -263,8 +271,8 @@ export default function Spa2({ lang = 'vi' }: Props) {
               </div>
             </div>
             <div className="order-1 md:order-2 grid grid-cols-2 gap-4">
-              <img className="rounded-[2rem] aspect-[3/4] object-cover mt-12" src={IMG.teamPortrait1} alt={t.team.portrait1Alt} />
-              <img className="rounded-[2rem] aspect-[3/4] object-cover" src={IMG.teamPortrait2} alt={t.team.portrait2Alt} />
+              <img className="rounded-[2rem] aspect-[3/4] object-cover mt-12" src={IMG.teamPortrait1} alt={t.team.portrait1Alt} loading="lazy" />
+              <img className="rounded-[2rem] aspect-[3/4] object-cover" src={IMG.teamPortrait2} alt={t.team.portrait2Alt} loading="lazy" />
             </div>
           </div>
         </section>

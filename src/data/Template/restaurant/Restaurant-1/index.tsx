@@ -6,6 +6,7 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -15,7 +16,7 @@ export default function Restaurant1({ lang = 'vi' }: Props) {
   const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
-  const IMG = { hero: images.hero ?? 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop&q=70' };
+  const IMG = { hero: images.hero ?? imgHero };
 
   return (
     <div className="min-h-screen bg-[#FFFBF5] font-sans">
@@ -34,7 +35,7 @@ export default function Restaurant1({ lang = 'vi' }: Props) {
       {/* Hero */}
       <section data-section="hero" className="relative overflow-hidden">
         <div className="relative h-[480px] lg:h-[580px]">
-          <img src={IMG.hero} alt={t.shopName} className="w-full h-full object-cover" />
+          <img src={IMG.hero} alt={t.hero.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20" />
           <div className="absolute inset-0 flex items-center px-8 lg:px-20">
             <div className="max-w-xl space-y-5">

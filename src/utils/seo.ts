@@ -61,7 +61,10 @@ const CATEGORY_SCHEMA_TYPE: Record<string, string> = {
   restaurant: 'Restaurant',
   spa: 'DaySpa',
   gym: 'ExerciseGym',
-  wedding: 'LocalBusiness',
+  // Thiệp cưới luôn có section địa điểm tổ chức lễ (venue) — EventVenue là subtype
+  // hợp lệ của LocalBusiness trong schema.org, sát nghĩa hơn LocalBusiness chung chung.
+  wedding: 'EventVenue',
+  villa: 'LodgingBusiness',
 };
 
 function schemaTypeForCategory(category?: string): string {

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import TutorialStep from './_components/TutorialStep';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
-import { CONTACT_PHONE } from '../../config/contact';
+import { CONTACT_PHONE, DOMAIN } from '../../config/contact';
 import HreflangLinks from '../../i18n/HreflangLinks';
 
 interface StepData {
@@ -18,11 +18,27 @@ export default function TutorialsPage() {
   const { showSnackbar } = useAppContext();
   const steps = t('steps', { returnObjects: true }) as StepData[];
 
+  // HowTo JSON-LD — khớp đúng 4 bước hiển thị trên trang, không bịa thêm dữ liệu
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: t('heading'),
+    description: t('subheading'),
+    url: `https://${DOMAIN}${ROUTES.TUTORIALS}`,
+    step: steps.map(step => ({
+      '@type': 'HowToStep',
+      position: Number(step.num),
+      name: step.title,
+      text: step.desc,
+    })),
+  };
+
   return (
     <article className="py-10 px-6 xl:px-10 w-full space-y-8">
       <Helmet>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <HreflangLinks path={ROUTES.TUTORIALS} />
       <header className="text-center space-y-3">

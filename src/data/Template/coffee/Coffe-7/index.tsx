@@ -7,6 +7,12 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgMenuFeatured from './images/menuFeatured.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -14,12 +20,12 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBa7hO-2pu0fubtVfd30zM9SrE0oFcWzg4t0VBgCEe0c1BPJW3B-tsuNvoesemvdHBhb0IR_IrgpnsYjeoiGBVA1oDV03ag3M6wgiGkrZWwNSH3Ey92ulGqlRTOMBQ7or11rBWCiH0Mfe6w1Vjz_Hl3YDpmYqAuCZ_KJDINbR9WUvKd7ZbjPuXEUM5sEegwRqjwfRMysQpvPqVVW_XUDzJE3wRfFEdbMwm2xJozFBWOpeeixZe2WgNl',
-  menuFeatured: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDodW_lmZQ6zKZdUe_3m1_UbLqzM7cw2lB49TMbblqNQOknkbIpuMWgTh_ZIESvcL5vzBZDzWNVhIk8Ri_lOvYhDaXH4jjDZ0ZXD8FwN_4d5bHGyXIHUZEaRGXzh7xOGnwrDX8bOuKKEH1txmHbISOJQ0hT2cqWwzPqPwnuzfMha-q4D5KUk4S3jeS0tyxH9Bjqr8uC8POXzNM_fw23GvM9c647IoD81zhF5JwVPOzDxelGCjX7P_AT',
-  gallery1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIud2DolIkBtQQvWjhEopoPyJwzSofk2Ih-MKDsMZsFZUD7ua-45yZv0OZiAGI2h3BkhPP7S6nIDO7vwTBho_D997B5jNOKA7ltya1b_b6Ke7fw1zbGf8O6fJ_0B1OkzLRP1OV1tQFucD-Ik_4qV6jGZLydxx0bc2pbYVETieO4REH9ZjNiCMbS4kzlT2dDFaEcoEyrEZmhAgVYj6DhLYMk5bjPn5P98JOldN6KT_nTuyLlh6jh0Xb',
-  gallery2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDy8N8Stgl1FtOs2jnbDJuAMq8gjKfk4I-zDnD6FLobGeSvomblhF5ydUeiOCuU2q0QNbYEzhXuBDfBijpKnADuk580YvyHwRT4apXIpWjiB1xHvqOOW04ymi6hG4nbSktQPAzGAJdhvnpV5ge4j1ZYPwr6ISDZiOHPbapIp_GrtFwKFuQJZwwalnGNyn-8pIMz3cT5nOB0gGDNp1d-KZ_jrHrfu6nnW68O5IKvKxBvjQ_n6QN8jUvg',
-  gallery3: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYYMYEYfN7FJX13ylAJQBoKXrNuS2sWFZCs33c0WeFSZPQuxUKQxj98R57dmD6DyhH9nDNF93iJa4tZE30nx_B3pk831aprZ5x85DqPXhj5SkMnD5XdNoDMccxJbRThfIjc3VPFugIgNtOxkJniqJpUP8bU5z6n64cq5y6_LDT879F_CCV04OWJ4EfhI1WTMmsJ9-4mUQwSFKvFhYdpW9Pkd3H5oTCGIdY1XJdQpAzYGCeToqNnEWN',
-  gallery4: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDgmrdbVs2erBFKMvjRWdC80zLvyQILUAzyrm1wh_uRheX3Ea2ChA0d-0r1ggaOVsIZ_By-h-_S5GYh2s6MKvXuCgO7SkkGRRxOuBdvsWa1Nu7Y6iSFntADBgq5O8vpCvBI-iAFDXq7T5roHagyf962SQOLDDQwrpwhynbNSokrZOWIUHieU5C9fUJX4OF2abQm_zU_985rBLEUodNAeW2QKneh7H0w3BWlqbGVegm_kap7zHYGm9Mk',
+  heroBg: imgHeroBg,
+  menuFeatured: imgMenuFeatured,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
   avatar1: 'https://lh3.googleusercontent.com/aida/AP1WRLtI_ne1U9Nsu3H4YBzSiooK5BQSogLCPk7t4W31d9iHudjuGq_aBgPiUIAKfyCKmJbyBiAA-0a5i-ZEI_r-3emipT3UhDKcqLgmspeS0aqvNubCt1nC8MCFerm9sJZOCmPdXHncxlYz4PmFR1xehQjw_DTIA3__NDuFs0SgUi-fmqfjSx_pzCtuKXUv0VHRa8VS33P0f9P3g8im8BUTAJQjyGew5xmaujuKTACBqkfXVIzK1OFkiNjryG4',
   avatar2: 'https://lh3.googleusercontent.com/aida/AP1WRLvKom7znxLJXRYK6ogR18f3P1yRDUmhAadVjCYfjm9zk-RQIsJdXZzQjXTxPg3UBMyZB-ZkOnGCY17QMvgLlpcHMmH5KXmIbi5xZClguuiC6OGlsZaoFxfpLNVeqMXx4J49ljJhFq28TB0oaQB8q9dpI-xJlLHKgdJU4IjCgTXna55MsPHLQ6c1kPvmRIUqZZl444y-iXX8HTzmDk1ou7M04nd6UVkbwnC0I5dOrnzy6go8VzUQU6FHZmo',
   avatar3: 'https://lh3.googleusercontent.com/aida/AP1WRLtnqGi6iEPr_VHu33rdGQXmBeI4Yi4ZgH2doQnqMCYmqdbl5ZQjJouy9NbZz82ORWPUaxjvouZulgWuNuVMUYJWm0KBTksB_FkVNX0ffvN0YhyyCNQL4f_QvdcJ9qE4-HonbuOLxFxv527sjFdzk3Xo77NeaLMNWUzS6qTS9XdgTHKmzf70jsk0T8mV2wOCYtq37L9USQZt30aAYDGoGUMUzjXcfyXwa06vp0ztejAZ0CMECNKbRQqQzs8',
@@ -29,6 +35,12 @@ const DEFAULT_IMGS = {
 const MENU_ITEM_ICONS = [Coffee, CupSoda];
 const AVATAR_KEYS = ['avatar1', 'avatar2', 'avatar3'] as const;
 const GALLERY_KEYS = ['gallery1', 'gallery2', 'gallery3', 'gallery4'] as const;
+const GALLERY_ALTS = [
+  'Cozy corner seating with warm lighting',
+  'Coffee beans and brewing equipment on display',
+  'Outdoor patio with lush greenery',
+  'Barista preparing drinks at the counter',
+];
 
 export default function Coffe7({ lang = 'vi' }: Props) {
   const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
@@ -107,7 +119,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Featured item */}
             <Reveal variant="zoom-in" className="md:col-span-8 group relative rounded-xl overflow-hidden h-[400px]">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG.menuFeatured} alt={t.menu.featured.name} />
+              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG.menuFeatured} alt={t.menu.featured.name} loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-8">
                 <span data-field="menu.featured.badge" className="bg-[#536254] text-white px-3 py-1 rounded-full text-xs font-semibold w-fit mb-3">{t.menu.featured.badge}</span>
                 <h3 data-field="menu.featured.name" className="font-lexend text-2xl font-medium text-white mb-2">{t.menu.featured.name}</h3>
@@ -149,7 +161,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {GALLERY_KEYS.map((key, i) => (
                 <Reveal key={key} variant="zoom-in" delay={i * 90} className={`h-[300px] md:h-[400px] rounded-xl overflow-hidden group ${i % 2 === 0 ? 'md:mt-12' : ''}`}>
-                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={IMG[key]} alt="" />
+                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src={IMG[key]} alt={GALLERY_ALTS[i]} loading="lazy" />
                 </Reveal>
               ))}
             </div>
@@ -165,7 +177,7 @@ export default function Coffe7({ lang = 'vi' }: Props) {
               return (
                 <Reveal key={i} variant="fade-up" delay={i * 120} className="bg-[#efeeea] p-8 rounded-2xl relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <img className="w-14 h-14 rounded-full object-cover border-2 border-[#ffdcbd]" src={IMG[avatarKey]} alt="" />
+                    <img className="w-14 h-14 rounded-full object-cover border-2 border-[#ffdcbd]" src={IMG[avatarKey]} alt={item.name} loading="lazy" />
                     <div>
                       <p data-field={`testimonials.items.${i}.name`} className="text-sm font-medium">{item.name}</p>
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#50453b]">{item.role}</p>

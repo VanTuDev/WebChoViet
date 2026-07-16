@@ -12,6 +12,10 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
+import imgProgram0 from './images/program0.jpg';
+import imgProgram1 from './images/program1.jpg';
+import imgProgram2 from './images/program2.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -33,10 +37,10 @@ export default function Gym3({ lang = 'vi' }: Props) {
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
   const IMG = {
-    hero: images.hero ?? 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&auto=format&fit=crop&q=70',
-    program_0: images.program_0 ?? 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&auto=format&fit=crop&q=70',
-    program_1: images.program_1 ?? 'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=700&auto=format&fit=crop&q=70',
-    program_2: images.program_2 ?? 'https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=700&auto=format&fit=crop&q=70',
+    hero: images.hero ?? imgHero,
+    program_0: images.program_0 ?? imgProgram0,
+    program_1: images.program_1 ?? imgProgram1,
+    program_2: images.program_2 ?? imgProgram2,
   };
   const PROGRAM_IMAGES = [IMG.program_0, IMG.program_1, IMG.program_2];
 
@@ -59,7 +63,7 @@ export default function Gym3({ lang = 'vi' }: Props) {
 
       {/* Hero */}
       <section data-section="hero" className="relative overflow-hidden min-h-[80vh] flex items-center">
-        <img src={IMG.hero} alt={t.shopName} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={IMG.hero} alt={`Không gian phòng tập ấm cúng tại ${t.shopName}`} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#141312] via-[#141312]/70 to-transparent" />
         <div className="relative z-10 px-6 lg:px-16 max-w-2xl space-y-6 py-24">
           <span data-field="hero.badge" className="block text-xs font-semibold uppercase tracking-[0.3em] text-[#EEBD8E]">{t.hero.badge}</span>
@@ -96,7 +100,7 @@ export default function Gym3({ lang = 'vi' }: Props) {
                   style={RAISED}
                   className={`relative overflow-hidden rounded-xl min-h-[280px] group ${i === 0 ? 'md:col-span-8' : 'md:col-span-4'}`}
                 >
-                  <img src={PROGRAM_IMAGES[i]} alt={item.name} className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-700" />
+                  <img src={PROGRAM_IMAGES[i]} alt={item.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F0E0D] via-[#0F0E0D]/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-6">
                     <Icon className="w-7 h-7 text-[#EEBD8E] mb-2" />

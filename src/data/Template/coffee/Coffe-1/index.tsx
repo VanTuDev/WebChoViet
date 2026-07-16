@@ -7,6 +7,15 @@ import Reveal from '../../_shared/Reveal';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+import imgHeroBg from './images/heroBg.png';
+import imgHeroMain from './images/heroMain.png';
+import imgDrink1 from './images/drink1.png';
+import imgDrink2 from './images/drink2.png';
+import imgDrink3 from './images/drink3.png';
+import imgGalleryMain from './images/galleryMain.png';
+import imgGallery2 from './images/gallery2.png';
+import imgGallery3 from './images/gallery3.png';
+import imgGallery4 from './images/gallery4.png';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -14,15 +23,15 @@ const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
 interface Props { lang?: Lang; }
 
 const IMGS = {
-  heroBg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNkqsQSsTeYHw1cnpeU4Uf8MH_blw-Fu7MpPh180Fi0B0ENa0grGwofz2i4Kx6-FbVrIAnE1ehmWhby5zlEGg4KI36Q6WrJoHaey7gbVBPY9dRIdT93aw_bKShcmlj3SnS8Opb797Fztt-vD1VVZUJs6kyb7idreLbbqq1czNPDN0Zp7jG91PZTCGE8r0PCllLuPuPPXOfMFrazJZyBMP6b61VbyI29Jw0ch2DFXnJW0vFekGId5arfP0JDJ7-WsaR0dS3_3QGKuU',
-  heroMain: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBT1T29AWcpkBPubUTqh6dQGDlTVcUUDzLh_rT6_Z0HEDmdw-xPPTbGLDLCi0i3T_N88Yr8ARxjaX6DeEkTNNLpi87unSdAk5eKxlYEet0KO_OiFzgU1b240fnl4vdoFqEHwv_aUBXqg2-Lqp5H6ELolMgEVwvKUx6KpH1gwsStcyd2n85g7xbj45pczLxn0KfVvytlxUrNznItnfjdW9jl3BZCKdd7FJs9mK8WHuOAEzVu2sKxwAEcDCYVkNx0RnUgjgFlXAwTAc4',
-  drink1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAhYysaf6Dsi-b4xGx0Gtp8JwHEChXeSlG2mCJcij7XHEIgCM_OZKUyd4qEDZegSq3kWtwcUo7giUXtyZUxzQifiBX8RZMBOIxtPR2GgaZzkh23IxX0AOuWw-ilfnmzEFHiefiOSQVenrFM8TByZ7PO9ouVxt5olp-VoPmcOQsw1bb-KJ41_uUczIeiFiVF2QN76CG5G99RW5HT6eg-hHjqGXyAPFjBCsjH3XzUQuEJHvHY4P8qBUAhhpEXNVQX4Pxp0k9GW_6QBC4',
-  drink2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6IUgUjzgxFhoHjDdt6ZKZY2czsmyVVqBplHpHeJVipWBXYyNun8B-4P7UHCDDxlk8RorgFeqBqiDiPkQdjPMDYyEKyi7b7ihNvPpdkDvWilEqegwJ4tB6uKVfFI7DYcUP4Ls_xC3xMLSBpxU93VnhU3oaCqqOwxXB-iU_uwre9is_PMPOmVIX0cHJ99w-RdMSPz4b3QsEWMCyz2bqc47r7BdVYzHtPWxud0PYLO-lwz8Mnn-51NVBfnJpzD5uPObk3FVDybql3fA',
-  drink3: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUk7HVg9JWjogGyybbLroGhwuDm8g8sSvoPhkMJBo0d8kVma61lYwf2yJfBcVvM6Kbzmor2NWimy7x6LwIcyA7dconhnn9sAy11MNRskv8RnSmvrHocX2yF_VrVD7GOkKGxGAsCPPoIICWh3AA0xGPp6j8mvGMeqrkST3q0o1DdU2zCUMRSako6n17nHpLBaLwc3sEytz8OoGeIfBb94aWC7YweW9KqlytD2uN4J-W2J-DOyJN-fRcsEbk5E8rwQDi6WjIsaoU5eg',
-  galleryMain: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAiwCA6-9Nm7Vr8Y4arkvk5aV-3YguTyuqhKXeJbulipcwAXaWA87XlsZ8QpcbiMhCgBWtBHfQEX81syQkxjC4yuu46VYG4aGUC-xKHHNf33UsANIuEJj5Pq6INdysrhjvPNE1LOhdKzUGDpQV2DviLnaCSRYxVp64f2uD8pNPQ9MfPPpVfuqoKZdpZZ_rHXvkTE0AkPr5S2V1zU46uru7kLyHWuNflBiH_67SlxgX0f2av5RHoqMzxX6maxY6A0OQlhgKq41_59gA',
-  gallery2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBuQ2UP4nOD8HiXXgNFXajISfeCloB6FQgunov0MHp-J-WbuuBfvHY1b8meE-rk-AFB9C4GjLCfCAQzkQChjBVtx-g4aFMvMVQiN86ymbHW1VTV_kbGq_u3jUD12fYjGZTMjNIZrG3Wt2c2aGXKnapbSXeAqgmCaI_j7Xzw4lIrYaOzG73_fyen7eKlI83o7MO40MH9brUH7NXAEKl4tAvUU5j56kBobuu8YoHXIn1JpYZorcMpR6x-x5qA8DTus1YpyWN9we-J5A0',
-  gallery3: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdQFfDbVSGSbbBBZkj4l3cPXiZH_yJssczjPgSZG5o1Yj5b9noIpmuA8xD6T4rJsaWk_qzwgJS9rav3qSRSCk9aPqCrTQwfK-CqKlvocg1SMHwjPRZzZZCTRNO3pv_453CnXn8_Ozn80ACzZ7CrI7NMF2ZlZG3pxsDf4CQv1SY4mJTTskkKtgE3uHGG4XPn4Zuce1m8_70k6pKm5BzTRXjpzTwqlC7XsJ_rEJzbT7MHF6PP0i89iKB2QaLrbgZ4jpeocc2FX53iG8',
-  gallery4: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAhbuGZT_G_jOWqSCejeZLkTx2yGWMfDaZ0FEdL3I29eQMfPSX0OT-WRQDyoe9NmVYtiVZeWo_koSjeumPuuxcvCx1VZr6dHXn3Nmmi3ftT3QYssLVoE0IKxHkdW09yF5XSdZRBeQdpvWVaszMgniCKHPXuowTUYGBYiAfXRE8i0F36aF5_RG3YjGdfe54ZPRYl33G9kIaXh2JWG5HMOYCYOzYrCqHY3KrmTMgdNSe2aKuQudzQY_IYHkbu-prc1GiXkNKFLpMu2RY',
+  heroBg: imgHeroBg,
+  heroMain: imgHeroMain,
+  drink1: imgDrink1,
+  drink2: imgDrink2,
+  drink3: imgDrink3,
+  galleryMain: imgGalleryMain,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
 };
 
 export default function Coffe1({ lang = 'vi' }: Props) {
@@ -88,7 +97,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
                 <img
                   className="rounded-[1.5rem] w-full h-[400px] object-cover"
                   src={img('heroMain')}
-                  alt="Artisan Coffee"
+                  alt={t.hero.titleHighlight}
                 />
               </div>
             </Reveal>
@@ -107,7 +116,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
               <Reveal variant="fade-up">
               <div className="group h-full rounded-2xl bg-white border border-[#e0e3e5] overflow-hidden hover:shadow-[0_12px_32px_rgba(46,78,63,0.08)] transition-all duration-300 hover:-translate-y-1">
                 <div className="h-64 overflow-hidden relative">
-                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('drink1')} alt={t.drinks.items[0].name} />
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('drink1')} alt={t.drinks.items[0].name} loading="lazy" />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#2E4E3F]">{t.drinks.badgeBestseller}</div>
                 </div>
                 <div className="p-10">
@@ -125,7 +134,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
               <Reveal variant="fade-up" delay={120}>
               <div className="group h-full rounded-2xl bg-white border border-[#e0e3e5] overflow-hidden hover:shadow-[0_12px_32px_rgba(46,78,63,0.08)] transition-all duration-300 hover:-translate-y-1">
                 <div className="h-64 overflow-hidden">
-                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('drink2')} alt={t.drinks.items[1].name} />
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('drink2')} alt={t.drinks.items[1].name} loading="lazy" />
                 </div>
                 <div className="p-10">
                   <div className="flex justify-between items-start mb-3">
@@ -142,7 +151,7 @@ export default function Coffe1({ lang = 'vi' }: Props) {
               <Reveal variant="fade-up" delay={240}>
               <div className="group h-full rounded-2xl bg-white border border-[#e0e3e5] overflow-hidden hover:shadow-[0_12px_32px_rgba(46,78,63,0.08)] transition-all duration-300 hover:-translate-y-1">
                 <div className="h-64 overflow-hidden relative">
-                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('drink3')} alt={t.drinks.items[2].name} />
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('drink3')} alt={t.drinks.items[2].name} loading="lazy" />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-secondary">{t.drinks.badgeNew}</div>
                 </div>
                 <div className="p-10">
@@ -173,19 +182,19 @@ export default function Coffe1({ lang = 'vi' }: Props) {
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[600px]">
               <Reveal variant="zoom-in" className="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('galleryMain')} alt="Gallery Main" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('galleryMain')} alt={t.gallery.labelIndoor} loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <span className="text-white text-sm font-medium">{t.gallery.labelIndoor}</span>
                 </div>
               </Reveal>
               <Reveal variant="zoom-in" delay={100} className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery2')} alt="Gallery 2" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery2')} alt="Cozy indoor lounge corner with greenery" loading="lazy" />
               </Reveal>
               <Reveal variant="zoom-in" delay={180} className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery3')} alt="Gallery 3" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery3')} alt="Outdoor garden seating area" loading="lazy" />
               </Reveal>
               <Reveal variant="zoom-in" delay={260} className="md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery4')} alt="Gallery 4" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img('gallery4')} alt="Bar counter and coffee brewing station" loading="lazy" />
               </Reveal>
             </div>
           </div>

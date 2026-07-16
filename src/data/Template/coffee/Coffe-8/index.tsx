@@ -7,6 +7,12 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgMenuFeatured from './images/menuFeatured.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -14,12 +20,12 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdB27d9Pn_rM-EpTqt-KpZmRwU8-9xBrPxpISCHBXPY2Bs78ToDr2uRCrYHfLHavKcjpc3T2Bwk9yIX5lNX3aUuHTcptC9aZRIj_acME9Dd3e_f31KMifmeXY92bO1OBnwqrWz_UlubfwOZRIcwPjeSlZPY3SuYNXPKuQ2dj0EEYhwvJtQiZp7hWOhACSIIhaEg6mofF-obg238UoBddGzmK-wvJIjF8_UBtGkaigT0yRxBYNz4by1',
-  menuFeatured: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7BHE2MzdhG4Vdi97dbPirRMzCnV1pqC5mUphxrRcO97834hgZNUHC6HGZX5A9BsisjmIPWW_J3logXCV1QrqHcm8DIx3NmWZIhZJpRIPP1DzABG9oWGLnZfkEVmem6QdaGdY-5NtROhNAc9moL55zQ6uaNXUUtxC8G1EJIkGxDp-9rh_amozxTomgL1-zAg1Xy2tpxzwMXbitmV0GHLouqKwt7adUbvDdbixyM2FXIo04WkpoNXQG',
-  gallery1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBExuNaVtcGjuwhR_vuZces8_c4ZUQsy1dZ-zaaK6_3oYFsnMbDqIJFXlAJBPBeB-Ky8iWYSxZb5s0gKsK9KAi5BM2rM9dgdYbY91n8thxqI1TYkTfAMEN3tMGXWW7igbdIl6avvSQqQ7SIC9hH_mwKzVoeJoqLR1jA3yuGWSnGUOmZnyey-ZWCYTIAElMTSe34anAD-ToSkfsxAucnSx84X2tLcDnHkLYH_q5-Io3KShSISI28EACs',
-  gallery2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDTvOYUmV004DMzbKe69PBneRvW5h0xnVfrJyEUjd1my8dvLUBdJ6THn3nhZhBnh48sYOrKwOiZemQGlNx7pT4tdKHM-vQqF52Co6bjRMHqBSWimC2ofE9t0WnavbA9su-e89sPOU0GYDOLTusmDY9FceREboM9HLBQpPQDA-R-H-2POzMOrKGuK2ZR6dw_xZbbULxtnsuBXd6TeyHmFicH2DXLXFu-ObsXKF780WDsILkqApu93aj7',
-  gallery3: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDIA9kptxLgFzda2Wu_Xaddedw7polRkt3cK8JZNdSdkwGsmzNnM8yJEs_VY0nYdy568oex6J7qb4DwFDix7uZOLO7RDlW09PGXAXWjDkYb3F6kBYullvV-Au8fitCR6gBphdBVLeOExSngFx9sSRr4WOBDU0WFHwPkeHzqnN2yZBPaAoUTrUjtvAndtZUPZFTd8Pq6Fa-JrXXV9dHUwJJj1Yo9EObvH5gDnY-0y1ha6us-Awy9fPAx',
-  gallery4: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBqxcywH71Q_54l7OO_eMpNZ26BBR9p14So035GBJtVayZnFBP7kJYJ_HapckPXfbbs10AIM8PlxaFRpeRG_IvBYDQvTq4B_GpSU-R7YT30XPTyfUEythPNwqevlzscFDQhwaFLQNXwUpDoM0qg1imbyuSs_AGGPijlbFZdSroCEChX7xCNFxmNPE3xgaLDur0r3HH4Y-zQGU2FJ95WKDuXDqOrcVrpquBkqUYKtuKWNqc94pKv8-89',
+  heroBg: imgHeroBg,
+  menuFeatured: imgMenuFeatured,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
   avatar1: 'https://lh3.googleusercontent.com/aida/AP1WRLtI_ne1U9Nsu3H4YBzSiooK5BQSogLCPk7t4W31d9iHudjuGq_aBgPiUIAKfyCKmJbyBiAA-0a5i-ZEI_r-3emipT3UhDKcqLgmspeS0aqvNubCt1nC8MCFerm9sJZOCmPdXHncxlYz4PmFR1xehQjw_DTIA3__NDuFs0SgUi-fmqfjSx_pzCtuKXUv0VHRa8VS33P0f9P3g8im8BUTAJQjyGew5xmaujuKTACBqkfXVIzK1OFkiNjryG4',
   avatar2: 'https://lh3.googleusercontent.com/aida/AP1WRLvKom7znxLJXRYK6ogR18f3P1yRDUmhAadVjCYfjm9zk-RQIsJdXZzQjXTxPg3UBMyZB-ZkOnGCY17QMvgLlpcHMmH5KXmIbi5xZClguuiC6OGlsZaoFxfpLNVeqMXx4J49ljJhFq28TB0oaQB8q9dpI-xJlLHKgdJU4IjCgTXna55MsPHLQ6c1kPvmRIUqZZl444y-iXX8HTzmDk1ou7M04nd6UVkbwnC0I5dOrnzy6go8VzUQU6FHZmo',
   avatar3: 'https://lh3.googleusercontent.com/aida/AP1WRLtnqGi6iEPr_VHu33rdGQXmBeI4Yi4ZgH2doQnqMCYmqdbl5ZQjJouy9NbZz82ORWPUaxjvouZulgWuNuVMUYJWm0KBTksB_FkVNX0ffvN0YhyyCNQL4f_QvdcJ9qE4-HonbuOLxFxv527sjFdzk3Xo77NeaLMNWUzS6qTS9XdgTHKmzf70jsk0T8mV2wOCYtq37L9USQZt30aAYDGoGUMUzjXcfyXwa06vp0ztejAZ0CMECNKbRQqQzs8',
@@ -28,6 +34,12 @@ const DEFAULT_IMGS = {
 /** Icon nhân vật đánh giá — dùng vòng lặp cố định, không lưu emoji trong i18n */
 const REVIEW_AVATARS = ['avatar1', 'avatar2', 'avatar3'] as const;
 const CONTACT_ICONS = [MapPin, Clock, Phone];
+const GALLERY_ALTS = [
+  'Lush green plant corner inside Garden Sanctuary',
+  'Cozy indoor seating surrounded by tropical plants',
+  'Outdoor garden patio with natural light',
+  'Coffee brewing station in the garden cafe',
+];
 
 export default function Coffe8({ lang = 'vi' }: Props) {
   const activeLang: Lang = (['vi', 'en', 'zh', 'ko'] as const).includes(lang as Lang) ? (lang as Lang) : 'vi';
@@ -163,7 +175,8 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   src={src}
-                  alt=""
+                  alt={GALLERY_ALTS[i]}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-[#4e635a]/10 group-hover:bg-transparent transition-colors" />
               </Reveal>
@@ -187,7 +200,7 @@ export default function Coffe8({ lang = 'vi' }: Props) {
                     &ldquo;{item.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <img src={avatarSrc} alt="" className="w-12 h-12 rounded-full object-cover border-2 border-[#8da399]" />
+                    <img src={avatarSrc} alt={item.name} loading="lazy" className="w-12 h-12 rounded-full object-cover border-2 border-[#8da399]" />
                     <div>
                       <h4 data-field={`testimonials.items.${i}.name`} className="text-sm font-medium text-[#4e635a]">{item.name}</h4>
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#424845]">{item.role}</p>

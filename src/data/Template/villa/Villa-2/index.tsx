@@ -29,6 +29,21 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgIntroMain from './images/introMain.jpg';
+import imgIntroSecondary from './images/introSecondary.jpg';
+import imgHighlight1 from './images/highlight1.jpg';
+import imgHighlight2 from './images/highlight2.jpg';
+import imgRoom1 from './images/room1.jpg';
+import imgRoom2 from './images/room2.jpg';
+import imgRoom3 from './images/room3.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
+import imgAvatar1 from './images/avatar1.jpg';
+import imgAvatar2 from './images/avatar2.jpg';
+import imgAvatar3 from './images/avatar3.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -36,21 +51,21 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80',
-  introMain: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
-  introSecondary: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
-  highlight1: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=1200&q=80',
-  highlight2: 'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1200&q=80',
-  room1: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
-  room2: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80',
-  room3: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
-  gallery1: 'https://images.unsplash.com/photo-1519449556851-5720b33024e7?auto=format&fit=crop&w=1200&q=80',
-  gallery2: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
-  gallery3: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=1200&q=80',
-  gallery4: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80',
-  avatar1: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-  avatar2: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-  avatar3: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80',
+  heroBg: imgHeroBg,
+  introMain: imgIntroMain,
+  introSecondary: imgIntroSecondary,
+  highlight1: imgHighlight1,
+  highlight2: imgHighlight2,
+  room1: imgRoom1,
+  room2: imgRoom2,
+  room3: imgRoom3,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
+  avatar1: imgAvatar1,
+  avatar2: imgAvatar2,
+  avatar3: imgAvatar3,
 };
 
 /** Icon gán theo thứ tự item của mảng nội dung — trang trí, không lưu trong i18n */
@@ -124,7 +139,7 @@ export default function Villa2({ lang = 'vi' }: Props) {
         <section data-section="intro" className="py-20 px-6 md:px-16">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <Reveal variant="fade-right" className="rounded-2xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(86,100,43,0.15)]">
-              <img alt="Không gian sinh hoạt chung nhìn ra vườn" className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000" src={IMG.introMain} />
+              <img alt="Không gian sinh hoạt chung nhìn ra vườn" loading="lazy" className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-1000" src={IMG.introMain} />
             </Reveal>
             <div className="md:pl-8">
               <Reveal variant="fade-up" data-field="intro.label" className="text-[#56642b] text-sm font-medium tracking-widest mb-3 block uppercase">
@@ -137,7 +152,7 @@ export default function Villa2({ lang = 'vi' }: Props) {
                 {t.intro.desc}
               </Reveal>
               <Reveal variant="fade-up" delay={200} className="mb-8">
-                <img alt="Góc thư viện nhỏ trong villa" className="w-full h-48 object-cover rounded-xl shadow-[0_10px_40px_-15px_rgba(86,100,43,0.15)] mb-4" src={IMG.introSecondary} />
+                <img alt="Góc thư viện nhỏ trong villa" loading="lazy" className="w-full h-48 object-cover rounded-xl shadow-[0_10px_40px_-15px_rgba(86,100,43,0.15)] mb-4" src={IMG.introSecondary} />
                 <p data-field="intro.quote" className="text-[#46483c] italic border-l-4 border-[#56642b]/20 pl-6 leading-relaxed">
                   &ldquo;{t.intro.quote}&rdquo;
                 </p>
@@ -168,7 +183,7 @@ export default function Villa2({ lang = 'vi' }: Props) {
                   className={`group relative overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_-15px_rgba(86,100,43,0.12)] ${i % 2 === 1 ? 'md:mt-16' : ''}`}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={i === 0 ? IMG.highlight1 : IMG.highlight2} />
+                    <img alt={item.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={i === 0 ? IMG.highlight1 : IMG.highlight2} />
                   </div>
                   <div className="p-8">
                     <h3 data-field={`highlights.items.${i}.title`} className="text-xl text-[#1a1c1a] mb-2">{item.title}</h3>
@@ -194,7 +209,7 @@ export default function Villa2({ lang = 'vi' }: Props) {
                 return (
                   <Reveal key={i} variant="fade-up" delay={i * 100} className="rounded-2xl overflow-hidden bg-[#faf9f6] shadow-[0_10px_40px_-15px_rgba(86,100,43,0.15)] flex flex-col">
                     <div className="h-56 overflow-hidden">
-                      <img alt={room.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src={imgSrc} />
+                      <img alt={room.name} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src={imgSrc} />
                     </div>
                     <div className="p-8 flex flex-col flex-1">
                       <h3 data-field={`rooms.items.${i}.name`} className="text-xl text-[#1a1c1a] mb-1">{room.name}</h3>
@@ -289,7 +304,7 @@ export default function Villa2({ lang = 'vi' }: Props) {
                 delay={i * 90}
                 className={`flex-none w-72 md:w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(86,100,43,0.15)] bg-white relative group ${i % 2 === 1 ? 'md:mt-16' : ''}`}
               >
-                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={IMG[key]} alt="" />
+                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={IMG[key]} alt={`${t.gallery.title} ${i + 1}`} loading="lazy" />
               </Reveal>
             ))}
           </div>
@@ -317,7 +332,7 @@ export default function Villa2({ lang = 'vi' }: Props) {
                       &ldquo;{item.quote}&rdquo;
                     </p>
                     <div className="flex items-center gap-4">
-                      <img src={avatarSrc} alt="" className="w-12 h-12 rounded-full object-cover" />
+                      <img src={avatarSrc} alt={item.name} loading="lazy" className="w-12 h-12 rounded-full object-cover" />
                       <div>
                         <p data-field={`testimonials.items.${i}.name`} className="text-sm font-medium text-[#1a1c1a]">{item.name}</p>
                         <p data-field={`testimonials.items.${i}.location`} className="text-xs text-[#46483c]">{item.location}</p>

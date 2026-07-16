@@ -7,6 +7,27 @@ import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import { useTemplateLang } from '../../_shared/LanguageSwitcher';
 import Reveal from '../../_shared/Reveal';
+import imgHero from './images/hero.png';
+import imgMap from './images/map.png';
+import imgCoffee1 from './images/coffee1.png';
+import imgCoffee2 from './images/coffee2.png';
+import imgCoffee3 from './images/coffee3.png';
+import imgCoffee4 from './images/coffee4.png';
+import imgTea1 from './images/tea1.png';
+import imgTea2 from './images/tea2.png';
+import imgTea3 from './images/tea3.png';
+import imgTea4 from './images/tea4.png';
+import imgPastries1 from './images/pastries1.png';
+import imgPastries2 from './images/pastries2.png';
+import imgPastries3 from './images/pastries3.png';
+import imgPastries4 from './images/pastries4.png';
+import imgGallery1 from './images/gallery1.png';
+import imgGallery2 from './images/gallery2.png';
+import imgGallery3 from './images/gallery3.png';
+import imgGallery4 from './images/gallery4.png';
+import imgTestimonials1 from './images/testimonials1.png';
+import imgTestimonials2 from './images/testimonials2.png';
+import imgTestimonials3 from './images/testimonials3.png';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -20,37 +41,37 @@ const glassCard = {
 } as const;
 
 const IMAGES = {
-  hero: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDaIGKuFpa2TTNgzB0NYKf_gM_H-BGiTv-TdhklJBmJ2sXnSHeT3_cA_gztVBTb91bIG9KqhB7Y62KA4ZXx01hqQSw9JrpL0dQ4MTW1Gm38v2HaABOHfLDE9bEsy4uSlkfQBDDs4dJlu5ZrSCMZyLUWxQWrjnSNgkwi2R7WEAqCmOBHfsrNoYqLgCU2XIxTe3Ua5Xj4PZnOEj7gDrw9wzK9FG2TCP8-mxsJXyJVdffTwPbcaQ_6EZK7EU1tbf3kSQuY_Xop9jPlHVs',
+  hero: imgHero,
   coffee: [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuD-63Lw3K3eym8gOyhSjOo4gyyKtRkCo2XRdgGhxZ8bEN8NKz1C-mRoXFq_-t0DtuIP0eya0am2ArVqhcHkKE_-DG2hdBkroLi3sJRN7C-VxTwlXPPJSEvmW6NksDkBoT8ZzHRbdiUpWHIR3BCyCMW7uGA0IuwamFNHyD2OBA70AUJQA7xeBN9EYgjST26amPoBWgQGCV2rB6rIT1tw-uJt4bmNhB2_y9abcfITFJE1jjpWxCGyR5fOBuCAYTQTKHnVUIEwqvAACIM',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBeepJ6yNlHQrKeY4B0Ucby3Fpwi9ZHE19mpAZ91WBQwcBRgr7i9RyeYcpzAVeFohEzQ88ND0JNzV78Oyy3qzov3oBjnMedF18rC2kRBK1_KNLHnsB-FFxsr2YSPcAxcW-MvRZIofb8QmFNvnoCRBC3r8GBX2YfP9wvJlPaulIM2GkJc7gvPLAWxnokP8eHnJkY-y3VkHl21LfW0jwzgLiLR8o_dctVMcVRjuxCQYDLyd8N5-8DJBDAMGYsiESVr4Th55N0LoXrJSk',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuCyL5zw-799eVfVL1zPfD6MBGHTDL7xvQmkgjFIJ_cavb3MXpvVlrztKAvIlupss9k5ObF_GlN6db2ZgE4BhBu1K8lkTM1NvY8mQtaKmHbBvG5YpPFVtAUJRGwbSnL0PX2QZvRMIsbsIO3Qh76qxbHdfUVz1YYiupMwq1t7fCvc8cCTcKyDE6-JxIDci-AfiliiRRr4ph1cPiyEWNsOS0PrfYmrmz6bIOsCBnzvGweqXZe53Yh2Khh2c1gWV-GMeAEqGhSotfFW_9s',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBtaOKhyhwfyXPLT1f62NuDjAGV2t5_KNOjPOLUUUGh2djM6ruXa8ZByhMjk3f4_4SrPxkignFtkL8ZajkYQX5qCoChsMSYjOWF158GUlXwodeM8-_A092ez41ACsOrP3zM0iMBwC0eX6FBoazpHLYuXGe7X74HNgrCn143sUifpi37sKO0ND-hLS3UV954MQu56z6bJaEHwEE2yGjhwSI-z5Cr8qx47GeZlWlLqQeRkbq-_KdDLUo-JdgRHaI2smIG_L4w9TU4bOo',
+    imgCoffee1,
+    imgCoffee2,
+    imgCoffee3,
+    imgCoffee4,
   ],
   tea: [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBY8-dW-MifWxH-aXLQiHnQ5Yt3buz5RIOZHbeHz2_u7pHWwzF5YUCZKUTIKqYt9qaiU2CoA750y6oW5rP1eQQk5eFaj7PEe8IdsFP6N8FRKKn9bpadwa6eNrfC-XiuXQOjqZEjNyoHov5M7fVoohAvpc0QehNBs7Oshnpvj3p80Aic5-rVIglkkanM3tAJFPXkfUgAz8dqFmdObfZydhrIUZlVJbLXyFdaguixgmTowEZi2R71nzOwTEx5Q4yfeHustW7dDrNElHA',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBLn5JLJYM4DnFXTb6_yuNPMwH5sOca2hui57sPEEPBbs6-wU64HyN8FwD6mqrdH1sKxP61-3yLRW7bZ-6iSCSMkx6U7l4BMsb1-9UGmNM_fGtNXhXlGY1NLj1SiL2vpTh0Q09Xv5-rq-Xj7cEn5qeIHYjAR7EQemKI_Kd5O8jp-UCefhtvoMe7iGLAPwuklRFWzgjWmucg7YafTWvklyfeZoi7nrO3r-uOGdxaATUWutDdTj3S_mZeMz3hwnugg2hpDrFArsvs6fY',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuA9_vYIHwdlPxpfUCPuacnf_cKFggGEyUyk-l_eO8z_gus1wOJhwkGWk6luLUTQHieZtdCqRyKv6SijWWA6x5O-uusMnWABsqJKPQeUgT3mgcPiNTioXCZ0FPuOtFI_xFERCPeZMipgLGIXJoiH1xiCxZ_HDIAmK-1xRN_ebSBU-AmKF6ElpT6eJZXsoGQrxnfFmz6aY3-mm889UfRQ3JG6ZO0rSuyJ-jP6stpjHxKz90IVnIBKWI0g1na-uhnJim9Qxj3zSWcQv6E',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAPf5Q918Vjt1KEYc02Y20aOt7k0Gzi1NrgtpXQFvuterWiPuTfpWQYYChBdVtBnAvQB1iOyTpACNR7sUIQZjIHLD1yywPlFSuJlEzaTzkdfRi0lzhouTTqe_Cd8GO06n4g3elKlTJLIHnQo0ktCuU6m7L5OVgK26ByK6Sd6TWaG0_Kbykmyta5hdGZoRRQQQmv1msayhq5Dl1iAGpOtN9eh9Fh-48XteH0ZV0j5kiOkbJc0yxC0AkBDwoVSK5FJpnZVjBdPBQnEJ0',
+    imgTea1,
+    imgTea2,
+    imgTea3,
+    imgTea4,
   ],
   pastries: [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBlkRtenUSmnrjf7_BUzNCC6hrYAYk_GMIedXDiT-Cyr5LvO04j06nc2lKQ8S5ftmS7_P3YrjhganlhqKmVsEHv1zbX6oL3GVx8M9hAPjzoF_-_IeaSR8Z2T_kmrVl4ob8RXR0wmYCBENksgoL_D7680BZZE0d4ZRYO10eeN_xVzmSRqUIHaYETSL4MGWOe5W7SyDzfjYozq_guhe1webvyOpk4QBVRrNEFOG-6jCfgEQJLYmutsaAQrvdlg-yptQYt2YLnHeXgVO4',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuABybs42o_rdPbd5AApNQGWJeuIBWqcT43JaQy2xOYuWNkBIWeoUfc56Eqs12WhGanvs3MLPpp6hr7Fk2w-S7i9DH6AFqMaZMBtmHSebrtpWw6MjncOBhIP56WDO7wj1NmlYufqq8BN8SHbA394Kklqf-T1UWCT9lcmWiXed62ZxLyrW8KHJV7TtC6vwupCVFbYE0VvJpJYnkKmbt5g29YiRUpFB68347FcIwC3CSPF6qvJyr2BNHE7capDJWDHtevGTy4QRovrrCY',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBxJR1Xh7IoI4cwWc7P4rKU0UcKn9dYcduQ0zUTx2Y693M_HvvwwOdHmGtR1khPHWSAGaYzs-5zbTYJ57xBmVsLXbPvEEDH36xgt67-7GSSwgRakDxvElintGCAnN51bMVJTWD1Hn-fSDbFHWKlBxh6z_iLrvBIroIfGIXlDYiV57OL4CJNCGSd6W_FTMdihog72WDUeDflWLZL7I5AilZSNVmdJFQXfq9HIVyY5mshYndm3Rif1RMczM9BQfFGcIxIY0YOna1aeMI',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAG5WA5TT1KFiy-bXMvUvULtk5IHljwKxu3lpfokLm_JWqzwq0RJffEXrqPhTscC7zMmGebqfOHbrsMTtBofYXObNfYJ9D9Zo-W89YbPoqVjHydG3YYDpLt7fd-ArrKo37YUsFlDpQHoRviMCLtco6tRWKnjgqZYRNyukV_5LQoJDL6U_dQNcvgwfIEM6xVODM0JUBZHMv2CNY61gtxCljWZKflyD7NwoVXTk-MAmLN5NwvWeZOO6ssJQi4wH_DBD0FBbqzHYOog2o',
+    imgPastries1,
+    imgPastries2,
+    imgPastries3,
+    imgPastries4,
   ],
   gallery: [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAnsgRWnILkA2bmaF3y1od56BBVaG4hwAYnvGsNsND4iMuGR8g2XQjnRkdBObc7OvLAQqRQrkLPsRnudzQ2bK4pIVhjGuYr0n9Iye1pn0dJ2E5RcFfjqOuAo5VzDzSwXKbtl5ZewuTq-RewtmqPf6uGB7sS1orW65YG06pe0MYaRZc-F5nX1eGZSUy4Lntn-hf2GcblAfxIStEU-5H1sJOnhvj5wXC4caifokNpZI4EHKd8NY3wXLPXuXjAcS1INYM8Bw8uea0h_As',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBZdy6mOGTrEgpW2zSP6ryn5ntzMIie5A9C_TzOEt1klZwu47EpO2xjyQkPDpq60zrRp8I-oLS8pgUOAW9HNZEkkuFZ9DzHd77AMexuBv9t8sl5tHafxzn0a2JpdAy2kJZldjzhlGMVstIvpRz1k2tvYQVmnZJoHh2EORJmuZMff5Qr0hgI_TwW7v08kqoYuUcpgoUgEkkdHGtqgv9uS7n626wdfU4tb8qg99FTaYBQ7fidGWtKbhtVyx-_K2l6GA3uIG5NXoUh-LM',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuDnvjmE8r_CqRB-MpP158vGnXsGRyBuezDJNGTS8r0jQ_83aG5tKwBuBF7H2KpM07njVIW2xktQthwefCD01f9MDV2WXTV8b6jYzO4TvS99p4XpbdiF6zuI1T7p0KaeXzeQbqteIw0Oy4xf5eXuGfJwZNghKYn4hvUVWX9GJb2PExJTIGSaf3QuzftbhbYo-Z959xvQSqnfXJaNRp-vmI9jvAZfBV-TpGVKJK1zI-_B0QssXJTzyjrlcmvPpwHaOxQmhbNstsn_6MM',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuCelo9G7sRxFTGYP2aCEVdzcC3Ij6XtQECc_hHd2sIgckrHyN0bNa02HxeIaMXexjNwQiFMOnswAdXdWHKfbHeCe8Hwu0glEK6GN0pVYE34SvqX52Xcmy7ivP8qtpHTcUPw-BUpK8Dc6NODpC7rQsStLc7gyVaxtIvjyL4juIeZG8yF5xoyai5UkIoTFB_Ua4juvuGCdYc1EawEouRIB62K2VGnnBeyEeO6m-sis1HGyF2e213TZYNhvaiRmcXFIGEI4Cf3ai1XWqc',
+    imgGallery1,
+    imgGallery2,
+    imgGallery3,
+    imgGallery4,
   ],
   testimonials: [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuDCCl806gjLz9Y3Lx0fQXrbT8-vBBQU75d8mTVArlspbx9VQZaS_Xzq8rX28USnN7dwwbO-m-obJ_6AOHjWWduxT9TuiXRegLoI_TFii9c9M--t8Vc21I3XWU4eSrmZWuNPuJWLjhX5ke_SxWml_IGZqaVwkoU2hvI7PCgrmVyQBR90aDHrVsW7klCLW8wK6OLQrr7odvWf6R0wMFLzxAVWyr9e5w0_TiS74rLG-pUEPlmkH31GH3N-ky3qqE3nN5_YAflAh7n8kCc',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBoW6lp5I8BjFaQkBTMr3bRVnMFBRio4sUftKwCX98yVoSiSlNsVx13LqBOVpswlrRhqtHgkl0aefO2wEZKfm4w1z822FUOUaG0J012MTXcST8qKE6hPUOanjDxw9EceSq5A7wmRC0DwlFms0pxLebZm5Gl-Pb8QPannQHUxgqQkWe9GTlBSsovwXpu01Zkg6SEn4bK0sFin28aCSuhTzeAL0GI9EKHwEFL-z-xTb2cVRUxWvkMJd5WqS6Q8dRkVFpOPoNpigEF_AI',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuDtu-REiPVbO_pnUQtgfrU7PhDszT5aNR8LD_CxaNiP0JgGWCDVuc8VbJxXlyRGZFvv73eDYqOzFFMvRTLRBrSsBKnt2BtMK5l2mJNhJWyF2BYqAJvjl33r5RbRRRolVQ1-gboexB9AieSX5jPs1OBc2AGTj5kbk10Uh3p28lqF6IR1CNWH3vT1JoGdSveJ9tz7y7qwsDl3GPr64JJjLA407uzMq4FPkuYlm3F7N1i8O8b9xwE0BFnIZ8P-3UEJUkJk7t9KAIh_uw0',
+    imgTestimonials1,
+    imgTestimonials2,
+    imgTestimonials3,
   ],
-  map: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDO03_YRODKk8oKzMyC5jNXNToS9lAc8Gj_pKEpKpcTda1MXc41p5sWF2nCZWBKsoYOZRyln_jLtUIs0Prn2fTyYssnvjpRx8vqsf4jH6T6_2xS1mcGH7bv3qQpNMudioAVeMxhaN7JEffzj5_x0dBcmDSn8JN8uGrGrALqo20OIBD8EYp4w6d0HkK3XE-YvPpP9xpPcgLKC1VXusyBd1WiP53CUlIifCDk9X97NXxUEVDqC8kab5JRLhreESWCqCNxeuL5Bym9Vsc',
+  map: imgMap,
 };
 
 type Category = 'coffee' | 'tea' | 'pastries';
@@ -71,7 +92,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
         <Reveal key={i} variant="fade-up" delay={i * 90}>
         <div className="group bg-white p-3 rounded-2xl hover:shadow-xl transition-all border border-[#c2c6d4]/30">
           <div className="relative h-48 mb-3 overflow-hidden rounded-xl">
-            <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={imgSrc} alt={item.name} />
+            <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={imgSrc} alt={item.name} loading="lazy" />
             {item.badge && (
               <span className={`absolute top-2 left-2 text-xs font-semibold px-2 py-1 rounded-full ${item.badge === 'HOT' ? 'bg-[#ba1a1a] text-white' : 'bg-secondary text-white'}`}>{item.badge}</span>
             )}
@@ -175,16 +196,16 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
                 <span className="text-white text-sm font-medium border border-white px-6 py-3 rounded-full">{t.gallery.viewAll}</span>
               </div>
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[0]} alt="Gallery Main" />
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[0]} alt="Cozy ocean-view lounge area at The Ocean Cafe" loading="lazy" />
             </Reveal>
             <Reveal variant="zoom-in" delay={100} className="rounded-2xl overflow-hidden group">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[1]} alt="Gallery 2" />
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[1]} alt="Outdoor seating deck facing the sea" loading="lazy" />
             </Reveal>
             <Reveal variant="zoom-in" delay={180} className="rounded-2xl overflow-hidden group">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[2]} alt="Gallery 3" />
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[2]} alt="Coastal-themed interior corner with natural light" loading="lazy" />
             </Reveal>
             <Reveal variant="zoom-in" delay={260} className="md:col-span-2 rounded-2xl overflow-hidden group">
-              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[3]} alt="Gallery Bar" />
+              <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMAGES.gallery[3]} alt="Coffee bar and espresso counter" loading="lazy" />
             </Reveal>
           </div>
         </div>
@@ -202,7 +223,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
             <div className="p-10 rounded-2xl shadow-sm border border-[#c2c6d4]/20 hover:-translate-y-2 transition-all h-full" style={glassCard}>
               <div className="flex items-center gap-6 mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-container">
-                  <img className="w-full h-full object-cover" src={IMAGES.testimonials[i]} alt={item.name} />
+                  <img className="w-full h-full object-cover" src={IMAGES.testimonials[i]} alt={item.name} loading="lazy" />
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-primary">{item.name}</h4>
@@ -267,7 +288,7 @@ export default function Coffe3({ lang: propLang = 'vi' }: Props) {
                   title="Google Maps"
                 />
               ) : (
-                <img className="w-full h-full object-cover" src={IMAGES.map} alt="Location Map" />
+                <img className="w-full h-full object-cover" src={IMAGES.map} alt={t.contact.address} loading="lazy" />
               )}
             </Reveal>
           </div>

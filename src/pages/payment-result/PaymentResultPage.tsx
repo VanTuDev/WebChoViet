@@ -7,6 +7,7 @@
 //    TemplateEditorPage.handleCheckout).
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, XCircle, Loader2, Clock } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
 import { useAppContext } from '../../store/AppContext';
@@ -96,6 +97,10 @@ export default function PaymentResultPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center gap-4 px-6">
+      <Helmet>
+        <title>Kết quả thanh toán — vngoweb</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="w-full max-w-md rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm space-y-5">
         {loading ? (
           <>

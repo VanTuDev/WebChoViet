@@ -10,6 +10,9 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.png';
+import imgGallery0 from './images/gallery0.jpg';
+import imgGallery1 from './images/gallery1.png';
 
 const SUPPORTED_LANGS = ['vi', 'en', 'zh', 'ko'] as const;
 type Lang = (typeof SUPPORTED_LANGS)[number];
@@ -26,9 +29,9 @@ export default function Wedding3({ lang = 'vi' }: Props) {
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
 
   const IMG = {
-    hero: images.hero ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhA_hTI6n8Eny8ykuqqT9nigsfgaE53fwSpOMTTPE6qbJcYu_Y1UnmSSac8gyVr6HCsS2_lvRvwf7-CJaSP5qNYGhlWoCe-eSNcb_WATav_n-LYSYzTckTR-PhRnWj3znJD9f8bK77j4LtM0CIfxjkkxxSFUFn7qXoBZHayf4e1RMSv6i3jEFEaTLgBBkuXFDT8htikojB7ztsXH0qamDlqz7ivgdqcwFRdW21Kj5FXwPlVsfvB3xu4kNoC_Fhzs8aUX_j14uv5UY',
-    gallery_0: images.gallery_0 ?? 'https://images.unsplash.com/photo-1529636798458-92182e662485?w=800&auto=format&fit=crop&q=70',
-    gallery_1: images.gallery_1 ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWBXCiCfNQMpA9nwOtKfUIm8LPpysQvoaIixt6LyhLfL8aCkND82L9fHSBbj-yQxBTrgnLy2GCAPahhKq361G_h3EBAIRhWusdGDiQxezk4DXLr7QDIoLQ9RpIle0dCqDYUYat4RYoc0Vf4jaQvVVntVHReJxyDJCta8MdBVKvZBsnScWwPhUjBSyuRn9euqLUAVtbWhhzazNthXxdwqHGp5bS_QpfYeK66XzmvVtY6eVemyKSX5G77-gyiMTKyppVdvfDEl-i634',
+    hero: images.hero ?? imgHero,
+    gallery_0: images.gallery_0 ?? imgGallery0,
+    gallery_1: images.gallery_1 ?? imgGallery1,
   };
 
   const calendarDays = Array.from({ length: CALENDAR_LEAD_OFFSET }, () => null).concat(
@@ -66,7 +69,7 @@ export default function Wedding3({ lang = 'vi' }: Props) {
         <section data-section="hero" className="relative min-h-[600px] md:min-h-[820px] flex items-center justify-center rounded overflow-hidden mb-24 border-[3px] border-double border-[#D4AF37]/60 p-2 bg-[#FCF9F2]">
           <div className="relative w-full h-full rounded overflow-hidden">
             <div className="absolute inset-0 bg-black/30 z-10" />
-            <img src={IMG.hero} alt="Wedding couple" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={IMG.hero} alt={t.hero.coupleNames} className="absolute inset-0 w-full h-full object-cover" />
             <div className="relative z-20 text-center p-8 md:p-12 max-w-2xl bg-[#FCF9F2]/85 backdrop-blur-md border border-[#D4AF37]/40 shadow-lg mx-4 rounded flex flex-col items-center justify-center my-12">
               {/* Corner ornaments */}
               <div className="absolute top-4 left-4 w-10 h-10 border-t-2 border-l-2 border-[#D4AF37]" />
@@ -137,10 +140,10 @@ export default function Wedding3({ lang = 'vi' }: Props) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px]">
             <div className="md:col-span-2 md:row-span-2 border-2 border-[#C9B093]/30 p-1 bg-white relative group overflow-hidden">
-              <img src={IMG.gallery_0} alt="Wedding detail" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={IMG.gallery_0} alt={`${t.hero.coupleNames} – ${t.gallery.title}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
             <div className="border-2 border-[#C9B093]/30 p-1 bg-white relative group overflow-hidden">
-              <img src={IMG.gallery_1} alt="Gallery" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={IMG.gallery_1} alt={`${t.hero.coupleNames} – ${t.gallery.subtitle}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
           </div>
         </section>

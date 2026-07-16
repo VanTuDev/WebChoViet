@@ -76,7 +76,13 @@
   "gallery": {
     "label": "전망과 공간",
     "title": "다채로운 시선",
-    "viewMore": "더 보기"
+    "viewMore": "더 보기",
+    "items": [
+      { "alt": "Serenity Villa 외관 전경" },
+      { "alt": "아늑한 빌라 내부 공간" },
+      { "alt": "Serenity Villa의 독특한 건축미" },
+      { "alt": "밤에 빛나는 인피니티 풀" }
+    ]
   },
   "testimonials": {
     "title": "투숙객들의 생생한 이야기",

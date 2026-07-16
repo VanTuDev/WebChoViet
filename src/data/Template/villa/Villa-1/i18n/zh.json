@@ -76,7 +76,13 @@
   "gallery": {
     "label": "视野与空间",
     "title": "多维视角",
-    "viewMore": "查看更多"
+    "viewMore": "查看更多",
+    "items": [
+      { "alt": "Serenity Villa外观全景" },
+      { "alt": "别墅温馨的室内空间" },
+      { "alt": "Serenity Villa独特的建筑设计" },
+      { "alt": "夜晚闪耀的无边泳池" }
+    ]
   },
   "testimonials": {
     "title": "住客的真实体验",

@@ -13,6 +13,7 @@ import PublishModal from './_components/PublishModal';
 import InlineEditOverlay from './_components/InlineEditOverlay';
 import GoogleMapsImportModal from './_components/GoogleMapsImportModal';
 import AiAssistantWidget from './_components/AiAssistantWidget';
+import PreviewErrorBoundary from '../../components/error/PreviewErrorBoundary';
 import { generateUUID } from '../../utils/uuid';
 import { deepMerge } from '../../utils/deepMerge';
 import { useAppContext } from '../../store/AppContext';
@@ -45,7 +46,7 @@ export default function TemplateEditorPage() {
   const navigate = useNavigate();
   const { siteId } = useParams<{ siteId?: string }>();
   const [searchParams] = useSearchParams();
-  const { user, upsertSiteConfig, showSnackbar, showConfirm } = useAppContext();
+  const { user, isAuthenticated, upsertSiteConfig, showSnackbar, showConfirm, openLoginModal } = useAppContext();
   const { getEffectiveAccess } = useTemplateAccess();
 
   const isEdit = !!siteId && siteId !== 'new';
@@ -179,6 +180,23 @@ export default function TemplateEditorPage() {
     }
   }, [viewport]);
 
+  // Safety net: for a src-less iframe, some browsers fire `load` synchronously
+  // during mount — before React has attached the `onLoad` listener — so it
+  // never reaches `handleIframeLoad`. Nothing throws in that case, the portal
+  // condition (`iframeDoc && createPortal(...)`) just silently never becomes
+  // true, leaving the phone frame permanently blank with no visible error.
+  // Poll once shortly after mount and finish setup manually if `onLoad` never
+  // fired but the iframe's document is actually ready.
+  useEffect(() => {
+    if (viewport !== 'mobile') return;
+    const timer = setTimeout(() => {
+      if (iframeDocRef.current) return; // onLoad already handled it
+      const doc = iframeRef.current?.contentDocument;
+      if (doc && doc.readyState !== 'loading') handleIframeLoad();
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [viewport, handleIframeLoad]);
+
   // ── Field change ──────────────────────────────────────────────────────────
   const handleFieldChange = useCallback((path: string[], value: string) => {
     setSite(prev => {
@@ -289,6 +307,15 @@ export default function TemplateEditorPage() {
    */
   const handleCheckout = async (name: string): Promise<void> => {
     if (!site) return;
+    // Route đã bọc RequireAuth nên guest lẽ ra không thể vào tới đây — chốt chặn
+    // thêm ở tầng gọi API để không bao giờ tạo đơn PayOS (và không bao giờ
+    // redirect sang trang thanh toán/QR) khi phiên đăng nhập vừa hết hạn giữa
+    // chừng lúc đang mở trình chỉnh sửa.
+    if (!isAuthenticated) {
+      openLoginModal();
+      showSnackbar('Vui lòng đăng nhập để thanh toán.', 'error');
+      throw new Error('not authenticated');
+    }
     try {
       const slug = await generateSlug(name, site.id);
       const toSave: SiteConfig = {
@@ -749,26 +776,33 @@ export default function TemplateEditorPage() {
             <div className="mx-auto my-4 w-97.5 rounded-4xl overflow-hidden shadow-2xl ring-4 ring-gray-300">
               <iframe
                 ref={iframeRef}
+                // srcDoc (thay vì để trống src) đảm bảo browser điều hướng "load" 1
+                // document thật sự thay vì document about:blank mặc định — 1 vài
+                // browser không phát sự kiện `load` đáng tin cậy cho iframe không
+                // có src, khiến `handleIframeLoad` không bao giờ chạy.
+                srcDoc="<!DOCTYPE html><html><head></head><body></body></html>"
                 onLoad={handleIframeLoad}
                 title="Xem trước trên điện thoại"
                 style={{ width: 390, height: 844, border: 'none', display: 'block' }}
               />
               {iframeDoc &&
                 createPortal(
-                  <TemplateCustomProvider value={contextValue}>
-                    <div onDoubleClick={handlePreviewDblClick}>
-                      <Suspense
-                        fallback={
-                          <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
-                            <Loader2 className="w-5 h-5 animate-spin" />
-                            <span className="text-sm">Đang tải template...</span>
-                          </div>
-                        }
-                      >
-                        <TemplateComponent lang={site.lang} />
-                      </Suspense>
-                    </div>
-                  </TemplateCustomProvider>,
+                  <PreviewErrorBoundary key={`${templateId}-${site.lang}`}>
+                    <TemplateCustomProvider value={contextValue}>
+                      <div onDoubleClick={handlePreviewDblClick}>
+                        <Suspense
+                          fallback={
+                            <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
+                              <Loader2 className="w-5 h-5 animate-spin" />
+                              <span className="text-sm">Đang tải template...</span>
+                            </div>
+                          }
+                        >
+                          <TemplateComponent lang={site.lang} />
+                        </Suspense>
+                      </div>
+                    </TemplateCustomProvider>
+                  </PreviewErrorBoundary>,
                   iframeDoc.body
                 )}
             </div>
@@ -778,18 +812,20 @@ export default function TemplateEditorPage() {
               style={{ transform: 'translateZ(0)' }}
               onDoubleClick={handlePreviewDblClick}
             >
-              <TemplateCustomProvider value={contextValue}>
-                <Suspense
-                  fallback={
-                    <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      <span className="text-sm">Đang tải template...</span>
-                    </div>
-                  }
-                >
-                  <TemplateComponent lang={site.lang} />
-                </Suspense>
-              </TemplateCustomProvider>
+              <PreviewErrorBoundary key={`${templateId}-${site.lang}`}>
+                <TemplateCustomProvider value={contextValue}>
+                  <Suspense
+                    fallback={
+                      <div className="flex items-center justify-center h-96 gap-3 text-gray-400">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <span className="text-sm">Đang tải template...</span>
+                      </div>
+                    }
+                  >
+                    <TemplateComponent lang={site.lang} />
+                  </Suspense>
+                </TemplateCustomProvider>
+              </PreviewErrorBoundary>
             </div>
           )}
         </main>

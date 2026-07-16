@@ -7,6 +7,106 @@ import villa4Schema from '../../Template/villa/Villa-4/i18n/vi.json';
 import villa5Schema from '../../Template/villa/Villa-5/i18n/vi.json';
 import villa6Schema from '../../Template/villa/Villa-6/i18n/vi.json';
 import villa7Schema from '../../Template/villa/Villa-7/i18n/vi.json';
+import img_Villa1_card from '../../Template/villa/Villa-1/images/card.jpg';
+import img_Villa1_heroBg from '../../Template/villa/Villa-1/images/heroBg.jpg';
+import img_Villa1_roomZenGarden from '../../Template/villa/Villa-1/images/roomZenGarden.jpg';
+import img_Villa1_roomPoolSuite from '../../Template/villa/Villa-1/images/roomPoolSuite.jpg';
+import img_Villa1_roomFamilyVilla from '../../Template/villa/Villa-1/images/roomFamilyVilla.jpg';
+import img_Villa1_roomSkyLoft from '../../Template/villa/Villa-1/images/roomSkyLoft.jpg';
+import img_Villa1_galleryExterior from '../../Template/villa/Villa-1/images/galleryExterior.jpg';
+import img_Villa1_galleryInterior from '../../Template/villa/Villa-1/images/galleryInterior.jpg';
+import img_Villa1_galleryArchitecture from '../../Template/villa/Villa-1/images/galleryArchitecture.jpg';
+import img_Villa1_galleryPoolNight from '../../Template/villa/Villa-1/images/galleryPoolNight.jpg';
+import img_Villa1_welcomeTray from '../../Template/villa/Villa-1/images/welcomeTray.jpg';
+import img_Villa1_avatar1 from '../../Template/villa/Villa-1/images/avatar1.jpg';
+import img_Villa1_avatar2 from '../../Template/villa/Villa-1/images/avatar2.jpg';
+import img_Villa1_avatar3 from '../../Template/villa/Villa-1/images/avatar3.jpg';
+import img_Villa2_card from '../../Template/villa/Villa-2/images/card.jpg';
+import img_Villa2_heroBg from '../../Template/villa/Villa-2/images/heroBg.jpg';
+import img_Villa2_introMain from '../../Template/villa/Villa-2/images/introMain.jpg';
+import img_Villa2_introSecondary from '../../Template/villa/Villa-2/images/introSecondary.jpg';
+import img_Villa2_highlight1 from '../../Template/villa/Villa-2/images/highlight1.jpg';
+import img_Villa2_highlight2 from '../../Template/villa/Villa-2/images/highlight2.jpg';
+import img_Villa2_room1 from '../../Template/villa/Villa-2/images/room1.jpg';
+import img_Villa2_room2 from '../../Template/villa/Villa-2/images/room2.jpg';
+import img_Villa2_room3 from '../../Template/villa/Villa-2/images/room3.jpg';
+import img_Villa2_gallery1 from '../../Template/villa/Villa-2/images/gallery1.jpg';
+import img_Villa2_gallery2 from '../../Template/villa/Villa-2/images/gallery2.jpg';
+import img_Villa2_gallery3 from '../../Template/villa/Villa-2/images/gallery3.jpg';
+import img_Villa2_gallery4 from '../../Template/villa/Villa-2/images/gallery4.jpg';
+import img_Villa2_avatar1 from '../../Template/villa/Villa-2/images/avatar1.jpg';
+import img_Villa2_avatar2 from '../../Template/villa/Villa-2/images/avatar2.jpg';
+import img_Villa2_avatar3 from '../../Template/villa/Villa-2/images/avatar3.jpg';
+import img_Villa3_card from '../../Template/villa/Villa-3/images/card.jpg';
+import img_Villa3_heroBg from '../../Template/villa/Villa-3/images/heroBg.jpg';
+import img_Villa3_storyImg from '../../Template/villa/Villa-3/images/storyImg.jpg';
+import img_Villa3_room1 from '../../Template/villa/Villa-3/images/room1.jpg';
+import img_Villa3_room2 from '../../Template/villa/Villa-3/images/room2.jpg';
+import img_Villa3_room3 from '../../Template/villa/Villa-3/images/room3.jpg';
+import img_Villa3_room4 from '../../Template/villa/Villa-3/images/room4.jpg';
+import img_Villa3_gallery1 from '../../Template/villa/Villa-3/images/gallery1.jpg';
+import img_Villa3_gallery2 from '../../Template/villa/Villa-3/images/gallery2.jpg';
+import img_Villa3_gallery3 from '../../Template/villa/Villa-3/images/gallery3.jpg';
+import img_Villa3_gallery4 from '../../Template/villa/Villa-3/images/gallery4.jpg';
+import img_Villa3_avatar1 from '../../Template/villa/Villa-3/images/avatar1.jpg';
+import img_Villa3_avatar2 from '../../Template/villa/Villa-3/images/avatar2.jpg';
+import img_Villa3_avatar3 from '../../Template/villa/Villa-3/images/avatar3.jpg';
+import img_Villa4_card from '../../Template/villa/Villa-4/images/card.jpg';
+import img_Villa4_heroBg from '../../Template/villa/Villa-4/images/heroBg.jpg';
+import img_Villa4_heritageImg from '../../Template/villa/Villa-4/images/heritageImg.jpg';
+import img_Villa4_fireplaceImg from '../../Template/villa/Villa-4/images/fireplaceImg.jpg';
+import img_Villa4_room1 from '../../Template/villa/Villa-4/images/room1.jpg';
+import img_Villa4_room2 from '../../Template/villa/Villa-4/images/room2.jpg';
+import img_Villa4_room3 from '../../Template/villa/Villa-4/images/room3.jpg';
+import img_Villa4_room4 from '../../Template/villa/Villa-4/images/room4.jpg';
+import img_Villa4_gallery1 from '../../Template/villa/Villa-4/images/gallery1.jpg';
+import img_Villa4_gallery2 from '../../Template/villa/Villa-4/images/gallery2.jpg';
+import img_Villa4_gallery3 from '../../Template/villa/Villa-4/images/gallery3.jpg';
+import img_Villa4_gallery4 from '../../Template/villa/Villa-4/images/gallery4.jpg';
+import img_Villa4_avatar1 from '../../Template/villa/Villa-4/images/avatar1.jpg';
+import img_Villa4_avatar2 from '../../Template/villa/Villa-4/images/avatar2.jpg';
+import img_Villa4_avatar3 from '../../Template/villa/Villa-4/images/avatar3.jpg';
+import img_Villa5_card from '../../Template/villa/Villa-5/images/card.jpg';
+import img_Villa5_heroBg from '../../Template/villa/Villa-5/images/heroBg.jpg';
+import img_Villa5_room1 from '../../Template/villa/Villa-5/images/room1.jpg';
+import img_Villa5_room2 from '../../Template/villa/Villa-5/images/room2.jpg';
+import img_Villa5_room3 from '../../Template/villa/Villa-5/images/room3.jpg';
+import img_Villa5_gallery1 from '../../Template/villa/Villa-5/images/gallery1.jpg';
+import img_Villa5_gallery2 from '../../Template/villa/Villa-5/images/gallery2.jpg';
+import img_Villa5_gallery3 from '../../Template/villa/Villa-5/images/gallery3.jpg';
+import img_Villa5_gallery4 from '../../Template/villa/Villa-5/images/gallery4.jpg';
+import img_Villa5_avatar1 from '../../Template/villa/Villa-5/images/avatar1.jpg';
+import img_Villa5_avatar2 from '../../Template/villa/Villa-5/images/avatar2.jpg';
+import img_Villa5_avatar3 from '../../Template/villa/Villa-5/images/avatar3.jpg';
+import img_Villa6_card from '../../Template/villa/Villa-6/images/card.jpg';
+import img_Villa6_heroBg from '../../Template/villa/Villa-6/images/heroBg.jpg';
+import img_Villa6_aboutImg from '../../Template/villa/Villa-6/images/aboutImg.jpg';
+import img_Villa6_room1 from '../../Template/villa/Villa-6/images/room1.jpg';
+import img_Villa6_room2 from '../../Template/villa/Villa-6/images/room2.jpg';
+import img_Villa6_room3 from '../../Template/villa/Villa-6/images/room3.jpg';
+import img_Villa6_room4 from '../../Template/villa/Villa-6/images/room4.jpg';
+import img_Villa6_gallery1 from '../../Template/villa/Villa-6/images/gallery1.jpg';
+import img_Villa6_gallery2 from '../../Template/villa/Villa-6/images/gallery2.jpg';
+import img_Villa6_gallery3 from '../../Template/villa/Villa-6/images/gallery3.jpg';
+import img_Villa6_gallery4 from '../../Template/villa/Villa-6/images/gallery4.jpg';
+import img_Villa6_avatar1 from '../../Template/villa/Villa-6/images/avatar1.jpg';
+import img_Villa6_avatar2 from '../../Template/villa/Villa-6/images/avatar2.jpg';
+import img_Villa6_avatar3 from '../../Template/villa/Villa-6/images/avatar3.jpg';
+import img_Villa7_card from '../../Template/villa/Villa-7/images/card.jpg';
+import img_Villa7_heroBg from '../../Template/villa/Villa-7/images/heroBg.jpg';
+import img_Villa7_introImg from '../../Template/villa/Villa-7/images/introImg.jpg';
+import img_Villa7_roomFeatured from '../../Template/villa/Villa-7/images/roomFeatured.jpg';
+import img_Villa7_room1 from '../../Template/villa/Villa-7/images/room1.jpg';
+import img_Villa7_room2 from '../../Template/villa/Villa-7/images/room2.jpg';
+import img_Villa7_room3 from '../../Template/villa/Villa-7/images/room3.jpg';
+import img_Villa7_amenitiesImg from '../../Template/villa/Villa-7/images/amenitiesImg.jpg';
+import img_Villa7_gallery1 from '../../Template/villa/Villa-7/images/gallery1.jpg';
+import img_Villa7_gallery2 from '../../Template/villa/Villa-7/images/gallery2.jpg';
+import img_Villa7_gallery3 from '../../Template/villa/Villa-7/images/gallery3.jpg';
+import img_Villa7_gallery4 from '../../Template/villa/Villa-7/images/gallery4.jpg';
+import img_Villa7_avatar1 from '../../Template/villa/Villa-7/images/avatar1.jpg';
+import img_Villa7_avatar2 from '../../Template/villa/Villa-7/images/avatar2.jpg';
+import img_Villa7_avatar3 from '../../Template/villa/Villa-7/images/avatar3.jpg';
 
 export const VILLA_TEMPLATES: TemplateDefinition[] = [
   {
@@ -19,23 +119,23 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     badge: 'MỚI',
     rating: 4.8,
     tags: ['villa', 'homestay', 'zen', 'nghỉ dưỡng', 'Phú Quốc'],
-    imageUrl: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: img_Villa1_card,
     component: lazy(() => import('../../Template/villa/Villa-1/index')),
     schema: villa1Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1600&auto=format&fit=crop' },
-      { key: 'roomZenGarden', label: 'Phòng Zen Garden', defaultUrl: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'roomPoolSuite', label: 'Phòng Pool Suite', defaultUrl: 'https://images.unsplash.com/photo-1587985064135-0366536eab42?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'roomFamilyVilla', label: 'Phòng Family Villa', defaultUrl: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'roomSkyLoft', label: 'Phòng Sky Loft', defaultUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'galleryExterior', label: 'Gallery — Ngoại thất', defaultUrl: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=900&auto=format&fit=crop' },
-      { key: 'galleryInterior', label: 'Gallery — Nội thất', defaultUrl: 'https://images.unsplash.com/photo-1592229505726-ca121723b8ef?q=80&w=900&auto=format&fit=crop' },
-      { key: 'galleryArchitecture', label: 'Gallery — Kiến trúc', defaultUrl: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=900&auto=format&fit=crop' },
-      { key: 'galleryPoolNight', label: 'Gallery — Hồ bơi đêm', defaultUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=900&auto=format&fit=crop' },
-      { key: 'welcomeTray', label: 'Ảnh khay chào đón', defaultUrl: 'https://images.unsplash.com/photo-1519996529931-28324d5a630e?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://i.pravatar.cc/150?img=32' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://i.pravatar.cc/150?img=51' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://i.pravatar.cc/150?img=47' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa1_heroBg },
+      { key: 'roomZenGarden', label: 'Phòng Zen Garden', defaultUrl: img_Villa1_roomZenGarden },
+      { key: 'roomPoolSuite', label: 'Phòng Pool Suite', defaultUrl: img_Villa1_roomPoolSuite },
+      { key: 'roomFamilyVilla', label: 'Phòng Family Villa', defaultUrl: img_Villa1_roomFamilyVilla },
+      { key: 'roomSkyLoft', label: 'Phòng Sky Loft', defaultUrl: img_Villa1_roomSkyLoft },
+      { key: 'galleryExterior', label: 'Gallery — Ngoại thất', defaultUrl: img_Villa1_galleryExterior },
+      { key: 'galleryInterior', label: 'Gallery — Nội thất', defaultUrl: img_Villa1_galleryInterior },
+      { key: 'galleryArchitecture', label: 'Gallery — Kiến trúc', defaultUrl: img_Villa1_galleryArchitecture },
+      { key: 'galleryPoolNight', label: 'Gallery — Hồ bơi đêm', defaultUrl: img_Villa1_galleryPoolNight },
+      { key: 'welcomeTray', label: 'Ảnh khay chào đón', defaultUrl: img_Villa1_welcomeTray },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa1_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa1_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa1_avatar3 },
     ],
   },
   {
@@ -47,25 +147,25 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     priceText: '299,000đ',
     rating: 4.7,
     tags: ['villa', 'homestay', 'nghỉ dưỡng', 'zen', 'cao cấp'],
-    imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: img_Villa2_card,
     component: lazy(() => import('../../Template/villa/Villa-2/index')),
     schema: villa2Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80' },
-      { key: 'introMain', label: 'Ảnh giới thiệu chính', defaultUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'introSecondary', label: 'Ảnh giới thiệu phụ', defaultUrl: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'highlight1', label: 'Điểm nhấn 1', defaultUrl: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'highlight2', label: 'Điểm nhấn 2', defaultUrl: 'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room1', label: 'Phòng 1', defaultUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room2', label: 'Phòng 2', defaultUrl: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room3', label: 'Phòng 3', defaultUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery1', label: 'Gallery 1', defaultUrl: 'https://images.unsplash.com/photo-1519449556851-5720b33024e7?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery2', label: 'Gallery 2', defaultUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery3', label: 'Gallery 3', defaultUrl: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery4', label: 'Gallery 4', defaultUrl: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa2_heroBg },
+      { key: 'introMain', label: 'Ảnh giới thiệu chính', defaultUrl: img_Villa2_introMain },
+      { key: 'introSecondary', label: 'Ảnh giới thiệu phụ', defaultUrl: img_Villa2_introSecondary },
+      { key: 'highlight1', label: 'Điểm nhấn 1', defaultUrl: img_Villa2_highlight1 },
+      { key: 'highlight2', label: 'Điểm nhấn 2', defaultUrl: img_Villa2_highlight2 },
+      { key: 'room1', label: 'Phòng 1', defaultUrl: img_Villa2_room1 },
+      { key: 'room2', label: 'Phòng 2', defaultUrl: img_Villa2_room2 },
+      { key: 'room3', label: 'Phòng 3', defaultUrl: img_Villa2_room3 },
+      { key: 'gallery1', label: 'Gallery 1', defaultUrl: img_Villa2_gallery1 },
+      { key: 'gallery2', label: 'Gallery 2', defaultUrl: img_Villa2_gallery2 },
+      { key: 'gallery3', label: 'Gallery 3', defaultUrl: img_Villa2_gallery3 },
+      { key: 'gallery4', label: 'Gallery 4', defaultUrl: img_Villa2_gallery4 },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa2_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa2_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa2_avatar3 },
     ],
   },
   {
@@ -77,23 +177,23 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     priceText: '349,000đ',
     rating: 4.9,
     tags: ['villa', 'homestay', 'Phong Nha', 'du lịch sinh thái', 'trekking'],
-    imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: img_Villa3_card,
     component: lazy(() => import('../../Template/villa/Villa-3/index')),
     schema: villa3Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80' },
-      { key: 'storyImg', label: 'Ảnh câu chuyện thương hiệu', defaultUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room1', label: 'Phòng 1 — Forest View Bungalow', defaultUrl: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'room2', label: 'Phòng 2 — Karst Valley Suite', defaultUrl: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'room3', label: 'Phòng 3 — Riverside Villa', defaultUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'room4', label: 'Phòng 4 — Cave Explorer Family Room', defaultUrl: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'gallery1', label: 'Gallery 1', defaultUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'gallery2', label: 'Gallery 2', defaultUrl: 'https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'gallery3', label: 'Gallery 3', defaultUrl: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'gallery4', label: 'Gallery 4', defaultUrl: 'https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=1000&q=80' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://randomuser.me/api/portraits/women/44.jpg' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://randomuser.me/api/portraits/men/32.jpg' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://randomuser.me/api/portraits/women/68.jpg' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa3_heroBg },
+      { key: 'storyImg', label: 'Ảnh câu chuyện thương hiệu', defaultUrl: img_Villa3_storyImg },
+      { key: 'room1', label: 'Phòng 1 — Forest View Bungalow', defaultUrl: img_Villa3_room1 },
+      { key: 'room2', label: 'Phòng 2 — Karst Valley Suite', defaultUrl: img_Villa3_room2 },
+      { key: 'room3', label: 'Phòng 3 — Riverside Villa', defaultUrl: img_Villa3_room3 },
+      { key: 'room4', label: 'Phòng 4 — Cave Explorer Family Room', defaultUrl: img_Villa3_room4 },
+      { key: 'gallery1', label: 'Gallery 1', defaultUrl: img_Villa3_gallery1 },
+      { key: 'gallery2', label: 'Gallery 2', defaultUrl: img_Villa3_gallery2 },
+      { key: 'gallery3', label: 'Gallery 3', defaultUrl: img_Villa3_gallery3 },
+      { key: 'gallery4', label: 'Gallery 4', defaultUrl: img_Villa3_gallery4 },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa3_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa3_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa3_avatar3 },
     ],
   },
   {
@@ -105,24 +205,24 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     priceText: '349,000đ',
     rating: 4.7,
     tags: ['villa', 'homestay', 'Tây Nguyên', 'nhà Rông', 'nghỉ dưỡng núi rừng'],
-    imageUrl: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: img_Villa4_card,
     component: lazy(() => import('../../Template/villa/Villa-4/index')),
     schema: villa4Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1800&auto=format&fit=crop' },
-      { key: 'heritageImg', label: 'Ảnh di sản văn hoá', defaultUrl: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1400&auto=format&fit=crop' },
-      { key: 'fireplaceImg', label: 'Ảnh lửa trại', defaultUrl: 'https://images.unsplash.com/photo-1517824806704-9040b037703b?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'room1', label: 'Phòng 1 — Rông Bungalow Đơn', defaultUrl: 'https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'room2', label: 'Phòng 2 — Villa Đôi Gia Đình', defaultUrl: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'room3', label: 'Phòng 3 — Suite Thác Nước', defaultUrl: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'room4', label: 'Phòng 4 — Nhà Dài Cộng Đồng', defaultUrl: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery1', label: 'Gallery 1', defaultUrl: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery2', label: 'Gallery 2', defaultUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery3', label: 'Gallery 3', defaultUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery4', label: 'Gallery 4', defaultUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=400&auto=format&fit=crop' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa4_heroBg },
+      { key: 'heritageImg', label: 'Ảnh di sản văn hoá', defaultUrl: img_Villa4_heritageImg },
+      { key: 'fireplaceImg', label: 'Ảnh lửa trại', defaultUrl: img_Villa4_fireplaceImg },
+      { key: 'room1', label: 'Phòng 1 — Rông Bungalow Đơn', defaultUrl: img_Villa4_room1 },
+      { key: 'room2', label: 'Phòng 2 — Villa Đôi Gia Đình', defaultUrl: img_Villa4_room2 },
+      { key: 'room3', label: 'Phòng 3 — Suite Thác Nước', defaultUrl: img_Villa4_room3 },
+      { key: 'room4', label: 'Phòng 4 — Nhà Dài Cộng Đồng', defaultUrl: img_Villa4_room4 },
+      { key: 'gallery1', label: 'Gallery 1', defaultUrl: img_Villa4_gallery1 },
+      { key: 'gallery2', label: 'Gallery 2', defaultUrl: img_Villa4_gallery2 },
+      { key: 'gallery3', label: 'Gallery 3', defaultUrl: img_Villa4_gallery3 },
+      { key: 'gallery4', label: 'Gallery 4', defaultUrl: img_Villa4_gallery4 },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa4_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa4_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa4_avatar3 },
     ],
   },
   {
@@ -135,21 +235,21 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     badge: 'BÁN CHẠY',
     rating: 4.9,
     tags: ['villa', 'homestay', 'nghỉ dưỡng', 'view biển', 'đặt phòng online'],
-    imageUrl: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: img_Villa5_card,
     component: lazy(() => import('../../Template/villa/Villa-5/index')),
     schema: villa5Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1600&auto=format&fit=crop' },
-      { key: 'room1', label: 'Phòng 1 — Deluxe Garden Villa', defaultUrl: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'room2', label: 'Phòng 2 — Ocean Master Suite', defaultUrl: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'room3', label: 'Phòng 3 — Grand Presidential Suite', defaultUrl: 'https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery1', label: 'Gallery 1', defaultUrl: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery2', label: 'Gallery 2', defaultUrl: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery3', label: 'Gallery 3', defaultUrl: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'gallery4', label: 'Gallery 4', defaultUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://i.pravatar.cc/150?img=12' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://i.pravatar.cc/150?img=45' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://i.pravatar.cc/150?img=33' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa5_heroBg },
+      { key: 'room1', label: 'Phòng 1 — Deluxe Garden Villa', defaultUrl: img_Villa5_room1 },
+      { key: 'room2', label: 'Phòng 2 — Ocean Master Suite', defaultUrl: img_Villa5_room2 },
+      { key: 'room3', label: 'Phòng 3 — Grand Presidential Suite', defaultUrl: img_Villa5_room3 },
+      { key: 'gallery1', label: 'Gallery 1', defaultUrl: img_Villa5_gallery1 },
+      { key: 'gallery2', label: 'Gallery 2', defaultUrl: img_Villa5_gallery2 },
+      { key: 'gallery3', label: 'Gallery 3', defaultUrl: img_Villa5_gallery3 },
+      { key: 'gallery4', label: 'Gallery 4', defaultUrl: img_Villa5_gallery4 },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa5_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa5_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa5_avatar3 },
     ],
   },
   {
@@ -161,23 +261,23 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     priceText: '399,000đ',
     rating: 4.8,
     tags: ['villa', 'homestay', 'Hà Giang', 'nghỉ dưỡng núi', 'trekking'],
-    imageUrl: 'https://images.unsplash.com/photo-1518733057094-95b53143d2a7?w=1200&q=80',
+    imageUrl: img_Villa6_card,
     component: lazy(() => import('../../Template/villa/Villa-6/index')),
     schema: villa6Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1518733057094-95b53143d2a7?w=1600&q=80' },
-      { key: 'aboutImg', label: 'Ảnh giới thiệu', defaultUrl: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200&q=80' },
-      { key: 'room1', label: "Phòng 1 — H'Mong Suite", defaultUrl: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=1000&q=80' },
-      { key: 'room2', label: 'Phòng 2 — Valley View Room', defaultUrl: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1000&q=80' },
-      { key: 'room3', label: 'Phòng 3 — Cliff Bungalow', defaultUrl: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1000&q=80' },
-      { key: 'room4', label: 'Phòng 4 — Cloud Terrace Family', defaultUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1000&q=80' },
-      { key: 'gallery1', label: 'Gallery 1', defaultUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80' },
-      { key: 'gallery2', label: 'Gallery 2', defaultUrl: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=80' },
-      { key: 'gallery3', label: 'Gallery 3', defaultUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80' },
-      { key: 'gallery4', label: 'Gallery 4', defaultUrl: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1200&q=80' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://i.pravatar.cc/150?img=32' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://i.pravatar.cc/150?img=44' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://i.pravatar.cc/150?img=25' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa6_heroBg },
+      { key: 'aboutImg', label: 'Ảnh giới thiệu', defaultUrl: img_Villa6_aboutImg },
+      { key: 'room1', label: "Phòng 1 — H'Mong Suite", defaultUrl: img_Villa6_room1 },
+      { key: 'room2', label: 'Phòng 2 — Valley View Room', defaultUrl: img_Villa6_room2 },
+      { key: 'room3', label: 'Phòng 3 — Cliff Bungalow', defaultUrl: img_Villa6_room3 },
+      { key: 'room4', label: 'Phòng 4 — Cloud Terrace Family', defaultUrl: img_Villa6_room4 },
+      { key: 'gallery1', label: 'Gallery 1', defaultUrl: img_Villa6_gallery1 },
+      { key: 'gallery2', label: 'Gallery 2', defaultUrl: img_Villa6_gallery2 },
+      { key: 'gallery3', label: 'Gallery 3', defaultUrl: img_Villa6_gallery3 },
+      { key: 'gallery4', label: 'Gallery 4', defaultUrl: img_Villa6_gallery4 },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa6_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa6_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa6_avatar3 },
     ],
   },
   {
@@ -189,24 +289,24 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     priceText: '349,000đ',
     rating: 4.8,
     tags: ['villa', 'homestay', 'nghỉ dưỡng', 'Phong Nha', 'đồi rừng'],
-    imageUrl: 'https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: img_Villa7_card,
     component: lazy(() => import('../../Template/villa/Villa-7/index')),
     schema: villa7Schema,
     imageSlots: [
-      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: 'https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?auto=format&fit=crop&w=1600&q=80' },
-      { key: 'introImg', label: 'Ảnh giới thiệu', defaultUrl: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'roomFeatured', label: 'Phòng nổi bật — Deluxe', defaultUrl: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room1', label: 'Phòng 1 — Standard', defaultUrl: 'https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room2', label: 'Phòng 2 — Family', defaultUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'room3', label: 'Phòng 3 — Nguyên villa', defaultUrl: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'amenitiesImg', label: 'Ảnh tiện nghi', defaultUrl: 'https://images.unsplash.com/photo-1521783593447-5702b9bfd267?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery1', label: 'Gallery 1', defaultUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery2', label: 'Gallery 2', defaultUrl: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery3', label: 'Gallery 3', defaultUrl: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'gallery4', label: 'Gallery 4', defaultUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80' },
-      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80' },
-      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80' },
-      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80' },
+      { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa7_heroBg },
+      { key: 'introImg', label: 'Ảnh giới thiệu', defaultUrl: img_Villa7_introImg },
+      { key: 'roomFeatured', label: 'Phòng nổi bật — Deluxe', defaultUrl: img_Villa7_roomFeatured },
+      { key: 'room1', label: 'Phòng 1 — Standard', defaultUrl: img_Villa7_room1 },
+      { key: 'room2', label: 'Phòng 2 — Family', defaultUrl: img_Villa7_room2 },
+      { key: 'room3', label: 'Phòng 3 — Nguyên villa', defaultUrl: img_Villa7_room3 },
+      { key: 'amenitiesImg', label: 'Ảnh tiện nghi', defaultUrl: img_Villa7_amenitiesImg },
+      { key: 'gallery1', label: 'Gallery 1', defaultUrl: img_Villa7_gallery1 },
+      { key: 'gallery2', label: 'Gallery 2', defaultUrl: img_Villa7_gallery2 },
+      { key: 'gallery3', label: 'Gallery 3', defaultUrl: img_Villa7_gallery3 },
+      { key: 'gallery4', label: 'Gallery 4', defaultUrl: img_Villa7_gallery4 },
+      { key: 'avatar1', label: 'Avatar khách 1', defaultUrl: img_Villa7_avatar1 },
+      { key: 'avatar2', label: 'Avatar khách 2', defaultUrl: img_Villa7_avatar2 },
+      { key: 'avatar3', label: 'Avatar khách 3', defaultUrl: img_Villa7_avatar3 },
     ],
   },
 ];

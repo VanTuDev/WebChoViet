@@ -6,6 +6,14 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
+import imgBroth from './images/broth.jpg';
+import imgWagyu from './images/wagyu.jpg';
+import imgSeafood from './images/seafood.jpg';
+import imgPrivate from './images/private.jpg';
+import imgGroup from './images/group.jpg';
+import imgTerrace from './images/terrace.jpg';
+import imgMap from './images/map.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -13,14 +21,14 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  hero:    'https://lh3.googleusercontent.com/aida-public/AB6AXuDiaJgeHhbOFHgymMN0SFz6mD_9gmm1R9mGz51tE7yR63holMlbe10AL9W4V-sAsFsIN-o7F-KUPSCSJzJyQm5FxWGNCQyNtJjNoBYN_qzGYO8XZSXIs3nXNrFMW_X-yyHk7LW_-Y4pqmkYwbEGzJzTFOBWjUL5oYmip7wWZLsnFQ1i37CHp76O9Qw9VRaAPD6d5D8XUvCSdWvYt8kIS3i_xtWxNGANSeKSOGiyMlfTJrUNSi1Np2rW',
-  broth:   'https://lh3.googleusercontent.com/aida-public/AB6AXuCm2ObKvxndK7fecM3kDPru86xKM1NjAHReehC28qUrFTp0dZluXLKWjMy7eR3exlTt2rU3vE1c68jdpVoi0rCZXl2jaq_ux75jJLuDq-yweQYFV4AN97taxpjA8UcTkvbITpExomnj3z7GOH3ef0_rLlUKXdbDkkATMY7Te4kTJmUBlFa8VWvDoXPSG1i9QwgCWhmPxADV6SGdLUaYXkyJzqtyLk8K7txL-O3xnDI5YGFL54OXQzSh',
-  wagyu:   'https://lh3.googleusercontent.com/aida-public/AB6AXuDY_232H2L2Ank8Ddb1cl54JdGNm2NhXY-zHgCDYBDLUbOd7KcGf1q6-mdQuXoK1JxGTLmQ1LGAY19UO2Z4iSwcPeyXTh6X-XEEGnSEGC0y2jieWIq5NlI70lBgLEkBqwF7i2rERQVbfUqcPv89rTbc2lnLtwwtX2E9qQhVpO7a7Gx9WsUvYP6X5_sTlyxUgNix_AN8AM1SyhvVytf2AYspX_MtvksUvA3fgE63V2GlMHEZn9XNpkcI',
-  seafood: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC6vc1XIo5GcSaJlK7jtYax3u73WPrlVYpDojbpbDV6CGWTTXRWrqpuid99qErCGRcxNjmjX7_EuO5V335KNxsTZG4g2lNibpMB4tnBxD1GgYRjKZn0l8MLH5ajRPc1LDwgpQxn2oKTv7SQkqzIOF9G3cGaAjRWrA45cib-2voJmofvocrI8ikZ5jxxPPlf7FeCDiJt0ikueC0pK6lfnhHn4MjMygfuixVY4r0LKRKB-aL9EDe28o-4',
-  private: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPcX-9srf7yVKVs1n90ZIW50GMUGcWsGVmkFrNJL0yc8m2raiHbnTrJoXXO-SEZdGdUZuSfGzREHqfa56XKU6Tt-TK8DPu3R1UtWVESMvuUoZaS2dkLcBrw0wFr2PydY8YSz8uNtoA6fU4VIFRwUpK9IdbgeTwpelb2_ch0RXNBDtW_L91VMftV05CuZ_bC6CwXafjzwyrYgKXPtLFTj4jjcI3DzTLljaeYPa91-ZTdUhrufGQy-yW',
-  group:   'https://lh3.googleusercontent.com/aida-public/AB6AXuB-9LQ5Js6lARZILNsvsVI79qyXwD0Ay_GZZri0ZoA1d0cwFLdVK6kUYR-HcLKrV0sO_zIAG_TJObQXu8lTqbChNSHvwl9iRFvGPtBuBqYAD-Lgct1TynuHnQa3Bd-AhrXXK33uMuf2g3L6gOfu9UqWI0-Dao7SdIFY86L2jcYLcofjQ75xqJgIzBeH0_KUVa2z6A78IDO77HO5hAkkSYZam3nSCtmgq2oJLGLx0B9i4xMJxRbsFMdY',
-  terrace: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAi-qjwlhYAKsJHp9SGTJDv9LCaJfTKYSfGMlNNz8_in7les75ZJ9tAWZgzXjBTuMEkMPclHwMpwbuBDREzTin89rMCGl9AcmPCrDdyrSShx455EQ9CuuB9ANUWJlOVBIVGeUgHAnrw_Yce57xVSbrVzH2MaftOqHrbzwBuywXeKSqoNZK1yapMXs0VwfV2LsHDwBCkOz3i3TSNecYaeq3hNoUeSPqKy9qE1fBtgsREu-7xlfN3oPx4',
-  map:     'https://lh3.googleusercontent.com/aida-public/AB6AXuDw1eA4bgTMZ-Os7wxTYHaZ0bljZ4jocO4oDn0vxQ6IjC0X6h_t9Qsdde7QTjc5uGidpode4-AuaXuxiwwb6QucRIim6r8a4LSEsFt6mGCVyjUUqS0MianucUFF3tfnnehexI2XojfnkFQQ3F6SoGlyPm2aOBcyxktZcG8jrKgqbC60KCODzzGUq7mC1iCwUGSbKnMO59XNqxJs9j-jYpo1PIV7H978bHIn2pzXQ6wPQv-ZtZPvOkMT',
+  hero:    imgHero,
+  broth:   imgBroth,
+  wagyu:   imgWagyu,
+  seafood: imgSeafood,
+  private: imgPrivate,
+  group:   imgGroup,
+  terrace: imgTerrace,
+  map:     imgMap,
 };
 
 /** Icon minh hoạ cho 2 feature "Không Gian Nhà Hàng" — không phải nội dung dịch */
@@ -64,7 +72,7 @@ export default function Restaurant3({ lang = 'vi' }: Props) {
         {/* Hero */}
         <section data-section="hero" className="relative h-[85vh] min-h-125 w-full flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img className="w-full h-full object-cover" src={IMG.hero} alt="" />
+            <img className="w-full h-full object-cover" src={IMG.hero} alt={t.hero.title} />
             <div className="absolute inset-0 bg-black/40" />
           </div>
           <div className="relative z-10 text-center px-6 max-w-3xl">
@@ -106,7 +114,7 @@ export default function Restaurant3({ lang = 'vi' }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               {/* Featured broth card */}
               <div className="md:col-span-8 relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 min-h-100 group">
-                <img className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.broth} alt={t.menuSection.featured.name} />
+                <img className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.broth} alt={t.menuSection.featured.name} loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6 w-full">
                   <div className="flex items-center gap-1 mb-1">
@@ -125,7 +133,7 @@ export default function Restaurant3({ lang = 'vi' }: Props) {
                   { img: IMG.seafood, item: t.menuSection.items[1], field: 'menuSection.items.1' }].map((row) => (
                   <div key={row.field} className="bg-white rounded-3xl p-4 shadow-sm border border-[#ebe8e1] flex gap-4 items-center group cursor-pointer hover:border-[#8f000d] transition-all">
                     <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
-                      <img className="w-full h-full object-cover group-hover:scale-110 transition-transform" src={row.img} alt={row.item.name} />
+                      <img className="w-full h-full object-cover group-hover:scale-110 transition-transform" src={row.img} alt={row.item.name} loading="lazy" />
                     </div>
                     <div>
                       <h4 data-field={`${row.field}.name`} className="font-semibold text-sm">{row.item.name}</h4>
@@ -154,15 +162,15 @@ export default function Restaurant3({ lang = 'vi' }: Props) {
               <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="rounded-2xl overflow-hidden h-64 shadow-md">
-                    <img className="w-full h-full object-cover" src={IMG.private} alt="" />
+                    <img className="w-full h-full object-cover" src={IMG.private} alt={t.space.features[0].title} loading="lazy" />
                   </div>
                   <div className="rounded-2xl overflow-hidden h-48 shadow-md">
-                    <img className="w-full h-full object-cover" src={IMG.group} alt="" />
+                    <img className="w-full h-full object-cover" src={IMG.group} alt={t.space.title} loading="lazy" />
                   </div>
                 </div>
                 <div className="pt-6">
                   <div className="rounded-2xl overflow-hidden h-[450px] shadow-md">
-                    <img className="w-full h-full object-cover" src={IMG.terrace} alt="" />
+                    <img className="w-full h-full object-cover" src={IMG.terrace} alt={t.space.features[1].title} loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -227,7 +235,7 @@ export default function Restaurant3({ lang = 'vi' }: Props) {
                   />
                 ) : (
                   <div className="relative w-full h-full">
-                    <img className="w-full h-full object-cover" src={IMG.map} alt="" />
+                    <img className="w-full h-full object-cover" src={IMG.map} alt={t.contact.address} loading="lazy" />
                     <div className="absolute inset-0 bg-black/10 flex items-center justify-center flex-col gap-2">
                       <MapPin aria-hidden className="w-12 h-12 text-[#8f000d]" />
                       <p className="text-sm font-semibold text-white bg-black/50 px-3 py-1 rounded-full">{t.contact.mapLoading}</p>

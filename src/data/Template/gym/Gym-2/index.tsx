@@ -11,6 +11,8 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHero from './images/hero.jpg';
+import imgFeature from './images/feature.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -21,8 +23,8 @@ export default function Gym2({ lang = 'vi' }: Props) {
   const { customData, images } = useTemplateCustom();
   const t = deepMerge(translations[activeLang] as Record<string, unknown>, customData) as typeof viJson;
   const IMG = {
-    hero: images.hero ?? 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400&auto=format&fit=crop&q=70',
-    feature: images.feature ?? 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&auto=format&fit=crop&q=70',
+    hero: images.hero ?? imgHero,
+    feature: images.feature ?? imgFeature,
   };
 
   return (
@@ -42,7 +44,7 @@ export default function Gym2({ lang = 'vi' }: Props) {
 
       {/* Hero */}
       <section data-section="hero" className="relative overflow-hidden min-h-[85vh] flex items-center">
-        <img src={IMG.hero} alt={t.shopName} className="absolute inset-0 w-full h-full object-cover opacity-50" />
+        <img src={IMG.hero} alt={`Không gian phòng tập hiện đại tại ${t.shopName}`} className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent" />
         <div className="relative z-10 px-6 lg:px-16 max-w-3xl space-y-6 py-24">
           <span data-field="hero.badge" className="inline-flex items-center gap-2 bg-[#DC2626]/10 text-[#DC2626] text-xs font-bold px-4 py-1.5 rounded-full tracking-widest uppercase border border-[#DC2626]/30">
@@ -77,7 +79,7 @@ export default function Gym2({ lang = 'vi' }: Props) {
               if (i === 1) {
                 return (
                   <div key={i} className="relative rounded-2xl overflow-hidden group min-h-[280px] border border-white/10">
-                    <img src={IMG.feature} alt={item.name} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
+                    <img src={IMG.feature} alt={item.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 to-transparent" />
                     <div className="absolute bottom-0 left-0 p-6">
                       <Icon className="w-8 h-8 text-[#DC2626] mb-2" />

@@ -7,6 +7,10 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.png';
+import imgGalleryMain from './images/galleryMain.png';
+import imgGallery2 from './images/gallery2.png';
+import imgGallery4 from './images/gallery4.png';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -14,11 +18,11 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg:      'https://lh3.googleusercontent.com/aida-public/AB6AXuCNkqsQSsTeYHw1cnpeU4Uf8MH_blw-Fu7MpPh180Fi0B0ENa0grGwofz2i4Kx6-FbVrIAnE1ehmWhby5zlEGg4KI36Q6WrJoHaey7gbVBPY9dRIdT93aw_bKShcmlj3SnS8Opb797Fztt-vD1VVZUJs6kyb7idreLbbqq1czNPDN0Zp7jG91PZTCGE8r0PCllLuPuPPXOfMFrazJZyBMP6b61VbyI29Jw0ch2DFXnJW0vFekGId5arfP0JDJ7-WsaR0dS3_3QGKuU',
-  galleryMain: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAiwCA6-9Nm7Vr8Y4arkvk5aV-3YguTyuqhKXeJbulipcwAXaWA87XlsZ8QpcbiMhCgBWtBHfQEX81syQkxjC4yuu46VYG4aGUC-xKHHNf33UsANIuEJj5Pq6INdysrhjvPNE1LOhdKzUGDpQV2DviLnaCSRYxVp64f2uD8pNPQ9MfPPpVfuqoKZdpZZ_rHXvkTE0AkPr5S2V1zU46uru7kLyHWuNflBiH_67SlxgX0f2av5RHoqMzxX6maxY6A0OQlhgKq41_59gA',
-  gallery2:    'https://lh3.googleusercontent.com/aida-public/AB6AXuBuQ2UP4nOD8HiXXgNFXajISfeCloB6FQgunov0MHp-J-WbuuBfvHY1b8meE-rk-AFB9C4GjLCfCAQzkQChjBVtx-g4aFMvMVQiN86ymbHW1VTV_kbGq_u3jUD12fYjGZTMjNIZrG3Wt2c2aGXKnapbSXeAqgmCaI_j7Xzw4lIrYaOzG73_fyen7eKlI83o7MO40MH9brUH7NXAEKl4tAvUU5j56kBobuu8YoHXIn1JpYZorcMpR6x-x5qA8DTus1YpyWN9we-J5A0',
+  heroBg:      imgHeroBg,
+  galleryMain: imgGalleryMain,
+  gallery2:    imgGallery2,
   gallery3:    'https://lh3.googleusercontent.com/aida-public/AB6AXuCdQFfDbVSGSbbBBZkj4l3cPXiZH_yJssczjPgSZG5o1Yj5b9noIpmuA8xD6T4rJsaWk_qSXNXpv_453CnXn8_Ozn80ACzZ7CrI7NMF2ZlZG3pxsDf4CQv1SY4mJTTskkKtgE3uHGG4XPn4Zuce1m8_70k6pKm5BzTRXjpzTwqlC7XsJ_rEJzbT7MHF6PP0i89iKB2QaLrbgZ4jpeocc2FX53iG8',
-  gallery4:    'https://lh3.googleusercontent.com/aida-public/AB6AXuAhbuGZT_G_jOWqSCejeZLkTx2yGWMfDaZ0FEdL3I29eQMfPSX0OT-WRQDyoe9NmVYtiVZeWo_koSjeumPuuxcvCx1VZr6dHXn3Nmmi3ftT3QYssLVoE0IKxHkdW09yF5XSdZRBeQdpvWVaszMgniCKHPXuowTUYGBYiAfXRE8i0F36aF5_RG3YjGdfe54ZPRYl33G9kIaXh2JWG5HMOYCYOzYrCqHY3KrmTMgdNSe2aKuQudzQY_IYHkbu-prc1GiXkNKFLpMu2RY',
+  gallery4:    imgGallery4,
 };
 
 /** Icon cho 4 nhóm menu — nằm ngoài i18n vì không phải nội dung dịch */
@@ -125,19 +129,19 @@ export default function Coffe6({ lang = 'vi' }: Props) {
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[600px]">
               <Reveal variant="zoom-in" className="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group h-64 md:h-auto">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.galleryMain} alt={t.gallery.caption} />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.galleryMain} alt={t.gallery.caption} loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                   <span data-field="gallery.caption" className="text-white text-sm font-medium">{t.gallery.caption}</span>
                 </div>
               </Reveal>
               <Reveal variant="zoom-in" delay={100} className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery2} alt="" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery2} alt="Cozy garden seating nook" loading="lazy" />
               </Reveal>
               <Reveal variant="zoom-in" delay={180} className="md:col-span-1 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery3} alt="" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery3} alt="Green plant wall accent" loading="lazy" />
               </Reveal>
               <Reveal variant="zoom-in" delay={260} className="md:col-span-2 md:row-span-1 rounded-2xl overflow-hidden group hidden md:block">
-                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery4} alt="" />
+                <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={IMG.gallery4} alt="Outdoor patio surrounded by greenery" loading="lazy" />
               </Reveal>
             </div>
           </div>

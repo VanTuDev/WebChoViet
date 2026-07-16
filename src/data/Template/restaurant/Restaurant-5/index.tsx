@@ -10,6 +10,14 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgBentoFlavor from './images/bentoFlavor.jpg';
+import imgBentoSpace from './images/bentoSpace.jpg';
+import imgMenu1 from './images/menu1.jpg';
+import imgMenu2 from './images/menu2.jpg';
+import imgMenu3 from './images/menu3.jpg';
+import imgPaymentVisa from './images/paymentVisa.jpg';
+import imgPaymentMc from './images/paymentMc.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -17,14 +25,14 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg:     'https://lh3.googleusercontent.com/aida-public/AB6AXuDVnViOD58Q78qpSKvZTufwNEOPzBpJijYrH-bmIVOqx0eZ1YOqdrWb_CbuiF_RWfKXN72Vp2S19wwJ7lkujKM00qeTSwHKuj6mte8fZvc26eBTSjMGXEL3JhnbP7XpjP4miZGdNlZ6F5yQ4mVLsx_v2LkMfnUCJdinrH2dggyt6U5kCjQoNLBGSt4JtBfexA9M4ang9LCcPm7nhgaN-Bmac_qB9V9Fo71eWSjQxtfjFCfBiX8mVUeQ',
-  bentoFlavor:'https://lh3.googleusercontent.com/aida-public/AB6AXuAgrkgBZ8mgq5zYeXg6TjtnK2iSZBap4YpCuXQcrjDfnFFjgjOOPPPxgR3-sFMSIQTYtkdUMeZTEXsyHSIc-XmBa8jRx4dyimkMKsfK8UPmVgDQ5qlZGTYbRonwWlurcvlr7rG7eR8MUNy7Et9EHck5cEPi10ld2Jk8yK-X3JOkFEAkV0N57bRY1VsdpYohMxTNhtg8Cp1l2zimS3PwhqJpFIA6NZkHq0LDal6w9KV3JyZTISdt26xd',
-  bentoSpace: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCPfUXNc6xy0Er-whdMTCA5VdWFBWvvtbra9lQJEYrSWiQx4YRPgQxD607bR32oZLptR8Jy5t9E-I-kdfnYlBhU2fo02ChHGaJE1TyO_-d-WVytV4tJqqHUEFI0he64BIHJLiU1wvlrDZXA__1uKijk8zyqXmj2M3TU3rkd4d4r1dUCrFAcuOUgl3kQ0n9wOLvkKHtF10MAeLVxCCs-eBlov2S1jw5IaAXKN8MVVtabOmCtzPZG8MVo',
-  menu1:      'https://lh3.googleusercontent.com/aida-public/AB6AXuAn5Ns9MWghtXbIfhIIVWxf0J-cReQ-T7MjXqP5xmolMncWNBTJZbzXrFzbXIi5Vcio1WDRS3DiM9L906TRtEcZGO97T77Arz6rt1pT0yYCRe7n3NiWjlNTIf_0jVMuOFlCCJv6Fq11rDm4VgDLckT_Vy2_ecvuYqwgSxdnvxJuwq5yUllQpMmgzDmTvBUw4sZxq03kHDQdcyczPiFwhOCHgnRplynez8PpLdLTFcWCmC0r2WKzdXdF',
-  menu2:      'https://lh3.googleusercontent.com/aida-public/AB6AXuDUIh8aphtyp99iz3GAW9hkzwzbypDyOuye-JAoL-rUEtQqjb2sPX83uymqXqrJusBzHY5a_BFKkCxrcwvbQS2B7v1OB3BhRFPdTSrawZry96RQ5OlSINU1tGDBAf_kYNf1QJIVg-D3NYdm7mNMOuFBOHuNcZqo56s1Ykd_GvYnQbQU9H78kOJcT3TMbonc2cXdQI2BfCrzA5DAA2BdnWtKx2OlwMRLvcZQCHpnkTOa4PUmKuDpBV8P',
-  menu3:      'https://lh3.googleusercontent.com/aida-public/AB6AXuDEJwTWshO0mjow4tNZjLSlV7GLg29oAoAiv41zlhZmkWW7G9GvGrOE9IZa3lXyCseoUPoT2IfvyNmsgYGG5ExlFywy2GZWBLGI2jeZ_l2LiiMUxMACjlWTPOLAt5niOFpfgGiwcbwXLcF-ascL9OsTVmntwhVbiNWcIDjr_DfkOxkUMzGeEkPfHvba75pQC0cAiCS4eGqytIfN8T4NWLjzd35bM_S1-KiKfV4HWScfbibjmEHvxhtA',
-  paymentVisa:'https://lh3.googleusercontent.com/aida-public/AB6AXuDAtTqmpTxq759gcbRUCdJqxcbPnVA5Dud2swoI6y7ohKMIEToNp9ZDiS0lxD3h-M5YCCW8wWwA-RQnlUDf4t1tJ6qVuSUdnLqZp0c_2UTAEEnjTgtCbltCy-Nj_arAvL8LbyPyVt6KmgdB4bDltrxtunGutfMJCliH4pVlR6gPKYyJChjgKPd1ui_LIDtGfGtFG0Yd0VSBXoT96J0lPfZgKbkjNapcUDTOsNTDT29iAf4GtPKBMqaT',
-  paymentMc:  'https://lh3.googleusercontent.com/aida-public/AB6AXuCDp-knw6fmZPRKaiDRZvOvBDbnHl6BmRI8Db_B4cnFj043FVmP2Abto74bD6fNWaoVmXZbAnaIN35VJM6nmkNuQQVaRbBj8-0E9eQhsZyrT-KzoJ34KXUDddA8gOjrkUb4OafVodHCcHH9tVye3KKX-WLO-2BhNhvEu-28syDxNZbdn_d7pdUcXDOKSZiQf7K00TImHZ4OPyWoQNR5DafpG6eicmKEgdS6m4HIDo-7xllzks5JB-AV',
+  heroBg:     imgHeroBg,
+  bentoFlavor:imgBentoFlavor,
+  bentoSpace: imgBentoSpace,
+  menu1:      imgMenu1,
+  menu2:      imgMenu2,
+  menu3:      imgMenu3,
+  paymentVisa:imgPaymentVisa,
+  paymentMc:  imgPaymentMc,
 };
 
 /** Icon liên hệ theo thứ tự address/phone/hours — trang trí, không phải nội dung dịch */
@@ -223,7 +231,7 @@ export default function Restaurant5({ lang = 'vi' }: Props) {
                   <div key={i} className="group">
                     <div className="relative aspect-square rounded-xl overflow-hidden mb-4">
                       <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        src={MENU_IMGS[i]} alt={item.name} />
+                        src={MENU_IMGS[i]} alt={item.name} loading="lazy" />
                       <div className="absolute top-4 right-4 flex gap-2">
                         <span data-field={`menu.items.${i}.tag`}
                           className="bg-[#3b6934] text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full">
@@ -406,8 +414,8 @@ export default function Restaurant5({ lang = 'vi' }: Props) {
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#887361]/10 gap-4">
             <span data-field="footer.copy" className="text-xs text-[#554434]">{t.footer.copy}</span>
             <div className="flex gap-6">
-              <img alt="Visa" className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src={IMG.paymentVisa} />
-              <img alt="Mastercard" className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src={IMG.paymentMc} />
+              <img alt="Visa" className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src={IMG.paymentVisa} loading="lazy" />
+              <img alt="Mastercard" className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src={IMG.paymentMc} loading="lazy" />
             </div>
           </div>
         </div>

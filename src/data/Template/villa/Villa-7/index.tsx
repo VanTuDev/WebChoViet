@@ -26,6 +26,20 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgIntroImg from './images/introImg.jpg';
+import imgRoomFeatured from './images/roomFeatured.jpg';
+import imgRoom1 from './images/room1.jpg';
+import imgRoom2 from './images/room2.jpg';
+import imgRoom3 from './images/room3.jpg';
+import imgAmenitiesImg from './images/amenitiesImg.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
+import imgAvatar1 from './images/avatar1.jpg';
+import imgAvatar2 from './images/avatar2.jpg';
+import imgAvatar3 from './images/avatar3.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -33,20 +47,20 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?auto=format&fit=crop&w=1600&q=80',
-  introImg: 'https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1200&q=80',
-  roomFeatured: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=80',
-  room1: 'https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=1200&q=80',
-  room2: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
-  room3: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80',
-  amenitiesImg: 'https://images.unsplash.com/photo-1521783593447-5702b9bfd267?auto=format&fit=crop&w=1200&q=80',
-  gallery1: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80',
-  gallery2: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80',
-  gallery3: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80',
-  gallery4: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80',
-  avatar1: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
-  avatar2: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-  avatar3: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80',
+  heroBg: imgHeroBg,
+  introImg: imgIntroImg,
+  roomFeatured: imgRoomFeatured,
+  room1: imgRoom1,
+  room2: imgRoom2,
+  room3: imgRoom3,
+  amenitiesImg: imgAmenitiesImg,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
+  avatar1: imgAvatar1,
+  avatar2: imgAvatar2,
+  avatar3: imgAvatar3,
 };
 
 /** Icon/ảnh gán theo thứ tự item của mảng nội dung — trang trí, không lưu trong i18n */
@@ -126,7 +140,8 @@ export default function Villa7({ lang = 'vi' }: Props) {
               <div className="absolute -top-8 -left-8 w-32 h-32 border border-[#56642b]/20 rounded-full opacity-50 hidden md:block" />
               <img
                 src={IMG.introImg}
-                alt=""
+                alt={t.intro.title}
+                loading="lazy"
                 className={`rounded-[2rem] shadow-[0_20px_50px_-10px_rgba(86,100,43,0.18)] w-full aspect-[4/5] object-cover relative z-10`}
               />
             </Reveal>
@@ -163,7 +178,7 @@ export default function Villa7({ lang = 'vi' }: Props) {
               className={`md:col-span-3 relative rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(86,100,43,0.18)] group grid grid-cols-1 md:grid-cols-2`}
             >
               <div className="relative h-72 md:h-auto overflow-hidden">
-                <img src={IMG.roomFeatured} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={IMG.roomFeatured} alt={t.rooms.featured.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <span data-field="rooms.featured.badge" className="absolute top-4 left-4 bg-[#56642b] text-white px-4 py-1.5 rounded-full text-xs font-medium">
                   {t.rooms.featured.badge}
                 </span>
@@ -194,7 +209,7 @@ export default function Villa7({ lang = 'vi' }: Props) {
               return (
                 <Reveal key={i} variant="fade-up" delay={100 + i * 100} className={`bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(86,100,43,0.18)] flex flex-col group`}>
                   <div className="h-56 overflow-hidden relative">
-                    <img src={imgSrc} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={imgSrc} alt={room.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <span data-field={`rooms.items.${i}.tag`} className="absolute top-4 right-4 bg-white/85 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-[#56642b]">
                       {room.tag}
                     </span>
@@ -229,7 +244,7 @@ export default function Villa7({ lang = 'vi' }: Props) {
               <p data-field="amenities.desc" className="text-[#46483c] text-lg font-light leading-relaxed">{t.amenities.desc}</p>
             </div>
             <Reveal variant="zoom-in" className="order-1 lg:order-2">
-              <img src={IMG.amenitiesImg} alt="" className={`rounded-[2rem] shadow-[0_20px_50px_-10px_rgba(86,100,43,0.18)] w-full aspect-video object-cover`} />
+              <img src={IMG.amenitiesImg} alt={t.amenities.title} loading="lazy" className={`rounded-[2rem] shadow-[0_20px_50px_-10px_rgba(86,100,43,0.18)] w-full aspect-video object-cover`} />
             </Reveal>
           </div>
 
@@ -268,7 +283,7 @@ export default function Villa7({ lang = 'vi' }: Props) {
                 delay={i * 90}
                 className={`flex-none w-72 md:w-full aspect-[3/4] rounded-[1.5rem] overflow-hidden shadow-[0_20px_50px_-10px_rgba(86,100,43,0.18)] bg-[#c6c8b8] relative group ${i % 2 === 1 ? 'md:mt-16' : ''}`}
               >
-                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={src} alt="" />
+                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={src} alt={`${t.gallery.title} ${i + 1}`} loading="lazy" />
                 <div className="absolute inset-0 bg-[#56642b]/10 group-hover:bg-transparent transition-colors" />
               </Reveal>
             ))}
@@ -297,7 +312,7 @@ export default function Villa7({ lang = 'vi' }: Props) {
                     &ldquo;{item.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <img src={avatarSrc} alt="" className="w-11 h-11 rounded-full object-cover border-2 border-[#8a9a5b]" />
+                    <img src={avatarSrc} alt={item.name} loading="lazy" className="w-11 h-11 rounded-full object-cover border-2 border-[#8a9a5b]" />
                     <div>
                       <h4 data-field={`testimonials.items.${i}.name`} className="text-sm font-medium text-[#56642b]">{item.name}</h4>
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#46483c]">{item.role}</p>

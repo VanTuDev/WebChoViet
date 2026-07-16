@@ -7,6 +7,16 @@ import Reveal from '../../_shared/Reveal';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
+import imgSlideImgs1 from './images/slideImgs1.png';
+import imgSlideImgs2 from './images/slideImgs2.png';
+import imgBestsellerImgs1 from './images/bestsellerImgs1.png';
+import imgBestsellerImgs2 from './images/bestsellerImgs2.png';
+import imgBestsellerImgs3 from './images/bestsellerImgs3.png';
+import imgAvatarImgs1 from './images/avatarImgs1.png';
+import imgAvatarImgs2 from './images/avatarImgs2.png';
+import imgAvatarImgs3 from './images/avatarImgs3.png';
+import imgMapImg from './images/mapImg.png';
+import imgSpaceImg from './images/spaceImg.png';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -22,24 +32,24 @@ const glassCard = {
 } as const;
 
 const SLIDE_IMGS = [
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAdLMqjDGSjcg9BNtGMqRZs5DzFzQrtcKw8TgfospemgnfRbUn1awWdCRd2cHi80P4mvgR0vaq7iAAW6AXtYJiqnfAAbqcE6IC84PSdAQEsttEdQl44ckbleKo33pGgJHArDqwfrwk-9XRQRY9ivQHo4aTURIRMhSAic7AADLHIUrp9cMiOR7_-pioCDczuz8OgcUKN3a7EIEO4TBEzLMyz7PXK7xP84w_XqyR0UlWSQxuJHo-7DSh4CD332h8NTGZZKfEobgQy2oc',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBEL4exsTFkxdGfFnYI6OPBu7RQhY6XDy4-MleOU-jMeLix6_ZYGgAnnhTat7wiHreeb5kgwcl04_N7gvOh8cwjxOSrW5iWJMPeTUBbjzw7BMkhczJsyjX9bwahsnGtdoHDwFvwZHoLpD3qKTbuN4Q9KT1A6eMt4IZhDd4_t06xj6etcl1JfWe62tfmDZEVAbESqR86WIKZH334xn0FX8ILOFiUg8ZBJpcKsP2nX1SuSmxUgxwcbd7T9XJ1X5D_XM0JdtghoKi8yWg',
+  imgSlideImgs1,
+  imgSlideImgs2,
 ];
 
 const BESTSELLER_IMGS = [
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBDCwpfl7hv3Z9YkrtZlg2YDaY-XaEeI3-i-AOYbaIDLBedP-aOJTiOHa2pRDqx314dCuqWkO48bjuzkee6XGderAEeuvBe4HSIWqhk86KKWP5LmBBev_2Zoy0dE-R5qmm_qhJhSCowC02qvZ5SseMMsEA6EBNBJRYaMVckZflXXQ8R3_giIKXXx8HkE_wbAveiq2xXFSj5n8fDo8Y-KeXCgMXXVAdedzR9j6jOOUxpVwVrZwcWA1HckZrYCn3DK8R097BeMMQto5E',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuB-8cTGCBMH1NHLgK3-N2j7eiAV_w0K9P9VI3j9Jf27l-Z3e0rv8v9NkkFvwB_lu7xShYrPrT_1UqHPs-ryMCrK0ZAqS6FRUyxmLkDNIr_olmOpXe7TAbMKEsFt2wKwRnPr6hP_0HxFdMkeziBJ_A8OsZG7p6V2sJ5GVAVwd3AK6IO3xsBEt43E7LdDymlQcHJATG7RLWGX3gfkJldzkXBvUC7CVRx3hmxLUhp6RvreFayDKmNbpmHtnb9sIsd3sc7-JFlYLUh-8TQ',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDraIGhwfQBlHoKOfS4XVo-rU__7HO8jMzRnVqbaVkF1JnmKTibmCn6_xS2fflzaTcukdQx5NduYs7dCJq6KoKlXKM0fPNHJCR1ASIeELChdy8Uh5_LwW0MUwusYi4MDRBTdz6OEwmpMDTk6whk2XTs12KB803ugBtR2IfpOEPnXwuTRmLIqrNT8Jxu-SiMo0rje4PcD5tV7ggV4Zs9fdUqBkXcKMHfU_ZWE313rG4GY6ZheKs-nENmISFYxXpalUyzCfO2HhE34RE',
+  imgBestsellerImgs1,
+  imgBestsellerImgs2,
+  imgBestsellerImgs3,
 ];
 
 const AVATAR_IMGS = [
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCyluc5rhJPBPrNhYCLLFC7FIvZhGhfChP_1kPBpzxayKir2zIxr1-PElv1FxgM6IWfjZanl-49znLWUrcIGJoGwqN6xVU7-x5-r7Vb3juDFmafLOgaWc4O4i3S-naIu9JV7C9b-Fw2MqwgLnmfCz5X6bQNeD7SX5ipQLALVM5SOBbbqmiemQ4TtqyznMYZdUpoi-97sG9HPRxszS9Ljb8yc0lqXRNHgZwT6TQRrdzceoSV2HPsRYRpwF3yCOAgGTEgfHBrbpJpO0Y',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBnAQry9HFK-ecJVcL9_kCL39ztrOI_NPUAIx1WlEsgt48fuFEzwyiX1BDvIPNccCOK_Kk2pfYSuz-7HaQ7meN5MEnKMvAbxSi_1Ndz6WP4N1vNHnI74O4v6BW-VSgcOtmFF4zY63YJLieNGuIwK3emcg8BjIvzDBhYz_7UOSFn9GXpeo4KBCtsIogZg6jhhg4jD_Nkn1LtnQr0nSRuJHKbbmd1pBeN4YmKXPY9giLecrpiKCDcJjEUJhKR_s2WBt3Ob4B5WRXQQ4Q',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCD0_aKD4u0q8exAjJm-pKJNiUGe_yZaArAWss8N_i70Ia_G5qxc8mfnBoXZQgApHMwgkJjfdwn4NuXVm2k5YaFL5b-Hz9N041wpDnT-psHv-Bo19XLT9ohMnbA-FjF_4BRrSPOfKfZOkEjGHfPNTrgHVqXHNcJIFw1oIoO1-lYEO5xFG03kn1Ihnt1qhg1m9G9BV1GwolVswlWFMfifOrEjVx3B2xQl08nsGt13CFInDu3FD3pDElDce-Bx0I3lN1VK6-khaQ13-4',
+  imgAvatarImgs1,
+  imgAvatarImgs2,
+  imgAvatarImgs3,
 ];
 
-const MAP_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBktsMp5r2HBD_yrSARsoytd_YLBAW6osqvP_5nKZMKwTsWg2YfpbfKTEC_rXZXdJW1FME7MLZ1vfzav33Ri-8UoiK1quVVkUAtcr-t4Y_HdspYbAkvS-IKp1mhNsfWJy4fTLYAX-8zC9xTRC_16_2IK1SopXufZKXEK-kTruD15RMAZaeWg8YBQ7kSi0O-SQFY5aLTdEmgE-iR-W1QKjAcWUZ6t7uiyTHOZnsLCcSAVtK252-AkA6lmPvWWfxtywl7SKMjSsTi34g';
-const SPACE_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuAuDQu1q9ySPWpcewoJ0KbwPt4ZuMjj10ehn-d0Q4jNiKYU7dLY9kgyCtlslk4xgms6ZGNN7GBcVIAnT02rQPTXJ9Vwfxcyfmy6klcWx5QmAC8IBSZgYtCxwil739UPNsziwmBAXetEAxICOGSTiThDRen8OrlFk6kOyVcZGbgysORStU3DJl86af9vkgFXvrmxSLun0CVY3CGiYy1zW9kYRdtyXyLW4J4P5HKDxUaCQhX2HUu-MuZuLLopBaE7RDw7Z6Qa1h_zc';
+const MAP_IMG = imgMapImg;
+const SPACE_IMG = imgSpaceImg;
 
 export default function Coffe2({ lang = 'vi' }: Props) {
   const { customData, images } = useTemplateCustom();
@@ -139,7 +149,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
               <Reveal key={i} variant="fade-up" delay={i * 110}>
               <div className="group relative overflow-hidden rounded-2xl p-6 hover:shadow-xl transition-all duration-500 h-full" style={glassCard}>
                 <div className="aspect-square overflow-hidden rounded-xl mb-6">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`bestsellers_items_${i}`] ?? BESTSELLER_IMGS[i]} alt={item.name} />
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={images[`bestsellers_items_${i}`] ?? BESTSELLER_IMGS[i]} alt={item.name} loading="lazy" />
                 </div>
                 <h3 data-field={`bestsellers.items.${i}.name`} className="font-lexend text-2xl font-semibold">{item.name}</h3>
                 <p data-field={`bestsellers.items.${i}.desc`} className="text-[#424752] mb-6 text-base">{item.desc}</p>
@@ -202,7 +212,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <Reveal variant="fade-right" className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl relative z-20">
-                <img className="w-full h-[500px] object-cover" src={images['space'] ?? SPACE_IMG} alt="Cafe Space" />
+                <img className="w-full h-[500px] object-cover" src={images['space'] ?? SPACE_IMG} alt={t.space.title} loading="lazy" />
               </div>
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#cce5ff] rounded-full -z-10 blur-3xl opacity-50" />
             </Reveal>
@@ -240,7 +250,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                   <p className="text-base mb-6">"{item.text}"</p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-[#e0e3e5] overflow-hidden">
-                      <img className="w-full h-full object-cover" src={images[`avatar_${i}`] ?? AVATAR_IMGS[i]} alt={item.name} />
+                      <img className="w-full h-full object-cover" src={images[`avatar_${i}`] ?? AVATAR_IMGS[i]} alt={item.name} loading="lazy" />
                     </div>
                     <div>
                       <p className="font-bold text-sm">{item.name}</p>
@@ -290,7 +300,7 @@ export default function Coffe2({ lang = 'vi' }: Props) {
                   title="Google Maps"
                 />
               ) : (
-                <img className="w-full h-full object-cover" src={images['map'] ?? MAP_IMG} alt="Location Map" />
+                <img className="w-full h-full object-cover" src={images['map'] ?? MAP_IMG} alt={t.location.address} loading="lazy" />
               )}
             </Reveal>
           </div>

@@ -61,7 +61,9 @@
       { "title": "Infinite Ocean Views", "desc": "Every treatment room faces the ocean, delivering a complete sense of mental release." },
       { "title": "Minimalist Design", "desc": "Natural materials, white marble and pale wood create an atmosphere of absolute stillness." },
       { "title": "Therapeutic Sound", "desc": "A blend of authentic wave sounds and low-frequency music guides the body into deep relaxation." }
-    ]
+    ],
+    "image1Alt": "Ocean-facing treatment space at Ocean Oasis",
+    "image2Alt": "Minimalist interior with white marble and pale wood"
   },
   "contact": {
     "title": "A Quiet Location",

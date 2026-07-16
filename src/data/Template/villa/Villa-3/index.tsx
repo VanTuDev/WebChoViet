@@ -23,6 +23,19 @@ import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
 import koJson from './i18n/ko.json';
+import imgHeroBg from './images/heroBg.jpg';
+import imgStoryImg from './images/storyImg.jpg';
+import imgRoom1 from './images/room1.jpg';
+import imgRoom2 from './images/room2.jpg';
+import imgRoom3 from './images/room3.jpg';
+import imgRoom4 from './images/room4.jpg';
+import imgGallery1 from './images/gallery1.jpg';
+import imgGallery2 from './images/gallery2.jpg';
+import imgGallery3 from './images/gallery3.jpg';
+import imgGallery4 from './images/gallery4.jpg';
+import imgAvatar1 from './images/avatar1.jpg';
+import imgAvatar2 from './images/avatar2.jpg';
+import imgAvatar3 from './images/avatar3.jpg';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
@@ -30,19 +43,19 @@ const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: 
 interface Props { lang?: string }
 
 const DEFAULT_IMGS = {
-  heroBg: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80',
-  storyImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-  room1: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1000&q=80',
-  room2: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80',
-  room3: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80',
-  room4: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?auto=format&fit=crop&w=1000&q=80',
-  gallery1: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80',
-  gallery2: 'https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1000&q=80',
-  gallery3: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80',
-  gallery4: 'https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=1000&q=80',
-  avatar1: 'https://randomuser.me/api/portraits/women/44.jpg',
-  avatar2: 'https://randomuser.me/api/portraits/men/32.jpg',
-  avatar3: 'https://randomuser.me/api/portraits/women/68.jpg',
+  heroBg: imgHeroBg,
+  storyImg: imgStoryImg,
+  room1: imgRoom1,
+  room2: imgRoom2,
+  room3: imgRoom3,
+  room4: imgRoom4,
+  gallery1: imgGallery1,
+  gallery2: imgGallery2,
+  gallery3: imgGallery3,
+  gallery4: imgGallery4,
+  avatar1: imgAvatar1,
+  avatar2: imgAvatar2,
+  avatar3: imgAvatar3,
 };
 
 /** Icon minh hoạ gán theo thứ tự mảng nội dung — trang trí, không lưu trong i18n */
@@ -117,7 +130,7 @@ export default function Villa3({ lang = 'vi' }: Props) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <Reveal variant="zoom-in" className="relative group">
               <div className="rounded-[2rem] overflow-hidden aspect-[4/5] shadow-[0_10px_40px_-10px_rgba(86,100,43,0.2)]">
-                <img alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG.storyImg} />
+                <img alt={t.story.imageCaptionTitle} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={IMG.storyImg} />
               </div>
               <div className="absolute -bottom-8 -right-4 md:-right-8 bg-[#faf9f6]/90 backdrop-blur-md p-8 rounded-[1.5rem] shadow-[0_10px_40px_-10px_rgba(86,100,43,0.25)] hidden md:block max-w-xs border border-white/40">
                 <h4 data-field="story.imageCaptionTitle" className="text-xl text-[#56642b] font-normal mb-2">{t.story.imageCaptionTitle}</h4>
@@ -159,7 +172,7 @@ export default function Villa3({ lang = 'vi' }: Props) {
               return (
                 <Reveal key={i} variant="fade-up" delay={i * 100} className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(86,100,43,0.15)] flex flex-col sm:flex-row group">
                   <div className="sm:w-2/5 aspect-[4/3] sm:aspect-auto overflow-hidden">
-                    <img src={roomImg} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={roomImg} alt={room.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="p-7 flex flex-col justify-between sm:w-3/5">
                     <div>
@@ -221,7 +234,7 @@ export default function Villa3({ lang = 'vi' }: Props) {
                 delay={i * 90}
                 className={`flex-none w-72 md:w-full aspect-[3/4] rounded-[1.5rem] overflow-hidden shadow-[0_10px_40px_-10px_rgba(86,100,43,0.2)] relative group ${i % 2 === 1 ? 'md:mt-16' : ''}`}
               >
-                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={src} alt="" />
+                <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={src} alt={`${t.gallery.title} ${i + 1}`} loading="lazy" />
                 <div className="absolute inset-0 bg-[#56642b]/10 group-hover:bg-transparent transition-colors" />
               </Reveal>
             ))}
@@ -248,7 +261,7 @@ export default function Villa3({ lang = 'vi' }: Props) {
                     &ldquo;{item.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <img src={avatarSrc} alt="" className="w-11 h-11 rounded-full object-cover" />
+                    <img src={avatarSrc} alt={item.name} loading="lazy" className="w-11 h-11 rounded-full object-cover" />
                     <div>
                       <h4 data-field={`testimonials.items.${i}.name`} className="text-sm font-medium text-[#1a1c1a]">{item.name}</h4>
                       <p data-field={`testimonials.items.${i}.role`} className="text-xs text-[#76786b]">{item.role}</p>

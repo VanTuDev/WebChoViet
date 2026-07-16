@@ -7,6 +7,7 @@ import { Info, ChevronDown } from 'lucide-react';
 import { TEMPLATES, type Template } from '../../data';
 import { CATEGORY_HEADING_MAP } from '../../data/templates/registry';
 import { ROUTES } from '../../config/routes';
+import { DOMAIN } from '../../config/contact';
 import TemplateCard from './_components/TemplateCard';
 import TemplateFilters, { type PriceFilter, type SortBy } from './_components/TemplateFilters';
 import HreflangLinks from '../../i18n/HreflangLinks';
@@ -64,11 +65,26 @@ export default function MarketplacePage() {
     navigate(`/template-editor/new?template=${t.id}`);
   };
 
+  // BreadcrumbList JSON-LD — chỉ khi đang xem 1 category cụ thể (trang gốc "Tất cả"
+  // không phải trang "sâu" nên không cần breadcrumb theo CLAUDE.md).
+  const categoryLabel = heading.title.split(':')[1]?.trim() ?? category;
+  const breadcrumbJsonLd = category !== 'all' ? {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t('breadcrumbRoot'), item: `https://${DOMAIN}${ROUTES.MARKETPLACE}` },
+      { '@type': 'ListItem', position: 2, name: categoryLabel, item: `https://${DOMAIN}${ROUTES.MARKETPLACE}?category=${category}` },
+    ],
+  } : null;
+
   return (
     <div className="flex-1 py-5 sm:py-8 px-4 sm:px-6 xl:px-10 w-full">
       <Helmet>
         <title>{category === 'all' ? t('meta.title') : `${heading.title} — vngoweb`}</title>
         <meta name="description" content={category === 'all' ? t('meta.description') : heading.desc} />
+        {breadcrumbJsonLd && (
+          <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+        )}
       </Helmet>
       <HreflangLinks path={ROUTES.MARKETPLACE} />
       {/* ── Category breadcrumb + Heading ────────────────────────────────── */}

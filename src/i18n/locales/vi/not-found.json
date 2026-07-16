@@ -1,6 +1,7 @@
 {
   "meta": {
-    "title": "Không tìm thấy trang — vngoweb"
+    "title": "Không tìm thấy trang — vngoweb",
+    "description": "Trang bạn tìm không tồn tại hoặc đã bị di chuyển. Quay lại trang chủ vngoweb hoặc khám phá kho giao diện, bảng giá và hướng dẫn sử dụng."
   },
   "heading": "Trang này không tồn tại",
   "pathPrefix": "Đường dẫn",

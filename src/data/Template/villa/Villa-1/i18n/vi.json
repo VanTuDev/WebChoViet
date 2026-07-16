@@ -76,7 +76,13 @@
   "gallery": {
     "label": "Tầm Nhìn & Không Gian",
     "title": "Góc Nhìn Đa Chiều",
-    "viewMore": "Xem thêm"
+    "viewMore": "Xem thêm",
+    "items": [
+      { "alt": "Toàn cảnh ngoại thất Serenity Villa" },
+      { "alt": "Không gian nội thất ấm cúng của villa" },
+      { "alt": "Kiến trúc độc đáo của Serenity Villa" },
+      { "alt": "Hồ bơi vô cực lung linh về đêm" }
+    ]
   },
   "testimonials": {
     "title": "Trải Nghiệm Từ Khách Lưu Trú",
