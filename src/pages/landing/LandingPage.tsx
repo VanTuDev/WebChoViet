@@ -28,6 +28,7 @@ import { DOMAIN } from '../../config/contact';
 import SiteHeader from '../../components/shared/SiteHeader';
 import SiteFooter from '../../components/shared/SiteFooter';
 import HreflangLinks from '../../i18n/HreflangLinks';
+import { useTemplateStars } from '../../hooks/useTemplateStars';
 
 /* ═══════════════════════════════════════════════════════════════════════
    Showcase data — screenshot thật của template (utils/templateScreens)
@@ -70,6 +71,7 @@ function TemplateCarousel3D({
   const [active, setActive] = useState(0);
   const pausedRef = useRef(false);
   const n = items.length;
+  const { getStarCount } = useTemplateStars();
 
   const go = useCallback(
     (dir: 1 | -1) => setActive(a => (a + dir + n) % n),
@@ -217,10 +219,10 @@ function TemplateCarousel3D({
             />
           ))}
         </div>
-        {current?.rating && (
+        {current && getStarCount(current.id) > 0 && (
           <div className="flex items-center gap-1 font-inter text-xs text-on-surface-variant">
             <Star className="w-3.5 h-3.5 text-fnb-amber fill-fnb-amber" />
-            <span className="font-semibold text-on-surface">{current.rating}</span>
+            <span className="font-semibold text-on-surface">{getStarCount(current.id)}</span>
             · {t('showcase.trustedBy')}
           </div>
         )}

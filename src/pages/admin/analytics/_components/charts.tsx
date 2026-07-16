@@ -341,7 +341,7 @@ export function DonutChart({ slices, centerLabel }: { slices: DonutSlice[]; cent
 
       {/* Legend kèm giá trị — identity không bao giờ chỉ nằm ở màu */}
       <div className="flex-1 space-y-2.5 min-w-0">
-        {slices.map((s, i) => {
+        {slices.map((s) => {
           const pct = total > 0 ? Math.round((s.value / total) * 100) : 0;
           const visIdx = visible.indexOf(s);
           return (

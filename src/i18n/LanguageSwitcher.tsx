@@ -21,7 +21,7 @@ export default function LanguageSwitcher({ dropDirection = 'down', className = '
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
 
   const lng = (i18n.resolvedLanguage ?? i18n.language ?? '').split('-')[0];
   const active: AppLang = isAppLang(lng) ? lng : DEFAULT_APP_LANG;

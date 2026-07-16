@@ -29,7 +29,6 @@ export interface Template {
   price: number;
   priceText: string;
   badge?: 'BÁN CHẠY' | 'PREMIUM' | 'MỚI';
-  rating?: number;
   tags: string[];
   imageUrl: string;
 }

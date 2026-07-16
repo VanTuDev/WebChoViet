@@ -46,7 +46,7 @@ export default function AdminDashboard() {
 
   const SITES_LIMIT = 10;
 
-  const handleTogglePending = async (siteId: string, currentPending: boolean) => {
+  const handleTogglePending = async (siteId: string) => {
     try {
       const res = await apiToggleSitePending(siteId);
       showSnackbar(
@@ -317,7 +317,7 @@ export default function AdminDashboard() {
                       </a>
                     )}
                     <button
-                      onClick={() => handleTogglePending(site.id, site.isPending)}
+                      onClick={() => handleTogglePending(site.id)}
                       className={`flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded-lg transition-colors cursor-pointer ${
                         site.isPending
                           ? 'text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20'

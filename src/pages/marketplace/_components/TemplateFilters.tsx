@@ -2,7 +2,7 @@
 import { ChevronDown } from 'lucide-react';
 
 export type PriceFilter = 'all' | 'free' | 'paid';
-export type SortBy = 'newest' | 'bestseller' | 'priceAsc' | 'priceDesc';
+export type SortBy = 'newest' | 'bestseller' | 'mostStarred' | 'priceAsc' | 'priceDesc';
 
 interface Props {
   priceFilter: PriceFilter;
@@ -47,7 +47,8 @@ export default function TemplateFilters({ priceFilter, sortBy, onPriceChange, on
             className="appearance-none bg-gray-50 border border-gray-200 text-xs font-medium text-gray-700 rounded-full pl-4 pr-10 py-1.5 focus:border-primary-container focus:outline-none cursor-pointer"
           >
             <option value="newest">Mới nhất</option>
-            <option value="bestseller">Xem nhiều & Bán chạy</option>
+            <option value="bestseller">Bán chạy</option>
+            <option value="mostStarred">Nhiều sao nhất</option>
             <option value="priceAsc">Giá tăng dần</option>
             <option value="priceDesc">Giá giảm dần</option>
           </select>

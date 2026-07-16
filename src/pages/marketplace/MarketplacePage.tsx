@@ -11,6 +11,7 @@ import { DOMAIN } from '../../config/contact';
 import TemplateCard from './_components/TemplateCard';
 import TemplateFilters, { type PriceFilter, type SortBy } from './_components/TemplateFilters';
 import HreflangLinks from '../../i18n/HreflangLinks';
+import { useTemplateStars } from '../../hooks/useTemplateStars';
 
 export default function MarketplacePage() {
   const { t } = useTranslation('marketplace');
@@ -24,6 +25,7 @@ export default function MarketplacePage() {
   const [priceFilter, setPriceFilter] = useState<PriceFilter>('all');
   const [sortBy, setSortBy] = useState<SortBy>('newest');
   const [visibleCount, setVisibleCount] = useState(15);
+  const { getStarCount } = useTemplateStars();
 
   // Heading "Tất cả" dịch theo ngôn ngữ hệ thống; heading theo category lấy từ
   // registry (dữ liệu catalog template, giữ tiếng gốc).
@@ -50,14 +52,15 @@ export default function MarketplacePage() {
       result.sort((a, b) => {
         if (a.badge === 'BÁN CHẠY') return -1;
         if (b.badge === 'BÁN CHẠY') return 1;
-        return (b.rating ?? 0) - (a.rating ?? 0);
+        return getStarCount(b.id) - getStarCount(a.id);
       });
+    else if (sortBy === 'mostStarred') result.sort((a, b) => getStarCount(b.id) - getStarCount(a.id));
     else if (sortBy === 'priceAsc') result.sort((a, b) => a.price - b.price);
     else if (sortBy === 'priceDesc') result.sort((a, b) => b.price - a.price);
     else result.sort((a, b) => b.id.localeCompare(a.id));
 
     return result;
-  }, [category, searchQuery, priceFilter, sortBy]);
+  }, [category, searchQuery, priceFilter, sortBy, getStarCount]);
 
   const visible = filtered.slice(0, visibleCount);
 

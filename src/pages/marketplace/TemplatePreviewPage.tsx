@@ -1,10 +1,12 @@
 import { Suspense, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { Star } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
 import { TEMPLATES } from '../../data';
 import { COMPONENT_MAP } from '../../data/templates/registry';
 import { useTemplateAccess } from '../../hooks/useTemplateAccess';
+import { useTemplateStars } from '../../hooks/useTemplateStars';
 import { useAppContext } from '../../store/AppContext';
 
 type Lang = 'vi' | 'en' | 'zh' | 'ko';
@@ -24,7 +26,8 @@ export default function TemplatePreviewPage() {
   const template = TEMPLATES.find(t => t.id === templateId);
   const Component = templateId ? COMPONENT_MAP[templateId] : null;
   const { getEffectiveAccess } = useTemplateAccess();
-  const { user } = useAppContext();
+  const { getStarCount, isStarred, toggleStar } = useTemplateStars();
+  const { user, isAuthenticated, openLoginModal, showSnackbar } = useAppContext();
 
   if (!Component || !template) {
     return (
@@ -46,6 +49,12 @@ export default function TemplatePreviewPage() {
 
   const access = getEffectiveAccess(template.id, template.price, user?.plan ?? 'free');
   const isFree = access.price === 0;
+  const starred = isStarred(template.id);
+
+  const handleToggleStar = () => {
+    if (!isAuthenticated) { openLoginModal(); return; }
+    toggleStar(template.id).catch(err => showSnackbar(err instanceof Error ? err.message : 'Không thể sao mẫu này.', 'error'));
+  };
 
   return (
     <div className="relative">
@@ -89,6 +98,21 @@ export default function TemplatePreviewPage() {
               {template.badge}
             </span>
           )}
+
+          {/* Sao mẫu — kiểu GitHub star, bấm để sao/bỏ sao */}
+          <button
+            onClick={handleToggleStar}
+            title={starred ? 'Bỏ sao' : 'Sao mẫu này'}
+            aria-pressed={starred}
+            className={`hidden sm:flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full border transition-colors cursor-pointer ${
+              starred
+                ? 'text-fnb-amber bg-fnb-amber/10 border-fnb-amber/30 hover:bg-fnb-amber/20'
+                : 'text-gray-500 bg-gray-50 border-gray-200 hover:text-fnb-amber hover:border-fnb-amber/30'
+            }`}
+          >
+            <Star className={`h-3.5 w-3.5 ${starred ? 'fill-fnb-amber' : ''}`} />
+            {getStarCount(template.id)}
+          </button>
 
           {/* Lang switcher */}
           <div className="flex items-center bg-gray-100 rounded-full p-0.5 gap-0.5">

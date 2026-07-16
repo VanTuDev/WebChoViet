@@ -7,6 +7,7 @@ import type { Template } from '../../../data/templates/registry';
 import { CATEGORY_REGISTRY } from '../../../data/templates/registry';
 import { TEMPLATE_SCREEN_BY_ID } from '../../../utils/templateScreens';
 import { useTemplateAccess } from '../../../hooks/useTemplateAccess';
+import { useTemplateStars } from '../../../hooks/useTemplateStars';
 import { useAppContext } from '../../../store/AppContext';
 
 const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(
@@ -22,14 +23,23 @@ interface Props {
 
 export default function TemplateCard({ template: t, onUse }: Props) {
   const navigate = useNavigate();
-  const { user } = useAppContext();
+  const { user, isAuthenticated, openLoginModal, showSnackbar } = useAppContext();
   const { getEffectiveAccess } = useTemplateAccess();
+  const { getStarCount, isStarred, toggleStar } = useTemplateStars();
   const access = getEffectiveAccess(t.id, t.price, user?.plan ?? 'free');
   const isFree = access.price === 0;
+  const starCount = getStarCount(t.id);
+  const starred = isStarred(t.id);
   // Ưu tiên screenshot full-page thật (hover cuộn xem toàn trang), fallback ảnh cover
   const screen = TEMPLATE_SCREEN_BY_ID[t.id];
   const goPreview = () => navigate(`/marketplace/preview/${t.id}`);
   const goUse = () => (isFree ? navigate(`/template-editor/new?template=${t.id}`) : onUse(t));
+
+  const handleToggleStar = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!isAuthenticated) { openLoginModal(); return; }
+    toggleStar(t.id).catch(err => showSnackbar(err instanceof Error ? err.message : 'Không thể sao mẫu này.', 'error'));
+  };
 
   return (
     <article className="group relative flex flex-col rounded-xl border border-outline-variant/60 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
@@ -112,12 +122,17 @@ export default function TemplateCard({ template: t, onUse }: Props) {
         </div>
         <div className="flex items-center gap-1 text-[10px] text-on-surface-variant font-medium">
           <span className="truncate">{CATEGORY_LABEL[t.category] ?? t.category}</span>
-          {t.rating && (
-            <span className="flex items-center gap-0.5 shrink-0 font-bold text-on-surface ml-auto">
-              <Star className="h-2.5 w-2.5 text-fnb-amber fill-fnb-amber" />
-              {t.rating}
-            </span>
-          )}
+          <button
+            onClick={handleToggleStar}
+            title={starred ? 'Bỏ sao' : 'Sao mẫu này'}
+            aria-pressed={starred}
+            className={`flex items-center gap-0.5 shrink-0 font-bold ml-auto px-1.5 py-0.5 rounded-full transition-colors cursor-pointer ${
+              starred ? 'text-fnb-amber bg-fnb-amber/10 hover:bg-fnb-amber/20' : 'text-on-surface-variant hover:text-fnb-amber hover:bg-fnb-amber/10'
+            }`}
+          >
+            <Star className={`h-2.5 w-2.5 ${starred ? 'fill-fnb-amber' : ''}`} />
+            {starCount}
+          </button>
         </div>
       </div>
     </article>
