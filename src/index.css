@@ -65,9 +65,21 @@
   --color-fnb-pink: #e94f8a;
   --color-fnb-cream: #fff8f0;
 
+  /* ── Bảng màu "Việt Nam đương đại" — landing page ─────────────────────
+     Lấy cảm hứng từ lụa đỏ son, vân mây vàng kim, hạc bay (tranh dân gian). */
+  --color-viet-red: #a4161a;
+  --color-viet-maroon: #6e0f12;
+  --color-viet-lacquer: #4a0a0c;
+  --color-viet-gold: #d9a441;
+  --color-viet-gold-light: #f2c86b;
+  --color-viet-cream: #fdf3e3;
+
   /* ── Font families ──────────────────────────────────────────────────── */
   --font-lexend: 'Lexend', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  /* Font landing Việt: serif sang trọng cho heading + sans thiết kế riêng cho tiếng Việt */
+  --font-display: 'Playfair Display', 'Lexend', serif;
+  --font-viet: 'Be Vietnam Pro', 'Inter', sans-serif;
 }
 
 /* Class giữ lại cho tương thích — bảng màu FnB giờ là mặc định ở @theme */
@@ -255,6 +267,113 @@
   animation: shimmer 1.6s linear infinite;
 }
 
+/* ── Landing "Việt Nam đương đại" — motif hạc / vân mây / thủy ba ─────── */
+
+/* Chữ vàng kim óng ánh — dùng cho highlight trên nền đỏ son */
+.text-gold-shine {
+  background: linear-gradient(105deg, #f2c86b 0%, #ffe9b0 28%, #d9a441 55%, #f6d789 80%, #c8922e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 5s ease-in-out infinite alternate;
+}
+@keyframes goldShimmer {
+  from { background-position: 0% center; }
+  to   { background-position: 100% center; }
+}
+
+/* Hạc bay lượn — bồng bềnh + nghiêng cánh nhẹ */
+@keyframes craneGlide {
+  0%   { transform: translateY(0) rotate(0deg); }
+  30%  { transform: translateY(-14px) rotate(-2.5deg); }
+  60%  { transform: translateY(6px) rotate(1.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+.crane-glide {
+  animation: craneGlide 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Vân mây trôi chầm chậm */
+@keyframes cloudDrift {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(26px); }
+  100% { transform: translateX(0); }
+}
+.cloud-drift {
+  animation: cloudDrift 14s ease-in-out infinite;
+}
+
+/* Cánh mai vàng rơi trong hero */
+@keyframes petalFall {
+  0%   { transform: translateY(-8vh) translateX(0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 0.9; }
+  85%  { opacity: 0.8; }
+  100% { transform: translateY(96vh) translateX(-6vw) rotate(320deg); opacity: 0; }
+}
+.petal-fall {
+  animation: petalFall linear infinite;
+}
+
+/* Đèn lồng đung đưa — treo từ mép trên */
+@keyframes lanternSwing {
+  0%   { transform: rotate(-4deg); }
+  50%  { transform: rotate(4deg); }
+  100% { transform: rotate(-4deg); }
+}
+.lantern-swing {
+  transform-origin: top center;
+  animation: lanternSwing 5.5s ease-in-out infinite;
+}
+
+/* Scroll-reveal 3D — phần tử ngả ra sau rồi dựng thẳng dậy khi cuộn tới */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(1100px) rotateX(14deg) translateY(56px) scale(0.97);
+  transform-origin: center 80%;
+  transition:
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.75s ease;
+  will-change: transform, opacity;
+}
+.reveal-3d.in-view {
+  opacity: 1;
+  transform: perspective(1100px) rotateX(0deg) translateY(0) scale(1);
+}
+
+/* Thẻ nghiêng theo con trỏ (JS set biến --rx/--ry) */
+.tilt-card {
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.25s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Wrapper parallax — JS đặt transform theo scroll + chuột (engine trong LandingPage) */
+.par-wrap {
+  will-change: transform;
+}
+
+/* Card dính xếp chồng — JS scrub rotateX/scale theo tiến độ cuộn */
+[data-stack-card] {
+  will-change: transform, filter;
+  transform-style: preserve-3d;
+}
+
+/* Khối nghiêng 3D liên tục theo vị trí cuộn */
+[data-tilt-scroll] {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+/* Nền hero đỏ son — parallax nhẹ trên desktop */
+@media (min-width: 1024px) {
+  .hero-parallax {
+    background-attachment: fixed;
+  }
+}
+
 /* Tôn trọng người dùng tắt animation */
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll { opacity: 1; }
@@ -264,17 +383,39 @@
   .stagger-children > *,
   .floating,
   .spin-slow,
-  .shimmer {
+  .shimmer,
+  .crane-glide,
+  .cloud-drift,
+  .lantern-swing,
+  .text-gold-shine {
     animation: none !important;
     opacity: 1;
+  }
+  .petal-fall {
+    animation: none !important;
+    opacity: 0;
   }
   .card-sway {
     animation: none !important;
   }
+  .reveal-3d {
+    opacity: 1;
+    transform: none;
+  }
+  .par-wrap,
+  [data-stack-card],
+  [data-tilt-scroll] {
+    transform: none !important;
+    filter: none !important;
+  }
   .card-3d,
   .card-sway,
   .hover-lift,
+  .tilt-card,
   .carousel-3d__slide {
     transition: none;
+  }
+  .hero-parallax {
+    background-attachment: scroll;
   }
 }
