@@ -66,9 +66,9 @@ export default function LoginModal({ onClose }: Props) {
           <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full bg-red-950/50 blur-3xl pointer-events-none" />
 
           <div className="relative flex flex-col h-full p-8">
-            {/* Wordmark — inline để override màu trên nền tối */}
-            <p className="font-lexend font-extrabold tracking-tight text-[22px] text-white leading-none mb-2">
-              vngo<span className="text-orange-200">web</span>
+            {/* Wordmark bản trắng — logo đỏ/cam không đọc được trên nền gradient tối */}
+            <p className="text-[22px] leading-none mb-2">
+              <Wordmark inverted />
             </p>
             <p className="text-white/65 text-[13px] font-light leading-snug mb-8 pr-4">
               {t('login.headline')}

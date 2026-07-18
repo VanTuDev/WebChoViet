@@ -14,10 +14,10 @@ import LanguageSwitcher from '../../i18n/LanguageSwitcher';
 function Logo({ badge }: { badge?: string }) {
   return (
     <Link
-      to={ROUTES.MARKETPLACE}
+      to={ROUTES.HOME}
       className="flex items-center gap-1.5 text-xl text-slate-900 cursor-pointer select-none shrink-0 outline-none"
     >
-      <Wordmark />
+      <Wordmark icon />
       {badge && (
         <span className="hidden sm:inline-flex text-[9px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase tracking-wide">
           {badge}
@@ -167,12 +167,23 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
 
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <LanguageSwitcher />
-            <button
-              className="bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
-              onClick={openLoginModal}
-            >
-              {t('header.login')}
-            </button>
+            {/* Đã đăng nhập → CTA tạo web (Link cho crawler); chưa → mở modal đăng nhập */}
+            {isAuthenticated ? (
+              <Link
+                to={ROUTES.MARKETPLACE}
+                className="flex items-center gap-1.5 bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+              >
+                <Plus className="h-4 w-4" />
+                {t('header.createSite')}
+              </Link>
+            ) : (
+              <button
+                className="bg-primary text-white font-inter font-medium text-sm px-5 py-2.5 rounded-full shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                onClick={openLoginModal}
+              >
+                {t('header.login')}
+              </button>
+            )}
           </div>
 
           <button
@@ -191,12 +202,23 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
               <div className="flex justify-center pb-1">
                 <LanguageSwitcher dropDirection="up" />
               </div>
-              <button
-                className="w-full py-2.5 text-sm font-semibold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
-                onClick={() => { openLoginModal(); closeMobile(); }}
-              >
-                {t('header.login')}
-              </button>
+              {isAuthenticated ? (
+                <Link
+                  to={ROUTES.MARKETPLACE}
+                  onClick={closeMobile}
+                  className="w-full flex items-center justify-center gap-1.5 py-2.5 text-sm font-semibold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
+                >
+                  <Plus className="h-4 w-4" />
+                  {t('header.createSite')}
+                </Link>
+              ) : (
+                <button
+                  className="w-full py-2.5 text-sm font-semibold bg-primary text-white rounded-full hover:bg-primary/90 transition-colors cursor-pointer"
+                  onClick={() => { openLoginModal(); closeMobile(); }}
+                >
+                  {t('header.login')}
+                </button>
+              )}
             </div>
           </div>
         )}

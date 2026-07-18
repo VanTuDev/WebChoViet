@@ -36,6 +36,13 @@
 /favicon-256.png     /favicon-256.png                                        200
 /favicon.svg         /favicon.svg                                            200
 /apple-touch-icon.png /apple-touch-icon.png                                  200
+/site.webmanifest    /site.webmanifest                                       200
+/pwa-192.png         /pwa-192.png                                            200
+/pwa-512.png         /pwa-512.png                                            200
+/pwa-maskable-512.png /pwa-maskable-512.png                                  200
+/logo-wordmark.svg   /logo-wordmark.svg                                      200
+/logo-wordmark.png   /logo-wordmark.png                                      200
+/logoVNGOWeb.png     /logoVNGOWeb.png                                        200
 
 # Site khách xuất bản — chuyển hẳn từ path sang wildcard subdomain (*.vngoweb.com
 # đã Active trên Cloudflare Pages). 301 vì đây là thay đổi URL vĩnh viễn — giữ SEO

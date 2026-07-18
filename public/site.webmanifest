@@ -1,0 +1,16 @@
+{
+  "name": "vngoweb — Tạo website chuyên nghiệp cho doanh nghiệp nhỏ",
+  "short_name": "vngoweb",
+  "description": "Nền tảng tạo website chuyên nghiệp cho doanh nghiệp nhỏ — chọn mẫu, tuỳ chỉnh, xuất bản ngay không cần biết code.",
+  "lang": "vi",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF8F2",
+  "theme_color": "#e8491f",
+  "icons": [
+    { "src": "/pwa-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/pwa-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/pwa-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

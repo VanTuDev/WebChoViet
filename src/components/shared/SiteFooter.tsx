@@ -33,8 +33,8 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
     return (
       <footer className="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-outline-variant/30 bg-surface-container-high">
         {/* Logo */}
-        <div className="flex items-center gap-1.5 opacity-70">
-          <Wordmark className="text-xl text-on-surface" />
+        <div className="flex items-center gap-1.5 opacity-80">
+          <Wordmark className="text-xl" />
         </div>
 
         {/* Copyright */}
@@ -76,7 +76,7 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
                 to={ROUTES.HOME}
                 className="flex items-center gap-2 text-2xl text-slate-900 cursor-pointer leading-none"
               >
-                <Wordmark />
+                <Wordmark icon />
               </Link>
               <div className="flex items-center gap-1.5 mt-1.5">
                 <Globe className="h-3.5 w-3.5 text-slate-400" />
