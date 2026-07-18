@@ -1,10 +1,11 @@
 // Modal đăng nhập — CHỈ hỗ trợ Google OAuth. Hệ thống chưa có đăng ký/đăng nhập
 // bằng email, nên modal này không có tab hay form email/password.
-import { X, ShieldCheck, Check } from 'lucide-react';
+import { X, ShieldCheck, Check, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getGoogleLoginUrl } from '../../services/authService';
 import { ROUTES } from '../../config/routes';
+import Wordmark from './Wordmark';
 
 function GoogleLogo() {
   return (
@@ -24,70 +25,191 @@ interface Props {
 export default function LoginModal({ onClose }: Props) {
   const { t } = useTranslation('common');
   const handleGoogle = () => {
-    // Không set postLoginRedirect — mặc định đổ về Marketplace sau khi đăng nhập
-    // (xem authService.ts), kể cả khi mở modal này từ Landing Page ("/").
+    // Không set postLoginRedirect — mặc định đổ về Marketplace sau khi đăng nhập.
     window.location.href = getGoogleLoginUrl();
   };
 
+  const features: string[] = [
+    t('login.feat1'),
+    t('login.feat2'),
+    t('login.feat3'),
+  ];
+
   return (
     <div
-      className="fixed inset-0 z-[99990] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-99990 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
       onClick={e => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm overflow-hidden relative animate-fade-in">
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-190 overflow-hidden relative animate-fade-in flex">
 
-        {/* Close */}
+        {/* Close button — absolute top-right của card (nằm trên right panel trắng) */}
         <button
           onClick={onClose}
-          className="absolute top-3.5 right-3.5 p-1.5 rounded-full hover:bg-white/20 text-white/80 hover:text-white transition-colors cursor-pointer z-10"
+          aria-label="Đóng"
+          className="absolute top-4 right-4 p-1.5 rounded-full bg-black/8 hover:bg-black/12 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer z-20"
         >
           <X className="w-4 h-4" />
         </button>
 
-        {/* Header strip */}
-        <div className="bg-linear-to-r from-primary to-primary-container px-8 pt-7 pb-7 text-center relative overflow-hidden">
+        {/* ── LEFT PANEL — brand / marketing (md+) ─────────────────────── */}
+        <div
+          className="hidden md:flex flex-col w-[46%] shrink-0 relative overflow-hidden"
+          style={{ background: 'linear-gradient(145deg, #ff6b2c 0%, #e8491f 38%, #b83510 70%, #8b2208 100%)' }}
+        >
+          {/* Dot matrix pattern */}
           <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '18px 18px' }}
+            className="absolute inset-0 opacity-[0.07]"
+            style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
           />
-          <div className="relative">
-            <div className="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-white/15 border border-white/25 mb-3 shadow-lg">
-              <ShieldCheck className="h-5.5 w-5.5 text-white" />
-            </div>
-            <h1 className="font-lexend font-bold text-lg text-white mb-0.5">
+          {/* Glow blobs */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-orange-300/20 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full bg-red-950/50 blur-3xl pointer-events-none" />
+
+          <div className="relative flex flex-col h-full p-8">
+            {/* Wordmark — inline để override màu trên nền tối */}
+            <p className="font-lexend font-extrabold tracking-tight text-[22px] text-white leading-none mb-2">
               vngo<span className="text-orange-200">web</span>
-            </h1>
-            <p className="text-xs text-orange-200/70">{t('login.subtitle')}</p>
+            </p>
+            <p className="text-white/65 text-[13px] font-light leading-snug mb-8 pr-4">
+              {t('login.headline')}
+            </p>
+
+            {/* Browser mockup illustration */}
+            <div className="flex-1 flex items-center justify-center py-2">
+              <div className="w-full max-w-50 rounded-xl overflow-hidden shadow-2xl border border-white/15 select-none">
+                {/* Browser chrome */}
+                <div className="bg-white/20 px-3 py-2 flex items-center gap-2">
+                  <div className="flex gap-1.5 shrink-0">
+                    <div className="w-2 h-2 rounded-full bg-red-300/80" />
+                    <div className="w-2 h-2 rounded-full bg-amber-300/80" />
+                    <div className="w-2 h-2 rounded-full bg-green-300/80" />
+                  </div>
+                  <div className="flex-1 h-3.5 rounded-full bg-white/20 flex items-center justify-center overflow-hidden px-1">
+                    <span className="text-white/50 text-[8px] font-mono truncate">vngoweb.com/your-shop</span>
+                  </div>
+                </div>
+                {/* Page preview */}
+                <div className="bg-white/8 p-2.5 space-y-2">
+                  {/* Hero section mock */}
+                  <div className="h-14 rounded-lg relative overflow-hidden bg-linear-to-r from-orange-400/50 to-amber-300/25">
+                    <div className="absolute inset-0 flex items-center px-3">
+                      <div className="space-y-1.5">
+                        <div className="h-2 w-16 bg-white/80 rounded-full" />
+                        <div className="h-1.5 w-10 bg-white/50 rounded-full" />
+                        <div className="mt-0.5 h-4 w-14 rounded-full border border-white/40 flex items-center justify-center">
+                          <div className="h-1 w-7 bg-white/70 rounded-full" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Cards row */}
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {[0, 1, 2].map(i => (
+                      <div key={i} className="h-9 rounded-md bg-white/20 border border-white/10 flex flex-col items-center justify-center gap-1 p-1">
+                        <div className="w-4 h-1.5 bg-white/55 rounded-full" />
+                        <div className="w-6 h-1 bg-white/30 rounded-full" />
+                      </div>
+                    ))}
+                  </div>
+                  {/* Info bar */}
+                  <div className="h-5 rounded-md bg-white/15 flex items-center justify-center gap-3 px-2">
+                    <div className="w-7 h-1 bg-white/45 rounded-full" />
+                    <div className="w-px h-2.5 bg-white/20" />
+                    <div className="w-7 h-1 bg-white/45 rounded-full" />
+                    <div className="w-px h-2.5 bg-white/20" />
+                    <div className="w-7 h-1 bg-white/45 rounded-full" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature list */}
+            <ul className="space-y-3 mt-2">
+              {features.map((feat, i) => (
+                <li key={i} className="flex items-center gap-2.5 text-[13px] text-white/82">
+                  <span className="w-5 h-5 rounded-full bg-white/20 border border-white/25 flex items-center justify-center shrink-0">
+                    <Check className="w-3 h-3 text-white" />
+                  </span>
+                  {feat}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Body */}
-        <div className="px-7 py-6 space-y-4">
+        {/* ── RIGHT PANEL — action ─────────────────────────────────────── */}
+        <div className="flex-1 flex flex-col justify-center px-8 py-10 bg-[#fff9f3]">
+
+          {/* Mobile: compact brand header */}
+          <div className="md:hidden flex flex-col items-center mb-7">
+            <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center mb-3 shadow-lg shadow-primary/35">
+              <Globe className="w-6 h-6 text-white" />
+            </div>
+            <Wordmark className="text-2xl" />
+          </div>
+
+          {/* Desktop greeting */}
+          <div className="hidden md:block mb-7">
+            <h2 className="text-[22px] font-bold text-on-surface leading-tight">
+              {t('login.ctaHeading')}
+            </h2>
+            <p className="text-sm text-on-surface-variant mt-1.5 leading-relaxed">
+              {t('login.subtitle')}
+            </p>
+          </div>
+
+          {/* Mobile greeting */}
+          <div className="md:hidden text-center mb-6">
+            <h2 className="text-xl font-bold text-on-surface">{t('login.ctaHeading')}</h2>
+            <p className="text-sm text-on-surface-variant mt-1">{t('login.subtitle')}</p>
+          </div>
+
+          {/* Google sign-in button */}
           <button
             onClick={handleGoogle}
-            className="w-full flex items-center justify-center gap-2.5 h-11 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-slate-300 hover:shadow-md transition-all cursor-pointer active:scale-[0.98] shadow-sm"
+            className="w-full flex items-center justify-center gap-3 h-12 bg-white border-2 border-outline-variant rounded-2xl text-sm font-semibold text-on-surface hover:border-primary hover:shadow-lg hover:shadow-primary/15 active:scale-[0.98] transition-all cursor-pointer shadow-sm"
           >
             <GoogleLogo />
             {t('login.googleButton')}
           </button>
 
-          {/* Terms/Privacy — <Link> thật để crawler index được, không dùng <button> */}
-          <p className="text-center text-[11px] text-slate-400 leading-relaxed">
+          {/* Divider */}
+          <div className="flex items-center gap-3 my-5">
+            <div className="h-px flex-1 bg-outline-variant" />
+            <ShieldCheck className="w-4 h-4 text-secondary shrink-0" />
+            <div className="h-px flex-1 bg-outline-variant" />
+          </div>
+
+          {/* Trust badges */}
+          <div className="flex items-center justify-center gap-4 flex-wrap text-[11px] text-on-surface-variant font-medium mb-6">
+            <span className="flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5 text-secondary shrink-0" />
+              {t('login.ssl')}
+            </span>
+            <span className="w-px h-3.5 bg-outline-variant hidden sm:block" />
+            <span className="flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5 text-secondary shrink-0" />
+              {t('login.noPassword')}
+            </span>
+            <span className="w-px h-3.5 bg-outline-variant hidden sm:block" />
+            <span className="flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5 text-secondary shrink-0" />
+              {t('login.gdpr')}
+            </span>
+          </div>
+
+          {/* Terms — <Link> thật để crawler index được, không dùng <button> */}
+          <p className="text-center text-[11px] text-on-surface-variant leading-relaxed">
             {t('login.termsPrefix')}{' '}
-            <Link to={ROUTES.POLICY_TERMS} onClick={onClose} className="text-primary hover:underline cursor-pointer">{t('login.termsLink')}</Link>
+            <Link to={ROUTES.POLICY_TERMS} onClick={onClose} className="text-primary hover:underline font-medium cursor-pointer">
+              {t('login.termsLink')}
+            </Link>
             {' '}{t('login.and')}{' '}
-            <Link to={ROUTES.POLICY_PRIVACY} onClick={onClose} className="text-primary hover:underline cursor-pointer">{t('login.privacyLink')}</Link>
+            <Link to={ROUTES.POLICY_PRIVACY} onClick={onClose} className="text-primary hover:underline font-medium cursor-pointer">
+              {t('login.privacyLink')}
+            </Link>
             {' '}{t('login.termsSuffix')}
           </p>
-        </div>
-
-        {/* Trust bar */}
-        <div className="flex items-center justify-center gap-4 px-7 pb-5 text-[10px] text-slate-400 font-medium">
-          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> {t('login.ssl')}</span>
-          <span className="w-px h-3 bg-slate-200" />
-          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> {t('login.noPassword')}</span>
-          <span className="w-px h-3 bg-slate-200" />
-          <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-500" /> {t('login.gdpr')}</span>
         </div>
       </div>
     </div>

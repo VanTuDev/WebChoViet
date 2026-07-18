@@ -48,7 +48,12 @@
     "allRightsReserved": "Tất cả quyền được bảo lưu."
   },
   "login": {
-    "subtitle": "Đăng nhập để quản lý cửa hàng",
+    "ctaHeading": "Đăng nhập để bắt đầu",
+    "subtitle": "Đăng nhập để quản lý cửa hàng của bạn",
+    "headline": "Tạo website đẹp cho quán của bạn trong 5 phút",
+    "feat1": "Bắt đầu miễn phí, không cần thẻ ngân hàng",
+    "feat2": "Đăng nhập 1 click qua Google – không cần mật khẩu",
+    "feat3": "6 ngôn ngữ · 100+ mẫu giao diện chuyên nghiệp",
     "googleButton": "Tiếp tục với Google",
     "termsPrefix": "Bằng cách tiếp tục, bạn đồng ý với",
     "termsLink": "Điều khoản",

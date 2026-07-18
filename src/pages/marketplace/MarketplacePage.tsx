@@ -17,18 +17,14 @@ export default function MarketplacePage() {
   const { t } = useTranslation('marketplace');
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  // Đọc filter state từ URL — không cần useState riêng
   const category = searchParams.get('category') ?? 'all';
   const searchQuery = searchParams.get('q') ?? '';
 
-  // Local UI state (không cần share lên trên)
   const [priceFilter, setPriceFilter] = useState<PriceFilter>('all');
   const [sortBy, setSortBy] = useState<SortBy>('newest');
   const [visibleCount, setVisibleCount] = useState(15);
   const { getStarCount } = useTemplateStars();
 
-  // Heading "Tất cả" dịch theo ngôn ngữ hệ thống; heading theo category lấy từ
-  // registry (dữ liệu catalog template, giữ tiếng gốc).
   const allHeading = { title: t('allHeading.title'), desc: t('allHeading.desc') };
   const heading = category === 'all' ? allHeading : (CATEGORY_HEADING_MAP[category] ?? allHeading);
 
@@ -68,8 +64,7 @@ export default function MarketplacePage() {
     navigate(`/template-editor/new?template=${t.id}`);
   };
 
-  // BreadcrumbList JSON-LD — chỉ khi đang xem 1 category cụ thể (trang gốc "Tất cả"
-  // không phải trang "sâu" nên không cần breadcrumb theo CLAUDE.md).
+  // BreadcrumbList JSON-LD
   const categoryLabel = heading.title.split(':')[1]?.trim() ?? category;
   const breadcrumbJsonLd = category !== 'all' ? {
     '@context': 'https://schema.org',
@@ -90,6 +85,7 @@ export default function MarketplacePage() {
         )}
       </Helmet>
       <HreflangLinks path={ROUTES.MARKETPLACE} />
+
       {/* ── Category breadcrumb + Heading ────────────────────────────────── */}
       <header className="space-y-2.5 sm:space-y-4 mb-6 sm:mb-8">
         {category !== 'all' && (
@@ -107,6 +103,7 @@ export default function MarketplacePage() {
       <TemplateFilters
         priceFilter={priceFilter}
         sortBy={sortBy}
+        totalCount={filtered.length}
         onPriceChange={v => { setPriceFilter(v); setVisibleCount(15); }}
         onSortChange={v => { setSortBy(v); setVisibleCount(15); }}
       />

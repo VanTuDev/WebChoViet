@@ -48,7 +48,12 @@
     "allRightsReserved": "All rights reserved."
   },
   "login": {
+    "ctaHeading": "Sign in to get started",
     "subtitle": "Log in to manage your store",
+    "headline": "Build a beautiful website for your business in 5 minutes",
+    "feat1": "Free to start — no credit card required",
+    "feat2": "One-click Google sign-in — no password needed",
+    "feat3": "6 languages · 100+ professional templates",
     "googleButton": "Continue with Google",
     "termsPrefix": "By continuing, you agree to vngoweb's",
     "termsLink": "Terms of Service",
