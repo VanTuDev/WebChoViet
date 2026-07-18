@@ -252,17 +252,6 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
             />
           </div>
 
-          <LanguageSwitcher className="hidden sm:block" />
-
-          {/* CTA */}
-          <Link
-            to={ROUTES.MARKETPLACE}
-            className="flex items-center gap-1.5 rounded-full bg-primary hover:bg-primary/90 transition-all px-2.5 sm:px-3.5 py-2 text-xs font-semibold text-white cursor-pointer shadow-sm hover:shadow-md active:scale-95 whitespace-nowrap"
-          >
-            <Plus className="h-3.5 w-3.5 shrink-0" />
-            <span className="hidden sm:inline">{t('header.createSite')}</span>
-          </Link>
-
           {/* Auth: avatar user thật nếu đã đăng nhập, nút Đăng nhập nếu chưa */}
           {isAuthenticated && user ? (
             <div ref={avatarRef} className="relative ml-1 pl-2 border-l border-gray-100">
