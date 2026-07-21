@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Sáng Tâm",
+    "home": "홈",
+    "link1": "첨단 기술",
+    "link2": "진료 항목",
+    "link3": "고객 후기",
+    "link4": "문의하기",
+    "cta": "진료 예약"
+  },
+  "hero": {
+    "badge": "Dental Excellence",
+    "titleLine1": "당신의 미소를 높이고,",
+    "titleLine2": "품격을 완성하다",
+    "subtitle": "고급스러운 공간과 최고의 전문의 팀이 선사하는 국제 표준 치과 진료를 경험하세요. 저희는 아름다움을 넘어 상류층 라이프스타일을 반영하는 미소를 만들어 드립니다.",
+    "btnPrimary": "전문의 상담 예약",
+    "btnSecondary": "진료 항목 둘러보기",
+    "imageAlt": "고급 치과 리셉션 라운지"
+  },
+  "technology": {
+    "eyebrow": "선도적인 기술",
+    "title": "모든 시술에서 완벽한 정밀함을",
+    "imageAlt": "최첨단 치과 장비",
+    "items": [
+      { "title": "Lumiere 레이저 시스템", "desc": "차세대 레이저 기술로 무통증 시술을 구현하며, 침습을 최소화하고 회복 기간을 최대한 단축합니다." },
+      { "title": "5D 영상 진단", "desc": "턱과 안면 구조를 미크론 단위까지 정밀하게 재현하여, 의료진이 개개인에게 완벽한 맞춤 치료 계획을 수립할 수 있도록 돕습니다." }
+    ]
+  },
+  "services": {
+    "eyebrow": "프리미엄 케어",
+    "title": "프리미엄 진료 가격표",
+    "tab1": "개별 진료",
+    "tab2": "VIP 라운지 패키지",
+    "groups": [
+      {
+        "title": "심화 교정 치료",
+        "items": [
+          { "name": "Invisalign Diamond Elite", "desc": "미국 표준 투명 교정기로 완벽한 심미성을 구현합니다.", "price": "450만~" },
+          { "name": "Pro-Standard 세라믹 브라켓", "desc": "교정 효과와 심미성을 모두 갖춘 이상적인 선택.", "price": "350만~" },
+          { "name": "정기 미소 유지 관리", "desc": "전용 케어 플랜으로 결과를 영구적으로 유지합니다.", "price": "50만 / 악당" }
+        ]
+      },
+      {
+        "title": "심미 & 보철",
+        "items": [
+          { "name": "초박형 세라믹 베니어", "desc": "자연 치아를 최대한 보존하며 자연스러운 아름다움을 완성합니다.", "price": "80만~ / 개" },
+          { "name": "FlashWhite 레이저 미백", "desc": "부드러운 45분 시술만으로 눈에 띄게 밝아진 치아.", "price": "40만" },
+          { "name": "예술적 충전 치료", "desc": "프리미엄 소재로 치아의 해부학적 구조를 정교하게 재현합니다.", "price": "25만~" }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "검증된 결과",
+    "title": "달라진 미소, 달라진 삶",
+    "stat1Number": "5,000+",
+    "stat1Label": "VIP 고객",
+    "stat2Number": "15+",
+    "stat2Label": "년 경력",
+    "highlightTitle": "국제 5성급 기준",
+    "highlightDesc": "완벽하게 무균 처리된, 프라이빗하고 고급스러운 진료 환경.",
+    "transformationImageAlt": "놀라운 미소 변화 결과",
+    "trustImageAlt": "고급스러운 진료 공간",
+    "items": [
+      { "name": "Hoang Nam 씨", "role": "최고경영자", "quote": "전문적인 진행 과정과 기대 이상의 결과. 충전 부위가 실제 치아 색과 완벽하게 일치해 중요한 협상 자리에서도 더욱 자신감을 가질 수 있었습니다." },
+      { "name": "Bao Ngoc 씨", "role": "인비절라인 교정", "quote": "의료진이 매 단계를 꼼꼼히 설명해 주며 정성껏 돌봐주셨습니다. 8개월 착용 후 미소가 완전히 달라졌는데도 아무도 교정 중이라는 걸 눈치채지 못했어요." },
+      { "name": "Anh Tuan 씨", "role": "기업가", "quote": "5성급 호텔처럼 고급스러운 진료 공간입니다. 전용 VIP 라운지 덕분에 기다림 없이 진료받을 수 있어 항상 저녁 시간에 예약합니다." },
+      { "name": "Dieu Linh 씨", "role": "FlashWhite 미백 고객", "quote": "단 45분 만에 치아가 눈에 띄게 밝아졌고 시린 느낌도 전혀 없었습니다. 고객 응대 역시 매우 전문적이었습니다." }
+    ]
+  },
+  "footer": {
+    "eyebrow": "문의하기",
+    "title": "연결되어 빛나다",
+    "brand": "Nha Khoa Sáng Tâm",
+    "desc": "저희는 프리미엄 치과의 기준을 새롭게 정의하며, 모든 고객을 최고의 전문의가 정성껏 모시는 귀빈으로 대합니다.",
+    "addressLabel": "주소",
+    "address": "123 Health Blvd, Cityville, 호치민시",
+    "hotlineLabel": "VIP 핫라인",
+    "hotline": "(028) 123-4567",
+    "emailLabel": "이메일",
+    "email": "info@nhakhoasangtam.vn",
+    "hoursLabel": "진료 시간",
+    "hoursLine1": "월 - 토 (8:00 - 20:00)",
+    "hoursLine2": "일요일 (8:00 - 17:00)",
+    "ctaLabel": "지금 예약하기",
+    "mapTitle": "오시는 길",
+    "mapBrand": "Nha Khoa Sáng Tâm",
+    "mapSub": "온라인 예약",
+    "mapUrl": "",
+    "navTitle": "바로가기",
+    "navLink1": "홈",
+    "navLink2": "첨단 기술",
+    "navLink3": "진료 항목",
+    "navLink4": "고객 후기",
+    "legalTitle": "법적 고지",
+    "legalLink1": "개인정보 처리방침",
+    "legalLink2": "이용 약관",
+    "legalLink3": "자주 묻는 질문",
+    "copyright": "© 2024 Nha Khoa Sáng Tâm. 미소를 높이고, 품격을 완성하다."
+  }
+}

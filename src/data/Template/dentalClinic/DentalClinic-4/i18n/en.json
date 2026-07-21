@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "brandSub": "Digital Dentistry 5.0",
+    "home": "Home",
+    "link1": "Services",
+    "link2": "Pricing",
+    "link3": "Reviews",
+    "link4": "Contact",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "badge": "Digital Dentistry 5.0",
+    "titleLine1": "Crafting Smiles",
+    "titleLine2": "With Technology",
+    "titleHighlight": "Of Absolute Precision",
+    "subtitle": "Powered by the latest iTero Element 5D 3D scanning system and next-generation CT Cone Beam, delivering minimally invasive treatment and flawless aesthetics.",
+    "btnPrimary": "Explore Our Solutions",
+    "btnSecondary": "Watch Process Video",
+    "statNumber": "99.9%",
+    "statLabel": "Technical Precision",
+    "imageAlt": "High-tech CT Cone Beam scanner in a sterile dental facility"
+  },
+  "services": {
+    "eyebrow": "Advanced Technology",
+    "title": "High-Tech Dental Services",
+    "subtitle": "A closed-loop process using equipment imported directly from Europe, ensuring international medical standards.",
+    "featured": {
+      "title": "Robotic Implant Placement",
+      "desc": "Precise implant positioning guided by the most advanced 3D navigation technology.",
+      "linkLabel": "Learn more",
+      "imageAlt": "3D intraoral scanner emitting blue laser light over a dental model"
+    },
+    "items": [
+      { "number": "01", "title": "AI-Guided Braces", "desc": "Invisalign treatment plans that simulate tooth movement outcomes using artificial intelligence." },
+      { "number": "02", "title": "CAD/CAM Porcelain Crowns", "desc": "Automated design and fabrication of porcelain crowns within 24 hours at maximum precision." },
+      { "number": "03", "title": "Piezotome Extraction", "desc": "High-frequency ultrasonic technology enables painless extraction with faster healing." }
+    ]
+  },
+  "technology": {
+    "eyebrow": "Precision Technology",
+    "title": "Precision Down To",
+    "titleHighlight": "The Micron",
+    "desc": "We understand that in dentistry, the smallest deviation can affect long-term results. At Nha Khoa Tân Kỷ Nguyên, every procedure is controlled by advanced computer systems.",
+    "image1Alt": "Close-up of a porcelain crown being milled by a high-precision CAD/CAM machine",
+    "image2Alt": "3D model of a human skull and jawbone on an implant planning screen",
+    "points": [
+      { "title": "3D Cone Beam CT Scan", "desc": "Intuitive three-dimensional imaging diagnosis with extremely low radiation dosage." },
+      { "title": "iTero Intraoral Scanning", "desc": "Replaces traditional impressions with 100% digital technology." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Published Price List",
+    "title": "Published Service Price List",
+    "subtitle": "Transparent pricing with no hidden costs throughout your treatment.",
+    "colService": "Treatment Service",
+    "colPrice": "Estimated Cost",
+    "colAction": "Action",
+    "actionLabel": "Details",
+    "items": [
+      { "name": "Invisalign Braces (Full Package)", "price": "From 45,000,000 VND" },
+      { "name": "Dental Implant (Post + Crown)", "price": "From 15,000,000 VND" },
+      { "name": "Aesthetic Porcelain Crown (Cercon HT)", "price": "From 4,000,000 VND / tooth" },
+      { "name": "Plasma Teeth Whitening", "price": "2,500,000 VND" },
+      { "name": "Piezotome Wisdom Tooth Extraction", "price": "From 1,500,000 VND" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "What Clients Say",
+    "title": "What Our Clients Say About Us",
+    "items": [
+      { "name": "Mr. Hoang Nam", "role": "Piezotome Extraction Client", "quote": "I was really impressed by the Piezotome extraction technology here. It wasn't painful at all like I expected, and the wound healed very quickly. The doctor was extremely dedicated." },
+      { "name": "Ms. Minh Anh", "role": "AI-Guided Braces Client", "quote": "Invisalign treatment at Nha Khoa Tân Kỷ Nguyên let me stay confident while socializing during treatment. Previewing the results with AI gave me complete peace of mind." },
+      { "name": "Mr. Le Hung", "role": "Robotic Implant Client", "quote": "The Robotic Implant service is incredibly modern. I can finally eat comfortably again after years of missing teeth. Many thanks to the Nha Khoa Tân Kỷ Nguyên team." }
+    ]
+  },
+  "cta": {
+    "floatingLabel": "Book Now"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "desc": "Vietnam's leading 5.0-standard digital dental system. Bringing world-class technology to Vietnamese smiles.",
+    "addressLabel": "Address",
+    "address": "123 Cong Nghe Street, District 1, Ho Chi Minh City",
+    "phoneLabel": "Hotline",
+    "phone": "1900 6789 - 0901 234 567",
+    "emailLabel": "Email",
+    "email": "contact@nexadental.vn",
+    "mapTitle": "Clinic Location",
+    "mapBrand": "NHA KHOA TÂN KỶ NGUYÊN",
+    "mapSub": "Digital Dentistry 5.0",
+    "mapLoading": "Loading map...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tân Kỷ Nguyên. Preserving Vietnamese smiles.",
+    "link1": "Privacy Policy",
+    "link2": "Terms of Service",
+    "link3": "FAQ"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Nụ Cười Vàng",
+    "brandAccent": "牙科",
+    "home": "首页",
+    "link1": "关于我们",
+    "link2": "服务项目",
+    "link3": "价目表",
+    "link4": "技术设备",
+    "link5": "客户评价",
+    "link6": "联系我们",
+    "cta": "预约就诊"
+  },
+  "hero": {
+    "since": "始于 1998 年",
+    "titleLine1": "微笑的",
+    "titleAccent": "艺术之作",
+    "titleLine3": "尊贵体验",
+    "subtitle": "现代医学与五星级艺术空间的完美融合，由顶尖专家团队为您精心呵护每一个笑容。",
+    "btnPrimary": "立即探索",
+    "cardNumber": "01.",
+    "cardLabel": "尊贵典雅的空间",
+    "cardDesc": "精心设计的诊疗环境，让您在整个治疗过程中享受绝对的舒适与放松。",
+    "imageAlt": "Nha Khoa Nụ Cười Vàng 诊所内部空间"
+  },
+  "technology": {
+    "eyebrowTitle1": "前沿",
+    "eyebrowTitle2": "科技领航",
+    "desc": "我们持续投资全球最先进的设备，确保诊疗过程精准、无痛，并达到最佳的美学效果。",
+    "items": [
+      { "number": "01", "title": "Laser X-Pulse 激光系统", "desc": "非侵入式治疗系统，恢复速度极快。" },
+      { "number": "02", "title": "数字化种植导板", "desc": "3D 精准定位种植，确保绝对精确。" }
+    ],
+    "highlights": [
+      { "title": "AI 影像诊断", "desc": "多点位分析技术，以 99% 的准确率及早发现牙齿问题。", "imageAlt": "AI 影像诊断系统" },
+      { "title": "院内数字实验室", "desc": "现场进行 CAD/CAM 瓷牙设计，24 小时内即可完成。", "imageAlt": "院内 CAD/CAM 数字实验室" }
+    ]
+  },
+  "services": {
+    "eyebrow": "服务项目",
+    "title": "专业深度方案",
+    "tagline": "卓越标准",
+    "items": [
+      { "number": "01", "title": "普通牙科", "desc": "以国际医疗标准，为您全家提供全方位口腔健康护理。", "imageAlt": "普通牙科服务", "linkLabel": "查看详情" },
+      { "number": "02", "title": "美学修复", "desc": "采用超薄瓷贴面与 3D 微笑设计技术，重塑完美笑容。", "imageAlt": "美学修复服务", "linkLabel": "查看详情" },
+      { "number": "03", "title": "种植牙", "desc": "以数字化种植技术修复缺失牙齿，保障终身咀嚼功能。", "imageAlt": "种植牙服务", "linkLabel": "查看详情" }
+    ]
+  },
+  "pricing": {
+    "title1": "尊享",
+    "titleAccent": "价目表",
+    "desc": "费用透明是我们始终坚守的承诺。所有治疗方案均可个性化定制，以带来最佳效果。",
+    "colService": "治疗服务",
+    "colPrice": "起价",
+    "colPolicy": "保障政策",
+    "items": [
+      { "name": "洁牙及深层清洁", "price": "500,000 越南盾", "policy": "每 6 个月一次" },
+      { "name": "激光美白", "price": "3,500,000 越南盾", "policy": "保修 6 个月" },
+      { "name": "全瓷美学牙冠", "price": "5,000,000 越南盾 / 颗", "policy": "保修 10 年" },
+      { "name": "瑞士 Straumann 种植体", "price": "25,000,000 越南盾 / 颗", "policy": "终身保修" }
+    ],
+    "downloadLabel": "下载详细报价单（PDF）"
+  },
+  "testimonials": {
+    "eyebrow": "客户心声",
+    "titleLine1": "重获新生的",
+    "titleLine2": "灿烂笑容",
+    "photo1Alt": "Nha Khoa Nụ Cười Vàng 满意客户",
+    "photo2Alt": "Nha Khoa Nụ Cười Vàng 治疗后的笑容",
+    "items": [
+      { "name": "Thanh Hằng 女士", "role": "企业家", "quote": "Nha Khoa Nụ Cười Vàng 的空间非常高雅且私密。我在这里做了 20 颗瓷牙，对自然度和医生的用心服务都非常满意。" },
+      { "name": "Minh Khôi 先生", "role": "创意总监", "quote": "这里的激光技术确实与众不同，完全不像我想象中那么痛。整个流程专业，也节省了不少时间。" },
+      { "name": "Bảo Trâm 女士", "role": "平面模特", "quote": "团队在做贴面前咨询得非常仔细，最终效果与最初的 3D 模拟完全一致，自然到朋友们都看不出我做过修复。" },
+      { "name": "Đức Anh 先生", "role": "建筑师", "quote": "在 Nha Khoa Nụ Cười Vàng 种植牙是我做过最正确的决定之一。3D 精准定位种植，麻药消退后几乎感觉不到疼痛。" }
+    ]
+  },
+  "footer": {
+    "brand": "Nha Khoa Nụ Cười Vàng",
+    "brandAccent": "牙科",
+    "desc": "融合医学精粹与现代科技，为您打造完美笑容。每年超过 10,000 位客户信赖之选。",
+    "addressLabel": "总院地址",
+    "address": "越南胡志明市第一郡 Luxury 街 123 号",
+    "hotlineLabel": "服务热线",
+    "hotline": "1900 6789 — 028 3333 9999",
+    "hoursLabel": "服务时间",
+    "hours": "周一至周日：08:00 — 20:00",
+    "mapUrl": "",
+    "mapBrand": "Nha Khoa Nụ Cười Vàng",
+    "mapSub": "尊享牙科体验",
+    "copyright": "© 2024 Nha Khoa Nụ Cười Vàng 诊所。保留所有权利。",
+    "link1": "隐私政策",
+    "link2": "使用条款",
+    "link3": "Cookie 政策"
+  },
+  "stickyCta": "预约就诊"
+}

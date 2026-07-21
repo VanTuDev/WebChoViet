@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tinh Anh",
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "services": "Dịch vụ",
+    "servicesSub1": "Niềng răng",
+    "servicesSub2": "Trồng răng Implant",
+    "servicesSub3": "Nha khoa Thẩm mỹ",
+    "servicesSub4": "Nha khoa Tổng quát",
+    "pricing": "Bảng giá",
+    "technology": "Công nghệ",
+    "testimonials": "Khách hàng",
+    "contact": "Liên hệ",
+    "cta": "Đặt lịch khám"
+  },
+  "hero": {
+    "eyebrow": "Kiến tạo nụ cười hoàn mỹ",
+    "titleLine1": "Nghệ Thuật Nha Khoa",
+    "titleLine2": "Đẳng Cấp Quốc Tế",
+    "subtitle": "Trải nghiệm dịch vụ chăm sóc răng miệng tiêu chuẩn 5 sao với công nghệ hiện đại nhất và đội ngũ chuyên gia hàng đầu.",
+    "btnPrimary": "Khám phá dịch vụ",
+    "btnSecondary": "Về chúng tôi",
+    "imageAlt": "Ngoại cảnh phòng khám Nha Khoa Tinh Anh"
+  },
+  "experts": {
+    "eyebrow": "Đội ngũ chuyên gia",
+    "title": "Y Đức Song Hành",
+    "titleLine2": "Cùng Chuyên Môn",
+    "desc": "Tại Nha Khoa Tinh Anh, chúng tôi tin rằng nụ cười đẹp bắt nguồn từ sự thấu hiểu. Mỗi bác sĩ không chỉ là một chuyên gia kỹ thuật mà còn là người đồng hành tận tâm trong hành trình chăm sóc răng miệng của bạn.",
+    "stat1Number": "15+",
+    "stat1Label": "Năm kinh nghiệm",
+    "stat2Number": "10k+",
+    "stat2Label": "Khách hàng hài lòng",
+    "imageAlt": "Nữ bác sĩ nha khoa chuyên nghiệp",
+    "quote": "Chúng tôi không chỉ chỉnh sửa hàm răng, chúng tôi thay đổi cuộc sống qua những nụ cười tự tin.",
+    "quoteName": "Dr. Tinh Anh",
+    "quoteRole": "Giám đốc chuyên môn"
+  },
+  "services": {
+    "eyebrow": "Dịch vụ đặc trị",
+    "title": "Công Nghệ & Chính Xác",
+    "viewAllLabel": "Xem tất cả dịch vụ",
+    "items": [
+      { "title": "Trồng răng Implant", "desc": "Giải pháp phục hình răng đã mất bền vững nhất với công nghệ định vị chính xác cao từ Thụy Sĩ." },
+      { "title": "Niềng răng Thẩm mỹ", "desc": "Sở hữu hàm răng đều đẹp với công nghệ niềng răng trong suốt Invisalign, hiệu quả và thẩm mỹ tuyệt đối." },
+      { "title": "Nha khoa Thẩm mỹ", "desc": "Dán sứ Veneer, tẩy trắng răng công nghệ cao giúp nụ cười rạng rỡ và giữ nguyên cấu trúc răng thật." },
+      { "title": "Điều trị Tổng quát", "desc": "Chăm sóc răng miệng định kỳ, điều trị tủy, nhổ răng không đau với trang thiết bị vô trùng chuẩn FDA." }
+    ],
+    "precisionTitle": "Độ Chính Xác Đến",
+    "precisionTitleLine2": "Từng Milimet",
+    "precisionDesc": "Sử dụng hệ thống chẩn đoán hình ảnh CT Cone Beam 3D và máy quét Itero thế hệ mới nhất, chúng tôi cam kết kết quả điều trị chuẩn xác và an toàn tuyệt đối cho bệnh nhân.",
+    "precisionImageAlt": "Độ chính xác trong trồng răng Implant",
+    "precisionPoints": [
+      "Công nghệ chẩn đoán kỹ thuật số",
+      "Hệ thống vô trùng khép kín Melag",
+      "Vật liệu cao cấp nhập khẩu chính hãng"
+    ]
+  },
+  "experience": {
+    "eyebrow": "Trải nghiệm khách hàng",
+    "title": "Không Gian Sang Trọng",
+    "titleLine2": "Dịch Vụ Tận Tâm",
+    "desc": "Rũ bỏ mọi lo âu về \"phòng khám\", Nha Khoa Tinh Anh mang đến không gian thư giãn như tại sảnh lounge khách sạn cao cấp, giúp bạn thoải mái nhất trong suốt quá trình thăm khám.",
+    "imageAlt": "Phòng tư vấn sang trọng",
+    "steps": [
+      { "number": "01", "title": "Tư vấn chuyên sâu 1-1", "desc": "Bác sĩ trực tiếp lắng nghe và lập phác đồ cá nhân hóa dựa trên tình trạng và mong muốn của bạn." },
+      { "number": "02", "title": "Quy trình chuẩn Quốc tế", "desc": "Mọi thao tác đều được thực hiện dưới sự kiểm soát nghiêm ngặt về y tế và thẩm mỹ." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Chi phí dịch vụ",
+    "title": "Bảng Giá Minh Bạch",
+    "colService": "Dịch vụ",
+    "colPrice": "Giá niêm yết (VNĐ)",
+    "items": [
+      { "name": "Nhổ răng khôn (máy siêu âm Piezosurgery)", "desc": "Không đau, lành thương nhanh", "price": "1.500.000 - 4.500.000" },
+      { "name": "Tẩy trắng răng Zoom Whitening", "desc": "Bật tông sau 45 phút, an toàn nướu", "price": "3.500.000" },
+      { "name": "Răng sứ Veneer Emax (Siêu mỏng)", "desc": "Bảo tồn răng thật tối đa, độ bền 20 năm", "price": "7.000.000 - 12.000.000/Răng" },
+      { "name": "Trồng răng Implant (Trọn gói trụ Straumann)", "desc": "Bao gồm trụ, Abutment và răng sứ", "price": "35.000.000 - 45.000.000" },
+      { "name": "Niềng răng Invisalign (Mỹ)", "desc": "Cam kết kết quả bằng văn bản", "price": "80.000.000 - 120.000.000" }
+    ],
+    "note": "* Giá trên mang tính chất tham khảo. Chi phí chính xác phụ thuộc vào tình trạng răng miệng cụ thể sau khi thăm khám.",
+    "downloadLabel": "Tải bảng giá đầy đủ (PDF)"
+  },
+  "testimonials": {
+    "eyebrow": "Tiếng nói khách hàng",
+    "title": "Khách Hàng Nói Gì Về Nha Khoa Tinh Anh",
+    "centerImageAlt": "Nụ cười tự tin sau điều trị tại Nha Khoa Tinh Anh",
+    "centerCaption": "Hơn 10.000 nụ cười hoàn mỹ đã được kiến tạo",
+    "items": [
+      { "name": "Chị Lan Phương", "role": "Khách hàng Veneer Emax", "quote": "Không gian như khách sạn 5 sao, bác sĩ tư vấn cực kỳ tận tâm. Hàm răng sứ mới trông tự nhiên đến mức bạn bè không nhận ra tôi đã làm răng." },
+      { "name": "Anh Đức Thịnh", "role": "Khách hàng Implant", "quote": "Trồng răng Implant tại đây gần như không đau, đội ngũ theo dõi hậu phẫu rất kỹ. Sau 3 tháng ăn nhai thoải mái như răng thật." },
+      { "name": "Chị Ngọc Hà", "role": "Khách hàng Invisalign", "quote": "Niềng răng trong suốt giúp tôi tự tin đi làm mỗi ngày mà không ai để ý. Kết quả đúng như bác sĩ cam kết ban đầu." },
+      { "name": "Anh Minh Quân", "role": "Khách hàng Tẩy trắng", "quote": "Chỉ 45 phút mà răng trắng sáng rõ rệt, hoàn toàn không ê buốt. Dịch vụ chuyên nghiệp từ lễ tân đến bác sĩ." }
+    ],
+    "ctaLabel": "Đặt lịch tư vấn miễn phí"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tinh Anh",
+    "desc": "Hệ thống nha khoa thẩm mỹ tiêu chuẩn quốc tế. Nơi quy tụ những chuyên gia hàng đầu và công nghệ hiện đại nhất vì nụ cười Việt.",
+    "hotlineLabel": "Hotline đặt lịch",
+    "hotline": "1900 68XX",
+    "addressLabel": "Địa chỉ trụ sở",
+    "address": "123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
+    "linksTitle": "Liên kết nhanh",
+    "link1": "Về chúng tôi",
+    "link2": "Dịch vụ",
+    "link3": "Bảng giá",
+    "link4": "Chính sách bảo mật",
+    "hoursTitle": "Thời gian làm việc",
+    "hoursLine1": "Thứ 2 - Thứ 7: 08:00 - 20:00",
+    "hoursLine2": "Chủ nhật: 08:00 - 17:00",
+    "hoursNote": "Nghỉ các ngày lễ, Tết",
+    "mapBrand": "NHA KHOA TINH ANH",
+    "mapSub": "123 Nguyễn Huệ, Quận 1, TP.HCM",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tinh Anh. Bảo tồn nụ cười Việt.",
+    "social1": "Facebook",
+    "social2": "Instagram",
+    "social3": "Youtube"
+  }
+}

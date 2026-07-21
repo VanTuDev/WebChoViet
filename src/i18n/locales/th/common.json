@@ -65,5 +65,41 @@
     "email": "อีเมล",
     "hotline": "สายด่วน",
     "operatedByLine": "ดำเนินการโดยบุคคลธรรมดา {{name}}"
+  },
+  "sidebar": {
+    "marketplaceTitle": "หมวดหมู่เทมเพลต",
+    "dashboardTitle": "จัดการร้านค้า",
+    "collapseMenu": "ย่อเมนู",
+    "expandMenu": "ขยายเมนู",
+    "quickNav": "เมนูนำทางด่วน",
+    "language": "ภาษา",
+    "categories": {
+      "all": "ทุกเทมเพลต",
+      "coffee": "คาเฟ่ & เครื่องดื่ม",
+      "restaurant": "ร้านอาหาร",
+      "spa": "สปา & ความงาม",
+      "gym": "ยิม & กีฬา",
+      "wedding": "การ์ดแต่งงาน",
+      "villa": "โฮมสเตย์ & วิลล่า",
+      "dental": "คลินิกทันตกรรม"
+    },
+    "menus": {
+      "projects": "โปรเจกต์ของฉัน",
+      "analytics": "วิเคราะห์ประสิทธิภาพ",
+      "qrcodes": "จัดการ QR โค้ด",
+      "settings": "ตั้งค่าระบบ",
+      "support": "ฝ่ายสนับสนุน 24/7"
+    },
+    "upgradePlan": "อัปเกรดแพ็กเกจ",
+    "plan": {
+      "ultraActive": "แพ็กเกจ Ultra กำลังใช้งาน",
+      "ultraDesc": "คุณกำลังใช้แพ็กเกจระดับสูงสุดของ vngoweb ขอบคุณที่อยู่เคียงข้างกัน!",
+      "proActive": "แพ็กเกจ Pro กำลังใช้งาน",
+      "proDesc": "ต้องการสิทธิพิเศษเพิ่มเติมใช่ไหม? สำรวจแพ็กเกจ Ultra",
+      "viewUltra": "ดูแพ็กเกจ Ultra",
+      "upgradeTitle": "อัปเกรดเป็น WebPro",
+      "upgradeDesc": "ปลดล็อกโดเมนส่วนตัว (.vn, .com) และลบโลโก้ vngoweb ออกทั้งหมด",
+      "upgradeCta": "สมัครแพ็กเกจ Pro"
+    }
   }
 }

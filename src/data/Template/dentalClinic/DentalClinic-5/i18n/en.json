@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "brand": "Nha Khoa An Nhiên",
+    "home": "Home",
+    "link1": "Services",
+    "link2": "Pricing",
+    "link3": "Reviews",
+    "link4": "Contact",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "eyebrow": "International Dental Standards",
+    "titleLine1": "Crafting smiles",
+    "titleLine2": "in a space of",
+    "titleLine3": "quiet calm.",
+    "subtitle": "Experience dental care like a premium wellness retreat, with a dedicated team of specialists and the world's leading technology.",
+    "btnPrimary": "Explore Services",
+    "btnSecondary": "Free Consultation",
+    "imageAlt": "Professional dental specialist in a modern clinic, warm and airy space with minimalist emerald accents"
+  },
+  "stats": {
+    "items": [
+      { "number": "15+", "label": "Years of Experience" },
+      { "number": "10k+", "label": "Happy Patients" },
+      { "number": "20+", "label": "Specialist Dentists" },
+      { "number": "0%", "label": "Installment Interest" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Comprehensive Dental Care",
+    "title": "We blend aesthetic artistry with restorative science to deliver the most lasting results for your smile.",
+    "viewAll": "View All Services",
+    "learnMore": "Learn more",
+    "items": [
+      { "title": "Dental Implants", "desc": "The most optimal solution for missing teeth today, restoring 100% of chewing function and natural aesthetics.", "imageAlt": "Close-up of a modern dental implant procedure model in a high-tech clinic" },
+      { "title": "Invisalign Braces", "desc": "Bracket-free orthodontics that is completely invisible and comfortable throughout treatment." },
+      { "title": "Cosmetic Porcelain Veneers", "desc": "Ultra-thin porcelain veneers that preserve your natural teeth while delivering a radiant, beautiful smile." },
+      { "title": "General Dentistry", "desc": "Regular checkups, fillings, and painless ultrasonic scaling and cleaning.", "imageAlt": "Woman smiling radiantly after a successful dental treatment in a warm, sun-drenched setting" }
+    ]
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "We guarantee no hidden costs throughout your treatment. 0% interest installment plans available on every service.",
+    "colService": "Service",
+    "colDetail": "Details",
+    "colPrice": "Starting Price",
+    "items": [
+      { "name": "Ultrasonic Scaling & Cleaning", "desc": "Deep cleaning, pain-free", "price": "200,000 VND" },
+      { "name": "Laser Whitening", "desc": "US technology, brightens 2-3 shades", "price": "2,500,000 VND" },
+      { "name": "Cercon HT Porcelain Crown", "desc": "10-year warranty", "price": "4,500,000 VND / tooth" },
+      { "name": "Metal Bracket Braces", "desc": "Free water flosser included", "price": "25,000,000 VND" },
+      { "name": "Dentium Implant", "desc": "Genuine Korean fixture", "price": "15,000,000 VND / implant" }
+    ]
+  },
+  "testimonials": {
+    "title": "Stories From Our Patients",
+    "items": [
+      { "name": "Mr. Minh Hoang", "role": "Freelance Entrepreneur", "quote": "I used to be terrified of the dentist until I came to Nha Khoa An Nhiên. The space is truly as relaxing as a spa, and the doctors explain everything carefully and gently. I'm completely satisfied with my new porcelain veneers.", "rating": 5 },
+      { "name": "Ms. Lan Phuong", "role": "Office Worker", "quote": "The Invisalign treatment here is very professional. Every visit feels like a moment to unwind. Thank you to the Nha Khoa An Nhiên team for helping me feel so much more confident.", "rating": 5 },
+      { "name": "Mrs. Thu Van", "role": "Retiree", "quote": "I was worried about getting implants at my age, but the doctor was so gentle. Now I can enjoy eating just like before. The facility here is spotless and modern.", "rating": 5 }
+    ]
+  },
+  "cta": {
+    "titleLine1": "Ready to own",
+    "titleLine2": "a radiant smile?",
+    "subtitle": "Book your appointment today to receive a 20% discount on porcelain veneer and implant services.",
+    "btnLabel": "Book a Free Consultation"
+  },
+  "footer": {
+    "brand": "Nha Khoa An Nhiên",
+    "desc": "Preserving Vietnamese smiles with dedication and leading technology. We're proud to be a trusted companion on your family's oral health journey.",
+    "address": "123 Lang Street, Dong Da District, Hanoi",
+    "phone": "1900 6789 - 0988 123 456",
+    "email": "contact@zenfadental.vn",
+    "mapTitle": "Clinic Location",
+    "mapBrand": "ZENFA DENTAL",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa An Nhiên. Preserving Vietnamese smiles.",
+    "link1": "Privacy Policy",
+    "link2": "Terms of Use",
+    "link3": "FAQ"
+  },
+  "mobileCta": {
+    "label": "Book Now"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "brand": "NHA KHOA RẠNG NGỜI",
+    "brandSub": "International Dental Clinic",
+    "home": "Home",
+    "link1": "Technology",
+    "link2": "Services",
+    "link3": "Pricing",
+    "link4": "Reviews",
+    "link5": "Contact",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "badge": "International Dental Standards",
+    "titleLine1": "Elevate Your Smile,",
+    "titleLine2": "Craft Your Future",
+    "subtitle": "Experience world-class dental care right here in Vietnam. We combine the finest global technology with absolute dedication to deliver the perfect smile for discerning clients.",
+    "btnPrimary": "Consult an International Expert",
+    "statNumber": "5,000+",
+    "statLabel": "International Clients",
+    "cardTitle": "VIP Booking System",
+    "cardSubtitle": "Priority Response",
+    "imageAlt": "Modern dental treatment room"
+  },
+  "technology": {
+    "eyebrow": "International Medical Technology",
+    "title": "Investing in five-star technology infrastructure is our top commitment.",
+    "items": [
+      { "title": "CT Cone Beam G7 System", "desc": "Multi-dimensional analysis of jaw structure at ultra-high resolution. This is the core foundation for building personalized treatment plans for our clients, ensuring up to 99.9% precision.", "imageAlt": "Modern CT Cone Beam X-ray machine" },
+      { "title": "3D Intraoral Scanner iTero 5D", "desc": "Contactless jaw impression technology for absolute comfort. Clients can visualize their future restoration results directly on a high-definition touchscreen.", "imageAlt": "3D Intraoral Scanner machine" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Signature Service Menu",
+    "title": "Comprehensive oral care solutions built to U.S. medical standards.",
+    "items": [
+      { "title": "Aesthetic Orthodontics", "desc": "Clear Invisalign technology performed by our leading team of specialists, letting you transform your smile discreetly and flawlessly." },
+      { "title": "Artistic Fillings", "desc": "Premium German Composite material combined with advanced layering technique delivers a flawlessly natural look for your teeth." },
+      { "title": "International-Standard Care", "desc": "Deep-cleaning procedure with Gentle-Clean ultrasonic technology protects gums and enamel, sustaining lasting oral health and fresh breath." }
+    ]
+  },
+  "results": {
+    "badge": "Proven Results",
+    "imageAlt": "Successful treatment result",
+    "title": "A smile transformed,",
+    "titleHighlight": "A class elevated",
+    "desc": "Over the past decade, Nha Khoa Rạng Ngời has crafted thousands of perfect smiles for business leaders and celebrities. Every smile is a unique masterpiece, reflecting each client's personal presence and status.",
+    "points": [
+      "Specialist team trained in the U.S. & Europe",
+      "State-of-the-art iTero Element 3D restoration technology",
+      "Private, luxurious treatment spaces (VIP Lounge)"
+    ],
+    "btnLabel": "Explore Our Gallery of Masterpieces"
+  },
+  "pricing": {
+    "eyebrow": "Transparent & Prestigious",
+    "title": "International Service Price List",
+    "tab1": "VIP Services",
+    "tab2": "General",
+    "groups": [
+      {
+        "title": "Advanced Orthodontics",
+        "items": [
+          { "name": "Pro-Standard Metal Braces", "desc": "Maximum efficiency and durability", "price": "From 35M" },
+          { "name": "Invisalign Diamond Elite", "desc": "Absolute aesthetics, 5D standardization", "price": "From 45M" },
+          { "name": "Lifetime Smile Maintenance", "desc": "Preserving results permanently", "price": "5M / arch" }
+        ]
+      },
+      {
+        "title": "VIP Cosmetic Dentistry",
+        "items": [
+          { "name": "Deep Cleaning & Gum Spa Package", "desc": "Cleansing & relaxing your smile", "price": "1.5M" },
+          { "name": "Artistic Composite Restoration", "desc": "Meticulous attention to every detail", "price": "From 2.5M" },
+          { "name": "FlashWhite Laser Whitening", "desc": "Visibly brighter in a relaxing 45-minute session", "price": "4M" }
+        ]
+      }
+    ]
+  },
+  "facilities": {
+    "eyebrow": "Architecture & Space",
+    "title": "A Clinic System Built to Five-Star Resort Standards",
+    "items": [
+      { "imageAlt": "Modern waiting lounge", "label": "VIP Waiting Lounge" },
+      { "imageAlt": "High-tech treatment room", "label": "International Sterile Treatment Room" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Voices of Our Clients",
+    "title": "Journeys That Changed Lives",
+    "centerImageAlt": "A radiant smile",
+    "centerCaption": "A symbol of radiant confidence",
+    "items": [
+      { "name": "Ms. Minh Anh", "role": "Invisalign Patient", "quote": "More than a dental clinic — this is a genuine retreat experience. The dedication of the doctors put me completely at ease." },
+      { "name": "Mr. Hoang Nam", "role": "Aesthetic Dentistry", "quote": "A professional process with results beyond expectations. The filling perfectly matches my natural tooth color." },
+      { "name": "Ms. Thu Trang", "role": "Routine Care", "quote": "Five-star service from check-in to after-care. The equipment is incredibly modern and spotless." },
+      { "name": "Mr. Quoc Bao", "role": "FlashWhite Treatment", "quote": "No sensitivity at all, and the treatment was quick. Naturally white teeth give me more confidence in important meetings." }
+    ],
+    "ctaLabel": "Join Our Community of 5,000 VIP Clients"
+  },
+  "footer": {
+    "brand": "NHA KHOA RẠNG NGỜI",
+    "brandSub": "International Clinic",
+    "desc": "Redefining the standard of premium dentistry in Vietnam. We are committed to absolute satisfaction through technology and empathy.",
+    "contactTitle": "Operations Center",
+    "addressLabel": "Lobby Address",
+    "address": "123 Health Blvd, Cityville, Ho Chi Minh City",
+    "hotlineLabel": "VIP Hotline",
+    "hotline": "(028) 123-4567",
+    "hoursLabel": "Service Hours",
+    "hoursLine1": "8:00 AM - 8:00 PM (Mon - Sat)",
+    "hoursLine2": "8:00 AM - 5:00 PM (Sun)",
+    "mapTitle": "Find Us",
+    "mapBrand": "NHA KHOA RẠNG NGỜI",
+    "mapSub": "International Hub",
+    "mapLoading": "Loading map...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Rạng Ngời. Elevating Vietnamese smiles.",
+    "link1": "Privacy Policy",
+    "link2": "Concierge Terms",
+    "link3": "Global Careers"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Sáng Tâm",
+    "home": "首页",
+    "link1": "技术设备",
+    "link2": "服务项目",
+    "link3": "客户评价",
+    "link4": "联系我们",
+    "cta": "预约看诊"
+  },
+  "hero": {
+    "badge": "Dental Excellence",
+    "titleLine1": "提升笑容风采，",
+    "titleLine2": "塑造尊贵品位",
+    "subtitle": "在奢华典雅的空间中，由顶尖专家团队为您呈现国际标准的牙科体验。我们打造的不仅是美丽的笑容，更是上流生活方式的真实写照。",
+    "btnPrimary": "预约专家咨询",
+    "btnSecondary": "探索服务项目",
+    "imageAlt": "高端牙科诊所接待大厅"
+  },
+  "technology": {
+    "eyebrow": "领先科技",
+    "title": "每一步操作都追求极致精准",
+    "imageAlt": "先进的牙科设备",
+    "items": [
+      { "title": "Lumiere 激光系统", "desc": "采用新一代激光技术，实现无痛治疗，将创伤降至最低，并大幅缩短恢复时间。" },
+      { "title": "5D 影像诊断", "desc": "以微米级精度重现颌面结构，协助医生为每位客户制定完美的个性化治疗方案。" }
+    ]
+  },
+  "services": {
+    "eyebrow": "尊享护理",
+    "title": "高端服务价目表",
+    "tab1": "单项服务",
+    "tab2": "VIP 贵宾套餐",
+    "groups": [
+      {
+        "title": "深度正畸",
+        "items": [
+          { "name": "Invisalign Diamond Elite", "desc": "美国标准隐形牙套，极致美观。", "price": "450 万起" },
+          { "name": "Pro-Standard 陶瓷托槽", "desc": "兼顾正畸效果与美观的理想之选。", "price": "350 万起" },
+          { "name": "定期笑容维护", "desc": "通过专属护理方案，永久保持治疗效果。", "price": "50 万 / 单颌" }
+        ]
+      },
+      {
+        "title": "美学 & 修复",
+        "items": [
+          { "name": "超薄瓷贴面", "desc": "最大限度保留真牙，呈现自然美感。", "price": "80 万起 / 颗" },
+          { "name": "FlashWhite 激光美白", "desc": "仅需 45 分钟温和疗程，牙齿即刻亮白。", "price": "40 万" },
+          { "name": "艺术补牙", "desc": "采用高级材料，精准还原牙齿解剖结构。", "price": "25 万起" }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "真实疗效见证",
+    "title": "改变的笑容，蜕变的人生",
+    "stat1Number": "5,000+",
+    "stat1Label": "VIP 客户",
+    "stat2Number": "15+",
+    "stat2Label": "年从业经验",
+    "highlightTitle": "国际五星标准",
+    "highlightDesc": "绝对无菌的治疗环境，私密而尊贵。",
+    "transformationImageAlt": "令人惊艳的笑容改造成果",
+    "trustImageAlt": "高端治疗空间",
+    "items": [
+      { "name": "Hoang Nam 先生", "role": "首席执行官", "quote": "专业的治疗流程，效果远超预期。补牙颜色与真牙完美契合，让我在重要谈判中更加自信。" },
+      { "name": "Bao Ngoc 女士", "role": "Invisalign 隐形正畸", "quote": "医生团队非常用心，每个阶段都详细讲解。8 个月佩戴后，我的笑容彻底改变，甚至没人发现我在矫正牙齿。" },
+      { "name": "Anh Tuan 先生", "role": "企业家", "quote": "诊所环境如五星级酒店般奢华。我总是预约晚间时段，因为专属 VIP 贵宾室完全无需等待。" },
+      { "name": "Dieu Linh 女士", "role": "FlashWhite 美白客户", "quote": "仅 45 分钟，牙齿就明显变白，且完全没有酸痛感。客户服务也十分专业。" }
+    ]
+  },
+  "footer": {
+    "eyebrow": "联系我们",
+    "title": "携手连接，绽放光彩",
+    "brand": "Nha Khoa Sáng Tâm",
+    "desc": "我们重新定义高端牙科的标准，让每一位客户都能享受顶尖专家团队的尊贵礼遇。",
+    "addressLabel": "地址",
+    "address": "123 Health Blvd, Cityville, 胡志明市",
+    "hotlineLabel": "VIP 热线",
+    "hotline": "(028) 123-4567",
+    "emailLabel": "电子邮箱",
+    "email": "info@nhakhoasangtam.vn",
+    "hoursLabel": "营业时间",
+    "hoursLine1": "周一至周六 (8:00 - 20:00)",
+    "hoursLine2": "周日 (8:00 - 17:00)",
+    "ctaLabel": "立即预约看诊",
+    "mapTitle": "诊所位置",
+    "mapBrand": "Nha Khoa Sáng Tâm",
+    "mapSub": "在线预约",
+    "mapUrl": "",
+    "navTitle": "快速导航",
+    "navLink1": "首页",
+    "navLink2": "技术设备",
+    "navLink3": "服务项目",
+    "navLink4": "客户评价",
+    "legalTitle": "法律信息",
+    "legalLink1": "隐私政策",
+    "legalLink2": "使用条款",
+    "legalLink3": "常见问题",
+    "copyright": "© 2024 Nha Khoa Sáng Tâm。提升笑容，塑造尊贵品位。"
+  }
+}

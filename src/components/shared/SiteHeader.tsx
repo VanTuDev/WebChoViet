@@ -252,6 +252,11 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
             />
           </div>
 
+          {/* Chuyển đổi ngôn ngữ — chỉ hiện ở đây trên desktop, mobile đã có trong drawer bên dưới */}
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+
           {/* Auth: avatar user thật nếu đã đăng nhập, nút Đăng nhập nếu chưa */}
           {isAuthenticated && user ? (
             <div ref={avatarRef} className="relative ml-1 pl-2 border-l border-gray-100">

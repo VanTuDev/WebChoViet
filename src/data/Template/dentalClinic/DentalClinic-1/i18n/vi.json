@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "brand": "NHA KHOA RẠNG NGỜI",
+    "brandSub": "International Dental Clinic",
+    "home": "Trang chủ",
+    "link1": "Công nghệ",
+    "link2": "Dịch vụ",
+    "link3": "Bảng giá",
+    "link4": "Đánh giá",
+    "link5": "Liên hệ",
+    "cta": "Đặt lịch khám"
+  },
+  "hero": {
+    "badge": "Tiêu chuẩn nha khoa quốc tế",
+    "titleLine1": "Nâng Tầm Nụ Cười,",
+    "titleLine2": "Kiến Tạo Tương Lai",
+    "subtitle": "Trải nghiệm dịch vụ nha khoa đẳng cấp quốc tế ngay tại Việt Nam. Chúng tôi kết hợp tinh hoa công nghệ toàn cầu cùng sự tận tâm tuyệt đối để mang lại nụ cười hoàn mỹ cho giới thượng lưu.",
+    "btnPrimary": "Tư vấn chuyên gia quốc tế",
+    "statNumber": "5,000+",
+    "statLabel": "Khách hàng quốc tế",
+    "cardTitle": "Hệ thống đặt lịch VIP",
+    "cardSubtitle": "Phản hồi ưu tiên",
+    "imageAlt": "Phòng điều trị nha khoa hiện đại"
+  },
+  "technology": {
+    "eyebrow": "Công nghệ y khoa quốc tế",
+    "title": "Đầu tư vào hạ tầng công nghệ 5 sao là cam kết hàng đầu của chúng tôi.",
+    "items": [
+      { "title": "Hệ thống CT Cone Beam G7", "desc": "Phân tích đa chiều cấu trúc hàm mặt với độ phân giải siêu cao. Đây là nền tảng cốt lõi trong việc lập phác đồ cá nhân hóa cho khách hàng thượng lưu, đảm bảo độ chính xác lên đến 99.9%.", "imageAlt": "Máy X-quang CT Cone Beam hiện đại" },
+      { "title": "3D Intraoral Scanner iTero 5D", "desc": "Công nghệ quét dấu hàm không tiếp xúc mang lại sự thoải mái tuyệt đối. Khách hàng có thể quan sát trực quan kết quả phục hình tương lai ngay trên màn hình cảm ứng độ nét cao.", "imageAlt": "Máy quét dấu hàm 3D Intraoral Scanner" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Danh mục dịch vụ đặc quyền",
+    "title": "Giải pháp chăm sóc răng miệng toàn diện theo tiêu chuẩn y khoa Hoa Kỳ.",
+    "items": [
+      { "title": "Niềng răng thẩm mỹ", "desc": "Công nghệ Invisalign trong suốt được thực hiện bởi đội ngũ bác sĩ chuyên gia hàng đầu, giúp bạn thay đổi nụ cười một cách bí mật và hoàn hảo nhất." },
+      { "title": "Trám răng nghệ thuật", "desc": "Sử dụng vật liệu Composite cao cấp từ Đức, kết hợp kỹ thuật điêu khắc lớp chuyên sâu, mang lại vẻ đẹp tự nhiên không tì vết cho hàm răng của bạn." },
+      { "title": "Chăm sóc chuẩn quốc tế", "desc": "Quy trình vệ sinh chuyên sâu với công nghệ siêu âm Gentle-Clean, bảo vệ nướu và men răng, duy trì sức khỏe răng miệng bền vững và hơi thở tự tin." }
+    ]
+  },
+  "results": {
+    "badge": "Kết quả thực chứng",
+    "imageAlt": "Kết quả điều trị thành công",
+    "title": "Nụ cười thay đổi,",
+    "titleHighlight": "Đẳng cấp thăng hoa",
+    "desc": "Hơn một thập kỷ qua, Nha Khoa Rạng Ngời đã kiến tạo hàng ngàn nụ cười hoàn mỹ cho giới doanh nhân và người nổi tiếng. Mỗi nụ cười là một kiệt tác riêng biệt, phản ánh thần thái và đẳng cấp cá nhân của khách hàng.",
+    "points": [
+      "Đội ngũ chuyên gia tu nghiệp tại Hoa Kỳ & Châu Âu",
+      "Công nghệ phục hình 3D iTero Element tối tân",
+      "Không gian điều trị riêng tư, sang trọng (VIP Lounge)"
+    ],
+    "btnLabel": "Khám phá kho ảnh kiệt tác"
+  },
+  "pricing": {
+    "eyebrow": "Minh bạch & Đẳng cấp",
+    "title": "Biểu phí dịch vụ quốc tế",
+    "tab1": "Dịch vụ VIP",
+    "tab2": "Tổng quát",
+    "groups": [
+      {
+        "title": "Chỉnh nha chuyên sâu",
+        "items": [
+          { "name": "Mắc cài kim loại Pro-Standard", "desc": "Hiệu quả và bền bỉ tối đa", "price": "Từ 35 Tr" },
+          { "name": "Invisalign Diamond Elite", "desc": "Thẩm mỹ tuyệt đối, chuẩn hóa 5D", "price": "Từ 45 Tr" },
+          { "name": "Bảo dưỡng nụ cười trọn đời", "desc": "Duy trì kết quả vĩnh viễn", "price": "5 Tr / Hàm" }
+        ]
+      },
+      {
+        "title": "Nha khoa thẩm mỹ VIP",
+        "items": [
+          { "name": "Gói vệ sinh chuyên sâu & Spa nướu", "desc": "Làm sạch & Thư giãn nụ cười", "price": "1.5 Tr" },
+          { "name": "Phục hình Composite nghệ thuật", "desc": "Tỉ mỉ từng chi tiết nhỏ nhất", "price": "Từ 2.5 Tr" },
+          { "name": "Tẩy trắng FlashWhite Laser", "desc": "Sáng bật tông sau 45 phút thư giãn", "price": "4 Tr" }
+        ]
+      }
+    ]
+  },
+  "facilities": {
+    "eyebrow": "Kiến trúc & Không gian",
+    "title": "Hệ thống phòng khám tiêu chuẩn Resort 5 sao",
+    "items": [
+      { "imageAlt": "Phòng chờ hiện đại", "label": "Sảnh chờ VIP Lounge" },
+      { "imageAlt": "Phòng điều trị công nghệ cao", "label": "Phòng điều trị vô trùng quốc tế" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Tiếng nói từ khách hàng",
+    "title": "Những hành trình thay đổi cuộc đời",
+    "centerImageAlt": "Nụ cười rạng rỡ",
+    "centerCaption": "Biểu tượng của sự tự tin rạng rỡ",
+    "items": [
+      { "name": "Ms. Minh Anh", "role": "Invisalign Patient", "quote": "Hơn cả một phòng khám nha khoa, đây là một trải nghiệm nghỉ dưỡng thực thụ. Sự tận tâm của bác sĩ khiến tôi hoàn toàn yên tâm." },
+      { "name": "Mr. Hoàng Nam", "role": "Aesthetic Dentistry", "quote": "Quy trình chuyên nghiệp và kết quả vượt ngoài mong đợi. Vết trám hoàn toàn trùng khớp với màu răng thật." },
+      { "name": "Ms. Thu Trang", "role": "Routine Care", "quote": "Dịch vụ 5 sao từ khâu tiếp đón đến hậu mãi. Hệ thống trang thiết bị cực kỳ hiện đại và sạch sẽ." },
+      { "name": "Mr. Quốc Bảo", "role": "FlashWhite Treatment", "quote": "Không hề ê buốt, thời gian thực hiện nhanh chóng. Răng trắng tự nhiên giúp tôi tự tin hơn trong các buổi họp quan trọng." }
+    ],
+    "ctaLabel": "Gia nhập cộng đồng 5,000 khách hàng VIP"
+  },
+  "footer": {
+    "brand": "NHA KHOA RẠNG NGỜI",
+    "brandSub": "International Clinic",
+    "desc": "Định nghĩa lại tiêu chuẩn nha khoa cao cấp tại Việt Nam. Chúng tôi cam kết mang lại sự hài lòng tuyệt đối thông qua công nghệ và sự thấu cảm.",
+    "contactTitle": "Trung tâm điều hành",
+    "addressLabel": "Địa chỉ sảnh",
+    "address": "123 Health Blvd, Cityville, TP. Hồ Chí Minh",
+    "hotlineLabel": "Hotline VIP",
+    "hotline": "(028) 123-4567",
+    "hoursLabel": "Thời gian phục vụ",
+    "hoursLine1": "8:00 - 20:00 (Thứ 2 - Thứ 7)",
+    "hoursLine2": "8:00 - 17:00 (Chủ nhật)",
+    "mapTitle": "Vị trí kết nối",
+    "mapBrand": "NHA KHOA RẠNG NGỜI",
+    "mapSub": "International Hub",
+    "mapLoading": "Bản đồ đang được tải...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Rạng Ngời. Nâng tầm nụ cười Việt.",
+    "link1": "Privacy Policy",
+    "link2": "Concierge Terms",
+    "link3": "Global Careers"
+  }
+}

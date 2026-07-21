@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "brandSub": "数字牙科 5.0",
+    "home": "首页",
+    "link1": "服务项目",
+    "link2": "价目表",
+    "link3": "客户评价",
+    "link4": "联系我们",
+    "cta": "预约看诊"
+  },
+  "hero": {
+    "badge": "数字牙科 5.0",
+    "titleLine1": "以科技",
+    "titleLine2": "雕琢笑容",
+    "titleHighlight": "追求极致精准",
+    "subtitle": "采用最新一代 iTero Element 5D 三维扫描系统与锥形束CT技术，提供微创治疗方案与完美美学效果。",
+    "btnPrimary": "探索治疗方案",
+    "btnSecondary": "观看流程视频",
+    "statNumber": "99.9%",
+    "statLabel": "技术精准度",
+    "imageAlt": "无菌牙科诊室内的高科技锥形束CT扫描仪"
+  },
+  "services": {
+    "eyebrow": "尖端科技服务",
+    "title": "高科技牙科服务",
+    "subtitle": "采用直接从欧洲进口的设备打造闭环诊疗流程，确保达到国际医疗标准。",
+    "featured": {
+      "title": "机器人种植牙",
+      "desc": "运用最先进的三维导航技术，精准定位种植体位置。",
+      "linkLabel": "了解更多",
+      "imageAlt": "口内三维扫描仪对牙模发出蓝色激光扫描"
+    },
+    "items": [
+      { "number": "01", "title": "AI 智能矫正", "desc": "利用人工智能模拟牙齿移动效果的隐适美矫正方案。" },
+      { "number": "02", "title": "CAD/CAM 瓷牙", "desc": "24小时内自动设计与制作瓷牙，精密度极高。" },
+      { "number": "03", "title": "超声波拔牙", "desc": "采用高频超声波技术，拔牙无痛且伤口愈合迅速。" }
+    ]
+  },
+  "technology": {
+    "eyebrow": "精密科技",
+    "title": "精准至",
+    "titleHighlight": "微米级别",
+    "desc": "我们深知在牙科治疗中，最细微的偏差都可能影响长期效果。在Nha Khoa Tân Kỷ Nguyên，每一道流程都由现代化电脑系统精密掌控。",
+    "image1Alt": "高精密CAD/CAM机器正在切削瓷牙冠的特写",
+    "image2Alt": "种植计划屏幕上显示的头骨与颌骨三维模型",
+    "points": [
+      { "title": "三维锥形束CT扫描", "desc": "直观的三维影像诊断，辐射剂量极低。" },
+      { "title": "iTero 口内扫描", "desc": "以100%数字化技术取代传统取模方式。" }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "公开价目表",
+    "title": "服务价目公开表",
+    "subtitle": "价格透明，治疗全程无隐藏费用。",
+    "colService": "治疗项目",
+    "colPrice": "预估费用",
+    "colAction": "操作",
+    "actionLabel": "详情",
+    "items": [
+      { "name": "隐适美矫正（全套）", "price": "45,000,000 越南盾起" },
+      { "name": "种植牙（种植体+牙冠）", "price": "15,000,000 越南盾起" },
+      { "name": "美学瓷牙冠（Cercon HT）", "price": "4,000,000 越南盾/颗起" },
+      { "name": "等离子牙齿美白", "price": "2,500,000 越南盾" },
+      { "name": "超声波智齿拔除", "price": "1,500,000 越南盾起" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "客户怎么说",
+    "title": "客户怎么评价我们",
+    "items": [
+      { "name": "黄南先生", "role": "超声波拔牙客户", "quote": "这里的超声波拔牙技术让我印象深刻，完全没有想象中那么疼，伤口愈合也很快。医生非常用心。" },
+      { "name": "明英女士", "role": "AI 智能矫正客户", "quote": "在Nha Khoa Tân Kỷ Nguyên做隐适美矫正，治疗期间我依然能自信地社交。用AI提前预览效果让我非常安心。" },
+      { "name": "黎雄先生", "role": "机器人种植牙客户", "quote": "机器人种植牙服务非常先进。多年缺牙后，我终于能够舒适地进食了。非常感谢Nha Khoa Tân Kỷ Nguyên的医疗团队。" }
+    ]
+  },
+  "cta": {
+    "floatingLabel": "立即预约"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "desc": "越南领先的5.0标准数字牙科体系，将世界级科技带给越南人的笑容。",
+    "addressLabel": "地址",
+    "address": "胡志明市第一郡科技街123号",
+    "phoneLabel": "热线电话",
+    "phone": "1900 6789 - 0901 234 567",
+    "emailLabel": "电子邮箱",
+    "email": "contact@nexadental.vn",
+    "mapTitle": "诊所位置",
+    "mapBrand": "Nha Khoa Tân Kỷ Nguyên",
+    "mapSub": "数字牙科 5.0",
+    "mapLoading": "地图加载中...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tân Kỷ Nguyên。守护越南人的笑容。",
+    "link1": "隐私政策",
+    "link2": "服务条款",
+    "link3": "常见问题"
+  }
+}

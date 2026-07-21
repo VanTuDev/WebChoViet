@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tinh Anh",
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "servicesSub1": "Braces",
+    "servicesSub2": "Dental Implants",
+    "servicesSub3": "Cosmetic Dentistry",
+    "servicesSub4": "General Dentistry",
+    "pricing": "Pricing",
+    "technology": "Technology",
+    "testimonials": "Clients",
+    "contact": "Contact",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "eyebrow": "Crafting the perfect smile",
+    "titleLine1": "The Art of Dentistry,",
+    "titleLine2": "World-Class Standard",
+    "subtitle": "Experience five-star dental care with the most advanced technology and a team of leading specialists.",
+    "btnPrimary": "Explore Services",
+    "btnSecondary": "About Us",
+    "imageAlt": "Exterior of Nha Khoa Tinh Anh Clinic"
+  },
+  "experts": {
+    "eyebrow": "Our Specialists",
+    "title": "Ethics Combined",
+    "titleLine2": "With Expertise",
+    "desc": "At Nha Khoa Tinh Anh, we believe a beautiful smile begins with understanding. Every doctor is not only a technical expert but also a dedicated companion on your dental care journey.",
+    "stat1Number": "15+",
+    "stat1Label": "Years of Experience",
+    "stat2Number": "10k+",
+    "stat2Label": "Satisfied Clients",
+    "imageAlt": "Professional female dentist",
+    "quote": "We don't just fix teeth — we change lives through confident smiles.",
+    "quoteName": "Dr. Tinh Anh",
+    "quoteRole": "Clinical Director"
+  },
+  "services": {
+    "eyebrow": "Specialized Services",
+    "title": "Technology & Precision",
+    "viewAllLabel": "View All Services",
+    "items": [
+      { "title": "Dental Implants", "desc": "The most durable solution for missing teeth, using high-precision positioning technology from Switzerland." },
+      { "title": "Aesthetic Braces", "desc": "Achieve perfectly aligned teeth with clear Invisalign technology — effective and absolutely aesthetic." },
+      { "title": "Cosmetic Dentistry", "desc": "Veneer lamination and advanced teeth whitening for a radiant smile while preserving your natural tooth structure." },
+      { "title": "General Treatment", "desc": "Routine oral care, root canal treatment, and painless extractions with FDA-standard sterile equipment." }
+    ],
+    "precisionTitle": "Precision Down To",
+    "precisionTitleLine2": "The Millimeter",
+    "precisionDesc": "Using 3D Cone Beam CT imaging diagnostics and the latest generation Itero scanners, we guarantee accurate treatment results and absolute safety for patients.",
+    "precisionImageAlt": "Precision in dental implant placement",
+    "precisionPoints": [
+      "Digital diagnostic technology",
+      "Melag closed-loop sterilization system",
+      "Genuine imported premium materials"
+    ]
+  },
+  "experience": {
+    "eyebrow": "Client Experience",
+    "title": "Luxurious Space,",
+    "titleLine2": "Dedicated Service",
+    "desc": "Leave behind all worries about a \"clinic\" — Nha Khoa Tinh Anh offers a relaxing space like a premium hotel lounge, so you feel completely at ease throughout your visit.",
+    "imageAlt": "Luxurious consultation room",
+    "steps": [
+      { "number": "01", "title": "One-on-One Consultation", "desc": "Doctors listen directly and design a personalized treatment plan based on your condition and goals." },
+      { "number": "02", "title": "International-Standard Process", "desc": "Every procedure is carried out under strict medical and aesthetic control." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Service Costs",
+    "title": "Transparent Price List",
+    "colService": "Service",
+    "colPrice": "Listed Price (VND)",
+    "items": [
+      { "name": "Wisdom Tooth Extraction (Piezosurgery)", "desc": "Painless, fast healing", "price": "1,500,000 - 4,500,000" },
+      { "name": "Zoom Whitening", "desc": "Brighter shade in 45 minutes, gum-safe", "price": "3,500,000" },
+      { "name": "Emax Veneer (Ultra-thin)", "desc": "Maximum preservation of natural teeth, 20-year durability", "price": "7,000,000 - 12,000,000/tooth" },
+      { "name": "Dental Implant (Straumann full package)", "desc": "Includes fixture, abutment and crown", "price": "35,000,000 - 45,000,000" },
+      { "name": "Invisalign (USA)", "desc": "Results guaranteed in writing", "price": "80,000,000 - 120,000,000" }
+    ],
+    "note": "* Prices are for reference only. The exact cost depends on your specific dental condition after examination.",
+    "downloadLabel": "Download Full Price List (PDF)"
+  },
+  "testimonials": {
+    "eyebrow": "Client Voices",
+    "title": "What Our Clients Say About Nha Khoa Tinh Anh",
+    "centerImageAlt": "Confident smile after treatment at Nha Khoa Tinh Anh",
+    "centerCaption": "Over 10,000 perfect smiles crafted",
+    "items": [
+      { "name": "Ms. Lan Phuong", "role": "Emax Veneer Client", "quote": "The space feels like a 5-star hotel, and the doctors were incredibly attentive. My new veneers look so natural my friends couldn't tell." },
+      { "name": "Mr. Duc Thinh", "role": "Implant Client", "quote": "Getting an implant here was nearly painless, with thorough aftercare follow-up. After 3 months I can chew as comfortably as with natural teeth." },
+      { "name": "Ms. Ngoc Ha", "role": "Invisalign Client", "quote": "Clear braces let me stay confident at work every day without anyone noticing. The results matched exactly what the doctor promised." },
+      { "name": "Mr. Minh Quan", "role": "Whitening Client", "quote": "Just 45 minutes and my teeth were noticeably whiter, with zero sensitivity. Professional service from reception to the doctor." }
+    ],
+    "ctaLabel": "Book a Free Consultation"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tinh Anh",
+    "desc": "An international-standard dental system in Vietnam, bringing together leading specialists and the most advanced technology for Vietnamese smiles.",
+    "hotlineLabel": "Booking Hotline",
+    "hotline": "1900 68XX",
+    "addressLabel": "Head Office Address",
+    "address": "123 Nguyen Hue Street, District 1, Ho Chi Minh City",
+    "linksTitle": "Quick Links",
+    "link1": "About Us",
+    "link2": "Services",
+    "link3": "Pricing",
+    "link4": "Privacy Policy",
+    "hoursTitle": "Working Hours",
+    "hoursLine1": "Mon - Sat: 08:00 - 20:00",
+    "hoursLine2": "Sunday: 08:00 - 17:00",
+    "hoursNote": "Closed on public holidays and Tet",
+    "mapBrand": "NHA KHOA TINH ANH",
+    "mapSub": "123 Nguyen Hue, District 1, HCMC",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tinh Anh. Preserving Vietnamese smiles.",
+    "social1": "Facebook",
+    "social2": "Instagram",
+    "social3": "Youtube"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "NHA KHOA NỤ CƯỜI VÀNG",
+    "brandAccent": "DENTAL",
+    "home": "Trang chủ",
+    "link1": "Về chúng tôi",
+    "link2": "Dịch vụ",
+    "link3": "Bảng giá",
+    "link4": "Công nghệ",
+    "link5": "Đánh giá",
+    "link6": "Liên hệ",
+    "cta": "Đặt lịch hẹn"
+  },
+  "hero": {
+    "since": "Since 1998",
+    "titleLine1": "Nghệ Thuật",
+    "titleAccent": "Nụ Cười",
+    "titleLine3": "Đẳng Cấp",
+    "subtitle": "Sự kết hợp hoàn mỹ giữa y khoa hiện đại và không gian nghệ thuật 5 sao. Nơi nụ cười của bạn được chăm sóc bởi những chuyên gia hàng đầu.",
+    "btnPrimary": "Khám phá ngay",
+    "cardNumber": "01.",
+    "cardLabel": "Không gian sang trọng",
+    "cardDesc": "Được thiết kế để mang lại sự thư thái tuyệt đối trong suốt quá trình điều trị.",
+    "imageAlt": "Không gian phòng khám Nha Khoa Nụ Cười Vàng"
+  },
+  "technology": {
+    "eyebrowTitle1": "Công nghệ",
+    "eyebrowTitle2": "Tiên phong",
+    "desc": "Chúng tôi không ngừng đầu tư vào hệ thống thiết bị tân tiến nhất thế giới để đảm bảo quy trình điều trị chính xác, không đau và thẩm mỹ tối ưu.",
+    "items": [
+      { "number": "01", "title": "Laser X-Pulse", "desc": "Hệ thống điều trị không xâm lấn, hồi phục thần tốc." },
+      { "number": "02", "title": "Digital Implant", "desc": "Cấy ghép implant định vị 3D chính xác tuyệt đối." }
+    ],
+    "highlights": [
+      { "title": "Chẩn đoán hình ảnh AI", "desc": "Phân tích đa điểm giúp phát hiện sớm các vấn đề răng miệng với độ chính xác 99%.", "imageAlt": "Hệ thống chẩn đoán hình ảnh AI" },
+      { "title": "Phòng Lab tại chỗ", "desc": "Thiết kế răng sứ CAD/CAM ngay tại phòng khám, hoàn thiện chỉ trong 24 giờ.", "imageAlt": "Phòng Lab CAD/CAM tại chỗ" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Danh mục dịch vụ",
+    "title": "Giải Pháp Chuyên Sâu",
+    "tagline": "Standard of Excellence",
+    "items": [
+      { "number": "01", "title": "Nha khoa Tổng quát", "desc": "Chăm sóc toàn diện cho sức khỏe răng miệng gia đình với tiêu chuẩn y khoa quốc tế.", "imageAlt": "Dịch vụ nha khoa tổng quát", "linkLabel": "Xem chi tiết" },
+      { "number": "02", "title": "Thẩm mỹ Nụ cười", "desc": "Tái tạo nụ cười hoàn mỹ với Veneer sứ siêu mỏng và công nghệ thiết kế nụ cười 3D.", "imageAlt": "Dịch vụ thẩm mỹ nụ cười", "linkLabel": "Xem chi tiết" },
+      { "number": "03", "title": "Cấy ghép Implant", "desc": "Phục hình răng đã mất bằng công nghệ Implant số hóa, đảm bảo chức năng ăn nhai trọn đời.", "imageAlt": "Dịch vụ cấy ghép Implant", "linkLabel": "Xem chi tiết" }
+    ]
+  },
+  "pricing": {
+    "title1": "Bảng Giá",
+    "titleAccent": "Đặc Quyền",
+    "desc": "Minh bạch trong mọi chi phí là cam kết hàng đầu của chúng tôi. Các gói điều trị được cá nhân hóa để mang lại hiệu quả cao nhất.",
+    "colService": "Dịch vụ điều trị",
+    "colPrice": "Chi phí (từ)",
+    "colPolicy": "Chính sách",
+    "items": [
+      { "name": "Lấy cao răng & Vệ sinh chuyên sâu", "price": "500.000 VNĐ", "policy": "Định kỳ 6 tháng" },
+      { "name": "Tẩy trắng răng Laser Whitening", "price": "3.500.000 VNĐ", "policy": "Bảo hành 6 tháng" },
+      { "name": "Răng sứ thẩm mỹ (Ceramic)", "price": "5.000.000 VNĐ / Răng", "policy": "Bảo hành 10 năm" },
+      { "name": "Implant Thụy Sĩ Straumann", "price": "25.000.000 VNĐ / Trụ", "policy": "Bảo hành trọn đời" }
+    ],
+    "downloadLabel": "Tải báo giá chi tiết (.PDF)"
+  },
+  "testimonials": {
+    "eyebrow": "Khách hàng",
+    "titleLine1": "Những Nụ Cười",
+    "titleLine2": "Đã Được Tái Sinh",
+    "photo1Alt": "Khách hàng hài lòng tại Nha Khoa Nụ Cười Vàng",
+    "photo2Alt": "Nụ cười sau điều trị tại Nha Khoa Nụ Cười Vàng",
+    "items": [
+      { "name": "Chị Thanh Hằng", "role": "Doanh nhân", "quote": "Không gian tại Nha Khoa Nụ Cười Vàng thực sự rất sang trọng và riêng tư. Tôi đã làm 20 răng sứ tại đây và cực kỳ hài lòng với độ tự nhiên cũng như thái độ tận tâm của bác sĩ." },
+      { "name": "Anh Minh Khôi", "role": "Giám đốc sáng tạo", "quote": "Công nghệ Laser ở đây thực sự khác biệt, hoàn toàn không đau như tôi nghĩ. Quy trình chuyên nghiệp, tiết kiệm thời gian." },
+      { "name": "Chị Bảo Trâm", "role": "Người mẫu ảnh", "quote": "Ê-kíp tư vấn rất kỹ lưỡng trước khi làm Veneer, kết quả đúng như mô phỏng 3D ban đầu. Nụ cười tự nhiên đến mức bạn bè không nhận ra tôi đã chỉnh sửa." },
+      { "name": "Anh Đức Anh", "role": "Kiến trúc sư", "quote": "Trồng Implant tại Nha Khoa Nụ Cười Vàng là quyết định đúng đắn nhất của tôi. Bác sĩ định vị 3D cực kỳ chính xác, gần như không có cảm giác đau sau khi thuốc tê hết tác dụng." }
+    ]
+  },
+  "footer": {
+    "brand": "NHA KHOA NỤ CƯỜI VÀNG",
+    "brandAccent": "DENTAL",
+    "desc": "Kiến tạo nụ cười hoàn mỹ bằng sự kết hợp giữa tinh hoa y học và công nghệ hiện đại. Địa chỉ tin cậy của hơn 10.000 khách hàng mỗi năm.",
+    "addressLabel": "Trụ sở chính",
+    "address": "123 Đường Luxury, Quận 1, TP. Hồ Chí Minh",
+    "hotlineLabel": "Đường dây nóng",
+    "hotline": "1900 6789 — 028 3333 9999",
+    "hoursLabel": "Giờ phục vụ",
+    "hours": "Thứ 2 — Chủ Nhật: 08:00 — 20:00",
+    "mapUrl": "",
+    "mapBrand": "NHA KHOA NỤ CƯỜI VÀNG",
+    "mapSub": "Luxury Dental Experience",
+    "copyright": "© 2024 Nha Khoa Nụ Cười Vàng. All rights reserved.",
+    "link1": "Privacy Policy",
+    "link2": "Terms of Use",
+    "link3": "Cookies"
+  },
+  "stickyCta": "Đặt lịch khám"
+}

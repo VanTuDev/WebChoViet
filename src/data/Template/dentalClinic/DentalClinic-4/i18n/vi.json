@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "brandSub": "Digital Dentistry 5.0",
+    "home": "Trang chủ",
+    "link1": "Dịch vụ",
+    "link2": "Bảng giá",
+    "link3": "Đánh giá",
+    "link4": "Liên hệ",
+    "cta": "Đặt lịch khám"
+  },
+  "hero": {
+    "badge": "Digital Dentistry 5.0",
+    "titleLine1": "Kiến Tạo Nụ Cười",
+    "titleLine2": "Bằng Công Nghệ",
+    "titleHighlight": "Chính Xác Tuyệt Đối",
+    "subtitle": "Ứng dụng hệ thống quét 3D Itero Element 5D và CT Cone Beam thế hệ mới nhất, mang đến giải pháp điều trị xâm lấn tối thiểu và thẩm mỹ hoàn hảo.",
+    "btnPrimary": "Khám Phá Giải Pháp",
+    "btnSecondary": "Xem Video Quy Trình",
+    "statNumber": "99.9%",
+    "statLabel": "Độ Chính Xác Kỹ Thuật",
+    "imageAlt": "Máy quét CT Cone Beam công nghệ cao trong phòng nha khoa vô trùng"
+  },
+  "services": {
+    "eyebrow": "Công Nghệ Kỹ Thuật Cao",
+    "title": "Dịch Vụ Kỹ Thuật Cao",
+    "subtitle": "Quy trình khép kín với trang thiết bị nhập khẩu trực tiếp từ Châu Âu, đảm bảo tiêu chuẩn y khoa quốc tế.",
+    "featured": {
+      "title": "Trồng Răng Implant Robot",
+      "desc": "Định vị chính xác vị trí trụ Implant bằng công nghệ dẫn đường 3D hiện đại nhất.",
+      "linkLabel": "Tìm hiểu thêm",
+      "imageAlt": "Máy quét trong miệng 3D sử dụng laser xanh trên mẫu hàm răng"
+    },
+    "items": [
+      { "number": "01", "title": "Niềng Răng AI", "desc": "Phác đồ Invisalign mô phỏng kết quả dịch chuyển răng bằng trí tuệ nhân tạo." },
+      { "number": "02", "title": "Răng Sứ CAD/CAM", "desc": "Thiết kế và chế tác răng sứ tự động chỉ trong 24 giờ với độ tinh xảo tối đa." },
+      { "number": "03", "title": "Nhổ Răng Piezotome", "desc": "Sử dụng sóng siêu âm cao tần giúp nhổ răng không đau, nhanh lành thương." }
+    ]
+  },
+  "technology": {
+    "eyebrow": "Công Nghệ Chính Xác",
+    "title": "Độ Chính Xác Đến",
+    "titleHighlight": "Từng Micromet",
+    "desc": "Chúng tôi hiểu rằng trong nha khoa, sự sai lệch nhỏ nhất cũng có thể ảnh hưởng đến kết quả lâu dài. Tại Nha Khoa Tân Kỷ Nguyên, mọi quy trình đều được kiểm soát bởi hệ thống máy tính hiện đại.",
+    "image1Alt": "Ảnh cận cảnh mão răng sứ được phay bằng máy CAD/CAM độ chính xác cao",
+    "image2Alt": "Mô hình 3D hộp sọ và xương hàm trên màn hình lập kế hoạch cấy ghép Implant",
+    "points": [
+      { "title": "Phim CT Cone Beam 3D", "desc": "Chẩn đoán hình ảnh 3 chiều trực quan, liều lượng bức xạ cực thấp." },
+      { "title": "Scan trong miệng Itero", "desc": "Thay thế việc lấy dấu truyền thống bằng kỹ thuật số 100%." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Bảng Giá Niêm Yết",
+    "title": "Bảng Giá Dịch Vụ Niêm Yết",
+    "subtitle": "Minh bạch, không phát sinh chi phí phụ trong suốt quá trình điều trị.",
+    "colService": "Dịch Vụ Điều Trị",
+    "colPrice": "Chi Phí Ước Tính",
+    "colAction": "Hành Động",
+    "actionLabel": "Chi tiết",
+    "items": [
+      { "name": "Niềng răng Invisalign (Trọn gói)", "price": "Từ 45.000.000 VNĐ" },
+      { "name": "Trồng răng Implant (Trụ + Răng sứ)", "price": "Từ 15.000.000 VNĐ" },
+      { "name": "Răng sứ thẩm mỹ (Cercon HT)", "price": "Từ 4.000.000 VNĐ / Răng" },
+      { "name": "Tẩy trắng răng công nghệ Plasma", "price": "2.500.000 VNĐ" },
+      { "name": "Nhổ răng khôn Piezotome", "price": "Từ 1.500.000 VNĐ" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Khách Hàng Nói Gì",
+    "title": "Khách Hàng Nói Gì Về Chúng Tôi",
+    "items": [
+      { "name": "Anh Hoàng Nam", "role": "Khách hàng Nhổ Răng Piezotome", "quote": "Tôi rất ấn tượng với công nghệ nhổ răng Piezotome tại đây. Không hề đau đớn như tôi tưởng tượng, vết thương cũng lành rất nhanh. Bác sĩ cực kỳ tận tâm." },
+      { "name": "Chị Minh Anh", "role": "Khách hàng Niềng Răng AI", "quote": "Niềng răng Invisalign tại Nha Khoa Tân Kỷ Nguyên giúp tôi vẫn tự tin giao tiếp trong lúc điều trị. Việc xem trước kết quả bằng AI khiến tôi hoàn toàn yên tâm." },
+      { "name": "Bác Lê Hùng", "role": "Khách hàng Implant Robot", "quote": "Dịch vụ Implant Robot rất hiện đại. Tôi đã có thể ăn uống thoải mái sau nhiều năm mất răng. Cảm ơn đội ngũ bác sĩ Nha Khoa Tân Kỷ Nguyên rất nhiều." }
+    ]
+  },
+  "cta": {
+    "floatingLabel": "Đặt lịch ngay"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "desc": "Hệ thống nha khoa kỹ thuật số chuẩn 5.0 hàng đầu tại Việt Nam. Mang công nghệ thế giới về nụ cười Việt.",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Đường Công Nghệ, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Hotline",
+    "phone": "1900 6789 - 0901 234 567",
+    "emailLabel": "Email",
+    "email": "contact@nexadental.vn",
+    "mapTitle": "Vị trí phòng khám",
+    "mapBrand": "NHA KHOA TÂN KỶ NGUYÊN",
+    "mapSub": "Digital Dentistry 5.0",
+    "mapLoading": "Bản đồ đang tải...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tân Kỷ Nguyên. Bảo tồn nụ cười Việt.",
+    "link1": "Chính sách bảo mật",
+    "link2": "Điều khoản sử dụng",
+    "link3": "Câu hỏi thường gặp"
+  }
+}

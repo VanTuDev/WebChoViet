@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tinh Anh",
+    "home": "홈",
+    "about": "소개",
+    "services": "진료 항목",
+    "servicesSub1": "치아 교정",
+    "servicesSub2": "임플란트",
+    "servicesSub3": "심미 치과",
+    "servicesSub4": "일반 진료",
+    "pricing": "가격표",
+    "technology": "의료 기술",
+    "testimonials": "고객 후기",
+    "contact": "문의하기",
+    "cta": "진료 예약"
+  },
+  "hero": {
+    "eyebrow": "완벽한 미소를 만들다",
+    "titleLine1": "치과 예술,",
+    "titleLine2": "국제적 수준",
+    "subtitle": "최첨단 기술과 최고의 전문가 팀이 함께하는 5성급 치과 진료를 경험하세요.",
+    "btnPrimary": "진료 항목 살펴보기",
+    "btnSecondary": "소개",
+    "imageAlt": "Nha Khoa Tinh Anh 외관"
+  },
+  "experts": {
+    "eyebrow": "전문가 팀",
+    "title": "의술과 인술이",
+    "titleLine2": "함께하는 진료",
+    "desc": "Nha Khoa Tinh Anh는 아름다운 미소가 이해와 신뢰에서 시작된다고 믿습니다. 모든 의사는 단순한 기술 전문가를 넘어, 여러분의 치아 관리 여정을 함께하는 진심 어린 동반자입니다.",
+    "stat1Number": "15+",
+    "stat1Label": "년간의 경험",
+    "stat2Number": "10k+",
+    "stat2Label": "만족한 고객",
+    "imageAlt": "전문 여성 치과의사",
+    "quote": "저희는 단순히 치아를 고치는 것이 아니라, 자신감 있는 미소를 통해 삶을 변화시킵니다.",
+    "quoteName": "Tinh Anh 원장",
+    "quoteRole": "진료 원장"
+  },
+  "services": {
+    "eyebrow": "전문 진료 항목",
+    "title": "기술과 정밀함",
+    "viewAllLabel": "모든 서비스 보기",
+    "items": [
+      { "title": "임플란트", "desc": "스위스산 고정밀 위치 확인 기술로 결손 치아를 가장 견고하게 복원하는 솔루션입니다." },
+      { "title": "심미 교정", "desc": "투명 인비절라인 기술로 효과와 심미성을 동시에 만족시키는 가지런한 치아를 완성하세요." },
+      { "title": "심미 치과", "desc": "베니어 라미네이트와 첨단 미백 기술로 자연 치아 구조를 보존하면서 밝은 미소를 선사합니다." },
+      { "title": "일반 진료", "desc": "정기 구강 관리, 신경 치료, 무통 발치까지 FDA 기준 멸균 장비로 안전하게 진행합니다." }
+    ],
+    "precisionTitle": "밀리미터까지",
+    "precisionTitleLine2": "정밀한 진료",
+    "precisionDesc": "3D 콘빔 CT 진단 시스템과 최신 세대 아이테로 스캐너를 사용하여 정확한 치료 결과와 환자의 절대적인 안전을 보장합니다.",
+    "precisionImageAlt": "임플란트 정밀 시술",
+    "precisionPoints": [
+      "디지털 진단 기술",
+      "Melag 완전 밀폐 멸균 시스템",
+      "정품 수입 프리미엄 재료"
+    ]
+  },
+  "experience": {
+    "eyebrow": "고객 경험",
+    "title": "고급스러운 공간,",
+    "titleLine2": "정성 어린 서비스",
+    "desc": "\"병원\"에 대한 걱정은 내려놓으세요. Nha Khoa Tinh Anh는 고급 호텔 라운지처럼 편안한 공간을 제공하여 진료 내내 최고의 안락함을 느끼실 수 있습니다.",
+    "imageAlt": "고급스러운 상담실",
+    "steps": [
+      { "number": "01", "title": "1:1 심층 상담", "desc": "의사가 직접 상담하며 환자의 상태와 원하는 바에 맞춘 맞춤형 치료 계획을 수립합니다." },
+      { "number": "02", "title": "국제 표준 프로세스", "desc": "모든 진료 과정은 엄격한 의료 및 심미 기준 하에 진행됩니다." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "진료 비용",
+    "title": "투명한 가격표",
+    "colService": "진료 항목",
+    "colPrice": "정가 (VND)",
+    "items": [
+      { "name": "사랑니 발치 (피에조서저리)", "desc": "무통증, 빠른 회복", "price": "1,500,000 - 4,500,000" },
+      { "name": "줌 화이트닝", "desc": "45분 만에 톤업, 잇몸에 안전", "price": "3,500,000" },
+      { "name": "이맥스 초박형 베니어", "desc": "자연 치아 최대 보존, 내구성 20년", "price": "7,000,000 - 12,000,000/개" },
+      { "name": "임플란트 (스트라우만 풀 패키지)", "desc": "픽스처, 어버트먼트, 크라운 포함", "price": "35,000,000 - 45,000,000" },
+      { "name": "인비절라인 (미국)", "desc": "서면으로 결과 보장", "price": "80,000,000 - 120,000,000" }
+    ],
+    "note": "* 위 가격은 참고용이며, 정확한 비용은 검진 후 구강 상태에 따라 결정됩니다.",
+    "downloadLabel": "전체 가격표 다운로드 (PDF)"
+  },
+  "testimonials": {
+    "eyebrow": "고객의 목소리",
+    "title": "Nha Khoa Tinh Anh에 대한 고객 후기",
+    "centerImageAlt": "Nha Khoa Tinh Anh에서 치료 후 되찾은 자신감 있는 미소",
+    "centerCaption": "10,000명 이상의 완벽한 미소를 만들었습니다",
+    "items": [
+      { "name": "란프엉 님", "role": "이맥스 베니어 고객", "quote": "5성급 호텔 같은 공간에 의료진도 매우 세심했습니다. 새로 한 베니어가 너무 자연스러워서 친구들도 눈치채지 못했어요." },
+      { "name": "득틴 님", "role": "임플란트 고객", "quote": "임플란트 시술이 거의 통증 없이 진행됐고, 사후 관리도 꼼꼼했습니다. 3개월 후에는 자연치처럼 편안하게 씹을 수 있었어요." },
+      { "name": "응옥하 님", "role": "인비절라인 고객", "quote": "투명 교정 덕분에 매일 출근해도 아무도 눈치채지 못할 만큼 자연스러웠습니다. 결과도 의사 선생님이 약속한 그대로였어요." },
+      { "name": "민꿘 님", "role": "미백 고객", "quote": "단 45분 만에 치아가 눈에 띄게 하얘졌고 시린 느낌이 전혀 없었습니다. 접수부터 진료까지 모두 전문적이었어요." }
+    ],
+    "ctaLabel": "무료 상담 예약하기"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tinh Anh",
+    "desc": "베트남 국제 표준 치과 시스템으로, 최고의 전문가 팀과 최첨단 기술을 통해 베트남인의 미소를 지켜갑니다.",
+    "hotlineLabel": "예약 핫라인",
+    "hotline": "1900 68XX",
+    "addressLabel": "본원 주소",
+    "address": "호치민시 1군 응우옌후에 거리 123번지",
+    "linksTitle": "빠른 링크",
+    "link1": "소개",
+    "link2": "진료 항목",
+    "link3": "가격표",
+    "link4": "개인정보 처리방침",
+    "hoursTitle": "운영 시간",
+    "hoursLine1": "월 - 토: 08:00 - 20:00",
+    "hoursLine2": "일요일: 08:00 - 17:00",
+    "hoursNote": "공휴일 및 설 연휴 휴무",
+    "mapBrand": "Nha Khoa Tinh Anh",
+    "mapSub": "호치민시 1군 응우옌후에 거리 123번지",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tinh Anh. 베트남의 미소를 지킵니다.",
+    "social1": "Facebook",
+    "social2": "Instagram",
+    "social3": "Youtube"
+  }
+}

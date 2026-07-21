@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "brand": "Nha Khoa An Nhiên",
+    "home": "Trang chủ",
+    "link1": "Dịch vụ",
+    "link2": "Bảng giá",
+    "link3": "Đánh giá",
+    "link4": "Liên hệ",
+    "cta": "Đặt lịch khám"
+  },
+  "hero": {
+    "eyebrow": "Tiêu chuẩn nha khoa quốc tế",
+    "titleLine1": "Kiến tạo nụ cười",
+    "titleLine2": "trong không gian",
+    "titleLine3": "tĩnh lặng.",
+    "subtitle": "Trải nghiệm chăm sóc răng miệng như tại khu nghỉ dưỡng cao cấp với đội ngũ chuyên gia tận tâm và công nghệ hàng đầu thế giới.",
+    "btnPrimary": "Khám phá dịch vụ",
+    "btnSecondary": "Tư vấn miễn phí",
+    "imageAlt": "Bác sĩ nha khoa chuyên nghiệp trong phòng khám hiện đại, không gian ấm áp với tông màu emerald tối giản"
+  },
+  "stats": {
+    "items": [
+      { "number": "15+", "label": "Năm kinh nghiệm" },
+      { "number": "10k+", "label": "Khách hàng hài lòng" },
+      { "number": "20+", "label": "Bác sĩ chuyên khoa" },
+      { "number": "0%", "label": "Lãi suất trả góp" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Dịch vụ nha khoa toàn diện",
+    "title": "Chúng tôi kết hợp nghệ thuật thẩm mỹ và khoa học phục hồi để mang lại kết quả bền vững nhất cho nụ cười của bạn.",
+    "viewAll": "Xem tất cả dịch vụ",
+    "learnMore": "Tìm hiểu thêm",
+    "items": [
+      { "title": "Trồng răng Implant", "desc": "Giải pháp phục hình răng đã mất tối ưu nhất hiện nay, khôi phục 100% chức năng ăn nhai và thẩm mỹ tự nhiên.", "imageAlt": "Cận cảnh mô hình cấy ghép Implant nha khoa hiện đại trong phòng khám công nghệ cao" },
+      { "title": "Niềng răng Invisalign", "desc": "Chỉnh nha không mắc cài, hoàn toàn vô hình và thoải mái trong suốt quá trình điều trị." },
+      { "title": "Răng sứ thẩm mỹ", "desc": "Mặt dán sứ Veneer siêu mỏng, bảo tồn tối đa răng thật và mang lại vẻ đẹp rạng rỡ." },
+      { "title": "Nha khoa Tổng quát", "desc": "Chăm sóc định kỳ, hàn trám và lấy cao răng bằng công nghệ sóng siêu âm không đau.", "imageAlt": "Khách hàng nữ mỉm cười rạng rỡ sau khi điều trị nha khoa thành công trong không gian ấm áp" }
+    ]
+  },
+  "pricing": {
+    "title": "Bảng giá minh bạch",
+    "subtitle": "Chúng tôi cam kết không phát sinh chi phí trong suốt quá trình điều trị. Hỗ trợ trả góp 0% lãi suất cho mọi dịch vụ.",
+    "colService": "Dịch vụ",
+    "colDetail": "Chi tiết",
+    "colPrice": "Chi phí từ",
+    "items": [
+      { "name": "Lấy cao răng siêu âm", "desc": "Vệ sinh sâu, không đau", "price": "200.000đ" },
+      { "name": "Tẩy trắng răng Laser Whitening", "desc": "Công nghệ Mỹ, bật 2-3 tông", "price": "2.500.000đ" },
+      { "name": "Răng sứ Cercon HT", "desc": "Bảo hành 10 năm", "price": "4.500.000đ/răng" },
+      { "name": "Niềng răng mắc cài kim loại", "desc": "Tặng máy tăm nước", "price": "25.000.000đ" },
+      { "name": "Trồng răng Implant Dentium", "desc": "Trụ Hàn Quốc chính hãng", "price": "15.000.000đ/trụ" }
+    ]
+  },
+  "testimonials": {
+    "title": "Câu chuyện từ khách hàng",
+    "items": [
+      { "name": "Anh Minh Hoàng", "role": "Kinh doanh tự do", "quote": "Tôi từng rất sợ nha khoa cho đến khi đến An Nhiên. Không gian thực sự thư giãn như ở spa, các bác sĩ tư vấn rất kỹ và nhẹ nhàng. Tôi hoàn toàn hài lòng với bộ răng sứ mới của mình.", "rating": 5 },
+      { "name": "Chị Lan Phương", "role": "Nhân viên văn phòng", "quote": "Niềng răng Invisalign ở đây rất chuyên nghiệp. Mỗi lần đến khám là một lần được thư giãn. Cảm ơn đội ngũ bác sĩ An Nhiên đã giúp mình tự tin hơn rất nhiều.", "rating": 5 },
+      { "name": "Cô Thu Vân", "role": "Hưu trí", "quote": "Trồng răng Implant ở tuổi của cô ban đầu cô rất lo, nhưng bác sĩ làm rất êm. Giờ cô có thể ăn uống ngon miệng như trước. Cơ sở vật chất ở đây rất sạch sẽ và hiện đại.", "rating": 5 }
+    ]
+  },
+  "cta": {
+    "titleLine1": "Sẵn sàng để sở hữu",
+    "titleLine2": "nụ cười rạng rỡ?",
+    "subtitle": "Đặt lịch hẹn ngay hôm nay để nhận ưu đãi giảm giá 20% cho các dịch vụ thẩm mỹ răng sứ và Implant.",
+    "btnLabel": "Đặt lịch tư vấn miễn phí"
+  },
+  "footer": {
+    "brand": "Nha Khoa An Nhiên",
+    "desc": "Bảo tồn nụ cười Việt bằng tâm đức và công nghệ hàng đầu. Chúng tôi tự hào là người bạn đồng hành tin cậy trên hành trình chăm sóc sức khỏe răng miệng của gia đình bạn.",
+    "address": "123 Đường Láng, Quận Đống Đa, Hà Nội",
+    "phone": "1900 6789 - 0988 123 456",
+    "email": "contact@zenfadental.vn",
+    "mapTitle": "Vị trí phòng khám",
+    "mapBrand": "NHA KHOA ZENFA DENTAL",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa An Nhiên. Bảo tồn nụ cười Việt.",
+    "link1": "Chính sách bảo mật",
+    "link2": "Điều khoản sử dụng",
+    "link3": "Câu hỏi thường gặp"
+  },
+  "mobileCta": {
+    "label": "Đặt lịch khám ngay"
+  }
+}

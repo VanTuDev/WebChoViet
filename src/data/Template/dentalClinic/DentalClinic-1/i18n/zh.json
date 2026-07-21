@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Rạng Ngời",
+    "brandSub": "国际牙科诊所",
+    "home": "首页",
+    "link1": "技术设备",
+    "link2": "服务项目",
+    "link3": "价格表",
+    "link4": "客户评价",
+    "link5": "联系我们",
+    "cta": "预约看诊"
+  },
+  "hero": {
+    "badge": "国际牙科标准",
+    "titleLine1": "提升您的笑容，",
+    "titleLine2": "塑造美好未来",
+    "subtitle": "在越南即可体验国际顶级牙科服务。我们融合全球尖端科技与全心投入的专业态度，为尊贵客户打造完美笑容。",
+    "btnPrimary": "预约国际专家咨询",
+    "statNumber": "5,000+",
+    "statLabel": "国际客户",
+    "cardTitle": "VIP 预约系统",
+    "cardSubtitle": "优先响应",
+    "imageAlt": "现代化牙科治疗室"
+  },
+  "technology": {
+    "eyebrow": "国际医疗科技",
+    "title": "投资五星级科技设备，是我们始终如一的首要承诺。",
+    "items": [
+      { "title": "CT Cone Beam G7 系统", "desc": "以超高分辨率对颌骨结构进行多维分析，是为尊贵客户制定个性化治疗方案的核心基础，精确度高达 99.9%。", "imageAlt": "现代化 CT Cone Beam X 光机" },
+      { "title": "iTero 5D 三维口腔扫描仪", "desc": "无接触式取模科技带来极致舒适体验，客户可在高清触控屏幕上直观预览未来修复效果。", "imageAlt": "三维口腔扫描仪设备" }
+    ]
+  },
+  "services": {
+    "eyebrow": "尊享服务系列",
+    "title": "依循美国医学标准的全方位口腔护理方案。",
+    "items": [
+      { "title": "美学正畸", "desc": "由资深专家团队执行的隐形 Invisalign 技术，让您悄然而完美地改变笑容。" },
+      { "title": "艺术补牙", "desc": "采用德国进口高级复合材料，结合精细分层雕刻工艺，呈现自然无瑕的牙齿美感。" },
+      { "title": "国际标准护理", "desc": "采用 Gentle-Clean 超声波深层清洁工艺，保护牙龈与珐琅质，持久维护口腔健康与自信笑容。" }
+    ]
+  },
+  "results": {
+    "badge": "真实疗效见证",
+    "imageAlt": "成功治疗案例",
+    "title": "改变的笑容，",
+    "titleHighlight": "非凡的品位",
+    "desc": "十余年来，Nha Khoa Rạng Ngời 为众多商界精英与知名人士打造了无数完美笑容。每一个笑容都是独一无二的杰作，彰显客户的个人气质与尊贵品位。",
+    "points": [
+      "留学美欧的专家团队",
+      "先进的 iTero Element 三维修复技术",
+      "私密尊贵的治疗空间（VIP 贵宾室）"
+    ],
+    "btnLabel": "探索案例作品集"
+  },
+  "pricing": {
+    "eyebrow": "透明 & 尊贵",
+    "title": "国际服务价目表",
+    "tab1": "VIP 服务",
+    "tab2": "常规服务",
+    "groups": [
+      {
+        "title": "深度正畸",
+        "items": [
+          { "name": "Pro-Standard 金属托槽", "desc": "高效持久", "price": "350 万起" },
+          { "name": "Invisalign Diamond Elite", "desc": "极致美学，5D 精准标准", "price": "450 万起" },
+          { "name": "笑容终身维护", "desc": "持久维持治疗效果", "price": "50 万 / 单颌" }
+        ]
+      },
+      {
+        "title": "VIP 美学牙科",
+        "items": [
+          { "name": "深层清洁 & 牙龈 Spa 套餐", "desc": "清洁并放松您的笑容", "price": "15 万" },
+          { "name": "艺术复合树脂修复", "desc": "每个细节都精雕细琢", "price": "25 万起" },
+          { "name": "FlashWhite 激光美白", "desc": "45 分钟轻松美白亮白牙齿", "price": "40 万" }
+        ]
+      }
+    ]
+  },
+  "facilities": {
+    "eyebrow": "空间 & 建筑设计",
+    "title": "五星级度假村标准的诊所体系",
+    "items": [
+      { "imageAlt": "现代化候诊大厅", "label": "VIP 贵宾候诊厅" },
+      { "imageAlt": "高科技治疗室", "label": "国际标准无菌治疗室" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "客户心声",
+    "title": "改变人生的旅程",
+    "centerImageAlt": "灿烂的笑容",
+    "centerCaption": "自信笑容的象征",
+    "items": [
+      { "name": "Minh Anh 女士", "role": "隐形正畸患者", "quote": "这不仅仅是一家牙科诊所，更是一场真正的度假体验。医生的用心让我完全安心。" },
+      { "name": "Hoang Nam 先生", "role": "美学牙科客户", "quote": "专业的流程，效果超出预期。补牙颜色与真牙完美契合。" },
+      { "name": "Thu Trang 女士", "role": "常规护理客户", "quote": "从接待到售后都是五星级服务，设备现代且非常洁净。" },
+      { "name": "Quoc Bao 先生", "role": "FlashWhite 美白客户", "quote": "完全没有酸痛感，治疗速度很快。自然的白牙让我在重要会议中更加自信。" }
+    ],
+    "ctaLabel": "加入 5,000 位 VIP 客户社群"
+  },
+  "footer": {
+    "brand": "Nha Khoa Rạng Ngời",
+    "brandSub": "国际诊所",
+    "desc": "重新定义越南高端牙科标准。我们致力于通过科技与关怀带给客户绝对满意的体验。",
+    "contactTitle": "运营中心",
+    "addressLabel": "接待地址",
+    "address": "123 Health Blvd, Cityville, 胡志明市",
+    "hotlineLabel": "VIP 热线",
+    "hotline": "(028) 123-4567",
+    "hoursLabel": "服务时间",
+    "hoursLine1": "8:00 - 20:00（周一至周六）",
+    "hoursLine2": "8:00 - 17:00（周日）",
+    "mapTitle": "位置信息",
+    "mapBrand": "Nha Khoa Rạng Ngời",
+    "mapSub": "国际中心",
+    "mapLoading": "地图加载中...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Rạng Ngời。提升越南人的笑容。",
+    "link1": "隐私政策",
+    "link2": "服务条款",
+    "link3": "全球招聘"
+  }
+}

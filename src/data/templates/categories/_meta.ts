@@ -54,4 +54,12 @@ export const CATEGORY_REGISTRY: CategoryMeta[] = [
       desc: 'Giao diện ấm cúng cho homestay, villa cho thuê. Trưng bày phòng, tiện nghi và hỗ trợ đặt phòng trực tuyến.',
     },
   },
+  {
+    id: 'dentalClinic',
+    label: 'Nha Khoa',
+    heading: {
+      title: 'Kho Giao Diện: Nha Khoa',
+      desc: 'Giao diện chuyên nghiệp cho phòng khám nha khoa. Trưng bày công nghệ, dịch vụ, bảng giá và hỗ trợ đặt lịch khám trực tuyến.',
+    },
+  },
 ];

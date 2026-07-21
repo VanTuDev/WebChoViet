@@ -65,5 +65,41 @@
     "email": "ອີເມວ",
     "hotline": "ສາຍດ່ວນ",
     "operatedByLine": "ດຳເນີນງານໂດຍບຸກຄົນ {{name}}."
+  },
+  "sidebar": {
+    "marketplaceTitle": "ໝວດໝູ່ແມ່ແບບ",
+    "dashboardTitle": "ຈັດການຮ້ານຄ້າ",
+    "collapseMenu": "ຫຍໍ້ເມນູ",
+    "expandMenu": "ຂະຫຍາຍເມນູ",
+    "quickNav": "ນຳທາງດ່ວນ",
+    "language": "ພາສາ",
+    "categories": {
+      "all": "ແມ່ແບບທັງໝົດ",
+      "coffee": "ຄາເຟ່ & ເຄື່ອງດື່ມ",
+      "restaurant": "ຮ້ານອາຫານ",
+      "spa": "ສະປາ & ຄວາມງາມ",
+      "gym": "ຍິມ & ກິລາ",
+      "wedding": "ບັດແຕ່ງງານ",
+      "villa": "ໂຮມສະເຕ໌ & ວິນລາ",
+      "dental": "ຄລີນິກທັນຕະກຳ"
+    },
+    "menus": {
+      "projects": "ໂຄງການຂອງຂ້ອຍ",
+      "analytics": "ວິເຄາະປະສິດທິພາບ",
+      "qrcodes": "ຈັດການລະຫັດ QR",
+      "settings": "ຕັ້ງຄ່າລະບົບ",
+      "support": "ຊ່ວຍເຫຼືອ 24/7"
+    },
+    "upgradePlan": "ອັບເກຣດແພັກເກັດ",
+    "plan": {
+      "ultraActive": "ແພັກເກັດ Ultra ກຳລັງໃຊ້ງານ",
+      "ultraDesc": "ທ່ານກຳລັງໃຊ້ແພັກເກັດລະດັບສູງສຸດຂອງ vngoweb. ຂອບໃຈທີ່ຢູ່ນຳກັນ!",
+      "proActive": "ແພັກເກັດ Pro ກຳລັງໃຊ້ງານ",
+      "proDesc": "ຢາກໄດ້ສິດທິພິເສດເພີ່ມເຕີມບໍ່? ສຳຫຼວດແພັກເກັດ Ultra.",
+      "viewUltra": "ເບິ່ງແພັກເກັດ Ultra",
+      "upgradeTitle": "ອັບເກຣດເປັນ WebPro",
+      "upgradeDesc": "ປົດລັອກໂດເມນສ່ວນຕົວ (.vn, .com) ແລະ ລຶບໂລໂກ້ vngoweb ອອກທັງໝົດ.",
+      "upgradeCta": "ສະໝັກແພັກເກັດ Pro"
+    }
   }
 }

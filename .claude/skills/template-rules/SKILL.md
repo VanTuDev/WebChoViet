@@ -121,9 +121,52 @@ Template mới PHẢI có entry trong `src/data/templates/categories/<category>.
 — xem `src/data/templates/README.md` để biết chi tiết từng bước. Thiếu bước này,
 template tồn tại trong code nhưng không hiện ở Marketplace, không mua được.
 
+**`id` của template MỚI nên viết thường (kebab-case, không chữ hoa)** dù tên thư mục
+`src/data/Template/<category>/<Name-N>/` viết hoa chữ đầu (vd thư mục `DentalClinic-1`
+→ `id: 'dentalclinic-1'`, giống cách coffee đã làm: thư mục `Coffe-1` → `id: 'coffe-1'`).
+Lý do: `utils/templateScreens.ts` map `screen.png` của mọi template theo tên thư mục
+lowercase để phục vụ hiệu ứng hover-cuộn `.tmpl-screen` (Marketplace card + card
+"Website của tôi" ở Dashboard) — `TEMPLATE_SCREEN_BY_ID[t.id]` giờ đã tra không phân
+biệt hoa/thường (Proxy, sửa session 2026-07-21 sau khi phát hiện cả 6 template
+dentalClinic bị mất hiệu ứng do `id: 'dentalClinic-1'` lệch case với thư mục) nên
+KHÔNG còn là lỗi chức năng, nhưng validator vẫn WARN để nhắc đặt đúng chuẩn ngay
+từ đầu. **TUYỆT ĐỐI không tự đổi `id` của template đã publish** dù đang lệch case —
+site khách hàng đã tạo có thể đang lưu đúng `id` đó (vd `site.templateId` trong DB);
+đổi id sau khi publish làm site cũ tham chiếu tới template không tồn tại nữa.
+
+## 8. Hiệu ứng cuộn (Reveal) — BẮT BUỘC cho mọi section
+
+Nguồn gốc: session 2026-07-21, user phát hiện 6 template DentalClinic-1..6 không có
+hiệu ứng xuất hiện khi cuộn trang trong khi các template coffee đã có — trải nghiệm
+xem trước bị "cứng", không đúng chuẩn chất lượng chung của các template khác.
+
+Mọi template PHẢI dùng component dùng chung `Reveal` (`src/data/Template/_shared/Reveal.tsx`,
+import theo đường dẫn tương đối `'../../_shared/Reveal'`) để bọc:
+- Heading + subtitle + CTA của mọi section (không riêng hero) — `variant="fade-up"`,
+  `delay` tăng dần (0, 100, 200, 300...) để tạo hiệu ứng stagger.
+- Mỗi item trong `.map()` (card dịch vụ, dòng bảng giá, testimonial, ảnh gallery...) —
+  `variant="fade-up"` hoặc `"zoom-in"`, `delay={i * 100}` (hoặc tương tự) theo index.
+- Ảnh lớn (hero, portrait, ảnh kết quả) — `variant="blur-up"` hoặc `"zoom-in"`.
+
+Quy tắc an toàn khi bọc (xem thêm comment đầu file `Reveal.tsx`):
+- TUYỆT ĐỐI không bọc Reveal quanh phần tử `sticky`/`fixed` (nav dính, nút CTA nổi) —
+  `transform` trên tổ tiên làm fixed/sticky lệch gốc toạ độ.
+- Nếu 1 phần tử đã có hover transform riêng (`hover:-translate-y`, `hover:scale`...),
+  bọc Reveal ở NGOÀI phần tử đó, không làm mất transform hover.
+- Giữ nguyên chính xác `data-field`, `data-section`, `data-track`, `id`, className/style
+  hiện có — Reveal chỉ THÊM hiệu ứng bao ngoài, không đổi nội dung/style khác.
+- Dùng prop `as` để giữ đúng thẻ HTML ngữ nghĩa khi bọc trực tiếp 1 phần tử leaf
+  (vd `<Reveal as="h2" variant="fade-up">`); dùng `<Reveal className="...">` như div
+  bọc ngoài khi bọc nhiều phần tử con cùng lúc (cả 1 card).
+- Reveal kế thừa `HTMLAttributes<HTMLElement>` — KHÔNG có prop `href`. Nếu cần bọc
+  1 thẻ `<a>`, bọc `<Reveal><a href="...">...</a></Reveal>` thay vì `<Reveal as="a" href="...">`
+  (lỗi TS2322 điển hình nếu làm sai — đã gặp ở DentalClinic-5).
+- Tham khảo template Coffe-1 (`src/data/Template/coffee/Coffe-1/index.tsx`) làm ví dụ
+  chuẩn đã áp dụng đúng pattern trên toàn bộ section.
+
 ## Quy trình review nhanh 1 template
 
 1. Đọc `i18n/vi.json` — có `mapUrl` chưa, có section bắt buộc của category chưa.
-2. Đọc `index.tsx` — có `<iframe>` dùng `toGoogleMapsEmbedUrl` chưa, `lang` có lấy đúng từ prop không (không còn `initialLang`/`useState<Lang>(initialLang)`).
+2. Đọc `index.tsx` — có `<iframe>` dùng `toGoogleMapsEmbedUrl` chưa, `lang` có lấy đúng từ prop không (không còn `initialLang`/`useState<Lang>(initialLang)`), có bọc `Reveal` cho toàn bộ section chưa (mục 8), `id` trong registry có viết thường không (mục 7).
 3. Chạy `node scripts/validate-templates.mjs` — sửa tới khi 0 ERROR (WARN có thể chấp nhận nếu có lý do, nhưng nên sửa nếu rẻ).
 4. `pnpm run lint` (tsc --noEmit) + `pnpm run build` để chắc chắn không vỡ build.

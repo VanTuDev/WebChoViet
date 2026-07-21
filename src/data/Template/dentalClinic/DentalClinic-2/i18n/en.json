@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "brand": "NHA KHOA SÁNG TÂM",
+    "home": "Home",
+    "link1": "Technology",
+    "link2": "Services",
+    "link3": "Reviews",
+    "link4": "Contact",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "badge": "Dental Excellence",
+    "titleLine1": "Elevate Your Smile,",
+    "titleLine2": "Craft Your Prestige",
+    "subtitle": "Experience international-standard dentistry in a refined, luxurious space led by a top-tier team of specialists. We craft smiles that are not only beautiful, but a true reflection of an elevated lifestyle.",
+    "btnPrimary": "Consult a Specialist",
+    "btnSecondary": "Explore Services",
+    "imageAlt": "Premium dental clinic reception lounge"
+  },
+  "technology": {
+    "eyebrow": "Leading Technology",
+    "title": "Absolute Precision in Every Procedure",
+    "imageAlt": "State-of-the-art dental equipment",
+    "items": [
+      { "title": "Lumiere Laser System", "desc": "Next-generation laser technology for pain-free procedures, minimizing invasiveness and delivering the fastest possible recovery." },
+      { "title": "5D Diagnostic Imaging", "desc": "Reproduces jaw and facial structure down to the micron, helping our doctors design a flawless, personalized treatment plan for every patient." }
+    ]
+  },
+  "services": {
+    "eyebrow": "Signature Care",
+    "title": "Premium Service Price List",
+    "tab1": "À La Carte",
+    "tab2": "VIP Lounge Package",
+    "groups": [
+      {
+        "title": "Advanced Orthodontics",
+        "items": [
+          { "name": "Invisalign Diamond Elite", "desc": "U.S.-standard clear aligners for absolute aesthetics.", "price": "From 45M" },
+          { "name": "Pro-Standard Ceramic Braces", "desc": "The ideal balance of orthodontic effectiveness and aesthetics.", "price": "From 35M" },
+          { "name": "Periodic Smile Maintenance", "desc": "Preserve your results permanently with a dedicated care plan.", "price": "5M / arch" }
+        ]
+      },
+      {
+        "title": "Cosmetic & Restorative",
+        "items": [
+          { "name": "Ultra-Thin Porcelain Veneers", "desc": "Maximum preservation of natural teeth for a naturally beautiful result.", "price": "From 8M / tooth" },
+          { "name": "FlashWhite Laser Whitening", "desc": "Visibly brighter teeth after just a gentle 45-minute session.", "price": "4M" },
+          { "name": "Artistic Fillings", "desc": "Premium materials sculpted to match your natural anatomical structure.", "price": "From 2.5M" }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Proven Results",
+    "title": "Smiles Transformed, Destinies Elevated",
+    "stat1Number": "5,000+",
+    "stat1Label": "VIP Clients",
+    "stat2Number": "15+",
+    "stat2Label": "Years of Experience",
+    "highlightTitle": "International 5-Star Standard",
+    "highlightDesc": "An absolutely sterile treatment environment, private and luxurious.",
+    "transformationImageAlt": "A remarkable smile transformation result",
+    "trustImageAlt": "A premium treatment space",
+    "items": [
+      { "name": "Mr. Hoang Nam", "role": "Chief Executive Officer", "quote": "A professional process with results beyond expectations. The filling matches my natural tooth color perfectly, giving me more confidence in important negotiations." },
+      { "name": "Ms. Bao Ngoc", "role": "Invisalign Orthodontics", "quote": "The doctors were dedicated and explained every stage thoroughly. After 8 months of aligners, my smile completely transformed and no one even noticed I was in treatment." },
+      { "name": "Mr. Anh Tuan", "role": "Entrepreneur", "quote": "The clinic feels as luxurious as a 5-star hotel. I always book evening slots because the private VIP Lounge means there's never any waiting." },
+      { "name": "Ms. Dieu Linh", "role": "FlashWhite Whitening", "quote": "In just 45 minutes my teeth were visibly brighter with zero sensitivity. The customer care was exceptionally professional." }
+    ]
+  },
+  "footer": {
+    "eyebrow": "Get In Touch",
+    "title": "Connect and Shine",
+    "brand": "NHA KHOA SÁNG TÂM",
+    "desc": "We redefine the standard of premium dentistry, where every client is treated as an honored guest cared for by leading specialists.",
+    "addressLabel": "Address",
+    "address": "123 Health Blvd, Cityville, Ho Chi Minh City",
+    "hotlineLabel": "VIP Hotline",
+    "hotline": "(028) 123-4567",
+    "emailLabel": "Email",
+    "email": "info@nhakhoasangtam.vn",
+    "hoursLabel": "Business Hours",
+    "hoursLine1": "Mon - Sat (8:00 AM - 8:00 PM)",
+    "hoursLine2": "Sunday (8:00 AM - 5:00 PM)",
+    "ctaLabel": "Book an Appointment Now",
+    "mapTitle": "Clinic Location",
+    "mapBrand": "NHA KHOA SÁNG TÂM",
+    "mapSub": "Book Online",
+    "mapUrl": "",
+    "navTitle": "Navigation",
+    "navLink1": "Home",
+    "navLink2": "Technology",
+    "navLink3": "Services",
+    "navLink4": "Reviews",
+    "legalTitle": "Legal",
+    "legalLink1": "Privacy Policy",
+    "legalLink2": "Terms of Use",
+    "legalLink3": "FAQ",
+    "copyright": "© 2024 Nha Khoa Sáng Tâm. Elevating smiles, crafting prestige."
+  }
+}

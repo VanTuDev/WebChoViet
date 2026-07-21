@@ -4,10 +4,11 @@
 // thay bằng thanh chip cuộn ngang MobileSidebarNav (render bên trong <main> ở AppLayout).
 import React, { useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../../store/AppContext';
 import {
   LayoutGrid, Coffee, Sparkles, Utensils,
-  Dumbbell, Heart, Home,
+  Dumbbell, Heart, Home, Smile,
   TrendingUp, QrCode, Settings, HelpCircle,
   FolderSymlink, PanelLeftClose, PanelLeftOpen, Crown,
 } from 'lucide-react';
@@ -15,23 +16,26 @@ import { ROUTES } from '../../config/routes';
 import SidebarPlanCard from './SidebarPlanCard';
 
 // ── Config constants ───────────────────────────────────────────────────────────
+// Label là key trong namespace common (sidebar.*) — dịch qua useTranslation bên dưới,
+// KHÔNG hardcode chuỗi tiếng Việt để đổi ngôn ngữ ảnh hưởng toàn bộ sidebar.
 
-const MARKETPLACE_CATEGORIES: { id: string; label: string; icon: React.ReactNode }[] = [
-  { id: 'all',        label: 'Tất cả giao diện',    icon: <LayoutGrid className="h-4 w-4 shrink-0" /> },
-  { id: 'coffee',     label: 'Cafe & Đồ Uống',      icon: <Coffee    className="h-4 w-4 shrink-0" /> },
-  { id: 'restaurant', label: 'Nhà Hàng & Quán Ăn', icon: <Utensils  className="h-4 w-4 shrink-0" /> },
-  { id: 'spa',        label: 'Spa & Làm Đẹp',       icon: <Sparkles  className="h-4 w-4 shrink-0" /> },
-  { id: 'gym',        label: 'Gym & Thể Thao',      icon: <Dumbbell  className="h-4 w-4 shrink-0" /> },
-  { id: 'wedding',    label: 'Thiệp Cưới',          icon: <Heart     className="h-4 w-4 shrink-0" /> },
-  { id: 'villa',      label: 'Homestay & Villa',    icon: <Home      className="h-4 w-4 shrink-0" /> },
+const MARKETPLACE_CATEGORIES: { id: string; labelKey: string; icon: React.ReactNode }[] = [
+  { id: 'all',        labelKey: 'sidebar.categories.all',        icon: <LayoutGrid className="h-4 w-4 shrink-0" /> },
+  { id: 'coffee',     labelKey: 'sidebar.categories.coffee',     icon: <Coffee    className="h-4 w-4 shrink-0" /> },
+  { id: 'restaurant', labelKey: 'sidebar.categories.restaurant', icon: <Utensils  className="h-4 w-4 shrink-0" /> },
+  { id: 'spa',        labelKey: 'sidebar.categories.spa',        icon: <Sparkles  className="h-4 w-4 shrink-0" /> },
+  { id: 'gym',        labelKey: 'sidebar.categories.gym',        icon: <Dumbbell  className="h-4 w-4 shrink-0" /> },
+  { id: 'wedding',    labelKey: 'sidebar.categories.wedding',    icon: <Heart     className="h-4 w-4 shrink-0" /> },
+  { id: 'villa',      labelKey: 'sidebar.categories.villa',      icon: <Home      className="h-4 w-4 shrink-0" /> },
+  { id: 'dentalClinic', labelKey: 'sidebar.categories.dental',   icon: <Smile     className="h-4 w-4 shrink-0" /> },
 ];
 
 const DASHBOARD_MENUS = [
-  { path: ROUTES.DASHBOARD_PROJECTS,  label: 'Dự án của tôi',      icon: <FolderSymlink className="h-4 w-4 shrink-0" /> },
-  { path: ROUTES.DASHBOARD_ANALYTICS, label: 'Phân tích hiệu quả', icon: <TrendingUp className="h-4 w-4 shrink-0" /> },
-  { path: ROUTES.DASHBOARD_QRCODES,   label: 'Quản lý Mã QR',      icon: <QrCode className="h-4 w-4 shrink-0" /> },
-  { path: ROUTES.DASHBOARD_SETTINGS,  label: 'Cài đặt hệ thống',   icon: <Settings className="h-4 w-4 shrink-0" /> },
-  { path: ROUTES.DASHBOARD_SUPPORT,   label: 'Kênh hỗ trợ 24/7',  icon: <HelpCircle className="h-4 w-4 shrink-0" /> },
+  { path: ROUTES.DASHBOARD_PROJECTS,  labelKey: 'sidebar.menus.projects',  icon: <FolderSymlink className="h-4 w-4 shrink-0" /> },
+  { path: ROUTES.DASHBOARD_ANALYTICS, labelKey: 'sidebar.menus.analytics', icon: <TrendingUp className="h-4 w-4 shrink-0" /> },
+  { path: ROUTES.DASHBOARD_QRCODES,   labelKey: 'sidebar.menus.qrcodes',   icon: <QrCode className="h-4 w-4 shrink-0" /> },
+  { path: ROUTES.DASHBOARD_SETTINGS,  labelKey: 'sidebar.menus.settings',  icon: <Settings className="h-4 w-4 shrink-0" /> },
+  { path: ROUTES.DASHBOARD_SUPPORT,   labelKey: 'sidebar.menus.support',   icon: <HelpCircle className="h-4 w-4 shrink-0" /> },
 ];
 
 // ── Shared state hooks ─────────────────────────────────────────────────────────
@@ -75,6 +79,8 @@ function SidebarShell({
   title: string;
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation('common');
+
   return (
     // h-full: lấp đầy chiều cao body container (đã được giới hạn bởi h-screen ở AppLayout)
     // hidden md:flex — mobile dùng MobileSidebarNav thay thế
@@ -93,8 +99,8 @@ function SidebarShell({
           )}
           <button
             onClick={onToggle}
-            title={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'}
-            aria-label={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'}
+            title={collapsed ? t('sidebar.expandMenu') : t('sidebar.collapseMenu')}
+            aria-label={collapsed ? t('sidebar.expandMenu') : t('sidebar.collapseMenu')}
             className="p-1.5 rounded-lg text-outline hover:bg-fnb-cream hover:text-primary transition-colors cursor-pointer shrink-0"
           >
             {collapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
@@ -142,13 +148,14 @@ function SidebarItem({
 function SidebarFooter({ collapsed }: { collapsed: boolean }) {
   const navigate = useNavigate();
   const { user } = useAppContext();
+  const { t } = useTranslation('common');
 
   if (collapsed) {
     return (
       <button
         onClick={() => navigate(ROUTES.PRICING)}
-        title="Nâng cấp gói"
-        aria-label="Nâng cấp gói"
+        title={t('sidebar.upgradePlan')}
+        aria-label={t('sidebar.upgradePlan')}
         className="mx-auto p-2.5 rounded-xl bg-gradient-to-br from-fnb-amber to-fnb-orange text-white shadow-md shadow-fnb-amber/30 hover:scale-110 transition-transform cursor-pointer"
       >
         <Crown className="h-4 w-4" />
@@ -161,17 +168,18 @@ function SidebarFooter({ collapsed }: { collapsed: boolean }) {
 // ── Marketplace Sidebar (lọc theo danh mục) ────────────────────────────────────
 
 function MarketplaceSidebar() {
+  const { t } = useTranslation('common');
   const { selected, select } = useMarketplaceCategory();
   const { collapsed, toggle } = useCollapsed();
 
   return (
-    <SidebarShell collapsed={collapsed} onToggle={toggle} title="Danh Mục Giao Diện">
+    <SidebarShell collapsed={collapsed} onToggle={toggle} title={t('sidebar.marketplaceTitle')}>
       <nav className="space-y-1">
         {MARKETPLACE_CATEGORIES.map(cat => (
           <SidebarItem
             key={cat.id}
             icon={cat.icon}
-            label={cat.label}
+            label={t(cat.labelKey)}
             active={selected === cat.id}
             collapsed={collapsed}
             onSelect={() => select(cat.id)}
@@ -188,18 +196,19 @@ function MarketplaceSidebar() {
 // ── Dashboard Sidebar (điều hướng sub-pages) ──────────────────────────────────
 
 function DashboardSidebar() {
+  const { t } = useTranslation('common');
   const location = useLocation();
   const navigate = useNavigate();
   const { collapsed, toggle } = useCollapsed();
 
   return (
-    <SidebarShell collapsed={collapsed} onToggle={toggle} title="Quản Lý Cửa Hàng">
+    <SidebarShell collapsed={collapsed} onToggle={toggle} title={t('sidebar.dashboardTitle')}>
       <nav className="space-y-1">
         {DASHBOARD_MENUS.map(menu => (
           <SidebarItem
             key={menu.path}
             icon={menu.icon}
-            label={menu.label}
+            label={t(menu.labelKey)}
             active={location.pathname === menu.path}
             collapsed={collapsed}
             onSelect={() => navigate(menu.path)}
@@ -218,10 +227,11 @@ function DashboardSidebar() {
 function MobileChipBar({ items }: {
   items: { key: string; label: string; icon: React.ReactNode; active: boolean; onSelect: () => void }[];
 }) {
+  const { t } = useTranslation('common');
   return (
     <nav
       className="md:hidden sticky top-0 z-30 shrink-0 flex items-center gap-2 overflow-x-auto bg-surface/95 backdrop-blur-sm border-b border-outline-variant/40 px-4 py-2.5 scrollbar-none"
-      aria-label="Điều hướng nhanh"
+      aria-label={t('sidebar.quickNav')}
     >
       {items.map(item => (
         <button
@@ -242,12 +252,13 @@ function MobileChipBar({ items }: {
 }
 
 function MobileMarketplaceNav() {
+  const { t } = useTranslation('common');
   const { selected, select } = useMarketplaceCategory();
   return (
     <MobileChipBar
       items={MARKETPLACE_CATEGORIES.map(cat => ({
         key: cat.id,
-        label: cat.label,
+        label: t(cat.labelKey),
         icon: cat.icon,
         active: selected === cat.id,
         onSelect: () => select(cat.id),
@@ -257,13 +268,14 @@ function MobileMarketplaceNav() {
 }
 
 function MobileDashboardNav() {
+  const { t } = useTranslation('common');
   const location = useLocation();
   const navigate = useNavigate();
   return (
     <MobileChipBar
       items={DASHBOARD_MENUS.map(menu => ({
         key: menu.path,
-        label: menu.label,
+        label: t(menu.labelKey),
         icon: menu.icon,
         active: location.pathname === menu.path,
         onSelect: () => navigate(menu.path),

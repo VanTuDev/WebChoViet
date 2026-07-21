@@ -23,6 +23,7 @@ import { SPA_TEMPLATES } from './categories/spa';
 import { GYM_TEMPLATES } from './categories/gym';
 import { WEDDING_TEMPLATES } from './categories/wedding';
 import { VILLA_TEMPLATES } from './categories/villa';
+import { DENTAL_CLINIC_TEMPLATES } from './categories/dentalClinic';
 import type { ImageSlot, Template, TemplateDefinition } from './types';
 
 export type { ImageSlot, Template };
@@ -38,6 +39,7 @@ const TEMPLATE_REGISTRY: TemplateDefinition[] = [
   ...GYM_TEMPLATES,
   ...WEDDING_TEMPLATES,
   ...VILLA_TEMPLATES,
+  ...DENTAL_CLINIC_TEMPLATES,
 ];
 
 // ── Derived exports — consumers import những thứ này, không dùng registry trực tiếp ──

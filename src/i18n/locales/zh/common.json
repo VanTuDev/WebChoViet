@@ -65,5 +65,41 @@
     "email": "邮箱",
     "hotline": "服务热线",
     "operatedByLine": "由个人运营：{{name}}。"
+  },
+  "sidebar": {
+    "marketplaceTitle": "模板分类",
+    "dashboardTitle": "店铺管理",
+    "collapseMenu": "收起菜单",
+    "expandMenu": "展开菜单",
+    "quickNav": "快速导航",
+    "language": "语言",
+    "categories": {
+      "all": "全部模板",
+      "coffee": "咖啡 & 饮品",
+      "restaurant": "餐厅美食",
+      "spa": "美容美体",
+      "gym": "健身运动",
+      "wedding": "婚礼请柬",
+      "villa": "民宿别墅",
+      "dental": "牙科诊所"
+    },
+    "menus": {
+      "projects": "我的项目",
+      "analytics": "效果分析",
+      "qrcodes": "二维码管理",
+      "settings": "系统设置",
+      "support": "24/7 客服支持"
+    },
+    "upgradePlan": "升级套餐",
+    "plan": {
+      "ultraActive": "Ultra 套餐使用中",
+      "ultraDesc": "您正在使用 vngoweb 最高级套餐，感谢您的支持！",
+      "proActive": "Pro 套餐使用中",
+      "proDesc": "想要更多高级特权？了解 Ultra 套餐。",
+      "viewUltra": "查看 Ultra 套餐",
+      "upgradeTitle": "升级到 WebPro",
+      "upgradeDesc": "解锁专属域名（.vn、.com）并完全移除 vngoweb 标志。",
+      "upgradeCta": "开通 Pro 套餐"
+    }
   }
 }

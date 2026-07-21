@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "brandSub": "디지털 덴티스트리 5.0",
+    "home": "홈",
+    "link1": "진료 서비스",
+    "link2": "가격표",
+    "link3": "고객 후기",
+    "link4": "문의하기",
+    "cta": "진료 예약"
+  },
+  "hero": {
+    "badge": "디지털 덴티스트리 5.0",
+    "titleLine1": "최첨단 기술로",
+    "titleLine2": "완성하는 미소",
+    "titleHighlight": "완벽한 정밀함",
+    "subtitle": "최신 세대 iTero Element 5D 3D 스캐닝 시스템과 콘빔 CT를 적용하여 최소 침습 치료와 완벽한 심미적 결과를 제공합니다.",
+    "btnPrimary": "솔루션 살펴보기",
+    "btnSecondary": "치료 과정 영상 보기",
+    "statNumber": "99.9%",
+    "statLabel": "기술 정밀도",
+    "imageAlt": "무균 치과 시설 내 최첨단 콘빔 CT 스캐너"
+  },
+  "services": {
+    "eyebrow": "첨단 기술 서비스",
+    "title": "첨단 기술 진료 서비스",
+    "subtitle": "유럽에서 직수입한 장비로 완결된 프로세스를 갖추어 국제 의료 표준을 보장합니다.",
+    "featured": {
+      "title": "로봇 임플란트 식립",
+      "desc": "최첨단 3D 내비게이션 기술로 임플란트 위치를 정밀하게 유도합니다.",
+      "linkLabel": "자세히 보기",
+      "imageAlt": "치아 모형에 파란색 레이저를 비추는 3D 구강 스캐너"
+    },
+    "items": [
+      { "number": "01", "title": "AI 교정치료", "desc": "인공지능으로 치아 이동 결과를 시뮬레이션하는 인비절라인 치료 계획." },
+      { "number": "02", "title": "CAD/CAM 세라믹 크라운", "desc": "24시간 이내 자동 설계 및 제작으로 최고 수준의 정밀도를 구현합니다." },
+      { "number": "03", "title": "피에조톰 발치", "desc": "고주파 초음파 기술로 통증 없이 발치하고 회복도 빠릅니다." }
+    ]
+  },
+  "technology": {
+    "eyebrow": "정밀 기술",
+    "title": "미크론 단위의",
+    "titleHighlight": "정밀함",
+    "desc": "치과 치료에서 아주 작은 오차도 장기적인 결과에 영향을 줄 수 있다는 것을 저희는 잘 알고 있습니다. Nha Khoa Tân Kỷ Nguyên의 모든 과정은 최신 컴퓨터 시스템으로 정밀하게 제어됩니다.",
+    "image1Alt": "고정밀 CAD/CAM 장비로 세라믹 크라운을 가공하는 클로즈업 사진",
+    "image2Alt": "임플란트 계획 화면에 표시된 두개골 및 턱뼈 3D 모델",
+    "points": [
+      { "title": "3D 콘빔 CT 촬영", "desc": "직관적인 3차원 영상 진단, 매우 낮은 방사선량." },
+      { "title": "iTero 구강 스캔", "desc": "기존 인상 채득 방식을 100% 디지털 기술로 대체합니다." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "공개 가격표",
+    "title": "진료 서비스 공개 가격표",
+    "subtitle": "치료 전 과정 동안 투명하며 숨겨진 비용이 없습니다.",
+    "colService": "진료 항목",
+    "colPrice": "예상 비용",
+    "colAction": "작업",
+    "actionLabel": "자세히",
+    "items": [
+      { "name": "인비절라인 교정 (풀 패키지)", "price": "45,000,000 동부터" },
+      { "name": "임플란트 (픽스처 + 크라운)", "price": "15,000,000 동부터" },
+      { "name": "심미 세라믹 크라운 (Cercon HT)", "price": "치아당 4,000,000 동부터" },
+      { "name": "플라즈마 치아 미백", "price": "2,500,000 동" },
+      { "name": "피에조톰 사랑니 발치", "price": "1,500,000 동부터" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "고객 후기",
+    "title": "고객들이 전하는 이야기",
+    "items": [
+      { "name": "호앙남 님", "role": "피에조톰 발치 고객", "quote": "이곳의 피에조톰 발치 기술에 정말 감명받았습니다. 생각했던 것만큼 아프지 않았고 상처도 빨리 아물었어요. 의사 선생님도 매우 정성스러웠습니다." },
+      { "name": "민아잉 님", "role": "AI 교정치료 고객", "quote": "Nha Khoa Tân Kỷ Nguyên에서 인비절라인 교정을 받으면서도 자신 있게 사람들과 소통할 수 있었어요. AI로 미리 결과를 확인할 수 있어 완전히 안심이 됐습니다." },
+      { "name": "레훙 님", "role": "로봇 임플란트 고객", "quote": "로봇 임플란트 서비스가 정말 최첨단이었습니다. 오랜 기간 치아가 없어 불편했는데 이제는 편하게 식사할 수 있게 되었어요. Nha Khoa Tân Kỷ Nguyên 의료진께 진심으로 감사드립니다." }
+    ]
+  },
+  "cta": {
+    "floatingLabel": "지금 예약하기"
+  },
+  "footer": {
+    "brand": "Nha Khoa Tân Kỷ Nguyên",
+    "desc": "베트남 최고의 5.0 표준 디지털 치과 시스템입니다. 세계적인 기술로 베트남인의 미소를 지켜갑니다.",
+    "addressLabel": "주소",
+    "address": "호치민시 1군 꽁응에 거리 123번지",
+    "phoneLabel": "상담 전화",
+    "phone": "1900 6789 - 0901 234 567",
+    "emailLabel": "이메일",
+    "email": "contact@nexadental.vn",
+    "mapTitle": "병원 위치",
+    "mapBrand": "Nha Khoa Tân Kỷ Nguyên",
+    "mapSub": "디지털 덴티스트리 5.0",
+    "mapLoading": "지도 불러오는 중...",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa Tân Kỷ Nguyên. 베트남인의 미소를 지킵니다.",
+    "link1": "개인정보 처리방침",
+    "link2": "이용약관",
+    "link3": "자주 묻는 질문"
+  }
+}

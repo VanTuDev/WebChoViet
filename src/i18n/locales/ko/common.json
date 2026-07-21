@@ -65,5 +65,41 @@
     "email": "이메일",
     "hotline": "고객센터",
     "operatedByLine": "개인 운영자: {{name}}."
+  },
+  "sidebar": {
+    "marketplaceTitle": "템플릿 카테고리",
+    "dashboardTitle": "매장 관리",
+    "collapseMenu": "메뉴 접기",
+    "expandMenu": "메뉴 펼치기",
+    "quickNav": "빠른 탐색",
+    "language": "언어",
+    "categories": {
+      "all": "전체 템플릿",
+      "coffee": "카페 & 음료",
+      "restaurant": "레스토랑 & 식당",
+      "spa": "스파 & 뷰티",
+      "gym": "짐 & 스포츠",
+      "wedding": "청첩장",
+      "villa": "홈스테이 & 빌라",
+      "dental": "치과"
+    },
+    "menus": {
+      "projects": "내 프로젝트",
+      "analytics": "성과 분석",
+      "qrcodes": "QR 코드 관리",
+      "settings": "시스템 설정",
+      "support": "24/7 지원 채널"
+    },
+    "upgradePlan": "요금제 업그레이드",
+    "plan": {
+      "ultraActive": "Ultra 요금제 이용 중",
+      "ultraDesc": "vngoweb 최상위 요금제를 이용 중입니다. 함께해 주셔서 감사합니다!",
+      "proActive": "Pro 요금제 이용 중",
+      "proDesc": "더 많은 프리미엄 혜택을 원하시나요? Ultra 요금제를 살펴보세요.",
+      "viewUltra": "Ultra 요금제 보기",
+      "upgradeTitle": "WebPro로 업그레이드",
+      "upgradeDesc": "전용 도메인(.vn, .com)을 사용하고 vngoweb 로고를 완전히 제거하세요.",
+      "upgradeCta": "Pro 요금제 신청"
+    }
   }
 }

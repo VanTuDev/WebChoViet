@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "brand": "NHA KHOA SÁNG TÂM",
+    "home": "Trang chủ",
+    "link1": "Công nghệ",
+    "link2": "Dịch vụ",
+    "link3": "Đánh giá",
+    "link4": "Liên hệ",
+    "cta": "Đặt lịch khám"
+  },
+  "hero": {
+    "badge": "Dental Excellence",
+    "titleLine1": "Nâng Tầm Nụ Cười,",
+    "titleLine2": "Kiến Tạo Đẳng Cấp",
+    "subtitle": "Trải nghiệm nha khoa chuẩn quốc tế với không gian sang trọng và đội ngũ chuyên gia hàng đầu. Chúng tôi kiến tạo những nụ cười không chỉ đẹp mà còn phản ánh phong cách sống thượng lưu.",
+    "btnPrimary": "Tư vấn chuyên gia",
+    "btnSecondary": "Khám phá dịch vụ",
+    "imageAlt": "Không gian sảnh tiếp đón nha khoa cao cấp"
+  },
+  "technology": {
+    "eyebrow": "Công nghệ dẫn đầu",
+    "title": "Độ Chính Xác Tuyệt Đối Trong Từng Thao Tác",
+    "imageAlt": "Trang thiết bị nha khoa công nghệ cao",
+    "items": [
+      { "title": "Hệ thống Laser Lumiere", "desc": "Sử dụng công nghệ laser thế hệ mới nhất cho các quy trình điều trị không đau, giảm thiểu xâm lấn và rút ngắn thời gian hồi phục tối đa." },
+      { "title": "Chẩn đoán hình ảnh 5D", "desc": "Tái hiện cấu trúc hàm mặt chi tiết từng micron, giúp bác sĩ lập phác đồ điều trị hoàn hảo cho mỗi cá nhân." }
+    ]
+  },
+  "services": {
+    "eyebrow": "Đặc quyền chăm sóc",
+    "title": "Biểu Phí Dịch Vụ Cao Cấp",
+    "tab1": "Dịch vụ lẻ",
+    "tab2": "Gói VIP Lounge",
+    "groups": [
+      {
+        "title": "Chỉnh nha chuyên sâu",
+        "items": [
+          { "name": "Invisalign Diamond Elite", "desc": "Khay niềng trong suốt chuẩn Hoa Kỳ, thẩm mỹ tuyệt đối.", "price": "Từ 45 Tr" },
+          { "name": "Mắc cài sứ Pro-Standard", "desc": "Sự kết hợp giữa hiệu quả chỉnh nha và tính thẩm mỹ.", "price": "Từ 35 Tr" },
+          { "name": "Bảo dưỡng nụ cười định kỳ", "desc": "Duy trì kết quả vĩnh viễn với chế độ chăm sóc đặc biệt.", "price": "5 Tr / Hàm" }
+        ]
+      },
+      {
+        "title": "Thẩm mỹ & Phục hình",
+        "items": [
+          { "name": "Veneer Sứ Siêu Mỏng", "desc": "Bảo tồn tối đa răng thật, mang lại vẻ đẹp tự nhiên.", "price": "Từ 8 Tr / Răng" },
+          { "name": "Tẩy trắng Laser FlashWhite", "desc": "Răng trắng bật tông chỉ sau 45 phút điều trị nhẹ nhàng.", "price": "4 Tr" },
+          { "name": "Trám răng nghệ thuật", "desc": "Sử dụng vật liệu cao cấp, tạo hình chuẩn cấu trúc giải phẫu.", "price": "Từ 2.5 Tr" }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Kết quả thực chứng",
+    "title": "Thay Đổi Nụ Cười, Thay Đổi Vận Mệnh",
+    "stat1Number": "5,000+",
+    "stat1Label": "Khách Hàng VIP",
+    "stat2Number": "15+",
+    "stat2Label": "Năm Kinh Nghiệm",
+    "highlightTitle": "Đẳng cấp 5 sao quốc tế",
+    "highlightDesc": "Môi trường điều trị vô trùng tuyệt đối, riêng tư và sang trọng.",
+    "transformationImageAlt": "Kết quả thay đổi nụ cười ngoạn mục",
+    "trustImageAlt": "Không gian điều trị đẳng cấp",
+    "items": [
+      { "name": "Mr. Hoàng Nam", "role": "Giám đốc Điều hành", "quote": "Quy trình chuyên nghiệp và kết quả vượt ngoài mong đợi. Vết trám hoàn toàn trùng khớp với màu răng thật, giúp tôi tự tin hơn trong các cuộc đàm phán quan trọng." },
+      { "name": "Ms. Bảo Ngọc", "role": "Chỉnh nha Invisalign", "quote": "Đội ngũ bác sĩ tận tâm, tư vấn kỹ lưỡng từng giai đoạn. Sau 8 tháng niềng, nụ cười của tôi đã thay đổi hoàn toàn mà không ai nhận ra tôi đang niềng răng." },
+      { "name": "Mr. Anh Tuấn", "role": "Doanh nhân", "quote": "Không gian phòng khám sang trọng như khách sạn 5 sao. Tôi luôn ưu tiên đặt lịch buổi tối vì có phòng VIP Lounge riêng tư, không phải chờ đợi." },
+      { "name": "Ms. Diệu Linh", "role": "Tẩy trắng răng FlashWhite", "quote": "Chỉ sau 45 phút, hàm răng đã trắng sáng rõ rệt mà không hề ê buốt. Dịch vụ chăm sóc khách hàng cực kỳ chuyên nghiệp." }
+    ]
+  },
+  "footer": {
+    "eyebrow": "Liên hệ với chúng tôi",
+    "title": "Kết Nối Để Tỏa Sáng",
+    "brand": "NHA KHOA SÁNG TÂM",
+    "desc": "Chúng tôi định nghĩa lại tiêu chuẩn nha khoa cao cấp, nơi mỗi khách hàng đều là một thượng khách được chăm sóc bởi những chuyên gia hàng đầu.",
+    "addressLabel": "Địa chỉ",
+    "address": "123 Health Blvd, Cityville, TP. Hồ Chí Minh",
+    "hotlineLabel": "Hotline VIP",
+    "hotline": "(028) 123-4567",
+    "emailLabel": "Email",
+    "email": "info@nhakhoasangtam.vn",
+    "hoursLabel": "Giờ làm việc",
+    "hoursLine1": "Thứ 2 - Thứ 7 (8:00 - 20:00)",
+    "hoursLine2": "Chủ Nhật (8:00 - 17:00)",
+    "ctaLabel": "Đặt lịch hẹn ngay",
+    "mapTitle": "Vị trí phòng khám",
+    "mapBrand": "NHA KHOA SÁNG TÂM",
+    "mapSub": "Đặt lịch trực tuyến",
+    "mapUrl": "",
+    "navTitle": "Điều hướng",
+    "navLink1": "Trang chủ",
+    "navLink2": "Công nghệ",
+    "navLink3": "Dịch vụ",
+    "navLink4": "Đánh giá",
+    "legalTitle": "Pháp lý",
+    "legalLink1": "Chính sách bảo mật",
+    "legalLink2": "Điều khoản sử dụng",
+    "legalLink3": "Câu hỏi thường gặp",
+    "copyright": "© 2024 Nha Khoa Sáng Tâm. Nâng tầm nụ cười, kiến tạo đẳng cấp."
+  }
+}

@@ -70,5 +70,41 @@
     "email": "Email",
     "hotline": "Hotline",
     "operatedByLine": "Operated by individual {{name}}."
+  },
+  "sidebar": {
+    "marketplaceTitle": "Template Categories",
+    "dashboardTitle": "Store Management",
+    "collapseMenu": "Collapse menu",
+    "expandMenu": "Expand menu",
+    "quickNav": "Quick navigation",
+    "language": "Language",
+    "categories": {
+      "all": "All templates",
+      "coffee": "Cafe & Drinks",
+      "restaurant": "Restaurants & Eateries",
+      "spa": "Spa & Beauty",
+      "gym": "Gym & Fitness",
+      "wedding": "Wedding Invitations",
+      "villa": "Homestay & Villa",
+      "dental": "Dental Clinic"
+    },
+    "menus": {
+      "projects": "My Projects",
+      "analytics": "Performance Analytics",
+      "qrcodes": "QR Code Manager",
+      "settings": "System Settings",
+      "support": "24/7 Support"
+    },
+    "upgradePlan": "Upgrade plan",
+    "plan": {
+      "ultraActive": "Ultra plan active",
+      "ultraDesc": "You're on vngoweb's top-tier plan. Thanks for being with us!",
+      "proActive": "Pro plan active",
+      "proDesc": "Want even more premium perks? Explore the Ultra plan.",
+      "viewUltra": "View Ultra plan",
+      "upgradeTitle": "Upgrade to WebPro",
+      "upgradeDesc": "Unlock a custom domain (.vn, .com) & remove the vngoweb logo completely.",
+      "upgradeCta": "Get the Pro plan"
+    }
   }
 }

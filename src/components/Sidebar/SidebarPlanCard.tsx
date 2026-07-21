@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Crown, BadgeCheck, ArrowUpRight } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
 import type { UserPlan } from '../shared/PlanBadge';
@@ -15,6 +16,7 @@ interface Props {
  */
 export default function SidebarPlanCard({ plan }: Props) {
   const navigate = useNavigate();
+  const { t } = useTranslation('common');
   const effectivePlan = plan ?? 'free';
 
   if (effectivePlan === 'ultra') {
@@ -25,10 +27,10 @@ export default function SidebarPlanCard({ plan }: Props) {
         </div>
         <div className="flex items-center justify-center gap-1.5 text-sm font-bold">
           <Crown className="h-4 w-4 text-yellow-300 fill-yellow-300" />
-          <span>Gói Ultra đang hoạt động</span>
+          <span>{t('sidebar.plan.ultraActive')}</span>
         </div>
         <p className="text-xs text-violet-200 leading-relaxed">
-          Bạn đang dùng gói cao cấp nhất của vngoweb. Cảm ơn bạn đã đồng hành!
+          {t('sidebar.plan.ultraDesc')}
         </p>
       </div>
     );
@@ -42,16 +44,16 @@ export default function SidebarPlanCard({ plan }: Props) {
         </div>
         <div className="flex items-center justify-center gap-1.5 text-sm font-bold">
           <BadgeCheck className="h-4 w-4 text-emerald-300" />
-          <span>Gói Pro đang hoạt động</span>
+          <span>{t('sidebar.plan.proActive')}</span>
         </div>
         <p className="text-xs text-[#ffe3d6] leading-relaxed">
-          Muốn thêm đặc quyền cao cấp hơn nữa? Khám phá gói Ultra.
+          {t('sidebar.plan.proDesc')}
         </p>
         <button
           onClick={() => navigate(ROUTES.PRICING)}
           className="w-full py-2 bg-white text-primary hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95 flex items-center justify-center gap-1.5"
         >
-          <span>Xem gói Ultra</span>
+          <span>{t('sidebar.plan.viewUltra')}</span>
           <ArrowUpRight className="h-3.5 w-3.5" />
         </button>
       </div>
@@ -64,15 +66,15 @@ export default function SidebarPlanCard({ plan }: Props) {
       <div className="absolute -right-2.5 -top-2.5 opacity-10">
         <BadgeCheck className="h-20 w-20" />
       </div>
-      <div className="text-sm font-bold">Nâng cấp gói WebPro</div>
+      <div className="text-sm font-bold">{t('sidebar.plan.upgradeTitle')}</div>
       <p className="text-xs text-[#ffe3d6] leading-relaxed">
-        Mở khóa miền riêng biệt (.vn, .com) & loại bỏ hoàn toàn logo vngoweb.
+        {t('sidebar.plan.upgradeDesc')}
       </p>
       <button
         onClick={() => navigate(ROUTES.PRICING)}
         className="w-full py-2 bg-white text-primary hover:bg-gray-50 transition-colors rounded-full text-xs font-bold cursor-pointer shadow active:scale-95"
       >
-        Đăng ký gói Pro
+        {t('sidebar.plan.upgradeCta')}
       </button>
     </div>
   );

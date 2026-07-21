@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "Nha Khoa Nụ Cười Vàng",
+    "brandAccent": "덴탈",
+    "home": "홈",
+    "link1": "소개",
+    "link2": "진료 항목",
+    "link3": "가격표",
+    "link4": "첨단 기술",
+    "link5": "고객 후기",
+    "link6": "연락처",
+    "cta": "예약하기"
+  },
+  "hero": {
+    "since": "Since 1998",
+    "titleLine1": "미소의",
+    "titleAccent": "예술",
+    "titleLine3": "품격의 완성",
+    "subtitle": "최첨단 의료 기술과 5성급 아트 공간의 완벽한 조화. 최고의 전문의가 당신의 미소를 세심하게 관리합니다.",
+    "btnPrimary": "지금 둘러보기",
+    "cardNumber": "01.",
+    "cardLabel": "품격 있는 공간",
+    "cardDesc": "치료 전 과정 동안 온전한 편안함을 느끼실 수 있도록 세심하게 설계되었습니다.",
+    "imageAlt": "Nha Khoa Nụ Cười Vàng 클리닉 내부 공간"
+  },
+  "technology": {
+    "eyebrowTitle1": "선도하는",
+    "eyebrowTitle2": "첨단 기술",
+    "desc": "정확하고 통증 없는 치료와 최상의 심미적 결과를 위해 세계 최첨단 장비에 지속적으로 투자하고 있습니다.",
+    "items": [
+      { "number": "01", "title": "레이저 X-Pulse", "desc": "비침습 치료 시스템으로 회복 속도가 매우 빠릅니다." },
+      { "number": "02", "title": "디지털 임플란트", "desc": "3D 가이드 임플란트 식립으로 정확도를 극대화합니다." }
+    ],
+    "highlights": [
+      { "title": "AI 영상 진단", "desc": "다중 포인트 분석으로 99%의 정확도로 치아 문제를 조기에 발견합니다.", "imageAlt": "AI 영상 진단 시스템" },
+      { "title": "원내 디지털 랩", "desc": "클리닉 내에서 CAD/CAM 세라믹 크라운을 설계하여 24시간 내에 완성합니다.", "imageAlt": "원내 CAD/CAM 디지털 랩" }
+    ]
+  },
+  "services": {
+    "eyebrow": "진료 항목",
+    "title": "전문 심화 솔루션",
+    "tagline": "Standard of Excellence",
+    "items": [
+      { "number": "01", "title": "일반 치과", "desc": "국제 의료 표준에 따라 온 가족의 구강 건강을 종합적으로 관리합니다.", "imageAlt": "일반 치과 진료", "linkLabel": "자세히 보기" },
+      { "number": "02", "title": "심미 미소 디자인", "desc": "초박형 세라믹 비니어와 3D 스마일 디자인 기술로 완벽한 미소를 재현합니다.", "imageAlt": "심미 미소 디자인 진료", "linkLabel": "자세히 보기" },
+      { "number": "03", "title": "임플란트 식립", "desc": "디지털 임플란트 기술로 상실된 치아를 회복하여 평생 편안한 저작 기능을 보장합니다.", "imageAlt": "임플란트 식립 진료", "linkLabel": "자세히 보기" }
+    ]
+  },
+  "pricing": {
+    "title1": "프리미엄",
+    "titleAccent": "가격표",
+    "desc": "투명한 비용 안내는 저희의 최우선 약속입니다. 모든 치료 패키지는 최상의 효과를 위해 맞춤 설계됩니다.",
+    "colService": "치료 항목",
+    "colPrice": "시작 비용",
+    "colPolicy": "보증 정책",
+    "items": [
+      { "name": "스케일링 & 심층 클리닝", "price": "500,000 동", "policy": "6개월마다" },
+      { "name": "레이저 미백", "price": "3,500,000 동", "policy": "6개월 보증" },
+      { "name": "세라믹 심미 크라운", "price": "5,000,000 동 / 치아", "policy": "10년 보증" },
+      { "name": "스위스 Straumann 임플란트", "price": "25,000,000 동 / 픽스처", "policy": "평생 보증" }
+    ],
+    "downloadLabel": "상세 견적서 다운로드 (.PDF)"
+  },
+  "testimonials": {
+    "eyebrow": "고객 후기",
+    "titleLine1": "다시 태어난",
+    "titleLine2": "미소들",
+    "photo1Alt": "Nha Khoa Nụ Cười Vàng의 만족한 고객",
+    "photo2Alt": "Nha Khoa Nụ Cười Vàng 치료 후의 미소",
+    "items": [
+      { "name": "탄항 님", "role": "사업가", "quote": "Nha Khoa Nụ Cười Vàng의 공간은 정말 고급스럽고 프라이빗합니다. 이곳에서 세라믹 크라운을 20개나 했는데 자연스러움과 의료진의 정성에 매우 만족합니다." },
+      { "name": "민코이 님", "role": "크리에이티브 디렉터", "quote": "이곳의 레이저 기술은 확실히 다릅니다. 생각했던 것과 달리 전혀 아프지 않았고, 과정도 전문적이라 시간을 절약할 수 있었습니다." },
+      { "name": "바오짬 님", "role": "포토 모델", "quote": "비니어 시술 전 상담이 매우 꼼꼼했고, 결과도 처음 본 3D 시뮬레이션과 정확히 일치했습니다. 너무 자연스러워서 친구들도 시술 사실을 몰랐습니다." },
+      { "name": "득아잉 님", "role": "건축가", "quote": "Nha Khoa Nụ Cười Vàng에서 임플란트를 한 것은 제가 내린 최고의 결정 중 하나였습니다. 3D 가이드 식립이 매우 정밀했고, 마취가 풀린 후에도 거의 통증이 없었습니다." }
+    ]
+  },
+  "footer": {
+    "brand": "Nha Khoa Nụ Cười Vàng",
+    "brandAccent": "덴탈",
+    "desc": "의학의 정수와 현대 기술의 결합으로 완벽한 미소를 만듭니다. 매년 10,000명 이상의 고객이 신뢰하는 클리닉입니다.",
+    "addressLabel": "본원 주소",
+    "address": "호치민시 1군 Luxury 거리 123번지",
+    "hotlineLabel": "상담 핫라인",
+    "hotline": "1900 6789 — 028 3333 9999",
+    "hoursLabel": "진료 시간",
+    "hours": "월요일 — 일요일: 08:00 — 20:00",
+    "mapUrl": "",
+    "mapBrand": "Nha Khoa Nụ Cười Vàng",
+    "mapSub": "럭셔리 덴탈 경험",
+    "copyright": "© 2024 Nha Khoa Nụ Cười Vàng. All rights reserved.",
+    "link1": "개인정보 처리방침",
+    "link2": "이용 약관",
+    "link3": "쿠키 정책"
+  },
+  "stickyCta": "예약하기"
+}

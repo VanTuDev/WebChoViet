@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "brand": "Nha Khoa An Nhiên",
+    "home": "首页",
+    "link1": "服务项目",
+    "link2": "价格表",
+    "link3": "客户评价",
+    "link4": "联系我们",
+    "cta": "预约看诊"
+  },
+  "hero": {
+    "eyebrow": "国际牙科标准",
+    "titleLine1": "在静谧空间中",
+    "titleLine2": "为您",
+    "titleLine3": "塑造完美笑容。",
+    "subtitle": "在这里体验如高级度假村般的口腔护理，专业医疗团队与世界领先技术为您悉心服务。",
+    "btnPrimary": "探索服务项目",
+    "btnSecondary": "免费咨询",
+    "imageAlt": "现代化诊所中的专业牙科医生，温暖通透的空间搭配极简翡翠绿色调"
+  },
+  "stats": {
+    "items": [
+      { "number": "15+", "label": "年从业经验" },
+      { "number": "10k+", "label": "满意客户" },
+      { "number": "20+", "label": "专科医生" },
+      { "number": "0%", "label": "分期利率" }
+    ]
+  },
+  "services": {
+    "eyebrow": "全方位牙科服务",
+    "title": "我们融合美学艺术与修复科学，为您的笑容带来最持久的效果。",
+    "viewAll": "查看全部服务",
+    "learnMore": "了解更多",
+    "items": [
+      { "title": "种植牙", "desc": "当今最理想的缺牙修复方案，100% 恢复咀嚼功能与自然美观。", "imageAlt": "高科技诊所内现代种植牙手术模型的特写" },
+      { "title": "隐适美隐形矫正", "desc": "无托槽正畸，治疗全程完全隐形且舒适自在。" },
+      { "title": "美学瓷贴面", "desc": "超薄瓷贴面 Veneer，最大程度保留真牙，呈现明艳动人的笑容。" },
+      { "title": "综合牙科护理", "desc": "定期检查、补牙及超声波无痛洁牙。", "imageAlt": "在温暖阳光洒落的空间中，一位女士在成功接受牙科治疗后灿烂微笑" }
+    ]
+  },
+  "pricing": {
+    "title": "透明价格表",
+    "subtitle": "我们承诺整个疗程中不产生任何额外费用，所有服务均支持 0% 利率分期付款。",
+    "colService": "服务项目",
+    "colDetail": "详情",
+    "colPrice": "起始价格",
+    "items": [
+      { "name": "超声波洁牙", "desc": "深层清洁，无痛体验", "price": "20 万越南盾" },
+      { "name": "激光美白", "desc": "美国技术，提亮 2-3 个色阶", "price": "250 万越南盾" },
+      { "name": "Cercon HT 全瓷牙冠", "desc": "保修 10 年", "price": "450 万越南盾/颗" },
+      { "name": "金属托槽矫正", "desc": "赠送冲牙器", "price": "2500 万越南盾" },
+      { "name": "Dentium 种植体", "desc": "韩国原装进口牙根", "price": "1500 万越南盾/颗" }
+    ]
+  },
+  "testimonials": {
+    "title": "来自客户的真实故事",
+    "items": [
+      { "name": "明煌 先生", "role": "自由职业者", "quote": "在来 Nha Khoa An Nhiên 之前，我一直很害怕看牙医。这里的环境真的像 spa 一样让人放松，医生讲解得非常仔细耐心。我对我的新瓷牙非常满意。", "rating": 5 },
+      { "name": "兰芳 女士", "role": "上班族", "quote": "这里的隐适美矫正非常专业，每次复诊都像是一次放松身心的体验。感谢 Nha Khoa An Nhiên 的医疗团队，让我变得更加自信。", "rating": 5 },
+      { "name": "秋云 阿姨", "role": "退休人士", "quote": "一开始我很担心这个年纪做种植牙，但医生的手法非常轻柔。现在我又能像以前一样开心吃饭了。这里的设施非常干净现代。", "rating": 5 }
+    ]
+  },
+  "cta": {
+    "titleLine1": "准备好拥有",
+    "titleLine2": "灿烂笑容了吗？",
+    "subtitle": "立即预约，即可享受瓷牙美容与种植牙服务 20% 的优惠折扣。",
+    "btnLabel": "预约免费咨询"
+  },
+  "footer": {
+    "brand": "Nha Khoa An Nhiên",
+    "desc": "以匠心与领先技术守护越南人的笑容。我们自豪地成为您家庭口腔健康路上值得信赖的伙伴。",
+    "address": "越南河内市栋多郡朗街 123 号",
+    "phone": "1900 6789 - 0988 123 456",
+    "email": "contact@zenfadental.vn",
+    "mapTitle": "诊所位置",
+    "mapBrand": "Nha Khoa An Nhiên",
+    "mapUrl": "",
+    "copyright": "© 2024 Nha Khoa An Nhiên。守护越南人的笑容。",
+    "link1": "隐私政策",
+    "link2": "使用条款",
+    "link3": "常见问题"
+  },
+  "mobileCta": {
+    "label": "立即预约"
+  }
+}

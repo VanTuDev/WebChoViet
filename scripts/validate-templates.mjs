@@ -171,12 +171,30 @@ for (const category of readdirSync(TEMPLATE_DIR)) {
     if (dataSectionCount < 3) warn(tpl, `chỉ có ${dataSectionCount} data-section — nên đánh dấu ≥3 section`);
     if (!tsx.includes('data-track')) warn(tpl, 'không có data-track nào — CTA (gọi điện/đặt bàn/zalo) nên gắn để analytics đếm chuyển đổi');
 
-    // 7. Đã đăng ký trong registry (categories/<category>.ts)
+    // 7. Đã đăng ký trong registry (categories/<category>.ts) + id viết thường
     const catFile = categoryFileContents[category];
     if (!catFile) {
       err(tpl, `không tìm thấy file categories/${category}.ts trong registry`);
     } else if (!catFile.includes(`/${category}/${name}/`)) {
       err(tpl, `chưa được đăng ký trong categories/${category}.ts (thiếu import schema + entry TemplateDefinition)`);
+    } else {
+      // id phải viết thường: TEMPLATE_SCREEN_BY_ID map screen.png theo tên thư mục
+      // lowercase — id lệch case từng làm mất hiệu ứng hover-cuộn ở dentalClinic.
+      const importIdx = catFile.indexOf(`/${category}/${name}/index`);
+      const before = catFile.slice(0, importIdx);
+      const idMatches = [...before.matchAll(/id:\s*'([^']+)'/g)];
+      const lastId = idMatches.length ? idMatches.at(-1)[1] : null;
+      if (lastId && lastId !== lastId.toLowerCase()) {
+        // WARN chứ không ERROR: id đã publish có thể đang được site khách hàng
+        // tham chiếu (customData/site.templateId lưu trong DB) — KHÔNG tự đổi id
+        // template đã tồn tại, chỉ áp dụng viết thường cho template MỚI tạo.
+        warn(tpl, `id '${lastId}' trong categories/${category}.ts có chữ hoa — template MỚI nên đặt kebab-case viết thường (vd '${lastId.toLowerCase()}'); nếu template đã publish thì KHÔNG tự đổi id (có thể đang được site khách tham chiếu)`);
+      }
+    }
+
+    // 8. Hiệu ứng cuộn (Reveal) — mọi template phải dùng _shared/Reveal
+    if (!tsx.includes('_shared/Reveal')) {
+      warn(tpl, 'chưa dùng component Reveal (_shared/Reveal) để tạo hiệu ứng xuất hiện khi cuộn — xem mục 8 trong SKILL.md');
     }
   }
 }

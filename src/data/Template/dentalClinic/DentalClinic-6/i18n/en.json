@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "brand": "NHA KHOA NỤ CƯỜI VÀNG",
+    "brandAccent": "DENTAL",
+    "home": "Home",
+    "link1": "About Us",
+    "link2": "Services",
+    "link3": "Pricing",
+    "link4": "Technology",
+    "link5": "Reviews",
+    "link6": "Contact",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "since": "Since 1998",
+    "titleLine1": "The Art of a",
+    "titleAccent": "Beautiful Smile",
+    "titleLine3": "Redefined",
+    "subtitle": "A flawless fusion of modern medicine and five-star artistic space. Where your smile is cared for by leading specialists.",
+    "btnPrimary": "Discover Now",
+    "cardNumber": "01.",
+    "cardLabel": "A Luxurious Space",
+    "cardDesc": "Designed to bring absolute comfort throughout every treatment journey.",
+    "imageAlt": "Interior of Nha Khoa Nụ Cười Vàng clinic"
+  },
+  "technology": {
+    "eyebrowTitle1": "Pioneering",
+    "eyebrowTitle2": "Technology",
+    "desc": "We continuously invest in the world's most advanced equipment to ensure precise, pain-free treatment and optimal aesthetic results.",
+    "items": [
+      { "number": "01", "title": "Laser X-Pulse", "desc": "A non-invasive treatment system with lightning-fast recovery." },
+      { "number": "02", "title": "Digital Implant", "desc": "3D-guided implant placement with absolute precision." }
+    ],
+    "highlights": [
+      { "title": "AI Imaging Diagnostics", "desc": "Multi-point analysis that detects oral health issues early with 99% accuracy.", "imageAlt": "AI imaging diagnostic system" },
+      { "title": "On-Site Digital Lab", "desc": "CAD/CAM porcelain crown design right at the clinic, completed within 24 hours.", "imageAlt": "On-site CAD/CAM digital lab" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Service Menu",
+    "title": "In-Depth Solutions",
+    "tagline": "Standard of Excellence",
+    "items": [
+      { "number": "01", "title": "General Dentistry", "desc": "Comprehensive family oral health care to international medical standards.", "imageAlt": "General dentistry service", "linkLabel": "Learn More" },
+      { "number": "02", "title": "Smile Aesthetics", "desc": "Restore a flawless smile with ultra-thin porcelain veneers and 3D smile design technology.", "imageAlt": "Smile aesthetics service", "linkLabel": "Learn More" },
+      { "number": "03", "title": "Implant Placement", "desc": "Replace missing teeth with digital implant technology for a lifetime of confident chewing.", "imageAlt": "Implant placement service", "linkLabel": "Learn More" }
+    ]
+  },
+  "pricing": {
+    "title1": "Exclusive",
+    "titleAccent": "Price List",
+    "desc": "Full cost transparency is our top commitment. Treatment packages are personalized to deliver the highest effectiveness.",
+    "colService": "Treatment Service",
+    "colPrice": "Cost (from)",
+    "colPolicy": "Policy",
+    "items": [
+      { "name": "Scaling & Deep Cleaning", "price": "500,000 VND", "policy": "Every 6 months" },
+      { "name": "Laser Whitening", "price": "3,500,000 VND", "policy": "6-month warranty" },
+      { "name": "Ceramic Aesthetic Crown", "price": "5,000,000 VND / tooth", "policy": "10-year warranty" },
+      { "name": "Straumann Swiss Implant", "price": "25,000,000 VND / post", "policy": "Lifetime warranty" }
+    ],
+    "downloadLabel": "Download Full Price List (.PDF)"
+  },
+  "testimonials": {
+    "eyebrow": "Our Clients",
+    "titleLine1": "Smiles That Have",
+    "titleLine2": "Been Reborn",
+    "photo1Alt": "Happy client at Nha Khoa Nụ Cười Vàng",
+    "photo2Alt": "Smile after treatment at Nha Khoa Nụ Cười Vàng",
+    "items": [
+      { "name": "Ms. Thanh Hang", "role": "Entrepreneur", "quote": "The space at Nha Khoa Nụ Cười Vàng is truly luxurious and private. I had 20 porcelain crowns done here and I'm extremely happy with how natural they look and how dedicated the doctors were." },
+      { "name": "Mr. Minh Khoi", "role": "Creative Director", "quote": "The laser technology here is truly different — completely painless, unlike what I expected. Professional process, saved me a lot of time." },
+      { "name": "Ms. Bao Tram", "role": "Photo Model", "quote": "The team consulted very thoroughly before the veneers, and the result matched the initial 3D simulation exactly. The smile looks so natural my friends couldn't tell I'd had work done." },
+      { "name": "Mr. Duc Anh", "role": "Architect", "quote": "Getting my implant at Nha Khoa Nụ Cười Vàng was one of my best decisions. The 3D-guided placement was extremely precise, with almost no pain once the anesthesia wore off." }
+    ]
+  },
+  "footer": {
+    "brand": "NHA KHOA NỤ CƯỜI VÀNG",
+    "brandAccent": "DENTAL",
+    "desc": "Crafting flawless smiles through the fusion of medical excellence and modern technology. The trusted choice of over 10,000 clients every year.",
+    "addressLabel": "Head Office",
+    "address": "123 Luxury Street, District 1, Ho Chi Minh City",
+    "hotlineLabel": "Hotline",
+    "hotline": "1900 6789 — 028 3333 9999",
+    "hoursLabel": "Service Hours",
+    "hours": "Mon — Sun: 08:00 — 20:00",
+    "mapUrl": "",
+    "mapBrand": "NHA KHOA NỤ CƯỜI VÀNG",
+    "mapSub": "Luxury Dental Experience",
+    "copyright": "© 2024 Nha Khoa Nụ Cười Vàng. All rights reserved.",
+    "link1": "Privacy Policy",
+    "link2": "Terms of Use",
+    "link3": "Cookies"
+  },
+  "stickyCta": "Book Appointment"
+}

@@ -7,8 +7,15 @@ const SCREENSHOTS = import.meta.glob('../data/Template/*/*/screen.png', {
 }) as Record<string, string>;
 
 /** Map templateId (tên folder lowercase) → URL screenshot */
-export const TEMPLATE_SCREEN_BY_ID: Record<string, string> = {};
+const TEMPLATE_SCREEN_BY_ID_LOWER: Record<string, string> = {};
 for (const [path, url] of Object.entries(SCREENSHOTS)) {
   const folder = path.split('/').at(-2);
-  if (folder) TEMPLATE_SCREEN_BY_ID[folder.toLowerCase()] = url;
+  if (folder) TEMPLATE_SCREEN_BY_ID_LOWER[folder.toLowerCase()] = url;
 }
+
+// Tra không phân biệt hoa/thường: registry id đôi khi khác case với tên thư mục
+// (vd id 'dentalClinic-1' vs thư mục 'DentalClinic-1' → 'dentalclinic-1') — dùng
+// Proxy để chỗ gọi TEMPLATE_SCREEN_BY_ID[t.id] luôn khớp bất kể id viết hoa/thường.
+export const TEMPLATE_SCREEN_BY_ID: Record<string, string> = new Proxy({}, {
+  get: (_target, id: string) => TEMPLATE_SCREEN_BY_ID_LOWER[id.toLowerCase()],
+}) as Record<string, string>;

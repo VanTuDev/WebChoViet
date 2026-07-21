@@ -70,5 +70,41 @@
     "email": "Email",
     "hotline": "Hotline",
     "operatedByLine": "Vận hành bởi cá nhân {{name}}."
+  },
+  "sidebar": {
+    "marketplaceTitle": "Danh Mục Giao Diện",
+    "dashboardTitle": "Quản Lý Cửa Hàng",
+    "collapseMenu": "Thu gọn menu",
+    "expandMenu": "Mở rộng menu",
+    "quickNav": "Điều hướng nhanh",
+    "language": "Ngôn ngữ",
+    "categories": {
+      "all": "Tất cả giao diện",
+      "coffee": "Cafe & Đồ Uống",
+      "restaurant": "Nhà Hàng & Quán Ăn",
+      "spa": "Spa & Làm Đẹp",
+      "gym": "Gym & Thể Thao",
+      "wedding": "Thiệp Cưới",
+      "villa": "Homestay & Villa",
+      "dental": "Nha Khoa"
+    },
+    "menus": {
+      "projects": "Dự án của tôi",
+      "analytics": "Phân tích hiệu quả",
+      "qrcodes": "Quản lý Mã QR",
+      "settings": "Cài đặt hệ thống",
+      "support": "Kênh hỗ trợ 24/7"
+    },
+    "upgradePlan": "Nâng cấp gói",
+    "plan": {
+      "ultraActive": "Gói Ultra đang hoạt động",
+      "ultraDesc": "Bạn đang dùng gói cao cấp nhất của vngoweb. Cảm ơn bạn đã đồng hành!",
+      "proActive": "Gói Pro đang hoạt động",
+      "proDesc": "Muốn thêm đặc quyền cao cấp hơn nữa? Khám phá gói Ultra.",
+      "viewUltra": "Xem gói Ultra",
+      "upgradeTitle": "Nâng cấp gói WebPro",
+      "upgradeDesc": "Mở khóa miền riêng biệt (.vn, .com) & loại bỏ hoàn toàn logo vngoweb.",
+      "upgradeCta": "Đăng ký gói Pro"
+    }
   }
 }
