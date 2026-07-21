@@ -1,6 +1,6 @@
 import { createContext, useContext, type ReactNode } from 'react';
 
-export interface TemplateCustomState {
+interface TemplateCustomState {
   /** Deep partial override of the template's i18n data */
   customData: Record<string, unknown>;
   /** Map of imageKey → dataURL/URL override */

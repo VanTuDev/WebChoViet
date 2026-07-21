@@ -21,7 +21,7 @@ export const PAYMENT_STATUS_META: Record<PaymentStatus, PaymentStatusMeta> = {
 };
 
 /** Tên marketing của gói (khác với PLAN_META của PlanBadge — đây là tên hiển thị trong lịch sử giao dịch, không phải badge tài khoản) */
-export const PLAN_PURCHASE_LABEL: Record<string, string> = {
+const PLAN_PURCHASE_LABEL: Record<string, string> = {
   pro: 'Kinh Doanh WebPro',
   ultra: 'Thương Hiệu Ultra',
 };

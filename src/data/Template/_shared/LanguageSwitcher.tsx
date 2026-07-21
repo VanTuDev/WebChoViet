@@ -18,7 +18,7 @@ import { useEffect, useRef, useState } from 'react';
 
 /** Toàn bộ ngôn ngữ hệ thống hỗ trợ. Template chỉ truyền subset nó có i18n. */
 const ALL_LANGS = ['vi', 'en', 'zh', 'ko'] as const;
-export type TemplateLang = (typeof ALL_LANGS)[number];
+type TemplateLang = (typeof ALL_LANGS)[number];
 
 // Không dùng emoji cờ quốc gia — Windows không render được (hiện thành chữ 2 ký tự),
 // quy ước dự án: chỉ dùng nhãn chữ + icon vector.

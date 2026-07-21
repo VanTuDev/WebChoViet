@@ -1,4 +1,4 @@
-export interface DiffLeaf {
+interface DiffLeaf {
   label: string;
   oldValue?: string;
   newValue: string;

@@ -259,7 +259,7 @@ export function BarChart({ dates, values, color, unitLabel, height = 160 }: BarC
 
 // ─── DonutChart — khe 2px màu surface giữa các segment, legend kèm giá trị ──────
 
-export interface DonutSlice {
+interface DonutSlice {
   label: string;
   value: number;
   color: string;

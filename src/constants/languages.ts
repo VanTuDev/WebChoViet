@@ -4,7 +4,7 @@
 // và quy ước dự án là không dùng emoji trong UI — chỉ dùng nhãn chữ + icon lucide.
 import type { SiteLang } from '../types';
 
-export interface LangMeta {
+interface LangMeta {
   code: SiteLang;
   label: string;       // Tên đầy đủ — "Tiếng Việt"
   shortLabel: string;  // Nhãn ngắn cho tab/nút — "VI"

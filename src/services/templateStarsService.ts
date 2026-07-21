@@ -3,7 +3,7 @@
 // templateBillingService.ts. Xem BackEnd-WebChoViet/src/templates.
 import { apiFetch } from './apiClient';
 
-export interface TemplateStarToggleResult {
+interface TemplateStarToggleResult {
   starred: boolean;
   count: number;
 }

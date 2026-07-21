@@ -5,7 +5,7 @@ export interface AiChatTurn {
   content: string;
 }
 
-export interface AiChatResult {
+interface AiChatResult {
   reply: string;
   updates: Record<string, unknown>;
 }

@@ -14,7 +14,7 @@ export interface MySubscription {
   cancelAtPeriodEnd: boolean;
 }
 
-export interface CheckoutResult {
+interface CheckoutResult {
   checkoutUrl: string;
   orderCode: number;
 }

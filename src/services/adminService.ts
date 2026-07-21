@@ -31,14 +31,14 @@ export interface AdminUserListItem {
   createdAt: string;
 }
 
-export interface AdminUserList {
+interface AdminUserList {
   items: AdminUserListItem[];
   total: number;
   page: number;
   limit: number;
 }
 
-export interface ListUsersParams {
+interface ListUsersParams {
   search?: string;
   plan?: 'free' | 'pro' | 'ultra';
   page?: number;
@@ -111,14 +111,14 @@ export interface AdminSiteListItem {
   updatedAt: string;
 }
 
-export interface AdminSiteList {
+interface AdminSiteList {
   items: AdminSiteListItem[];
   total: number;
   page: number;
   limit: number;
 }
 
-export interface ListSitesParams {
+interface ListSitesParams {
   search?: string;
   status?: 'draft' | 'published';
   page?: number;
@@ -170,7 +170,7 @@ export interface AdminPaymentTotals {
   refundedAmount: number;
 }
 
-export interface AdminPaymentList {
+interface AdminPaymentList {
   items: AdminPaymentListItem[];
   total: number;
   page: number;
@@ -178,7 +178,7 @@ export interface AdminPaymentList {
   totals: AdminPaymentTotals;
 }
 
-export interface ListPaymentsParams {
+interface ListPaymentsParams {
   search?: string;
   status?: 'pending' | 'success' | 'failed' | 'refunded';
   page?: number;
@@ -212,14 +212,14 @@ export interface AdminUserCashFlowItem {
   lastOrderAt: string;
 }
 
-export interface AdminUserCashFlowList {
+interface AdminUserCashFlowList {
   items: AdminUserCashFlowItem[];
   total: number;
   page: number;
   limit: number;
 }
 
-export interface ListPaymentsByUserParams {
+interface ListPaymentsByUserParams {
   search?: string;
   page?: number;
   limit?: number;

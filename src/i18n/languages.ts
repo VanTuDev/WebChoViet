@@ -4,7 +4,7 @@
 
 import type { AppLang } from './types';
 
-export interface AppLangMeta {
+interface AppLangMeta {
   code: AppLang;
   /** Tên ngôn ngữ bằng chính ngôn ngữ đó */
   label: string;

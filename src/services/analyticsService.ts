@@ -8,7 +8,7 @@ import { getApiBaseUrl } from './authService';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-export type LogEventType =
+type LogEventType =
   | 'User-View'          // Vào trang
   | 'User-Leave'          // Rời đi mà KHÔNG tương tác gì (bounce)
   | 'User-Click'          // Click 1 element có ý nghĩa (phone, social, map, CTA...)

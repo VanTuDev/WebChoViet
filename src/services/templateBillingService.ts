@@ -13,7 +13,7 @@ export interface TemplateAccessInfo {
   ultraPrice: number | null;
 }
 
-export interface TemplateCheckoutResult {
+interface TemplateCheckoutResult {
   checkoutUrl: string;
   orderCode: number;
 }

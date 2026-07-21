@@ -1,6 +1,6 @@
 import { apiFetch } from './apiClient';
 
-export type TranslatableLang = 'en' | 'zh' | 'ko';
+type TranslatableLang = 'en' | 'zh' | 'ko';
 
 /**
  * Gọi backend POST /translate — Gemini dịch customData tiếng Việt sang các ngôn ngữ

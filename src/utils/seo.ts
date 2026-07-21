@@ -37,7 +37,7 @@ function findDeepString(obj: unknown, keyNames: string[], depth = 0): string | u
   return undefined;
 }
 
-export interface SeoFacts {
+interface SeoFacts {
   address?: string;
   phone?: string;
   hours?: string;
