@@ -75,8 +75,15 @@
   --color-viet-cream: #fdf3e3;
 
   /* ── Font families ──────────────────────────────────────────────────── */
+  /* Ghi đè font-sans mặc định của Tailwind (vốn là ui-sans-serif/system-ui) — AppLayout/AdminLayout
+     bọc toàn app bằng class font-sans nên đây là font body thật sự của cả hệ thống. */
+  --font-sans: 'Be Vietnam Pro', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /* Body/UI toàn hệ thống: Be Vietnam Pro — font thiết kế riêng cho dấu tiếng Việt,
+     dấu thanh cân đối, dễ đọc hơn Inter (font Latin gốc, dấu tiếng Việt chỉ là subset bổ sung). */
+  --font-inter: 'Be Vietnam Pro', 'Inter', sans-serif;
+  /* Heading: giữ Lexend — font được thiết kế theo nghiên cứu về tốc độ đọc (proven to improve
+     reading proficiency), vẫn có dấu tiếng Việt đầy đủ, tạo tương phản rõ với body. */
   --font-lexend: 'Lexend', sans-serif;
-  --font-inter: 'Inter', sans-serif;
   /* Font landing Việt: serif sang trọng cho heading + sans thiết kế riêng cho tiếng Việt */
   --font-display: 'Playfair Display', 'Lexend', serif;
   --font-viet: 'Be Vietnam Pro', 'Inter', sans-serif;
