@@ -1,7 +1,7 @@
 import { Suspense, useState, useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle, Languages, MapPin, Pencil, Eye } from 'lucide-react';
+import { ArrowLeft, Globe, Check, Loader2, Monitor, Smartphone, Save, AlertCircle, Languages, MapPin, Pencil, Eye, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { TemplateCustomProvider } from '../../context/TemplateCustomContext';
 import { saveSiteConfig, getSiteConfig, generateSlug, slugExists } from '../../services/siteConfigService';
 import { translateCustomData } from '../../services/translateService';
@@ -27,6 +27,9 @@ import {
   TEMPLATE_NAME_MAP,
   TEMPLATE_IMAGE_KEYS,
 } from '../../data/templates/registry';
+
+/** Trạng thái thu gọn panel "Tùy chỉnh nội dung" — nhớ qua localStorage giống Sidebar */
+const EDITOR_PANEL_COLLAPSE_KEY = 'wcv-editor-panel-collapsed';
 
 // ── Utility: set any value at a dot-path in a nested object ──────────────
 
@@ -57,6 +60,18 @@ export default function TemplateEditorPage() {
   const [slugError, setSlugError] = useState('');
   const [viewport, setViewport] = useState<'desktop' | 'mobile'>('desktop');
   const [mobileTab, setMobileTab] = useState<'editor' | 'preview'>('editor');
+  // Thu gọn panel "Tùy chỉnh nội dung" — cùng 1 nút onToggle cho cả 2 kích thước
+  // màn hình, giống hệt kiểu Sidebar (Danh Mục Giao Diện): nhớ lựa chọn qua
+  // localStorage, không hỏi lại mỗi lần mở trang. Mobile: thu gọn chỉ ẩn phần
+  // form, nhường chỗ khung xem trước hiện ngay bên dưới (không cần đổi tab).
+  // Desktop: thu gọn co hẹp cả panel về 1 dải mỏng để khung xem trước rộng hơn.
+  const [panelCollapsed, setPanelCollapsed] = useState(() => localStorage.getItem(EDITOR_PANEL_COLLAPSE_KEY) === '1');
+  const togglePanelCollapsed = () => {
+    setPanelCollapsed(prev => {
+      localStorage.setItem(EDITOR_PANEL_COLLAPSE_KEY, prev ? '0' : '1');
+      return !prev;
+    });
+  };
   const [showPublishModal, setShowPublishModal] = useState(false);
   const [showGmapsModal, setShowGmapsModal] = useState(false);
   const [inlineEdit, setInlineEdit] = useState<{
@@ -520,6 +535,10 @@ export default function TemplateEditorPage() {
     );
   }
 
+  // Trên mobile: hiện khung xem trước khi đang ở tab "Xem trước", HOẶC khi đang
+  // ở tab "Chỉnh sửa" nhưng đã thu gọn panel form (nhường chỗ ngó qua kết quả).
+  const showMobilePreview = mobileTab === 'preview' || (mobileTab === 'editor' && panelCollapsed);
+
   // templateId có thể trỏ tới 1 template đã bị gỡ khỏi registry (site cũ, đổi tên...) —
   // không check thì `<TemplateComponent lang={...} />` với giá trị undefined sẽ ném
   // "invalid element type", crash render không có thông báo rõ ràng.
@@ -709,51 +728,82 @@ export default function TemplateEditorPage() {
       {/* ── Body ─────────────────────────────────────────────────────────── */}
       <div className="flex flex-1 overflow-hidden">
 
-        {/* Editor panel:
-            mobile → full-width when editor tab active, hidden when preview tab
-            md+    → fixed sidebar (288px tablet / 340px desktop) */}
+        {/* Editor panel — nút onToggle thu gọn giống hệt Sidebar (Danh Mục Giao
+            Diện), tự nhớ lựa chọn qua localStorage:
+            mobile → full-width khi tab "Chỉnh sửa" đang mở + chưa thu gọn; thu
+                     gọn lại còn đúng phần tiêu đề + nút Xuất bản (icon), nhường
+                     chỗ cho khung xem trước hiện ngay bên dưới — không cần đổi tab
+            md+    → mở rộng: sidebar cố định (288px tablet / 340px desktop);
+                     thu gọn: co hẹp về dải mỏng chỉ còn nút mở lại, khung xem
+                     trước bên cạnh rộng thêm hẳn ra */}
         <aside
           data-tour="editor-panel"
           className={[
-            'flex-col overflow-hidden bg-white border-r border-gray-200',
-            mobileTab === 'editor' ? 'flex flex-1' : 'hidden',
-            'md:flex md:flex-none md:w-72 lg:w-85',
+            'overflow-hidden bg-white border-r border-gray-200',
+            mobileTab === 'editor'
+              ? (panelCollapsed ? 'flex flex-col shrink-0' : 'flex flex-col flex-1')
+              : 'hidden',
+            // md:flex-none BẮT BUỘC phải có — nếu không, class "flex-1" ở nhánh
+            // mobile phía trên (không có tiền tố md:) vẫn còn hiệu lực ở desktop
+            // và lấn át hẳn width cố định bên dưới (flex-grow thắng width), khiến
+            // panel giãn ra chiếm gần nửa màn hình thay vì đúng 288/340px.
+            'md:flex md:flex-col md:flex-none',
+            panelCollapsed ? 'md:w-14' : 'md:w-72 lg:w-85',
           ].join(' ')}
         >
-          <div className="px-4 py-3 border-b border-gray-100">
-            <h2 className="text-xs font-bold text-gray-500 uppercase tracking-wider">Tùy chỉnh nội dung</h2>
+          <div className={`shrink-0 px-4 py-3 border-b border-gray-100 flex items-center justify-between gap-2 ${panelCollapsed ? 'md:justify-center md:px-2' : ''}`}>
+            <h2 className={`text-xs font-bold text-gray-500 uppercase tracking-wider ${panelCollapsed ? 'md:hidden' : ''}`}>
+              Tùy chỉnh nội dung
+            </h2>
+            <button
+              onClick={togglePanelCollapsed}
+              aria-label={panelCollapsed ? 'Mở rộng panel tùy chỉnh' : 'Thu gọn panel tùy chỉnh'}
+              title={panelCollapsed ? 'Mở rộng' : 'Thu gọn'}
+              className="shrink-0 p-1.5 -m-1 md:m-0 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
+            >
+              {panelCollapsed ? <PanelLeftOpen className="w-4 h-4" /> : <PanelLeftClose className="w-4 h-4" />}
+            </button>
           </div>
-          <EditorPanel
-            schema={schema}
-            customData={(site.customData[site.lang] as Record<string, unknown>) ?? {}}
-            images={site.images}
-            imageSlots={imageSlots}
-            contact={site.contact}
-            onChange={handleFieldChange}
-            onArrayChange={handleArrayChange}
-            onImageChange={handleImageChange}
-            onContactChange={handleContactChange}
-            onSectionFocus={handleSectionFocus}
-          />
-          <div className="shrink-0 px-4 py-3 border-t border-gray-100">
+          {!panelCollapsed && (
+            <EditorPanel
+              schema={schema}
+              customData={(site.customData[site.lang] as Record<string, unknown>) ?? {}}
+              images={site.images}
+              imageSlots={imageSlots}
+              contact={site.contact}
+              onChange={handleFieldChange}
+              onArrayChange={handleArrayChange}
+              onImageChange={handleImageChange}
+              onContactChange={handleContactChange}
+              onSectionFocus={handleSectionFocus}
+            />
+          )}
+          <div className={`shrink-0 py-3 border-t border-gray-100 ${panelCollapsed ? 'px-2 flex justify-center' : 'px-4'}`}>
             <button
               onClick={() => setShowPublishModal(true)}
               disabled={!!slugError}
-              className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              title="Xuất bản"
+              className={
+                panelCollapsed
+                  ? 'p-2.5 flex items-center justify-center text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer'
+                  : 'w-full flex items-center justify-center gap-2 py-2.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-[#b33912] disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer'
+              }
             >
               <Globe className="w-4 h-4" />
-              Xuất bản
+              {!panelCollapsed && 'Xuất bản'}
             </button>
           </div>
         </aside>
 
         {/* Live preview:
-            mobile → full-width when preview tab active, hidden when editor tab
+            mobile → full-width khi tab "Xem trước", hoặc khi panel tùy chỉnh
+                     đang thu gọn (xem showMobilePreview ở trên); ẩn khi tab
+                     "Chỉnh sửa" còn đang mở rộng đầy đủ
             md+    → flex-1, takes remaining width */}
         <main
           className={[
             'overflow-auto bg-gray-100',
-            mobileTab === 'preview' ? 'flex flex-col flex-1' : 'hidden',
+            showMobilePreview ? 'flex flex-col flex-1' : 'hidden',
             'md:flex md:flex-col md:flex-1',
           ].join(' ')}
         >

@@ -2,7 +2,7 @@
 
 export const CONTACT_PHONE = '0347 868 656';
 export const CONTACT_PHONE_RAW = '0347868656';
-export const CONTACT_EMAIL = 'hotro@vngoweb.com';
+export const CONTACT_EMAIL = 'Vantu.software@gmail.com';
 export const DOMAIN = 'vngoweb.com';
 export const BRAND_NAME = 'vngoweb';
 export const FOUNDER_NAME = 'Nguyễn Văn Tú';
