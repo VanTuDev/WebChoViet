@@ -7,12 +7,17 @@ import Snackbar from '../components/Snackbar/Snackbar';
 import ConfirmDialog from '../components/ConfirmDialog/ConfirmDialog';
 import LoginModal from '../components/shared/LoginModal';
 import { useAppContext } from '../store/AppContext';
+import { OnboardingProvider } from '../context/OnboardingContext';
 
 export default function RootLayout() {
   const { snackbar, dismissSnackbar, confirmDialog, dismissConfirm, loginModalOpen, closeLoginModal } = useAppContext();
 
   return (
-    <>
+    // OnboardingProvider (hướng dẫn sử dụng lần đầu) đặt ở đây — cần Router context
+    // (useLocation/useNavigate) để tự lái người dùng qua từng trang trong tour, và
+    // tự render UI overlay của nó (Router context không có ở AppProvider, xem
+    // comment phía trên).
+    <OnboardingProvider>
       <Outlet />
 
       <AnimatePresence>
@@ -22,6 +27,6 @@ export default function RootLayout() {
       <ConfirmDialog dialog={confirmDialog} onCancel={dismissConfirm} />
 
       {loginModalOpen && <LoginModal onClose={closeLoginModal} />}
-    </>
+    </OnboardingProvider>
   );
 }

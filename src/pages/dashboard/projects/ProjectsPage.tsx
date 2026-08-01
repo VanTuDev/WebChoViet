@@ -90,6 +90,7 @@ export default function ProjectsPage() {
           </p>
         </div>
         <button
+          data-tour="create-website-btn"
           onClick={() => navigate('/marketplace')}
           className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-fnb-red to-fnb-orange hover:shadow-lg hover:shadow-fnb-red/30 text-white text-xs font-bold rounded-full shadow-sm transition-all cursor-pointer active:scale-95 self-start md:self-auto"
         >

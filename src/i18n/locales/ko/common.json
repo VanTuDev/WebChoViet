@@ -17,6 +17,7 @@
     "manageProjects": "프로젝트 관리",
     "adminPanel": "시스템 관리",
     "logout": "로그아웃",
+    "restartTour": "사용 가이드 다시 보기",
     "logoutConfirmTitle": "로그아웃하시겠습니까?",
     "logoutConfirmMessage": "vngoweb에서 로그아웃하시겠습니까?",
     "logoutConfirmAction": "로그아웃"

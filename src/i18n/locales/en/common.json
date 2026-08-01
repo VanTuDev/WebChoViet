@@ -17,6 +17,7 @@
     "manageProjects": "Manage projects",
     "adminPanel": "Admin panel",
     "logout": "Log out",
+    "restartTour": "Replay the guided tour",
     "logoutConfirmTitle": "Log out?",
     "logoutConfirmMessage": "Are you sure you want to log out of vngoweb?",
     "logoutConfirmAction": "Log out"

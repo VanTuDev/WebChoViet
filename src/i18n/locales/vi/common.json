@@ -17,6 +17,7 @@
     "manageProjects": "Quản lý dự án",
     "adminPanel": "Quản lý hệ thống",
     "logout": "Đăng xuất",
+    "restartTour": "Xem lại hướng dẫn sử dụng",
     "logoutConfirmTitle": "Đăng xuất?",
     "logoutConfirmMessage": "Bạn có chắc muốn đăng xuất khỏi vngoweb?",
     "logoutConfirmAction": "Đăng xuất"

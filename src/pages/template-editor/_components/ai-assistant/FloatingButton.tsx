@@ -41,6 +41,7 @@ export default function FloatingButton({ left, top, onDrag, onClick }: Props) {
   return (
     <button
       type="button"
+      data-tour="ai-assistant-widget"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}

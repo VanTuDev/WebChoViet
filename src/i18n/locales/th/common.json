@@ -17,6 +17,7 @@
     "manageProjects": "จัดการโปรเจกต์",
     "adminPanel": "จัดการระบบ",
     "logout": "ออกจากระบบ",
+    "restartTour": "ดูคำแนะนำการใช้งานอีกครั้ง",
     "logoutConfirmTitle": "ออกจากระบบ?",
     "logoutConfirmMessage": "คุณต้องการออกจากระบบ vngoweb ใช่หรือไม่?",
     "logoutConfirmAction": "ออกจากระบบ"

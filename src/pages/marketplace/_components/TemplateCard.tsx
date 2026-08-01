@@ -97,6 +97,7 @@ export default function TemplateCard({ template: t, onUse }: Props) {
             Xem trước
           </button>
           <button
+            data-tour="template-card-cta"
             onClick={e => { e.stopPropagation(); goUse(); }}
             className="w-full max-w-[140px] inline-flex items-center justify-center bg-gradient-to-r from-fnb-red to-fnb-orange text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full shadow-lg shadow-fnb-red/40 cursor-pointer active:scale-95 transition-all"
           >

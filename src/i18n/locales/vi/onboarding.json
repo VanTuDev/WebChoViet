@@ -1,0 +1,55 @@
+{
+  "welcome": {
+    "badge": "Trợ lý hướng dẫn AI",
+    "title": "Chào mừng bạn đến với vngoweb!",
+    "subtitle": "Bạn có muốn mình hướng dẫn nhanh cách tạo một website chuyên nghiệp cho riêng bạn không? Chỉ mất khoảng 2 phút.",
+    "features": [
+      "Chọn 1 trong hơn 100 mẫu giao diện đẹp",
+      "Tùy chỉnh nội dung, hình ảnh — có AI hỗ trợ",
+      "Xuất bản ngay, có link riêng để chia sẻ"
+    ],
+    "accept": "Có, hướng dẫn tôi",
+    "footnote": "Bạn có thể mở lại hướng dẫn bất cứ lúc nào từ biểu tượng la bàn trên thanh menu."
+  },
+  "tour": {
+    "stepCounter": "Bước {{current}}/{{total}}",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "finish": "Hoàn tất",
+    "routeHint": "Bấm vào phần được tô sáng để tiếp tục"
+  },
+  "steps": {
+    "dashboard-sidebar": {
+      "title": "Menu quản lý của bạn",
+      "body": "Đây là khu vực điều hướng chính: Dự án, Phân tích, Mã QR, Cài đặt và Hỗ trợ — mọi thứ bạn cần đều nằm ở đây."
+    },
+    "dashboard-create-cta": {
+      "title": "Bắt đầu tạo website đầu tiên",
+      "body": "Nhấn vào đây để khám phá kho hơn 100 mẫu giao diện đẹp, tối ưu riêng cho từng ngành nghề."
+    },
+    "marketplace-categories": {
+      "title": "Lọc theo lĩnh vực kinh doanh",
+      "body": "Chọn đúng danh mục — quán cà phê, nhà hàng, spa, gym, thiệp cưới, homestay, nha khoa... để xem các mẫu phù hợp nhất với bạn."
+    },
+    "marketplace-pick-template": {
+      "title": "Chọn một mẫu bạn ưng ý",
+      "body": "Di chuột vào ảnh mẫu rồi bấm \"Dùng miễn phí\" (hoặc \"Mua ngay\") để bắt đầu tùy chỉnh — không cần thẻ ngân hàng để dùng thử."
+    },
+    "editor-panel": {
+      "title": "Tùy chỉnh nội dung của bạn",
+      "body": "Điền tên quán, mô tả, hình ảnh, menu, thông tin liên hệ... vào form bên trái. Mọi thay đổi hiển thị ngay lập tức ở khung xem trước bên phải."
+    },
+    "editor-ai-tools": {
+      "title": "Để AI làm hộ phần nặng nhọc",
+      "body": "Tự động điền toàn bộ nội dung từ 1 link Google Maps, hoặc dịch cả website sang tiếng Anh / Trung / Hàn chỉ với 1 cú nhấp."
+    },
+    "ai-assistant-widget": {
+      "title": "Trợ lý AI luôn túc trực",
+      "body": "Cần chỉnh sửa nhanh? Gõ yêu cầu bằng ngôn ngữ tự nhiên (vd \"đổi tiêu đề thành...\") cho Trợ lý AI — nút này kéo đi đâu cũng được."
+    },
+    "editor-publish": {
+      "title": "Xuất bản website của bạn",
+      "body": "Khi đã ưng ý, nhấn \"Xuất bản\" để đưa website lên mạng — bạn sẽ có ngay 1 đường link riêng để chia sẻ với khách hàng."
+    }
+  }
+}

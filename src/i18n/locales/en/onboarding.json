@@ -1,0 +1,55 @@
+{
+  "welcome": {
+    "badge": "AI Onboarding Assistant",
+    "title": "Welcome to vngoweb!",
+    "subtitle": "Want a quick walkthrough on building your own professional website? It only takes about 2 minutes.",
+    "features": [
+      "Pick from 100+ beautiful templates",
+      "Customize content & images — with AI help",
+      "Publish instantly with your own shareable link"
+    ],
+    "accept": "Yes, guide me",
+    "footnote": "You can reopen this guide anytime from the compass icon in the menu bar."
+  },
+  "tour": {
+    "stepCounter": "Step {{current}}/{{total}}",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "routeHint": "Click the highlighted element to continue"
+  },
+  "steps": {
+    "dashboard-sidebar": {
+      "title": "Your management menu",
+      "body": "This is the main navigation: Projects, Analytics, QR Codes, Settings and Support — everything you need lives here."
+    },
+    "dashboard-create-cta": {
+      "title": "Build your first website",
+      "body": "Click here to browse a library of 100+ beautiful templates, optimized for every kind of business."
+    },
+    "marketplace-categories": {
+      "title": "Filter by business type",
+      "body": "Pick the right category — cafe, restaurant, spa, gym, wedding, homestay, dental clinic... to see the templates that fit you best."
+    },
+    "marketplace-pick-template": {
+      "title": "Choose a template you like",
+      "body": "Hover over a template's image and click \"Use free\" (or \"Buy now\") to start customizing — no card required to try it out."
+    },
+    "editor-panel": {
+      "title": "Customize your content",
+      "body": "Fill in your shop name, description, photos, menu, contact info... on the left. Every change appears instantly in the preview on the right."
+    },
+    "editor-ai-tools": {
+      "title": "Let AI handle the heavy lifting",
+      "body": "Auto-fill your entire website from a Google Maps link, or translate the whole site into English / Chinese / Korean in one click."
+    },
+    "ai-assistant-widget": {
+      "title": "Your AI assistant is on standby",
+      "body": "Need a quick edit? Just type what you want in plain language (e.g. \"change the headline to...\") — drag this button anywhere on screen."
+    },
+    "editor-publish": {
+      "title": "Publish your website",
+      "body": "When you're happy with it, hit \"Publish\" to put your website online — you'll instantly get your own link to share with customers."
+    }
+  }
+}

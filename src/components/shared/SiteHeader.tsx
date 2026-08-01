@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { Search, Plus, Menu, X, LogOut, Shield } from 'lucide-react';
+import { Search, Plus, Menu, X, LogOut, Shield, Compass } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../../config/routes';
 import { useAppContext } from '../../store/AppContext';
+import { useOnboarding } from '../../context/OnboardingContext';
 import PlanBadge from './PlanBadge';
 import Wordmark from './Wordmark';
 import LanguageSwitcher from '../../i18n/LanguageSwitcher';
@@ -66,6 +67,7 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
   const [avatarOpen, setAvatarOpen] = useState(false);
   const avatarRef = useRef<HTMLDivElement>(null);
   const { user, isAuthenticated, logout, showConfirm, openLoginModal } = useAppContext();
+  const { startTour } = useOnboarding();
 
   const handleLogout = () => {
     setAvatarOpen(false);
@@ -251,6 +253,18 @@ export default function SiteHeader({ variant = 'app' }: SiteHeaderProps) {
               className="w-full rounded-full border border-gray-200 bg-gray-50/60 py-1.5 pl-8 pr-3 text-xs transition-colors focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary/20"
             />
           </div>
+
+          {/* Mở lại hướng dẫn sử dụng — chỉ có ý nghĩa khi đã đăng nhập (tour bắt đầu từ Dashboard) */}
+          {isAuthenticated && (
+            <button
+              onClick={startTour}
+              title={t('header.restartTour')}
+              aria-label={t('header.restartTour')}
+              className="hidden sm:flex p-1.5 rounded-lg text-gray-400 hover:text-primary hover:bg-fnb-cream transition-colors cursor-pointer"
+            >
+              <Compass className="h-4 w-4" />
+            </button>
+          )}
 
           {/* Chuyển đổi ngôn ngữ — chỉ hiện ở đây trên desktop, mobile đã có trong drawer bên dưới */}
           <div className="hidden md:block">

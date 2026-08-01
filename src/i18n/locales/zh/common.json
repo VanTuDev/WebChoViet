@@ -17,6 +17,7 @@
     "manageProjects": "项目管理",
     "adminPanel": "系统管理",
     "logout": "退出登录",
+    "restartTour": "重新查看使用引导",
     "logoutConfirmTitle": "退出登录？",
     "logoutConfirmMessage": "确定要退出 vngoweb 吗？",
     "logoutConfirmAction": "退出登录"

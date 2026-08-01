@@ -381,6 +381,43 @@
   }
 }
 
+/* ── Product tour (hướng dẫn sử dụng lần đầu) — src/components/onboarding/ ── */
+
+/* Tấm chắn mờ tạo khung quanh lỗ hổng spotlight — mỗi tấm tự blur riêng vì
+   kỹ thuật box-shadow 1 khối không hỗ trợ backdrop-filter. */
+.tour-dim {
+  position: fixed;
+  background: rgba(20, 12, 8, 0.62);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  pointer-events: auto;
+}
+
+/* Viền phát sáng nhấp nháy quanh phần tử đang được hướng dẫn — không chặn click */
+.tour-ring {
+  position: fixed;
+  border-radius: 16px;
+  pointer-events: none;
+  animation: tourRingPulse 2.2s ease-in-out infinite;
+}
+@keyframes tourRingPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color-fnb-orange), 0 0 20px 2px color-mix(in srgb, var(--color-fnb-red) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 8px var(--color-fnb-orange), 0 0 32px 8px color-mix(in srgb, var(--color-fnb-red) 55%, transparent);
+  }
+}
+
+/* Vòng sóng lan tỏa sau avatar Trợ lý AI ở modal chào mừng */
+@keyframes tourAvatarPulse {
+  0%   { transform: scale(0.85); opacity: 0.9; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+.tour-avatar-pulse {
+  animation: tourAvatarPulse 2.4s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
 /* Tôn trọng người dùng tắt animation */
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll { opacity: 1; }
@@ -394,7 +431,9 @@
   .crane-glide,
   .cloud-drift,
   .lantern-swing,
-  .text-gold-shine {
+  .text-gold-shine,
+  .tour-ring,
+  .tour-avatar-pulse {
     animation: none !important;
     opacity: 1;
   }

@@ -629,6 +629,7 @@ export default function TemplateEditorPage() {
 
             {/* Publish */}
             <button
+              data-tour="publish-btn"
               onClick={() => setShowPublishModal(true)}
               disabled={!!slugError}
               className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-white bg-primary rounded-full hover:bg-[#b33912] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
@@ -659,7 +660,7 @@ export default function TemplateEditorPage() {
             ))}
           </div>
 
-          <div className="ml-auto flex items-center gap-2">
+          <div data-tour="editor-ai-tools" className="ml-auto flex items-center gap-2">
             <button
               onClick={() => setShowGmapsModal(true)}
               className="flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors"
@@ -712,6 +713,7 @@ export default function TemplateEditorPage() {
             mobile → full-width when editor tab active, hidden when preview tab
             md+    → fixed sidebar (288px tablet / 340px desktop) */}
         <aside
+          data-tour="editor-panel"
           className={[
             'flex-col overflow-hidden bg-white border-r border-gray-200',
             mobileTab === 'editor' ? 'flex flex-1' : 'hidden',

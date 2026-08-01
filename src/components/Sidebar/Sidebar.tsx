@@ -72,12 +72,14 @@ function useCollapsed() {
 // ── Shared shell + nav item ────────────────────────────────────────────────────
 
 function SidebarShell({
-  collapsed, onToggle, title, children,
+  collapsed, onToggle, title, children, tourId,
 }: {
   collapsed: boolean;
   onToggle: () => void;
   title: string;
   children: React.ReactNode;
+  /** Móc cho hướng dẫn sử dụng lần đầu (product tour) — xem src/onboarding/steps.ts */
+  tourId?: string;
 }) {
   const { t } = useTranslation('common');
 
@@ -85,6 +87,7 @@ function SidebarShell({
     // h-full: lấp đầy chiều cao body container (đã được giới hạn bởi h-screen ở AppLayout)
     // hidden md:flex — mobile dùng MobileSidebarNav thay thế
     <aside
+      data-tour={tourId}
       className={`hidden md:flex h-full shrink-0 border-r border-outline-variant/50 bg-white/70 backdrop-blur-sm flex-col justify-between py-4 overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out ${
         collapsed ? 'w-16 px-2' : 'w-56 lg:w-64 px-3'
       }`}
@@ -173,7 +176,7 @@ function MarketplaceSidebar() {
   const { collapsed, toggle } = useCollapsed();
 
   return (
-    <SidebarShell collapsed={collapsed} onToggle={toggle} title={t('sidebar.marketplaceTitle')}>
+    <SidebarShell collapsed={collapsed} onToggle={toggle} title={t('sidebar.marketplaceTitle')} tourId="marketplace-categories">
       <nav className="space-y-1">
         {MARKETPLACE_CATEGORIES.map(cat => (
           <SidebarItem
@@ -202,7 +205,7 @@ function DashboardSidebar() {
   const { collapsed, toggle } = useCollapsed();
 
   return (
-    <SidebarShell collapsed={collapsed} onToggle={toggle} title={t('sidebar.dashboardTitle')}>
+    <SidebarShell collapsed={collapsed} onToggle={toggle} title={t('sidebar.dashboardTitle')} tourId="dashboard-sidebar">
       <nav className="space-y-1">
         {DASHBOARD_MENUS.map(menu => (
           <SidebarItem
@@ -224,12 +227,15 @@ function DashboardSidebar() {
 
 // ── Mobile: thanh chip cuộn ngang thay cho sidebar (chỉ hiện < md) ─────────────
 
-function MobileChipBar({ items }: {
+function MobileChipBar({ items, tourId }: {
   items: { key: string; label: string; icon: React.ReactNode; active: boolean; onSelect: () => void }[];
+  /** Móc cho hướng dẫn sử dụng lần đầu — cùng giá trị với SidebarShell để tour tìm được dù ở mobile hay desktop */
+  tourId?: string;
 }) {
   const { t } = useTranslation('common');
   return (
     <nav
+      data-tour={tourId}
       className="md:hidden sticky top-0 z-30 shrink-0 flex items-center gap-2 overflow-x-auto bg-surface/95 backdrop-blur-sm border-b border-outline-variant/40 px-4 py-2.5 scrollbar-none"
       aria-label={t('sidebar.quickNav')}
     >
@@ -263,6 +269,7 @@ function MobileMarketplaceNav() {
         active: selected === cat.id,
         onSelect: () => select(cat.id),
       }))}
+      tourId="marketplace-categories"
     />
   );
 }
@@ -280,6 +287,7 @@ function MobileDashboardNav() {
         active: location.pathname === menu.path,
         onSelect: () => navigate(menu.path),
       }))}
+      tourId="dashboard-sidebar"
     />
   );
 }
