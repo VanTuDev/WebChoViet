@@ -1,14 +1,15 @@
-// ─── Hướng dẫn sử dụng lần đầu (product tour) — BẮT BUỘC, không thể thoát ──
+// ─── Hướng dẫn sử dụng lần đầu (product tour) ──────────────────────────────
 // Đặt BÊN TRONG cây Router (render ở RootLayout, không phải AppProvider ở
 // main.tsx) vì cần useLocation/useNavigate để: (1) biết khi nào người dùng đã
 // điều hướng sang bước kế thật sự (họ tự bấm nút/link thật trên trang, không
 // phải overlay giả lập), (2) tự lái người dùng về đúng trang khi bấm "Quay
 // lại" hoặc mở lại hướng dẫn từ menu trợ giúp.
 //
-// Cố tình KHÔNG có nút bỏ qua/đóng ở modal chào mừng lẫn overlay tour — mọi
-// tài khoản mới đều phải hoàn thành trọn vẹn (finishTour) mới được đánh dấu
-// 'done'; nếu họ thoát ngang (đóng tab, back trình duyệt...) thì lần vào lại
-// sau sẽ được hỏi lại từ đầu, không có cách nào tắt vĩnh viễn ngoài hoàn tất.
+// Màn hình chào mừng có nút "Từ chối" thật sự — bấm 1 lần là KHÔNG hỏi lại
+// nữa (đánh dấu 'declined' vĩnh viễn). Nhưng MỘT KHI đã đồng ý bắt đầu, overlay
+// tour không có nút bỏ qua/đóng giữa chừng — phải hoàn thành trọn vẹn
+// (finishTour) mới được đánh dấu 'done'; nếu thoát ngang (đóng tab, back trình
+// duyệt...) mà chưa hoàn tất thì lần vào lại sau sẽ hỏi lại từ đầu.
 //
 // Trạng thái lưu localStorage theo TỪNG user (không theo trình duyệt) — nhiều
 // tài khoản dùng chung máy không bị lệch trạng thái của nhau.
@@ -20,24 +21,25 @@ import { TOUR_STEPS, stepMatchesPath, type TourStep } from '../onboarding/steps'
 import WelcomeModal from '../components/onboarding/WelcomeModal';
 import TourOverlay from '../components/onboarding/TourOverlay';
 
-type OnboardingStatus = 'new' | 'done';
+type OnboardingStatus = 'new' | 'declined' | 'done';
 
 const STORAGE_PREFIX = 'wcv_onboarding_status_v1';
 
 function readStatus(userId: string | null | undefined): OnboardingStatus {
   if (!userId) return 'new';
   try {
-    if (localStorage.getItem(`${STORAGE_PREFIX}:${userId}`) === 'done') return 'done';
+    const raw = localStorage.getItem(`${STORAGE_PREFIX}:${userId}`);
+    if (raw === 'declined' || raw === 'done') return raw;
   } catch {
     // localStorage có thể bị chặn (chế độ ẩn danh nghiêm ngặt) — coi như chưa từng thấy hướng dẫn
   }
   return 'new';
 }
 
-function markDone(userId: string | null | undefined) {
+function writeStatus(userId: string | null | undefined, status: 'declined' | 'done') {
   if (!userId) return;
   try {
-    localStorage.setItem(`${STORAGE_PREFIX}:${userId}`, 'done');
+    localStorage.setItem(`${STORAGE_PREFIX}:${userId}`, status);
   } catch {
     // Bỏ qua — không có localStorage thì đơn giản là lần sau lại hỏi lại, không nghiêm trọng
   }
@@ -60,6 +62,8 @@ interface OnboardingContextType {
   currentStep: TourStep | null;
   /** Bắt đầu/mở lại hướng dẫn — tự điều hướng về Dashboard nếu cần, dùng cho cả nút chào mừng lẫn nút trợ giúp trên header */
   startTour: () => void;
+  /** Từ chối ở màn hình chào mừng — đánh dấu vĩnh viễn, không hỏi lại nữa */
+  declineTour: () => void;
   nextStep: () => void;
   prevStep: () => void;
   finishTour: () => void;
@@ -138,6 +142,11 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
     setActive(true);
   }, [pathname, navigate]);
 
+  const declineTour = useCallback(() => {
+    setWelcomeOpen(false);
+    writeStatus(user?._id, 'declined');
+  }, [user]);
+
   const nextStep = useCallback(() => {
     setStepIndex(i => Math.min(i + 1, TOUR_STEPS.length - 1));
   }, []);
@@ -154,7 +163,7 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
   const finishTour = useCallback(() => {
     setActive(false);
     setStepIndex(0);
-    markDone(user?._id);
+    writeStatus(user?._id, 'done');
     showSnackbar('Tuyệt vời! Giờ hãy thử tự tay hoàn thiện website của riêng bạn.', 'success');
   }, [user, showSnackbar]);
 
@@ -164,11 +173,11 @@ export function OnboardingProvider({ children }: { children: React.ReactNode }) 
     <OnboardingContext.Provider
       value={{
         welcomeOpen, active, stepIndex, totalSteps: TOUR_STEPS.length, currentStep,
-        startTour, nextStep, prevStep, finishTour,
+        startTour, declineTour, nextStep, prevStep, finishTour,
       }}
     >
       {children}
-      <WelcomeModal open={welcomeOpen} onStart={startTour} />
+      <WelcomeModal open={welcomeOpen} onStart={startTour} onDecline={declineTour} />
       <TourOverlay />
     </OnboardingContext.Provider>
   );

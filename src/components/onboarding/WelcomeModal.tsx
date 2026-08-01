@@ -1,6 +1,7 @@
-// Màn hình chào mừng lần đầu — mở đầu cho hướng dẫn BẮT BUỘC (xem
-// OnboardingContext). Cố tình KHÔNG có nút đóng, không bấm nền để tắt, không
-// ESC — chỉ có 1 lối duy nhất là bấm bắt đầu.
+// Màn hình chào mừng lần đầu — mở đầu cho hướng dẫn (xem OnboardingContext).
+// Có nút "Từ chối" thật sự — bấm 1 lần là không hỏi lại nữa (đánh dấu vĩnh
+// viễn). Nhưng MỘT KHI đã bấm "Có" để bắt đầu, overlay tour sau đó không có
+// nút bỏ qua/đóng giữa chừng nữa (xem TourOverlay.tsx).
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { Bot, LayoutTemplate, Wand2, Rocket, Sparkles } from 'lucide-react';
@@ -8,11 +9,12 @@ import { Bot, LayoutTemplate, Wand2, Rocket, Sparkles } from 'lucide-react';
 interface Props {
   open: boolean;
   onStart: () => void;
+  onDecline: () => void;
 }
 
 const FEATURE_ICONS = [LayoutTemplate, Wand2, Rocket];
 
-export default function WelcomeModal({ open, onStart }: Props) {
+export default function WelcomeModal({ open, onStart, onDecline }: Props) {
   const { t } = useTranslation('onboarding');
 
   const features = t('welcome.features', { returnObjects: true }) as string[];
@@ -86,13 +88,21 @@ export default function WelcomeModal({ open, onStart }: Props) {
                   })}
                 </ul>
 
-                <button
-                  onClick={onStart}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full bg-gradient-to-r from-fnb-red to-fnb-orange text-white text-sm font-bold shadow-lg shadow-fnb-red/30 hover:shadow-xl hover:shadow-fnb-red/40 transition-all cursor-pointer active:scale-95"
-                >
-                  <Sparkles className="h-4 w-4" />
-                  {t('welcome.accept')}
-                </button>
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={onStart}
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full bg-gradient-to-r from-fnb-red to-fnb-orange text-white text-sm font-bold shadow-lg shadow-fnb-red/30 hover:shadow-xl hover:shadow-fnb-red/40 transition-all cursor-pointer active:scale-95"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    {t('welcome.accept')}
+                  </button>
+                  <button
+                    onClick={onDecline}
+                    className="w-full py-2.5 rounded-full text-xs font-semibold text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-colors cursor-pointer"
+                  >
+                    {t('welcome.decline')}
+                  </button>
+                </div>
 
                 <p className="text-center text-[11px] text-gray-400 leading-relaxed">
                   {t('welcome.footnote')}

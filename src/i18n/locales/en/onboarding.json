@@ -9,6 +9,7 @@
       "Publish instantly with your own shareable link"
     ],
     "accept": "Yes, guide me",
+    "decline": "Maybe later",
     "footnote": "You can reopen this guide anytime from the compass icon in the menu bar."
   },
   "tour": {
