@@ -6,6 +6,7 @@ import { AnimatePresence } from 'motion/react';
 import Snackbar from '../components/Snackbar/Snackbar';
 import ConfirmDialog from '../components/ConfirmDialog/ConfirmDialog';
 import LoginModal from '../components/shared/LoginModal';
+import AdSenseLoader from '../components/shared/AdSenseLoader';
 import { useAppContext } from '../store/AppContext';
 import { OnboardingProvider } from '../context/OnboardingContext';
 
@@ -18,6 +19,7 @@ export default function RootLayout() {
     // tự render UI overlay của nó (Router context không có ở AppProvider, xem
     // comment phía trên).
     <OnboardingProvider>
+      <AdSenseLoader />
       <Outlet />
 
       <AnimatePresence>
