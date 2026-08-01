@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
 import { Check, Loader2, LayoutTemplate, X, Search, Layers, Coins } from 'lucide-react';
 import { TEMPLATES, CATEGORY_REGISTRY } from '../../../data/templates/registry';
 import { fetchTemplatePrices, type TemplateAccessInfo } from '../../../services/templateBillingService';
@@ -56,12 +57,12 @@ function OverridePriceInput({
   onChange: (next: number | null) => void;
 }) {
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex items-center gap-1.5 flex-1 min-w-0">
       <PriceInput
         value={value ?? ''}
         placeholder="= giá gốc"
         onChange={raw => onChange(raw === '' ? null : Math.max(0, Number(raw) || 0))}
-        className="w-24"
+        className="flex-1 min-w-0"
       />
       {value !== 0 && (
         <button
@@ -78,11 +79,21 @@ function OverridePriceInput({
           type="button"
           onClick={() => onChange(null)}
           title="Xóa override — quay lại dùng giá gốc"
-          className="text-slate-500 hover:text-slate-300 cursor-pointer"
+          className="text-slate-500 hover:text-slate-300 cursor-pointer shrink-0"
         >
           <X className="h-3 w-3" />
         </button>
       )}
+    </div>
+  );
+}
+
+/** 1 hàng nhãn + ô nhập trong card giá — dùng chung cho cả 3 mức giá để card luôn thẳng cột. */
+function PriceField({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-[11px] text-slate-500 w-20 shrink-0">{label}</span>
+      {children}
     </div>
   );
 }
@@ -211,60 +222,52 @@ export default function AdminTemplatesPage() {
                 <h2 id={`cat-${category}`} className="text-sm font-bold text-white">{CATEGORY_LABEL[category] ?? category}</h2>
                 <span className="text-[11px] text-slate-500">({items.length} mẫu)</span>
               </div>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-slate-800">
-                      {['Mẫu', 'Giá gốc · Free', 'Giá gói Pro', 'Giá gói Ultra', ''].map(h => (
-                        <th key={h} className="text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider px-5 py-3 whitespace-nowrap">
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-800">
-                    {items.map(t => {
-                      const draft = drafts[t.id];
-                      if (!draft) return null;
-                      return (
-                        <tr key={t.id} className="hover:bg-slate-800/40 transition-colors">
-                          <td className="px-5 py-3 text-white font-medium whitespace-nowrap">{t.name}</td>
-                          <td className="px-5 py-3">
-                            <PriceInput
-                              value={draft.price}
-                              onChange={raw => updateDraft(t.id, { price: Math.max(0, Number(raw) || 0) })}
-                              className="w-28"
-                            />
-                          </td>
-                          <td className="px-5 py-3">
-                            <OverridePriceInput
-                              value={draft.proPrice}
-                              onChange={v => updateDraft(t.id, { proPrice: v })}
-                            />
-                          </td>
-                          <td className="px-5 py-3">
-                            <OverridePriceInput
-                              value={draft.ultraPrice}
-                              onChange={v => updateDraft(t.id, { ultraPrice: v })}
-                            />
-                          </td>
-                          <td className="px-5 py-3">
-                            <button
-                              onClick={() => handleSave(t.id)}
-                              disabled={draft.saving}
-                              className={`flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed ${
-                                draft.saved ? 'bg-emerald-500/20 text-emerald-400' : 'bg-primary-container text-white hover:bg-primary-container/80'
-                              }`}
-                            >
-                              {draft.saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : draft.saved ? <Check className="h-3.5 w-3.5" /> : null}
-                              {draft.saving ? 'Đang lưu...' : draft.saved ? 'Đã lưu' : 'Lưu'}
-                            </button>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+              <div className="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5">
+                {items.map(t => {
+                  const draft = drafts[t.id];
+                  if (!draft) return null;
+                  return (
+                    <div key={t.id} className="bg-slate-950/60 border border-slate-800 rounded-xl p-4 flex flex-col gap-3">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="text-white font-semibold text-sm leading-tight">{t.name}</h3>
+                        <span className="text-[10px] text-slate-600 font-mono shrink-0 mt-0.5">{t.id}</span>
+                      </div>
+
+                      <div className="space-y-2 border-t border-slate-800/80 pt-3">
+                        <PriceField label="Giá gốc · Free">
+                          <PriceInput
+                            value={draft.price}
+                            onChange={raw => updateDraft(t.id, { price: Math.max(0, Number(raw) || 0) })}
+                            className="flex-1"
+                          />
+                        </PriceField>
+                        <PriceField label="Giá gói Pro">
+                          <OverridePriceInput
+                            value={draft.proPrice}
+                            onChange={v => updateDraft(t.id, { proPrice: v })}
+                          />
+                        </PriceField>
+                        <PriceField label="Giá gói Ultra">
+                          <OverridePriceInput
+                            value={draft.ultraPrice}
+                            onChange={v => updateDraft(t.id, { ultraPrice: v })}
+                          />
+                        </PriceField>
+                      </div>
+
+                      <button
+                        onClick={() => handleSave(t.id)}
+                        disabled={draft.saving}
+                        className={`self-end flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed ${
+                          draft.saved ? 'bg-emerald-500/20 text-emerald-400' : 'bg-primary-container text-white hover:bg-primary-container/80'
+                        }`}
+                      >
+                        {draft.saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : draft.saved ? <Check className="h-3.5 w-3.5" /> : null}
+                        {draft.saving ? 'Đang lưu...' : draft.saved ? 'Đã lưu' : 'Lưu'}
+                      </button>
+                    </div>
+                  );
+                })}
               </div>
             </section>
           ))}
