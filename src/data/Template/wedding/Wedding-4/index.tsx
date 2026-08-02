@@ -177,16 +177,16 @@ export default function Wedding4({ lang = 'vi' }: Props) {
                   </p>
                   <div className="flex flex-col items-center">
                     <p data-field="ceremony.timeLabel" className="text-[11px] uppercase tracking-widest mb-1.5">{t.ceremony.timeLabel}</p>
-                    <span data-field="ceremony.time" className="text-5xl font-display text-[#775a19]">{t.ceremony.time}</span>
+                    <span data-field="ceremony.time" className="text-5xl font-sans font-bold tabular-nums text-[#775a19]">{t.ceremony.time}</span>
                   </div>
                   <div className="flex items-center justify-center gap-4 py-3 border-y border-[#C5A059]/20">
                     <span data-field="ceremony.weekday" className="text-[11px] uppercase tracking-widest">{t.ceremony.weekday}</span>
                     <div className="w-px h-7 bg-[#C5A059]/30" />
-                    <span data-field="ceremony.day" className="text-3xl font-display text-[#775a19]">{t.ceremony.day}</span>
+                    <span data-field="ceremony.day" className="text-3xl font-sans font-bold tabular-nums text-[#775a19]">{t.ceremony.day}</span>
                     <div className="w-px h-7 bg-[#C5A059]/30" />
                     <span data-field="ceremony.month" className="text-[11px] uppercase tracking-widest">{t.ceremony.month}</span>
                   </div>
-                  <p data-field="ceremony.year" className="text-xl font-display">{t.ceremony.year}</p>
+                  <p data-field="ceremony.year" className="text-xl font-sans font-bold tabular-nums">{t.ceremony.year}</p>
                   <p data-field="ceremony.lunarNote" className="italic text-xs text-[#8B8C74]">{t.ceremony.lunarNote}</p>
                 </div>
               </Reveal>
@@ -197,28 +197,28 @@ export default function Wedding4({ lang = 'vi' }: Props) {
                 <div className="space-y-8 text-[#4e4639] text-center">
                   <div className="flex flex-col items-center">
                     <p data-field="events.timeLabel" className="text-[11px] uppercase tracking-widest mb-1.5">{t.events.timeLabel}</p>
-                    <span data-field="events.time" className="text-5xl font-display text-[#775a19]">{t.events.time}</span>
+                    <span data-field="events.time" className="text-5xl font-sans font-bold tabular-nums text-[#775a19]">{t.events.time}</span>
                   </div>
                   <div className="flex items-center justify-center gap-4 py-3 border-y border-[#C5A059]/20">
                     <span data-field="events.weekday" className="text-[11px] uppercase tracking-widest">{t.events.weekday}</span>
                     <div className="w-px h-7 bg-[#C5A059]/30" />
-                    <span data-field="events.day" className="text-3xl font-display text-[#775a19]">{t.events.day}</span>
+                    <span data-field="events.day" className="text-3xl font-sans font-bold tabular-nums text-[#775a19]">{t.events.day}</span>
                     <div className="w-px h-7 bg-[#C5A059]/30" />
                     <span data-field="events.month" className="text-[11px] uppercase tracking-widest">{t.events.month}</span>
                   </div>
-                  <p data-field="events.year" className="text-xl font-display">{t.events.year}</p>
+                  <p data-field="events.year" className="text-xl font-sans font-bold tabular-nums">{t.events.year}</p>
                   <p data-field="events.lunarNote" className="italic text-xs text-[#8B8C74]">{t.events.lunarNote}</p>
 
                   <div className="grid grid-cols-2 gap-4 pt-2">
                     <Reveal variant="fade-up" className="text-center flex flex-col items-center gap-1">
                       <Users aria-hidden className="w-4 h-4 text-[#C5A059] mb-1" />
                       <p data-field="events.welcomeLabel" className="text-[10px] uppercase tracking-wider opacity-60">{t.events.welcomeLabel}</p>
-                      <p data-field="events.welcomeTime" className="text-lg font-display">{t.events.welcomeTime}</p>
+                      <p data-field="events.welcomeTime" className="text-lg font-sans font-bold tabular-nums">{t.events.welcomeTime}</p>
                     </Reveal>
                     <Reveal variant="fade-up" delay={100} className="text-center flex flex-col items-center gap-1">
                       <UtensilsCrossed aria-hidden className="w-4 h-4 text-[#C5A059] mb-1" />
                       <p data-field="events.startLabel" className="text-[10px] uppercase tracking-wider opacity-60">{t.events.startLabel}</p>
-                      <p data-field="events.startTime" className="text-lg font-display">{t.events.startTime}</p>
+                      <p data-field="events.startTime" className="text-lg font-sans font-bold tabular-nums">{t.events.startTime}</p>
                     </Reveal>
                   </div>
 

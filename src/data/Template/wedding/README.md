@@ -176,6 +176,14 @@ imageSlots: [
     layout ngay chỗ chữ có dấu. Nếu thật sự cần thêm 1 font mới cho cả hệ thống, phải
     thêm vào `<link>` chung ở `index.html` gốc VÀ tự kiểm tra bằng cách chụp màn hình
     phóng to như trên trước khi coi là xong — không suy đoán qua tên font.
+  - **Số liệu lớn (giờ, ngày, năm — vd "09:00", "18:00", "2026") dùng `font-sans` +
+    `font-bold` + `tabular-nums`, KHÔNG dùng `font-display`.** Bộ số của Playfair Display
+    có nét trang trí đặc trưng (high-contrast, chân serif cách điệu) rất đẹp cho CHỮ
+    nhưng nhìn không "chuẩn"/dễ đọc khi đứng riêng một mình làm số hiển thị lớn — người
+    dùng đã phản hồi trực tiếp về việc này ở `Wedding-4`. Be Vietnam Pro có bộ số hình
+    học rõ ràng, `tabular-nums` giữ các chữ số cùng độ rộng (đẹp khi xếp cạnh nhau kiểu
+    "03 | Tháng 01"). Chỉ dùng `font-display` cho CHỮ (tên đôi, tiêu đề, tên riêng),
+    không bao giờ dùng cho khối hiển thị thuần số.
 - **Lịch mini "Save the Date":** dùng hook dùng chung `useCalendarMonth` (`_shared/`,
   xem `_shared/README.md` mục "Cách dùng `useCalendarMonth`") để tính ô trống đầu bảng +
   số ngày trong tháng — KHÔNG tự nhẩm tay bằng hằng số cố định như `Wedding-4` bản đầu
