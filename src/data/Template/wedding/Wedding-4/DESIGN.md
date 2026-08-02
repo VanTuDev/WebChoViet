@@ -118,11 +118,32 @@ The typography is the soul of this design system. We use a combination of classi
 - **Styling Note:** For the most prominent display text (e.g., the couple's names), use "Antique Gold." All other informational text should remain in "Ebony Wood."
 
 ## Layout & Spacing
-The layout follows a **Fixed Grid** approach that mimics the proportions of a physical wedding card. On desktop, content is centered within a 12-column grid with generous outer margins to simulate the invitation being placed on a table.
+**Cập nhật (implementation thật, thay cho spec 12-column ban đầu):** Toàn bộ template là
+**1 tấm thiệp dọc duy nhất**, khung viền vàng kép (double-border), căn giữa trên nền
+trắng thuần — không phải bố cục nhiều section rộng full-bleed. Mọi section (hero,
+ceremony, events, rsvp, location, footer) xếp chồng và cuộn liền mạch bên trong đúng
+1 khung thiệp đó, ngăn cách bằng đường kẻ mảnh (`border-t border-[#C5A059]/20`) thay
+vì mỗi section có khung viền kép riêng.
 
-- **Rhythm:** Use an 8px base unit. Spacing should be generous; "breathing room" is a luxury indicator in this system.
-- **Mobile:** Transition to a single-column layout with 24px side margins. Botanical illustrations should reflow to sit at the top and bottom of the viewport, acting as a frame for the text.
-- **Alignment:** Central alignment is preferred for all primary invitation text. Left alignment is reserved for auxiliary details like "Order of Events" or RSVP forms.
+- **Bề rộng thiệp:** cố định `420px` (`sm:w-105`) trên màn hình ≥640px, `w-full` trên
+  mobile. **Bắt buộc dùng đơn vị cố định (px/rem), KHÔNG dùng `vw`/`vh`** — trang preview
+  của `TemplateEditorPage` (desktop mode) render qua 1 pane có thể bị co/scale lại để
+  vừa layout editor, nên `vw` sẽ tính theo bề ngang cửa sổ trình duyệt thật rồi bị scale
+  chồng thêm 1 lần nữa → kích thước hiển thị sai lệch, không đoán trước được giữa các
+  nơi hiển thị (marketplace preview / editor / site đã publish).
+- **Rhythm:** Đơn vị cơ sở 8px vẫn giữ nguyên, nhưng padding trong thiệp phải nén lại
+  đáng kể so với bản 12-column gốc (`px-6` ngang, `pt-10`/`pb-10` giữa các section) vì
+  bề rộng nội dung thực tế chỉ còn ~370px (420px trừ padding/border khung).
+- **Grid nhiều cột → xếp dọc:** Mọi bố cục nhiều cột kiểu trang rộng (nhà trai/nhà gái
+  2 cột, danh sách liên hệ 2 cột...) phải đổi thành xếp dọc 1 cột — ở bề rộng thiệp hẹp,
+  2 cột cạnh nhau làm tên riêng/số điện thoại bị vỡ dòng xấu. Ngoại lệ: cặp số liệu ngắn
+  (Đón khách/Khai tiệc, giờ/ngày/tháng) vẫn giữ 2 cột vì nội dung đủ ngắn.
+- **KHÔNG dùng breakpoint `sm:`/`md:`/`lg:` cho layout BÊN TRONG thiệp** (chỉ dùng ở
+  đúng 1 chỗ — khai báo bề rộng thiệp) — các breakpoint này tính theo viewport thật của
+  trình duyệt, không phải bề rộng thiệp, nên sẽ kích hoạt sai bất cứ khi nào khung thiệp
+  hẹp hơn viewport (luôn luôn đúng như vậy trên desktop).
+- **Alignment:** Căn giữa hầu hết nội dung thiệp (đúng tinh thần thiệp giấy vật lý);
+  chỉ label form RSVP dùng canh trái.
 
 ## Elevation & Depth
 Depth is achieved through **Tonal Layering** and **Subtle Shadows** rather than high-tech blurs.

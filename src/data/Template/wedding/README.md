@@ -19,6 +19,7 @@ Thay thế hoàn toàn thiệp giấy — tiết kiệm, hiện đại, có th�
 | `wedding-1` | Thiệp Hồng | Miễn phí | Tông vàng gold, câu chuyện tình yêu, timeline, RSVP tương tác |
 | `wedding-2` | Ánh Bạc | 299,000đ | Navy & Gold, countdown timer thực, gallery hover-reveal |
 | `wedding-3` | Thành Hỷ | 249,000đ | Cổ điển kem-vàng, khung ornament, save-the-date dạng lịch, song ngữ Việt/Anh |
+| `wedding-4` | Di Sản Vĩnh Cửu | 249,000đ | "Timeless Heritage" tối giản — trình bày dạng **1 tấm thiệp dọc duy nhất** căn giữa nền trắng (xem mục [Layout dạng thiệp đơn](#layout-dạng-thiệp-đơn-single-card) bên dưới), hoạ tiết hoa lá vector viền tay tự vector hoá từ ảnh line-art, RSVP có nút gọi/Zalo trực tiếp |
 
 ---
 
@@ -149,9 +150,38 @@ imageSlots: [
 - **Floral decoration:** Dùng SVG hoặc PNG hoa lá trang trí góc — đặc trưng của thiệp cưới
 - **Animation nhẹ:** Fade-in, float, confetti — tạo cảm xúc khi mở thiệp lần đầu
 - **Print-friendly:** Một số user muốn in ra — tránh nền tối, background ảnh lớn
-- **Font:** Serif lãng mạn (Cormorant Garamond, Playfair Display, Great Vibes cho tên đôi)
+- **Font:** Chỉ dùng font đã load sẵn toàn cục ở `index.html` gốc — `font-display` (Playfair
+  Display, serif sang trọng, đủ dấu tiếng Việt) cho tên đôi/tiêu đề, `font-sans`/`font-inter`
+  (Be Vietnam Pro) cho phần thân. KHÔNG tự thêm `<link>` Google Fonts khác (Cormorant Garamond,
+  Great Vibes...) trong `index.tsx` — React component không có chỗ nào đáng tin cậy để inject
+  vào `<head>`, và mỗi font thêm riêng cho 1 template sẽ không xuất hiện khi site đã publish.
 - **Responsive:** 100% khách xem trên mobile qua Zalo — tối ưu 360px-430px trước hết
 - **Không cần auth:** Thiệp cưới là public URL — không cần đăng nhập để xem
+
+---
+
+## Layout dạng thiệp đơn (single-card)
+
+`wedding-4` giới thiệu 1 kiểu trình bày khác hẳn `wedding-1/2/3` (vốn là trang landing
+nhiều section rộng full-bleed): toàn bộ nội dung nằm trong **đúng 1 khung thiệp dọc**,
+căn giữa trên nền trắng, mô phỏng 1 tấm thiệp giấy vật lý đặt trên bàn. Dùng kiểu này khi
+brief yêu cầu cảm giác "thiệp mời" cổ điển thay vì "website cưới" hiện đại nhiều block.
+
+Rút kinh nghiệm từ session làm `wedding-4` — 3 quy tắc bắt buộc nếu làm thêm template theo
+hướng này (xem chi tiết + rationale đầy đủ ở `Wedding-4/DESIGN.md` mục "Layout & Spacing"):
+
+1. **Bề rộng khung thiệp phải cố định bằng px/rem, KHÔNG dùng `vw`.** `TemplateEditorPage`
+   render preview desktop qua 1 pane có thể bị co/scale để vừa layout editor — `vw` sẽ tính
+   theo bề ngang cửa sổ trình duyệt thật rồi bị scale chồng thêm lần nữa, ra kích thước sai
+   khác nhau giữa marketplace preview / editor / site đã publish. Dùng 1 giá trị cố định
+   (vd `sm:w-105` = 420px) cho kết quả nhất quán ở mọi nơi.
+2. **Không dùng breakpoint `sm:`/`md:`/`lg:` cho layout BÊN TRONG khung thiệp** — các
+   breakpoint này tính theo viewport thật của trình duyệt chứ không phải bề rộng khung
+   thiệp, nên sẽ kích hoạt sai (vd bật `grid-cols-2` cho desktop) ngay cả khi khung thiệp
+   vẫn đang hẹp ~400px. Chỉ dùng breakpoint đúng 1 chỗ duy nhất: khai báo bề rộng khung.
+3. **Grid nhiều cột kiểu trang rộng phải đổi thành xếp dọc 1 cột** (nhà trai/nhà gái, danh
+   sách liên hệ...) — ở bề rộng ~370-400px sau khi trừ padding, 2 cột cạnh nhau làm tên
+   riêng/số điện thoại vỡ dòng xấu. Chỉ giữ 2 cột cho cặp số liệu thật ngắn (giờ/ngày).
 
 ---
 
