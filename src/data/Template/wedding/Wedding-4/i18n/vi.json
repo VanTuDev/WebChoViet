@@ -59,11 +59,7 @@
     "attendNo": "Rất tiếc không thể",
     "messageLabel": "Lời Nhắn",
     "messagePlaceholder": "Gửi lời chúc phúc đến cô dâu chú rể...",
-    "submit": "Gửi Xác Nhận",
-    "groomPhone": "0901 111 222",
-    "bridePhone": "0901 333 444",
-    "groomZalo": "https://zalo.me/0901111222",
-    "brideZalo": "https://zalo.me/0901333444"
+    "submit": "Gửi Xác Nhận"
   },
   "location": {
     "title": "Đường Đến Nơi Tổ Chức",
@@ -71,6 +67,14 @@
     "address": "194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh",
     "mapUrl": "",
     "mapPlaceholder": "Bản đồ sẽ hiển thị khi chủ tiệc thêm link Google Maps"
+  },
+  "music": {
+    "toggleLabel": "Nhạc Nền",
+    "tracks": [
+      { "title": "Bài hát nền 1", "artist": "Chưa đặt tên ca sĩ", "src": "" },
+      { "title": "Bài hát nền 2", "artist": "Chưa đặt tên ca sĩ", "src": "" },
+      { "title": "Bài hát nền 3", "artist": "Chưa đặt tên ca sĩ", "src": "" }
+    ]
   },
   "footer": {
     "brand": "Nam & Vy",

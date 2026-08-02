@@ -59,11 +59,7 @@
     "attendNo": "Regretfully unable to attend",
     "messageLabel": "Message",
     "messagePlaceholder": "Send your wishes to the couple...",
-    "submit": "Send RSVP",
-    "groomPhone": "0901 111 222",
-    "bridePhone": "0901 333 444",
-    "groomZalo": "https://zalo.me/0901111222",
-    "brideZalo": "https://zalo.me/0901333444"
+    "submit": "Send RSVP"
   },
   "location": {
     "title": "Finding Your Way",
@@ -71,6 +67,14 @@
     "address": "194 Hoang Van Thu St., Ward 9, Phu Nhuan District, Ho Chi Minh City",
     "mapUrl": "",
     "mapPlaceholder": "The map will appear once the host adds a Google Maps link"
+  },
+  "music": {
+    "toggleLabel": "Background Music",
+    "tracks": [
+      { "title": "Background Track 1", "artist": "Artist not set yet", "src": "" },
+      { "title": "Background Track 2", "artist": "Artist not set yet", "src": "" },
+      { "title": "Background Track 3", "artist": "Artist not set yet", "src": "" }
+    ]
   },
   "footer": {
     "brand": "Nam & Vy",

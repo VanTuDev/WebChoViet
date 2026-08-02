@@ -59,11 +59,7 @@
     "attendNo": "아쉽지만 참석이 어렵습니다",
     "messageLabel": "축하 메시지",
     "messagePlaceholder": "신랑 신부에게 축하 메시지를 남겨주세요...",
-    "submit": "보내기",
-    "groomPhone": "0901 111 222",
-    "bridePhone": "0901 333 444",
-    "groomZalo": "https://zalo.me/0901111222",
-    "brideZalo": "https://zalo.me/0901333444"
+    "submit": "보내기"
   },
   "location": {
     "title": "오시는 길",
@@ -71,6 +67,14 @@
     "address": "호치민시 푸뉴언군 9구역 호앙반투街 194번지",
     "mapUrl": "",
     "mapPlaceholder": "주최자가 Google 지도 링크를 추가하면 지도가 표시됩니다"
+  },
+  "music": {
+    "toggleLabel": "배경 음악",
+    "tracks": [
+      { "title": "배경 음악 1", "artist": "가수 미설정", "src": "" },
+      { "title": "배경 음악 2", "artist": "가수 미설정", "src": "" },
+      { "title": "배경 음악 3", "artist": "가수 미설정", "src": "" }
+    ]
   },
   "footer": {
     "brand": "Nam & Vy",

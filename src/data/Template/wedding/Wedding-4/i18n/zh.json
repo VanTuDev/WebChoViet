@@ -59,11 +59,7 @@
     "attendNo": "很遗憾无法出席",
     "messageLabel": "留言祝福",
     "messagePlaceholder": "给新人送上您的祝福...",
-    "submit": "送出确认",
-    "groomPhone": "0901 111 222",
-    "bridePhone": "0901 333 444",
-    "groomZalo": "https://zalo.me/0901111222",
-    "brideZalo": "https://zalo.me/0901333444"
+    "submit": "送出确认"
   },
   "location": {
     "title": "交通路线",
@@ -71,6 +67,14 @@
     "address": "胡志明市富润郡9坊黄文树街194号",
     "mapUrl": "",
     "mapPlaceholder": "主人添加 Google 地图链接后将在此显示地图"
+  },
+  "music": {
+    "toggleLabel": "背景音乐",
+    "tracks": [
+      { "title": "背景音乐 1", "artist": "尚未设置歌手", "src": "" },
+      { "title": "背景音乐 2", "artist": "尚未设置歌手", "src": "" },
+      { "title": "背景音乐 3", "artist": "尚未设置歌手", "src": "" }
+    ]
   },
   "footer": {
     "brand": "Nam & Vy",

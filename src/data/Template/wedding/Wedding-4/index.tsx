@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Heart, MapPin, Phone, MessageCircle, Users, UtensilsCrossed, Check, X, Navigation } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Heart, MapPin, Users, UtensilsCrossed, Check, X, Navigation, Music, Play, Pause } from 'lucide-react';
 import { useTemplateCustom } from '../../../../context/TemplateCustomContext';
 import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
@@ -36,6 +36,40 @@ export default function Wedding4({ lang = 'vi' }: Props) {
     Array.from({ length: CALENDAR_DAYS_IN_MONTH }, (_, i) => i + 1),
   );
 
+  // ── Danh sách nhạc nền — khách bấm chọn 1 bài trong list thay vì chỉ 1 bài autoplay cố định.
+  // `src` để trống cho tới khi chủ tiệc tự thêm link file mp3 qua panel tùy chỉnh (giống cách
+  // `mapUrl` hoạt động) — bấm 1 bài chưa có src sẽ bị vô hiệu hoá (disabled), không lỗi im lặng.
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const musicPanelRef = useRef<HTMLDivElement | null>(null);
+  const [musicOpen, setMusicOpen] = useState(false);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const tracks = t.music.tracks;
+
+  useEffect(() => {
+    if (!musicOpen) return;
+    const onClickOutside = (e: MouseEvent) => {
+      if (musicPanelRef.current && !musicPanelRef.current.contains(e.target as Node)) setMusicOpen(false);
+    };
+    document.addEventListener('mousedown', onClickOutside);
+    return () => document.removeEventListener('mousedown', onClickOutside);
+  }, [musicOpen]);
+
+  useEffect(() => () => { audioRef.current?.pause(); }, []);
+
+  const handleTrackClick = (i: number) => {
+    const track = tracks[i];
+    const audio = audioRef.current;
+    if (!track?.src || !audio) return;
+    if (playingIndex === i) {
+      audio.pause();
+      setPlayingIndex(null);
+      return;
+    }
+    audio.src = track.src;
+    void audio.play();
+    setPlayingIndex(i);
+  };
+
   return (
     // Trình bày như 1 tấm thiệp dọc duy nhất căn giữa trên nền trắng. Bề rộng thiệp
     // cố định bằng px/rem (KHÔNG dùng vw) — TemplateEditorPage render preview desktop
@@ -43,7 +77,7 @@ export default function Wedding4({ lang = 'vi' }: Props) {
     // ngang cửa sổ trình duyệt thật rồi bị scale chồng thêm 1 lần nữa, ra kích thước
     // không đoán trước được — cố định px mới cho kết quả nhất quán ở mọi nơi hiển thị.
     <div className="min-h-screen bg-white flex justify-center sm:py-10">
-      <div className="relative w-full sm:w-105 p-1.5 sm:p-2">
+      <div className="relative w-full sm:w-120 p-1.5 sm:p-2">
         <div className="border border-[#C5A059] p-1">
           <div className="relative border-2 border-[#C5A059] bg-[#FDF9F1] text-[#1c1c17] font-sans antialiased overflow-hidden">
 
@@ -105,18 +139,21 @@ export default function Wedding4({ lang = 'vi' }: Props) {
               <Reveal variant="fade-up" as="section" data-section="ceremony" className="pt-10 pb-10 px-6 border-t border-[#C5A059]/20 mt-4" id="ceremony">
                 <h2 data-field="ceremony.title" className="font-display text-xl text-[#6B5B52] mb-8 uppercase tracking-widest text-center">{t.ceremony.title}</h2>
 
-                <div className="space-y-6 mb-10 text-center">
+                {/* Nhà Trai/Nhà Gái PHẢI đối xứng 2 cột kể cả trên mobile (yêu cầu rõ ràng —
+                    khác quy tắc "gộp về 1 cột" thường áp cho grid rộng khác) — cột hẹp lại
+                    thì tên xuống dòng tự nhiên, không cắt/ẩn nội dung. */}
+                <div className="grid grid-cols-2 gap-3 mb-10 text-center">
                   <div className="space-y-1.5">
                     <p data-field="ceremony.groomFamilyLabel" className="text-[11px] text-[#8B8C74] uppercase tracking-wider">{t.ceremony.groomFamilyLabel}</p>
                     {t.ceremony.groomParents.map((name, i) => (
-                      <p key={i} className="font-display text-base text-[#6B5B52]">{name}</p>
+                      <p key={i} className="font-display text-sm text-[#6B5B52]">{name}</p>
                     ))}
                     <p data-field="ceremony.groomAddress" className="text-xs opacity-60">{t.ceremony.groomAddress}</p>
                   </div>
                   <div className="space-y-1.5">
                     <p data-field="ceremony.brideFamilyLabel" className="text-[11px] text-[#8B8C74] uppercase tracking-wider">{t.ceremony.brideFamilyLabel}</p>
                     {t.ceremony.brideParents.map((name, i) => (
-                      <p key={i} className="font-display text-base text-[#6B5B52]">{name}</p>
+                      <p key={i} className="font-display text-sm text-[#6B5B52]">{name}</p>
                     ))}
                     <p data-field="ceremony.brideAddress" className="text-xs opacity-60">{t.ceremony.brideAddress}</p>
                   </div>
@@ -265,19 +302,6 @@ export default function Wedding4({ lang = 'vi' }: Props) {
                     </button>
                   </div>
                 </form>
-
-                <div className="mt-6 flex flex-col gap-2.5">
-                  <div className="flex items-center justify-center gap-3 border border-[#C5A059]/30 py-3 px-3">
-                    <span className="font-display text-sm text-[#775a19]">{t.ceremony.groomName}</span>
-                    <a href={`tel:${t.rsvp.groomPhone.replace(/\s/g, '')}`} data-track="rsvp-call-groom" title={t.rsvp.groomPhone} className="text-[#6B5B52] hover:text-[#775a19]"><Phone aria-hidden className="w-3.5 h-3.5" /></a>
-                    <a href={t.rsvp.groomZalo} target="_blank" rel="noreferrer" data-track="rsvp-zalo-groom" title="Zalo" className="text-[#6B5B52] hover:text-[#775a19]"><MessageCircle aria-hidden className="w-3.5 h-3.5" /></a>
-                  </div>
-                  <div className="flex items-center justify-center gap-3 border border-[#C5A059]/30 py-3 px-3">
-                    <span className="font-display text-sm text-[#775a19]">{t.ceremony.brideName}</span>
-                    <a href={`tel:${t.rsvp.bridePhone.replace(/\s/g, '')}`} data-track="rsvp-call-bride" title={t.rsvp.bridePhone} className="text-[#6B5B52] hover:text-[#775a19]"><Phone aria-hidden className="w-3.5 h-3.5" /></a>
-                    <a href={t.rsvp.brideZalo} target="_blank" rel="noreferrer" data-track="rsvp-zalo-bride" title="Zalo" className="text-[#6B5B52] hover:text-[#775a19]"><MessageCircle aria-hidden className="w-3.5 h-3.5" /></a>
-                  </div>
-                </div>
               </Reveal>
 
               {/* Location */}
@@ -330,6 +354,46 @@ export default function Wedding4({ lang = 'vi' }: Props) {
             </Reveal>
           </div>
         </div>
+      </div>
+
+      {/* Music player — nổi cố định theo màn hình (KHÔNG đặt trong cây có Reveal/overflow-hidden
+          ở trên: transform lúc ẩn của Reveal sẽ tạo containing block mới làm fixed lệch gốc).
+          Đặt ở góc dưới-TRÁI — góc dưới-phải đã bị badge "Made with vngoweb" cố định chiếm
+          (xem PublicSitePage.tsx, `fixed bottom-5 right-5`, hiện diện trên MỌI site đã publish). */}
+      <div ref={musicPanelRef} className="fixed bottom-5 left-5 z-60 flex flex-col items-start gap-2">
+        {musicOpen && (
+          <div className="w-64 max-w-[80vw] bg-[#FDF9F1] border border-[#C5A059] shadow-xl p-3">
+            <p className="text-[10px] uppercase tracking-widest text-[#8B8C74] mb-2 px-1">{t.music.toggleLabel}</p>
+            <div className="space-y-1">
+              {tracks.map((track, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => handleTrackClick(i)}
+                  disabled={!track.src}
+                  data-track="music-select"
+                  className={`w-full flex items-center gap-2 px-2 py-2 text-left text-xs transition-colors cursor-pointer disabled:cursor-not-allowed disabled:opacity-40 ${playingIndex === i ? 'bg-[#C5A059]/15 text-[#775a19]' : 'text-[#6B5B52] hover:bg-[#C5A059]/10'}`}
+                >
+                  {playingIndex === i ? <Pause aria-hidden className="w-3.5 h-3.5 shrink-0" /> : <Play aria-hidden className="w-3.5 h-3.5 shrink-0" />}
+                  <span className="min-w-0">
+                    <span data-field={`music.tracks.${i}.title`} className="block truncate font-medium">{track.title}</span>
+                    <span data-field={`music.tracks.${i}.artist`} className="block truncate text-[10px] opacity-60">{track.artist}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        <button
+          type="button"
+          onClick={() => setMusicOpen(o => !o)}
+          aria-label={t.music.toggleLabel}
+          data-track="music-toggle"
+          className={`w-11 h-11 rounded-full flex items-center justify-center shadow-lg border-2 border-[#e9c176] transition-colors cursor-pointer ${playingIndex !== null ? 'bg-[#775a19] text-white' : 'bg-[#C5A059] text-white'}`}
+        >
+          <Music aria-hidden className="w-4.5 h-4.5" />
+        </button>
+        <audio ref={audioRef} loop onEnded={() => setPlayingIndex(null)} />
       </div>
     </div>
   );
