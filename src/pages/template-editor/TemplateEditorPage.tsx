@@ -105,7 +105,13 @@ export default function TemplateEditorPage() {
   const templateAccess = getEffectiveAccess(templateId, templateStaticPrice, user?.plan ?? 'free');
 
   // ── Load configuration asynchronously ──────────────────────────────────────
+  // `ignore` chặn kết quả trả về TRỄ (StrictMode dev chạy effect 2 lần liên tiếp
+  // khi mount, hoặc user đổi URL nhanh giữa 2 site) ghi đè state bằng dữ liệu cũ —
+  // KHÔNG hủy được request HTTP đã gửi (generateSlug/getSiteConfig không nhận
+  // AbortSignal), chỉ đảm bảo lần gọi cũ không còn set state sau khi đã "ignore".
   useEffect(() => {
+    let ignore = false;
+
     async function load() {
       setIsLoading(true);
       try {
@@ -124,8 +130,10 @@ export default function TemplateEditorPage() {
                 ko: existing.customData.ko || {},
               };
             }
-            setSite(existing);
-            setIsLoading(false);
+            if (!ignore) {
+              setSite(existing);
+              setIsLoading(false);
+            }
             return;
           }
         }
@@ -144,14 +152,16 @@ export default function TemplateEditorPage() {
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         };
-        setSite(base);
+        if (!ignore) setSite(base);
       } catch (error) {
-        console.error('Failed to load site config:', error);
+        if (!ignore) console.error('Failed to load site config:', error);
       } finally {
-        setIsLoading(false);
+        if (!ignore) setIsLoading(false);
       }
     }
     load();
+
+    return () => { ignore = true; };
   }, [isEdit, siteId, searchParams]);
 
   // ── Mobile preview iframe setup ─────────────────────────────────────────────
