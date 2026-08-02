@@ -37,11 +37,13 @@ export default function Wedding4({ lang = 'vi' }: Props) {
   );
 
   return (
-    // Trình bày như 1 tấm thiệp dọc duy nhất căn giữa trên nền trắng — bề rộng thiệp
-    // ~2/9 bề ngang màn hình ở desktop (kẹp min/max để chữ không quá chật/quá loãng),
-    // full-width trên mobile vì 2/9 của màn hình điện thoại sẽ không đọc được.
+    // Trình bày như 1 tấm thiệp dọc duy nhất căn giữa trên nền trắng. Bề rộng thiệp
+    // cố định bằng px/rem (KHÔNG dùng vw) — TemplateEditorPage render preview desktop
+    // qua 1 pane có thể bị scale/co lại để vừa khung, nên đơn vị vw sẽ tính theo bề
+    // ngang cửa sổ trình duyệt thật rồi bị scale chồng thêm 1 lần nữa, ra kích thước
+    // không đoán trước được — cố định px mới cho kết quả nhất quán ở mọi nơi hiển thị.
     <div className="min-h-screen bg-white flex justify-center sm:py-10">
-      <div className="relative w-full sm:w-104 lg:w-[22vw] lg:min-w-90 lg:max-w-110 p-1.5 sm:p-2">
+      <div className="relative w-full sm:w-105 p-1.5 sm:p-2">
         <div className="border border-[#C5A059] p-1">
           <div className="relative border-2 border-[#C5A059] bg-[#FDF9F1] text-[#1c1c17] font-sans antialiased overflow-hidden">
 
