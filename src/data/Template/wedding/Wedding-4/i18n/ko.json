@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "eyebrow": "결혼식에 초대합니다",
+    "coupleNames": "Hoang Nam & Thao Vy",
+    "caption": "영원히 함께",
+    "rsvpBtn": "참석 여부 알리기"
+  },
+  "ceremony": {
+    "title": "결혼식 안내",
+    "groomFamilyLabel": "신랑측",
+    "groomParents": ["쩐꾸옥흥", "응우옌티홍"],
+    "groomAddress": "호치민시 1군",
+    "brideFamilyLabel": "신부측",
+    "brideParents": ["레반탄", "팜티란"],
+    "brideAddress": "호치민시 3군",
+    "announceLabel": "삼가 알립니다",
+    "announceText": "저희 자녀의 결혼식을",
+    "groomName": "응우옌호앙남",
+    "groomTitle": "(장남)",
+    "brideName": "쩐타오비",
+    "brideTitle": "(막내딸)",
+    "venueLabel": "결혼식은 이곳에서 거행됩니다",
+    "venueName": "자택",
+    "timeLabel": "시간",
+    "time": "오전 9:00",
+    "weekday": "토요일",
+    "day": "03",
+    "month": "1월",
+    "year": "2026",
+    "lunarNote": "(음력 을사년 11월 15일)"
+  },
+  "events": {
+    "title": "피로연 안내",
+    "timeLabel": "피로연은 이 시간에 시작됩니다",
+    "time": "오후 6:00",
+    "weekday": "토요일",
+    "day": "03",
+    "month": "1월",
+    "year": "2026",
+    "lunarNote": "(음력 을사년 11월 15일)",
+    "welcomeLabel": "하객 맞이",
+    "welcomeTime": "오후 5:30",
+    "startLabel": "피로연 시작",
+    "startTime": "오후 6:00",
+    "calendarMonthYear": "2026년 1월",
+    "weekdaysShort": ["월", "화", "수", "목", "금", "토", "일"],
+    "venueLabel": "장소",
+    "venueName": "White Palace",
+    "venueAddress": "호치민시 푸뉴언군 9구역 호앙반투街 194번지"
+  },
+  "rsvp": {
+    "title": "참석 여부 알리기",
+    "subtitle": "귀하의 참석은 저희의 특별한 날에 가장 큰 선물입니다.",
+    "deadline": "2025년 12월 20일 전까지 회신 부탁드립니다",
+    "nameLabel": "성함",
+    "namePlaceholder": "성함을 입력해 주세요",
+    "attendanceLabel": "참석 가능하신가요?",
+    "attendYes": "기쁘게 참석합니다",
+    "attendNo": "아쉽지만 참석이 어렵습니다",
+    "messageLabel": "축하 메시지",
+    "messagePlaceholder": "신랑 신부에게 축하 메시지를 남겨주세요...",
+    "submit": "보내기",
+    "groomPhone": "0901 111 222",
+    "bridePhone": "0901 333 444",
+    "groomZalo": "https://zalo.me/0901111222",
+    "brideZalo": "https://zalo.me/0901333444"
+  },
+  "location": {
+    "title": "오시는 길",
+    "venueName": "White Palace",
+    "address": "호치민시 푸뉴언군 9구역 호앙반투街 194번지",
+    "mapUrl": "",
+    "mapPlaceholder": "주최자가 Google 지도 링크를 추가하면 지도가 표시됩니다"
+  },
+  "footer": {
+    "brand": "Nam & Vy",
+    "tagline": "사랑을 담아, Hoang Nam & Thao Vy — 2026",
+    "privacy": "개인정보 처리방침",
+    "contact": "문의하기"
+  }
+}

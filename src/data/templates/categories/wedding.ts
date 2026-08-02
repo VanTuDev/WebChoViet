@@ -7,6 +7,7 @@ import type { TemplateDefinition } from '../types';
 import schema_wedding1 from '../../Template/wedding/Wedding-1/i18n/vi.json';
 import schema_wedding2 from '../../Template/wedding/Wedding-2/i18n/vi.json';
 import schema_wedding3 from '../../Template/wedding/Wedding-3/i18n/vi.json';
+import schema_wedding4 from '../../Template/wedding/Wedding-4/i18n/vi.json';
 import img_Wedding1_card from '../../Template/wedding/Wedding-1/images/card.jpg';
 import img_Wedding1_hero from '../../Template/wedding/Wedding-1/images/hero.jpg';
 import img_Wedding2_card from '../../Template/wedding/Wedding-2/images/card.jpg';
@@ -17,6 +18,8 @@ import img_Wedding3_card from '../../Template/wedding/Wedding-3/images/card.png'
 import img_Wedding3_hero from '../../Template/wedding/Wedding-3/images/hero.png';
 import img_Wedding3_gallery0 from '../../Template/wedding/Wedding-3/images/gallery0.jpg';
 import img_Wedding3_gallery1 from '../../Template/wedding/Wedding-3/images/gallery1.png';
+import img_Wedding4_card from '../../Template/wedding/Wedding-4/images/card.jpg';
+import img_Wedding4_hero from '../../Template/wedding/Wedding-4/images/hero.jpg';
 
 export const WEDDING_TEMPLATES: TemplateDefinition[] = [
   {
@@ -72,6 +75,23 @@ export const WEDDING_TEMPLATES: TemplateDefinition[] = [
       { key: 'hero',      label: 'Ảnh Hero Cặp Đôi', defaultUrl: img_Wedding3_hero },
       { key: 'gallery_0', label: 'Album 1',            defaultUrl: img_Wedding3_gallery0 },
       { key: 'gallery_1', label: 'Album 2',            defaultUrl: img_Wedding3_gallery1 },
+    ],
+  },
+
+  {
+    id: 'wedding-4',
+    name: 'Di Sản Vĩnh Cửu',
+    description: 'Thiệp cưới phong cách "Timeless Heritage" tối giản cổ điển, nền giấy parchment, viền khung kép vàng đồng cổ, hoạ tiết hoa lá vector viền tay tinh xảo. Đầy đủ thông tin lễ cưới/tiệc cưới hai bên gia đình, lịch mini highlight ngày cưới, form RSVP xác nhận tham dự kèm liên hệ Zalo/gọi điện trực tiếp.',
+    category: 'wedding',
+    price: 249000,
+    priceText: '249,000đ',
+    badge: 'MỚI',
+    tags: ['Thiệp Cưới', 'Tối Giản', 'Cổ Điển', 'RSVP'],
+    imageUrl: img_Wedding4_card,
+    component: lazy(() => import('../../Template/wedding/Wedding-4/index')),
+    schema: schema_wedding4 as Record<string, unknown>,
+    imageSlots: [
+      { key: 'hero', label: 'Ảnh Cặp Đôi', defaultUrl: img_Wedding4_hero },
     ],
   },
 ];

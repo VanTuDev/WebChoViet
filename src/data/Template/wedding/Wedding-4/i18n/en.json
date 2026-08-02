@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "eyebrow": "The Wedding Of",
+    "coupleNames": "Hoang Nam & Thao Vy",
+    "caption": "Always & Forever",
+    "rsvpBtn": "RSVP Now"
+  },
+  "ceremony": {
+    "title": "Wedding Ceremony",
+    "groomFamilyLabel": "Groom's Family",
+    "groomParents": ["Mr. & Mrs. Tran Quoc Hung", "Nguyen Thi Hong"],
+    "groomAddress": "District 1, Ho Chi Minh City",
+    "brideFamilyLabel": "Bride's Family",
+    "brideParents": ["Mr. & Mrs. Le Van Thanh", "Pham Thi Lan"],
+    "brideAddress": "District 3, Ho Chi Minh City",
+    "announceLabel": "With Great Joy",
+    "announceText": "We announce the wedding of our children",
+    "groomName": "Nguyen Hoang Nam",
+    "groomTitle": "(Eldest Son)",
+    "brideName": "Tran Thao Vy",
+    "brideTitle": "(Youngest Daughter)",
+    "venueLabel": "The ceremony will be held at",
+    "venueName": "Family Home",
+    "timeLabel": "At",
+    "time": "9:00 AM",
+    "weekday": "Saturday",
+    "day": "03",
+    "month": "January",
+    "year": "2026",
+    "lunarNote": "(15th day of the 11th lunar month, Year of the Snake)"
+  },
+  "events": {
+    "title": "Wedding Reception",
+    "timeLabel": "The reception will begin at",
+    "time": "6:00 PM",
+    "weekday": "Saturday",
+    "day": "03",
+    "month": "January",
+    "year": "2026",
+    "lunarNote": "(15th day of the 11th lunar month, Year of the Snake)",
+    "welcomeLabel": "Guest Arrival",
+    "welcomeTime": "5:30 PM",
+    "startLabel": "Reception Begins",
+    "startTime": "6:00 PM",
+    "calendarMonthYear": "January 2026",
+    "weekdaysShort": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+    "venueLabel": "Held At",
+    "venueName": "White Palace",
+    "venueAddress": "194 Hoang Van Thu St., Ward 9, Phu Nhuan District, Ho Chi Minh City"
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "subtitle": "Your presence is the greatest gift on our special day.",
+    "deadline": "Kindly respond before December 20, 2025",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "attendanceLabel": "Will you attend?",
+    "attendYes": "Joyfully attending",
+    "attendNo": "Regretfully unable to attend",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Send your wishes to the couple...",
+    "submit": "Send RSVP",
+    "groomPhone": "0901 111 222",
+    "bridePhone": "0901 333 444",
+    "groomZalo": "https://zalo.me/0901111222",
+    "brideZalo": "https://zalo.me/0901333444"
+  },
+  "location": {
+    "title": "Finding Your Way",
+    "venueName": "White Palace",
+    "address": "194 Hoang Van Thu St., Ward 9, Phu Nhuan District, Ho Chi Minh City",
+    "mapUrl": "",
+    "mapPlaceholder": "The map will appear once the host adds a Google Maps link"
+  },
+  "footer": {
+    "brand": "Nam & Vy",
+    "tagline": "With love, Hoang Nam & Thao Vy — 2026",
+    "privacy": "Privacy Policy",
+    "contact": "Contact Us"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "eyebrow": "婚礼盛典",
+    "coupleNames": "Hoang Nam & Thao Vy",
+    "caption": "执子之手 与子偕老",
+    "rsvpBtn": "确认出席"
+  },
+  "ceremony": {
+    "title": "婚礼仪式",
+    "groomFamilyLabel": "男方家庭",
+    "groomParents": ["陈国兴 先生 & 夫人", "阮氏红"],
+    "groomAddress": "胡志明市第1郡",
+    "brideFamilyLabel": "女方家庭",
+    "brideParents": ["黎文成 先生 & 夫人", "范氏兰"],
+    "brideAddress": "胡志明市第3郡",
+    "announceLabel": "谨此敬告",
+    "announceText": "我们孩子的婚礼",
+    "groomName": "阮黄南",
+    "groomTitle": "（长子）",
+    "brideName": "陈草薇",
+    "brideTitle": "（幼女）",
+    "venueLabel": "婚礼将于此处举行",
+    "venueName": "家中",
+    "timeLabel": "时间",
+    "time": "上午9:00",
+    "weekday": "星期六",
+    "day": "03",
+    "month": "1月",
+    "year": "2026",
+    "lunarNote": "（农历乙巳年十一月十五日）"
+  },
+  "events": {
+    "title": "婚宴信息",
+    "timeLabel": "婚宴将于此时开始",
+    "time": "下午6:00",
+    "weekday": "星期六",
+    "day": "03",
+    "month": "1月",
+    "year": "2026",
+    "lunarNote": "（农历乙巳年十一月十五日）",
+    "welcomeLabel": "迎宾时间",
+    "welcomeTime": "下午5:30",
+    "startLabel": "开席时间",
+    "startTime": "下午6:00",
+    "calendarMonthYear": "2026年1月",
+    "weekdaysShort": ["一", "二", "三", "四", "五", "六", "日"],
+    "venueLabel": "举办地点",
+    "venueName": "White Palace",
+    "venueAddress": "胡志明市富润郡9坊黄文树街194号"
+  },
+  "rsvp": {
+    "title": "确认出席",
+    "subtitle": "您的到场是我们大喜之日最珍贵的礼物。",
+    "deadline": "请于2025年12月20日前回复",
+    "nameLabel": "姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "attendanceLabel": "您是否能出席？",
+    "attendYes": "确定出席",
+    "attendNo": "很遗憾无法出席",
+    "messageLabel": "留言祝福",
+    "messagePlaceholder": "给新人送上您的祝福...",
+    "submit": "送出确认",
+    "groomPhone": "0901 111 222",
+    "bridePhone": "0901 333 444",
+    "groomZalo": "https://zalo.me/0901111222",
+    "brideZalo": "https://zalo.me/0901333444"
+  },
+  "location": {
+    "title": "交通路线",
+    "venueName": "White Palace",
+    "address": "胡志明市富润郡9坊黄文树街194号",
+    "mapUrl": "",
+    "mapPlaceholder": "主人添加 Google 地图链接后将在此显示地图"
+  },
+  "footer": {
+    "brand": "Nam & Vy",
+    "tagline": "爱与祝福，Hoang Nam & Thao Vy — 2026",
+    "privacy": "隐私政策",
+    "contact": "联系我们"
+  }
+}

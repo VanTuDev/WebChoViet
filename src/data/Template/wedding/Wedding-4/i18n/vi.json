@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "eyebrow": "Lễ Thành Hôn",
+    "coupleNames": "Hoàng Nam & Thảo Vy",
+    "caption": "Trọn Đời Bên Nhau",
+    "rsvpBtn": "Xác Nhận Tham Dự"
+  },
+  "ceremony": {
+    "title": "Thông Tin Lễ Cưới",
+    "groomFamilyLabel": "Nhà Trai",
+    "groomParents": ["Ông Bà Trần Quốc Hưng", "Nguyễn Thị Hồng"],
+    "groomAddress": "Quận 1, TP. Hồ Chí Minh",
+    "brideFamilyLabel": "Nhà Gái",
+    "brideParents": ["Ông Bà Lê Văn Thành", "Phạm Thị Lan"],
+    "brideAddress": "Quận 3, TP. Hồ Chí Minh",
+    "announceLabel": "Trân Trọng Báo Tin",
+    "announceText": "Lễ Thành Hôn của con chúng tôi",
+    "groomName": "Nguyễn Hoàng Nam",
+    "groomTitle": "(Trưởng Nam)",
+    "brideName": "Trần Thảo Vy",
+    "brideTitle": "(Út Nữ)",
+    "venueLabel": "Lễ Thành Hôn được cử hành tại",
+    "venueName": "Tư Gia",
+    "timeLabel": "Vào Lúc",
+    "time": "09:00",
+    "weekday": "Thứ Bảy",
+    "day": "03",
+    "month": "Tháng 01",
+    "year": "2026",
+    "lunarNote": "(Tức ngày 15 tháng 11 năm Ất Tỵ)"
+  },
+  "events": {
+    "title": "Thông Tin Tiệc Cưới",
+    "timeLabel": "Tiệc Cưới Sẽ Diễn Ra Vào Lúc",
+    "time": "18:00",
+    "weekday": "Thứ Bảy",
+    "day": "03",
+    "month": "Tháng 01",
+    "year": "2026",
+    "lunarNote": "(Tức ngày 15 tháng 11 năm Ất Tỵ)",
+    "welcomeLabel": "Đón Khách",
+    "welcomeTime": "17:30",
+    "startLabel": "Khai Tiệc",
+    "startTime": "18:00",
+    "calendarMonthYear": "Tháng 1 / 2026",
+    "weekdaysShort": ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+    "venueLabel": "Tổ Chức Tại",
+    "venueName": "White Palace",
+    "venueAddress": "194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh"
+  },
+  "rsvp": {
+    "title": "Xác Nhận Tham Dự",
+    "subtitle": "Sự hiện diện của bạn là món quà ý nghĩa nhất trong ngày trọng đại của chúng tôi.",
+    "deadline": "Vui lòng phản hồi trước ngày 20/12/2025",
+    "nameLabel": "Họ Và Tên",
+    "namePlaceholder": "Nhập họ tên của bạn",
+    "attendanceLabel": "Bạn có thể tham dự?",
+    "attendYes": "Chắc chắn tham dự",
+    "attendNo": "Rất tiếc không thể",
+    "messageLabel": "Lời Nhắn",
+    "messagePlaceholder": "Gửi lời chúc phúc đến cô dâu chú rể...",
+    "submit": "Gửi Xác Nhận",
+    "groomPhone": "0901 111 222",
+    "bridePhone": "0901 333 444",
+    "groomZalo": "https://zalo.me/0901111222",
+    "brideZalo": "https://zalo.me/0901333444"
+  },
+  "location": {
+    "title": "Đường Đến Nơi Tổ Chức",
+    "venueName": "White Palace",
+    "address": "194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh",
+    "mapUrl": "",
+    "mapPlaceholder": "Bản đồ sẽ hiển thị khi chủ tiệc thêm link Google Maps"
+  },
+  "footer": {
+    "brand": "Nam & Vy",
+    "tagline": "Với tình yêu, Hoàng Nam & Thảo Vy — 2026",
+    "privacy": "Chính Sách Bảo Mật",
+    "contact": "Liên Hệ"
+  }
+}
