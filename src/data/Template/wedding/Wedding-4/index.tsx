@@ -5,6 +5,7 @@ import { deepMerge } from '../../../../utils/deepMerge';
 import { toGoogleMapsEmbedUrl } from '../../../../utils/googleMaps';
 import LanguageSwitcher, { useTemplateLang } from '../../_shared/LanguageSwitcher';
 import Reveal from '../../_shared/Reveal';
+import { useCalendarMonth } from '../../_shared/useCalendarMonth';
 import viJson from './i18n/vi.json';
 import enJson from './i18n/en.json';
 import zhJson from './i18n/zh.json';
@@ -19,9 +20,10 @@ type Lang = (typeof SUPPORTED_LANGS)[number];
 const translations: Record<Lang, typeof viJson> = { vi: viJson, en: enJson, zh: zhJson, ko: koJson };
 interface Props { lang?: string }
 
-// Lịch tháng 01/2026: ngày 1 rơi vào Thứ Năm → cột tuần bắt đầu Thứ Hai nên có 3 ô trống đầu bảng
-const CALENDAR_LEAD_OFFSET = 3;
-const CALENDAR_DAYS_IN_MONTH = 31;
+// Ngày cưới thật dùng để tính lịch mini — đổi 2 số này khi đổi ngày cưới, useCalendarMonth
+// tự tính đúng thứ trong tuần + số ô trống đầu bảng, không cần tự nhẩm tay.
+const WEDDING_YEAR = 2026;
+const WEDDING_MONTH = 1; // 1–12
 
 export default function Wedding4({ lang = 'vi' }: Props) {
   const { activeLang, setActiveLang } = useTemplateLang(lang as Lang, SUPPORTED_LANGS);
@@ -32,9 +34,7 @@ export default function Wedding4({ lang = 'vi' }: Props) {
   const [attending, setAttending] = useState<'yes' | 'no' | null>(null);
 
   const highlightDay = Number(t.events.day);
-  const calendarDays = Array.from({ length: CALENDAR_LEAD_OFFSET }, () => null).concat(
-    Array.from({ length: CALENDAR_DAYS_IN_MONTH }, (_, i) => i + 1),
-  );
+  const { cells: calendarDays } = useCalendarMonth({ year: WEDDING_YEAR, month: WEDDING_MONTH });
 
   // ── Danh sách nhạc nền — khách bấm chọn 1 bài trong list thay vì chỉ 1 bài autoplay cố định.
   // `src` để trống cho tới khi chủ tiệc tự thêm link file mp3 qua panel tùy chỉnh (giống cách
@@ -341,11 +341,7 @@ export default function Wedding4({ lang = 'vi' }: Props) {
             {/* Footer */}
             <Reveal variant="fade" as="footer" data-section="footer" className="bg-[#f1ede5] border-t border-[#C5A059]/20 flex flex-col items-center gap-2 py-10 px-6">
               <span data-field="footer.brand" className="font-display text-xl text-[#775a19] mb-3">{t.footer.brand}</span>
-              <p data-field="footer.tagline" className="text-xs text-center text-[#4e4639]/80 mb-6">{t.footer.tagline}</p>
-              <div className="flex gap-6">
-                <a data-field="footer.privacy" className="text-[10px] uppercase tracking-wider text-[#4e4639]/80 hover:text-[#775a19] transition-colors" href="#">{t.footer.privacy}</a>
-                <a data-field="footer.contact" className="text-[10px] uppercase tracking-wider text-[#4e4639]/80 hover:text-[#775a19] transition-colors" href="#">{t.footer.contact}</a>
-              </div>
+              <p data-field="footer.tagline" className="text-xs text-center text-[#4e4639]/80">{t.footer.tagline}</p>
               <div className="mt-6 flex items-center gap-4">
                 <div className="w-10 h-px bg-[#C5A059]/20" />
                 <Heart aria-hidden className="w-3.5 h-3.5 text-[#8B8C74]" />

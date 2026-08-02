@@ -14,6 +14,7 @@ Khác với `src/components/` (UI của app vngoweb), code ở đây render
 |------|-----------|
 | `LanguageSwitcher.tsx` | Nút 🌐 chuyển ngôn ngữ trên header + hook `useTemplateLang` |
 | `Reveal.tsx` | Hiệu ứng xuất hiện/ẩn đi theo viewport (scroll reveal 2 chiều, stagger, tôn trọng `prefers-reduced-motion`) — KHÔNG bọc quanh phần tử chứa con `fixed`/`sticky` |
+| `useCalendarMonth.ts` | Tự tính lưới lịch tháng (ô trống đầu bảng, số ngày, thứ trong tuần) từ năm+tháng — dùng cho khối lịch mini "Save the Date" thay vì tự nhẩm tay |
 
 ## Cách dùng `LanguageSwitcher`
 
@@ -42,3 +43,30 @@ Quy tắc:
 - Prop `lang` từ editor luôn thắng: khi editor đổi ngôn ngữ preview, hook tự
   reset lựa chọn nội bộ của khách.
 - Template chỉ có 1 ngôn ngữ → component tự ẩn, không cần điều kiện bên ngoài.
+
+## Cách dùng `useCalendarMonth`
+
+```tsx
+import { useCalendarMonth } from '../../_shared/useCalendarMonth';
+
+// Đổi ngày cưới → chỉ sửa 2 số này, hook tự tính lại đúng thứ + số ô trống,
+// KHÔNG tự nhẩm tay "ngày 1 rơi vào thứ mấy" như trước.
+const WEDDING_YEAR = 2026;
+const WEDDING_MONTH = 1; // 1–12
+
+const { cells } = useCalendarMonth({ year: WEDDING_YEAR, month: WEDDING_MONTH });
+
+// cells: (number | null)[] — null là ô trống đầu bảng, render đúng thứ tự 7 cột
+<div className="grid grid-cols-7">
+  {cells.map((day, i) =>
+    day === null ? <span key={i} /> : <span key={i}>{day}</span>,
+  )}
+</div>
+```
+
+Quy tắc:
+
+- `month` nhận 1–12 như người thật hay nói (KHÔNG phải 0–11 kiểu `Date` gốc của JS).
+- Tự xử lý năm nhuận và số ngày thật của từng tháng — không cần tự tra bảng.
+- Ngày highlight (ngày cưới) vẫn là `Number` từ i18n như cũ (vd `Number(t.events.day)`),
+  hook chỉ lo phần vẽ lưới; không trộn logic hiển thị/dịch vào hook.

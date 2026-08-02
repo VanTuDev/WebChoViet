@@ -146,15 +146,45 @@ imageSlots: [
 ## Lưu ý thiết kế đặc biệt cho Wedding
 
 - **Countdown timer:** Bắt buộc phải có — tính từ `Date.now()` đến `weddingDate` trong vi.json
-- **Nhạc nền:** Optional nhưng rất được yêu thích — nên có nút bật/tắt rõ ràng
+- **Nhạc nền:** Optional nhưng rất được yêu thích. Ưu tiên kiểu **list nhạc cho khách tự
+  chọn bài** (xem `Wedding-4/index.tsx` — nút tròn nổi mở panel liệt kê track, bấm 1 bài
+  để phát/dừng) thay vì chỉ 1 bài autoplay cố định — sinh động hơn và khách có thể đổi
+  bài nếu không thích bài đang phát. `src` từng bài để trống sẵn trong `i18n/*.json`, chủ
+  tiệc tự điền link file mp3 sau qua panel tùy chỉnh (giống hệt cơ chế `mapUrl`, không
+  cần thêm capability upload nào mới). Nút nổi đặt góc **dưới-TRÁI** (`fixed bottom-5
+  left-5`) — góc dưới-phải đã bị badge "Made with vngoweb" của `PublicSitePage.tsx` chiếm
+  cố định trên MỌI site đã publish (`fixed bottom-5 right-5`), đặt cùng chỗ sẽ đè lên nhau.
 - **Floral decoration:** Dùng SVG hoặc PNG hoa lá trang trí góc — đặc trưng của thiệp cưới
 - **Animation nhẹ:** Fade-in, float, confetti — tạo cảm xúc khi mở thiệp lần đầu
 - **Print-friendly:** Một số user muốn in ra — tránh nền tối, background ảnh lớn
-- **Font:** Chỉ dùng font đã load sẵn toàn cục ở `index.html` gốc — `font-display` (Playfair
-  Display, serif sang trọng, đủ dấu tiếng Việt) cho tên đôi/tiêu đề, `font-sans`/`font-inter`
-  (Be Vietnam Pro) cho phần thân. KHÔNG tự thêm `<link>` Google Fonts khác (Cormorant Garamond,
-  Great Vibes...) trong `index.tsx` — React component không có chỗ nào đáng tin cậy để inject
-  vào `<head>`, và mỗi font thêm riêng cho 1 template sẽ không xuất hiện khi site đã publish.
+- **Font — chỉ dùng 2 font đã load sẵn toàn cục ở `index.html` gốc, đã tự kiểm tra tận
+  mắt (chụp màn hình phóng to @2x, dấu thanh/dấu mũ tiếng Việt không vỡ, không tofu) nên
+  yên tâm dùng cho MỌI template wedding tiếp theo:**
+  - `font-display` (Playfair Display) — cho tên đôi/tiêu đề lớn, chỉ load sẵn 2 style:
+    normal weight 600/700/800/900 và **italic CHỈ ở weight 700**. Dùng `italic` mà không
+    ép `font-bold`/`font-normal` cụ thể là an toàn (trình duyệt tự khớp về weight 700
+    italic có sẵn); đừng ép `font-weight` nhẹ hơn cho chữ `italic` vì face đó không tồn
+    tại, trình duyệt sẽ phải chọn lại theo thuật toán riêng, không kiểm soát được.
+  - `font-sans` / `font-inter` (Be Vietnam Pro) — cho toàn bộ phần thân, font thiết kế
+    riêng cho tiếng Việt nên luôn an toàn ở mọi weight đã load (400/500/600/700).
+  - **TUYỆT ĐỐI không tự thêm `<link>` Google Fonts khác** (Cormorant Garamond, Great
+    Vibes, Dancing Script, Alex Brush, Sacramento, Parisienne, Playball...) trong
+    `index.tsx` dù trông "sang" hơn cho thiệp cưới — React component không có chỗ nào
+    đáng tin cậy để inject vào `<head>` (không xuất hiện khi site đã publish), và phần
+    lớn font script/cursive kiểu Tây trên Google Fonts **không có bảng chữ Việt** (chỉ
+    hỗ trợ Latin cơ bản) → chữ có dấu sẽ tự động rớt xuống font dự phòng giữa chừng, vỡ
+    layout ngay chỗ chữ có dấu. Nếu thật sự cần thêm 1 font mới cho cả hệ thống, phải
+    thêm vào `<link>` chung ở `index.html` gốc VÀ tự kiểm tra bằng cách chụp màn hình
+    phóng to như trên trước khi coi là xong — không suy đoán qua tên font.
+- **Lịch mini "Save the Date":** dùng hook dùng chung `useCalendarMonth` (`_shared/`,
+  xem `_shared/README.md` mục "Cách dùng `useCalendarMonth`") để tính ô trống đầu bảng +
+  số ngày trong tháng — KHÔNG tự nhẩm tay bằng hằng số cố định như `Wedding-4` bản đầu
+  (dễ tính sai khi đổi ngày cưới, không ai kiểm chứng lại).
+- **Bản đồ đường đi — BẮT BUỘC, không phải optional dù bảng "Sections" bên dưới đánh dấu
+  ✅:** khách đọc thiệp cần biết đường tới nơi tổ chức thật. Nhúng Google Maps qua
+  `toGoogleMapsEmbedUrl` (xem `.claude/skills/template-rules/SKILL.md` mục 1) với fallback
+  đẹp khi `mapUrl` rỗng — không để trống trắng, tối thiểu phải có địa chỉ dạng chữ +
+  nút "chỉ đường" mở Google Maps search theo địa chỉ đó.
 - **Responsive:** 100% khách xem trên mobile qua Zalo — tối ưu 360px-430px trước hết
 - **Không cần auth:** Thiệp cưới là public URL — không cần đăng nhập để xem
 
@@ -174,14 +204,22 @@ hướng này (xem chi tiết + rationale đầy đủ ở `Wedding-4/DESIGN.md`
    render preview desktop qua 1 pane có thể bị co/scale để vừa layout editor — `vw` sẽ tính
    theo bề ngang cửa sổ trình duyệt thật rồi bị scale chồng thêm lần nữa, ra kích thước sai
    khác nhau giữa marketplace preview / editor / site đã publish. Dùng 1 giá trị cố định
-   (vd `sm:w-105` = 420px) cho kết quả nhất quán ở mọi nơi.
+   (`Wedding-4` dùng `sm:w-120` = 480px, đã tăng từ 420px ban đầu theo phản hồi "nhìn vẫn
+   nhỏ") cho kết quả nhất quán ở mọi nơi.
 2. **Không dùng breakpoint `sm:`/`md:`/`lg:` cho layout BÊN TRONG khung thiệp** — các
    breakpoint này tính theo viewport thật của trình duyệt chứ không phải bề rộng khung
    thiệp, nên sẽ kích hoạt sai (vd bật `grid-cols-2` cho desktop) ngay cả khi khung thiệp
    vẫn đang hẹp ~400px. Chỉ dùng breakpoint đúng 1 chỗ duy nhất: khai báo bề rộng khung.
-3. **Grid nhiều cột kiểu trang rộng phải đổi thành xếp dọc 1 cột** (nhà trai/nhà gái, danh
-   sách liên hệ...) — ở bề rộng ~370-400px sau khi trừ padding, 2 cột cạnh nhau làm tên
-   riêng/số điện thoại vỡ dòng xấu. Chỉ giữ 2 cột cho cặp số liệu thật ngắn (giờ/ngày).
+3. **Khối "2 nhà thông gia" (Nhà Trai/Nhà Gái) LUÔN LUÔN là lưới 2 cột đối xứng — kể cả
+   trên mobile.** Đây là yêu cầu rõ ràng, đã sửa lại từ 1 bản nháp trước đó lỡ gộp về
+   1 cột (tưởng nhầm là áp dụng chung quy tắc "gộp cột cho grid hẹp" bên dưới) — 2 nhà
+   đứng lệch cao thấp nhìn rất xấu, đối xứng mới đúng tinh thần thiệp cưới truyền thống.
+   Cứ để tên dài tự xuống dòng trong cột của nó (`grid grid-cols-2 gap-3`, text-sm trở
+   xuống), không ép về 1 cột chỉ vì cột hẹp.
+   Các grid nhiều cột KHÁC không mang tính "cặp đối xứng" (vd danh sách liên hệ rời rạc,
+   grid ảnh...) thì vẫn áp dụng quy tắc chung: đổi về xếp dọc 1 cột nếu bề rộng cột quá
+   hẹp để đọc thoải mái. Cặp số liệu thật ngắn (giờ/ngày, đón khách/khai tiệc) vẫn giữ
+   2 cột bình thường vì đủ ngắn để không vỡ dòng.
 
 ---
 
