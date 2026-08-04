@@ -138,7 +138,7 @@ export default function AdminDashboard() {
 
   const totalSitesPages = Math.ceil(sitesTotal / SITES_LIMIT);
 
-  // Get base URL for public sites (same origin, /:slug)
+  // URL public của site — dạng subdomain {slug}.vngoweb.com
   const getPublicUrl = getPublicSiteUrl;
 
   if (loading) {

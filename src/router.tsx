@@ -42,7 +42,7 @@ const tenantSlug = getTenantSlug();
 // công khai của 1 khách hàng, nên MỌI path đều render thẳng PublicSitePage, bỏ qua
 // toàn bộ route app chính (marketplace/dashboard/admin...). Route app chính vẫn giữ
 // nguyên bên dưới để phục vụ domain gốc vngoweb.com và URL cũ /{slug} (giai đoạn
-// chuyển tiếp — xem readmeToDo.md).
+// chuyển tiếp).
 export const router = tenantSlug
   ? createBrowserRouter([
       {

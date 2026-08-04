@@ -108,7 +108,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
   const ogImage = Object.values(config.images || {})[0];
   // Canonical phải khớp đúng cách khách đang truy cập: subdomain nếu đã vào qua
   // {slug}.vngoweb.com, hoặc path cũ nếu còn vào qua vngoweb.com/{slug} (giai đoạn
-  // chuyển tiếp — xem readmeToDo.md).
+  // chuyển tiếp).
   const canonicalUrl = isTenantHost ? getPublicSiteUrl(config.slug) : `https://${DOMAIN}/${config.slug}`;
   const category = TEMPLATES.find(t => t.id === config.templateId)?.category;
   const activeCustomData = (config.customData[activeLang] as Record<string, unknown>) ?? config.customData;
@@ -233,7 +233,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
 export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } = {}) {
   const { slug: pathSlug } = useParams<{ slug: string }>();
   // `slug` prop chỉ được router truyền khi đang ở tenant subdomain ({slug}.vngoweb.com);
-  // ngược lại lấy từ path cũ /:slug (giai đoạn chuyển tiếp — xem readmeToDo.md).
+  // ngược lại lấy từ path cũ /:slug (giai đoạn chuyển tiếp).
   const slug = tenantSlug ?? pathSlug;
   const isTenantHost = tenantSlug !== undefined;
 

@@ -295,6 +295,9 @@ export default function LandingPage() {
      2) [data-stack-card]: card dính xếp chồng — card sau trườn lên đè
         card trước, card trước lùi sâu (scale + tối dần), card đang vào
         màn hình dựng dậy từ tư thế ngả 3D theo đúng tiến độ cuộn.
+        HIỆN KHÔNG có element nào trong trang gắn data-stack-card — nhánh
+        này đang ở trạng thái chờ (stackEls rỗng, không chạy gì), giữ lại
+        để dùng khi cần thêm khối card xếp chồng.
      3) [data-tilt-scroll]: khối nghiêng rotateX liên tục theo khoảng
         cách tới tâm màn hình.
      Tất cả gom về 1 requestAnimationFrame, tắt khi reduced-motion. */

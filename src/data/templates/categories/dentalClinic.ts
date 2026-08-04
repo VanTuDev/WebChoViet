@@ -1,5 +1,5 @@
 /**
- * Category: dentalClinic — xem src/data/Template/dentalClinic/README.md
+ * Category: dentalClinic
  */
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
