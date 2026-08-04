@@ -1,7 +1,8 @@
 // Card một website của user — đồng bộ phong cách mini card bên Marketplace:
 // khung trình duyệt 3 chấm + slug, ảnh dọc 3/4 hover cuộn toàn trang,
 // nút hành động chính nằm trong overlay khi hover.
-import { Edit3, ExternalLink, Trash2, Globe, FileEdit, Lock, Link2, QrCode } from 'lucide-react';
+import type { MouseEvent } from 'react';
+import { Edit3, ExternalLink, Trash2, Globe, FileEdit, Lock, Link2, QrCode, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { SiteConfig } from '../../../../types';
 import { TEMPLATES } from '../../../../data';
@@ -14,13 +15,18 @@ import { getPublicSiteUrl } from '../../../../utils/tenant';
 interface Props {
   site: SiteConfig;
   onDelete: () => void;
+  /** Đang được chọn trong chế độ chọn nhiều (để xóa hàng loạt) */
+  selected?: boolean;
+  /** Đang có ít nhất 1 website khác được chọn — click thường cũng chọn/bỏ chọn thay vì mở editor */
+  selectMode?: boolean;
+  onToggleSelect?: () => void;
 }
 
 const LANG_LABELS: Record<string, string> = {
   vi: 'VI', en: 'EN', zh: 'ZH', ko: 'KO',
 };
 
-export default function SiteConfigCard({ site, onDelete }: Props) {
+export default function SiteConfigCard({ site, onDelete, selected = false, selectMode = false, onToggleSelect }: Props) {
   const navigate = useNavigate();
   const { showSnackbar } = useAppContext();
   const template = TEMPLATES.find(t => t.id === site.templateId);
@@ -41,8 +47,23 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
     }
   };
 
+  const goEditOrToggleSelect = (e: MouseEvent) => {
+    // Ctrl/Cmd+click luôn chọn/bỏ chọn (không mở editor); khi đã có website khác đang
+    // được chọn, click thường cũng chọn/bỏ chọn tiếp — đỡ phải giữ Ctrl cho từng cái.
+    if (e.ctrlKey || e.metaKey || selectMode) {
+      e.preventDefault();
+      onToggleSelect?.();
+      return;
+    }
+    goEdit();
+  };
+
   return (
-    <article className="group relative flex flex-col rounded-xl border border-outline-variant/60 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    <article
+      className={`group relative flex flex-col rounded-xl border bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden ${
+        selected ? 'border-fnb-red ring-2 ring-fnb-red/40' : 'border-outline-variant/60'
+      }`}
+    >
 
       {/* ── Thanh trình duyệt: 3 chấm + slug ────────────────────────────── */}
       <div className="flex items-center gap-0.5 px-2 py-1 bg-gradient-to-r from-fnb-cream to-white border-b border-outline-variant/40 shrink-0">
@@ -54,15 +75,30 @@ export default function SiteConfigCard({ site, onDelete }: Props) {
         </span>
       </div>
 
-      {/* ── Screenshot dọc — nhấn mở editor, hover cuộn toàn trang ─────── */}
+      {/* ── Screenshot dọc — nhấn mở editor (Ctrl/Cmd+click hoặc đang chọn nhiều thì chọn thay vì mở), hover cuộn toàn trang ─────── */}
       <div
-        onClick={goEdit}
+        onClick={goEditOrToggleSelect}
         role="button"
         tabIndex={0}
         onKeyDown={e => e.key === 'Enter' && goEdit()}
         aria-label={`Chỉnh sửa website ${site.name}`}
         className={`relative aspect-[3/4] w-full overflow-hidden bg-surface-container-low cursor-pointer ${screen ? 'tmpl-screen' : ''}`}
       >
+        {/* Checkbox chọn — luôn hiện khi đang chọn nhiều/đã chọn, chỉ hiện lúc hover khi chưa */}
+        <button
+          type="button"
+          onClick={e => { e.stopPropagation(); onToggleSelect?.(); }}
+          aria-label={selected ? `Bỏ chọn ${site.name}` : `Chọn ${site.name}`}
+          aria-pressed={selected}
+          className={`absolute right-1.5 top-1.5 z-10 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all cursor-pointer ${
+            selected
+              ? 'bg-fnb-red border-fnb-red text-white opacity-100'
+              : `bg-white/85 border-white text-transparent opacity-0 group-hover:opacity-100 ${selectMode ? '!opacity-100' : ''}`
+          }`}
+        >
+          <Check className="h-3 w-3" strokeWidth={3} />
+        </button>
+
         {screen || template?.imageUrl ? (
           <img
             src={screen ?? template?.imageUrl}

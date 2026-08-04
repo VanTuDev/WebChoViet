@@ -4,7 +4,7 @@
 // hành vi mới của user, chỉ cần gọi sendLog(slug, '<Loại-Mới>', { ...data }) —
 // không cần đổi schema hay endpoint (xem LogEventType bên dưới để thêm loại mới).
 import { apiFetch } from './apiClient';
-import { getApiBaseUrl } from './authService';
+import { getApiBaseUrl } from './authToken';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 

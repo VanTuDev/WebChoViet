@@ -1,6 +1,8 @@
 // Auth service — gọi thẳng NestJS backend thật (không qua Express mock của Vite dev server).
 // Base URL cấu hình qua VITE_API_URL — trỏ tới localhost:3001/api/v1 khi dev local,
 // hoặc URL ngrok public khi backend được tunnel (xem BackEnd-WebChoViet/.env.example).
+import { ApiError, apiFetch } from './apiClient';
+import { getApiBaseUrl, getToken, clearToken } from './authToken';
 
 export interface AuthUser {
   _id: string;
@@ -11,27 +13,10 @@ export interface AuthUser {
   role: 'user' | 'admin';
 }
 
-const TOKEN_KEY = 'wcv_token';
 const POST_LOGIN_REDIRECT_KEY = 'wcv_post_login_redirect';
-
-export function getApiBaseUrl(): string {
-  return import.meta.env.VITE_API_URL ?? 'http://localhost:3001/api/v1';
-}
 
 export function getGoogleLoginUrl(): string {
   return `${getApiBaseUrl()}/auth/google`;
-}
-
-export function getToken(): string | null {
-  return localStorage.getItem(TOKEN_KEY);
-}
-
-export function setToken(token: string): void {
-  localStorage.setItem(TOKEN_KEY, token);
-}
-
-function clearToken(): void {
-  localStorage.removeItem(TOKEN_KEY);
 }
 
 /**
@@ -58,27 +43,18 @@ export function consumePostLoginRedirect(): string | null {
  * unhandled rejection ở các nơi gọi không có .catch() (vd lúc app khởi động).
  */
 export async function fetchMe(): Promise<AuthUser | null> {
-  const token = getToken();
-  if (!token) return null;
+  if (!getToken()) return null;
 
   try {
-    const res = await fetch(`${getApiBaseUrl()}/auth/me`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        // Bỏ qua trang cảnh báo interstitial của ngrok free plan khi gọi qua tunnel
-        'ngrok-skip-browser-warning': 'true',
-      },
-    });
-
-    if (!res.ok) {
-      if (res.status === 401) clearToken();
-      return null;
-    }
-
-    const body = await res.json();
-    return body.data as AuthUser;
+    return await apiFetch<AuthUser>('/auth/me');
   } catch (err) {
-    console.error('fetchMe() thất bại:', err);
+    // ApiError giữ status HTTP — chỉ 401 (token hết hạn/không hợp lệ) mới xoá token,
+    // lỗi mạng/5xx thì giữ nguyên token, có thể vẫn còn hợp lệ khi mạng ổn lại.
+    if (err instanceof ApiError && err.status === 401) {
+      clearToken();
+    } else {
+      console.error('fetchMe() thất bại:', err);
+    }
     return null;
   }
 }
@@ -89,12 +65,9 @@ export async function logoutRequest(): Promise<void> {
   clearToken();
   if (!token) return;
   try {
-    await fetch(`${getApiBaseUrl()}/auth/logout`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'ngrok-skip-browser-warning': 'true',
-      },
-    });
+    // Gắn thẳng token vừa xoá vào header — interceptor của apiClient đọc getToken() lúc
+    // request chạy, mà token đã bị clearToken() ở trên nên tự nó sẽ không gắn được nữa.
+    await apiFetch('/auth/logout', { headers: { Authorization: `Bearer ${token}` } });
   } catch {
     // Logout phía client vẫn coi là thành công dù request thất bại
   }

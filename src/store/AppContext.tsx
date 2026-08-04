@@ -3,7 +3,8 @@ import { SiteConfig } from '../types';
 import { type SnackbarState } from '../components/Snackbar/Snackbar';
 import { type ConfirmDialogState } from '../components/ConfirmDialog/ConfirmDialog';
 import { getAllSiteConfigs, deleteSiteConfig as apiDeleteSiteConfig } from '../services/siteConfigService';
-import { type AuthUser, fetchMe, getToken, setToken, logoutRequest } from '../services/authService';
+import { type AuthUser, fetchMe, logoutRequest } from '../services/authService';
+import { getToken, setToken } from '../services/authToken';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 

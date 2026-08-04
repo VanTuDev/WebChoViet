@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
-  Globe, Loader2, Search, Rocket, FileEdit, Lock, ChevronDown, Sparkles,
+  Globe, Loader2, Search, Rocket, FileEdit, Lock, ChevronDown, Sparkles, Trash2, X,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../store/AppContext';
@@ -27,6 +27,29 @@ export default function ProjectsPage() {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [sortBy, setSortBy] = useState<SortBy>('updated');
 
+  // ── Chọn nhiều (Ctrl/Cmd+click vào card, hoặc bấm checkbox) để xóa hàng loạt ────
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const selectMode = selectedIds.size > 0;
+
+  const toggleSelect = (id: string) => {
+    setSelectedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const clearSelection = () => setSelectedIds(new Set());
+
+  // Esc để thoát chế độ chọn nhanh — chuẩn UX file manager (Explorer, Gmail...)
+  useEffect(() => {
+    if (!selectMode) return;
+    const onKeyDown = (e: KeyboardEvent) => { if (e.key === 'Escape') clearSelection(); };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [selectMode]);
+
   const handleDeleteSiteConfig = (id: string) => {
     showConfirm({
       title: 'Xóa website?',
@@ -40,6 +63,27 @@ export default function ProjectsPage() {
         } catch {
           showSnackbar('Không thể xóa. Vui lòng thử lại.', 'error');
         }
+      },
+    });
+  };
+
+  const handleBulkDelete = () => {
+    const ids = Array.from(selectedIds);
+    if (ids.length === 0) return;
+    showConfirm({
+      title: `Xóa ${ids.length} website đã chọn?`,
+      message: `${ids.length} website và toàn bộ nội dung tùy chỉnh sẽ bị xóa vĩnh viễn. Không thể khôi phục.`,
+      confirmLabel: `Xóa ${ids.length} website`,
+      variant: 'danger',
+      onConfirm: async () => {
+        // allSettled — 1 website xóa lỗi (vd mất mạng giữa chừng) không được chặn các
+        // website còn lại; đếm lại số thành công/thất bại để báo đúng cho người dùng.
+        const results = await Promise.allSettled(ids.map(id => removeSiteConfig(id)));
+        const failed = results.filter(r => r.status === 'rejected').length;
+        const succeeded = ids.length - failed;
+        if (failed === 0) showSnackbar(`Đã xóa ${succeeded} website thành công.`, 'success');
+        else showSnackbar(`Đã xóa ${succeeded}/${ids.length} website — ${failed} website xóa thất bại.`, 'error');
+        clearSelection();
       },
     });
   };
@@ -124,6 +168,11 @@ export default function ProjectsPage() {
           <div className="flex items-center gap-2 mr-auto">
             <h2 className="text-lg font-bold text-gray-900 font-display">Website của tôi</h2>
             {!siteConfigsLoaded && <Loader2 className="h-4 w-4 animate-spin text-outline" />}
+            {!selectMode && siteConfigs.length > 1 && (
+              <span className="hidden sm:inline text-[10px] text-on-surface-variant font-medium">
+                · Giữ <kbd className="px-1 py-0.5 rounded border border-outline-variant bg-surface-container-low font-mono">Ctrl</kbd> và bấm để chọn nhiều
+              </span>
+            )}
           </div>
 
           {/* Search */}
@@ -169,6 +218,29 @@ export default function ProjectsPage() {
           </div>
         </div>
 
+        {/* Thanh hành động chọn nhiều — chỉ hiện khi có ít nhất 1 website đang được chọn */}
+        {selectMode && (
+          <div className="flex items-center gap-3 bg-fnb-cream border border-fnb-orange/30 rounded-2xl px-4 py-2.5">
+            <p className="text-xs font-bold text-gray-800 mr-auto">
+              Đã chọn <span className="text-primary">{selectedIds.size}</span> website
+            </p>
+            <button
+              onClick={handleBulkDelete}
+              className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3.5 py-1.5 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors cursor-pointer active:scale-95"
+            >
+              <Trash2 className="h-3 w-3" />
+              Xóa đã chọn ({selectedIds.size})
+            </button>
+            <button
+              onClick={clearSelection}
+              className="inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-white/70 transition-colors cursor-pointer"
+            >
+              <X className="h-3 w-3" />
+              Bỏ chọn
+            </button>
+          </div>
+        )}
+
         {/* Grid / empty states */}
         {siteConfigsLoaded && siteConfigs.length === 0 ? (
           <div className="text-center py-14 bg-gradient-to-br from-fnb-cream to-fnb-orange/10 rounded-3xl border border-dashed border-fnb-orange/30">
@@ -197,6 +269,9 @@ export default function ProjectsPage() {
                 key={site.id}
                 site={site}
                 onDelete={() => handleDeleteSiteConfig(site.id)}
+                selected={selectedIds.has(site.id)}
+                selectMode={selectMode}
+                onToggleSelect={() => toggleSelect(site.id)}
               />
             ))}
           </div>

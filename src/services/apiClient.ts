@@ -1,11 +1,25 @@
 import axios, { AxiosError, type AxiosRequestConfig } from 'axios';
-import { getApiBaseUrl, getToken } from './authService';
+import { getApiBaseUrl, getToken } from './authToken';
 
 /** Response envelope chuẩn từ backend NestJS: { success, data, message? } (xem ResponseInterceptor + AllExceptionsFilter phía BE) */
 interface ApiEnvelope<T> {
   success: boolean;
   data?: T;
   message?: string | string[];
+}
+
+/**
+ * Error chuẩn cho mọi lỗi API — giữ lại `status` (HTTP status code) thay vì chỉ có `message`
+ * như Error thường, để nơi gọi cần phân biệt loại lỗi (vd 401 hết hạn token vs lỗi mạng) không
+ * phải tự parse lại. Vẫn `extends Error` nên mọi chỗ đang bắt `Error`/đọc `.message` không đổi.
+ */
+export class ApiError extends Error {
+  status?: number;
+  constructor(message: string, status?: number) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
 }
 
 /**
@@ -39,13 +53,13 @@ export async function apiFetch<T>(path: string, config?: AxiosRequestConfig, fal
   try {
     const res = await client.request<ApiEnvelope<T>>({ url: path, ...config });
     if (!res.data?.success) {
-      throw new Error(extractMessage(res.data) || fallbackMessage || `API lỗi: ${path}`);
+      throw new ApiError(extractMessage(res.data) || fallbackMessage || `API lỗi: ${path}`, res.status);
     }
     return res.data.data as T;
   } catch (err) {
     if (err instanceof AxiosError) {
       const status = err.response?.status;
-      throw new Error(extractMessage(err.response?.data) || fallbackMessage || `API ${status ?? ''}: ${path}`.trim());
+      throw new ApiError(extractMessage(err.response?.data) || fallbackMessage || `API ${status ?? ''}: ${path}`.trim(), status);
     }
     throw err;
   }
