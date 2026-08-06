@@ -7,6 +7,11 @@
 // gắn cùng 1 tài khoản quảng cáo với những trang thiếu nội dung/lặp mẫu đó.
 // Giới hạn phạm vi tải giúp lần review sau chỉ còn xét đúng các trang marketing
 // thật sự có nội dung.
+//
+// LƯU Ý: xác minh quyền sở hữu site (<meta name="google-adsense-account"> +
+// /ads.txt) đặt TĨNH trong index.html, KHÔNG qua component này — bot review
+// phải thấy được ngay ở tầng HTML nguồn, không phụ thuộc JS đã chạy xong hay
+// chưa. Component này chỉ lo tải script phục vụ hiển thị quảng cáo thật.
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ROUTES } from '../../config/routes';
@@ -37,13 +42,48 @@ export default function AdSenseLoader() {
     // app chính — chặn thêm ở đây để không bao giờ tải nhầm trên site khách.
     if (getTenantSlug()) return;
     if (!ADSENSE_ROUTES.includes(location.pathname)) return;
-    if (document.getElementById(SCRIPT_ID)) return; // đã tải rồi trong phiên này
+
+    const existing = document.getElementById(SCRIPT_ID);
+    if (existing) {
+      // Đã tải rồi trong phiên này (vd chuyển route qua lại giữa 2 trang đều
+      // nằm trong ADSENSE_ROUTES) — không tải lại, chỉ log trạng thái hiện tại.
+      if (import.meta.env.DEV) {
+        console.log(
+          `[AdSense] Script đã có sẵn cho route "${location.pathname}". window.adsbygoogle:`,
+          window.adsbygoogle,
+        );
+      }
+      return;
+    }
 
     const script = document.createElement('script');
     script.id = SCRIPT_ID;
     script.async = true;
     script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
     script.crossOrigin = 'anonymous';
+
+    if (import.meta.env.DEV) {
+      console.log(`[AdSense] Bắt đầu tải script cho route "${location.pathname}"...`);
+
+      script.onload = () => {
+        console.log('[AdSense] ✅ Script tải thành công.', {
+          adsbygoogle: window.adsbygoogle,
+          route: location.pathname,
+        });
+      };
+
+      script.onerror = () => {
+        // Lý do phổ biến nhất KHÔNG phải lỗi cấu hình: trình duyệt/extension
+        // chặn quảng cáo (uBlock, AdBlock, Brave shields...) chặn thẳng domain
+        // pagead2.googlesyndication.com trước khi request kịp gửi đi. Thử tắt
+        // ad-blocker hoặc mở tab ẩn danh không cài extension trước khi nghi ngờ
+        // code sai.
+        console.warn(
+          '[AdSense] ❌ Script tải THẤT BẠI — kiểm tra ad-blocker (uBlock/AdBlock/Brave Shields) trước khi nghi ngờ code. Thử lại ở tab ẩn danh không cài extension.',
+        );
+      };
+    }
+
     document.head.appendChild(script);
   }, [location.pathname]);
 
