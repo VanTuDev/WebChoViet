@@ -2,12 +2,12 @@
 
 @theme {
   /* ── Colors — Design System "VNGOWEB Pin" ──────────────────────────
-     Bảng màu lấy trực tiếp từ logo chính thức (public/Logo/logo_VNGOWEB-01.png,
+     Bảng màu lấy trực tiếp từ logo chính thức (design/Logo/logo_VNGOWEB-01.png,
      sample bằng script màu pixel thật, không đoán bằng mắt): ruy băng ghim vị trí
      (location pin) chuyển sắc lam ngọc → xanh dương → tím, chữ "WEB" mực navy
      gần đen. Thay thế hoàn toàn bảng "FnB Warmth" (đỏ cam ấm) cũ — brand đã đổi
      hướng từ ẩm thực sang nền tảng "biến Google Maps thành website chuyên nghiệp"
-     cho MỌI ngành (xem banner public/Logo/bannerweb_VNGOweb.png). */
+     cho MỌI ngành (xem banner design/Logo/bannerweb_VNGOweb.png). */
   --color-primary: #0a6ee6;
   --color-on-primary: #ffffff;
   --color-primary-container: #1496f0;

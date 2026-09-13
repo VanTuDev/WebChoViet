@@ -487,7 +487,7 @@ export default function LandingPage() {
               </ul>
             </div>
 
-            {/* Right — ảnh banner chính thức (public/Logo/bannerweb_VNGOweb.png,
+            {/* Right — ảnh banner chính thức (design/Logo/bannerweb_VNGOweb.png,
                 cắt phần minh hoạ: thẻ Google Maps → mũi tên → website/mobile) */}
             <div
               className="lg:w-[48%] w-full relative"

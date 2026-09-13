@@ -1,5 +1,5 @@
 // ─── Logo chính thức vngoweb — wordmark "VNGOWEB" (biểu tượng ghim vị trí lồng
-// chữ W, gradient lam ngọc → xanh dương → tím, nguồn: public/Logo/logo_VNGOWEB-01.png).
+// chữ W, gradient lam ngọc → xanh dương → tím, nguồn: design/Logo/logo_VNGOWEB-01.png).
 // PNG độ phân giải cao thay vì SVG — chưa có nguồn vector thật (chỉ có .ai/.psd gốc),
 // nét vẫn sắc nét ở mọi cỡ hiển thị thực tế (navbar/sidebar/footer). Cao theo em nên
 // chỉnh cỡ bằng class text-* như chữ thường. Nền tối truyền `inverted` để đổi sang bản
