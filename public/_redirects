@@ -42,6 +42,8 @@
 /pwa-maskable-512.png /pwa-maskable-512.png                                  200
 /logo-wordmark.svg   /logo-wordmark.svg                                      200
 /logo-wordmark.png   /logo-wordmark.png                                      200
+/logo-icon.png       /logo-icon.png                                          200
+/hero-banner-visual.jpg /hero-banner-visual.jpg                              200
 /logoVNGOWeb.png     /logoVNGOWeb.png                                        200
 
 # Site khách xuất bản — chuyển hẳn từ path sang wildcard subdomain (*.vngoweb.com
