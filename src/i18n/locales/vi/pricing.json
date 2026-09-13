@@ -23,12 +23,12 @@
   "plans": {
     "free": {
       "name": "Khởi Nghiệp (Miễn phí)",
-      "desc": "Giải pháp hoàn hảo để bắt đầu số hóa thực đơn & quầy bán lẻ nhỏ.",
+      "desc": "Giải pháp hoàn hảo để bắt đầu xây dựng website cho quán & cửa hàng nhỏ.",
       "features": [
         "Tối đa 1 website đã xuất bản + 2 bản nháp thử nghiệm",
         "Đường dẫn website trên tên miền vngoweb.com",
         "Hỗ trợ Mã QR động không giới hạn",
-        "Trình quản lý thực đơn kéo thả căn bản",
+        "Trình quản lý nội dung kéo thả căn bản",
         "Logo vngoweb hiển thị ở góc website"
       ]
     },

@@ -47,12 +47,12 @@
       "description": "Dán link, nhận ngay website với đầy đủ đánh giá, hình ảnh và thông tin liên hệ được đồng bộ tự động. Không cần gõ lại một chữ."
     },
     "multilang": {
-      "title": "Menu đa ngôn ngữ thông minh",
+      "title": "Website đa ngôn ngữ, thông minh",
       "description": "Hệ thống tự động nhận diện ngôn ngữ của khách hàng và chuyển đổi giao diện mượt mà, ghi điểm với khách du lịch nước ngoài."
     },
     "qr": {
       "title": "Mã QR động & Độc quyền",
-      "description": "Tạo mã QR đặt bàn có logo quán. In một lần, cập nhật menu hay giá bán mãi mãi trên hệ thống mà không cần in lại."
+      "description": "Tạo mã QR đặt bàn có logo quán. In một lần, cập nhật nội dung hay giá bán mãi mãi trên hệ thống mà không cần in lại."
     }
   },
   "howItWorks": {

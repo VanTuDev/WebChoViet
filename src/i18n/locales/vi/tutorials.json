@@ -14,12 +14,12 @@
     {
       "num": "02",
       "title": "Chỉnh Sửa Thông Tin Tiệm",
-      "desc": "Thay đổi tên cửa hàng, số điện thoại Zalo, logo text, bảng màu phù hợp và sửa thực đơn bảng giá dễ dàng."
+      "desc": "Thay đổi tên cửa hàng, số điện thoại Zalo, logo text, bảng màu phù hợp và sửa nội dung, bảng giá dễ dàng."
     },
     {
       "num": "03",
       "title": "Nhận Mã QR Code Động",
-      "desc": "Hệ thống tự động tạo mã QR cho website. In đề can dán lên bàn để khách hàng quét và xem menu ngay."
+      "desc": "Hệ thống tự động tạo mã QR cho website. In đề can dán lên bàn để khách hàng quét và xem website ngay."
     },
     {
       "num": "04",

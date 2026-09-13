@@ -23,12 +23,12 @@
   "plans": {
     "free": {
       "name": "Starter (Free)",
-      "desc": "The perfect way to start digitizing your menu and small retail counter.",
+      "desc": "The perfect way to start building a website for your small shop or retail counter.",
       "features": [
         "Up to 1 published website + 2 draft sites",
         "Website URL on the vngoweb.com domain",
         "Unlimited dynamic QR codes",
-        "Basic drag-and-drop menu manager",
+        "Basic drag-and-drop content manager",
         "vngoweb badge shown in the website corner"
       ]
     },
