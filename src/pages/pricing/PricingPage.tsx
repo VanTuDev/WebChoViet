@@ -19,9 +19,9 @@ import {
 // hạn mức khớp BE src/users/schemas/user.schema.ts (PLAN_SITE_LIMIT) — sửa phải sửa cả 2 nơi.
 // Nội dung text (name/desc/features) lấy từ i18n namespace pricing.
 const PLAN_STATIC = [
-  { id: 'free',  color: '#475569', price: null,                                    limits: { draft: 2, published: 2 },  popular: false },
-  { id: 'pro',   color: '#ff6b2c', price: { monthly: 199_000, yearly: 1_990_000 }, limits: { draft: 4, published: 4 },  popular: true },
-  { id: 'ultra', color: '#5b21b6', price: { monthly: 499_000, yearly: 4_990_000 }, limits: { draft: 10, published: 6 }, popular: false },
+  { id: 'free',  color: '#475569', price: null,                                    limits: { draft: 2, published: 1 },  popular: false },
+  { id: 'pro',   color: '#ff6b2c', price: { monthly: 199_000, yearly: 1_990_000 }, limits: { draft: 4, published: 1 },  popular: true },
+  { id: 'ultra', color: '#5b21b6', price: { monthly: 499_000, yearly: 4_990_000 }, limits: { draft: 15, published: 3 }, popular: false },
 ] as const;
 
 function buildPlanDefs(t: TFunction<'pricing'>): PricingPlanDef[] {
