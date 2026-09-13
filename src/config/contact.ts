@@ -9,3 +9,7 @@ export const FOUNDER_NAME = 'Nguyễn Văn Tú';
 export const FOUNDER_SCHOOL = 'Đại học FPT Đà Nẵng';
 export const FOUNDER_FACEBOOK = 'https://www.facebook.com/vantu1602/';
 export const FOUNDER_ZALO = 'https://zalo.me/0399604816';
+
+// Trang mạng xã hội CHÍNH THỨC của vngoweb (khác FOUNDER_FACEBOOK — đó là Facebook cá nhân người sáng lập)
+export const SOCIAL_FACEBOOK = 'https://www.facebook.com/share/18XS1QBz7w/?mibextid=wwXIfr';
+export const SOCIAL_TIKTOK = 'https://www.tiktok.com/@vngoweb.official';

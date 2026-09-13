@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { CSSProperties, MouseEvent as ReactMouseEvent } from 'react';
+import type { MouseEvent as ReactMouseEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -9,7 +9,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ClipboardPaste,
-  Coffee,
   Flame,
   Languages,
   LogIn,
@@ -18,7 +17,6 @@ import {
   QrCode,
   Rocket,
   Star,
-  UtensilsCrossed,
   Zap,
 } from 'lucide-react';
 import { TEMPLATES, CATEGORY_REGISTRY } from '../../data/templates/registry';
@@ -29,23 +27,6 @@ import SiteHeader from '../../components/shared/SiteHeader';
 import SiteFooter from '../../components/shared/SiteFooter';
 import HreflangLinks from '../../i18n/HreflangLinks';
 import { useTemplateStars } from '../../hooks/useTemplateStars';
-import {
-  ApricotBranch,
-  GoldCloud,
-  Lantern,
-  MaiPetal,
-  ThuyBaWave,
-} from './_components/VietMotifs';
-
-/* Element hạc & hoa mẫu đơn tách nền từ public/chim-hac-vector-2.jpg
-   (script flood-fill + connected-components) — PNG trong suốt trong public/elements/ */
-const EL = {
-  hacCream: '/elements/hac-1.png', // hạc kem cánh đen, bay lên, mặt hướng phải
-  hacUp: '/elements/hac-2.png', // hạc trắng vút lên, đầu hướng trái-trên
-  hacGlide: '/elements/hac-3.png', // hạc hồng sải cánh lượn, đầu hướng phải
-  hacLand: '/elements/hac-4.png', // hạc trắng cánh chữ V, mỏ hướng trái
-  peony: '/elements/hoa-mau-don.png', // hoa mẫu đơn đỏ viền vàng
-} as const;
 
 /* ═══════════════════════════════════════════════════════════════════════
    Showcase data — screenshot thật của template (utils/templateScreens)
@@ -74,16 +55,33 @@ const FILTER_CHIPS: { id: string; label: string | null }[] = [
   })),
 ];
 
-/* Cánh mai rơi trong hero — vị trí/thời lượng cố định để render ổn định */
-const PETALS = [
-  { left: '6%', delay: '0s', duration: '11s', size: 16 },
-  { left: '18%', delay: '3.5s', duration: '14s', size: 12 },
-  { left: '34%', delay: '7s', duration: '12s', size: 14 },
-  { left: '52%', delay: '1.8s', duration: '15s', size: 11 },
-  { left: '68%', delay: '5.2s', duration: '13s', size: 15 },
-  { left: '82%', delay: '9s', duration: '16s', size: 12 },
-  { left: '93%', delay: '2.6s', duration: '12.5s', size: 13 },
-];
+/* ═══════════════════════════════════════════════════════════════════════
+   Sóng bo mềm khép chân hero — 1 đường cong duy nhất, gradient thương
+   hiệu (primary → tertiary), thay cho hoạ tiết vảy cá sơn mài cũ.
+═══════════════════════════════════════════════════════════════════════ */
+function HeroWave({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 1440 110"
+      preserveAspectRatio="none"
+      className={className}
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <linearGradient id="heroWaveGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="var(--color-primary)" />
+          <stop offset="55%" stopColor="var(--color-secondary)" />
+          <stop offset="100%" stopColor="var(--color-tertiary)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M0,58 C240,110 420,0 720,26 C1020,52 1200,10 1440,50 L1440,110 L0,110 Z"
+        fill="url(#heroWaveGrad)"
+      />
+    </svg>
+  );
+}
 
 /* ═══════════════════════════════════════════════════════════════════════
    3D Coverflow carousel — trình diễn screenshot template
@@ -156,13 +154,13 @@ function TemplateCarousel3D({
                 className="block w-[240px] sm:w-[300px] text-left cursor-pointer group outline-none"
                 aria-label={isCenter ? t('showcase.previewAria', { name: tmpl.name }) : t('showcase.goToAria', { name: tmpl.name })}
               >
-                <div className="rounded-2xl overflow-hidden bg-white shadow-2xl shadow-viet-red/30 ring-2 ring-viet-gold/45">
-                  {/* Thanh trình duyệt giả lập — sơn mài đỏ viền vàng */}
-                  <div className="flex items-center gap-1.5 px-3.5 py-2.5 bg-gradient-to-r from-viet-maroon to-viet-red border-b-2 border-viet-gold/60">
-                    <span className="w-2.5 h-2.5 rounded-full bg-viet-gold" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-fnb-orange" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-viet-cream" />
-                    <span className="ml-2 flex-1 truncate text-[10px] font-viet text-viet-cream/90 bg-white/12 rounded-full px-2.5 py-0.5">
+                <div className="rounded-2xl overflow-hidden bg-white shadow-2xl shadow-primary/20 ring-1 ring-outline-variant">
+                  {/* Thanh trình duyệt giả lập — gradient thương hiệu */}
+                  <div className="flex items-center gap-1.5 px-3.5 py-2.5 bg-gradient-to-r from-primary to-tertiary">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/50" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/30" />
+                    <span className="ml-2 flex-1 truncate text-[10px] font-inter text-white/90 bg-white/15 rounded-full px-2.5 py-0.5">
                       {DOMAIN}/{tmpl.id}
                     </span>
                   </div>
@@ -176,13 +174,13 @@ function TemplateCarousel3D({
                       className="w-full h-full object-cover"
                     />
                     {tmpl.badge && (
-                      <span className="absolute top-3 left-3 bg-gradient-to-r from-viet-red to-fnb-orange text-white text-[10px] font-viet font-bold px-2.5 py-1 rounded-full shadow-lg shadow-viet-red/40">
+                      <span className="absolute top-3 left-3 bg-gradient-to-r from-primary to-tertiary text-white text-[10px] font-inter font-bold px-2.5 py-1 rounded-full shadow-lg shadow-primary/40">
                         {tmpl.badge}
                       </span>
                     )}
                     {isCenter && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-viet-red/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-5">
-                        <span className="bg-viet-cream text-viet-red font-viet font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg flex items-center gap-1.5">
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-5">
+                        <span className="bg-white text-primary font-inter font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg flex items-center gap-1.5">
                           {t('showcase.previewThis')}
                           <ArrowRight className="w-3.5 h-3.5" />
                         </span>
@@ -194,15 +192,15 @@ function TemplateCarousel3D({
                   <div className="px-4 py-3 flex items-center justify-between gap-2 bg-white">
                     <div className="min-w-0">
                       <p className="font-lexend font-semibold text-sm text-on-surface truncate">{tmpl.name}</p>
-                      <p className="font-viet text-[11px] text-on-surface-variant truncate">
+                      <p className="font-inter text-[11px] text-on-surface-variant truncate">
                         {CATEGORY_LABEL[tmpl.category] ?? tmpl.category}
                       </p>
                     </div>
                     <span
-                      className={`shrink-0 text-[11px] font-viet font-bold px-2.5 py-1 rounded-full ${
+                      className={`shrink-0 text-[11px] font-inter font-bold px-2.5 py-1 rounded-full ${
                         tmpl.price === 0
                           ? 'bg-fnb-green/10 text-fnb-green'
-                          : 'bg-viet-gold/20 text-on-secondary-container'
+                          : 'bg-primary/10 text-primary'
                       }`}
                     >
                       {tmpl.priceText}
@@ -218,14 +216,14 @@ function TemplateCarousel3D({
         <button
           onClick={() => go(-1)}
           aria-label={t('showcase.prevSlide')}
-          className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-viet-red ring-1 ring-viet-gold/50 shadow-lg shadow-viet-red/20 flex items-center justify-center hover:bg-viet-red hover:text-viet-cream hover:scale-110 transition-all cursor-pointer"
+          className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-primary ring-1 ring-primary/20 shadow-lg shadow-primary/15 flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={() => go(1)}
           aria-label={t('showcase.nextSlide')}
-          className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-viet-red ring-1 ring-viet-gold/50 shadow-lg shadow-viet-red/20 flex items-center justify-center hover:bg-viet-red hover:text-viet-cream hover:scale-110 transition-all cursor-pointer"
+          className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/90 backdrop-blur text-primary ring-1 ring-primary/20 shadow-lg shadow-primary/15 flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all cursor-pointer"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -241,15 +239,15 @@ function TemplateCarousel3D({
               aria-label={t('showcase.selectAria', { name: tmpl.name })}
               className={`rounded-full transition-all cursor-pointer ${
                 i === active
-                  ? 'w-7 h-2.5 bg-gradient-to-r from-viet-gold to-viet-red'
-                  : 'w-2.5 h-2.5 bg-outline-variant hover:bg-viet-gold/60'
+                  ? 'w-7 h-2.5 bg-gradient-to-r from-primary to-tertiary'
+                  : 'w-2.5 h-2.5 bg-outline-variant hover:bg-primary/50'
               }`}
             />
           ))}
         </div>
         {current && getStarCount(current.id) > 0 && (
-          <div className="flex items-center gap-1 font-viet text-xs text-on-surface-variant">
-            <Star className="w-3.5 h-3.5 text-viet-gold fill-viet-gold" />
+          <div className="flex items-center gap-1 font-inter text-xs text-on-surface-variant">
+            <Star className="w-3.5 h-3.5 text-fnb-amber fill-fnb-amber" />
             <span className="font-semibold text-on-surface">{getStarCount(current.id)}</span>
             · {t('showcase.trustedBy')}
           </div>
@@ -408,10 +406,14 @@ export default function LandingPage() {
     [activeFilter],
   );
 
-  const heroShot = SHOWCASE[0];
+  const HERO_PILLS = [
+    { key: 'pillFast', Icon: Zap },
+    { key: 'pillQr', Icon: QrCode },
+    { key: 'pillMultilang', Icon: Languages },
+  ] as const;
 
   return (
-    <div className="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-viet-gold/40 selection:text-viet-maroon relative min-h-screen">
+    <div className="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-primary/20 selection:text-primary relative min-h-screen">
       <Helmet>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
@@ -423,216 +425,130 @@ export default function LandingPage() {
       <main className="pb-20">
 
         {/* ════════════════════════════════════════════════════════════════
-            HERO — lụa đỏ son, hạc bay, vân mây vàng kim
-            (nền: public/BackgroundLandingPage.jpg)
+            HERO — câu chuyện đúng banner chính thức: thẻ Google Maps →
+            mũi tên → website hoàn chỉnh. Nền sáng gradient thương hiệu
+            (lam ngọc → xanh dương → tím), không còn lụa đỏ/hạc/đèn lồng.
         ════════════════════════════════════════════════════════════════ */}
         <section
-          aria-label={t('hero.badge')}
-          className="hero-parallax relative overflow-hidden bg-viet-maroon bg-cover bg-center pt-[130px] pb-36 sm:pb-44"
-          style={{ backgroundImage: "url('/BackgroundLandingPage.jpg')" }}
+          aria-label={t('hero.title1')}
+          className="hero-parallax relative overflow-hidden bg-gradient-to-b from-surface via-surface to-primary-container/15 pt-[130px] pb-24 sm:pb-32"
         >
-          {/* Phủ tối nhẹ bên trái để chữ nổi trên nền lụa */}
-          <div className="absolute inset-0 bg-gradient-to-r from-viet-lacquer/75 via-viet-lacquer/35 to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-viet-lacquer/50 to-transparent pointer-events-none" />
-
-          {/* Vân mây trôi — bị kéo theo khi cuộn (parallax) */}
-          <div data-par="0.1" data-par-mouse="9" className="par-wrap absolute top-[16%] right-[4%] w-52 pointer-events-none hidden sm:block">
-            <GoldCloud className="cloud-drift w-full opacity-70" />
-          </div>
-          <div data-par="0.18" data-par-mouse="6" className="par-wrap absolute bottom-[30%] left-[2%] w-40 pointer-events-none hidden lg:block">
-            <GoldCloud className="cloud-drift w-full opacity-45" />
-          </div>
-
-          {/* Đèn lồng treo hai bên — lắc lư, trễ nhẹ khi cuộn */}
-          <div data-par="-0.06" data-par-mouse="5" className="par-wrap absolute top-0 left-[7%] w-16 sm:w-20 pointer-events-none hidden md:block">
-            <Lantern className="lantern-swing w-full drop-shadow-xl" />
-          </div>
-          <div data-par="-0.08" data-par-mouse="4" className="par-wrap absolute top-0 right-[9%] w-12 sm:w-14 pointer-events-none hidden lg:block">
-            <Lantern className="lantern-swing w-full drop-shadow-xl" />
-          </div>
-
-          {/* Hạc hồng bay xa phía trên khu chữ */}
-          <div data-par="0.15" data-par-mouse="12" className="par-wrap absolute top-[13%] left-[40%] w-32 pointer-events-none hidden xl:block">
-            <img
-              src={EL.hacGlide}
-              alt=""
-              aria-hidden="true"
-              width={330}
-              height={239}
-              className="floating w-full h-auto opacity-85 select-none"
-            />
-          </div>
-
-          {/* Cánh mai vàng rơi */}
-          {PETALS.map((p, i) => (
-            <MaiPetal
-              key={i}
-              className="petal-fall absolute top-0 pointer-events-none"
-              style={{
-                left: p.left,
-                width: p.size,
-                animationDelay: p.delay,
-                animationDuration: p.duration,
-              } as CSSProperties}
-            />
-          ))}
+          {/* Quầng sáng mềm — chiều sâu, không hình khối cứng */}
+          <div data-par="0.08" className="par-wrap absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-tertiary/15 blur-3xl pointer-events-none" />
+          <div data-par="0.05" className="par-wrap absolute top-1/3 -left-32 w-80 h-80 rounded-full bg-secondary/15 blur-3xl pointer-events-none" />
 
           <div className="relative max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-14 lg:gap-10">
 
             {/* Left — text */}
             <div className="lg:w-[52%] flex flex-col items-start space-y-7">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-viet-gold-light border border-viet-gold/50 px-4 py-1.5 rounded-full text-xs font-semibold font-viet">
-                <Zap className="w-3.5 h-3.5 fill-viet-gold text-viet-gold" />
-                {t('hero.badge')}
-              </div>
-
-              <h1 className="font-display font-extrabold text-[40px] sm:text-[54px] leading-[1.12] tracking-tight text-viet-cream drop-shadow-[0_2px_18px_rgba(0,0,0,0.35)]">
+              <h1 className="font-display font-extrabold text-[40px] sm:text-[54px] leading-[1.12] tracking-tight text-on-surface">
                 {t('hero.title1')}{' '}
-                <span className="text-gold-shine">{t('hero.titleHighlight')}</span>{' '}
+                <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
+                  {t('hero.titleHighlight')}
+                </span>{' '}
                 {t('hero.title2')}
               </h1>
 
-              <p className="font-viet text-[17px] sm:text-[18px] leading-[1.7] text-viet-cream/85 max-w-lg">
+              <p className="font-inter text-[19px] sm:text-[21px] font-medium leading-[1.5] text-on-surface-variant">
+                {t('hero.subheading')}
+              </p>
+
+              <p className="font-inter text-[17px] sm:text-[18px] leading-[1.7] text-on-surface-variant max-w-lg">
                 {t('hero.description')}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full sm:w-auto">
                 <Link
                   to={ROUTES.DASHBOARD_PROJECTS}
-                  className="bg-gradient-to-r from-viet-gold-light via-viet-gold to-viet-gold-light bg-[length:200%_auto] hover:bg-right text-viet-maroon font-viet font-bold text-sm px-10 py-4 rounded-full shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-viet-gold/30 hover:-translate-y-0.5 transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer"
+                  className="bg-primary hover:bg-primary/90 text-white font-inter font-bold text-sm px-10 py-4 rounded-full shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   {t('hero.ctaStart')}
                   <ArrowRight className="w-4.5 h-4.5" />
                 </Link>
                 <Link
                   to={ROUTES.MARKETPLACE}
-                  className="bg-white/5 text-viet-cream border border-viet-cream/50 backdrop-blur-sm font-viet font-semibold text-sm px-10 py-4 rounded-full hover:bg-white/15 hover:border-viet-gold transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="bg-white text-on-surface border border-outline-variant font-inter font-semibold text-sm px-10 py-4 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <PlayCircle className="w-4.5 h-4.5" />
                   {t('hero.ctaDemo')}
                 </Link>
               </div>
 
-              {/* Mini social proof */}
-              <ul className="flex items-center gap-5 pt-1 font-viet text-xs text-viet-cream/75 list-none">
-                <li className="flex items-center gap-1.5">
-                  <Coffee className="w-4 h-4 text-viet-gold" /> {t('hero.proofCafe')}
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <UtensilsCrossed className="w-4 h-4 text-viet-gold" /> {t('hero.proofRestaurant')}
-                </li>
+              {/* 3 pill — đúng banner chính thức: Nhanh chóng / QR Trang Web / Đa Ngôn Ngữ */}
+              <ul className="flex flex-wrap items-center gap-2.5 pt-1 list-none">
+                {HERO_PILLS.map(({ key, Icon }) => (
+                  <li
+                    key={key}
+                    className="flex items-center gap-1.5 font-inter text-xs font-semibold text-on-surface bg-surface-container-lowest border border-outline-variant px-3.5 py-2 rounded-full shadow-sm"
+                  >
+                    <Icon className="w-3.5 h-3.5 text-primary" /> {t(`hero.${key}`)}
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Right — hạc bay + mockup trình duyệt nghiêng 3D theo con trỏ */}
+            {/* Right — ảnh banner chính thức (public/Logo/bannerweb_VNGOweb.png,
+                cắt phần minh hoạ: thẻ Google Maps → mũi tên → website/mobile) */}
             <div
               className="lg:w-[48%] w-full relative"
               onMouseMove={handleTilt}
               onMouseLeave={resetTilt}
             >
-              <div data-par="0.07" data-par-mouse="20" className="par-wrap absolute -top-24 sm:-top-32 right-[10%] w-[56%] max-w-[350px] pointer-events-none z-0">
+              <div ref={tiltRef} className="tilt-card relative">
                 <img
-                  src={EL.hacLand}
-                  alt=""
-                  aria-hidden="true"
-                  width={333}
-                  height={250}
-                  className="crane-glide w-full h-auto drop-shadow-[0_16px_28px_rgba(0,0,0,0.4)] select-none"
+                  src="/hero-banner-visual.jpg"
+                  alt={t('hero.visualAlt')}
+                  className="w-full h-auto rounded-[1.6rem] shadow-2xl shadow-primary/25"
+                  width={1350}
+                  height={930}
                 />
-              </div>
 
-              {heroShot && (
-                <div ref={tiltRef} className="tilt-card relative mt-20 sm:mt-24">
-                  {/* Khung sơn mài vàng phía sau */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-viet-gold/50 via-viet-gold-light/30 to-transparent rounded-[2rem] rotate-2 scale-[1.04] -z-10" />
-                  <div className="rounded-[1.6rem] overflow-hidden ring-2 ring-viet-gold/60 shadow-2xl shadow-black/45 bg-white">
-                    {/* Thanh trình duyệt */}
-                    <div className="flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-viet-maroon to-viet-red border-b-2 border-viet-gold/60">
-                      <span className="w-2.5 h-2.5 rounded-full bg-viet-gold" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-fnb-orange" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-viet-cream" />
-                      <span className="ml-2 flex-1 truncate text-[10px] font-viet text-viet-cream/90 bg-white/12 rounded-full px-2.5 py-0.5">
-                        {DOMAIN}/{heroShot.id}
-                      </span>
-                    </div>
-                    <div className="tmpl-screen h-[280px] sm:h-[340px] overflow-hidden">
-                      <img
-                        src={heroShot.screen}
-                        alt={t('showcase.screenshotAlt', { name: heroShot.name })}
-                        className="w-full h-full object-cover"
-                        width={640}
-                        height={400}
-                      />
-                    </div>
+                {/* Badge nổi */}
+                <div
+                  className="absolute -bottom-5 -left-3 sm:-left-6 bg-white border border-outline-variant rounded-xl p-3 flex items-center gap-3 shadow-lg animate-bounce"
+                  style={{ animationDuration: '3s' }}
+                >
+                  <div className="bg-fnb-green/10 text-fnb-green rounded-full p-1.5 flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5" />
                   </div>
-
-                  {/* Badge nổi — kính mờ tối trên nền đỏ */}
-                  <div
-                    className="absolute -bottom-6 -left-4 sm:-left-6 bg-viet-lacquer/70 backdrop-blur-md border border-viet-gold/40 rounded-xl p-3 flex items-center gap-3 shadow-lg shadow-black/40 animate-bounce"
-                    style={{ animationDuration: '3s' }}
-                  >
-                    <div className="bg-fnb-green/20 text-fnb-green rounded-full p-1.5 flex items-center justify-center">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-viet font-semibold text-[12px] text-viet-cream">{t('hero.floatReady')}</p>
-                      <p className="text-[10px] text-viet-cream/70">{t('hero.floatReadySub')}</p>
-                    </div>
-                  </div>
-                  <div className="absolute z-20 -top-5 -right-2 sm:-right-4 bg-viet-lacquer/70 backdrop-blur-md border border-viet-gold/40 rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg shadow-black/40">
-                    <QrCode className="w-6 h-6 text-viet-gold" />
-                    <div>
-                      <p className="font-viet font-semibold text-[11px] text-viet-cream">{t('hero.floatQr')}</p>
-                      <p className="text-[10px] text-viet-gold-light font-semibold">{t('hero.floatQrSub')}</p>
-                    </div>
+                  <div>
+                    <p className="font-inter font-semibold text-[12px] text-on-surface">{t('hero.floatReady')}</p>
+                    <p className="text-[10px] text-on-surface-variant">{t('hero.floatReadySub')}</p>
                   </div>
                 </div>
-              )}
+                <div className="absolute z-20 -top-4 -right-2 sm:-right-5 bg-white border border-outline-variant rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
+                  <QrCode className="w-6 h-6 text-primary" />
+                  <div>
+                    <p className="font-inter font-semibold text-[11px] text-on-surface">{t('hero.floatQr')}</p>
+                    <p className="text-[10px] text-primary font-semibold">{t('hero.floatQrSub')}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Sóng thủy ba khép chân hero */}
-          <ThuyBaWave
-            className="absolute -bottom-px left-0 w-full h-16 sm:h-20"
-            fill="#8d1216"
-            stroke="#d9a441"
-          />
+          {/* Sóng bo mềm khép chân hero — gradient thương hiệu */}
+          <HeroWave className="absolute -bottom-px left-0 w-full h-14 sm:h-20" />
         </section>
 
         {/* ════════════════════════════════════════════════════════════════
             TEMPLATE SHOWCASE — 3D carousel screenshot thật
         ════════════════════════════════════════════════════════════════ */}
         <section className="relative py-24 overflow-hidden" aria-label={t('showcase.badge')}>
-          {/* Hạc trắng vút lên bên phải khu trưng bày — kéo theo khi cuộn */}
-          <div data-par="0.12" data-par-mouse="10" className="par-wrap absolute top-8 right-[1%] w-[240px] lg:w-[300px] pointer-events-none hidden md:block">
-            <img
-              src={EL.hacUp}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              width={299}
-              height={248}
-              className="floating w-full h-auto select-none"
-            />
-          </div>
-          <div data-par="0.17" className="par-wrap absolute top-24 left-[3%] w-44 pointer-events-none hidden lg:block">
-            <GoldCloud className="w-full opacity-25" />
-          </div>
-
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="reveal-3d text-center mb-8">
-              <div className="inline-flex items-center gap-1.5 bg-viet-red/8 text-viet-red border border-viet-red/20 px-4 py-1.5 rounded-full text-xs font-semibold font-viet mb-5">
-                <Flame className="w-3.5 h-3.5 text-viet-red" />
+              <div className="inline-flex items-center gap-1.5 bg-primary/8 text-primary border border-primary/20 px-4 py-1.5 rounded-full text-xs font-semibold font-inter mb-5">
+                <Flame className="w-3.5 h-3.5" />
                 {t('showcase.badge')}
               </div>
               <h2 className="font-display font-bold text-[32px] sm:text-[40px] leading-[1.22] text-on-surface mb-3">
                 {t('showcase.title1')}{' '}
-                <span className="bg-gradient-to-r from-viet-red via-fnb-orange to-viet-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
                   {t('showcase.titleHighlight')}
                 </span>
                 {t('showcase.title2')}
               </h2>
-              <p className="font-viet text-[16px] leading-[1.65] text-on-surface-variant max-w-2xl mx-auto">
+              <p className="font-inter text-[16px] leading-[1.65] text-on-surface-variant max-w-2xl mx-auto">
                 {t('showcase.description')}
               </p>
             </div>
@@ -643,10 +559,10 @@ export default function LandingPage() {
                 <button
                   key={f.id}
                   onClick={() => setActiveFilter(f.id)}
-                  className={`font-viet font-semibold text-xs px-4 py-2 rounded-full cursor-pointer border transition-all ${
+                  className={`font-inter font-semibold text-xs px-4 py-2 rounded-full cursor-pointer border transition-all ${
                     activeFilter === f.id
-                      ? 'bg-gradient-to-r from-viet-red to-fnb-orange text-white border-transparent shadow-md shadow-viet-red/30 scale-105'
-                      : 'bg-white text-on-surface-variant border-outline-variant hover:border-viet-gold hover:text-viet-red'
+                      ? 'bg-gradient-to-r from-primary to-tertiary text-white border-transparent shadow-md shadow-primary/30 scale-105'
+                      : 'bg-white text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary'
                   }`}
                 >
                   {f.label ?? t('showcase.filterAll')}
@@ -668,7 +584,7 @@ export default function LandingPage() {
             <div className="text-center mt-8">
               <Link
                 to={ROUTES.MARKETPLACE}
-                className="inline-flex items-center gap-1.5 font-viet font-semibold text-sm text-viet-red hover:text-fnb-orange transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 font-inter font-semibold text-sm text-primary hover:text-tertiary transition-colors cursor-pointer"
               >
                 {t('showcase.exploreAll')}
                 <ArrowRight className="w-4 h-4" />
@@ -678,74 +594,57 @@ export default function LandingPage() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════
-            FEATURES — bento 3 thẻ đỏ / xanh / vàng kim
+            FEATURES — 3 thẻ lam / ngọc lam / tím, khớp bậc thang thương hiệu
         ════════════════════════════════════════════════════════════════ */}
         <section
           id="features"
           className="relative max-w-[1280px] mx-auto px-6 py-20"
           aria-labelledby="features-heading"
         >
-          <div data-par="0.1" className="par-wrap absolute -top-4 right-0 w-40 sm:w-52 pointer-events-none">
-            <ApricotBranch className="w-full opacity-70" />
-          </div>
-          {/* Hoa mẫu đơn đỏ viền vàng — góc trái đối trọng cành mai */}
-          <img
-            src={EL.peony}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            width={162}
-            height={154}
-            className="absolute top-0 left-0 w-32 sm:w-40 h-auto opacity-90 pointer-events-none select-none"
-          />
-
           <div className="reveal-3d text-center mb-12">
             <h2 id="features-heading" className="font-display font-bold text-[32px] sm:text-[36px] leading-[1.25] text-on-surface mb-3">
               {t('features.title1')}{' '}
-              <span className="bg-gradient-to-r from-viet-red to-viet-gold bg-clip-text text-transparent">{t('features.titleHighlight')}</span>{' '}
+              <span className="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">{t('features.titleHighlight')}</span>{' '}
               {t('features.title2')}
             </h2>
-            <p className="font-viet text-[16px] leading-[1.65] text-on-surface-variant max-w-2xl mx-auto">
+            <p className="font-inter text-[16px] leading-[1.65] text-on-surface-variant max-w-2xl mx-auto">
               {t('features.description')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <article className="reveal-3d relative overflow-hidden bg-gradient-to-b from-viet-red/8 to-white rounded-[2rem] p-10 border border-viet-red/20 shadow-md shadow-viet-red/10 glow-hover flex flex-col h-full group">
-              <GoldCloud className="absolute -top-3 -right-6 w-36 opacity-15 pointer-events-none" />
-              <div className="w-13 h-13 p-3.5 rounded-2xl bg-gradient-to-br from-viet-red to-fnb-orange text-white flex items-center justify-center mb-6 shadow-lg shadow-viet-red/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+            <article className="reveal-3d relative overflow-hidden bg-gradient-to-b from-primary/8 to-white rounded-[2rem] p-10 border border-primary/20 shadow-md shadow-primary/10 glow-hover flex flex-col h-full group">
+              <div className="w-13 h-13 p-3.5 rounded-2xl bg-primary text-white flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <MapPin className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[22px] leading-[1.4] text-on-surface mb-3">
                 {t('features.maps.title')}
               </h3>
-              <p className="font-viet text-[15.5px] leading-[1.65] text-on-surface-variant flex-grow">
+              <p className="font-inter text-[15.5px] leading-[1.65] text-on-surface-variant flex-grow">
                 {t('features.maps.description')}
               </p>
             </article>
 
-            <article className="reveal-3d relative overflow-hidden bg-gradient-to-b from-fnb-green/10 to-white rounded-[2rem] p-10 border border-fnb-green/20 shadow-md shadow-fnb-green/10 glow-hover flex flex-col h-full group" style={{ transitionDelay: '110ms' }}>
-              <GoldCloud className="absolute -top-3 -right-6 w-36 opacity-15 pointer-events-none" />
-              <div className="w-13 h-13 p-3.5 rounded-2xl bg-gradient-to-br from-fnb-green to-emerald-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-fnb-green/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+            <article className="reveal-3d relative overflow-hidden bg-gradient-to-b from-secondary/8 to-white rounded-[2rem] p-10 border border-secondary/20 shadow-md shadow-secondary/10 glow-hover flex flex-col h-full group" style={{ transitionDelay: '110ms' }}>
+              <div className="w-13 h-13 p-3.5 rounded-2xl bg-secondary text-white flex items-center justify-center mb-6 shadow-lg shadow-secondary/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Languages className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[22px] leading-[1.4] text-on-surface mb-3">
                 {t('features.multilang.title')}
               </h3>
-              <p className="font-viet text-[15.5px] leading-[1.65] text-on-surface-variant flex-grow">
+              <p className="font-inter text-[15.5px] leading-[1.65] text-on-surface-variant flex-grow">
                 {t('features.multilang.description')}
               </p>
             </article>
 
-            <article className="reveal-3d relative overflow-hidden bg-gradient-to-b from-viet-gold/15 to-white rounded-[2rem] p-10 border border-viet-gold/30 shadow-md shadow-viet-gold/15 glow-hover flex flex-col h-full group" style={{ transitionDelay: '220ms' }}>
-              <GoldCloud className="absolute -top-3 -right-6 w-36 opacity-20 pointer-events-none" />
-              <div className="w-13 h-13 p-3.5 rounded-2xl bg-gradient-to-br from-viet-gold-light to-viet-gold text-viet-maroon flex items-center justify-center mb-6 shadow-lg shadow-viet-gold/35 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+            <article className="reveal-3d relative overflow-hidden bg-gradient-to-b from-tertiary/8 to-white rounded-[2rem] p-10 border border-tertiary/20 shadow-md shadow-tertiary/10 glow-hover flex flex-col h-full group" style={{ transitionDelay: '220ms' }}>
+              <div className="w-13 h-13 p-3.5 rounded-2xl bg-tertiary text-white flex items-center justify-center mb-6 shadow-lg shadow-tertiary/30 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <QrCode className="w-6 h-6" />
               </div>
               <h3 className="font-lexend font-semibold text-[22px] leading-[1.4] text-on-surface mb-3">
                 {t('features.qr.title')}
               </h3>
-              <p className="font-viet text-[15.5px] leading-[1.65] text-on-surface-variant flex-grow">
+              <p className="font-inter text-[15.5px] leading-[1.65] text-on-surface-variant flex-grow">
                 {t('features.qr.description')}
               </p>
             </article>
@@ -753,7 +652,7 @@ export default function LandingPage() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════
-            HOW IT WORKS — 3 bước, số đánh dấu kiểu ấn triện đỏ
+            HOW IT WORKS — 3 bước, số đánh dấu theo bậc thang thương hiệu
         ════════════════════════════════════════════════════════════════ */}
         <section
           className="max-w-[1280px] mx-auto px-6 py-20"
@@ -762,48 +661,48 @@ export default function LandingPage() {
           <div className="reveal-3d text-center mb-20">
             <h2 id="how-heading" className="font-display font-bold text-[32px] sm:text-[36px] leading-[1.25] text-on-surface mb-3">
               {t('howItWorks.title1')}{' '}
-              <span className="bg-gradient-to-r from-fnb-orange to-viet-gold bg-clip-text text-transparent">{t('howItWorks.titleHighlight')}</span>
+              <span className="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">{t('howItWorks.titleHighlight')}</span>
             </h2>
-            <p className="font-viet text-[16px] leading-[1.65] text-on-surface-variant max-w-2xl mx-auto">
+            <p className="font-inter text-[16px] leading-[1.65] text-on-surface-variant max-w-2xl mx-auto">
               {t('howItWorks.description')}
             </p>
           </div>
 
           <div className="flex flex-col md:flex-row justify-between relative">
-            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-1 rounded-full bg-gradient-to-r from-viet-red/35 via-viet-gold/50 to-fnb-green/35 z-0" />
+            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-1 rounded-full bg-gradient-to-r from-primary/35 via-secondary/45 to-tertiary/35 z-0" />
 
             {/* Step 1 */}
             <div className="reveal-3d flex flex-col items-center text-center relative z-10 md:w-1/3 px-6 mb-10 md:mb-0">
-              <div className="w-24 h-24 rounded-full bg-white border-4 border-viet-red flex items-center justify-center mb-6 shadow-lg shadow-viet-red/25 text-viet-red">
+              <div className="w-24 h-24 rounded-full bg-white border-4 border-primary flex items-center justify-center mb-6 shadow-lg shadow-primary/25 text-primary">
                 <LogIn className="w-9 h-9" />
               </div>
-              <div className="bg-viet-red text-viet-cream font-display font-bold text-sm w-8 h-8 rounded-md ring-2 ring-viet-gold/70 ring-offset-2 ring-offset-surface flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-viet-red/30">1</div>
+              <div className="bg-primary text-white font-display font-bold text-sm w-8 h-8 rounded-md ring-2 ring-primary/30 ring-offset-2 ring-offset-surface flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-primary/30">1</div>
               <h3 className="font-lexend font-semibold text-[22px] leading-[1.4] text-on-surface mb-1">{t('howItWorks.step1Title')}</h3>
-              <p className="font-viet text-[15.5px] leading-[1.65] text-on-surface-variant">
+              <p className="font-inter text-[15.5px] leading-[1.65] text-on-surface-variant">
                 {t('howItWorks.step1Desc')}
               </p>
             </div>
 
             {/* Step 2 */}
             <div className="reveal-3d flex flex-col items-center text-center relative z-10 md:w-1/3 px-6 mb-10 md:mb-0" style={{ transitionDelay: '110ms' }}>
-              <div className="w-24 h-24 rounded-full bg-white border-4 border-viet-gold flex items-center justify-center mb-6 shadow-lg shadow-viet-gold/30 text-viet-gold">
+              <div className="w-24 h-24 rounded-full bg-white border-4 border-secondary flex items-center justify-center mb-6 shadow-lg shadow-secondary/30 text-secondary">
                 <ClipboardPaste className="w-9 h-9" />
               </div>
-              <div className="bg-viet-red text-viet-cream font-display font-bold text-sm w-8 h-8 rounded-md ring-2 ring-viet-gold/70 ring-offset-2 ring-offset-surface flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-viet-red/30">2</div>
+              <div className="bg-secondary text-white font-display font-bold text-sm w-8 h-8 rounded-md ring-2 ring-secondary/30 ring-offset-2 ring-offset-surface flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-secondary/30">2</div>
               <h3 className="font-lexend font-semibold text-[22px] leading-[1.4] text-on-surface mb-1">{t('howItWorks.step2Title')}</h3>
-              <p className="font-viet text-[15.5px] leading-[1.65] text-on-surface-variant">
+              <p className="font-inter text-[15.5px] leading-[1.65] text-on-surface-variant">
                 {t('howItWorks.step2Desc')}
               </p>
             </div>
 
             {/* Step 3 */}
             <div className="reveal-3d flex flex-col items-center text-center relative z-10 md:w-1/3 px-6" style={{ transitionDelay: '220ms' }}>
-              <div className="w-24 h-24 rounded-full bg-white border-4 border-fnb-green flex items-center justify-center mb-6 shadow-lg shadow-fnb-green/25 text-fnb-green">
+              <div className="w-24 h-24 rounded-full bg-white border-4 border-tertiary flex items-center justify-center mb-6 shadow-lg shadow-tertiary/25 text-tertiary">
                 <Rocket className="w-9 h-9" />
               </div>
-              <div className="bg-viet-red text-viet-cream font-display font-bold text-sm w-8 h-8 rounded-md ring-2 ring-viet-gold/70 ring-offset-2 ring-offset-surface flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-viet-red/30">3</div>
+              <div className="bg-tertiary text-white font-display font-bold text-sm w-8 h-8 rounded-md ring-2 ring-tertiary/30 ring-offset-2 ring-offset-surface flex items-center justify-center absolute top-0 -ml-12 md:ml-0 md:-mt-4 z-20 shadow-md shadow-tertiary/30">3</div>
               <h3 className="font-lexend font-semibold text-[22px] leading-[1.4] text-on-surface mb-1">{t('howItWorks.step3Title')}</h3>
-              <p className="font-viet text-[15.5px] leading-[1.65] text-on-surface-variant">
+              <p className="font-inter text-[15.5px] leading-[1.65] text-on-surface-variant">
                 {t('howItWorks.step3Desc')}
               </p>
             </div>
@@ -811,49 +710,26 @@ export default function LandingPage() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════
-            CTA — trở lại tấm lụa đỏ son
+            CTA — panel gradient thương hiệu đậm (lam → tím), khép trang
         ════════════════════════════════════════════════════════════════ */}
         <section className="max-w-[1280px] mx-auto px-6 py-20" aria-label={t('cta.title')}>
-          <div
-            className="reveal-3d relative overflow-hidden bg-viet-maroon bg-cover bg-center text-viet-cream rounded-[2.5rem] p-12 sm:p-20 text-center shadow-2xl shadow-viet-red/35 ring-2 ring-viet-gold/40"
-            style={{ backgroundImage: "url('/BackgroundLandingPage.jpg')" }}
-          >
-            <div className="absolute inset-0 bg-viet-lacquer/45" />
-            <div data-par="0.1" className="par-wrap absolute top-8 right-[6%] w-40 pointer-events-none">
-              <GoldCloud className="cloud-drift w-full opacity-60" />
-            </div>
-            {/* Hạc kem cánh đen bay vào giữa CTA — kéo theo khi cuộn */}
-            <div data-par="0.07" data-par-mouse="10" className="par-wrap absolute top-[30%] left-[3%] w-40 sm:w-48 pointer-events-none hidden sm:block">
-              <img
-                src={EL.hacCream}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                width={308}
-                height={279}
-                className="crane-glide w-full h-auto opacity-95 select-none"
-              />
-            </div>
+          <div className="reveal-3d relative overflow-hidden bg-gradient-to-br from-primary via-secondary/90 to-tertiary text-white rounded-[2.5rem] p-12 sm:p-20 text-center shadow-2xl shadow-primary/30">
+            <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-white/10 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-20 -left-10 w-64 h-64 rounded-full bg-white/10 blur-3xl pointer-events-none" />
 
-            <h2 className="font-display font-bold text-[34px] sm:text-[46px] leading-[1.2] tracking-tight mb-4 relative z-10 drop-shadow-[0_2px_14px_rgba(0,0,0,0.4)]">
+            <h2 className="font-display font-bold text-[34px] sm:text-[46px] leading-[1.2] tracking-tight mb-4 relative z-10">
               {t('cta.title')}
             </h2>
-            <p className="font-viet text-[17px] leading-[1.7] text-viet-cream/85 mb-10 max-w-xl mx-auto relative z-10">
+            <p className="font-inter text-[17px] leading-[1.7] text-white/85 mb-10 max-w-xl mx-auto relative z-10">
               {t('cta.description')}
             </p>
             <Link
               to={ROUTES.DASHBOARD_PROJECTS}
-              className="bg-gradient-to-r from-viet-gold-light via-viet-gold to-viet-gold-light bg-[length:200%_auto] hover:bg-right text-viet-maroon font-viet font-bold text-sm px-14 sm:px-20 py-4 rounded-full shadow-xl shadow-black/30 hover:scale-105 hover:shadow-2xl transition-all duration-500 relative z-10 cursor-pointer inline-flex items-center gap-2"
+              className="bg-white text-primary font-inter font-bold text-sm px-14 sm:px-20 py-4 rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 relative z-10 cursor-pointer inline-flex items-center gap-2"
             >
               {t('cta.button')}
               <ArrowRight className="w-4.5 h-4.5" />
             </Link>
-
-            <ThuyBaWave
-              className="absolute -bottom-px left-0 w-full h-12 opacity-70"
-              fill="#8d1216"
-              stroke="#d9a441"
-            />
           </div>
         </section>
       </main>

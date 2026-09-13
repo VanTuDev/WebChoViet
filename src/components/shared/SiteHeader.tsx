@@ -16,7 +16,7 @@ function Logo({ badge }: { badge?: string }) {
   return (
     <Link
       to={ROUTES.HOME}
-      className="flex items-center gap-1.5 text-xl text-slate-900 cursor-pointer select-none shrink-0 outline-none"
+      className="flex items-center gap-1.5 text-3xl text-slate-900 cursor-pointer select-none shrink-0 outline-none"
     >
       <Wordmark icon />
       {badge && (

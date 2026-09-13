@@ -4,16 +4,17 @@
     "description": "vngoweb giúp quán cafe, nhà hàng, spa và doanh nghiệp nhỏ tạo website chuyên nghiệp trong vài phút — chọn mẫu, tuỳ chỉnh, xuất bản ngay, không cần biết code."
   },
   "hero": {
-    "badge": "Giải pháp nhanh gọn cho quán cafe, nhà hàng",
-    "title1": "Biến Google Maps thành",
-    "titleHighlight": "Website & Menu QR",
-    "title2": "chuyên nghiệp trong 30 giây",
+    "title1": "Nền tảng hỗ trợ doanh nghiệp",
+    "titleHighlight": "làm website",
+    "title2": "chuyên nghiệp",
+    "subheading": "Biến Google Maps thành website chuyên nghiệp",
     "description": "Không cần biết code. Chỉ cần dán link Google Maps của bạn, vngoweb sẽ tự động tạo một trang web tuyệt đẹp, tối ưu hóa cho di động và sẵn sàng thu hút khách hàng.",
     "ctaStart": "Bắt đầu miễn phí ngay",
     "ctaDemo": "Xem demo",
-    "proofCafe": "Quán cafe",
-    "proofRestaurant": "Nhà hàng",
-    "imageAlt": "Chủ quán cafe với mã QR chuyên nghiệp",
+    "pillFast": "Nhanh chóng",
+    "pillQr": "QR Trang Web",
+    "pillMultilang": "Đa Ngôn Ngữ",
+    "visualAlt": "Minh hoạ chuyển đổi từ trang Google Maps thành website chuyên nghiệp, xem trên máy tính và điện thoại",
     "floatReady": "Website đã sẵn sàng!",
     "floatReadySub": "Vừa tạo xong 2 phút trước",
     "floatQr": "Menu QR tại bàn",
@@ -66,7 +67,7 @@
     "step3Desc": "Nhấn nút xuất bản, nhận mã QR và bắt đầu đón khách hàng mới ngay lập tức."
   },
   "cta": {
-    "title": "Sẵn sàng để chuyên nghiệp hóa quán của bạn?",
+    "title": "Sẵn sàng để chuyên nghiệp hóa doanh nghiệp của bạn?",
     "description": "Bắt đầu xây dựng hình ảnh chuyên nghiệp trên internet ngay hôm nay. Miễn phí trải nghiệm các tính năng cơ bản.",
     "button": "Bắt đầu miễn phí ngay"
   }

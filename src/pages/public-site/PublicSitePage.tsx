@@ -138,7 +138,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
     scope: scopePath,
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#ff6b2c',
+    theme_color: '#0a6ee6',
     icons: [{ src: iconUrl, sizes: '512x512', type: 'image/png' }],
   }))}`;
 
@@ -182,7 +182,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
 
         {/* PWA — cho phép "Thêm vào Màn hình chính". manifest động theo từng site (data: URI). */}
         <link rel="manifest" href={manifestHref} />
-        <meta name="theme-color" content="#ff6b2c" />
+        <meta name="theme-color" content="#0a6ee6" />
         {/* iOS Safari không đọc manifest.json cho Add to Home Screen — cần riêng bộ meta tag này */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content={config.name} />

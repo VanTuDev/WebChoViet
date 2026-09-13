@@ -1,12 +1,52 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Globe, MessageCircle } from 'lucide-react';
+import { Phone, Mail, Globe, MessageCircle, Facebook } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../../config/routes';
-import { CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, DOMAIN, BRAND_NAME, FOUNDER_NAME } from '../../config/contact';
+import {
+  CONTACT_PHONE, CONTACT_PHONE_RAW, CONTACT_EMAIL, DOMAIN, BRAND_NAME, FOUNDER_NAME,
+  SOCIAL_FACEBOOK, SOCIAL_TIKTOK,
+} from '../../config/contact';
 import Wordmark from './Wordmark';
 
 interface SiteFooterProps {
   variant?: 'landing' | 'app';
+}
+
+/* lucide-react không có icon TikTok (thư viện chỉ giữ vài brand icon phổ biến) — SVG glyph
+   nốt nhạc chính thức, cùng cỡ/màu currentColor để đứng chung hàng với icon lucide khác. */
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M16.6 5.82c-.7-.77-1.13-1.76-1.2-2.82h-3.05v13.1a2.7 2.7 0 1 1-1.9-2.58V9.9a5.7 5.7 0 1 0 4.9 5.65V9.7a8.3 8.3 0 0 0 4.85 1.55V8.2a5.4 5.4 0 0 1-3.6-2.38z" />
+    </svg>
+  );
+}
+
+/* Icon MXH chính thức vngoweb — dùng chung cho cả 2 variant footer */
+function SocialLinks({ className }: { className?: string }) {
+  const { t } = useTranslation('common');
+  return (
+    <div className={`flex items-center gap-2 ${className ?? ''}`}>
+      <a
+        href={SOCIAL_FACEBOOK}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t('footer.socialFacebook')}
+        className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-container/8 text-primary-container hover:bg-primary-container hover:text-white transition-all"
+      >
+        <Facebook className="h-3.5 w-3.5" />
+      </a>
+      <a
+        href={SOCIAL_TIKTOK}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t('footer.socialTiktok')}
+        className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary-container/8 text-primary-container hover:bg-primary-container hover:text-white transition-all"
+      >
+        <TikTokIcon className="h-3.5 w-3.5" />
+      </a>
+    </div>
+  );
 }
 
 // labelKey trong namespace common (footer.links.*)
@@ -32,9 +72,10 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
   if (variant === 'landing') {
     return (
       <footer className="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-outline-variant/30 bg-surface-container-high">
-        {/* Logo */}
-        <div className="flex items-center gap-1.5 opacity-80">
-          <Wordmark className="text-xl" />
+        {/* Logo + MXH */}
+        <div className="flex items-center gap-4">
+          <Wordmark className="text-xl opacity-80" />
+          <SocialLinks />
         </div>
 
         {/* Copyright */}
@@ -127,6 +168,8 @@ export default function SiteFooter({ variant = 'app' }: SiteFooterProps) {
                 <span className="font-medium">{CONTACT_EMAIL}</span>
               </a>
             </address>
+
+            <SocialLinks className="pt-1" />
           </section>
 
           <nav className="md:col-span-3 space-y-3" aria-label={t('footer.productHeading')}>

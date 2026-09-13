@@ -21,7 +21,7 @@ export function GoldCloud({ className, style }: MotifProps) {
       aria-hidden="true"
       focusable="false"
     >
-      <g stroke="#d9a441" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <g stroke="#2fd3b3" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         {/* Cụm mây chính — 3 cuộn xoáy nối nhau */}
         <path d="M18 62 C6 58 4 42 14 35 C8 24 20 12 33 16 C36 4 56 2 62 13 C72 4 90 8 92 22 C106 16 120 26 116 40" />
         <path d="M33 47 C27 44 27 36 33 33 C39 30 46 34 46 41" />
@@ -39,8 +39,8 @@ export function GoldCloud({ className, style }: MotifProps) {
 /* ── Sóng thủy ba — dải vảy cá xếp lớp viền vàng trên nền đỏ ─────────── */
 export function ThuyBaWave({
   className,
-  fill = '#a4161a',
-  stroke = '#d9a441',
+  fill = '#0a50d2',
+  stroke = '#2fd3b3',
 }: MotifProps & { fill?: string; stroke?: string }) {
   const R = 46; // bán kính vảy ngoài cùng
   const step = R * 2; // khoảng cách tâm trong 1 hàng
@@ -164,28 +164,28 @@ export function Lantern({ className }: MotifProps) {
     >
       <defs>
         <radialGradient id={gBody} cx="0.38" cy="0.32" r="0.9">
-          <stop offset="0" stopColor="#e8402a" />
-          <stop offset="0.6" stopColor="#c1121f" />
-          <stop offset="1" stopColor="#8d1e22" />
+          <stop offset="0" stopColor="#1496f0" />
+          <stop offset="0.6" stopColor="#0a50d2" />
+          <stop offset="1" stopColor="#1a1464" />
         </radialGradient>
       </defs>
       {/* Dây treo */}
-      <line x1="60" y1="0" x2="60" y2="26" stroke="#d9a441" strokeWidth="3" />
+      <line x1="60" y1="0" x2="60" y2="26" stroke="#2fd3b3" strokeWidth="3" />
       {/* Nắp trên / đáy */}
-      <rect x="40" y="26" width="40" height="12" rx="5" fill="#d9a441" />
-      <rect x="44" y="140" width="32" height="10" rx="4" fill="#d9a441" />
+      <rect x="40" y="26" width="40" height="12" rx="5" fill="#2fd3b3" />
+      <rect x="44" y="140" width="32" height="10" rx="4" fill="#2fd3b3" />
       {/* Thân đèn */}
       <ellipse cx="60" cy="90" rx="46" ry="56" fill={`url(#${gBody})`} />
       {/* Gân đèn */}
-      <g stroke="#f2c86b" strokeWidth="2" opacity="0.75" fill="none">
+      <g stroke="#7ee9d1" strokeWidth="2" opacity="0.75" fill="none">
         <ellipse cx="60" cy="90" rx="16" ry="56" />
         <ellipse cx="60" cy="90" rx="32" ry="56" />
         <ellipse cx="60" cy="90" rx="45" ry="56" />
       </g>
       {/* Tua rua */}
-      <line x1="60" y1="150" x2="60" y2="168" stroke="#d9a441" strokeWidth="3" />
-      <circle cx="60" cy="171" r="5" fill="#d9a441" />
-      <g stroke="#e8402a" strokeWidth="3" strokeLinecap="round">
+      <line x1="60" y1="150" x2="60" y2="168" stroke="#2fd3b3" strokeWidth="3" />
+      <circle cx="60" cy="171" r="5" fill="#2fd3b3" />
+      <g stroke="#1496f0" strokeWidth="3" strokeLinecap="round">
         <line x1="54" y1="176" x2="51" y2="205" />
         <line x1="60" y1="176" x2="60" y2="208" />
         <line x1="66" y1="176" x2="69" y2="205" />
@@ -206,8 +206,8 @@ export function MaiPetal({ className, style }: MotifProps) {
     >
       <path
         d="M12 1 C 19 6 20 17 12 25 C 4 17 5 6 12 1 Z"
-        fill="#f2c86b"
-        stroke="#d9a441"
+        fill="#7ee9d1"
+        stroke="#2fd3b3"
         strokeWidth="1"
       />
     </svg>

@@ -1,92 +1,113 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Colors — Design System "FnB Warmth" ───────────────────────────
-     Bảng màu ấm nóng hướng ẩm thực dùng toàn hệ thống: đỏ cà chua,
-     cam, vàng amber, xanh lá tươi trên nền kem sang trọng. */
-  --color-primary: #e8491f;
+  /* ── Colors — Design System "VNGOWEB Pin" ──────────────────────────
+     Bảng màu lấy trực tiếp từ logo chính thức (public/Logo/logo_VNGOWEB-01.png,
+     sample bằng script màu pixel thật, không đoán bằng mắt): ruy băng ghim vị trí
+     (location pin) chuyển sắc lam ngọc → xanh dương → tím, chữ "WEB" mực navy
+     gần đen. Thay thế hoàn toàn bảng "FnB Warmth" (đỏ cam ấm) cũ — brand đã đổi
+     hướng từ ẩm thực sang nền tảng "biến Google Maps thành website chuyên nghiệp"
+     cho MỌI ngành (xem banner public/Logo/bannerweb_VNGOweb.png). */
+  --color-primary: #0a6ee6;
   --color-on-primary: #ffffff;
-  --color-primary-container: #ff6b2c;
-  --color-on-primary-container: #ffe3d6;
-  --color-inverse-primary: #ffb693;
-  --color-primary-fixed: #ffe3d3;
-  --color-primary-fixed-dim: #ffb693;
-  --color-on-primary-fixed: #541b00;
-  --color-on-primary-fixed-variant: #b33912;
+  --color-primary-container: #1496f0;
+  --color-on-primary-container: #eaf4ff;
+  --color-inverse-primary: #9ecbff;
+  --color-primary-fixed: #dceeff;
+  --color-primary-fixed-dim: #9ecbff;
+  --color-on-primary-fixed: #00204a;
+  --color-on-primary-fixed-variant: #0a50d2;
 
-  --color-secondary: #0e9f5c;
+  --color-secondary: #0a7a70;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #ffc21a;
-  --color-on-secondary-container: #4a2d00;
-  --color-secondary-fixed: #d3f5e0;
-  --color-secondary-fixed-dim: #8ee6b6;
-  --color-on-secondary-fixed: #00301a;
-  --color-on-secondary-fixed-variant: #007140;
+  --color-secondary-container: #2fd3b3;
+  --color-on-secondary-container: #00352e;
+  --color-secondary-fixed: #b6f2e4;
+  --color-secondary-fixed-dim: #6fe0c9;
+  --color-on-secondary-fixed: #00251f;
+  --color-on-secondary-fixed-variant: #00695f;
 
-  --color-tertiary: #c9327e;
+  --color-tertiary: #6d28d9;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #e35b9d;
-  --color-on-tertiary-container: #ffd9e8;
-  --color-tertiary-fixed: #ffd9e8;
-  --color-tertiary-fixed-dim: #ffaecf;
-  --color-on-tertiary-fixed: #3e0022;
-  --color-on-tertiary-fixed-variant: #a01560;
+  --color-tertiary-container: #a78bfa;
+  --color-on-tertiary-container: #2e1065;
+  --color-tertiary-fixed: #ede4ff;
+  --color-tertiary-fixed-dim: #c4b0fb;
+  --color-on-tertiary-fixed: #2e1065;
+  --color-on-tertiary-fixed-variant: #5b21b6;
 
+  /* Error KHÔNG đổi theo rebrand — đỏ cảnh báo là quy ước UX phổ quát, độc lập màu thương hiệu. */
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
-  --color-surface: #fff9f3;
-  --color-surface-dim: #f2e4d8;
-  --color-surface-bright: #fff9f3;
+  --color-surface: #f7f9fc;
+  --color-surface-dim: #e3e8f0;
+  --color-surface-bright: #f7f9fc;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #fdf1e6;
-  --color-surface-container: #fae9db;
-  --color-surface-container-high: #f6e1cf;
-  --color-surface-container-highest: #f1d9c4;
-  --color-surface-variant: #f1e0d2;
-  --color-surface-tint: #e8491f;
-  --color-on-surface: #2b160c;
-  --color-on-surface-variant: #6b5245;
-  --color-inverse-surface: #3a2417;
-  --color-inverse-on-surface: #fdeee2;
+  --color-surface-container-low: #f1f4f9;
+  --color-surface-container: #eaeff6;
+  --color-surface-container-high: #e3e9f2;
+  --color-surface-container-highest: #dbe2ee;
+  --color-surface-variant: #e2e7f0;
+  --color-surface-tint: #0a6ee6;
+  --color-on-surface: #071641;
+  --color-on-surface-variant: #4a5773;
+  --color-inverse-surface: #17233f;
+  --color-inverse-on-surface: #eef2fa;
 
-  --color-background: #fff9f3;
-  --color-on-background: #2b160c;
-  --color-outline: #8d7466;
-  --color-outline-variant: #ecd6c5;
+  --color-background: #f7f9fc;
+  --color-on-background: #071641;
+  --color-outline: #6b7690;
+  --color-outline-variant: #d7deea;
 
-  /* ── FnB accent palette — dùng cho landing page & các trang hướng ẩm thực ── */
-  --color-fnb-red: #e8402a;
-  --color-fnb-orange: #ff6b2c;
+  /* ── FnB accent ramp — vẫn giữ TÊN cũ (fnb-red/orange/amber/green/pink/cream) vì
+     dùng rải khắp app (Sidebar, nút CTA, badge, TourOverlay...), đổi tên hết rủi ro
+     cao/tốn công; chỉ đổi GIÁ TRỊ cho khớp brand mới. fnb-red/orange nhại theo
+     primary/primary-container y hệt cách chúng nhại theo primary cam cũ (fnb-red
+     ≈ primary, fnb-orange = primary-container y hệt giá trị — xem git blame).
+     fnb-green nhại secondary (vẫn đọc là "thành công/đang live" vì lam-lục vẫn
+     thuộc họ xanh). fnb-pink nhại tertiary (tím). RIÊNG fnb-amber CỐ TÌNH giữ
+     nguyên vàng gold — quy ước sao/rating/premium (TemplateCard, ProjectsPage
+     draft stat) mạnh hơn brand hue, đổi sang xanh sẽ mất nghĩa "ngôi sao". */
+  --color-fnb-red: #0a6ee6;
+  --color-fnb-orange: #1496f0;
   --color-fnb-amber: #ffb400;
-  --color-fnb-green: #12a150;
-  --color-fnb-pink: #e94f8a;
-  --color-fnb-cream: #fff8f0;
+  --color-fnb-green: #0a7a70;
+  --color-fnb-pink: #6d28d9;
+  --color-fnb-cream: #f7f9fc;
 
-  /* ── Bảng màu "Việt Nam đương đại" — landing page ─────────────────────
-     Lấy cảm hứng từ lụa đỏ son, vân mây vàng kim, hạc bay (tranh dân gian). */
-  --color-viet-red: #a4161a;
-  --color-viet-maroon: #6e0f12;
-  --color-viet-lacquer: #4a0a0c;
-  --color-viet-gold: #d9a441;
-  --color-viet-gold-light: #f2c86b;
-  --color-viet-cream: #fdf3e3;
+  /* ── Bảng màu hero landing (trước là "Việt Nam đương đại" lụa đỏ-vàng) ──────
+     Đổi theo đúng dải gradient thật của logo: lam đậm → lam sáng (cầu nối, xem
+     fnb-orange) → ngọc lam, thay cho đỏ son/vàng kim cũ. Tên biến giữ nguyên
+     (viet-red/maroon/lacquer/gold/gold-light/cream) vì dùng trực tiếp trong hero,
+     card nổi, CTA của LandingPage.tsx — đổi tên phải sửa hàng chục dòng, không
+     cần thiết cho việc đổi màu. */
+  --color-viet-red: #0a50d2;
+  --color-viet-maroon: #0a2a72;
+  --color-viet-lacquer: #071641;
+  --color-viet-gold: #2fd3b3;
+  --color-viet-gold-light: #7ee9d1;
+  --color-viet-cream: #eef5ff;
 
-  /* ── Font families ──────────────────────────────────────────────────── */
-  /* Ghi đè font-sans mặc định của Tailwind (vốn là ui-sans-serif/system-ui) — AppLayout/AdminLayout
-     bọc toàn app bằng class font-sans nên đây là font body thật sự của cả hệ thống. */
-  --font-sans: 'Be Vietnam Pro', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  /* Body/UI toàn hệ thống: Be Vietnam Pro — font thiết kế riêng cho dấu tiếng Việt,
-     dấu thanh cân đối, dễ đọc hơn Inter (font Latin gốc, dấu tiếng Việt chỉ là subset bổ sung). */
-  --font-inter: 'Be Vietnam Pro', 'Inter', sans-serif;
-  /* Heading: giữ Lexend — font được thiết kế theo nghiên cứu về tốc độ đọc (proven to improve
-     reading proficiency), vẫn có dấu tiếng Việt đầy đủ, tạo tương phản rõ với body. */
-  --font-lexend: 'Lexend', sans-serif;
-  /* Font landing Việt: serif sang trọng cho heading + sans thiết kế riêng cho tiếng Việt */
-  --font-display: 'Playfair Display', 'Lexend', serif;
-  --font-viet: 'Be Vietnam Pro', 'Inter', sans-serif;
+  /* ── Font families — 1 font "cơ bản" duy nhất toàn hệ thống ────────────
+     Trước đây trộn 3 font (Be Vietnam Pro thân bài + Lexend heading + Playfair
+     Display serif cho landing) — hợp với brand "lụa Việt" cũ nhưng lệch hẳn với
+     wordmark VNGOWEB mới (sans-serif hình học, đậm, không chân). Gộp về Inter —
+     font UI cơ bản, trung tính, phủ đủ dấu tiếng Việt, cùng họ hình học với logo,
+     hệ trọng số 100-900 đủ tạo tương phản heading/body chỉ bằng font-weight thay
+     vì đổi cả typeface. Be Vietnam Pro giữ làm fallback ngay sau Inter — lưới an
+     toàn dấu thanh tiếng Việt cho các tổ hợp ký tự hiếm nếu có. */
+  --font-sans: 'Inter', 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  --font-inter: 'Inter', 'Be Vietnam Pro', sans-serif;
+  /* Trước là Lexend riêng cho heading — gộp về Inter, tương phản với body tạo
+     bằng font-weight (extrabold/black) thay vì đổi typeface. */
+  --font-lexend: 'Inter', 'Be Vietnam Pro', sans-serif;
+  /* Trước là Playfair Display (serif sang trọng) cho landing "lụa Việt" — đổi
+     sang Inter đậm (font-black) để khớp phong cách sans hình học của logo mới. */
+  --font-display: 'Inter', 'Be Vietnam Pro', sans-serif;
+  --font-viet: 'Inter', 'Be Vietnam Pro', sans-serif;
 }
 
 /* Class giữ lại cho tương thích — bảng màu FnB giờ là mặc định ở @theme */
@@ -276,9 +297,11 @@
 
 /* ── Landing "Việt Nam đương đại" — motif hạc / vân mây / thủy ba ─────── */
 
-/* Chữ vàng kim óng ánh — dùng cho highlight trên nền đỏ son */
+/* Chữ ngọc lam óng ánh — dùng cho highlight trên nền lam đậm (trước là "gold-shine"
+   đỏ-vàng, đổi theo bảng màu VNGOWEB Pin; giữ tên class vì dùng trực tiếp trong
+   LandingPage.tsx, đổi tên không cần thiết cho việc đổi màu). */
 .text-gold-shine {
-  background: linear-gradient(105deg, #f2c86b 0%, #ffe9b0 28%, #d9a441 55%, #f6d789 80%, #c8922e 100%);
+  background: linear-gradient(105deg, #2fd3b3 0%, #9ce8ff 28%, #1496f0 55%, #7ee9d1 80%, #0a6ee6 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;

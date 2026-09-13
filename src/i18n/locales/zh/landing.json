@@ -4,16 +4,17 @@
     "description": "vngoweb 帮助咖啡馆、餐厅、美容院和小微企业在几分钟内建成专业网站——选择模板、编辑内容、一键发布，无需任何编程知识。"
   },
   "hero": {
-    "badge": "为咖啡馆、餐厅打造的快捷解决方案",
-    "title1": "把 Google Maps 变成",
-    "titleHighlight": "网站与二维码菜单",
-    "title2": "30 秒即可拥有专业形象",
+    "title1": "帮助企业",
+    "titleHighlight": "打造专业网站",
+    "title2": "的平台",
+    "subheading": "把 Google Maps 变成专业网站",
     "description": "无需懂代码。只需粘贴您的 Google Maps 链接，vngoweb 就会自动生成一个精美、移动端优化、随时吸引顾客的网站。",
     "ctaStart": "立即免费开始",
     "ctaDemo": "查看演示",
-    "proofCafe": "咖啡馆",
-    "proofRestaurant": "餐厅",
-    "imageAlt": "手持专业二维码的咖啡馆店主",
+    "pillFast": "快速",
+    "pillQr": "网站二维码",
+    "pillMultilang": "多语言",
+    "visualAlt": "展示 Google Maps 商家信息转变为专业网站的示意图，在笔记本电脑和手机上呈现",
     "floatReady": "网站已就绪！",
     "floatReadySub": "2 分钟前刚刚创建完成",
     "floatQr": "桌面二维码菜单",
@@ -66,7 +67,7 @@
     "step3Desc": "点击发布按钮，获取二维码，立刻开始迎接新顾客。"
   },
   "cta": {
-    "title": "准备好让您的店铺更专业了吗？",
+    "title": "准备好让您的企业更专业了吗？",
     "description": "今天就开始打造专业的线上形象。基础功能免费体验。",
     "button": "立即免费开始"
   }

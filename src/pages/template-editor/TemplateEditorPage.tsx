@@ -187,7 +187,7 @@ export default function TemplateEditorPage() {
     style.textContent = `
       html, body { margin: 0; padding: 0; background: #fff; }
       .preview-edit-mode [data-field] { cursor: text; }
-      .preview-edit-mode [data-field]:hover { outline: 2px dashed #ff6b2c; outline-offset: 3px; border-radius: 3px; }
+      .preview-edit-mode [data-field]:hover { outline: 2px dashed #0a6ee6; outline-offset: 3px; border-radius: 3px; }
     `;
     doc.head.appendChild(style);
     doc.body.className = 'preview-edit-mode';
@@ -820,7 +820,7 @@ export default function TemplateEditorPage() {
           {/* CSS: highlight data-field elements on hover in editor preview */}
           <style>{`
             .preview-edit-mode [data-field] { cursor: text; }
-            .preview-edit-mode [data-field]:hover { outline: 2px dashed #ff6b2c; outline-offset: 3px; border-radius: 3px; }
+            .preview-edit-mode [data-field]:hover { outline: 2px dashed #0a6ee6; outline-offset: 3px; border-radius: 3px; }
           `}</style>
 
           {viewport === 'mobile' ? (

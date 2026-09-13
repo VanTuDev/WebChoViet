@@ -4,16 +4,17 @@
     "description": "vngoweb과 함께 카페, 레스토랑, 스파 등 소규모 비즈니스의 전문 웹사이트를 몇 분 만에 완성하세요. 템플릿 선택, 콘텐츠 편집, 즉시 게시 — 코딩 지식은 필요 없습니다."
   },
   "hero": {
-    "badge": "카페와 레스토랑을 위한 빠르고 간편한 솔루션",
-    "title1": "Google Maps를",
-    "titleHighlight": "웹사이트 & QR 메뉴",
-    "title2": "로 30초 만에 전문가답게",
+    "title1": "기업의 전문적인",
+    "titleHighlight": "웹사이트 제작",
+    "title2": "을 돕는 플랫폼",
+    "subheading": "Google Maps를 전문 웹사이트로 전환합니다",
     "description": "코딩 지식이 없어도 괜찮습니다. Google Maps 링크만 붙여넣으면 vngoweb이 모바일에 최적화된 아름다운 웹사이트를 자동으로 만들어 고객을 맞이할 준비를 끝냅니다.",
     "ctaStart": "지금 무료로 시작하기",
     "ctaDemo": "데모 보기",
-    "proofCafe": "카페",
-    "proofRestaurant": "레스토랑",
-    "imageAlt": "전문 QR 코드를 든 카페 사장님",
+    "pillFast": "빠른 속도",
+    "pillQr": "웹사이트 QR",
+    "pillMultilang": "다국어",
+    "visualAlt": "Google Maps 정보가 전문 웹사이트로 바뀌는 과정을 노트북과 휴대폰 화면으로 보여주는 이미지",
     "floatReady": "웹사이트가 준비되었습니다!",
     "floatReadySub": "2분 전에 방금 완성",
     "floatQr": "테이블 QR 메뉴",
@@ -66,7 +67,7 @@
     "step3Desc": "게시 버튼을 누르고 QR 코드를 받아 지금 바로 새로운 고객을 맞이하세요."
   },
   "cta": {
-    "title": "매장을 한층 더 전문적으로 만들 준비가 되셨나요?",
+    "title": "비즈니스를 한층 더 전문적으로 만들 준비가 되셨나요?",
     "description": "오늘부터 인터넷에서 전문적인 브랜드 이미지를 구축해 보세요. 기본 기능은 무료로 체험할 수 있습니다.",
     "button": "지금 무료로 시작하기"
   }

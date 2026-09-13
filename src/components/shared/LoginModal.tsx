@@ -54,7 +54,7 @@ export default function LoginModal({ onClose }: Props) {
         {/* ── LEFT PANEL — brand / marketing (md+) ─────────────────────── */}
         <div
           className="hidden md:flex flex-col w-[46%] shrink-0 relative overflow-hidden"
-          style={{ background: 'linear-gradient(145deg, #ff6b2c 0%, #e8491f 38%, #b83510 70%, #8b2208 100%)' }}
+          style={{ background: 'linear-gradient(145deg, #2fd3b3 0%, #0a6ee6 45%, #0a2a72 78%, #1a1464 100%)' }}
         >
           {/* Dot matrix pattern */}
           <div
@@ -62,11 +62,11 @@ export default function LoginModal({ onClose }: Props) {
             style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}
           />
           {/* Glow blobs */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-orange-300/20 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full bg-red-950/50 blur-3xl pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-cyan-300/20 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-16 -left-16 w-52 h-52 rounded-full bg-indigo-950/50 blur-3xl pointer-events-none" />
 
           <div className="relative flex flex-col h-full p-8">
-            {/* Wordmark bản trắng — logo đỏ/cam không đọc được trên nền gradient tối */}
+            {/* Wordmark bản trắng — logo màu gốc không đọc được trên nền gradient tối */}
             <p className="text-[22px] leading-none mb-2">
               <Wordmark inverted />
             </p>
@@ -91,7 +91,7 @@ export default function LoginModal({ onClose }: Props) {
                 {/* Page preview */}
                 <div className="bg-white/8 p-2.5 space-y-2">
                   {/* Hero section mock */}
-                  <div className="h-14 rounded-lg relative overflow-hidden bg-linear-to-r from-orange-400/50 to-amber-300/25">
+                  <div className="h-14 rounded-lg relative overflow-hidden bg-linear-to-r from-sky-400/50 to-teal-300/25">
                     <div className="absolute inset-0 flex items-center px-3">
                       <div className="space-y-1.5">
                         <div className="h-2 w-16 bg-white/80 rounded-full" />
@@ -138,7 +138,7 @@ export default function LoginModal({ onClose }: Props) {
         </div>
 
         {/* ── RIGHT PANEL — action ─────────────────────────────────────── */}
-        <div className="flex-1 flex flex-col justify-center px-8 py-10 bg-[#fff9f3]">
+        <div className="flex-1 flex flex-col justify-center px-8 py-10 bg-[#f7f9fc]">
 
           {/* Mobile: compact brand header */}
           <div className="md:hidden flex flex-col items-center mb-7">
