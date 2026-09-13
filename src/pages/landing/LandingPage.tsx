@@ -16,6 +16,7 @@ import {
   PlayCircle,
   QrCode,
   Rocket,
+  Sparkles,
   Star,
   Zap,
 } from 'lucide-react';
@@ -517,7 +518,7 @@ export default function LandingPage() {
                   </div>
                 </div>
                 <div className="absolute z-20 -top-4 -right-2 sm:-right-5 bg-white border border-outline-variant rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
-                  <QrCode className="w-6 h-6 text-primary" />
+                  <Sparkles className="w-6 h-6 text-primary" />
                   <div>
                     <p className="font-inter font-semibold text-[11px] text-on-surface">{t('hero.floatQr')}</p>
                     <p className="text-[10px] text-primary font-semibold">{t('hero.floatQrSub')}</p>

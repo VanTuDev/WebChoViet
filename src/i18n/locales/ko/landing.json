@@ -17,8 +17,8 @@
     "visualAlt": "Google Maps 정보가 전문 웹사이트로 바뀌는 과정을 노트북과 휴대폰 화면으로 보여주는 이미지",
     "floatReady": "웹사이트가 준비되었습니다!",
     "floatReadySub": "2분 전에 방금 완성",
-    "floatQr": "테이블 QR 메뉴",
-    "floatQrSub": "오늘 스캔 +128회"
+    "floatQr": "자동 변환",
+    "floatQrSub": "Google Maps 링크가 바로 웹사이트로!"
   },
   "showcase": {
     "badge": "실제 제품, 터치하면 바로 실행",
