@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import {
-  Search, Ban, CheckCircle2, Users, ChevronDown, Loader2, ShieldCheck,
+  Search, Ban, CheckCircle2, Users, ChevronDown, Loader2, ShieldCheck, Sparkles,
 } from 'lucide-react';
 import {
-  fetchAdminUsers, toggleSuspendUser,
+  fetchAdminUsers, toggleSuspendUser, toggleUnlimitedAccessUser,
   AdminUserListItem,
 } from '../../../services/adminService';
 import { useAppContext } from '../../../store/AppContext';
@@ -77,6 +77,25 @@ export default function UsersPage() {
       variant: 'danger',
       onConfirm: () => doToggleSuspend(u),
     });
+  };
+
+  const handleToggleUnlimitedAccess = async (u: AdminUserListItem) => {
+    setTogglingId(u.id);
+    try {
+      const { hasUnlimitedAccess } = await toggleUnlimitedAccessUser(u.id);
+      setData(prev => prev && {
+        ...prev,
+        items: prev.items.map(item => (item.id === u.id ? { ...item, hasUnlimitedAccess } : item)),
+      });
+      showSnackbar(
+        hasUnlimitedAccess ? `Đã cấp quyền AS cho ${u.email}.` : `Đã thu hồi quyền AS của ${u.email}.`,
+        'success',
+      );
+    } catch (err) {
+      showSnackbar(err instanceof Error ? err.message : 'Thao tác thất bại.', 'error');
+    } finally {
+      setTogglingId(null);
+    }
   };
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
@@ -191,6 +210,18 @@ export default function UsersPage() {
                           : u.isSuspended ? <CheckCircle2 className="h-3.5 w-3.5" /> : <Ban className="h-3.5 w-3.5" />}
                       </button>
                     )}
+                    <button
+                      onClick={() => handleToggleUnlimitedAccess(u)}
+                      disabled={togglingId === u.id}
+                      title={u.hasUnlimitedAccess ? 'Thu hồi quyền AS' : 'Cấp quyền AS (không giới hạn draft/published/template)'}
+                      className={`p-1.5 rounded-lg transition-colors cursor-pointer disabled:opacity-50 ${
+                        u.hasUnlimitedAccess
+                          ? 'text-violet-400 hover:bg-violet-500/10'
+                          : 'text-slate-500 hover:bg-slate-500/10'
+                      }`}
+                    >
+                      <Sparkles className="h-3.5 w-3.5" />
+                    </button>
                   </td>
                 </tr>
               ))}
