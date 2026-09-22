@@ -152,7 +152,7 @@ imageSlots: [
   bài nếu không thích bài đang phát. `src` từng bài để trống sẵn trong `i18n/*.json`, chủ
   tiệc tự điền link file mp3 sau qua panel tùy chỉnh (giống hệt cơ chế `mapUrl`, không
   cần thêm capability upload nào mới). Nút nổi đặt góc **dưới-TRÁI** (`fixed bottom-5
-  left-5`) — góc dưới-phải đã bị badge "Made with vngoweb" của `PublicSitePage.tsx` chiếm
+  left-5`) — góc dưới-phải đã bị badge "Made with VNGOWEB" của `PublicSitePage.tsx` chiếm
   cố định trên MỌI site đã publish (`fixed bottom-5 right-5`), đặt cùng chỗ sẽ đè lên nhau.
 - **Floral decoration:** Dùng SVG hoặc PNG hoa lá trang trí góc — đặc trưng của thiệp cưới
 - **Animation nhẹ:** Fade-in, float, confetti — tạo cảm xúc khi mở thiệp lần đầu

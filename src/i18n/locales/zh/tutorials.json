@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "店铺数字化教程 — vngoweb",
-    "description": "4 步教程：用 vngoweb 创建网站、获取二维码、完成店铺数字化——无需编程知识，仅需 5 分钟。"
+    "title": "店铺数字化教程 — VNGOWEB",
+    "description": "4 步教程：用 VNGOWEB 创建网站、获取二维码、完成店铺数字化——无需编程知识，仅需 5 分钟。"
   },
-  "heading": "用 vngoweb 完成店铺数字化",
+  "heading": "用 VNGOWEB 完成店铺数字化",
   "subheading": "即使不懂编程，只需 5 分钟就能把整个店铺搬到线上。",
   "steps": [
     {
@@ -29,7 +29,7 @@
   ],
   "support": {
     "title": "想要完全免费的全程代建服务？",
-    "desc": "vngoweb 技术团队随时为您免费提供开店建站、产品拍摄和菜单录入的一站式服务！",
+    "desc": "VNGOWEB 技术团队随时为您免费提供开店建站、产品拍摄和菜单录入的一站式服务！",
     "cta": "立即通过 Zalo 联系",
     "connecting": "正在为您接通 Zalo 客服：{{phone}} —— 请稍候。"
   }

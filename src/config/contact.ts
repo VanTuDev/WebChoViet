@@ -4,12 +4,12 @@ export const CONTACT_PHONE = '0347 868 656';
 export const CONTACT_PHONE_RAW = '0347868656';
 export const CONTACT_EMAIL = 'Vantu.software@gmail.com';
 export const DOMAIN = 'vngoweb.com';
-export const BRAND_NAME = 'vngoweb';
+export const BRAND_NAME = 'VNGOWEB';
 export const FOUNDER_NAME = 'Nguyễn Văn Tú';
 export const FOUNDER_SCHOOL = 'Đại học FPT Đà Nẵng';
 export const FOUNDER_FACEBOOK = 'https://www.facebook.com/vantu1602/';
 export const FOUNDER_ZALO = 'https://zalo.me/0399604816';
 
-// Trang mạng xã hội CHÍNH THỨC của vngoweb (khác FOUNDER_FACEBOOK — đó là Facebook cá nhân người sáng lập)
+// Trang mạng xã hội CHÍNH THỨC của VNGOWEB (khác FOUNDER_FACEBOOK — đó là Facebook cá nhân người sáng lập)
 export const SOCIAL_FACEBOOK = 'https://www.facebook.com/share/18XS1QBz7w/?mibextid=wwXIfr';
 export const SOCIAL_TIKTOK = 'https://www.tiktok.com/@vngoweb.official';

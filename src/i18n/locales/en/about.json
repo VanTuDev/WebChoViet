@@ -1,20 +1,20 @@
 {
   "meta": {
-    "title": "About Us — vngoweb | Nguyễn Văn Tú, FPT University Da Nang",
-    "description": "vngoweb is a website builder for small businesses in Vietnam and worldwide, developed by Nguyễn Văn Tú — FPT University Da Nang. Contact: 0347 868 656."
+    "title": "About Us — VNGOWEB | Nguyễn Văn Tú, FPT University Da Nang",
+    "description": "VNGOWEB is a website builder for small businesses in Vietnam and worldwide, developed by Nguyễn Văn Tú — FPT University Da Nang. Contact: 0347 868 656."
   },
   "hero": {
     "badge": "About us",
-    "title": "vngoweb — professional websites for every business, no coding required",
-    "description": "vngoweb is a SaaS platform that lets small businesses in Vietnam and worldwide build a professional website in minutes: choose a template, edit with drag and drop, and publish instantly with a QR code and traffic analytics."
+    "title": "VNGOWEB — professional websites for every business, no coding required",
+    "description": "VNGOWEB is a SaaS platform that lets small businesses in Vietnam and worldwide build a professional website in minutes: choose a template, edit with drag and drop, and publish instantly with a QR code and traffic analytics."
   },
   "mission": {
-    "heading": "The vngoweb mission",
-    "body": "Millions of cafes, restaurants, spas and small shops thrive offline yet have no presence online because of cost and technical barriers. vngoweb's mission is to remove those barriers: anyone can own a beautiful, SEO-ready, multilingual website — starting at zero cost."
+    "heading": "The VNGOWEB mission",
+    "body": "Millions of cafes, restaurants, spas and small shops thrive offline yet have no presence online because of cost and technical barriers. VNGOWEB's mission is to remove those barriers: anyone can own a beautiful, SEO-ready, multilingual website — starting at zero cost."
   },
   "disambiguation": {
-    "heading": "Is vngoweb related to VNG Corporation (Zalo)?",
-    "body": "No. vngoweb is an independent website-builder platform created by individual developer Nguyễn Văn Tú. It is not owned by, affiliated with, or a representative of VNG Corporation — the company behind Zalo and ZaloPay. The shared first letters in the name are purely coincidental; there is no ownership or partnership between the two."
+    "heading": "Is VNGOWEB related to VNG Corporation (Zalo)?",
+    "body": "No. VNGOWEB is an independent website-builder platform created by individual developer Nguyễn Văn Tú. It is not owned by, affiliated with, or a representative of VNG Corporation — the company behind Zalo and ZaloPay. The shared first letters in the name are purely coincidental; there is no ownership or partnership between the two."
   },
   "values": {
     "heading": "Core values",
@@ -42,11 +42,11 @@
     "name": "Nguyễn Văn Tú",
     "role": "Founder & Developer",
     "school": "FPT University Da Nang",
-    "bio": "Nguyễn Văn Tú is a software developer and the founder of vngoweb, trained at FPT University Da Nang. He personally designed and built the entire vngoweb platform — from the template store and drag-and-drop editor to the payment system and analytics — with the goal of bringing modern web technology closer to small businesses."
+    "bio": "Nguyễn Văn Tú is a software developer and the founder of VNGOWEB, trained at FPT University Da Nang. He personally designed and built the entire VNGOWEB platform — from the template store and drag-and-drop editor to the payment system and analytics — with the goal of bringing modern web technology closer to small businesses."
   },
   "contact": {
     "heading": "Get in touch",
-    "description": "Need help building a website, exploring a partnership or getting technical support? The vngoweb team is always ready.",
+    "description": "Need help building a website, exploring a partnership or getting technical support? The VNGOWEB team is always ready.",
     "phoneLabel": "Phone / Zalo",
     "emailLabel": "Email",
     "domainLabel": "Website"

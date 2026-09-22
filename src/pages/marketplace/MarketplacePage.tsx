@@ -78,7 +78,7 @@ export default function MarketplacePage() {
   return (
     <div className="flex-1 py-5 sm:py-8 px-4 sm:px-6 xl:px-10 w-full">
       <Helmet>
-        <title>{category === 'all' ? t('meta.title') : `${heading.title} — vngoweb`}</title>
+        <title>{category === 'all' ? t('meta.title') : `${heading.title} — VNGOWEB`}</title>
         <meta name="description" content={category === 'all' ? t('meta.description') : heading.desc} />
         {breadcrumbJsonLd && (
           <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>

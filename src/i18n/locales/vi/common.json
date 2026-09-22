@@ -19,7 +19,7 @@
     "logout": "Đăng xuất",
     "restartTour": "Xem lại hướng dẫn sử dụng",
     "logoutConfirmTitle": "Đăng xuất?",
-    "logoutConfirmMessage": "Bạn có chắc muốn đăng xuất khỏi vngoweb?",
+    "logoutConfirmMessage": "Bạn có chắc muốn đăng xuất khỏi VNGOWEB?",
     "logoutConfirmAction": "Đăng xuất"
   },
   "footer": {
@@ -45,8 +45,8 @@
     "phoneSupportHours": "Hỗ trợ 8:00 – 22:00 hàng ngày",
     "zalo": "Nhắn qua Zalo",
     "zaloResponse": "Phản hồi trong vòng 15 phút",
-    "socialFacebook": "vngoweb trên Facebook",
-    "socialTiktok": "vngoweb trên TikTok",
+    "socialFacebook": "VNGOWEB trên Facebook",
+    "socialTiktok": "VNGOWEB trên TikTok",
     "operatedBy": "Vận hành bởi cá nhân {{name}}.",
     "allRightsReserved": "Tất cả quyền được bảo lưu."
   },
@@ -62,7 +62,7 @@
     "termsLink": "Điều khoản",
     "and": "và",
     "privacyLink": "Chính sách bảo mật",
-    "termsSuffix": "của vngoweb.",
+    "termsSuffix": "của VNGOWEB.",
     "ssl": "Bảo mật SSL",
     "noPassword": "Không lưu mật khẩu",
     "gdpr": "GDPR"
@@ -101,7 +101,7 @@
     "upgradePlan": "Nâng cấp gói",
     "plan": {
       "ultraActive": "Gói Ultra đang hoạt động",
-      "ultraDesc": "Bạn đang dùng gói cao cấp nhất của vngoweb. Cảm ơn bạn đã đồng hành!",
+      "ultraDesc": "Bạn đang dùng gói cao cấp nhất của VNGOWEB. Cảm ơn bạn đã đồng hành!",
       "proActive": "Gói Pro đang hoạt động",
       "proDesc": "Muốn thêm đặc quyền cao cấp hơn nữa? Khám phá gói Ultra.",
       "viewUltra": "Xem gói Ultra",

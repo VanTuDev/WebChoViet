@@ -1,28 +1,28 @@
 {
   "meta": {
-    "title": "Điều khoản sử dụng — vngoweb",
-    "description": "Điều khoản sử dụng dịch vụ vngoweb: tài khoản, nội dung đăng tải, gói dịch vụ, thanh toán, sở hữu trí tuệ và luật áp dụng."
+    "title": "Điều khoản sử dụng — VNGOWEB",
+    "description": "Điều khoản sử dụng dịch vụ VNGOWEB: tài khoản, nội dung đăng tải, gói dịch vụ, thanh toán, sở hữu trí tuệ và luật áp dụng."
   },
   "title": "Điều Khoản Sử Dụng",
   "updatedAt": "13/07/2026",
-  "intro": "Vui lòng đọc kỹ các điều khoản dưới đây trước khi sử dụng vngoweb. Việc tạo tài khoản hoặc sử dụng dịch vụ đồng nghĩa bạn đã đọc, hiểu và đồng ý với toàn bộ nội dung.",
+  "intro": "Vui lòng đọc kỹ các điều khoản dưới đây trước khi sử dụng VNGOWEB. Việc tạo tài khoản hoặc sử dụng dịch vụ đồng nghĩa bạn đã đọc, hiểu và đồng ý với toàn bộ nội dung.",
   "sections": [
     {
       "heading": "1. Chấp nhận điều khoản",
       "paragraphs": [
-        "Bằng việc đăng ký, đăng nhập hoặc sử dụng bất kỳ tính năng nào của vngoweb, bạn xác nhận đồng ý chịu sự ràng buộc của Điều Khoản Sử Dụng này cùng Chính Sách Bảo Mật liên quan."
+        "Bằng việc đăng ký, đăng nhập hoặc sử dụng bất kỳ tính năng nào của VNGOWEB, bạn xác nhận đồng ý chịu sự ràng buộc của Điều Khoản Sử Dụng này cùng Chính Sách Bảo Mật liên quan."
       ]
     },
     {
       "heading": "2. Mô tả dịch vụ",
       "paragraphs": [
-        "vngoweb là nền tảng SaaS giúp hộ kinh doanh, doanh nghiệp nhỏ tại Việt Nam và quốc tế tự tạo website với đường dẫn riêng trên tên miền vngoweb.com, bao gồm kho mẫu giao diện, trình chỉnh sửa kéo thả, mã QR động và công cụ phân tích truy cập."
+        "VNGOWEB là nền tảng SaaS giúp hộ kinh doanh, doanh nghiệp nhỏ tại Việt Nam và quốc tế tự tạo website với đường dẫn riêng trên tên miền vngoweb.com, bao gồm kho mẫu giao diện, trình chỉnh sửa kéo thả, mã QR động và công cụ phân tích truy cập."
       ]
     },
     {
       "heading": "3. Tài khoản người dùng",
       "paragraphs": [
-        "Tài khoản vngoweb được tạo và xác thực thông qua Google OAuth — mỗi tài khoản Google tương ứng 1 tài khoản vngoweb. Bạn chịu trách nhiệm bảo mật quyền truy cập tài khoản Google của mình; mọi hoạt động diễn ra dưới tài khoản đó được xem là do bạn thực hiện."
+        "Tài khoản VNGOWEB được tạo và xác thực thông qua Google OAuth — mỗi tài khoản Google tương ứng 1 tài khoản VNGOWEB. Bạn chịu trách nhiệm bảo mật quyền truy cập tài khoản Google của mình; mọi hoạt động diễn ra dưới tài khoản đó được xem là do bạn thực hiện."
       ]
     },
     {
@@ -36,13 +36,13 @@
         "Lừa đảo, gây hiểu nhầm hoặc quảng bá hàng hóa/dịch vụ bị cấm kinh doanh."
       ],
       "after": [
-        "vngoweb có quyền gỡ bỏ, tạm khóa hoặc xóa website vi phạm mà không cần báo trước."
+        "VNGOWEB có quyền gỡ bỏ, tạm khóa hoặc xóa website vi phạm mà không cần báo trước."
       ]
     },
     {
       "heading": "5. Gói dịch vụ & thanh toán",
       "paragraphs": [
-        "vngoweb cung cấp 3 gói: Miễn phí, Kinh Doanh WebPro và Thương Hiệu Ultra — giá niêm yết bằng VND tại trang Bảng Giá, thanh toán qua cổng PayOS.",
+        "VNGOWEB cung cấp 3 gói: Miễn phí, Kinh Doanh WebPro và Thương Hiệu Ultra — giá niêm yết bằng VND tại trang Bảng Giá, thanh toán qua cổng PayOS.",
         "Mỗi lần thanh toán kích hoạt trọn 1 chu kỳ (tháng hoặc năm) — hệ thống không tự động trừ tiền định kỳ. Khi hết chu kỳ mà bạn không thanh toán gia hạn, tài khoản sẽ tự động chuyển về gói Miễn phí; những website vượt hạn mức của gói Miễn phí sẽ tạm thời không hiển thị công khai (dữ liệu vẫn được giữ nguyên, không xóa) cho tới khi bạn nâng cấp lại hoặc xóa bớt website khác."
       ]
     },
@@ -55,19 +55,19 @@
     {
       "heading": "7. Giới hạn trách nhiệm",
       "paragraphs": [
-        "Dịch vụ được cung cấp theo nguyên trạng (\"as is\"). vngoweb nỗ lực đảm bảo hệ thống hoạt động ổn định nhưng không cam kết không gián đoạn hay không có lỗi tuyệt đối. vngoweb không chịu trách nhiệm với thiệt hại gián tiếp phát sinh từ việc sử dụng hoặc không thể sử dụng dịch vụ."
+        "Dịch vụ được cung cấp theo nguyên trạng (\"as is\"). VNGOWEB nỗ lực đảm bảo hệ thống hoạt động ổn định nhưng không cam kết không gián đoạn hay không có lỗi tuyệt đối. VNGOWEB không chịu trách nhiệm với thiệt hại gián tiếp phát sinh từ việc sử dụng hoặc không thể sử dụng dịch vụ."
       ]
     },
     {
       "heading": "8. Sở hữu trí tuệ",
       "paragraphs": [
-        "Bạn giữ toàn quyền sở hữu đối với nội dung mình tạo ra. Bằng việc đăng tải nội dung lên vngoweb, bạn cấp cho chúng tôi quyền lưu trữ và hiển thị nội dung đó nhằm mục đích duy nhất là vận hành dịch vụ cho bạn. Mã nguồn nền tảng, mẫu giao diện và thương hiệu vngoweb thuộc quyền sở hữu của vngoweb."
+        "Bạn giữ toàn quyền sở hữu đối với nội dung mình tạo ra. Bằng việc đăng tải nội dung lên VNGOWEB, bạn cấp cho chúng tôi quyền lưu trữ và hiển thị nội dung đó nhằm mục đích duy nhất là vận hành dịch vụ cho bạn. Mã nguồn nền tảng, mẫu giao diện và thương hiệu VNGOWEB thuộc quyền sở hữu của VNGOWEB."
       ]
     },
     {
       "heading": "9. Chấm dứt dịch vụ",
       "paragraphs": [
-        "vngoweb có quyền tạm ngưng hoặc chấm dứt tài khoản vi phạm Điều Khoản Sử Dụng. Bạn có thể ngừng sử dụng và yêu cầu xóa tài khoản của mình bất kỳ lúc nào."
+        "VNGOWEB có quyền tạm ngưng hoặc chấm dứt tài khoản vi phạm Điều Khoản Sử Dụng. Bạn có thể ngừng sử dụng và yêu cầu xóa tài khoản của mình bất kỳ lúc nào."
       ]
     },
     {

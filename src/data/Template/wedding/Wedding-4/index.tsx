@@ -354,7 +354,7 @@ export default function Wedding4({ lang = 'vi' }: Props) {
 
       {/* Music player — nổi cố định theo màn hình (KHÔNG đặt trong cây có Reveal/overflow-hidden
           ở trên: transform lúc ẩn của Reveal sẽ tạo containing block mới làm fixed lệch gốc).
-          Đặt ở góc dưới-TRÁI — góc dưới-phải đã bị badge "Made with vngoweb" cố định chiếm
+          Đặt ở góc dưới-TRÁI — góc dưới-phải đã bị badge "Made with VNGOWEB" cố định chiếm
           (xem PublicSitePage.tsx, `fixed bottom-5 right-5`, hiện diện trên MỌI site đã publish). */}
       <div ref={musicPanelRef} className="fixed bottom-5 left-5 z-60 flex flex-col items-start gap-2">
         {musicOpen && (

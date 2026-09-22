@@ -1,28 +1,28 @@
 {
   "meta": {
-    "title": "Terms of Service — vngoweb",
-    "description": "vngoweb Terms of Service: accounts, user content, service plans, payments, intellectual property and governing law."
+    "title": "Terms of Service — VNGOWEB",
+    "description": "VNGOWEB Terms of Service: accounts, user content, service plans, payments, intellectual property and governing law."
   },
   "title": "Terms of Service",
   "updatedAt": "13/07/2026",
-  "intro": "Please read the following terms carefully before using vngoweb. By creating an account or using the service, you confirm that you have read, understood and agreed to all of the terms below.",
+  "intro": "Please read the following terms carefully before using VNGOWEB. By creating an account or using the service, you confirm that you have read, understood and agreed to all of the terms below.",
   "sections": [
     {
       "heading": "1. Acceptance of terms",
       "paragraphs": [
-        "By registering, logging in or using any feature of vngoweb, you agree to be bound by these Terms of Service and the related Privacy Policy."
+        "By registering, logging in or using any feature of VNGOWEB, you agree to be bound by these Terms of Service and the related Privacy Policy."
       ]
     },
     {
       "heading": "2. Description of the service",
       "paragraphs": [
-        "vngoweb is a SaaS platform that lets small businesses in Vietnam and worldwide build their own websites with a dedicated URL on the vngoweb.com domain, including a template store, a drag-and-drop editor, dynamic QR codes and traffic analytics."
+        "VNGOWEB is a SaaS platform that lets small businesses in Vietnam and worldwide build their own websites with a dedicated URL on the vngoweb.com domain, including a template store, a drag-and-drop editor, dynamic QR codes and traffic analytics."
       ]
     },
     {
       "heading": "3. User accounts",
       "paragraphs": [
-        "vngoweb accounts are created and authenticated through Google OAuth — each Google account corresponds to one vngoweb account. You are responsible for securing access to your Google account; all activity carried out under that account is deemed to be performed by you."
+        "VNGOWEB accounts are created and authenticated through Google OAuth — each Google account corresponds to one VNGOWEB account. You are responsible for securing access to your Google account; all activity carried out under that account is deemed to be performed by you."
       ]
     },
     {
@@ -36,13 +36,13 @@
         "Is fraudulent, misleading, or promotes goods/services that are prohibited from trade."
       ],
       "after": [
-        "vngoweb reserves the right to remove, suspend or delete any infringing website without prior notice."
+        "VNGOWEB reserves the right to remove, suspend or delete any infringing website without prior notice."
       ]
     },
     {
       "heading": "5. Service plans & payment",
       "paragraphs": [
-        "vngoweb offers 3 plans: Free, WebPro Business and Ultra Brand — prices are listed in VND on the Pricing page, with payments processed via the PayOS gateway.",
+        "VNGOWEB offers 3 plans: Free, WebPro Business and Ultra Brand — prices are listed in VND on the Pricing page, with payments processed via the PayOS gateway.",
         "Each payment activates one full billing cycle (monthly or yearly) — the system does not automatically charge you on a recurring basis. If you do not pay to renew when a cycle ends, your account automatically reverts to the Free plan; websites exceeding the Free plan's limits will be temporarily hidden from public view (all data is kept intact and never deleted) until you upgrade again or remove other websites."
       ]
     },
@@ -55,19 +55,19 @@
     {
       "heading": "7. Limitation of liability",
       "paragraphs": [
-        "The service is provided on an \"as is\" basis. vngoweb strives to keep the system stable but does not guarantee uninterrupted or completely error-free operation. vngoweb is not liable for indirect damages arising from the use of, or inability to use, the service."
+        "The service is provided on an \"as is\" basis. VNGOWEB strives to keep the system stable but does not guarantee uninterrupted or completely error-free operation. VNGOWEB is not liable for indirect damages arising from the use of, or inability to use, the service."
       ]
     },
     {
       "heading": "8. Intellectual property",
       "paragraphs": [
-        "You retain full ownership of the content you create. By publishing content on vngoweb, you grant us the right to store and display that content for the sole purpose of operating the service for you. The platform source code, templates and the vngoweb brand remain the property of vngoweb."
+        "You retain full ownership of the content you create. By publishing content on VNGOWEB, you grant us the right to store and display that content for the sole purpose of operating the service for you. The platform source code, templates and the VNGOWEB brand remain the property of VNGOWEB."
       ]
     },
     {
       "heading": "9. Termination",
       "paragraphs": [
-        "vngoweb reserves the right to suspend or terminate accounts that violate these Terms of Service. You may stop using the service and request deletion of your account at any time."
+        "VNGOWEB reserves the right to suspend or terminate accounts that violate these Terms of Service. You may stop using the service and request deletion of your account at any time."
       ]
     },
     {

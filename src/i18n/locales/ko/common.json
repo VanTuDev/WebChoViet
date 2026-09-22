@@ -19,7 +19,7 @@
     "logout": "로그아웃",
     "restartTour": "사용 가이드 다시 보기",
     "logoutConfirmTitle": "로그아웃하시겠습니까?",
-    "logoutConfirmMessage": "vngoweb에서 로그아웃하시겠습니까?",
+    "logoutConfirmMessage": "VNGOWEB에서 로그아웃하시겠습니까?",
     "logoutConfirmAction": "로그아웃"
   },
   "footer": {
@@ -45,15 +45,15 @@
     "phoneSupportHours": "매일 8:00 – 22:00 고객 지원",
     "zalo": "Zalo로 문의하기",
     "zaloResponse": "15분 이내 답변",
-    "socialFacebook": "vngoweb 페이스북",
-    "socialTiktok": "vngoweb 틱톡",
+    "socialFacebook": "VNGOWEB 페이스북",
+    "socialTiktok": "VNGOWEB 틱톡",
     "operatedBy": "개인 운영자: {{name}}.",
     "allRightsReserved": "All rights reserved."
   },
   "login": {
     "subtitle": "로그인하고 매장을 관리하세요",
     "googleButton": "Google 계정으로 계속하기",
-    "termsPrefix": "계속 진행하면 vngoweb의",
+    "termsPrefix": "계속 진행하면 VNGOWEB의",
     "termsLink": "이용약관",
     "and": "및",
     "privacyLink": "개인정보 처리방침",
@@ -96,12 +96,12 @@
     "upgradePlan": "요금제 업그레이드",
     "plan": {
       "ultraActive": "Ultra 요금제 이용 중",
-      "ultraDesc": "vngoweb 최상위 요금제를 이용 중입니다. 함께해 주셔서 감사합니다!",
+      "ultraDesc": "VNGOWEB 최상위 요금제를 이용 중입니다. 함께해 주셔서 감사합니다!",
       "proActive": "Pro 요금제 이용 중",
       "proDesc": "더 많은 프리미엄 혜택을 원하시나요? Ultra 요금제를 살펴보세요.",
       "viewUltra": "Ultra 요금제 보기",
       "upgradeTitle": "WebPro로 업그레이드",
-      "upgradeDesc": "전용 도메인(.vn, .com)을 사용하고 vngoweb 로고를 완전히 제거하세요.",
+      "upgradeDesc": "전용 도메인(.vn, .com)을 사용하고 VNGOWEB 로고를 완전히 제거하세요.",
       "upgradeCta": "Pro 요금제 신청"
     }
   }

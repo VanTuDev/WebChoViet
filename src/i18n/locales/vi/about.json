@@ -1,20 +1,20 @@
 {
   "meta": {
-    "title": "Về chúng tôi — vngoweb | Nguyễn Văn Tú, Đại học FPT Đà Nẵng",
-    "description": "vngoweb là nền tảng tạo website cho doanh nghiệp nhỏ tại Việt Nam và quốc tế, được phát triển bởi Nguyễn Văn Tú — Đại học FPT Đà Nẵng. Liên hệ: 0347 868 656."
+    "title": "Về chúng tôi — VNGOWEB | Nguyễn Văn Tú, Đại học FPT Đà Nẵng",
+    "description": "VNGOWEB là nền tảng tạo website cho doanh nghiệp nhỏ tại Việt Nam và quốc tế, được phát triển bởi Nguyễn Văn Tú — Đại học FPT Đà Nẵng. Liên hệ: 0347 868 656."
   },
   "hero": {
     "badge": "Về chúng tôi",
-    "title": "vngoweb — website chuyên nghiệp cho mọi doanh nghiệp, không cần biết lập trình",
-    "description": "vngoweb là nền tảng SaaS giúp hộ kinh doanh và doanh nghiệp nhỏ tại Việt Nam cũng như quốc tế tự tạo website chuyên nghiệp trong vài phút: chọn mẫu giao diện, chỉnh sửa kéo thả, xuất bản ngay kèm mã QR và công cụ phân tích truy cập."
+    "title": "VNGOWEB — website chuyên nghiệp cho mọi doanh nghiệp, không cần biết lập trình",
+    "description": "VNGOWEB là nền tảng SaaS giúp hộ kinh doanh và doanh nghiệp nhỏ tại Việt Nam cũng như quốc tế tự tạo website chuyên nghiệp trong vài phút: chọn mẫu giao diện, chỉnh sửa kéo thả, xuất bản ngay kèm mã QR và công cụ phân tích truy cập."
   },
   "mission": {
-    "heading": "Sứ mệnh của vngoweb",
-    "body": "Hàng triệu quán cafe, nhà hàng, spa và cửa hàng nhỏ đang kinh doanh tốt ngoài đời thật nhưng chưa hiện diện trên internet vì rào cản chi phí và kỹ thuật. Sứ mệnh của vngoweb là xóa rào cản đó: bất kỳ ai cũng có thể sở hữu một website đẹp, chuẩn SEO và đa ngôn ngữ — với chi phí bắt đầu từ 0 đồng."
+    "heading": "Sứ mệnh của VNGOWEB",
+    "body": "Hàng triệu quán cafe, nhà hàng, spa và cửa hàng nhỏ đang kinh doanh tốt ngoài đời thật nhưng chưa hiện diện trên internet vì rào cản chi phí và kỹ thuật. Sứ mệnh của VNGOWEB là xóa rào cản đó: bất kỳ ai cũng có thể sở hữu một website đẹp, chuẩn SEO và đa ngôn ngữ — với chi phí bắt đầu từ 0 đồng."
   },
   "disambiguation": {
-    "heading": "vngoweb có phải là VNG Corporation (Zalo) không?",
-    "body": "Không. vngoweb là nền tảng tạo website độc lập do cá nhân Nguyễn Văn Tú phát triển, hoàn toàn không thuộc, không liên kết và không đại diện cho Tập đoàn VNG (VNG Corporation) — đơn vị sở hữu Zalo, ZaloPay. Việc trùng vài ký tự đầu trong tên gọi hoàn toàn ngẫu nhiên, không có bất kỳ quan hệ sở hữu hay hợp tác nào giữa hai bên."
+    "heading": "VNGOWEB có phải là VNG Corporation (Zalo) không?",
+    "body": "Không. VNGOWEB là nền tảng tạo website độc lập do cá nhân Nguyễn Văn Tú phát triển, hoàn toàn không thuộc, không liên kết và không đại diện cho Tập đoàn VNG (VNG Corporation) — đơn vị sở hữu Zalo, ZaloPay. Việc trùng vài ký tự đầu trong tên gọi hoàn toàn ngẫu nhiên, không có bất kỳ quan hệ sở hữu hay hợp tác nào giữa hai bên."
   },
   "values": {
     "heading": "Giá trị cốt lõi",
@@ -42,11 +42,11 @@
     "name": "Nguyễn Văn Tú",
     "role": "Nhà sáng lập & Lập trình viên",
     "school": "Đại học FPT Đà Nẵng",
-    "bio": "Nguyễn Văn Tú là lập trình viên và nhà sáng lập vngoweb, được đào tạo tại Đại học FPT Đà Nẵng. Anh trực tiếp thiết kế và xây dựng toàn bộ nền tảng vngoweb — từ kho giao diện, trình chỉnh sửa kéo thả cho tới hệ thống thanh toán và phân tích dữ liệu — với mục tiêu đưa công nghệ web hiện đại đến gần hơn với các hộ kinh doanh nhỏ."
+    "bio": "Nguyễn Văn Tú là lập trình viên và nhà sáng lập VNGOWEB, được đào tạo tại Đại học FPT Đà Nẵng. Anh trực tiếp thiết kế và xây dựng toàn bộ nền tảng VNGOWEB — từ kho giao diện, trình chỉnh sửa kéo thả cho tới hệ thống thanh toán và phân tích dữ liệu — với mục tiêu đưa công nghệ web hiện đại đến gần hơn với các hộ kinh doanh nhỏ."
   },
   "contact": {
     "heading": "Liên hệ với chúng tôi",
-    "description": "Bạn cần tư vấn tạo website, hợp tác hoặc hỗ trợ kỹ thuật? Đội ngũ vngoweb luôn sẵn sàng.",
+    "description": "Bạn cần tư vấn tạo website, hợp tác hoặc hỗ trợ kỹ thuật? Đội ngũ VNGOWEB luôn sẵn sàng.",
     "phoneLabel": "Điện thoại / Zalo",
     "emailLabel": "Email",
     "domainLabel": "Website"

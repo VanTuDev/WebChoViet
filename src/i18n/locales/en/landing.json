@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "vngoweb — Website Builder for Small Businesses",
-    "description": "vngoweb helps cafes, restaurants, spas and small businesses build a professional website in minutes — pick a template, customize, publish. No coding required."
+    "title": "VNGOWEB — Website Builder for Small Businesses",
+    "description": "VNGOWEB helps cafes, restaurants, spas and small businesses build a professional website in minutes — pick a template, customize, publish. No coding required."
   },
   "hero": {
     "title1": "The platform that helps businesses",
     "titleHighlight": "build a website",
     "title2": "professionally",
     "subheading": "Turn Google Maps into a professional website",
-    "description": "No coding needed. Just paste your Google Maps link and vngoweb automatically builds a beautiful, mobile-optimized website that's ready to win customers.",
+    "description": "No coding needed. Just paste your Google Maps link and VNGOWEB automatically builds a beautiful, mobile-optimized website that's ready to win customers.",
     "ctaStart": "Start free now",
     "ctaDemo": "View demo",
     "pillFast": "Fast",
@@ -25,7 +25,7 @@
     "title1": "A library of",
     "titleHighlight": "beautiful templates",
     "title2": ", ready to use",
-    "description": "These are real screenshots of website templates available on vngoweb — hover over the center template to scroll through the full page.",
+    "description": "These are real screenshots of website templates available on VNGOWEB — hover over the center template to scroll through the full page.",
     "filterAll": "All",
     "previewThis": "Preview this template",
     "previewAria": "Preview the {{name}} template",

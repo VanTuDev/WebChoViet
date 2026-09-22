@@ -19,7 +19,7 @@
     "logout": "ອອກຈາກລະບົບ",
     "restartTour": "ເບິ່ງຄູ່ມືການນຳໃຊ້ຄືນໃໝ່",
     "logoutConfirmTitle": "ອອກຈາກລະບົບ?",
-    "logoutConfirmMessage": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກຈາກລະບົບ vngoweb?",
+    "logoutConfirmMessage": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກຈາກລະບົບ VNGOWEB?",
     "logoutConfirmAction": "ອອກຈາກລະບົບ"
   },
   "footer": {
@@ -45,8 +45,8 @@
     "phoneSupportHours": "ຊ່ວຍເຫຼືອ 8:00 – 22:00 ທຸກມື້",
     "zalo": "ສົ່ງຂໍ້ຄວາມຜ່ານ Zalo",
     "zaloResponse": "ຕອບກັບພາຍໃນ 15 ນາທີ",
-    "socialFacebook": "vngoweb ເທິງ Facebook",
-    "socialTiktok": "vngoweb ເທິງ TikTok",
+    "socialFacebook": "VNGOWEB ເທິງ Facebook",
+    "socialTiktok": "VNGOWEB ເທິງ TikTok",
     "operatedBy": "ດຳເນີນງານໂດຍບຸກຄົນ {{name}}.",
     "allRightsReserved": "ສະຫງວນລິຂະສິດທັງໝົດ."
   },
@@ -57,7 +57,7 @@
     "termsLink": "ເງື່ອນໄຂການໃຊ້ງານ",
     "and": "ແລະ",
     "privacyLink": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
-    "termsSuffix": "ຂອງ vngoweb.",
+    "termsSuffix": "ຂອງ VNGOWEB.",
     "ssl": "ຄວາມປອດໄພ SSL",
     "noPassword": "ບໍ່ເກັບລະຫັດຜ່ານ",
     "gdpr": "GDPR"
@@ -96,12 +96,12 @@
     "upgradePlan": "ອັບເກຣດແພັກເກັດ",
     "plan": {
       "ultraActive": "ແພັກເກັດ Ultra ກຳລັງໃຊ້ງານ",
-      "ultraDesc": "ທ່ານກຳລັງໃຊ້ແພັກເກັດລະດັບສູງສຸດຂອງ vngoweb. ຂອບໃຈທີ່ຢູ່ນຳກັນ!",
+      "ultraDesc": "ທ່ານກຳລັງໃຊ້ແພັກເກັດລະດັບສູງສຸດຂອງ VNGOWEB. ຂອບໃຈທີ່ຢູ່ນຳກັນ!",
       "proActive": "ແພັກເກັດ Pro ກຳລັງໃຊ້ງານ",
       "proDesc": "ຢາກໄດ້ສິດທິພິເສດເພີ່ມເຕີມບໍ່? ສຳຫຼວດແພັກເກັດ Ultra.",
       "viewUltra": "ເບິ່ງແພັກເກັດ Ultra",
       "upgradeTitle": "ອັບເກຣດເປັນ WebPro",
-      "upgradeDesc": "ປົດລັອກໂດເມນສ່ວນຕົວ (.vn, .com) ແລະ ລຶບໂລໂກ້ vngoweb ອອກທັງໝົດ.",
+      "upgradeDesc": "ປົດລັອກໂດເມນສ່ວນຕົວ (.vn, .com) ແລະ ລຶບໂລໂກ້ VNGOWEB ອອກທັງໝົດ.",
       "upgradeCta": "ສະໝັກແພັກເກັດ Pro"
     }
   }

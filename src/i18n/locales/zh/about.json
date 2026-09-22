@@ -1,20 +1,20 @@
 {
   "meta": {
-    "title": "关于我们 — vngoweb | Nguyễn Văn Tú，越南岘港FPT大学",
-    "description": "vngoweb 是面向越南及全球小微企业的网站搭建平台，由越南岘港FPT大学的 Nguyễn Văn Tú 开发。联系电话：0347 868 656。"
+    "title": "关于我们 — VNGOWEB | Nguyễn Văn Tú，越南岘港FPT大学",
+    "description": "VNGOWEB 是面向越南及全球小微企业的网站搭建平台，由越南岘港FPT大学的 Nguyễn Văn Tú 开发。联系电话：0347 868 656。"
   },
   "hero": {
     "badge": "关于我们",
-    "title": "vngoweb — 无需编程，为每一家企业打造专业网站",
-    "description": "vngoweb 是一个 SaaS 平台，帮助越南及全球的个体商户和小微企业在几分钟内自主建成专业网站：挑选模板、拖拽编辑、即刻发布，并附带二维码和访问分析工具。"
+    "title": "VNGOWEB — 无需编程，为每一家企业打造专业网站",
+    "description": "VNGOWEB 是一个 SaaS 平台，帮助越南及全球的个体商户和小微企业在几分钟内自主建成专业网站：挑选模板、拖拽编辑、即刻发布，并附带二维码和访问分析工具。"
   },
   "mission": {
-    "heading": "vngoweb 的使命",
-    "body": "数以百万计的咖啡馆、餐厅、美容院和小店铺线下经营红火，却因成本和技术门槛而缺席互联网。vngoweb 的使命就是消除这道门槛：让任何人都能拥有一个美观、符合 SEO 标准、支持多语言的网站——起步成本为零。"
+    "heading": "VNGOWEB 的使命",
+    "body": "数以百万计的咖啡馆、餐厅、美容院和小店铺线下经营红火，却因成本和技术门槛而缺席互联网。VNGOWEB 的使命就是消除这道门槛：让任何人都能拥有一个美观、符合 SEO 标准、支持多语言的网站——起步成本为零。"
   },
   "disambiguation": {
-    "heading": "vngoweb 与 VNG Corporation（Zalo）有关系吗？",
-    "body": "没有关系。vngoweb 是由独立开发者 Nguyễn Văn Tú 创建的独立建站平台，与拥有 Zalo、ZaloPay 的 VNG Corporation 没有任何所有权、合作或代表关系。名称前几个字母相同纯属巧合，双方之间不存在任何所有权或合作关系。"
+    "heading": "VNGOWEB 与 VNG Corporation（Zalo）有关系吗？",
+    "body": "没有关系。VNGOWEB 是由独立开发者 Nguyễn Văn Tú 创建的独立建站平台，与拥有 Zalo、ZaloPay 的 VNG Corporation 没有任何所有权、合作或代表关系。名称前几个字母相同纯属巧合，双方之间不存在任何所有权或合作关系。"
   },
   "values": {
     "heading": "核心价值",
@@ -42,11 +42,11 @@
     "name": "Nguyễn Văn Tú",
     "role": "创始人 & 开发工程师",
     "school": "越南岘港FPT大学",
-    "bio": "Nguyễn Văn Tú 是 vngoweb 的开发者与创始人，毕业于越南岘港FPT大学。他亲自设计并构建了 vngoweb 的整个平台——从模板库、拖拽编辑器到支付系统与数据分析——目标是让现代网络技术更贴近小微商户。"
+    "bio": "Nguyễn Văn Tú 是 VNGOWEB 的开发者与创始人，毕业于越南岘港FPT大学。他亲自设计并构建了 VNGOWEB 的整个平台——从模板库、拖拽编辑器到支付系统与数据分析——目标是让现代网络技术更贴近小微商户。"
   },
   "contact": {
     "heading": "联系我们",
-    "description": "需要建站咨询、商务合作或技术支持？vngoweb 团队随时为您服务。",
+    "description": "需要建站咨询、商务合作或技术支持？VNGOWEB 团队随时为您服务。",
     "phoneLabel": "电话 / Zalo",
     "emailLabel": "邮箱",
     "domainLabel": "网站"

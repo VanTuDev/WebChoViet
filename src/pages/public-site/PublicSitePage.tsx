@@ -113,7 +113,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
   const category = TEMPLATES.find(t => t.id === config.templateId)?.category;
   const activeCustomData = (config.customData[activeLang] as Record<string, unknown>) ?? config.customData;
   const seoFacts = extractSeoFacts(activeCustomData);
-  const description = seoFacts.tagline || `${config.name} — website được tạo bởi vngoweb.`;
+  const description = seoFacts.tagline || `${config.name} — website được tạo bởi VNGOWEB.`;
   const jsonLd = buildLocalBusinessJsonLd({
     name: config.name,
     url: canonicalUrl,
@@ -157,7 +157,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
   return (
     <div className="relative">
       <Helmet>
-        <title>{config.name} — vngoweb</title>
+        <title>{config.name} — VNGOWEB</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
         {availableLangs.map(code => (
@@ -217,14 +217,14 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
         </button>
       )}
 
-      {/* "Made with vngoweb" badge — trên tenant subdomain, "/" là gốc site khách nên
+      {/* "Made with VNGOWEB" badge — trên tenant subdomain, "/" là gốc site khách nên
           phải trỏ tuyệt đối về domain chính, không dùng path tương đối */}
       <a
         href={isTenantHost ? `https://${DOMAIN}/` : '/'}
         className="fixed bottom-5 right-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm shadow-lg border border-black/5 rounded-full pl-3 pr-4 py-2 text-xs font-semibold text-gray-600 hover:shadow-xl hover:text-gray-900 transition-all z-50"
       >
         <Coffee className="w-4 h-4 text-primary" />
-        <span>Made with <span className="font-bold text-primary">vngoweb</span></span>
+        <span>Made with <span className="font-bold text-primary">VNGOWEB</span></span>
       </a>
     </div>
   );
@@ -262,7 +262,7 @@ export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } =
     }
 
     checkSite();
-    return () => { document.title = 'vngoweb'; };
+    return () => { document.title = 'VNGOWEB'; };
   }, [slug]);
 
   if (state.kind === 'loading') {
@@ -294,7 +294,7 @@ export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } =
             
             <div className="pt-2 flex flex-col gap-2">
               <a
-                href="mailto:vantu.software@gmail.com?subject=Yeu cau mo khoa website vngoweb"
+                href="mailto:vantu.software@gmail.com?subject=Yeu cau mo khoa website VNGOWEB"
                 className="w-full flex items-center justify-center gap-2 py-3 bg-linear-to-r from-orange-600 to-orange-600 hover:opacity-90 active:scale-95 text-white rounded-xl text-sm font-semibold shadow-md transition-all cursor-pointer"
               >
                 <Mail className="h-4 w-4" />
@@ -306,7 +306,7 @@ export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } =
                   className="w-full flex items-center justify-center gap-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-xl text-sm font-semibold transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="h-4 w-4" />
-                  Về Trang Chủ vngoweb
+                  Về Trang Chủ VNGOWEB
                 </a>
               ) : (
                 <Link
@@ -314,7 +314,7 @@ export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } =
                   className="w-full flex items-center justify-center gap-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-xl text-sm font-semibold transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="h-4 w-4" />
-                  Về Trang Chủ vngoweb
+                  Về Trang Chủ VNGOWEB
                 </Link>
               )}
             </div>
@@ -348,14 +348,14 @@ export default function PublicSitePage({ slug: tenantSlug }: { slug?: string } =
           href={`https://${DOMAIN}/`}
           className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-700 transition-colors"
         >
-          Về trang chủ vngoweb
+          Về trang chủ VNGOWEB
         </a>
       ) : (
         <Link
           to="/"
           className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded-full hover:bg-gray-700 transition-colors"
         >
-          Về trang chủ vngoweb
+          Về trang chủ VNGOWEB
         </Link>
       )}
     </div>

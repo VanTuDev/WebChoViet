@@ -19,7 +19,7 @@
     "logout": "退出登录",
     "restartTour": "重新查看使用引导",
     "logoutConfirmTitle": "退出登录？",
-    "logoutConfirmMessage": "确定要退出 vngoweb 吗？",
+    "logoutConfirmMessage": "确定要退出 VNGOWEB 吗？",
     "logoutConfirmAction": "退出登录"
   },
   "footer": {
@@ -45,15 +45,15 @@
     "phoneSupportHours": "每天 8:00 – 22:00 提供支持",
     "zalo": "通过 Zalo 联系",
     "zaloResponse": "15 分钟内回复",
-    "socialFacebook": "vngoweb 的 Facebook",
-    "socialTiktok": "vngoweb 的 TikTok",
+    "socialFacebook": "VNGOWEB 的 Facebook",
+    "socialTiktok": "VNGOWEB 的 TikTok",
     "operatedBy": "由个人运营：{{name}}。",
     "allRightsReserved": "保留所有权利。"
   },
   "login": {
     "subtitle": "登录以管理您的店铺",
     "googleButton": "使用 Google 账号继续",
-    "termsPrefix": "继续操作即表示您同意 vngoweb 的",
+    "termsPrefix": "继续操作即表示您同意 VNGOWEB 的",
     "termsLink": "使用条款",
     "and": "和",
     "privacyLink": "隐私政策",
@@ -96,12 +96,12 @@
     "upgradePlan": "升级套餐",
     "plan": {
       "ultraActive": "Ultra 套餐使用中",
-      "ultraDesc": "您正在使用 vngoweb 最高级套餐，感谢您的支持！",
+      "ultraDesc": "您正在使用 VNGOWEB 最高级套餐，感谢您的支持！",
       "proActive": "Pro 套餐使用中",
       "proDesc": "想要更多高级特权？了解 Ultra 套餐。",
       "viewUltra": "查看 Ultra 套餐",
       "upgradeTitle": "升级到 WebPro",
-      "upgradeDesc": "解锁专属域名（.vn、.com）并完全移除 vngoweb 标志。",
+      "upgradeDesc": "解锁专属域名（.vn、.com）并完全移除 VNGOWEB 标志。",
       "upgradeCta": "开通 Pro 套餐"
     }
   }

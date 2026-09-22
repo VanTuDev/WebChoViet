@@ -1,6 +1,6 @@
 {
   "nav": {
-    "brand": "vngoweb",
+    "brand": "VNGOWEB",
     "home": "Home",
     "menu": "Menu",
     "space": "Space",
@@ -100,13 +100,13 @@
     "mapUrl": ""
   },
   "footer": {
-    "brand": "vngoweb",
+    "brand": "VNGOWEB",
     "desc": "Professional website builder for Vietnamese businesses.",
     "linksTitle": "Links",
     "about": "About Us",
     "terms": "Terms",
     "privacy": "Privacy",
     "followTitle": "Follow",
-    "copyright": "© 2024 vngoweb. Professional website builder for Vietnamese businesses."
+    "copyright": "© 2024 VNGOWEB. Professional website builder for Vietnamese businesses."
   }
 }

@@ -19,7 +19,7 @@
     "logout": "Log out",
     "restartTour": "Replay the guided tour",
     "logoutConfirmTitle": "Log out?",
-    "logoutConfirmMessage": "Are you sure you want to log out of vngoweb?",
+    "logoutConfirmMessage": "Are you sure you want to log out of VNGOWEB?",
     "logoutConfirmAction": "Log out"
   },
   "footer": {
@@ -45,8 +45,8 @@
     "phoneSupportHours": "Support 8:00 AM – 10:00 PM daily",
     "zalo": "Message us on Zalo",
     "zaloResponse": "Replies within 15 minutes",
-    "socialFacebook": "vngoweb on Facebook",
-    "socialTiktok": "vngoweb on TikTok",
+    "socialFacebook": "VNGOWEB on Facebook",
+    "socialTiktok": "VNGOWEB on TikTok",
     "operatedBy": "Operated by individual {{name}}.",
     "allRightsReserved": "All rights reserved."
   },
@@ -58,7 +58,7 @@
     "feat2": "One-click Google sign-in — no password needed",
     "feat3": "6 languages · 100+ professional templates",
     "googleButton": "Continue with Google",
-    "termsPrefix": "By continuing, you agree to vngoweb's",
+    "termsPrefix": "By continuing, you agree to VNGOWEB's",
     "termsLink": "Terms of Service",
     "and": "and",
     "privacyLink": "Privacy Policy",
@@ -101,12 +101,12 @@
     "upgradePlan": "Upgrade plan",
     "plan": {
       "ultraActive": "Ultra plan active",
-      "ultraDesc": "You're on vngoweb's top-tier plan. Thanks for being with us!",
+      "ultraDesc": "You're on VNGOWEB's top-tier plan. Thanks for being with us!",
       "proActive": "Pro plan active",
       "proDesc": "Want even more premium perks? Explore the Ultra plan.",
       "viewUltra": "View Ultra plan",
       "upgradeTitle": "Upgrade to WebPro",
-      "upgradeDesc": "Unlock a custom domain (.vn, .com) & remove the vngoweb logo completely.",
+      "upgradeDesc": "Unlock a custom domain (.vn, .com) & remove the VNGOWEB logo completely.",
       "upgradeCta": "Get the Pro plan"
     }
   }

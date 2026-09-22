@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Chính sách hoàn tiền — vngoweb",
-    "description": "Chính sách hoàn tiền của vngoweb cho các giao dịch nâng cấp gói WebPro và Ultra thanh toán qua PayOS: điều kiện, quy trình và thời hạn xử lý."
+    "title": "Chính sách hoàn tiền — VNGOWEB",
+    "description": "Chính sách hoàn tiền của VNGOWEB cho các giao dịch nâng cấp gói WebPro và Ultra thanh toán qua PayOS: điều kiện, quy trình và thời hạn xử lý."
   },
   "title": "Chính Sách Hoàn Tiền",
   "updatedAt": "13/07/2026",
@@ -16,9 +16,9 @@
     {
       "heading": "2. Trường hợp được xem xét hoàn tiền",
       "list": [
-        "Bị trừ tiền nhưng gói dịch vụ không được kích hoạt do lỗi hệ thống từ phía vngoweb, sau khi đã liên hệ hỗ trợ mà vẫn không khắc phục được.",
+        "Bị trừ tiền nhưng gói dịch vụ không được kích hoạt do lỗi hệ thống từ phía VNGOWEB, sau khi đã liên hệ hỗ trợ mà vẫn không khắc phục được.",
         "Bị trừ tiền trùng lặp cho cùng một đơn hàng.",
-        "Dịch vụ gián đoạn kéo dài, liên tục do lỗi hoàn toàn từ phía vngoweb trong phần lớn thời gian của chu kỳ đã thanh toán."
+        "Dịch vụ gián đoạn kéo dài, liên tục do lỗi hoàn toàn từ phía VNGOWEB trong phần lớn thời gian của chu kỳ đã thanh toán."
       ]
     },
     {
@@ -33,7 +33,7 @@
       "heading": "4. Quy trình yêu cầu hoàn tiền",
       "list": [
         "Gửi yêu cầu qua email hotro@vngoweb.com hoặc hotline trong vòng 7 ngày kể từ ngày giao dịch, kèm theo mã đơn hàng hiển thị trong lịch sử thanh toán tại Dashboard.",
-        "vngoweb xác minh và phản hồi yêu cầu trong vòng 3 ngày làm việc.",
+        "VNGOWEB xác minh và phản hồi yêu cầu trong vòng 3 ngày làm việc.",
         "Nếu yêu cầu được chấp thuận, tiền sẽ được hoàn về đúng phương thức/tài khoản đã dùng để thanh toán qua PayOS trong vòng 5–7 ngày làm việc."
       ]
     },
