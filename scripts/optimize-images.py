@@ -68,6 +68,9 @@ def optimize_template_screens() -> None:
 
 
 # (nguồn, đích, hàm resize, chất lượng)
+# File đích MỚI ở public/ PHẢI thêm 1 dòng passthrough trong public/_redirects — Cloudflare
+# Pages áp _redirects kể cả khi file tồn tại, thiếu dòng thì rule /:slug 301 file sang
+# <tên-file>.vngoweb.com (vỡ ảnh trên production, `vite preview` local không phát hiện được).
 PUBLIC_ASSETS = [
     # Hero trang chủ: 2 cỡ cho srcset (mobile ~360–700px, desktop ~650px x2).
     ("hero-banner-visual.jpg", "hero-banner-visual.webp", lambda im: im, 80),

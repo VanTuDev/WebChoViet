@@ -14,9 +14,17 @@ import RequireAdmin from './components/auth/RequireAdmin';
 // nên trang chủ phải tải cả Admin/Template Editor/Dashboard (bundle ~1.1 MB).
 // Dùng `lazy` của react-router (không phải React.lazy): router tải xong chunk rồi
 // mới chuyển trang, trang cũ vẫn hiển thị trong lúc chờ — không nháy màn trắng.
-const lazyPage = (load: () => Promise<{ default: ComponentType }>) => async () => ({
-  Component: (await load()).default,
-});
+//
+// Chunk cũ sau deploy không tải được → main.tsx (vite:preloadError) chặn lỗi và tải lại
+// trang, khi đó import() trả về undefined. Giữ route ở trạng thái "đang tải" tới khi
+// trang mới thay thế: nếu để router báo lỗi, nó sẽ commit URL mới (pushState) và huỷ
+// mất lệnh location.assign() đang chờ → kẹt ở màn hình lỗi.
+const whileReloading = () => new Promise<never>(() => {});
+
+const lazyPage = (load: () => Promise<{ default: ComponentType } | undefined>) => async () => {
+  const mod = await load();
+  return mod ? { Component: mod.default } : whileReloading();
+};
 
 // Lần tải đầu vào thẳng 1 route lazy (vd mở link /pricing): render trống tới khi
 // chunk về — giống fallback={null} của Suspense ở main.tsx, và tránh warning
@@ -40,8 +48,9 @@ export const router = tenantSlug
           {
             path: '*',
             lazy: async () => {
-              const { default: PublicSitePage } = await import('./pages/public-site/PublicSitePage');
-              return { element: <PublicSitePage slug={tenantSlug} /> };
+              const mod = await import('./pages/public-site/PublicSitePage');
+              if (!mod) return whileReloading(); // chunk cũ sau deploy — xem lazyPage
+              return { element: <mod.default slug={tenantSlug} /> };
             },
             errorElement: (
               <RouteErrorBoundary
