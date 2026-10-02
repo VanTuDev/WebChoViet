@@ -27,6 +27,7 @@ export interface AdminUserListItem {
   plan: 'free' | 'pro' | 'ultra';
   role: 'user' | 'admin';
   isSuspended: boolean;
+  hasUnlimitedAccess: boolean;
   siteCount: number;
   createdAt: string;
 }
@@ -83,6 +84,11 @@ export function fetchAdminUsers(params: ListUsersParams = {}): Promise<AdminUser
 
 export function toggleSuspendUser(userId: string): Promise<{ id: string; isSuspended: boolean }> {
   return apiFetch(`/admin/users/${userId}/toggle-suspend`, { method: 'PATCH' });
+}
+
+/** Cấp/thu hồi "quyền AS" — bỏ giới hạn draft/published/thanh toán template, không đổi gói thật. */
+export function toggleUnlimitedAccessUser(userId: string): Promise<{ id: string; hasUnlimitedAccess: boolean }> {
+  return apiFetch(`/admin/users/${userId}/toggle-unlimited-access`, { method: 'PATCH' });
 }
 
 export function fetchPlatformAnalytics(

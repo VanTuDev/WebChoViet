@@ -39,7 +39,7 @@ export default function AboutUsPage() {
       telephone: `+84${CONTACT_PHONE_RAW.slice(1)}`,
       email: CONTACT_EMAIL,
       // disambiguatingDescription: thuộc tính schema.org dùng đúng cho mục đích tách
-      // thực thể "vngoweb" khỏi "VNG Corporation" (trùng vài ký tự đầu tên gọi).
+      // thực thể "VNGOWEB" khỏi "VNG Corporation" (trùng vài ký tự đầu tên gọi).
       disambiguatingDescription: t('disambiguation.body'),
       founder: {
         '@type': 'Person',
@@ -91,9 +91,9 @@ export default function AboutUsPage() {
         {/* ── SEO+GEO: Phân biệt thương hiệu ─────────────────────────────────────
          * SEO   : <h2> câu hỏi thật người dùng tìm; JSON-LD disambiguatingDescription
          *         (mainEntity.Organization) khớp đúng nội dung hiển thị bên dưới.
-         * GEO B1: Heading là câu hỏi thật ("vngoweb có phải là VNG Corporation không?").
+         * GEO B1: Heading là câu hỏi thật ("VNGOWEB có phải là VNG Corporation không?").
          * GEO B2: Câu đầu trả lời trực tiếp "Không." + tự đứng vững, không cần đọc đoạn trước.
-         * GEO B5: Nhất quán tên brand "vngoweb" + founder "Nguyễn Văn Tú" toàn site (E-E-A-T).
+         * GEO B5: Nhất quán tên brand "VNGOWEB" + founder "Nguyễn Văn Tú" toàn site (E-E-A-T).
          * ──────────────────────────────────────────────────────────────────────── */}
         <section aria-labelledby="about-disambiguation" className="bg-amber-50 border border-amber-200 rounded-3xl p-8 sm:p-10">
           <h2 id="about-disambiguation" className="text-xl font-display font-bold text-gray-900 mb-3">

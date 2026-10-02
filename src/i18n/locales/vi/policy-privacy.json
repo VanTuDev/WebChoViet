@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Chính sách bảo mật — vngoweb",
-    "description": "Chính sách bảo mật của vngoweb: dữ liệu thu thập, mục đích sử dụng, chia sẻ với bên thứ ba, thời gian lưu trữ và quyền của người dùng."
+    "title": "Chính sách bảo mật — VNGOWEB",
+    "description": "Chính sách bảo mật của VNGOWEB: dữ liệu thu thập, mục đích sử dụng, chia sẻ với bên thứ ba, thời gian lưu trữ và quyền của người dùng."
   },
   "title": "Chính Sách Bảo Mật",
   "updatedAt": "13/07/2026",
-  "intro": "vngoweb cam kết bảo vệ thông tin cá nhân của bạn. Chính sách này giải thích chúng tôi thu thập, sử dụng và bảo vệ dữ liệu như thế nào khi bạn sử dụng nền tảng.",
+  "intro": "VNGOWEB cam kết bảo vệ thông tin cá nhân của bạn. Chính sách này giải thích chúng tôi thu thập, sử dụng và bảo vệ dữ liệu như thế nào khi bạn sử dụng nền tảng.",
   "sections": [
     {
       "heading": "1. Thông tin chúng tôi thu thập",
       "list": [
-        "Thông tin tài khoản: khi đăng nhập bằng Google, chúng tôi nhận họ tên, địa chỉ email và ảnh đại diện từ Google — vngoweb không yêu cầu và không lưu trữ mật khẩu riêng.",
+        "Thông tin tài khoản: khi đăng nhập bằng Google, chúng tôi nhận họ tên, địa chỉ email và ảnh đại diện từ Google — VNGOWEB không yêu cầu và không lưu trữ mật khẩu riêng.",
         "Nội dung website bạn tạo: văn bản, hình ảnh, thông tin liên hệ bạn nhập vào Trình Chỉnh Sửa Mẫu để hiển thị trên website công khai.",
-        "Dữ liệu thanh toán: khi nâng cấp gói, giao dịch được xử lý bởi đối tác cổng thanh toán PayOS. vngoweb không lưu trữ số thẻ hay thông tin tài khoản ngân hàng của bạn — chỉ lưu mã đơn hàng, số tiền, gói dịch vụ và trạng thái giao dịch.",
+        "Dữ liệu thanh toán: khi nâng cấp gói, giao dịch được xử lý bởi đối tác cổng thanh toán PayOS. VNGOWEB không lưu trữ số thẻ hay thông tin tài khoản ngân hàng của bạn — chỉ lưu mã đơn hàng, số tiền, gói dịch vụ và trạng thái giao dịch.",
         "Dữ liệu truy cập & phân tích: khi khách ghé thăm website bạn tạo, hệ thống ghi nhận lượt xem, lượt click, thời lượng phiên và loại thiết bị (di động/máy tính) kèm một mã phiên ẩn danh để phục vụ báo cáo thống kê. Chúng tôi không thu thập tên, email hay bất kỳ thông tin định danh nào của khách truy cập website công khai.",
         "Dữ liệu từ tính năng \"Tạo từ Google Maps\": nếu bạn dùng tính năng nhập tự động thông tin cửa hàng, hệ thống truy xuất dữ liệu công khai (tên, địa chỉ, hình ảnh, đánh giá) của địa điểm theo đường link bạn cung cấp."
       ]
@@ -27,7 +27,7 @@
         "Hỗ trợ khách hàng khi có yêu cầu."
       ],
       "after": [
-        "vngoweb không bán hay cho thuê thông tin cá nhân của bạn cho bên thứ ba vì mục đích quảng cáo."
+        "VNGOWEB không bán hay cho thuê thông tin cá nhân của bạn cho bên thứ ba vì mục đích quảng cáo."
       ]
     },
     {
@@ -72,13 +72,13 @@
     {
       "heading": "7. Đối tượng sử dụng",
       "paragraphs": [
-        "Dịch vụ dành cho tổ chức, cá nhân kinh doanh có đủ năng lực hành vi dân sự theo pháp luật hiện hành. vngoweb không nhắm tới và không cố ý thu thập thông tin của trẻ em dưới 16 tuổi."
+        "Dịch vụ dành cho tổ chức, cá nhân kinh doanh có đủ năng lực hành vi dân sự theo pháp luật hiện hành. VNGOWEB không nhắm tới và không cố ý thu thập thông tin của trẻ em dưới 16 tuổi."
       ]
     },
     {
       "heading": "8. Thay đổi chính sách",
       "paragraphs": [
-        "vngoweb có thể cập nhật chính sách này theo thời gian. Thay đổi quan trọng sẽ được thông báo qua email hoặc hiển thị trên website trước khi có hiệu lực."
+        "VNGOWEB có thể cập nhật chính sách này theo thời gian. Thay đổi quan trọng sẽ được thông báo qua email hoặc hiển thị trên website trước khi có hiệu lực."
       ]
     }
   ]

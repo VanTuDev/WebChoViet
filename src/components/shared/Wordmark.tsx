@@ -1,4 +1,4 @@
-// ─── Logo chính thức vngoweb — wordmark "VNGOWEB" (biểu tượng ghim vị trí lồng
+// ─── Logo chính thức VNGOWEB — wordmark "VNGOWEB" (biểu tượng ghim vị trí lồng
 // chữ W, gradient lam ngọc → xanh dương → tím, nguồn: design/Logo/logo_VNGOWEB-01.png).
 // PNG độ phân giải cao thay vì SVG — chưa có nguồn vector thật (chỉ có .ai/.psd gốc),
 // nét vẫn sắc nét ở mọi cỡ hiển thị thực tế (navbar/sidebar/footer). Cao theo em nên
@@ -30,7 +30,7 @@ export default function Wordmark({ className = '', icon = false, inverted = fals
           nặng 72–163 KB trong khi chỉ hiển thị cao ~24–45px. */}
       <img
         src="/logo-wordmark.webp"
-        alt="vngoweb"
+        alt="VNGOWEB"
         width={614}
         height={96}
         className={`h-[0.78em] w-auto select-none ${inverted ? 'brightness-0 invert' : ''}`}

@@ -33,7 +33,7 @@ export default function TemplatePreviewPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gray-50">
         <Helmet>
-          <title>Không tìm thấy template — vngoweb</title>
+          <title>Không tìm thấy template — VNGOWEB</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
         <p className="text-gray-500 text-sm">Không tìm thấy template.</p>
@@ -59,7 +59,7 @@ export default function TemplatePreviewPage() {
   return (
     <div className="relative">
       <Helmet>
-        <title>Xem trước {template.name} — vngoweb</title>
+        <title>Xem trước {template.name} — VNGOWEB</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Hướng dẫn số hóa cửa hàng — vngoweb",
-    "description": "Hướng dẫn 4 bước tạo website, nhận mã QR và số hóa cửa hàng với vngoweb — không cần biết lập trình, chỉ mất 5 phút."
+    "title": "Hướng dẫn số hóa cửa hàng — VNGOWEB",
+    "description": "Hướng dẫn 4 bước tạo website, nhận mã QR và số hóa cửa hàng với VNGOWEB — không cần biết lập trình, chỉ mất 5 phút."
   },
-  "heading": "Hướng Dẫn Số Hóa Cửa Hàng Với vngoweb",
+  "heading": "Hướng Dẫn Số Hóa Cửa Hàng Với VNGOWEB",
   "subheading": "Dù bạn không biết lập trình, chỉ cần 5 phút để đưa toàn bộ cửa hàng lên môi trường số.",
   "steps": [
     {
@@ -29,7 +29,7 @@
   ],
   "support": {
     "title": "Bạn muốn được thiết kế trọn gói hoàn toàn miễn phí?",
-    "desc": "Đội ngũ kỹ thuật vngoweb sẵn sàng hỗ trợ khởi tạo gian hàng, chụp hình sản phẩm và nhập thực đơn trọn gói miễn phí!",
+    "desc": "Đội ngũ kỹ thuật VNGOWEB sẵn sàng hỗ trợ khởi tạo gian hàng, chụp hình sản phẩm và nhập thực đơn trọn gói miễn phí!",
     "cta": "Liên hệ ngay qua Zalo",
     "connecting": "Đang kết nối nhân viên tư vấn Zalo: {{phone}} — Vui lòng chờ trong giây lát."
   }

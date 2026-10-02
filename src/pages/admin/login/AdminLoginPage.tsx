@@ -105,7 +105,7 @@ export default function AdminLoginPage() {
 
         {/* Footer note */}
         <p className="text-center text-[11px] text-slate-600 mt-6">
-          Truy cập dành riêng cho nhân viên vngoweb. Mọi hoạt động được ghi lại.
+          Truy cập dành riêng cho nhân viên VNGOWEB. Mọi hoạt động được ghi lại.
         </p>
       </div>
     </div>

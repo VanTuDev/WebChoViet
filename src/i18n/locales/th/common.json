@@ -19,7 +19,7 @@
     "logout": "ออกจากระบบ",
     "restartTour": "ดูคำแนะนำการใช้งานอีกครั้ง",
     "logoutConfirmTitle": "ออกจากระบบ?",
-    "logoutConfirmMessage": "คุณต้องการออกจากระบบ vngoweb ใช่หรือไม่?",
+    "logoutConfirmMessage": "คุณต้องการออกจากระบบ VNGOWEB ใช่หรือไม่?",
     "logoutConfirmAction": "ออกจากระบบ"
   },
   "footer": {
@@ -45,8 +45,8 @@
     "phoneSupportHours": "ให้บริการทุกวัน 8:00 – 22:00 น.",
     "zalo": "ส่งข้อความผ่าน Zalo",
     "zaloResponse": "ตอบกลับภายใน 15 นาที",
-    "socialFacebook": "vngoweb บน Facebook",
-    "socialTiktok": "vngoweb บน TikTok",
+    "socialFacebook": "VNGOWEB บน Facebook",
+    "socialTiktok": "VNGOWEB บน TikTok",
     "operatedBy": "ดำเนินการโดยบุคคลธรรมดา {{name}}",
     "allRightsReserved": "สงวนลิขสิทธิ์ทั้งหมด"
   },
@@ -57,7 +57,7 @@
     "termsLink": "ข้อกำหนดการใช้งาน",
     "and": "และ",
     "privacyLink": "นโยบายความเป็นส่วนตัว",
-    "termsSuffix": "ของ vngoweb",
+    "termsSuffix": "ของ VNGOWEB",
     "ssl": "เข้ารหัส SSL",
     "noPassword": "ไม่จัดเก็บรหัสผ่าน",
     "gdpr": "GDPR"
@@ -96,12 +96,12 @@
     "upgradePlan": "อัปเกรดแพ็กเกจ",
     "plan": {
       "ultraActive": "แพ็กเกจ Ultra กำลังใช้งาน",
-      "ultraDesc": "คุณกำลังใช้แพ็กเกจระดับสูงสุดของ vngoweb ขอบคุณที่อยู่เคียงข้างกัน!",
+      "ultraDesc": "คุณกำลังใช้แพ็กเกจระดับสูงสุดของ VNGOWEB ขอบคุณที่อยู่เคียงข้างกัน!",
       "proActive": "แพ็กเกจ Pro กำลังใช้งาน",
       "proDesc": "ต้องการสิทธิพิเศษเพิ่มเติมใช่ไหม? สำรวจแพ็กเกจ Ultra",
       "viewUltra": "ดูแพ็กเกจ Ultra",
       "upgradeTitle": "อัปเกรดเป็น WebPro",
-      "upgradeDesc": "ปลดล็อกโดเมนส่วนตัว (.vn, .com) และลบโลโก้ vngoweb ออกทั้งหมด",
+      "upgradeDesc": "ปลดล็อกโดเมนส่วนตัว (.vn, .com) และลบโลโก้ VNGOWEB ออกทั้งหมด",
       "upgradeCta": "สมัครแพ็กเกจ Pro"
     }
   }

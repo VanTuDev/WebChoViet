@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "vngoweb — Tạo website chuyên nghiệp cho doanh nghiệp nhỏ",
-    "description": "vngoweb giúp quán cafe, nhà hàng, spa và doanh nghiệp nhỏ tạo website chuyên nghiệp trong vài phút — chọn mẫu, tuỳ chỉnh, xuất bản ngay, không cần biết code."
+    "title": "VNGOWEB — Tạo website chuyên nghiệp cho doanh nghiệp nhỏ",
+    "description": "VNGOWEB giúp quán cafe, nhà hàng, spa và doanh nghiệp nhỏ tạo website chuyên nghiệp trong vài phút — chọn mẫu, tuỳ chỉnh, xuất bản ngay, không cần biết code."
   },
   "hero": {
     "title1": "Nền tảng hỗ trợ doanh nghiệp",
     "titleHighlight": "làm website",
     "title2": "chuyên nghiệp",
     "subheading": "Biến Google Maps thành website chuyên nghiệp",
-    "description": "Không cần biết code. Chỉ cần dán link Google Maps của bạn, vngoweb sẽ tự động tạo một trang web tuyệt đẹp, tối ưu hóa cho di động và sẵn sàng thu hút khách hàng.",
+    "description": "Không cần biết code. Chỉ cần dán link Google Maps của bạn, VNGOWEB sẽ tự động tạo một trang web tuyệt đẹp, tối ưu hóa cho di động và sẵn sàng thu hút khách hàng.",
     "ctaStart": "Bắt đầu miễn phí ngay",
     "ctaDemo": "Xem demo",
     "pillFast": "Nhanh chóng",
@@ -25,7 +25,7 @@
     "title1": "Kho giao diện",
     "titleHighlight": "tuyệt đẹp",
     "title2": ", sẵn sàng sử dụng",
-    "description": "Đây là ảnh chụp thật từ các mẫu website đang bán trên vngoweb — di chuột lên mẫu chính giữa để cuộn xem toàn trang.",
+    "description": "Đây là ảnh chụp thật từ các mẫu website đang bán trên VNGOWEB — di chuột lên mẫu chính giữa để cuộn xem toàn trang.",
     "filterAll": "Tất cả",
     "previewThis": "Xem trước mẫu này",
     "previewAria": "Xem trước mẫu {{name}}",

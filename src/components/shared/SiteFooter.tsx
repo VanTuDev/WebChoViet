@@ -22,7 +22,7 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-/* Icon MXH chính thức vngoweb — dùng chung cho cả 2 variant footer */
+/* Icon MXH chính thức VNGOWEB — dùng chung cho cả 2 variant footer */
 function SocialLinks({ className }: { className?: string }) {
   const { t } = useTranslation('common');
   return (

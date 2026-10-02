@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Privacy Policy — vngoweb",
-    "description": "vngoweb Privacy Policy: what data we collect, how it is used, third-party sharing, retention periods and your rights as a user."
+    "title": "Privacy Policy — VNGOWEB",
+    "description": "VNGOWEB Privacy Policy: what data we collect, how it is used, third-party sharing, retention periods and your rights as a user."
   },
   "title": "Privacy Policy",
   "updatedAt": "13/07/2026",
-  "intro": "vngoweb is committed to protecting your personal information. This policy explains how we collect, use and safeguard your data when you use the platform.",
+  "intro": "VNGOWEB is committed to protecting your personal information. This policy explains how we collect, use and safeguard your data when you use the platform.",
   "sections": [
     {
       "heading": "1. Information we collect",
       "list": [
-        "Account information: when you sign in with Google, we receive your full name, email address and profile photo from Google — vngoweb never asks for or stores a separate password.",
+        "Account information: when you sign in with Google, we receive your full name, email address and profile photo from Google — VNGOWEB never asks for or stores a separate password.",
         "Website content you create: text, images and contact details you enter in the Template Editor to display on your public website.",
-        "Payment data: when you upgrade a plan, the transaction is processed by our payment gateway partner PayOS. vngoweb does not store your card number or bank account details — only the order ID, amount, service plan and transaction status.",
+        "Payment data: when you upgrade a plan, the transaction is processed by our payment gateway partner PayOS. VNGOWEB does not store your card number or bank account details — only the order ID, amount, service plan and transaction status.",
         "Traffic & analytics data: when visitors browse a website you created, the system records page views, clicks, session duration and device type (mobile/desktop) along with an anonymous session ID for statistical reporting. We do not collect names, emails or any identifying information about visitors to public websites.",
         "Data from the \"Create from Google Maps\" feature: if you use the automatic store import feature, the system retrieves publicly available data (name, address, photos, reviews) for the location at the link you provide."
       ]
@@ -27,7 +27,7 @@
         "Providing customer support on request."
       ],
       "after": [
-        "vngoweb does not sell or rent your personal information to third parties for advertising purposes."
+        "VNGOWEB does not sell or rent your personal information to third parties for advertising purposes."
       ]
     },
     {
@@ -72,13 +72,13 @@
     {
       "heading": "7. Who may use the service",
       "paragraphs": [
-        "The service is intended for organizations and business individuals with full legal capacity under applicable law. vngoweb does not target and does not knowingly collect information from children under 16."
+        "The service is intended for organizations and business individuals with full legal capacity under applicable law. VNGOWEB does not target and does not knowingly collect information from children under 16."
       ]
     },
     {
       "heading": "8. Changes to this policy",
       "paragraphs": [
-        "vngoweb may update this policy from time to time. Significant changes will be announced by email or displayed on the website before taking effect."
+        "VNGOWEB may update this policy from time to time. Significant changes will be announced by email or displayed on the website before taking effect."
       ]
     }
   ]
