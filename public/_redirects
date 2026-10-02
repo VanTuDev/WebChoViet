@@ -9,14 +9,17 @@
 # Bảo vệ route thật 1-đoạn của app chính — PHẢI đứng TRƯỚC rule /:slug bên dưới,
 # vì _redirects khớp theo thứ tự và không có negative-lookahead. Nếu thiếu 1 dòng
 # ở đây, route đó sẽ bị hiểu nhầm là slug site khách và bị redirect sang subdomain.
-/landing            /index.html                                              200
-/login              /index.html                                              200
-/marketplace        /index.html                                              200
-/pricing            /index.html                                              200
-/tutorials          /index.html                                              200
-/about              /index.html                                              200
-/dashboard          /index.html                                              200
-/payment-result     /index.html                                              200
+# Đích là "/" chứ KHÔNG phải "/index.html": Cloudflare Pages tự 308 "/index.html" về "/"
+# (pretty URL) nên rewrite sang /index.html bị trả thẳng 308 cho trình duyệt — mở trực
+# tiếp /pricing, /payment-result (returnUrl PayOS)... đều bị đá về trang chủ.
+/landing            /                                                        200
+/login              /                                                        200
+/marketplace        /                                                        200
+/pricing            /                                                        200
+/tutorials          /                                                        200
+/about              /                                                        200
+/dashboard          /                                                        200
+/payment-result     /                                                        200
 
 # File tĩnh 1-đoạn (crawler/service cần truy cập trực tiếp) — Cloudflare Pages áp
 # dụng _redirects BẤT KỂ có static asset trùng tên hay không, nên MỌI file tĩnh

@@ -524,10 +524,11 @@ export default function LandingPage() {
               onMouseLeave={resetTilt}
             >
               <div ref={tiltRef} className="tilt-card relative">
-                {/* WebP 2 cỡ do scripts/optimize-images.py tạo từ hero-banner-visual.jpg */}
+                {/* WebP 2 cỡ do scripts/optimize-images.py tạo từ hero-banner-visual.jpg.
+                    ?v=2: đổi khoá cache — edge Cloudflare từng cache 301 cho URL không query. */}
                 <img
-                  src="/hero-banner-visual.webp"
-                  srcSet="/hero-banner-visual-700.webp 700w, /hero-banner-visual.webp 1350w"
+                  src="/hero-banner-visual.webp?v=2"
+                  srcSet="/hero-banner-visual-700.webp?v=2 700w, /hero-banner-visual.webp?v=2 1350w"
                   sizes="(min-width: 1024px) 600px, 100vw"
                   alt={t('hero.visualAlt')}
                   className="w-full h-auto rounded-[1.6rem] shadow-2xl shadow-primary/25"

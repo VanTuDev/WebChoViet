@@ -19,7 +19,7 @@ export default function Wordmark({ className = '', icon = false, inverted = fals
     <span className={`inline-flex items-center gap-[0.3em] ${className}`}>
       {icon && (
         <img
-          src="/logo-icon.webp"
+          src="/logo-icon.webp?v=2"
           alt=""
           className="h-[1.5em] w-auto select-none"
           width={199}
@@ -27,9 +27,10 @@ export default function Wordmark({ className = '', icon = false, inverted = fals
         />
       )}
       {/* .webp thu nhỏ từ PNG gốc (scripts/optimize-images.py) — PNG gốc 1400px/967px
-          nặng 72–163 KB trong khi chỉ hiển thị cao ~24–45px. */}
+          nặng 72–163 KB trong khi chỉ hiển thị cao ~24–45px. ?v=2: edge Cloudflare từng
+          cache 301 (trước khi có dòng passthrough trong _redirects) — đổi khoá cache. */}
       <img
-        src="/logo-wordmark.webp"
+        src="/logo-wordmark.webp?v=2"
         alt="VNGOWEB"
         width={614}
         height={96}
