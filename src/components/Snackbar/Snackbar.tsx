@@ -1,6 +1,6 @@
 // Snackbar toàn cục — slide từ dưới lên, tự tắt sau 3.5s, dark-glass style
 import { useEffect } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CheckCircle, XCircle, X } from 'lucide-react';
 
 export interface SnackbarState {
@@ -24,7 +24,7 @@ export default function Snackbar({ snackbar, onDismiss }: SnackbarProps) {
   const isSuccess = snackbar.type === 'success';
 
   return (
-    <motion.div
+    <m.div
       key={snackbar.id}
       initial={{ y: 64, opacity: 0, scale: 0.97 }}
       animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -49,6 +49,6 @@ export default function Snackbar({ snackbar, onDismiss }: SnackbarProps) {
       >
         <X className="h-4 w-4" />
       </button>
-    </motion.div>
+    </m.div>
   );
 }

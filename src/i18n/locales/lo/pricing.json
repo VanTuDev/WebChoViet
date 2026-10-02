@@ -5,11 +5,13 @@
   },
   "heading": "ຕາຕະລາງລາຄາບໍລິການ vngoweb",
   "subheading": "ບໍ່ມີຄ່າໃຊ້ຈ່າຍແອບແຝງ. ຊຳລະຢ່າງປອດໄພຜ່ານ PayOS (ໂອນຜ່ານທະນາຄານ/VietQR).",
-  "cycle": {
-    "monthly": "ລາຍເດືອນ",
-    "yearly": "ລາຍປີ (ປະຢັດ ~17%)",
-    "monthlyShort": "ລາຍເດືອນ",
-    "yearlyShort": "ລາຍປີ"
+  "price": {
+    "listPrice": "ລາຄາປົກກະຕິ",
+    "firstYear": "ປີທຳອິດ",
+    "perYear": "ປີ",
+    "forever": "ຕະຫຼອດໄປ",
+    "renewalNote": "ຕັ້ງແຕ່ປີທີ 2: {{price}}/ປີ",
+    "renewalApplied": "ລາຄາຕໍ່ອາຍຸ — ທ່ານເຄີຍໃຊ້ແພັກເກດນີ້ແລ້ວ"
   },
   "trust": {
     "secure": "ຊຳລະປອດໄພຜ່ານ PayOS",
@@ -62,10 +64,9 @@
   },
   "cta": {
     "current": "ກຳລັງໃຊ້ຢູ່",
-    "currentPlan": "ແພັກເກັດປັດຈຸບັນ",
     "lower": "ແພັກເກັດຕ່ຳກວ່າ",
-    "changeCycle": "ປ່ຽນຮອບການຊຳລະ",
-    "upgrade": "ອັບເກຣດທັນທີ"
+    "upgrade": "ອັບເກຣດທັນທີ",
+    "renew": "ຕໍ່ອາຍຸອີກ 1 ປີ"
   },
   "subscription": {
     "cancelScheduled": "ຢືນຢັນບໍ່ຕໍ່ອາຍຸແລ້ວ — ແພັກເກັດຈະປ່ຽນເປັນ Free ໃນວັນທີ {{date}}.",

@@ -5,11 +5,13 @@
   },
   "heading": "vngoweb 服务价格",
   "subheading": "无任何隐藏费用。通过 PayOS 安全支付（银行转账/VietQR）。",
-  "cycle": {
-    "monthly": "按月",
-    "yearly": "按年（省约 17%）",
-    "monthlyShort": "按月",
-    "yearlyShort": "按年"
+  "price": {
+    "listPrice": "原价",
+    "firstYear": "首年",
+    "perYear": "年",
+    "forever": "永久",
+    "renewalNote": "第 2 年起：{{price}}/年",
+    "renewalApplied": "续费价格 —— 您曾使用过此套餐"
   },
   "trust": {
     "secure": "PayOS 安全支付",
@@ -62,10 +64,9 @@
   },
   "cta": {
     "current": "使用中",
-    "currentPlan": "当前套餐",
     "lower": "较低套餐",
-    "changeCycle": "更改付费周期",
-    "upgrade": "立即升级"
+    "upgrade": "立即升级",
+    "renew": "续费 1 年"
   },
   "subscription": {
     "cancelScheduled": "已确认不再续费——套餐将于 {{date}} 转为免费版。",

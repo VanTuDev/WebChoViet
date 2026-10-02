@@ -42,7 +42,7 @@ Khi tạo section nội dung mới có giá trị SEO/GEO (FAQ, so sánh gói, g
  * ──────────────────────────────────────────────────────────────────────── */}
 <section aria-labelledby="pricing-heading">
   <h2 id="pricing-heading">vngoweb có những gói giá nào?</h2>
-  <p>vngoweb có 3 gói: Free, Pro (299.000đ/tháng) và Ultra (599.000đ/tháng).</p>
+  <p>vngoweb có 3 gói: Free, Pro (1.999.000đ năm đầu) và Ultra (2.999.000đ năm đầu), thanh toán theo năm.</p>
   <table>{/* so sánh chi tiết tính năng từng gói */}</table>
 </section>
 ```

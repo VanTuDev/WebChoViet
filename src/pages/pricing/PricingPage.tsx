@@ -12,16 +12,17 @@ import { setPostLoginRedirect } from '../../services/authService';
 import HreflangLinks from '../../i18n/HreflangLinks';
 import {
   fetchMySubscription, createCheckout, cancelSubscription, reactivateSubscription,
-  type MySubscription, type PaidPlanId, type BillingCycle,
+  type MySubscription, type PaidPlanId,
 } from '../../services/billingService';
 
 // Giá niêm yết + hạn mức site — phần KHÔNG dịch; nguồn sự thật amount ở BE src/billing/plan-pricing.ts,
 // hạn mức khớp BE src/users/schemas/user.schema.ts (PLAN_SITE_LIMIT) — sửa phải sửa cả 2 nơi.
-// Nội dung text (name/desc/features) lấy từ i18n namespace pricing.
+// Chỉ bán theo NĂM: firstYear = lần đầu mua gói, renewal = từ năm 2 (gia hạn/mua lại),
+// listPrice chỉ để gạch ngang trưng bày. Nội dung text (name/desc/features) lấy từ i18n namespace pricing.
 const PLAN_STATIC = [
-  { id: 'free',  color: '#475569', price: null,                                    limits: { draft: 2, published: 1 },  popular: false },
-  { id: 'pro',   color: '#0a6ee6', price: { monthly: 199_000, yearly: 1_990_000 }, limits: { draft: 4, published: 1 },  popular: true },
-  { id: 'ultra', color: '#6d28d9', price: { monthly: 499_000, yearly: 4_990_000 }, limits: { draft: 15, published: 3 }, popular: false },
+  { id: 'free',  color: '#475569', price: null, limits: { draft: 2, published: 1 },  popular: false },
+  { id: 'pro',   color: '#0a6ee6', price: { listPrice: 2_499_000, firstYear: 1_999_000, renewal: 2_999_000 }, limits: { draft: 4, published: 1 },  popular: true },
+  { id: 'ultra', color: '#6d28d9', price: { listPrice: 3_499_000, firstYear: 2_999_000, renewal: 3_499_000 }, limits: { draft: 15, published: 3 }, popular: false },
 ] as const;
 
 function buildPlanDefs(t: TFunction<'pricing'>): PricingPlanDef[] {
@@ -38,11 +39,11 @@ const PLAN_RANK: Record<string, number> = { free: 0, pro: 1, ultra: 2 };
 
 function resolveCardState(
   planId: PricingPlanDef['id'],
-  cycle: BillingCycle,
   subscription: MySubscription | null,
   t: TFunction<'pricing'>,
 ) {
-  const currentPlan = subscription?.plan ?? 'free';
+  // Subscription 'expired' vẫn còn record với plan cũ — coi như đang ở gói free.
+  const currentPlan = subscription?.status === 'active' ? subscription.plan : 'free';
   const rank = PLAN_RANK[planId];
   const currentRank = PLAN_RANK[currentPlan];
 
@@ -52,12 +53,9 @@ function resolveCardState(
       : { cta: t('cta.lower'), disabled: true, actionable: false };
   }
 
-  if (planId === currentPlan) {
-    if (subscription?.billingCycle === cycle) {
-      return { cta: t('cta.currentPlan'), disabled: true, actionable: false };
-    }
-    return { cta: t('cta.changeCycle'), disabled: false, actionable: true };
-  }
+  // Gói đang dùng → gia hạn thêm 1 năm (BE cộng nối tiếp từ ngày hết hạn hiện tại) — đích
+  // của nút "Gia hạn ngay" trong mail nhắc hết hạn.
+  if (planId === currentPlan) return { cta: t('cta.renew'), disabled: false, actionable: true };
 
   if (rank > currentRank) return { cta: t('cta.upgrade'), disabled: false, actionable: true };
   return { cta: t('cta.lower'), disabled: true, actionable: false };
@@ -66,16 +64,11 @@ function resolveCardState(
 export default function PricingPage() {
   const { t, i18n } = useTranslation('pricing');
   const { isAuthenticated, showSnackbar, openLoginModal } = useAppContext();
-  const [cycle, setCycle] = useState<BillingCycle>('monthly');
   const [subscription, setSubscription] = useState<MySubscription | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<PaidPlanId | null>(null);
   const [cancelLoading, setCancelLoading] = useState(false);
 
   const planDefs = useMemo(() => buildPlanDefs(t), [t]);
-  const cycleOptions: { value: BillingCycle; label: string }[] = [
-    { value: 'monthly', label: t('cycle.monthly') },
-    { value: 'yearly', label: t('cycle.yearly') },
-  ];
   // Định dạng ngày theo locale đang xem (vi-VN, en-US...)
   const dateLocale = i18n.resolvedLanguage === 'vi' ? 'vi-VN' : i18n.resolvedLanguage;
 
@@ -110,7 +103,7 @@ export default function PricingPage() {
     }
     setCheckoutLoading(plan);
     try {
-      const { checkoutUrl } = await createCheckout(plan, cycle);
+      const { checkoutUrl } = await createCheckout(plan);
       window.location.href = checkoutUrl;
     } catch (err) {
       showSnackbar(err instanceof Error ? err.message : t('subscription.checkoutFailed'), 'error');
@@ -131,8 +124,15 @@ export default function PricingPage() {
         '@type': 'Offer',
         name: p.name,
         description: p.desc,
-        price: p.price.monthly,
+        // Giá năm đầu (hiển thị lớn trên card) — đơn vị tính 1 năm (ANN)
+        price: p.price.firstYear,
         priceCurrency: 'VND',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: p.price.firstYear,
+          priceCurrency: 'VND',
+          referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'ANN' },
+        },
         url: `https://${DOMAIN}${ROUTES.PRICING}`,
         availability: 'https://schema.org/InStock',
       })),
@@ -169,29 +169,11 @@ export default function PricingPage() {
         </ul>
       </header>
 
-      <div className="flex justify-center">
-        <div className="inline-flex bg-gray-100 rounded-full p-1">
-          {cycleOptions.map(opt => (
-            <button
-              key={opt.value}
-              onClick={() => setCycle(opt.value)}
-              className={`px-4 py-2 text-xs font-bold rounded-full transition-colors cursor-pointer ${
-                cycle === opt.value ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
       {subscription && subscription.plan !== 'free' && subscription.status === 'active' && subscription.currentPeriodEnd && (
         <div className="max-w-2xl mx-auto w-full rounded-2xl border border-gray-200 bg-white p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <p className="text-sm font-bold text-gray-900">
               {planDefs.find(p => p.id === subscription.plan)?.name ?? subscription.plan}
-              {' · '}
-              {subscription.billingCycle === 'yearly' ? t('cycle.yearlyShort') : t('cycle.monthlyShort')}
             </p>
             <p className="text-xs text-gray-500 mt-1">
               {subscription.cancelAtPeriodEnd
@@ -215,12 +197,12 @@ export default function PricingPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
         {planDefs.map(plan => {
-          const { cta, disabled, actionable } = resolveCardState(plan.id, cycle, subscription, t);
+          const { cta, disabled, actionable } = resolveCardState(plan.id, subscription, t);
           return (
             <PricingCard
               key={plan.id}
               plan={plan}
-              cycle={cycle}
+              returning={plan.id !== 'free' && !!subscription?.purchasedPlans?.includes(plan.id)}
               cta={cta}
               disabled={disabled || checkoutLoading !== null}
               loading={checkoutLoading === plan.id}

@@ -3,7 +3,8 @@
 import { apiFetch } from './apiClient';
 
 export type PaidPlanId = 'pro' | 'ultra';
-export type BillingCycle = 'monthly' | 'yearly';
+/** Chỉ bán gói năm — 'monthly' chỉ còn ở subscription/đơn cũ trước khi bỏ gói tháng */
+export type BillingCycle = 'yearly' | 'monthly';
 type PaymentStatus = 'pending' | 'success' | 'failed' | 'refunded';
 
 export interface MySubscription {
@@ -12,6 +13,8 @@ export interface MySubscription {
   status: string | null;
   currentPeriodEnd: string | null;
   cancelAtPeriodEnd: boolean;
+  /** Gói đã từng thanh toán thành công → mua lại/gia hạn tính giá "từ năm 2". Optional: BE cũ chưa trả field này */
+  purchasedPlans?: PaidPlanId[];
 }
 
 interface CheckoutResult {
@@ -32,10 +35,11 @@ export function fetchMySubscription(): Promise<MySubscription> {
   return apiFetch<MySubscription>('/billing/me');
 }
 
-export function createCheckout(plan: PaidPlanId, billingCycle: BillingCycle): Promise<CheckoutResult> {
+/** Tạo đơn thanh toán 1 năm — BE tự tính giá năm đầu hay giá gia hạn */
+export function createCheckout(plan: PaidPlanId): Promise<CheckoutResult> {
   return apiFetch<CheckoutResult>('/billing/checkout', {
     method: 'POST',
-    data: { plan, billingCycle },
+    data: { plan },
   });
 }
 

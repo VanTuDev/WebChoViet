@@ -4,13 +4,6 @@
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
 
-import schema_restaurant1 from '../../Template/restaurant/Restaurant-1/i18n/vi.json';
-import schema_restaurant2 from '../../Template/restaurant/Restaurant-2/i18n/vi.json';
-import schema_restaurant3 from '../../Template/restaurant/Restaurant-3/i18n/vi.json';
-import schema_restaurant4 from '../../Template/restaurant/Restaurant-4/i18n/vi.json';
-import schema_restaurant5 from '../../Template/restaurant/Restaurant-5/i18n/vi.json';
-import schema_restaurant6 from '../../Template/restaurant/Restaurant-6/i18n/vi.json';
-import schema_restaurant7 from '../../Template/restaurant/Restaurant-7/i18n/vi.json';
 import img_Restaurant1_card from '../../Template/restaurant/Restaurant-1/images/card.jpg';
 import img_Restaurant1_hero from '../../Template/restaurant/Restaurant-1/images/hero.jpg';
 import img_Restaurant2_card from '../../Template/restaurant/Restaurant-2/images/card.png';
@@ -75,7 +68,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ['Nhà Hàng', 'Ẩm Thực Việt', 'Đặt Bàn'],
     imageUrl: img_Restaurant1_card,
     component: lazy(() => import('../../Template/restaurant/Restaurant-1/index')),
-    schema: schema_restaurant1 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Hero', defaultUrl: img_Restaurant1_hero },
     ],
@@ -92,7 +84,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ['Nhà Hàng Cao Cấp', 'Form Đặt Bàn', '4 Ngôn Ngữ'],
     imageUrl: img_Restaurant2_card,
     component: lazy(() => import('../../Template/restaurant/Restaurant-2/index')),
-    schema: schema_restaurant2 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero',     label: 'Ảnh nền Hero',      defaultUrl: img_Restaurant2_hero },
       { key: 'about',    label: 'Ảnh giới thiệu',    defaultUrl: img_Restaurant2_about },
@@ -118,7 +109,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ["RESTAURANT","Thực Đơn","Bản Đồ","Đánh Giá","Đặt Lịch"],
     imageUrl: img_Restaurant3_card,
     component: lazy(() => import('../../Template/restaurant/Restaurant-3/index')),
-    schema: schema_restaurant3 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "hero",
@@ -173,7 +163,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ["RESTAURANT","Thực Đơn","Bản Đồ","Đánh Giá"],
     imageUrl: img_Restaurant4_card,
     component: lazy(() => import('../../Template/restaurant/Restaurant-4/index')),
-    schema: schema_restaurant4 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",
@@ -224,7 +213,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ["RESTAURANT","Thực Đơn","Bản Đồ","Đánh Giá","Đặt Lịch"],
     imageUrl: img_Restaurant5_card,
     component: lazy(() => import('../../Template/restaurant/Restaurant-5/index')),
-    schema: schema_restaurant5 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",
@@ -279,7 +267,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ["RESTAURANT","Thực Đơn","Bản Đồ","Đánh Giá","Đặt Lịch"],
     imageUrl: img_Restaurant6_card,
     component: lazy(() => import('../../Template/restaurant/Restaurant-6/index')),
-    schema: schema_restaurant6 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",
@@ -340,7 +327,6 @@ export const RESTAURANT_TEMPLATES: TemplateDefinition[] = [
     tags: ["RESTAURANT","Thực Đơn","Bản Đồ","Đánh Giá"],
     imageUrl: 'https://lh3.googleusercontent.com/aida/AP1WRLvWGLzS4GDNPNs6dtEzfgiEs2NLzqNcAm2-St4v1GXWLoNVEfZFNi6kmeMxOy83S_jlLOdaqOkfkJOkEmu919gm3YQXfqv1Sgm1xv0IhA5Ke_Hx6M4Bi9Qm25HAuZ_34SnpQ6fU4hVUvMI3T36GoBL82qjMxYGoytkEYcKfFQjnK1pJOPJIwtOuKykL7d5EmHe4SV5PBnJHQIk5LPXxK4WzdWQXue0tia-vTPsbxG0qTzfddtdk0-wI_A',
     component: lazy(() => import('../../Template/restaurant/Restaurant-7/index')),
-    schema: schema_restaurant7 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "hero",

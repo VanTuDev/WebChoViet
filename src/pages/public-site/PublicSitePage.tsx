@@ -15,7 +15,7 @@ import { getPublicSiteUrl } from '../../utils/tenant';
 import { DOMAIN } from '../../config/contact';
 import FloatingContactBar from '../../components/shared/FloatingContactBar';
 
-import { COMPONENT_MAP, TEMPLATES } from '../../data/templates/registry';
+import { COMPONENT_MAP, ALL_TEMPLATES } from '../../data/templates/registry';
 
 // ── Language switcher — chỉ hiện nếu site có từ 2 ngôn ngữ có nội dung trở lên ──
 
@@ -110,7 +110,7 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
   // {slug}.vngoweb.com, hoặc path cũ nếu còn vào qua vngoweb.com/{slug} (giai đoạn
   // chuyển tiếp).
   const canonicalUrl = isTenantHost ? getPublicSiteUrl(config.slug) : `https://${DOMAIN}/${config.slug}`;
-  const category = TEMPLATES.find(t => t.id === config.templateId)?.category;
+  const category = ALL_TEMPLATES.find(t => t.id === config.templateId)?.category;
   const activeCustomData = (config.customData[activeLang] as Record<string, unknown>) ?? config.customData;
   const seoFacts = extractSeoFacts(activeCustomData);
   const description = seoFacts.tagline || `${config.name} — website được tạo bởi vngoweb.`;

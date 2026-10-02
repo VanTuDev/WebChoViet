@@ -1,40 +1,27 @@
+import type { ComponentType } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { ROUTES } from './config/routes';
 import { getTenantSlug } from './utils/tenant';
 import RouteErrorBoundary from './components/error/RouteErrorBoundary';
 import LandingPage from './pages/landing/LandingPage';
-import AuthCallbackPage from './pages/auth-callback/AuthCallbackPage';
-import NotFoundPage from './pages/not-found/NotFoundPage';
 import RootLayout from './layouts/RootLayout';
-import AppLayout from './layouts/AppLayout';
-import MarketplacePage from './pages/marketplace/MarketplacePage';
-import AboutUsPage from './pages/about/AboutUsPage';
-import ProjectsPage from './pages/dashboard/projects/ProjectsPage';
-import AnalyticsPage from './pages/dashboard/analytics/AnalyticsPage';
-import QRCodesPage from './pages/dashboard/qrcodes/QRCodesPage';
-import SettingsPage from './pages/dashboard/settings/SettingsPage';
-import SupportPage from './pages/dashboard/support/SupportPage';
-import PricingPage from './pages/pricing/PricingPage';
-import TutorialsPage from './pages/tutorials/TutorialsPage';
-import TemplatePreviewPage from './pages/marketplace/TemplatePreviewPage';
-import TemplateEditorPage from './pages/template-editor/TemplateEditorPage';
-import PaymentResultPage from './pages/payment-result/PaymentResultPage';
-import PrivacyPolicyPage from './pages/policy/PrivacyPolicyPage';
-import TermsPage from './pages/policy/TermsPage';
-import RefundPolicyPage from './pages/policy/RefundPolicyPage';
-import CookiePolicyPage from './pages/policy/CookiePolicyPage';
 import RequireAuth from './components/auth/RequireAuth';
 import RequireAdmin from './components/auth/RequireAdmin';
 
-import AdminLayout from './layouts/AdminLayout';
-import AdminLoginPage from './pages/admin/login/AdminLoginPage';
-import AdminDashboard from './pages/admin/dashboard/AdminDashboard';
-import AdminAnalyticsPage from './pages/admin/analytics/AdminAnalyticsPage';
-import UsersPage from './pages/admin/users/UsersPage';
-import PaymentsPage from './pages/admin/payments/PaymentsPage';
-import TransactionsPage from './pages/admin/transactions/TransactionsPage';
-import AdminTemplatesPage from './pages/admin/templates/AdminTemplatesPage';
-import PublicSitePage from './pages/public-site/PublicSitePage';
+// ── Code-splitting theo route ─────────────────────────────────────────────────
+// Chỉ Landing (trang vào nhiều nhất, quyết định LCP) + layout/guard nhỏ nằm trong
+// bundle đầu. Mọi trang khác tải chunk riêng khi cần — trước đây import tĩnh hết
+// nên trang chủ phải tải cả Admin/Template Editor/Dashboard (bundle ~1.1 MB).
+// Dùng `lazy` của react-router (không phải React.lazy): router tải xong chunk rồi
+// mới chuyển trang, trang cũ vẫn hiển thị trong lúc chờ — không nháy màn trắng.
+const lazyPage = (load: () => Promise<{ default: ComponentType }>) => async () => ({
+  Component: (await load()).default,
+});
+
+// Lần tải đầu vào thẳng 1 route lazy (vd mở link /pricing): render trống tới khi
+// chunk về — giống fallback={null} của Suspense ở main.tsx, và tránh warning
+// "No HydrateFallback element provided" của react-router.
+const EmptyFallback = () => null;
 
 const tenantSlug = getTenantSlug();
 
@@ -48,10 +35,14 @@ export const router = tenantSlug
       {
         element: <RootLayout />,
         errorElement: <RouteErrorBoundary />,
+        HydrateFallback: EmptyFallback,
         children: [
           {
             path: '*',
-            element: <PublicSitePage slug={tenantSlug} />,
+            lazy: async () => {
+              const { default: PublicSitePage } = await import('./pages/public-site/PublicSitePage');
+              return { element: <PublicSitePage slug={tenantSlug} /> };
+            },
             errorElement: (
               <RouteErrorBoundary
                 title="Trang này đang gặp sự cố"
@@ -71,6 +62,7 @@ export const router = tenantSlug
       {
         element: <RootLayout />,
         errorElement: <RouteErrorBoundary />,
+        HydrateFallback: EmptyFallback,
         children: [
           // ── Public — không dùng AppLayout ──────────────────────────────────────
           {
@@ -88,34 +80,34 @@ export const router = tenantSlug
           },
           {
             path: ROUTES.AUTH_CALLBACK,
-            element: <AuthCallbackPage />,
+            lazy: lazyPage(() => import('./pages/auth-callback/AuthCallbackPage')),
           },
 
           // ── App shell — pathless layout: AppLayout bọc Navbar + Sidebar + Outlet ──
           {
-            element: <AppLayout />,
+            lazy: lazyPage(() => import('./layouts/AppLayout')),
             children: [
-              { path: ROUTES.MARKETPLACE, element: <MarketplacePage /> },
-              { path: ROUTES.PRICING,     element: <PricingPage /> },
-              { path: ROUTES.TUTORIALS,   element: <TutorialsPage /> },
-              { path: ROUTES.ABOUT,       element: <AboutUsPage /> },
+              { path: ROUTES.MARKETPLACE, lazy: lazyPage(() => import('./pages/marketplace/MarketplacePage')) },
+              { path: ROUTES.PRICING,     lazy: lazyPage(() => import('./pages/pricing/PricingPage')) },
+              { path: ROUTES.TUTORIALS,   lazy: lazyPage(() => import('./pages/tutorials/TutorialsPage')) },
+              { path: ROUTES.ABOUT,       lazy: lazyPage(() => import('./pages/about/AboutUsPage')) },
 
               // Chính sách & pháp lý — công khai, không cần đăng nhập
-              { path: ROUTES.POLICY_PRIVACY, element: <PrivacyPolicyPage /> },
-              { path: ROUTES.POLICY_TERMS,   element: <TermsPage /> },
-              { path: ROUTES.POLICY_REFUND,  element: <RefundPolicyPage /> },
-              { path: ROUTES.POLICY_COOKIES, element: <CookiePolicyPage /> },
+              { path: ROUTES.POLICY_PRIVACY, lazy: lazyPage(() => import('./pages/policy/PrivacyPolicyPage')) },
+              { path: ROUTES.POLICY_TERMS,   lazy: lazyPage(() => import('./pages/policy/TermsPage')) },
+              { path: ROUTES.POLICY_REFUND,  lazy: lazyPage(() => import('./pages/policy/RefundPolicyPage')) },
+              { path: ROUTES.POLICY_COOKIES, lazy: lazyPage(() => import('./pages/policy/CookiePolicyPage')) },
 
               // Dashboard — cần đăng nhập vì gọi API có JWT guard (/sites/my...)
               {
                 element: <RequireAuth />,
                 children: [
                   { path: ROUTES.DASHBOARD,           element: <Navigate to={ROUTES.DASHBOARD_PROJECTS} replace /> },
-                  { path: ROUTES.DASHBOARD_PROJECTS,  element: <ProjectsPage /> },
-                  { path: ROUTES.DASHBOARD_ANALYTICS, element: <AnalyticsPage /> },
-                  { path: ROUTES.DASHBOARD_QRCODES,   element: <QRCodesPage /> },
-                  { path: ROUTES.DASHBOARD_SETTINGS,  element: <SettingsPage /> },
-                  { path: ROUTES.DASHBOARD_SUPPORT,   element: <SupportPage /> },
+                  { path: ROUTES.DASHBOARD_PROJECTS,  lazy: lazyPage(() => import('./pages/dashboard/projects/ProjectsPage')) },
+                  { path: ROUTES.DASHBOARD_ANALYTICS, lazy: lazyPage(() => import('./pages/dashboard/analytics/AnalyticsPage')) },
+                  { path: ROUTES.DASHBOARD_QRCODES,   lazy: lazyPage(() => import('./pages/dashboard/qrcodes/QRCodesPage')) },
+                  { path: ROUTES.DASHBOARD_SETTINGS,  lazy: lazyPage(() => import('./pages/dashboard/settings/SettingsPage')) },
+                  { path: ROUTES.DASHBOARD_SUPPORT,   lazy: lazyPage(() => import('./pages/dashboard/support/SupportPage')) },
                 ],
               },
             ],
@@ -124,7 +116,7 @@ export const router = tenantSlug
           // ── Template preview — full-screen, no AppLayout ───────────────────────
           {
             path: ROUTES.TEMPLATE_PREVIEW,
-            element: <TemplatePreviewPage />,
+            lazy: lazyPage(() => import('./pages/marketplace/TemplatePreviewPage')),
           },
 
           // ── Template editor — full-screen, no AppLayout, cần đăng nhập để lưu (POST /sites) ──
@@ -133,7 +125,7 @@ export const router = tenantSlug
             children: [
               {
                 path: ROUTES.TEMPLATE_EDITOR_NEW,
-                element: <TemplateEditorPage />,
+                lazy: lazyPage(() => import('./pages/template-editor/TemplateEditorPage')),
                 errorElement: (
                   <RouteErrorBoundary
                     title="Trình chỉnh sửa gặp sự cố"
@@ -143,7 +135,7 @@ export const router = tenantSlug
               },
               {
                 path: ROUTES.TEMPLATE_EDITOR_EDIT,
-                element: <TemplateEditorPage />,
+                lazy: lazyPage(() => import('./pages/template-editor/TemplateEditorPage')),
                 errorElement: (
                   <RouteErrorBoundary
                     title="Trình chỉnh sửa gặp sự cố"
@@ -158,27 +150,27 @@ export const router = tenantSlug
           {
             element: <RequireAuth />,
             children: [
-              { path: ROUTES.PAYMENT_RESULT, element: <PaymentResultPage /> },
+              { path: ROUTES.PAYMENT_RESULT, lazy: lazyPage(() => import('./pages/payment-result/PaymentResultPage')) },
             ],
           },
 
           // ── Admin portal — luồng riêng biệt, không dùng AppLayout ──────────────
           {
             path: ROUTES.ADMIN_LOGIN,
-            element: <AdminLoginPage />,
+            lazy: lazyPage(() => import('./pages/admin/login/AdminLoginPage')),
           },
           {
             element: <RequireAdmin />,
             children: [
               {
-                element: <AdminLayout />,
+                lazy: lazyPage(() => import('./layouts/AdminLayout')),
                 children: [
-                  { path: ROUTES.ADMIN_DASHBOARD,    element: <AdminDashboard /> },
-                  { path: ROUTES.ADMIN_ANALYTICS,    element: <AdminAnalyticsPage /> },
-                  { path: ROUTES.ADMIN_USERS,        element: <UsersPage /> },
-                  { path: ROUTES.ADMIN_PAYMENTS,     element: <PaymentsPage /> },
-                  { path: ROUTES.ADMIN_TRANSACTIONS, element: <TransactionsPage /> },
-                  { path: ROUTES.ADMIN_TEMPLATES,    element: <AdminTemplatesPage /> },
+                  { path: ROUTES.ADMIN_DASHBOARD,    lazy: lazyPage(() => import('./pages/admin/dashboard/AdminDashboard')) },
+                  { path: ROUTES.ADMIN_ANALYTICS,    lazy: lazyPage(() => import('./pages/admin/analytics/AdminAnalyticsPage')) },
+                  { path: ROUTES.ADMIN_USERS,        lazy: lazyPage(() => import('./pages/admin/users/UsersPage')) },
+                  { path: ROUTES.ADMIN_PAYMENTS,     lazy: lazyPage(() => import('./pages/admin/payments/PaymentsPage')) },
+                  { path: ROUTES.ADMIN_TRANSACTIONS, lazy: lazyPage(() => import('./pages/admin/transactions/TransactionsPage')) },
+                  { path: ROUTES.ADMIN_TEMPLATES,    lazy: lazyPage(() => import('./pages/admin/templates/AdminTemplatesPage')) },
                 ],
               },
             ],
@@ -191,7 +183,7 @@ export const router = tenantSlug
           // nội bộ.
           {
             path: ROUTES.PUBLIC_SITE,
-            element: <PublicSitePage />,
+            lazy: lazyPage(() => import('./pages/public-site/PublicSitePage')),
             errorElement: (
               <RouteErrorBoundary
                 title="Trang này đang gặp sự cố"
@@ -203,7 +195,7 @@ export const router = tenantSlug
           // ── Catch-all 404 — phải đặt cuối cùng ──────────────────────────────────
           {
             path: ROUTES.NOT_FOUND,
-            element: <NotFoundPage />,
+            lazy: lazyPage(() => import('./pages/not-found/NotFoundPage')),
           },
         ],
       },

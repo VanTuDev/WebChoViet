@@ -19,16 +19,20 @@ export default function Wordmark({ className = '', icon = false, inverted = fals
     <span className={`inline-flex items-center gap-[0.3em] ${className}`}>
       {icon && (
         <img
-          src="/logo-icon.png"
+          src="/logo-icon.webp"
           alt=""
           className="h-[1.5em] w-auto select-none"
-          width={967}
-          height={700}
+          width={199}
+          height={144}
         />
       )}
+      {/* .webp thu nhỏ từ PNG gốc (scripts/optimize-images.py) — PNG gốc 1400px/967px
+          nặng 72–163 KB trong khi chỉ hiển thị cao ~24–45px. */}
       <img
-        src="/logo-wordmark.png"
+        src="/logo-wordmark.webp"
         alt="vngoweb"
+        width={614}
+        height={96}
         className={`h-[0.78em] w-auto select-none ${inverted ? 'brightness-0 invert' : ''}`}
       />
     </span>

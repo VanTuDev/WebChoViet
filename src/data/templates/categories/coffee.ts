@@ -4,14 +4,6 @@
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
 
-import schema_coffe1 from '../../Template/coffee/Coffe-1/i18n/vi.json';
-import schema_coffe2 from '../../Template/coffee/Coffe-2/i18n/vi.json';
-import schema_coffe3 from '../../Template/coffee/Coffe-3/i18n/vi.json';
-import schema_coffe4 from '../../Template/coffee/Coffe-4/i18n/vi.json';
-import schema_coffe5 from '../../Template/coffee/Coffe-5/i18n/vi.json';
-import schema_coffe6 from '../../Template/coffee/Coffe-6/i18n/vi.json';
-import schema_coffee7 from '../../Template/coffee/Coffe-7/i18n/vi.json';
-import schema_coffee8 from '../../Template/coffee/Coffe-8/i18n/vi.json';
 import img_Coffe1_card from '../../Template/coffee/Coffe-1/images/card.png';
 import img_Coffe1_heroBg from '../../Template/coffee/Coffe-1/images/heroBg.png';
 import img_Coffe1_heroMain from '../../Template/coffee/Coffe-1/images/heroMain.png';
@@ -89,7 +81,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ['Sân Vườn', 'Signature Menu', 'Gallery Bento'],
     imageUrl: img_Coffe1_card,
     component: lazy(() => import('../../Template/coffee/Coffe-1/index')),
-    schema: schema_coffe1 as Record<string, unknown>,
     imageSlots: [
       { key: 'heroBg',      label: 'Ảnh nền Hero',    defaultUrl: img_Coffe1_heroBg },
       { key: 'heroMain',    label: 'Ảnh chính Hero',  defaultUrl: img_Coffe1_heroMain },
@@ -114,7 +105,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ['Hero Slider', 'Menu Tabs', 'FAB Cart'],
     imageUrl: img_Coffe2_card,
     component: lazy(() => import('../../Template/coffee/Coffe-2/index')),
-    schema: schema_coffe2 as Record<string, unknown>,
     imageSlots: [
       { key: 'slide_0',   label: 'Slide 1',        defaultUrl: img_Coffe2_slide0 },
       { key: 'slide_1',   label: 'Slide 2',        defaultUrl: img_Coffe2_slide1 },
@@ -137,7 +127,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ['3 Menu Tab', 'Gallery Bento', 'Đánh Giá Sao'],
     imageUrl: img_Coffe3_card,
     component: lazy(() => import('../../Template/coffee/Coffe-3/index')),
-    schema: schema_coffe3 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero',      label: 'Ảnh Hero',   defaultUrl: img_Coffe3_hero },
       { key: 'coffee_0',  label: 'Coffee 1',   defaultUrl: img_Coffe3_coffee0 },
@@ -160,7 +149,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ['Sân Vườn Cao Cấp', 'Gallery Koi', 'Menu 4 Tabs'],
     imageUrl: img_Coffe4_card,
     component: lazy(() => import('../../Template/coffee/Coffe-4/index')),
-    schema: schema_coffe4 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero',          label: 'Ảnh Hero',           defaultUrl: img_Coffe4_hero },
       { key: 'gallery_0',     label: 'Gallery 1',          defaultUrl: img_Coffe4_gallery0 },
@@ -184,7 +172,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ['Trà Sữa', 'Menu Carousel', 'Newsletter'],
     imageUrl: img_Coffe5_card,
     component: lazy(() => import('../../Template/coffee/Coffe-5/index')),
-    schema: schema_coffe5 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero',      label: 'Ảnh Hero',           defaultUrl: img_Coffe5_hero },
       { key: 'gallery_0', label: 'Gallery 1',          defaultUrl: img_Coffe5_gallery0 },
@@ -210,7 +197,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ['Menu 16 Món', 'Gallery Bento', '4 Ngôn Ngữ'],
     imageUrl: img_Coffe6_card,
     component: lazy(() => import('../../Template/coffee/Coffe-6/index')),
-    schema: schema_coffe6 as Record<string, unknown>,
     imageSlots: [
       { key: 'heroBg',      label: 'Ảnh nền Hero', defaultUrl: img_Coffe6_heroBg },
       { key: 'galleryMain', label: 'Gallery chính', defaultUrl: img_Coffe6_galleryMain },
@@ -231,7 +217,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ["COFFEE","Thực Đơn","Bản Đồ","Đánh Giá"],
     imageUrl: img_Coffe7_card,
     component: lazy(() => import('../../Template/coffee/Coffe-7/index')),
-    schema: schema_coffee7 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",
@@ -291,7 +276,6 @@ export const COFFEE_TEMPLATES: TemplateDefinition[] = [
     tags: ["COFFEE","Thực Đơn","Bản Đồ","Đánh Giá"],
     imageUrl: img_Coffe8_card,
     component: lazy(() => import('../../Template/coffee/Coffe-8/index')),
-    schema: schema_coffee8 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",

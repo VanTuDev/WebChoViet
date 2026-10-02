@@ -2,7 +2,7 @@
 // Có nút "Từ chối" thật sự — bấm 1 lần là không hỏi lại nữa (đánh dấu vĩnh
 // viễn). Nhưng MỘT KHI đã bấm "Có" để bắt đầu, overlay tour sau đó không có
 // nút bỏ qua/đóng giữa chừng nữa (xem TourOverlay.tsx).
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { Bot, LayoutTemplate, Wand2, Rocket, Sparkles } from 'lucide-react';
 
@@ -23,7 +23,7 @@ export default function WelcomeModal({ open, onStart, onDecline }: Props) {
     <AnimatePresence>
       {open && (
         <>
-          <motion.div
+          <m.div
             key="onboarding-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -32,7 +32,7 @@ export default function WelcomeModal({ open, onStart, onDecline }: Props) {
             className="fixed inset-0 bg-slate-900/55 backdrop-blur-sm z-[9995]"
           />
 
-          <motion.div
+          <m.div
             key="onboarding-modal"
             role="dialog"
             aria-modal="true"
@@ -109,7 +109,7 @@ export default function WelcomeModal({ open, onStart, onDecline }: Props) {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

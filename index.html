@@ -32,7 +32,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet">
+    <!-- Material Symbols: chỉ vài template (Coffe-1..5) dùng, app chính dùng lucide-react
+         → tải KHÔNG chặn render (media="print" rồi đổi sang "all" khi tải xong). Trước
+         đây là stylesheet chặn render tốn ~1s FCP trên mobile cho mọi trang. -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet"></noscript>
     <!-- Font cơ bản toàn hệ thống: Inter (đủ dấu tiếng Việt, hệ trọng số rộng cho cả
          heading lẫn body) + Be Vietnam Pro làm fallback dấu tiếng Việt. Trước đây tải
          thêm Lexend + Playfair Display riêng cho heading/landing — đã gộp hết về Inter

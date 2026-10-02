@@ -17,7 +17,10 @@ export default function MarketplacePage() {
   const { t } = useTranslation('marketplace');
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const category = searchParams.get('category') ?? 'all';
+  // Category không còn hiển thị (tạm ẩn — HIDDEN_CATEGORIES) hoặc gõ sai → coi như 'all',
+  // tránh trang có tiêu đề/SEO của category ẩn mà danh sách rỗng.
+  const rawCategory = searchParams.get('category') ?? 'all';
+  const category = Object.hasOwn(CATEGORY_HEADING_MAP, rawCategory) ? rawCategory : 'all';
   const searchQuery = searchParams.get('q') ?? '';
 
   const [priceFilter, setPriceFilter] = useState<PriceFilter>('all');

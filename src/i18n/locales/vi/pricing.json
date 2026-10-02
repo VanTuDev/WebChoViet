@@ -5,11 +5,13 @@
   },
   "heading": "Bảng Giá Dịch Vụ vngoweb",
   "subheading": "Không phát sinh chi phí ẩn. Thanh toán an toàn qua PayOS (chuyển khoản ngân hàng/VietQR).",
-  "cycle": {
-    "monthly": "Hàng tháng",
-    "yearly": "Hàng năm (tiết kiệm ~17%)",
-    "monthlyShort": "Hàng tháng",
-    "yearlyShort": "Hàng năm"
+  "price": {
+    "listPrice": "Giá gốc",
+    "firstYear": "năm đầu",
+    "perYear": "năm",
+    "forever": "mãi mãi",
+    "renewalNote": "Từ năm thứ 2: {{price}}/năm",
+    "renewalApplied": "Giá gia hạn — bạn đã từng dùng gói này"
   },
   "trust": {
     "secure": "Thanh toán an toàn PayOS",
@@ -62,10 +64,9 @@
   },
   "cta": {
     "current": "Đang sử dụng",
-    "currentPlan": "Gói hiện tại",
     "lower": "Gói thấp hơn",
-    "changeCycle": "Đổi chu kỳ thanh toán",
-    "upgrade": "Nâng cấp ngay"
+    "upgrade": "Nâng cấp ngay",
+    "renew": "Gia hạn thêm 1 năm"
   },
   "subscription": {
     "cancelScheduled": "Đã xác nhận không gia hạn — gói sẽ chuyển về Free vào {{date}}.",

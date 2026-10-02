@@ -1,5 +1,5 @@
 // Dialog xác nhận hành động — thay thế window.confirm(), có animation
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { AlertTriangle, Trash2, X } from 'lucide-react';
 
 export interface ConfirmDialogState {
@@ -31,7 +31,7 @@ export default function ConfirmDialog({ dialog, onCancel }: ConfirmDialogProps) 
       {dialog && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             key="backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -42,7 +42,7 @@ export default function ConfirmDialog({ dialog, onCancel }: ConfirmDialogProps) 
           />
 
           {/* Dialog box */}
-          <motion.div
+          <m.div
             key="dialog"
             initial={{ opacity: 0, scale: 0.92, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -97,7 +97,7 @@ export default function ConfirmDialog({ dialog, onCancel }: ConfirmDialogProps) 
                 </button>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

@@ -4,10 +4,6 @@
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
 
-import schema_wedding1 from '../../Template/wedding/Wedding-1/i18n/vi.json';
-import schema_wedding2 from '../../Template/wedding/Wedding-2/i18n/vi.json';
-import schema_wedding3 from '../../Template/wedding/Wedding-3/i18n/vi.json';
-import schema_wedding4 from '../../Template/wedding/Wedding-4/i18n/vi.json';
 import img_Wedding1_card from '../../Template/wedding/Wedding-1/images/card.jpg';
 import img_Wedding1_hero from '../../Template/wedding/Wedding-1/images/hero.jpg';
 import img_Wedding2_card from '../../Template/wedding/Wedding-2/images/card.jpg';
@@ -33,7 +29,6 @@ export const WEDDING_TEMPLATES: TemplateDefinition[] = [
     tags: ['Thiệp Cưới', 'RSVP', 'Lãng Mạn'],
     imageUrl: img_Wedding1_card,
     component: lazy(() => import('../../Template/wedding/Wedding-1/index')),
-    schema: schema_wedding1 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Cặp Đôi', defaultUrl: img_Wedding1_hero },
     ],
@@ -49,7 +44,6 @@ export const WEDDING_TEMPLATES: TemplateDefinition[] = [
     tags: ['Thiệp Cưới', 'Countdown', 'Gallery', 'Navy Gold'],
     imageUrl: img_Wedding2_card,
     component: lazy(() => import('../../Template/wedding/Wedding-2/index')),
-    schema: schema_wedding2 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero',      label: 'Ảnh Hero Cặp Đôi', defaultUrl: img_Wedding2_hero },
       { key: 'gallery_0', label: 'Album 1',            defaultUrl: img_Wedding2_gallery0 },
@@ -70,7 +64,6 @@ export const WEDDING_TEMPLATES: TemplateDefinition[] = [
     tags: ['Thiệp Cưới', 'Cổ Điển', 'Save The Date'],
     imageUrl: img_Wedding3_card,
     component: lazy(() => import('../../Template/wedding/Wedding-3/index')),
-    schema: schema_wedding3 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero',      label: 'Ảnh Hero Cặp Đôi', defaultUrl: img_Wedding3_hero },
       { key: 'gallery_0', label: 'Album 1',            defaultUrl: img_Wedding3_gallery0 },
@@ -89,7 +82,6 @@ export const WEDDING_TEMPLATES: TemplateDefinition[] = [
     tags: ['Thiệp Cưới', 'Tối Giản', 'Cổ Điển', 'RSVP'],
     imageUrl: img_Wedding4_card,
     component: lazy(() => import('../../Template/wedding/Wedding-4/index')),
-    schema: schema_wedding4 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Cặp Đôi', defaultUrl: img_Wedding4_hero },
     ],

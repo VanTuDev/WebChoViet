@@ -6,7 +6,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Check, MousePointerClick, Sparkles } from 'lucide-react';
 import { useOnboarding } from '../../context/OnboardingContext';
@@ -172,7 +172,7 @@ export default function TourOverlay() {
 
   return createPortal(
     <AnimatePresence>
-      <motion.div
+      <m.div
         key={currentStep.id}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -194,7 +194,7 @@ export default function TourOverlay() {
         />
 
         {/* ── Thẻ hướng dẫn ─────────────────────────────────────────────────── */}
-        <motion.div
+        <m.div
           ref={tooltipRef}
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -265,8 +265,8 @@ export default function TourOverlay() {
               )}
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </AnimatePresence>,
     document.body,
   );

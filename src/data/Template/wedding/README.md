@@ -1,5 +1,10 @@
 # Category: Thiệp Cưới Online
 
+> **TẠM ẨN (10/2026)** — giao diện chưa đạt, đang chờ làm lại. Category này nằm trong
+> `HIDDEN_CATEGORIES` (`src/data/templates/registry.ts`) nên không hiện ở Landing,
+> Marketplace, Sidebar, trang xem trước, tạo site mới hay Admin. Code giữ nguyên; site
+> khách đã tạo từ thiệp cưới vẫn hoạt động. Làm lại xong → xoá `'wedding'` khỏi set đó.
+
 **Category ID:** `wedding`
 **Label sidebar:** Thiệp Cưới
 

@@ -4,11 +4,6 @@
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
 
-import schema_spa1 from '../../Template/spa/Spa-1/i18n/vi.json';
-import schema_spa2 from '../../Template/spa/Spa-2/i18n/vi.json';
-import schema_spa4 from '../../Template/spa/Spa-4/i18n/vi.json';
-import schema_spa5 from '../../Template/spa/Spa-5/i18n/vi.json';
-import schema_spa6 from '../../Template/spa/Spa-6/i18n/vi.json';
 import img_Spa1_card from '../../Template/spa/Spa-1/images/card.jpg';
 import img_Spa1_heroBg from '../../Template/spa/Spa-1/images/heroBg.jpg';
 import img_Spa1_bentoImg from '../../Template/spa/Spa-1/images/bentoImg.jpg';
@@ -60,7 +55,6 @@ export const SPA_TEMPLATES: TemplateDefinition[] = [
     tags: ['Trị Mụn', 'Da Liễu', 'Công Nghệ Cao'],
     imageUrl: img_Spa1_card,
     component: lazy(() => import('../../Template/spa/Spa-1/index')),
-    schema: schema_spa1 as Record<string, unknown>,
     imageSlots: [
       { key: 'heroBg',  label: 'Ảnh nền Hero', defaultUrl: img_Spa1_heroBg },
       { key: 'bentoImg', label: 'Ảnh bento nổi bật', defaultUrl: img_Spa1_bentoImg },
@@ -80,7 +74,6 @@ export const SPA_TEMPLATES: TemplateDefinition[] = [
     tags: ["SPA","Bản Đồ"],
     imageUrl: img_Spa2_card,
     component: lazy(() => import('../../Template/spa/Spa-2/index')),
-    schema: schema_spa2 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroImg",
@@ -125,7 +118,6 @@ export const SPA_TEMPLATES: TemplateDefinition[] = [
     tags: ["SPA","Bản Đồ"],
     imageUrl: img_Spa4_card,
     component: lazy(() => import('../../Template/spa/Spa-4/index')),
-    schema: schema_spa4 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",
@@ -161,7 +153,6 @@ export const SPA_TEMPLATES: TemplateDefinition[] = [
     tags: ["SPA","Bản Đồ","Đánh Giá"],
     imageUrl: img_Spa5_card,
     component: lazy(() => import('../../Template/spa/Spa-5/index')),
-    schema: schema_spa5 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",
@@ -231,7 +222,6 @@ export const SPA_TEMPLATES: TemplateDefinition[] = [
     tags: ["SPA","Bản Đồ","Đặt Lịch"],
     imageUrl: img_Spa6_card,
     component: lazy(() => import('../../Template/spa/Spa-6/index')),
-    schema: schema_spa6 as Record<string, unknown>,
     imageSlots: [
         {
               "key": "heroBg",

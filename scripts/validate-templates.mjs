@@ -176,7 +176,7 @@ for (const category of readdirSync(TEMPLATE_DIR)) {
     if (!catFile) {
       err(tpl, `không tìm thấy file categories/${category}.ts trong registry`);
     } else if (!catFile.includes(`/${category}/${name}/`)) {
-      err(tpl, `chưa được đăng ký trong categories/${category}.ts (thiếu import schema + entry TemplateDefinition)`);
+      err(tpl, `chưa được đăng ký trong categories/${category}.ts (thiếu entry TemplateDefinition)`);
     } else {
       // id phải viết thường: TEMPLATE_SCREEN_BY_ID map screen.png theo tên thư mục
       // lowercase — id lệch case từng làm mất hiệu ứng hover-cuộn ở dentalClinic.
@@ -190,6 +190,18 @@ for (const category of readdirSync(TEMPLATE_DIR)) {
         // template đã tồn tại, chỉ áp dụng viết thường cho template MỚI tạo.
         warn(tpl, `id '${lastId}' trong categories/${category}.ts có chữ hoa — template MỚI nên đặt kebab-case viết thường (vd '${lastId.toLowerCase()}'); nếu template đã publish thì KHÔNG tự đổi id (có thể đang được site khách tham chiếu)`);
       }
+      // Schema (data/templates/schemas.ts) + screenshot tra theo tên thư mục lowercase
+      // → id lệch tên thư mục thì Template Editor nhận schema rỗng.
+      if (lastId && lastId.toLowerCase() !== name.toLowerCase()) {
+        err(tpl, `id '${lastId}' không khớp tên thư mục '${name}' — schema vi.json và screenshot tra theo tên thư mục viết thường`);
+      }
+    }
+
+    // 9. screen.webp (bản nhẹ cho carousel/Marketplace) phải mới hơn screen.png
+    const screenPng = join(tplPath, 'screen.png');
+    const screenWebp = join(tplPath, 'screen.webp');
+    if (existsSync(screenPng) && (!existsSync(screenWebp) || statSync(screenWebp).mtimeMs < statSync(screenPng).mtimeMs)) {
+      warn(tpl, 'screen.webp thiếu hoặc cũ hơn screen.png — chạy `python scripts/optimize-images.py` (trang chủ đang phải tải screen.png gốc, nặng)');
     }
 
     // 8. Hiệu ứng cuộn (Reveal) — mọi template phải dùng _shared/Reveal

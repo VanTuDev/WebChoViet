@@ -1,6 +1,5 @@
 import { Check, Loader2, Rocket, BadgeCheck, Crown, Globe, NotebookPen } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import type { BillingCycle } from '../../../services/billingService';
 
 export interface PricingPlanDef {
   id: 'free' | 'pro' | 'ultra';
@@ -8,8 +7,11 @@ export interface PricingPlanDef {
   color: string;
   desc: string;
   features: string[];
-  /** null = gói miễn phí, không có giá theo chu kỳ */
-  price: { monthly: number; yearly: number } | null;
+  /**
+   * Giá 1 năm (chỉ bán theo năm) — null = gói miễn phí. listPrice chỉ để trưng bày (gạch
+   * ngang); số tiền thật BE tính theo firstYear/renewal ở src/billing/plan-pricing.ts.
+   */
+  price: { listPrice: number; firstYear: number; renewal: number } | null;
   /** Giới hạn số site — tách riêng draft/published, khớp PLAN_SITE_LIMIT phía backend */
   limits: { draft: number; published: number };
   popular: boolean;
@@ -17,7 +19,8 @@ export interface PricingPlanDef {
 
 interface Props {
   plan: PricingPlanDef;
-  cycle: BillingCycle;
+  /** Tài khoản đã từng mua gói này → hiển thị (và BE sẽ tính) giá gia hạn thay vì giá năm đầu */
+  returning: boolean;
   cta: string;
   disabled: boolean;
   loading: boolean;
@@ -49,11 +52,11 @@ const PLAN_VISUAL: Record<PricingPlanDef['id'], { iconBg: string; ring: string; 
   },
 };
 
-export default function PricingCard({ plan, cycle, cta, disabled, loading, onSelect }: Props) {
+export default function PricingCard({ plan, returning, cta, disabled, loading, onSelect }: Props) {
   const { t } = useTranslation('pricing');
-  const amount = plan.price ? plan.price[cycle] : 0;
-  const periodLabel = plan.price ? (cycle === 'monthly' ? 'tháng' : 'năm') : 'mãi mãi';
-  const savings = plan.price && cycle === 'yearly' ? plan.price.monthly * 12 - plan.price.yearly : 0;
+  const { price } = plan;
+  const amount = price ? (returning ? price.renewal : price.firstYear) : 0;
+  const periodLabel = price ? (returning ? t('price.perYear') : t('price.firstYear')) : t('price.forever');
   const visual = PLAN_VISUAL[plan.id];
   const Icon = PLAN_ICON[plan.id];
 
@@ -84,13 +87,19 @@ export default function PricingCard({ plan, cycle, cta, disabled, loading, onSel
         </div>
 
         <div className="py-2 border-b border-gray-50">
+          {price && !returning && (
+            <p className="text-xs text-gray-400">
+              <span className="sr-only">{t('price.listPrice')}: </span>
+              <s>{fmt(price.listPrice)}</s>
+            </p>
+          )}
           <div className="flex items-baseline gap-1">
-            <span className="text-3xl font-display font-extrabold text-gray-900">{plan.price ? fmt(amount) : '0đ'}</span>
+            <span className="text-3xl font-display font-extrabold text-gray-900">{price ? fmt(amount) : '0đ'}</span>
             <span className="text-xs text-gray-500">/ {periodLabel}</span>
           </div>
-          {savings > 0 && (
-            <p className="text-[11px] text-emerald-600 font-semibold mt-1">
-              Tiết kiệm {fmt(savings)} mỗi năm so với trả theo tháng
+          {price && (
+            <p className="text-[11px] text-gray-500 font-semibold mt-1">
+              {returning ? t('price.renewalApplied') : t('price.renewalNote', { price: fmt(price.renewal) })}
             </p>
           )}
         </div>

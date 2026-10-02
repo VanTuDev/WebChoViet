@@ -43,8 +43,7 @@ export default function AdSenseLoader() {
     if (getTenantSlug()) return;
     if (!ADSENSE_ROUTES.includes(location.pathname)) return;
 
-    const existing = document.getElementById(SCRIPT_ID);
-    if (existing) {
+    if (document.getElementById(SCRIPT_ID)) {
       // Đã tải rồi trong phiên này (vd chuyển route qua lại giữa 2 trang đều
       // nằm trong ADSENSE_ROUTES) — không tải lại, chỉ log trạng thái hiện tại.
       if (import.meta.env.DEV) {
@@ -56,35 +55,59 @@ export default function AdSenseLoader() {
       return;
     }
 
-    const script = document.createElement('script');
-    script.id = SCRIPT_ID;
-    script.async = true;
-    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
-    script.crossOrigin = 'anonymous';
+    // Hoãn tới khi trang tải xong (window load) + trình duyệt rảnh: adsbygoogle.js
+    // là script bên thứ 3 nặng — chèn ngay lúc mount nó tranh băng thông/CPU với
+    // bundle chính, kéo chậm FCP/LCP/TBT của chính các trang marketing này.
+    let cancelled = false;
 
-    if (import.meta.env.DEV) {
-      console.log(`[AdSense] Bắt đầu tải script cho route "${location.pathname}"...`);
+    const inject = () => {
+      // Rời khỏi ADSENSE_ROUTES trước khi tới lượt → không tải nữa.
+      if (cancelled || document.getElementById(SCRIPT_ID)) return;
 
-      script.onload = () => {
-        console.log('[AdSense] ✅ Script tải thành công.', {
-          adsbygoogle: window.adsbygoogle,
-          route: location.pathname,
-        });
-      };
+      const script = document.createElement('script');
+      script.id = SCRIPT_ID;
+      script.async = true;
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
+      script.crossOrigin = 'anonymous';
 
-      script.onerror = () => {
-        // Lý do phổ biến nhất KHÔNG phải lỗi cấu hình: trình duyệt/extension
-        // chặn quảng cáo (uBlock, AdBlock, Brave shields...) chặn thẳng domain
-        // pagead2.googlesyndication.com trước khi request kịp gửi đi. Thử tắt
-        // ad-blocker hoặc mở tab ẩn danh không cài extension trước khi nghi ngờ
-        // code sai.
-        console.warn(
-          '[AdSense] ❌ Script tải THẤT BẠI — kiểm tra ad-blocker (uBlock/AdBlock/Brave Shields) trước khi nghi ngờ code. Thử lại ở tab ẩn danh không cài extension.',
-        );
-      };
-    }
+      if (import.meta.env.DEV) {
+        console.log(`[AdSense] Bắt đầu tải script cho route "${location.pathname}"...`);
 
-    document.head.appendChild(script);
+        script.onload = () => {
+          console.log('[AdSense] ✅ Script tải thành công.', {
+            adsbygoogle: window.adsbygoogle,
+            route: location.pathname,
+          });
+        };
+
+        script.onerror = () => {
+          // Lý do phổ biến nhất KHÔNG phải lỗi cấu hình: trình duyệt/extension
+          // chặn quảng cáo (uBlock, AdBlock, Brave shields...) chặn thẳng domain
+          // pagead2.googlesyndication.com trước khi request kịp gửi đi. Thử tắt
+          // ad-blocker hoặc mở tab ẩn danh không cài extension trước khi nghi ngờ
+          // code sai.
+          console.warn(
+            '[AdSense] ❌ Script tải THẤT BẠI — kiểm tra ad-blocker (uBlock/AdBlock/Brave Shields) trước khi nghi ngờ code. Thử lại ở tab ẩn danh không cài extension.',
+          );
+        };
+      }
+
+      document.head.appendChild(script);
+    };
+
+    // Safari chưa có requestIdleCallback → fallback setTimeout.
+    const scheduleWhenIdle = () => {
+      if (typeof window.requestIdleCallback === 'function') window.requestIdleCallback(inject, { timeout: 4000 });
+      else setTimeout(inject, 2000);
+    };
+
+    if (document.readyState === 'complete') scheduleWhenIdle();
+    else window.addEventListener('load', scheduleWhenIdle, { once: true });
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener('load', scheduleWhenIdle);
+    };
   }, [location.pathname]);
 
   return null;

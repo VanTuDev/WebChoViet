@@ -5,11 +5,13 @@
   },
   "heading": "vngoweb 서비스 요금제",
   "subheading": "숨겨진 비용이 없습니다. PayOS(은행 이체/VietQR)를 통한 안전한 결제를 지원합니다.",
-  "cycle": {
-    "monthly": "월간 결제",
-    "yearly": "연간 결제 (약 17% 절약)",
-    "monthlyShort": "월간",
-    "yearlyShort": "연간"
+  "price": {
+    "listPrice": "정가",
+    "firstYear": "첫해",
+    "perYear": "년",
+    "forever": "평생",
+    "renewalNote": "2년 차부터: {{price}}/년",
+    "renewalApplied": "갱신 가격 — 이전에 이 요금제를 이용하셨습니다"
   },
   "trust": {
     "secure": "안전한 PayOS 결제",
@@ -62,10 +64,9 @@
   },
   "cta": {
     "current": "사용 중",
-    "currentPlan": "현재 플랜",
     "lower": "하위 플랜",
-    "changeCycle": "결제 주기 변경",
-    "upgrade": "지금 업그레이드"
+    "upgrade": "지금 업그레이드",
+    "renew": "1년 연장하기"
   },
   "subscription": {
     "cancelScheduled": "갱신 중단이 확인되었습니다 — {{date}}에 무료 플랜으로 전환됩니다.",

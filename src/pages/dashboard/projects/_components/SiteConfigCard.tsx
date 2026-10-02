@@ -5,7 +5,7 @@ import type { MouseEvent } from 'react';
 import { Edit3, ExternalLink, Trash2, Globe, FileEdit, Lock, Link2, QrCode, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import type { SiteConfig } from '../../../../types';
-import { TEMPLATES } from '../../../../data';
+import { ALL_TEMPLATES } from '../../../../data';
 import { TEMPLATE_NAME_MAP } from '../../../../data/templates/registry';
 import { TEMPLATE_SCREEN_BY_ID } from '../../../../utils/templateScreens';
 import { ROUTES } from '../../../../config/routes';
@@ -29,7 +29,7 @@ const LANG_LABELS: Record<string, string> = {
 export default function SiteConfigCard({ site, onDelete, selected = false, selectMode = false, onToggleSelect }: Props) {
   const navigate = useNavigate();
   const { showSnackbar } = useAppContext();
-  const template = TEMPLATES.find(t => t.id === site.templateId);
+  const template = ALL_TEMPLATES.find(t => t.id === site.templateId); // kể cả template category tạm ẩn
   const screen = TEMPLATE_SCREEN_BY_ID[site.templateId];
   const isPublished = site.status === 'published';
   const goEdit = () => navigate(`/template-editor/${site.id}`);

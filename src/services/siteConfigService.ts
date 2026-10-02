@@ -1,6 +1,6 @@
 import type { SiteConfig } from '../types';
 import { apiFetch } from './apiClient';
-import { TEMPLATES } from '../data/templates/registry';
+import { ALL_TEMPLATES } from '../data/templates/registry';
 
 // ── Backend Site shape (BackEnd-WebChoViet/src/sites/schemas/site.schema.ts) ────
 
@@ -51,7 +51,7 @@ function toBackend(config: SiteConfig) {
     status: config.status,
     // Giá tĩnh từ registry — backend chỉ dùng làm fallback khi admin CHƯA set override riêng
     // cho templateId này (xem BackEnd-WebChoViet/src/templates/templates.service.ts resolveEffectivePrice).
-    templatePrice: TEMPLATES.find(t => t.id === config.templateId)?.price ?? 0,
+    templatePrice: ALL_TEMPLATES.find(t => t.id === config.templateId)?.price ?? 0,
   };
 }
 

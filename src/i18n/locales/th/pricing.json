@@ -5,11 +5,13 @@
   },
   "heading": "แพ็กเกจราคาบริการ vngoweb",
   "subheading": "ไม่มีค่าใช้จ่ายแอบแฝง ชำระเงินอย่างปลอดภัยผ่าน PayOS (โอนผ่านธนาคาร/VietQR)",
-  "cycle": {
-    "monthly": "รายเดือน",
-    "yearly": "รายปี (ประหยัด ~17%)",
-    "monthlyShort": "รายเดือน",
-    "yearlyShort": "รายปี"
+  "price": {
+    "listPrice": "ราคาปกติ",
+    "firstYear": "ปีแรก",
+    "perYear": "ปี",
+    "forever": "ตลอดไป",
+    "renewalNote": "ตั้งแต่ปีที่ 2: {{price}}/ปี",
+    "renewalApplied": "ราคาต่ออายุ — คุณเคยใช้แพ็กเกจนี้แล้ว"
   },
   "trust": {
     "secure": "ชำระเงินปลอดภัยผ่าน PayOS",
@@ -62,10 +64,9 @@
   },
   "cta": {
     "current": "กำลังใช้งาน",
-    "currentPlan": "แพ็กเกจปัจจุบัน",
     "lower": "แพ็กเกจระดับต่ำกว่า",
-    "changeCycle": "เปลี่ยนรอบการชำระเงิน",
-    "upgrade": "อัปเกรดทันที"
+    "upgrade": "อัปเกรดทันที",
+    "renew": "ต่ออายุอีก 1 ปี"
   },
   "subscription": {
     "cancelScheduled": "ยืนยันการไม่ต่ออายุแล้ว — แพ็กเกจจะเปลี่ยนเป็น Free ในวันที่ {{date}}",

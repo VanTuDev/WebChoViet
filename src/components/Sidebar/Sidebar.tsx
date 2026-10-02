@@ -13,6 +13,7 @@ import {
   FolderSymlink, PanelLeftClose, PanelLeftOpen, Crown,
 } from 'lucide-react';
 import { ROUTES } from '../../config/routes';
+import { HIDDEN_CATEGORIES } from '../../data/templates/registry';
 import SidebarPlanCard from './SidebarPlanCard';
 
 // ── Config constants ───────────────────────────────────────────────────────────
@@ -28,7 +29,7 @@ const MARKETPLACE_CATEGORIES: { id: string; labelKey: string; icon: React.ReactN
   { id: 'wedding',    labelKey: 'sidebar.categories.wedding',    icon: <Heart     className="h-4 w-4 shrink-0" /> },
   { id: 'villa',      labelKey: 'sidebar.categories.villa',      icon: <Home      className="h-4 w-4 shrink-0" /> },
   { id: 'dentalClinic', labelKey: 'sidebar.categories.dental',   icon: <Smile     className="h-4 w-4 shrink-0" /> },
-];
+].filter(cat => !HIDDEN_CATEGORIES.has(cat.id)); // category tạm ẩn (vd thiệp cưới) — xem registry
 
 const DASHBOARD_MENUS = [
   { path: ROUTES.DASHBOARD_PROJECTS,  labelKey: 'sidebar.menus.projects',  icon: <FolderSymlink className="h-4 w-4 shrink-0" /> },

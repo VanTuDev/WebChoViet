@@ -1,5 +1,5 @@
 // Trang 404 — standalone, không dùng AppLayout
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
@@ -36,7 +36,7 @@ export default function NotFoundPage() {
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-rose-100/25 blur-[150px] pointer-events-none" />
 
       {/* Content card */}
-      <motion.section
+      <m.section
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -50,7 +50,7 @@ export default function NotFoundPage() {
             404
           </span>
           {/* Icon overlay */}
-          <motion.div
+          <m.div
             animate={{ rotate: [0, -8, 8, -5, 5, 0] }}
             transition={{ duration: 2, delay: 0.6, repeat: Infinity, repeatDelay: 4 }}
             className="absolute inset-0 flex items-center justify-center"
@@ -61,7 +61,7 @@ export default function NotFoundPage() {
                 <span className="text-white text-[10px] font-black">!</span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Text */}
@@ -122,7 +122,7 @@ export default function NotFoundPage() {
             ))}
           </ul>
         </nav>
-      </motion.section>
+      </m.section>
 
       {/* Footer brand */}
       <footer className="absolute bottom-6 text-xs text-slate-400">

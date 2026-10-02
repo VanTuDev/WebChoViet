@@ -114,6 +114,24 @@ function TemplateCarousel3D({
     return () => clearInterval(timer);
   }, [n]);
 
+  /* Chỉ gắn ảnh khi sân khấu cách viewport ≤ 300px: loading="lazy" của trình duyệt
+     tải sớm từ ~1250–2500px, trên mobile 5 screenshot (~300 KB) tranh băng thông
+     với nội dung màn hình đầu và kéo chậm LCP. Đã gần viewport 1 lần là giữ luôn. */
+  const stageRef = useRef<HTMLDivElement>(null);
+  const [nearViewport, setNearViewport] = useState(false);
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage || nearViewport) return;
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries.some(e => e.isIntersecting)) setNearViewport(true);
+      },
+      { rootMargin: '300px 0px' },
+    );
+    observer.observe(stage);
+    return () => observer.disconnect();
+  }, [nearViewport, n]);
+
   if (n === 0) return null;
 
   /* Khoảng cách vòng ngắn nhất từ slide i tới slide active: [-n/2, n/2] */
@@ -132,10 +150,14 @@ function TemplateCarousel3D({
       onMouseLeave={() => { pausedRef.current = false; }}
     >
       {/* Sân khấu 3D */}
-      <div className="carousel-3d relative h-[460px] sm:h-[520px] overflow-hidden">
+      <div ref={stageRef} className="carousel-3d relative h-[460px] sm:h-[520px] overflow-hidden">
         {items.map((tmpl, i) => {
           const off = offsetOf(i);
           const abs = Math.abs(off);
+          // Chỉ mount 9 slide quanh tâm (5 hiện + 2 ẩn mỗi bên, đủ cho cú nhảy 2 bước
+          // khi bấm slide rìa vẫn có transition) — trước đây mount đủ ~40 slide,
+          // chiếm hơn nửa DOM trang chủ, làm chậm render + style/layout lần đầu.
+          if (abs > 4) return null;
           const hidden = abs > 2;
           const isCenter = off === 0;
           return (
@@ -168,12 +190,18 @@ function TemplateCarousel3D({
 
                   {/* Screenshot full-page — hover sẽ cuộn từ từ xuống cuối trang */}
                   <div className="tmpl-screen relative h-[300px] sm:h-[360px] overflow-hidden">
-                    <img
-                      src={tmpl.screen}
-                      alt={t('showcase.screenshotAlt', { name: tmpl.name })}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
+                    {/* Slide ẩn (ngoài 5 slide quanh tâm) KHÔNG gắn ảnh: mọi slide xếp
+                        chồng cùng 1 vị trí layout nên loading="lazy" coi tất cả là
+                        "gần viewport" → trước đây tải screenshot của cả ~40 template. */}
+                    {!hidden && nearViewport && (
+                      <img
+                        src={tmpl.screen}
+                        alt={t('showcase.screenshotAlt', { name: tmpl.name })}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                     {tmpl.badge && (
                       <span className="absolute top-3 left-3 bg-gradient-to-r from-primary to-tertiary text-white text-[10px] font-inter font-bold px-2.5 py-1 rounded-full shadow-lg shadow-primary/40">
                         {tmpl.badge}
@@ -496,8 +524,11 @@ export default function LandingPage() {
               onMouseLeave={resetTilt}
             >
               <div ref={tiltRef} className="tilt-card relative">
+                {/* WebP 2 cỡ do scripts/optimize-images.py tạo từ hero-banner-visual.jpg */}
                 <img
-                  src="/hero-banner-visual.jpg"
+                  src="/hero-banner-visual.webp"
+                  srcSet="/hero-banner-visual-700.webp 700w, /hero-banner-visual.webp 1350w"
+                  sizes="(min-width: 1024px) 600px, 100vw"
                   alt={t('hero.visualAlt')}
                   className="w-full h-auto rounded-[1.6rem] shadow-2xl shadow-primary/25"
                   width={1350}

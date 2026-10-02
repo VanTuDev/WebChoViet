@@ -36,6 +36,6 @@ export interface Template {
 /** Template đầy đủ với runtime fields — 1 object này = 1 entry trong 1 file category */
 export interface TemplateDefinition extends Template {
   component: LazyExoticComponent<ComponentType<{ lang?: string }>>;
-  schema: Record<string, unknown>;
+  // Schema vi.json KHÔNG khai báo ở đây — xem schemas.ts (tách khỏi bundle trang chủ).
   imageSlots: ImageSlot[];
 }

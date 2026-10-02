@@ -18,6 +18,12 @@
 //
 // File dịch lazy-load theo cặp (ngôn ngữ × namespace) qua dynamic import — Vite tách
 // mỗi file JSON thành chunk riêng, không phình bundle ban đầu.
+//
+// NGOẠI LỆ: tiếng Việt (ngôn ngữ mặc định, đa số visitor + Googlebot) của các namespace
+// cần ngay lúc mở trang chủ được đóng gói sẵn trong bundle đầu. Nếu lazy-load, trang
+// chủ phải chờ thác nước 3 vòng request nối tiếp trước khi hiện chữ đầu tiên:
+// common → landing (LandingPage suspend) → onboarding (WelcomeModal/TourOverlay luôn
+// mount ở RootLayout và suspend) — kéo FCP/LCP trên mobile thêm hàng giây.
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
@@ -25,13 +31,26 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { APP_LANGS, DEFAULT_APP_LANG, isAppLang, type AppLang } from './types';
 import { appLangMeta } from './languages';
+import viCommon from './locales/vi/common.json';
+import viLanding from './locales/vi/landing.json';
+import viOnboarding from './locales/vi/onboarding.json';
 
 const APP_LANG_STORAGE_KEY = 'vngoweb_lang';
+
+// Loại các file đã import tĩnh ở trên khỏi danh sách lazy-load (tránh Vite gộp nhầm/
+// cảnh báo "dynamically imported but also statically imported").
+const LAZY_LOCALES = import.meta.glob(
+  ['./locales/*/*.json', '!./locales/vi/{common,landing,onboarding}.json'],
+  { import: 'default' },
+);
 
 i18n
   .use(LanguageDetector)
   .use(
-    resourcesToBackend((lng: string, ns: string) => import(`./locales/${lng}/${ns}.json`)),
+    resourcesToBackend((lng: string, ns: string) => {
+      const load = LAZY_LOCALES[`./locales/${lng}/${ns}.json`];
+      return load ? load() : Promise.reject(new Error(`Không có file dịch ${lng}/${ns}.json`));
+    }),
   )
   .use(initReactI18next)
   .init({
@@ -39,8 +58,13 @@ i18n
     fallbackLng: DEFAULT_APP_LANG,
     load: 'languageOnly',           // 'en-US' → 'en', 'vi-VN' → 'vi'
     nonExplicitSupportedLngs: true,
+    // Bản dịch đóng gói sẵn (xem comment đầu file); phần còn lại vẫn qua backend.
+    resources: { vi: { common: viCommon, landing: viLanding, onboarding: viOnboarding } },
+    partialBundledLanguages: true,
     defaultNS: 'common',
-    ns: ['common'],                 // namespace trang nạp thêm qua useTranslation('<ns>')
+    // 'onboarding' nạp ngay lúc init (song song với common) cho ngôn ngữ khác vi —
+    // RootLayout luôn cần nó; để tới lúc render mới nạp là thêm 1 vòng request nối tiếp.
+    ns: ['common', 'onboarding'],   // namespace trang nạp thêm qua useTranslation('<ns>')
     detection: {
       order: ['querystring', 'localStorage'],
       lookupQuerystring: 'lang',

@@ -18,15 +18,15 @@ import { generateUUID } from '../../utils/uuid';
 import { deepMerge } from '../../utils/deepMerge';
 import { useAppContext } from '../../store/AppContext';
 import { ROUTES } from '../../config/routes';
-import { TEMPLATES } from '../../data';
+import { TEMPLATES, ALL_TEMPLATES } from '../../data';
 import { useTemplateAccess } from '../../hooks/useTemplateAccess';
 import { createTemplateCheckout } from '../../services/templateBillingService';
 import {
   COMPONENT_MAP,
-  SCHEMA_MAP,
   TEMPLATE_NAME_MAP,
   TEMPLATE_IMAGE_KEYS,
 } from '../../data/templates/registry';
+import { getTemplateSchema } from '../../data/templates/schemas';
 
 /** Trạng thái thu gọn panel "Tùy chỉnh nội dung" — nhớ qua localStorage giống Sidebar */
 const EDITOR_PANEL_COLLAPSE_KEY = 'wcv-editor-panel-collapsed';
@@ -98,10 +98,11 @@ export default function TemplateEditorPage() {
 
   const templateId = site?.templateId || 'coffe-1';
   const TemplateComponent = COMPONENT_MAP[templateId];
-  const schema = SCHEMA_MAP[templateId] ?? {};
+  const schema = getTemplateSchema(templateId);
   const imageSlots = TEMPLATE_IMAGE_KEYS[templateId] ?? [];
 
-  const templateStaticPrice = TEMPLATES.find(t => t.id === templateId)?.price ?? 0;
+  // ALL_TEMPLATES: site đã tạo từ template category tạm ẩn vẫn phải tính đúng giá.
+  const templateStaticPrice = ALL_TEMPLATES.find(t => t.id === templateId)?.price ?? 0;
   const templateAccess = getEffectiveAccess(templateId, templateStaticPrice, user?.plan ?? 'free');
 
   // ── Load configuration asynchronously ──────────────────────────────────────
@@ -139,6 +140,12 @@ export default function TemplateEditorPage() {
         }
 
         const tId = searchParams.get('template') ?? 'coffe-1';
+        // Không cho tạo site MỚI từ template không còn hiển thị (category tạm ẩn —
+        // xem HIDDEN_CATEGORIES trong registry) dù gõ thẳng URL.
+        if (!TEMPLATES.some(t => t.id === tId)) {
+          if (!ignore) navigate(ROUTES.MARKETPLACE, { replace: true });
+          return;
+        }
         const generatedSlug = await generateSlug(TEMPLATE_NAME_MAP[tId] ?? tId);
         const base: SiteConfig = {
           id: generateUUID(),

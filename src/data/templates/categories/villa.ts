@@ -1,12 +1,5 @@
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
-import villa1Schema from '../../Template/villa/Villa-1/i18n/vi.json';
-import villa2Schema from '../../Template/villa/Villa-2/i18n/vi.json';
-import villa3Schema from '../../Template/villa/Villa-3/i18n/vi.json';
-import villa4Schema from '../../Template/villa/Villa-4/i18n/vi.json';
-import villa5Schema from '../../Template/villa/Villa-5/i18n/vi.json';
-import villa6Schema from '../../Template/villa/Villa-6/i18n/vi.json';
-import villa7Schema from '../../Template/villa/Villa-7/i18n/vi.json';
 import img_Villa1_card from '../../Template/villa/Villa-1/images/card.jpg';
 import img_Villa1_heroBg from '../../Template/villa/Villa-1/images/heroBg.jpg';
 import img_Villa1_roomZenGarden from '../../Template/villa/Villa-1/images/roomZenGarden.jpg';
@@ -120,7 +113,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'zen', 'nghỉ dưỡng', 'Phú Quốc'],
     imageUrl: img_Villa1_card,
     component: lazy(() => import('../../Template/villa/Villa-1/index')),
-    schema: villa1Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa1_heroBg },
       { key: 'roomZenGarden', label: 'Phòng Zen Garden', defaultUrl: img_Villa1_roomZenGarden },
@@ -147,7 +139,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'nghỉ dưỡng', 'zen', 'cao cấp'],
     imageUrl: img_Villa2_card,
     component: lazy(() => import('../../Template/villa/Villa-2/index')),
-    schema: villa2Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa2_heroBg },
       { key: 'introMain', label: 'Ảnh giới thiệu chính', defaultUrl: img_Villa2_introMain },
@@ -176,7 +167,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'Phong Nha', 'du lịch sinh thái', 'trekking'],
     imageUrl: img_Villa3_card,
     component: lazy(() => import('../../Template/villa/Villa-3/index')),
-    schema: villa3Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa3_heroBg },
       { key: 'storyImg', label: 'Ảnh câu chuyện thương hiệu', defaultUrl: img_Villa3_storyImg },
@@ -203,7 +193,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'Tây Nguyên', 'nhà Rông', 'nghỉ dưỡng núi rừng'],
     imageUrl: img_Villa4_card,
     component: lazy(() => import('../../Template/villa/Villa-4/index')),
-    schema: villa4Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa4_heroBg },
       { key: 'heritageImg', label: 'Ảnh di sản văn hoá', defaultUrl: img_Villa4_heritageImg },
@@ -232,7 +221,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'nghỉ dưỡng', 'view biển', 'đặt phòng online'],
     imageUrl: img_Villa5_card,
     component: lazy(() => import('../../Template/villa/Villa-5/index')),
-    schema: villa5Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa5_heroBg },
       { key: 'room1', label: 'Phòng 1 — Deluxe Garden Villa', defaultUrl: img_Villa5_room1 },
@@ -257,7 +245,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'Hà Giang', 'nghỉ dưỡng núi', 'trekking'],
     imageUrl: img_Villa6_card,
     component: lazy(() => import('../../Template/villa/Villa-6/index')),
-    schema: villa6Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa6_heroBg },
       { key: 'aboutImg', label: 'Ảnh giới thiệu', defaultUrl: img_Villa6_aboutImg },
@@ -284,7 +271,6 @@ export const VILLA_TEMPLATES: TemplateDefinition[] = [
     tags: ['villa', 'homestay', 'nghỉ dưỡng', 'Phong Nha', 'đồi rừng'],
     imageUrl: img_Villa7_card,
     component: lazy(() => import('../../Template/villa/Villa-7/index')),
-    schema: villa7Schema,
     imageSlots: [
       { key: 'heroBg', label: 'Ảnh nền Hero', defaultUrl: img_Villa7_heroBg },
       { key: 'introImg', label: 'Ảnh giới thiệu', defaultUrl: img_Villa7_introImg },

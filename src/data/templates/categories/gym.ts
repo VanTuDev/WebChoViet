@@ -4,10 +4,6 @@
 import { lazy } from 'react';
 import type { TemplateDefinition } from '../types';
 
-import schema_gym1 from '../../Template/gym/Gym-1/i18n/vi.json';
-import schema_gym2 from '../../Template/gym/Gym-2/i18n/vi.json';
-import schema_gym3 from '../../Template/gym/Gym-3/i18n/vi.json';
-import schema_gym4 from '../../Template/gym/Gym-4/i18n/vi.json';
 import img_Gym1_card from '../../Template/gym/Gym-1/images/card.jpg';
 import img_Gym1_hero from '../../Template/gym/Gym-1/images/hero.jpg';
 import img_Gym2_card from '../../Template/gym/Gym-2/images/card.jpg';
@@ -35,7 +31,6 @@ export const GYM_TEMPLATES: TemplateDefinition[] = [
     tags: ['Gym', 'Fitness', 'Bảng Giá'],
     imageUrl: img_Gym1_card,
     component: lazy(() => import('../../Template/gym/Gym-1/index')),
-    schema: schema_gym1 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Hero', defaultUrl: img_Gym1_hero },
     ],
@@ -51,7 +46,6 @@ export const GYM_TEMPLATES: TemplateDefinition[] = [
     tags: ['Gym', 'Công Nghệ', 'Tông Tối'],
     imageUrl: img_Gym2_card,
     component: lazy(() => import('../../Template/gym/Gym-2/index')),
-    schema: schema_gym2 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Hero', defaultUrl: img_Gym2_hero },
       { key: 'feature', label: 'Ảnh Ánh Sáng Sinh Học', defaultUrl: img_Gym2_feature },
@@ -68,7 +62,6 @@ export const GYM_TEMPLATES: TemplateDefinition[] = [
     tags: ['Gym', 'Cao Cấp', 'Yoga'],
     imageUrl: img_Gym3_card,
     component: lazy(() => import('../../Template/gym/Gym-3/index')),
-    schema: schema_gym3 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Hero', defaultUrl: img_Gym3_hero },
       { key: 'program_0', label: 'Ảnh Phòng Gym Hiện Đại', defaultUrl: img_Gym3_program0 },
@@ -87,7 +80,6 @@ export const GYM_TEMPLATES: TemplateDefinition[] = [
     tags: ['Gym', 'Futuristic', 'Yoga'],
     imageUrl: img_Gym4_card,
     component: lazy(() => import('../../Template/gym/Gym-4/index')),
-    schema: schema_gym4 as Record<string, unknown>,
     imageSlots: [
       { key: 'hero', label: 'Ảnh Hero', defaultUrl: img_Gym4_hero },
       { key: 'tech', label: 'Ảnh Công Nghệ Aura-Sense', defaultUrl: img_Gym4_tech },

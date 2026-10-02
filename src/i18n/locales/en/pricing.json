@@ -5,11 +5,13 @@
   },
   "heading": "vngoweb Pricing",
   "subheading": "No hidden fees. Secure payments via PayOS (bank transfer/VietQR).",
-  "cycle": {
-    "monthly": "Monthly",
-    "yearly": "Yearly (save ~17%)",
-    "monthlyShort": "Monthly",
-    "yearlyShort": "Yearly"
+  "price": {
+    "listPrice": "Regular price",
+    "firstYear": "first year",
+    "perYear": "year",
+    "forever": "forever",
+    "renewalNote": "From year 2: {{price}}/year",
+    "renewalApplied": "Renewal price — you've used this plan before"
   },
   "trust": {
     "secure": "Secure PayOS checkout",
@@ -62,10 +64,9 @@
   },
   "cta": {
     "current": "Current plan",
-    "currentPlan": "Current plan",
     "lower": "Lower plan",
-    "changeCycle": "Change billing cycle",
-    "upgrade": "Upgrade now"
+    "upgrade": "Upgrade now",
+    "renew": "Renew for 1 more year"
   },
   "subscription": {
     "cancelScheduled": "Non-renewal confirmed — your plan will revert to Free on {{date}}.",
