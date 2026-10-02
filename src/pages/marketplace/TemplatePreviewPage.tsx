@@ -59,7 +59,7 @@ export default function TemplatePreviewPage() {
   return (
     <div className="relative">
       <Helmet>
-        <title>Xem trước {template.name} — VNGOWEB</title>
+        <title>{`Xem trước ${template.name} — VNGOWEB`}</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 

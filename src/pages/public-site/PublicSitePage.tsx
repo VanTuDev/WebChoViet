@@ -157,7 +157,8 @@ function TemplateSite({ config, isTenantHost }: { config: SiteConfig; isTenantHo
   return (
     <div className="relative">
       <Helmet>
-        <title>{config.name} — VNGOWEB</title>
+        {/* 1 chuỗi duy nhất: React 19 bỏ trống <title> có nhiều children (biến + chữ) */}
+        <title>{`${config.name} — VNGOWEB`}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
         {availableLangs.map(code => (
