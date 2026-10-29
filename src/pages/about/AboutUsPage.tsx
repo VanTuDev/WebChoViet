@@ -1,4 +1,6 @@
 // ─── Trang Về Chúng Tôi — 100% semantic HTML5, chuẩn SEO + GEO ────────────────
+// Thứ tự: Hero → Đội ngũ sản phẩm (điểm nhấn, carousel) → Sứ mệnh → Giá trị → Phân biệt
+// thương hiệu → Liên hệ → Người sáng lập → CTA.
 // Nội dung viết dạng câu khẳng định tự đứng vững (AI search trích xuất từng đoạn);
 // JSON-LD AboutPage + Person khớp CHÍNH XÁC với text hiển thị (Google đối chiếu).
 
@@ -17,6 +19,7 @@ import {
 } from '../../config/contact';
 import { TEAM_MEMBERS, FOUNDER_PHOTO_ID, teamPhoto, type TeamGroupId } from '../../config/team';
 import HreflangLinks from '../../i18n/HreflangLinks';
+import TeamCarousel from './_components/TeamCarousel';
 
 const VALUE_ICONS = [Code2, Rocket, Languages, BadgeDollarSign];
 
@@ -26,28 +29,12 @@ interface ValueItem {
 }
 
 /** Class Tailwind phải viết nguyên văn (không nối chuỗi) để Tailwind quét được */
-const GROUP_STYLE: Record<TeamGroupId, {
-  icon: typeof Cog;
-  frame: string;      // viền gradient quanh thẻ thành viên
-  tile: string;       // nền thẻ giới thiệu nhóm
-  chip: string;       // nhãn nhóm trên ảnh
-  check: string;      // icon gạch đầu dòng phụ trách
-}> = {
-  ops: {
-    icon: Cog,
-    frame: 'from-secondary-container via-primary-container to-primary',
-    tile: 'from-secondary to-primary',
-    chip: 'bg-secondary-container text-on-secondary-container',
-    check: 'bg-white/20 text-white',
-  },
-  marketing: {
-    icon: Megaphone,
-    frame: 'from-primary-container via-primary to-tertiary',
-    tile: 'from-primary to-tertiary',
-    chip: 'bg-tertiary-container text-on-tertiary-container',
-    check: 'bg-white/20 text-white',
-  },
+const GROUP_STYLE: Record<TeamGroupId, { icon: typeof Cog; tile: string }> = {
+  ops: { icon: Cog, tile: 'from-secondary to-primary' },
+  marketing: { icon: Megaphone, tile: 'from-primary to-tertiary' },
 };
+
+const GROUPS: TeamGroupId[] = ['ops', 'marketing'];
 
 export default function AboutUsPage() {
   const { t } = useTranslation('about');
@@ -81,6 +68,7 @@ export default function AboutUsPage() {
     ...m,
     role: t(`team.members.${m.id}.role`),
     bio: t(`team.members.${m.id}.bio`),
+    groupTitle: t(`team.groups.${m.group}.title`),
   }));
 
   // JSON-LD: AboutPage → Organization → founder + employee (Person) — cùng @id với schema
@@ -121,8 +109,6 @@ export default function AboutUsPage() {
     },
   };
 
-  const groups: TeamGroupId[] = ['ops', 'marketing'];
-
   return (
     <article ref={pageRef} className="py-6 px-4 sm:px-6 xl:px-10 w-full">
       <Helmet>
@@ -134,8 +120,8 @@ export default function AboutUsPage() {
 
       <div className="max-w-6xl mx-auto space-y-20">
 
-        {/* ── Hero: nền gradient thương hiệu + dải chân dung cả đội ───────────── */}
-        <header className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-viet-lacquer via-viet-maroon to-tertiary text-white px-6 py-14 sm:px-12 sm:py-20 text-center">
+        {/* ── Hero: nền gradient thương hiệu + dải chân dung đội ngũ ──────────── */}
+        <header className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-viet-lacquer via-viet-maroon to-tertiary text-white px-6 py-12 sm:px-12 sm:py-16 text-center">
           <span aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 h-72 w-72 rounded-full bg-secondary-container/30 blur-3xl" />
           <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-16 h-80 w-80 rounded-full bg-primary-container/40 blur-3xl" />
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:22px_22px]" />
@@ -151,10 +137,10 @@ export default function AboutUsPage() {
             {t('hero.description')}
           </p>
 
-          {/* Dải avatar cả đội — ảnh thật, alt = tên + vai trò */}
-          <figure className="mt-10 flex flex-col items-center gap-3">
+          {/* Dải avatar đội ngũ — ảnh thật, alt = tên + vai trò */}
+          <figure className="mt-9 flex flex-col items-center gap-3">
             <ul className="flex items-center justify-center list-none">
-              {[{ id: FOUNDER_PHOTO_ID, name: FOUNDER_NAME, role: founderRole }, ...members].map((p, i) => (
+              {members.map((p, i) => (
                 <li key={p.id} className={i === 0 ? '' : '-ml-3 sm:-ml-4'}>
                   <img
                     src={teamPhoto(p.id, 480)}
@@ -171,6 +157,97 @@ export default function AboutUsPage() {
             </figcaption>
           </figure>
         </header>
+
+        {/* ── SEO+GEO: Đội ngũ sản phẩm — điểm nhấn của trang ─────────────────────
+         * SEO   : <h2> chứa từ khoá "đội ngũ" + brand; ảnh có alt thật (tên — vai trò), width/height
+         *         chống CLS, loading=lazy; JSON-LD Organization.employee khớp tên/vai trò hiển thị.
+         * GEO B1: Heading nêu thực thể rõ ràng ("Đội ngũ sản phẩm VNGOWEB").
+         * GEO B2: Đoạn ngay sau heading trả lời trực tiếp: gồm bao nhiêu người, chia mảng nào.
+         * GEO B3: Phụ trách từng mảng + từng thành viên trình bày bằng <ul>, không viết đoạn dài.
+         * GEO B5: Tên/vai trò là text thật trong HTML (không nằm trong ảnh), nhất quán với JSON-LD.
+         * ──────────────────────────────────────────────────────────────────────── */}
+        <section
+          aria-labelledby="about-team"
+          className="relative isolate overflow-hidden rounded-[2rem] border border-primary/15 bg-gradient-to-b from-primary-fixed/60 via-white to-tertiary-fixed/40 px-4 py-12 sm:px-10 sm:py-16"
+        >
+          <span aria-hidden="true" className="pointer-events-none absolute -top-20 left-1/2 -z-10 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-primary-container/25 blur-3xl" />
+
+          <div className="reveal-3d text-center max-w-3xl mx-auto mb-4">
+            <p className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
+              <Users className="h-3.5 w-3.5" aria-hidden="true" />
+              {BRAND_NAME}
+            </p>
+            <h2 id="about-team" className="text-3xl sm:text-5xl font-display font-extrabold text-gray-900">
+              {t('team.heading')}
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-gray-500 leading-relaxed">
+              {t('team.intro')}
+            </p>
+          </div>
+
+          <div className="reveal-3d">
+            <TeamCarousel members={members} brand={BRAND_NAME} />
+          </div>
+
+          {/* Tóm tắt phụ trách từng mảng */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            {GROUPS.map((g, gi) => {
+              const style = GROUP_STYLE[g];
+              const GroupIcon = style.icon;
+              const duties = t(`team.groups.${g}.duties`, { returnObjects: true }) as string[];
+              const groupMembers = members.filter((m) => m.group === g);
+              return (
+                <section
+                  key={g}
+                  aria-labelledby={`team-${g}`}
+                  className={`reveal-3d relative isolate overflow-hidden rounded-3xl bg-gradient-to-br ${style.tile} text-white p-7 flex flex-col gap-5`}
+                  style={{ transitionDelay: `${gi * 120}ms` }}
+                >
+                  <span aria-hidden="true" className="pointer-events-none absolute -right-10 -bottom-10 h-44 w-44 rounded-full bg-white/15 blur-2xl" />
+                  <div className="flex items-center gap-4">
+                    <span className="inline-flex items-center justify-center w-12 h-12 shrink-0 rounded-2xl bg-white/20 backdrop-blur" aria-hidden="true">
+                      <GroupIcon className="h-6 w-6" />
+                    </span>
+                    <h3 id={`team-${g}`} className="text-2xl font-display font-extrabold">
+                      {t(`team.groups.${g}.title`)}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-white/85 leading-relaxed">{t(`team.groups.${g}.description`)}</p>
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-white/70 mb-2">
+                      {t('team.dutiesLabel')}
+                    </p>
+                    <ul className="space-y-2 list-none">
+                      {duties.map((d) => (
+                        <li key={d} className="flex items-start gap-2 text-sm">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20" aria-hidden="true">
+                            <Check className="h-3 w-3" />
+                          </span>
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <ul className="flex flex-wrap gap-2 list-none mt-auto">
+                    {groupMembers.map((m) => (
+                      <li key={m.id} className="flex items-center gap-2 rounded-full bg-white/15 border border-white/20 py-1 pl-1 pr-3 text-xs font-semibold">
+                        <img
+                          src={teamPhoto(m.id, 480)}
+                          alt=""
+                          width={480}
+                          height={600}
+                          loading="lazy"
+                          className="h-7 w-7 rounded-full object-cover object-top bg-slate-300"
+                        />
+                        {m.name}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
+          </div>
+        </section>
 
         {/* ── Sứ mệnh ──────────────────────────────────────────────────────── */}
         <section aria-labelledby="about-mission" className="reveal-3d bg-gradient-to-br from-fnb-cream to-white border border-primary/15 rounded-3xl p-8 sm:p-10">
@@ -205,163 +282,6 @@ export default function AboutUsPage() {
               );
             })}
           </ul>
-        </section>
-
-        {/* ── Người sáng lập — text hiển thị khớp JSON-LD Person ──────────── */}
-        <section aria-labelledby="about-founder" className="reveal-3d relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-viet-lacquer to-inverse-surface text-white p-6 sm:p-10">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-tertiary/40 blur-3xl" />
-          <div className="grid gap-8 md:grid-cols-[minmax(0,300px)_1fr] items-center">
-            <figure className="mx-auto w-full max-w-[300px] rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-              <div className="rounded-[1.75rem] p-1 bg-gradient-to-br from-secondary-container via-primary-container to-tertiary-container shadow-2xl shadow-primary/30">
-                <img
-                  src={teamPhoto(FOUNDER_PHOTO_ID)}
-                  srcSet={`${teamPhoto(FOUNDER_PHOTO_ID, 480)} 480w, ${teamPhoto(FOUNDER_PHOTO_ID)} 800w`}
-                  sizes="(min-width: 768px) 300px, 80vw"
-                  alt={`${FOUNDER_NAME} — ${founderRole}, ${BRAND_NAME}`}
-                  width={800}
-                  height={1000}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full aspect-[4/5] object-cover object-top rounded-[1.5rem] bg-slate-300"
-                />
-              </div>
-            </figure>
-
-            <div className="space-y-4">
-              <h2 id="about-founder" className="text-sm font-semibold uppercase tracking-widest text-secondary-container">
-                {t('founder.heading')}
-              </h2>
-              <p className="text-3xl sm:text-4xl font-display font-extrabold">{FOUNDER_NAME}</p>
-              <p className="inline-flex flex-wrap items-center gap-2 text-sm">
-                <span className="bg-white/10 border border-white/15 rounded-full px-3 py-1">{founderRole}</span>
-                <span className="bg-white/10 border border-white/15 rounded-full px-3 py-1">{FOUNDER_SCHOOL}</span>
-              </p>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
-                {t('founder.bio')}
-              </p>
-              <ul className="flex flex-wrap gap-3 list-none pt-1">
-                {[
-                  { label: 'Facebook', href: FOUNDER_FACEBOOK },
-                  { label: 'Zalo', href: FOUNDER_ZALO },
-                ].map((s) => (
-                  <li key={s.label}>
-                    <a
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 bg-white text-viet-lacquer text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-transform"
-                    >
-                      {s.label}
-                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ── SEO+GEO: Đội ngũ sản phẩm ───────────────────────────────────────────
-         * SEO   : <h2> chứa từ khoá "đội ngũ" + brand; ảnh có alt thật (tên — vai trò), width/height
-         *         chống CLS, loading=lazy; JSON-LD Organization.employee khớp tên/vai trò hiển thị.
-         * GEO B1: Heading nêu thực thể rõ ràng ("Đội ngũ sản phẩm VNGOWEB").
-         * GEO B2: Đoạn ngay sau heading trả lời trực tiếp: gồm bao nhiêu người, chia mảng nào.
-         * GEO B3: Phụ trách từng mảng + từng thành viên trình bày bằng <ul>, không viết đoạn dài.
-         * GEO B5: Tên/vai trò là text thật trong HTML (không nằm trong ảnh), nhất quán với JSON-LD.
-         * ──────────────────────────────────────────────────────────────────────── */}
-        <section aria-labelledby="about-team">
-          <div className="reveal-3d text-center max-w-3xl mx-auto mb-12">
-            <p className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
-              <Users className="h-3.5 w-3.5" aria-hidden="true" />
-              {BRAND_NAME}
-            </p>
-            <h2 id="about-team" className="text-2xl sm:text-4xl font-display font-extrabold text-gray-900">
-              {t('team.heading')}
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-gray-500 leading-relaxed">
-              {t('team.intro')}
-            </p>
-          </div>
-
-          <div className="space-y-14">
-            {groups.map((g) => {
-              const style = GROUP_STYLE[g];
-              const GroupIcon = style.icon;
-              const groupMembers = members.filter((m) => m.group === g);
-              const duties = t(`team.groups.${g}.duties`, { returnObjects: true }) as string[];
-              // Nhóm 2 người: thẻ giới thiệu chiếm 2 cột; nhóm 3 người: chiếm 1 cột → luôn đủ 4 cột
-              const tileSpan = groupMembers.length === 2 ? 'lg:col-span-2' : 'lg:col-span-1';
-              return (
-                <section key={g} aria-labelledby={`team-${g}`}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-                    <header
-                      className={`reveal-3d relative isolate overflow-hidden rounded-3xl bg-gradient-to-br ${style.tile} text-white p-7 sm:col-span-2 ${tileSpan} flex flex-col justify-between gap-6`}
-                    >
-                      <span aria-hidden="true" className="pointer-events-none absolute -right-10 -bottom-10 h-44 w-44 rounded-full bg-white/15 blur-2xl" />
-                      <span className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/20 backdrop-blur" aria-hidden="true">
-                        <GroupIcon className="h-6 w-6" />
-                      </span>
-                      <div className="space-y-3">
-                        <h3 id={`team-${g}`} className="text-2xl font-display font-extrabold">
-                          {t(`team.groups.${g}.title`)}
-                        </h3>
-                        <p className="text-sm text-white/85 leading-relaxed">
-                          {t(`team.groups.${g}.description`)}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-widest text-white/70 mb-2">
-                          {t('team.dutiesLabel')}
-                        </p>
-                        <ul className="space-y-2 list-none">
-                          {duties.map((d) => (
-                            <li key={d} className="flex items-start gap-2 text-sm">
-                              <span className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${style.check}`} aria-hidden="true">
-                                <Check className="h-3 w-3" />
-                              </span>
-                              {d}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </header>
-
-                    <ul className="contents list-none">
-                      {groupMembers.map((m, i) => (
-                        <li key={m.id} className="reveal-3d" style={{ transitionDelay: `${(i + 1) * 110}ms` }}>
-                          <article className={`group card-3d h-full rounded-3xl p-[3px] bg-gradient-to-br ${style.frame} shadow-lg shadow-primary/10`}>
-                            <div className="h-full flex flex-col overflow-hidden rounded-[1.35rem] bg-white">
-                              <figure className="relative aspect-[4/5] overflow-hidden bg-slate-300">
-                                <img
-                                  src={teamPhoto(m.id)}
-                                  srcSet={`${teamPhoto(m.id, 480)} 480w, ${teamPhoto(m.id)} 800w`}
-                                  sizes="(min-width: 1024px) 270px, (min-width: 640px) 45vw, 90vw"
-                                  alt={`${m.name} — ${m.role}, ${BRAND_NAME}`}
-                                  width={800}
-                                  height={1000}
-                                  loading="lazy"
-                                  decoding="async"
-                                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[11px] font-bold shadow ${style.chip}`}>
-                                  {t(`team.groups.${g}.title`)}
-                                </span>
-                                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-viet-lacquer/95 via-viet-lacquer/70 to-transparent px-4 pb-4 pt-12 text-white">
-                                  <h4 className="text-lg font-display font-extrabold leading-tight">{m.name}</h4>
-                                  <p className="mt-0.5 text-xs font-medium text-white/85">{m.role}</p>
-                                </figcaption>
-                              </figure>
-                              <p className="p-4 text-xs text-gray-500 leading-relaxed">{m.bio}</p>
-                            </div>
-                          </article>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </section>
-              );
-            })}
-          </div>
         </section>
 
         {/* ── SEO+GEO: Phân biệt thương hiệu ─────────────────────────────────────
@@ -411,6 +331,60 @@ export default function AboutUsPage() {
               <span className="text-sm font-bold text-gray-900">{DOMAIN}</span>
             </span>
           </address>
+        </section>
+
+        {/* ── Người sáng lập (cuối trang) — text hiển thị khớp JSON-LD Person ─── */}
+        <section aria-labelledby="about-founder" className="reveal-3d relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-viet-lacquer to-inverse-surface text-white p-6 sm:p-10">
+          <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-tertiary/40 blur-3xl" />
+          <div className="grid gap-8 md:grid-cols-[minmax(0,260px)_1fr] items-center">
+            <figure className="mx-auto w-full max-w-[260px] rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+              <div className="rounded-[1.75rem] p-1 bg-gradient-to-br from-secondary-container via-primary-container to-tertiary-container shadow-2xl shadow-primary/30">
+                <img
+                  src={teamPhoto(FOUNDER_PHOTO_ID)}
+                  srcSet={`${teamPhoto(FOUNDER_PHOTO_ID, 480)} 480w, ${teamPhoto(FOUNDER_PHOTO_ID)} 800w`}
+                  sizes="(min-width: 768px) 260px, 70vw"
+                  alt={`${FOUNDER_NAME} — ${founderRole}, ${BRAND_NAME}`}
+                  width={800}
+                  height={1000}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[4/5] object-cover object-top rounded-[1.5rem] bg-slate-300"
+                />
+              </div>
+            </figure>
+
+            <div className="space-y-4">
+              <h2 id="about-founder" className="text-sm font-semibold uppercase tracking-widest text-secondary-container">
+                {t('founder.heading')}
+              </h2>
+              <p className="text-3xl sm:text-4xl font-display font-extrabold">{FOUNDER_NAME}</p>
+              <p className="inline-flex flex-wrap items-center gap-2 text-sm">
+                <span className="bg-white/10 border border-white/15 rounded-full px-3 py-1">{founderRole}</span>
+                <span className="bg-white/10 border border-white/15 rounded-full px-3 py-1">{FOUNDER_SCHOOL}</span>
+              </p>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+                {t('founder.bio')}
+              </p>
+              <ul className="flex flex-wrap gap-3 list-none pt-1">
+                {[
+                  { label: 'Facebook', href: FOUNDER_FACEBOOK },
+                  { label: 'Zalo', href: FOUNDER_ZALO },
+                ].map((s) => (
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 bg-white text-viet-lacquer text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                    >
+                      {s.label}
+                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* ── CTA ──────────────────────────────────────────────────────────── */}

@@ -90,6 +90,12 @@
         "role": "Community & Social Media Specialist",
         "bio": "Manages Facebook and TikTok, nurtures the community and listens to shop owners' feedback."
       }
+    },
+    "carousel": {
+      "label": "Meet each team member",
+      "prev": "Previous member",
+      "next": "Next member",
+      "pick": "View {{name}}"
     }
   },
   "contact": {

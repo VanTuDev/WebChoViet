@@ -90,6 +90,12 @@
         "role": "Chuyên viên cộng đồng & mạng xã hội",
         "bio": "Quản lý Facebook, TikTok, chăm sóc cộng đồng và lắng nghe phản hồi từ chủ cửa hàng."
       }
+    },
+    "carousel": {
+      "label": "Giới thiệu từng thành viên",
+      "prev": "Thành viên trước",
+      "next": "Thành viên tiếp theo",
+      "pick": "Xem {{name}}"
     }
   },
   "contact": {
