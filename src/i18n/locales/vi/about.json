@@ -44,6 +44,54 @@
     "school": "Đại học FPT Đà Nẵng",
     "bio": "Nguyễn Văn Tú là lập trình viên và nhà sáng lập VNGOWEB, được đào tạo tại Đại học FPT Đà Nẵng. Anh trực tiếp thiết kế và xây dựng toàn bộ nền tảng VNGOWEB — từ kho giao diện, trình chỉnh sửa kéo thả cho tới hệ thống thanh toán và phân tích dữ liệu — với mục tiêu đưa công nghệ web hiện đại đến gần hơn với các hộ kinh doanh nhỏ."
   },
+  "team": {
+    "heading": "Đội ngũ sản phẩm VNGOWEB",
+    "intro": "Đội ngũ sản phẩm VNGOWEB gồm 5 thành viên chia làm hai mảng — vận hành sản phẩm và marketing — cùng đồng hành với nhà sáng lập để đưa nền tảng đến tay mỗi chủ cửa hàng.",
+    "stackLabel": "Những gương mặt đứng sau VNGOWEB",
+    "dutiesLabel": "Phụ trách",
+    "groups": {
+      "ops": {
+        "title": "Vận hành sản phẩm",
+        "description": "Giữ cho nền tảng chạy trơn tru và đồng hành cùng khách hàng sau khi xuất bản website.",
+        "duties": [
+          "Giám sát chất lượng và hoạt động của nền tảng",
+          "Kiểm thử và cập nhật kho giao diện",
+          "Hỗ trợ khách hàng, xử lý yêu cầu kỹ thuật"
+        ]
+      },
+      "marketing": {
+        "title": "Marketing",
+        "description": "Đưa VNGOWEB đến đúng những chủ cửa hàng đang cần một website.",
+        "duties": [
+          "Chiến lược thương hiệu và chiến dịch",
+          "Nội dung và SEO/GEO",
+          "Cộng đồng và mạng xã hội"
+        ]
+      }
+    },
+    "members": {
+      "hieu": {
+        "role": "Trưởng vận hành sản phẩm",
+        "bio": "Điều phối quy trình vận hành nền tảng, theo dõi chất lượng dịch vụ và đảm bảo mọi tính năng mới đến tay khách hàng đúng hẹn."
+      },
+      "khoa": {
+        "role": "Chuyên viên vận hành & chất lượng giao diện",
+        "bio": "Kiểm thử, cập nhật kho giao diện và xử lý yêu cầu kỹ thuật để website của khách hàng luôn chạy ổn định."
+      },
+      "hoai-mi": {
+        "role": "Trưởng marketing",
+        "bio": "Xây dựng chiến lược thương hiệu và các chiến dịch thu hút chủ cửa hàng đến với VNGOWEB."
+      },
+      "linh": {
+        "role": "Chuyên viên nội dung & SEO",
+        "bio": "Viết nội dung và tối ưu SEO/GEO để VNGOWEB cùng website khách hàng dễ được tìm thấy trên Google và công cụ AI."
+      },
+      "nga": {
+        "role": "Chuyên viên cộng đồng & mạng xã hội",
+        "bio": "Quản lý Facebook, TikTok, chăm sóc cộng đồng và lắng nghe phản hồi từ chủ cửa hàng."
+      }
+    }
+  },
   "contact": {
     "heading": "Liên hệ với chúng tôi",
     "description": "Bạn cần tư vấn tạo website, hợp tác hoặc hỗ trợ kỹ thuật? Đội ngũ VNGOWEB luôn sẵn sàng.",
