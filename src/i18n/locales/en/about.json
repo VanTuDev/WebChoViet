@@ -89,14 +89,19 @@
       "nga": {
         "role": "Community & Social Media Specialist",
         "bio": "Manages Facebook and TikTok, nurtures the community and listens to shop owners' feedback."
+      },
+      "tu": {
+        "bio": "Designed and built the entire VNGOWEB platform — from the template library and drag-and-drop editor to payments and analytics."
       }
     },
     "carousel": {
       "label": "Meet each team member",
       "prev": "Previous member",
       "next": "Next member",
-      "pick": "View {{name}}"
-    }
+      "pick": "View {{name}}",
+      "page": "Page {{n}}"
+    },
+    "founderChip": "Founder"
   },
   "contact": {
     "heading": "Get in touch",

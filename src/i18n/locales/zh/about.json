@@ -89,14 +89,19 @@
       "nga": {
         "role": "社区与社交媒体专员",
         "bio": "运营 Facebook 和 TikTok，维护社区并倾听店主的反馈。"
+      },
+      "tu": {
+        "bio": "亲自设计并开发了整个 VNGOWEB 平台——从模板库、拖放编辑器到支付和数据分析。"
       }
     },
     "carousel": {
       "label": "团队成员介绍",
       "prev": "上一位成员",
       "next": "下一位成员",
-      "pick": "查看 {{name}}"
-    }
+      "pick": "查看 {{name}}",
+      "page": "第 {{n}} 页"
+    },
+    "founderChip": "创始人"
   },
   "contact": {
     "heading": "联系我们",

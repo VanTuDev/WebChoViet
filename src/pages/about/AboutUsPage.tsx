@@ -19,7 +19,7 @@ import {
 } from '../../config/contact';
 import { TEAM_MEMBERS, FOUNDER_PHOTO_ID, teamPhoto, type TeamGroupId } from '../../config/team';
 import HreflangLinks from '../../i18n/HreflangLinks';
-import TeamCarousel from './_components/TeamCarousel';
+import TeamCarousel, { type CarouselMember } from './_components/TeamCarousel';
 
 const VALUE_ICONS = [Code2, Rocket, Languages, BadgeDollarSign];
 
@@ -71,6 +71,15 @@ export default function AboutUsPage() {
     groupTitle: t(`team.groups.${m.group}.title`),
   }));
 
+  // Thẻ giới thiệu từng người: 5 thành viên + người sáng lập ở cuối → 6 thẻ chia đều 2 trang × 3
+  const cards: CarouselMember[] = [
+    ...members.map((m) => ({ id: m.id, name: m.name, role: m.role, bio: m.bio, group: m.group, chip: m.groupTitle })),
+    {
+      id: FOUNDER_PHOTO_ID, name: FOUNDER_NAME, role: founderRole, bio: t('team.members.tu.bio'),
+      group: 'founder' as const, chip: t('team.founderChip'),
+    },
+  ];
+
   // JSON-LD: AboutPage → Organization → founder + employee (Person) — cùng @id với schema
   // Organization trong index.html để Google gộp thành 1 thực thể duy nhất.
   const jsonLd = {
@@ -118,10 +127,10 @@ export default function AboutUsPage() {
       </Helmet>
       <HreflangLinks path={ROUTES.ABOUT} />
 
-      <div className="max-w-6xl mx-auto space-y-20">
+      <div className="max-w-6xl mx-auto space-y-16">
 
-        {/* ── Hero: nền gradient thương hiệu + dải chân dung đội ngũ ──────────── */}
-        <header className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-viet-lacquer via-viet-maroon to-tertiary text-white px-6 py-12 sm:px-12 sm:py-16 text-center">
+        {/* ── Hero: tiêu đề gọn để thẻ ảnh đội ngũ lên sát đầu trang ─────────── */}
+        <header className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-viet-lacquer via-viet-maroon to-tertiary text-white px-6 py-10 sm:px-12 sm:py-12 text-center">
           <span aria-hidden="true" className="pointer-events-none absolute -top-24 -left-20 h-72 w-72 rounded-full bg-secondary-container/30 blur-3xl" />
           <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-16 h-80 w-80 rounded-full bg-primary-container/40 blur-3xl" />
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:22px_22px]" />
@@ -130,32 +139,12 @@ export default function AboutUsPage() {
             <Users className="h-3.5 w-3.5" aria-hidden="true" />
             {t('hero.badge')}
           </p>
-          <h1 className="mt-5 text-3xl sm:text-5xl font-display font-extrabold leading-tight max-w-4xl mx-auto">
+          <h1 className="mt-4 text-2xl sm:text-4xl font-display font-extrabold leading-tight max-w-4xl mx-auto">
             {t('hero.title')}
           </h1>
-          <p className="mt-5 text-sm sm:text-base text-white/75 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-white/75 max-w-2xl mx-auto leading-relaxed">
             {t('hero.description')}
           </p>
-
-          {/* Dải avatar đội ngũ — ảnh thật, alt = tên + vai trò */}
-          <figure className="mt-9 flex flex-col items-center gap-3">
-            <ul className="flex items-center justify-center list-none">
-              {members.map((p, i) => (
-                <li key={p.id} className={i === 0 ? '' : '-ml-3 sm:-ml-4'}>
-                  <img
-                    src={teamPhoto(p.id, 480)}
-                    alt={`${p.name} — ${p.role}`}
-                    width={480}
-                    height={600}
-                    className="h-14 w-14 sm:h-20 sm:w-20 rounded-full object-cover object-top ring-4 ring-viet-lacquer bg-slate-300 hover:-translate-y-1.5 hover:scale-110 transition-transform duration-300"
-                  />
-                </li>
-              ))}
-            </ul>
-            <figcaption className="text-xs sm:text-sm font-semibold tracking-wide text-white/80">
-              {t('team.stackLabel')}
-            </figcaption>
-          </figure>
         </header>
 
         {/* ── SEO+GEO: Đội ngũ sản phẩm — điểm nhấn của trang ─────────────────────
@@ -186,7 +175,7 @@ export default function AboutUsPage() {
           </div>
 
           <div className="reveal-3d">
-            <TeamCarousel members={members} brand={BRAND_NAME} />
+            <TeamCarousel members={cards} brand={BRAND_NAME} />
           </div>
 
           {/* Tóm tắt phụ trách từng mảng */}

@@ -89,14 +89,19 @@
       "nga": {
         "role": "Chuyên viên cộng đồng & mạng xã hội",
         "bio": "Quản lý Facebook, TikTok, chăm sóc cộng đồng và lắng nghe phản hồi từ chủ cửa hàng."
+      },
+      "tu": {
+        "bio": "Thiết kế và xây dựng toàn bộ nền tảng VNGOWEB — từ kho giao diện, trình chỉnh sửa kéo thả tới thanh toán và phân tích dữ liệu."
       }
     },
     "carousel": {
       "label": "Giới thiệu từng thành viên",
       "prev": "Thành viên trước",
       "next": "Thành viên tiếp theo",
-      "pick": "Xem {{name}}"
-    }
+      "pick": "Xem {{name}}",
+      "page": "Trang {{n}}"
+    },
+    "founderChip": "Nhà sáng lập"
   },
   "contact": {
     "heading": "Liên hệ với chúng tôi",
