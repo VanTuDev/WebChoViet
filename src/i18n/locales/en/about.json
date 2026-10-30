@@ -45,62 +45,10 @@
     "bio": "Nguyễn Văn Tú is a software developer and the founder of VNGOWEB, trained at FPT University Da Nang. He personally designed and built the entire VNGOWEB platform — from the template store and drag-and-drop editor to the payment system and analytics — with the goal of bringing modern web technology closer to small businesses."
   },
   "team": {
-    "heading": "The VNGOWEB product team",
-    "intro": "The VNGOWEB product team has 5 members split into two areas — product operations and marketing — working alongside the founder to put the platform in the hands of every shop owner.",
-    "stackLabel": "The people behind VNGOWEB",
-    "dutiesLabel": "Responsibilities",
-    "groups": {
-      "ops": {
-        "title": "Product operations",
-        "description": "Keeps the platform running smoothly and supports customers after their website is published.",
-        "duties": [
-          "Monitoring platform quality and uptime",
-          "Testing and updating the template library",
-          "Customer support and technical requests"
-        ]
-      },
-      "marketing": {
-        "title": "Marketing",
-        "description": "Brings VNGOWEB to the shop owners who need a website.",
-        "duties": [
-          "Brand strategy and campaigns",
-          "Content and SEO/GEO",
-          "Community and social media"
-        ]
-      }
-    },
-    "members": {
-      "hieu": {
-        "role": "Head of Product Operations",
-        "bio": "Coordinates platform operations, tracks service quality and makes sure every new feature reaches customers on time."
-      },
-      "khoa": {
-        "role": "Operations & Template Quality Specialist",
-        "bio": "Tests and updates the template library and handles technical requests so customer websites stay stable."
-      },
-      "hoai-mi": {
-        "role": "Head of Marketing",
-        "bio": "Builds the brand strategy and the campaigns that bring shop owners to VNGOWEB."
-      },
-      "linh": {
-        "role": "Content & SEO Specialist",
-        "bio": "Writes content and optimizes SEO/GEO so VNGOWEB and customer websites are easy to find on Google and AI search."
-      },
-      "nga": {
-        "role": "Community & Social Media Specialist",
-        "bio": "Manages Facebook and TikTok, nurtures the community and listens to shop owners' feedback."
-      },
-      "tu": {
-        "bio": "Designed and built the entire VNGOWEB platform — from the template library and drag-and-drop editor to payments and analytics."
-      }
-    },
-    "carousel": {
-      "label": "Meet each team member",
-      "prev": "Previous member",
-      "next": "Next member",
-      "pick": "View {{name}}",
-      "page": "Page {{n}}"
-    },
+    "heading": "The VNGOWEB co-founders",
+    "intro": "VNGOWEB is built by 6 founders: 5 co-founders and Nguyễn Văn Tú, the founder in charge of system development.",
+    "cofounder": "Co-founder",
+    "systemDev": "System development",
     "founderChip": "Founder"
   },
   "contact": {

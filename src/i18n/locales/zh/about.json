@@ -45,62 +45,10 @@
     "bio": "Nguyễn Văn Tú 是 VNGOWEB 的开发者与创始人，毕业于越南岘港FPT大学。他亲自设计并构建了 VNGOWEB 的整个平台——从模板库、拖拽编辑器到支付系统与数据分析——目标是让现代网络技术更贴近小微商户。"
   },
   "team": {
-    "heading": "VNGOWEB 产品团队",
-    "intro": "VNGOWEB 产品团队由 5 名成员组成，分为产品运营和市场营销两个方向，与创始人携手把平台送到每一位店主手中。",
-    "stackLabel": "VNGOWEB 背后的人",
-    "dutiesLabel": "主要职责",
-    "groups": {
-      "ops": {
-        "title": "产品运营",
-        "description": "保障平台顺畅运行，并在网站发布后持续支持客户。",
-        "duties": [
-          "监控平台质量与运行状况",
-          "测试并更新模板库",
-          "客户支持与技术问题处理"
-        ]
-      },
-      "marketing": {
-        "title": "市场营销",
-        "description": "让 VNGOWEB 触达真正需要网站的店主。",
-        "duties": [
-          "品牌策略与营销活动",
-          "内容与 SEO/GEO",
-          "社区与社交媒体"
-        ]
-      }
-    },
-    "members": {
-      "hieu": {
-        "role": "产品运营负责人",
-        "bio": "统筹平台运营流程，跟踪服务质量，确保每个新功能按时交付给客户。"
-      },
-      "khoa": {
-        "role": "运营与模板质量专员",
-        "bio": "测试并更新模板库，处理技术需求，确保客户网站稳定运行。"
-      },
-      "hoai-mi": {
-        "role": "市场营销负责人",
-        "bio": "制定品牌策略和营销活动，吸引店主选择 VNGOWEB。"
-      },
-      "linh": {
-        "role": "内容与 SEO 专员",
-        "bio": "撰写内容并优化 SEO/GEO，让 VNGOWEB 及客户网站更容易在 Google 和 AI 搜索中被找到。"
-      },
-      "nga": {
-        "role": "社区与社交媒体专员",
-        "bio": "运营 Facebook 和 TikTok，维护社区并倾听店主的反馈。"
-      },
-      "tu": {
-        "bio": "亲自设计并开发了整个 VNGOWEB 平台——从模板库、拖放编辑器到支付和数据分析。"
-      }
-    },
-    "carousel": {
-      "label": "团队成员介绍",
-      "prev": "上一位成员",
-      "next": "下一位成员",
-      "pick": "查看 {{name}}",
-      "page": "第 {{n}} 页"
-    },
+    "heading": "VNGOWEB 联合创始人",
+    "intro": "VNGOWEB 由 6 位创始成员共同打造：5 位联合创始人，以及负责系统开发的创始人 Nguyễn Văn Tú。",
+    "cofounder": "联合创始人",
+    "systemDev": "系统开发",
     "founderChip": "创始人"
   },
   "contact": {
